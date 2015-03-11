@@ -1,0 +1,175 @@
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.DAL\bin\Debug\ProMaster.DAL.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.DAL\bin\Debug\ProMaster.DAL.pdb
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.DAL\obj\Debug\ResolveAssemblyReference.cache
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.DAL\obj\Debug\ProMaster.DAL.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.DAL\obj\Debug\ProMaster.DAL.pdb
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.DAL\bin\Debug\ProMaster.Infrastructure.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.DAL\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.DAL.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.DAL.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.Infrastructure.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.DAL\obj\Debug\ProMaster.DAL.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.DAL\obj\Debug\ProMaster.DAL.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.DAL\obj\Debug\ProMaster.DAL.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.DAL\obj\Debug\ProMaster.DAL.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.DAL\bin\Debug\ProMaster.DAL.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.DAL\bin\Debug\ProMaster.DAL.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.DAL\bin\Debug\ProMaster.Infrastructure.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.DAL\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.DAL\bin\Debug\ProMaster.Core.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.DAL\bin\Debug\ProMaster.Core.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.DAL.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.DAL.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.Core.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.Infrastructure.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.Core.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.DAL\obj\Debug\ProMaster.DAL.csprojResolveAssemblyReference.cache
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.DAL\obj\Debug\ProMaster.DAL.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.DAL\obj\Debug\ProMaster.DAL.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.Core.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.Core.pdb
+C:\Development\Projects\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.DAL.dll
+C:\Development\Projects\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.DAL.pdb
+C:\Development\Projects\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.Core.dll
+C:\Development\Projects\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.Infrastructure.dll
+C:\Development\Projects\ProMaster\ProMaster.DAL\bin\Debug\System.Web.Mvc.dll
+C:\Development\Projects\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.Core.pdb
+C:\Development\Projects\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Development\Projects\ProMaster\ProMaster.DAL\obj\Debug\ProMaster.DAL.csprojResolveAssemblyReference.cache
+C:\Development\Projects\ProMaster\ProMaster.DAL\obj\Debug\ProMaster.DAL.dll
+C:\Development\Projects\ProMaster\ProMaster.DAL\obj\Debug\ProMaster.DAL.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.DAL\bin\Debug\EntityFramework.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.DAL.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.DAL.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.Core.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.Infrastructure.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.DAL\bin\Debug\EntityFramework.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.Core.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.DAL\obj\Debug\ProMaster.DAL.csprojResolveAssemblyReference.cache
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.DAL\obj\Debug\ProMaster.DAL.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.DAL\obj\Debug\ProMaster.DAL.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.DAL\bin\Debug\log4net.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.DAL\bin\Debug\log4net.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.DAL\bin\Debug\ProMaster.DAL.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.DAL\bin\Debug\ProMaster.DAL.pdb
+C:\Projects\SourceControl\ProMaster\src\ProMaster.DAL\bin\Debug\log4net.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.DAL\bin\Debug\ProMaster.Core.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.DAL\bin\Debug\ProMaster.Infrastructure.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.DAL\bin\Debug\System.Web.Mvc.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.DAL\bin\Debug\EntityFramework.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.DAL\bin\Debug\ProMaster.Core.pdb
+C:\Projects\SourceControl\ProMaster\src\ProMaster.DAL\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Projects\SourceControl\ProMaster\src\ProMaster.DAL\bin\Debug\log4net.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.DAL\bin\Debug\EntityFramework.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.DAL\obj\Debug\ProMaster.DAL.csprojResolveAssemblyReference.cache
+C:\Projects\SourceControl\ProMaster\src\ProMaster.DAL\obj\Debug\ProMaster.DAL.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.DAL\obj\Debug\ProMaster.DAL.pdb
+C:\Projects\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.DAL.dll
+C:\Projects\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.DAL.pdb
+C:\Projects\ProMaster\ProMaster.DAL\bin\Debug\log4net.dll
+C:\Projects\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.Core.dll
+C:\Projects\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.Infrastructure.dll
+C:\Projects\ProMaster\ProMaster.DAL\bin\Debug\System.Web.Mvc.dll
+C:\Projects\ProMaster\ProMaster.DAL\bin\Debug\EntityFramework.dll
+C:\Projects\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.Core.pdb
+C:\Projects\ProMaster\ProMaster.DAL\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Projects\ProMaster\ProMaster.DAL\bin\Debug\log4net.xml
+C:\Projects\ProMaster\ProMaster.DAL\bin\Debug\EntityFramework.xml
+C:\Projects\ProMaster\ProMaster.DAL\obj\Debug\ProMaster.DAL.csprojResolveAssemblyReference.cache
+C:\Projects\ProMaster\ProMaster.DAL\obj\Debug\ProMaster.DAL.dll
+C:\Projects\ProMaster\ProMaster.DAL\obj\Debug\ProMaster.DAL.pdb
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.DAL\bin\Debug\ProMaster.DAL.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.DAL\bin\Debug\ProMaster.DAL.pdb
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.DAL\bin\Debug\log4net.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.DAL\bin\Debug\ProMaster.Infrastructure.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.DAL\bin\Debug\System.Web.Mvc.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.DAL\bin\Debug\EntityFramework.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.DAL\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.DAL\bin\Debug\log4net.xml
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.DAL\bin\Debug\EntityFramework.xml
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.DAL\obj\Debug\ProMaster.DAL.csprojResolveAssemblyReference.cache
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.DAL\obj\Debug\ProMaster.DAL.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.DAL\obj\Debug\ProMaster.DAL.pdb
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.DAL\bin\Debug\ProMaster.DAL.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.DAL\bin\Debug\ProMaster.DAL.pdb
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.DAL\bin\Debug\log4net.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.DAL\bin\Debug\ProMaster.Infrastructure.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.DAL\bin\Debug\System.Web.Mvc.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.DAL\bin\Debug\EntityFramework.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.DAL\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.DAL\bin\Debug\log4net.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.DAL\bin\Debug\EntityFramework.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.DAL\obj\Debug\ProMaster.DAL.csprojResolveAssemblyReference.cache
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.DAL\obj\Debug\ProMaster.DAL.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.DAL\obj\Debug\ProMaster.DAL.pdb
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.DAL\bin\Debug\ProMaster.DAL.dll.config
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.DAL\bin\Debug\ProMaster.DAL.dll.config
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.DAL\obj\Debug\ProMaster.DAL.csprojResolveAssemblyReference.cache
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.DAL\obj\Debug\ProMaster.DAL.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.DAL\obj\Debug\ProMaster.DAL.pdb
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.DAL\bin\Debug\ProMaster.DAL.dll.config
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.DAL\bin\Debug\ProMaster.DAL.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.DAL\bin\Debug\ProMaster.DAL.pdb
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.DAL\bin\Debug\log4net.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.DAL\bin\Debug\ProMaster.Core.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.DAL\bin\Debug\ProMaster.Infrastructure.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.DAL\bin\Debug\System.Web.Mvc.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.DAL\bin\Debug\EntityFramework.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.DAL\bin\Debug\ProMaster.Core.pdb
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.DAL\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.DAL\bin\Debug\log4net.xml
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.DAL\bin\Debug\EntityFramework.xml
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.DAL\bin\Debug\ProMaster.Core.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.DAL\bin\Debug\ProMaster.Core.pdb
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.DAL\bin\Debug\ProMaster.DAL.dll.config
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.DAL\bin\Debug\ProMaster.DAL.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.DAL\bin\Debug\ProMaster.DAL.pdb
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.DAL\bin\Debug\log4net.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.DAL\bin\Debug\ProMaster.Core.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.DAL\bin\Debug\ProMaster.Infrastructure.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.DAL\bin\Debug\System.Web.Mvc.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.DAL\bin\Debug\EntityFramework.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.DAL\bin\Debug\ProMaster.Core.pdb
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.DAL\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.DAL\bin\Debug\log4net.xml
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.DAL\bin\Debug\EntityFramework.xml
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.DAL\obj\Debug\ProMaster.DAL.csprojResolveAssemblyReference.cache
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.DAL\obj\Debug\ProMaster.DAL.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.DAL\obj\Debug\ProMaster.DAL.pdb
+C:\Projects\Release\ProMasterRC\ProMaster.DAL\bin\Debug\ProMaster.DAL.dll.config
+C:\Projects\Release\ProMasterRC\ProMaster.DAL\bin\Debug\ProMaster.DAL.dll
+C:\Projects\Release\ProMasterRC\ProMaster.DAL\bin\Debug\ProMaster.DAL.pdb
+C:\Projects\Release\ProMasterRC\ProMaster.DAL\bin\Debug\log4net.dll
+C:\Projects\Release\ProMasterRC\ProMaster.DAL\bin\Debug\ProMaster.Core.dll
+C:\Projects\Release\ProMasterRC\ProMaster.DAL\bin\Debug\ProMaster.Infrastructure.dll
+C:\Projects\Release\ProMasterRC\ProMaster.DAL\bin\Debug\System.Web.Mvc.dll
+C:\Projects\Release\ProMasterRC\ProMaster.DAL\bin\Debug\EntityFramework.dll
+C:\Projects\Release\ProMasterRC\ProMaster.DAL\bin\Debug\ProMaster.Core.pdb
+C:\Projects\Release\ProMasterRC\ProMaster.DAL\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Projects\Release\ProMasterRC\ProMaster.DAL\bin\Debug\log4net.xml
+C:\Projects\Release\ProMasterRC\ProMaster.DAL\bin\Debug\EntityFramework.xml
+C:\Projects\Release\ProMasterRC\ProMaster.DAL\obj\Debug\ProMaster.DAL.csprojResolveAssemblyReference.cache
+C:\Projects\Release\ProMasterRC\ProMaster.DAL\obj\Debug\ProMaster.DAL.dll
+C:\Projects\Release\ProMasterRC\ProMaster.DAL\obj\Debug\ProMaster.DAL.pdb
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.DAL\bin\Debug\ProMaster.DAL.dll.config
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.DAL\bin\Debug\ProMaster.DAL.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.DAL\bin\Debug\ProMaster.DAL.pdb
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.DAL\bin\Debug\log4net.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.DAL\bin\Debug\ProMaster.Core.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.DAL\bin\Debug\ProMaster.Infrastructure.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.DAL\bin\Debug\System.Web.Mvc.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.DAL\bin\Debug\EntityFramework.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.DAL\bin\Debug\ProMaster.Core.pdb
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.DAL\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.DAL\bin\Debug\log4net.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.DAL\bin\Debug\EntityFramework.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.DAL\obj\Debug\ProMaster.DAL.csprojResolveAssemblyReference.cache
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.DAL\obj\Debug\ProMaster.DAL.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.DAL\obj\Debug\ProMaster.DAL.pdb

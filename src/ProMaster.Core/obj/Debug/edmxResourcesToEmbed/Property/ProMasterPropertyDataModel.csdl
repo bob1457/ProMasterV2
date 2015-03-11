@@ -1,0 +1,835 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProMasterPropertyDataModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="ProMasterPropertyDataEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="PropertyAddresses" EntityType="ProMasterPropertyDataModel.PropertyAddress" />
+    <EntitySet Name="PropertyManagers" EntityType="ProMasterPropertyDataModel.PropertyManager" />
+    <EntitySet Name="PropertyOwners" EntityType="ProMasterPropertyDataModel.PropertyOwner" />
+    <EntitySet Name="PropertyTypes" EntityType="ProMasterPropertyDataModel.PropertyType" />
+    <EntitySet Name="PropertyFacilities" EntityType="ProMasterPropertyDataModel.PropertyFacility" />
+    <EntitySet Name="RentalStatus" EntityType="ProMasterPropertyDataModel.RentalStatu" />
+    <EntitySet Name="PropertyFeatures" EntityType="ProMasterPropertyDataModel.PropertyFeature" />
+    <EntitySet Name="TenancyApplications" EntityType="ProMasterPropertyDataModel.TenancyApplication" />
+    <EntitySet Name="PropertyLists" EntityType="ProMasterPropertyDataModel.PropertyList" />
+    <EntitySet Name="Documents" EntityType="ProMasterPropertyDataModel.Document" />
+    <EntitySet Name="DocumentPrincipalTypes" EntityType="ProMasterPropertyDataModel.DocumentPrincipalType" />
+    <EntitySet Name="DocumentTypes" EntityType="ProMasterPropertyDataModel.DocumentType" />
+    <AssociationSet Name="FK_Document_DocumentPrincipalType" Association="ProMasterPropertyDataModel.FK_Document_DocumentPrincipalType">
+      <End Role="DocumentPrincipalType" EntitySet="DocumentPrincipalTypes" />
+      <End Role="Document" EntitySet="Documents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Document_DocumentType" Association="ProMasterPropertyDataModel.FK_Document_DocumentType">
+      <End Role="DocumentType" EntitySet="DocumentTypes" />
+      <End Role="Document" EntitySet="Documents" />
+    </AssociationSet>
+    <EntitySet Name="EventTypes" EntityType="ProMasterPropertyDataModel.EventType" />
+    <EntitySet Name="WorkOrderStatus" EntityType="ProMasterPropertyDataModel.WorkOrderStatu" />
+    <EntitySet Name="ManagementEvents" EntityType="ProMasterPropertyDataModel.ManagementEvent" />
+    <AssociationSet Name="FK_Event_EventType" Association="ProMasterPropertyDataModel.FK_Event_EventType">
+      <End Role="EventType" EntitySet="EventTypes" />
+      <End Role="ManagementEvent" EntitySet="ManagementEvents" />
+    </AssociationSet>
+    <EntitySet Name="LeaseTerms" EntityType="ProMasterPropertyDataModel.LeaseTerm" />
+    <EntitySet Name="Tenants" EntityType="ProMasterPropertyDataModel.Tenant" />
+    <EntitySet Name="Leases" EntityType="ProMasterPropertyDataModel.Lease" />
+    <AssociationSet Name="FK_Lease_LeaseTerm" Association="ProMasterPropertyDataModel.FK_Lease_LeaseTerm">
+      <End Role="LeaseTerm" EntitySet="LeaseTerms" />
+      <End Role="Lease" EntitySet="Leases" />
+    </AssociationSet>
+    <EntitySet Name="WorkOrderCategories" EntityType="ProMasterPropertyDataModel.WorkOrderCategory" />
+    <EntitySet Name="WorkOrders" EntityType="ProMasterPropertyDataModel.WorkOrder" />
+    <AssociationSet Name="FK_WorkOrder_WorkOrderCategory" Association="ProMasterPropertyDataModel.FK_WorkOrder_WorkOrderCategory">
+      <End Role="WorkOrderCategory" EntitySet="WorkOrderCategories" />
+      <End Role="WorkOrder" EntitySet="WorkOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrder_WorkOrderStatus" Association="ProMasterPropertyDataModel.FK_WorkOrder_WorkOrderStatus">
+      <End Role="WorkOrderStatu" EntitySet="WorkOrderStatus" />
+      <End Role="WorkOrder" EntitySet="WorkOrders" />
+    </AssociationSet>
+    <EntitySet Name="Vendors" EntityType="ProMasterPropertyDataModel.Vendor" />
+    <AssociationSet Name="FK_WorkOrder_Vendor" Association="ProMasterPropertyDataModel.FK_WorkOrder_Vendor">
+      <End Role="Vendor" EntitySet="Vendors" />
+      <End Role="WorkOrder" EntitySet="WorkOrders" />
+    </AssociationSet>
+    <EntitySet Name="Calendars" EntityType="ProMasterPropertyDataModel.Calendar" />
+    <EntitySet Name="Messages" EntityType="ProMasterPropertyDataModel.Message" />
+    <EntitySet Name="MessageReplies" EntityType="ProMasterPropertyDataModel.MessageReply" />
+    <EntitySet Name="MessageTypes" EntityType="ProMasterPropertyDataModel.MessageType" />
+    <AssociationSet Name="FK_Message_MessageType" Association="ProMasterPropertyDataModel.FK_Message_MessageType">
+      <End Role="MessageType" EntitySet="MessageTypes" />
+      <End Role="Message" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MessageReply_Message" Association="ProMasterPropertyDataModel.FK_MessageReply_Message">
+      <End Role="Message" EntitySet="Messages" />
+      <End Role="MessageReply" EntitySet="MessageReplies" />
+    </AssociationSet>
+    <EntitySet Name="PropertyListingPictures" EntityType="ProMasterPropertyDataModel.PropertyListingPicture" />
+    <EntitySet Name="Properties" EntityType="ProMasterPropertyDataModel.Property" />
+    <AssociationSet Name="FK_Lease_Property" Association="ProMasterPropertyDataModel.FK_Lease_Property">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="Lease" EntitySet="Leases" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_Property" Association="ProMasterPropertyDataModel.FK_Event_Property">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="ManagementEvent" EntitySet="ManagementEvents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Message_Property" Association="ProMasterPropertyDataModel.FK_Message_Property">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="Message" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Property_PropertyAddress" Association="ProMasterPropertyDataModel.FK_Property_PropertyAddress">
+      <End Role="PropertyAddress" EntitySet="PropertyAddresses" />
+      <End Role="Property" EntitySet="Properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Property_PropertyFacility" Association="ProMasterPropertyDataModel.FK_Property_PropertyFacility">
+      <End Role="PropertyFacility" EntitySet="PropertyFacilities" />
+      <End Role="Property" EntitySet="Properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Property_PropertyFeature" Association="ProMasterPropertyDataModel.FK_Property_PropertyFeature">
+      <End Role="PropertyFeature" EntitySet="PropertyFeatures" />
+      <End Role="Property" EntitySet="Properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Property_PropertyManager" Association="ProMasterPropertyDataModel.FK_Property_PropertyManager">
+      <End Role="PropertyManager" EntitySet="PropertyManagers" />
+      <End Role="Property" EntitySet="Properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Property_PropertyOwner" Association="ProMasterPropertyDataModel.FK_Property_PropertyOwner">
+      <End Role="PropertyOwner" EntitySet="PropertyOwners" />
+      <End Role="Property" EntitySet="Properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Property_PropertyType" Association="ProMasterPropertyDataModel.FK_Property_PropertyType">
+      <End Role="PropertyType" EntitySet="PropertyTypes" />
+      <End Role="Property" EntitySet="Properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Property_RentalStatus" Association="ProMasterPropertyDataModel.FK_Property_RentalStatus">
+      <End Role="RentalStatu" EntitySet="RentalStatus" />
+      <End Role="Property" EntitySet="Properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PropertyList_Property" Association="ProMasterPropertyDataModel.FK_PropertyList_Property">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="PropertyList" EntitySet="PropertyLists" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PropertyListingPicture_Property" Association="ProMasterPropertyDataModel.FK_PropertyListingPicture_Property">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="PropertyListingPicture" EntitySet="PropertyListingPictures" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TenancyApplication_Property" Association="ProMasterPropertyDataModel.FK_TenancyApplication_Property">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="TenancyApplication" EntitySet="TenancyApplications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrder_Property" Association="ProMasterPropertyDataModel.FK_WorkOrder_Property">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="WorkOrder" EntitySet="WorkOrders" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="PropertyAddress">
+    <Key>
+      <PropertyRef Name="PropertyAddressId" />
+    </Key>
+    <Property Name="PropertyAddressId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="PropertySuiteNumber" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="PropertyNumber" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="PropertyStreet" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="PropertyCity" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="PropertyStateProvince" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="PropertyCountry" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="PropertyZipPostCode" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="GPSLongitudeValue" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="GPSLatitudeValue" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Properties" Relationship="ProMasterPropertyDataModel.FK_Property_PropertyAddress" FromRole="PropertyAddress" ToRole="Property" />
+  </EntityType>
+  <EntityType Name="PropertyManager">
+    <Key>
+      <PropertyRef Name="PropertyManagerId" />
+    </Key>
+    <Property Name="PropertyManagerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ContactEmail" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ContactTelephone1" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="ContactTelephone2" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="UserAvartaImgUrl" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="UpdateDate" Type="DateTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="Properties" Relationship="ProMasterPropertyDataModel.FK_Property_PropertyManager" FromRole="PropertyManager" ToRole="Property" />
+  </EntityType>
+  <EntityType Name="PropertyOwner">
+    <Key>
+      <PropertyRef Name="PropertyOwnerId" />
+    </Key>
+    <Property Name="PropertyOwnerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ContactEmail" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ContactTelephone1" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="ContactTelephone2" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="OnlineAccessEnbaled" Type="Boolean" Nullable="false" />
+    <Property Name="UserAvartaImgUrl" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="AddedBy" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="UpdateDate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Type="Boolean" Name="AddProperty" />
+    <NavigationProperty Name="Properties" Relationship="ProMasterPropertyDataModel.FK_Property_PropertyOwner" FromRole="PropertyOwner" ToRole="Property" />
+  </EntityType>
+  <EntityType Name="PropertyType">
+    <Key>
+      <PropertyRef Name="PropertyTypeId" />
+    </Key>
+    <Property Name="PropertyTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="PropertyType1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Properties" Relationship="ProMasterPropertyDataModel.FK_Property_PropertyType" FromRole="PropertyType" ToRole="Property" />
+  </EntityType>
+  <EntityType Name="PropertyFacility">
+    <Key>
+      <PropertyRef Name="PropertyFacilityId" />
+    </Key>
+    <Property Type="Int32" Name="PropertyFacilityId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Boolean" Name="Stove" Nullable="false" />
+    <Property Type="Boolean" Name="Refrigerator" Nullable="false" />
+    <Property Type="Boolean" Name="Dishwasher" Nullable="false" />
+    <Property Type="Boolean" Name="AirConditioner" Nullable="false" />
+    <Property Type="Boolean" Name="Laundry" Nullable="false" />
+    <Property Type="Boolean" Name="BlindsCurtain" Nullable="false" />
+    <Property Type="Boolean" Name="Furniture" Nullable="false" />
+    <Property Type="Boolean" Name="TVInternet" Nullable="false" />
+    <Property Type="Boolean" Name="CommonFacility" Nullable="false" />
+    <Property Type="Boolean" Name="SecuritySystem" Nullable="false" />
+    <Property Type="Boolean" Name="FireAlarmSystem" Nullable="false" />
+    <Property Type="String" Name="Others" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Notes" MaxLength="400" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Properties" Relationship="ProMasterPropertyDataModel.FK_Property_PropertyFacility" FromRole="PropertyFacility" ToRole="Property" />
+  </EntityType>
+  <EntityType Name="RentalStatu">
+    <Key>
+      <PropertyRef Name="RentalStatusId" />
+    </Key>
+    <Property Type="Int32" Name="RentalStatusId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Properties" Relationship="ProMasterPropertyDataModel.FK_Property_RentalStatus" FromRole="RentalStatu" ToRole="Property" />
+  </EntityType>
+  <EntityType Name="PropertyFeature">
+    <Key>
+      <PropertyRef Name="PropertyFeatureId" />
+    </Key>
+    <Property Type="Int32" Name="PropertyFeatureId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="NumberOfBedrooms" Nullable="false" />
+    <Property Type="Int32" Name="NumberOfBathrooms" Nullable="false" />
+    <Property Type="Int32" Name="NumberOfLayers" Nullable="false" />
+    <Property Type="Int32" Name="NumberOfParking" Nullable="false" />
+    <Property Type="Boolean" Name="BasementAvailable" Nullable="false" />
+    <Property Type="Int32" Name="TotalLivingArea" Nullable="false" />
+    <Property Type="Boolean" Name="IsShared" Nullable="false" />
+    <Property Type="String" Name="Notes" MaxLength="400" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Properties" Relationship="ProMasterPropertyDataModel.FK_Property_PropertyFeature" FromRole="PropertyFeature" ToRole="Property" />
+  </EntityType>
+  <EntityType Name="TenancyApplication">
+    <Key>
+      <PropertyRef Name="TenancyApplicationId" />
+    </Key>
+    <Property Type="Int32" Name="TenancyApplicationId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="ApplicantFirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ApplicantLastName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="PropertyId" Nullable="false" />
+    <Property Type="String" Name="CurrentAddress" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ApplicantContactTel" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ApplicantContactEmail" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="NumberOfTenant" Nullable="false" />
+    <Property Type="Int32" Name="NumberOfChildren" />
+    <Property Type="String" Name="CurrentEmployerContact" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="CurrentMonthlyIncome" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Boolean" Name="IsAuthorizedForRefCheck" Nullable="false" />
+    <Property Type="String" Name="CurrentLandlordContact" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsIdentificationDocAvailalbe" Nullable="false" />
+    <Property Type="Boolean" Name="IsApproved" Nullable="false" />
+    <Property Type="DateTime" Name="ApplicationSentDate" Nullable="false" Precision="7" />
+    <Property Type="String" Name="CreditReportScore" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PreviousAddress" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PreviousEmployerContact" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PreviousLandlordContact" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ApplicantSIN" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="Property" Relationship="ProMasterPropertyDataModel.FK_TenancyApplication_Property" FromRole="TenancyApplication" ToRole="Property" />
+  </EntityType>
+  <EntityType Name="PropertyList">
+    <Key>
+      <PropertyRef Name="PropertyListId" />
+    </Key>
+    <Property Type="Int32" Name="PropertyListId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="PropertyId" Nullable="false" />
+    <Property Type="DateTime" Name="ListedDate" Nullable="false" Precision="7" />
+    <Property Type="Decimal" Name="ListedRentAmount" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsListedExternal" />
+    <Property Type="String" Name="Notes" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreationDate" Precision="7" Nullable="false" />
+    <Property Type="DateTime" Name="UpdateDate" Precision="7" Nullable="false" />
+    <Property Type="String" Name="ListingTitle" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Property" Relationship="ProMasterPropertyDataModel.FK_PropertyList_Property" FromRole="PropertyList" ToRole="Property" />
+  </EntityType>
+  <EntityType Name="Document">
+    <Key>
+      <PropertyRef Name="DocumentId" />
+    </Key>
+    <Property Type="Int32" Name="DocumentId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="DocumentTypeId" Nullable="false" />
+    <Property Type="String" Name="DocumentName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DcoumentDetails" Nullable="false" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="DocumentPrincipalTypeId" Nullable="false" />
+    <Property Type="Int32" Name="DocumentPrincipalId" Nullable="false" />
+    <Property Type="String" Name="DocumentUrl" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="7" />
+    <Property Type="DateTime" Name="UpdateDate" Nullable="false" Precision="7" />
+    <NavigationProperty Name="DocumentPrincipalType" Relationship="ProMasterPropertyDataModel.FK_Document_DocumentPrincipalType" FromRole="Document" ToRole="DocumentPrincipalType" />
+    <NavigationProperty Name="DocumentType" Relationship="ProMasterPropertyDataModel.FK_Document_DocumentType" FromRole="Document" ToRole="DocumentType" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DocumentPrincipalType">
+    <Key>
+      <PropertyRef Name="DocumentPrincipalTypeId" />
+    </Key>
+    <Property Type="Int32" Name="DocumentPrincipalTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="DocumentPrincipalType1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Documents" Relationship="ProMasterPropertyDataModel.FK_Document_DocumentPrincipalType" FromRole="DocumentPrincipalType" ToRole="Document" />
+  </EntityType>
+  <EntityType Name="DocumentType">
+    <Key>
+      <PropertyRef Name="DocumentTypeId" />
+    </Key>
+    <Property Type="Int32" Name="DocumentTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="DocumentType1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Documents" Relationship="ProMasterPropertyDataModel.FK_Document_DocumentType" FromRole="DocumentType" ToRole="Document" />
+  </EntityType>
+  <Association Name="FK_Document_DocumentPrincipalType">
+    <End Type="ProMasterPropertyDataModel.DocumentPrincipalType" Role="DocumentPrincipalType" Multiplicity="1" />
+    <End Type="ProMasterPropertyDataModel.Document" Role="Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentPrincipalType">
+        <PropertyRef Name="DocumentPrincipalTypeId" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="DocumentPrincipalTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Document_DocumentType">
+    <End Type="ProMasterPropertyDataModel.DocumentType" Role="DocumentType" Multiplicity="1" />
+    <End Type="ProMasterPropertyDataModel.Document" Role="Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentType">
+        <PropertyRef Name="DocumentTypeId" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="DocumentTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="EventType">
+    <Key>
+      <PropertyRef Name="EventTypeId" />
+    </Key>
+    <Property Type="Int32" Name="EventTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="EventType1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ManagementEvents" Relationship="ProMasterPropertyDataModel.FK_Event_EventType" FromRole="EventType" ToRole="ManagementEvent" />
+  </EntityType>
+  <EntityType Name="WorkOrderStatu">
+    <Key>
+      <PropertyRef Name="WorkOrderStatusId" />
+    </Key>
+    <Property Type="Int32" Name="WorkOrderStatusId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="WorkOrderStatus" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="WorkOrders" Relationship="ProMasterPropertyDataModel.FK_WorkOrder_WorkOrderStatus" FromRole="WorkOrderStatu" ToRole="WorkOrder" />
+  </EntityType>
+  <EntityType Name="ManagementEvent">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Type="Int32" Name="EventId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="EventName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="EventDetails" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="EventDate" Nullable="false" Precision="7" />
+    <Property Type="Int32" Name="EventTypeId" Nullable="false" />
+    <Property Type="Int32" Name="PropertyId" Nullable="false" />
+    <Property Type="Decimal" Name="MileageIncurred" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="7" />
+    <NavigationProperty Name="EventType" Relationship="ProMasterPropertyDataModel.FK_Event_EventType" FromRole="ManagementEvent" ToRole="EventType" />
+    <Property Type="Decimal" Name="TimeSpent" Precision="18" Scale="0" Nullable="false" />
+    <NavigationProperty Name="Property" Relationship="ProMasterPropertyDataModel.FK_Event_Property" FromRole="ManagementEvent" ToRole="Property" />
+  </EntityType>
+  <Association Name="FK_Event_EventType">
+    <End Type="ProMasterPropertyDataModel.EventType" Role="EventType" Multiplicity="1" />
+    <End Type="ProMasterPropertyDataModel.ManagementEvent" Role="ManagementEvent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EventType">
+        <PropertyRef Name="EventTypeId" />
+      </Principal>
+      <Dependent Role="ManagementEvent">
+        <PropertyRef Name="EventTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="LeaseTerm">
+    <Key>
+      <PropertyRef Name="LeaseTermId" />
+    </Key>
+    <Property Type="Int32" Name="LeaseTermId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="LeaaseTerm" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Leases" Relationship="ProMasterPropertyDataModel.FK_Lease_LeaseTerm" FromRole="LeaseTerm" ToRole="Lease" />
+  </EntityType>
+  <EntityType Name="Tenant">
+    <Key>
+      <PropertyRef Name="TenantId" />
+    </Key>
+    <Property Type="Int32" Name="TenantId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ContactEmail" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ContactTelephone1" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ContactTelephone2" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="OnlineAccessEnbaled" Nullable="false" />
+    <Property Type="String" Name="UserAvartaImgUrl" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="LeaseId" Nullable="false" />
+    <Property Type="Int32" Name="RoleId" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="String" Name="ManagedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="7" />
+    <Property Type="DateTime" Name="UpdateDate" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="Lease">
+    <Key>
+      <PropertyRef Name="LeaseId" />
+    </Key>
+    <Property Type="Int32" Name="LeaseId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="LeaseTitle" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LeaseDesc" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="PropertyId" Nullable="false" />
+    <Property Type="DateTime" Name="LeaseStartDate" Nullable="false" Precision="7" />
+    <Property Type="DateTime" Name="LeaseEndDate" Nullable="false" Precision="7" />
+    <Property Type="Int32" Name="LeaseTermId" Nullable="false" />
+    <Property Type="String" Name="RentFrequency" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="RentAmount" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="RentDueOn" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="DamageDepositAmount" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="PetDepositAmount" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="LeaseSignDate" Nullable="false" Precision="7" />
+    <Property Type="String" Name="LeaseAgreementDocUrl" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="Addendum" Nullable="false" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="7" />
+    <Property Type="DateTime" Name="UpdateDate" Nullable="false" Precision="7" />
+    <NavigationProperty Name="LeaseTerm" Relationship="ProMasterPropertyDataModel.FK_Lease_LeaseTerm" FromRole="Lease" ToRole="LeaseTerm" />
+    <Property Type="String" Name="Notes" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="Property" Relationship="ProMasterPropertyDataModel.FK_Lease_Property" FromRole="Lease" ToRole="Property" />
+  </EntityType>
+  <Association Name="FK_Lease_LeaseTerm">
+    <End Type="ProMasterPropertyDataModel.LeaseTerm" Role="LeaseTerm" Multiplicity="1" />
+    <End Type="ProMasterPropertyDataModel.Lease" Role="Lease" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LeaseTerm">
+        <PropertyRef Name="LeaseTermId" />
+      </Principal>
+      <Dependent Role="Lease">
+        <PropertyRef Name="LeaseTermId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="WorkOrderCategory">
+    <Key>
+      <PropertyRef Name="WorkOrderCategoryId" />
+    </Key>
+    <Property Type="Int32" Name="WorkOrderCategoryId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="CategoryName" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="WorkOrders" Relationship="ProMasterPropertyDataModel.FK_WorkOrder_WorkOrderCategory" FromRole="WorkOrderCategory" ToRole="WorkOrder" />
+  </EntityType>
+  <EntityType Name="WorkOrder">
+    <Key>
+      <PropertyRef Name="WorkOrderId" />
+    </Key>
+    <Property Type="Int32" Name="WorkOrderId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="WorkOrderName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="WorkOrderDetails" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="WorkOrderCategoryId" Nullable="false" />
+    <Property Type="Int32" Name="PropertyId" Nullable="false" />
+    <Property Type="Int32" Name="VendorId" Nullable="false" />
+    <Property Type="Int32" Name="WorkOrderTypeId" Nullable="false" />
+    <Property Type="Decimal" Name="InvoiceAmount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="InvoiceDocUrl" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="InvoiceDate" Nullable="false" Precision="7" />
+    <Property Type="DateTime" Name="StartDate" Nullable="false" Precision="7" />
+    <Property Type="DateTime" Name="EndDate" Nullable="false" Precision="7" />
+    <Property Type="Boolean" Name="IsAuthorized" Nullable="false" />
+    <Property Type="Int32" Name="WorkOrderStatusId" Nullable="false" />
+    <Property Type="Boolean" Name="IsPaid" Nullable="false" />
+    <Property Type="DateTime" Name="PaymentDate" Nullable="false" Precision="7" />
+    <Property Type="String" Name="PaymentMethod" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="PaymentAmount" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="RecordCreationDate" Nullable="false" Precision="7" />
+    <Property Type="DateTime" Name="RecordUpdateDate" Precision="7" />
+    <NavigationProperty Name="WorkOrderCategory" Relationship="ProMasterPropertyDataModel.FK_WorkOrder_WorkOrderCategory" FromRole="WorkOrder" ToRole="WorkOrderCategory" />
+    <NavigationProperty Name="WorkOrderStatu" Relationship="ProMasterPropertyDataModel.FK_WorkOrder_WorkOrderStatus" FromRole="WorkOrder" ToRole="WorkOrderStatu" />
+    <NavigationProperty Name="Vendor" Relationship="ProMasterPropertyDataModel.FK_WorkOrder_Vendor" FromRole="WorkOrder" ToRole="Vendor" />
+    <NavigationProperty Name="Property" Relationship="ProMasterPropertyDataModel.FK_WorkOrder_Property" FromRole="WorkOrder" ToRole="Property" />
+  </EntityType>
+  <Association Name="FK_WorkOrder_WorkOrderCategory">
+    <End Type="ProMasterPropertyDataModel.WorkOrderCategory" Role="WorkOrderCategory" Multiplicity="1" />
+    <End Type="ProMasterPropertyDataModel.WorkOrder" Role="WorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkOrderCategory">
+        <PropertyRef Name="WorkOrderCategoryId" />
+      </Principal>
+      <Dependent Role="WorkOrder">
+        <PropertyRef Name="WorkOrderCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrder_WorkOrderStatus">
+    <End Type="ProMasterPropertyDataModel.WorkOrderStatu" Role="WorkOrderStatu" Multiplicity="1" />
+    <End Type="ProMasterPropertyDataModel.WorkOrder" Role="WorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkOrderStatu">
+        <PropertyRef Name="WorkOrderStatusId" />
+      </Principal>
+      <Dependent Role="WorkOrder">
+        <PropertyRef Name="WorkOrderStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Vendor">
+    <Key>
+      <PropertyRef Name="VendorId" />
+    </Key>
+    <Property Type="Int32" Name="VendorId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="VendorBusinessName" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="VendorDesc" MaxLength="450" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="VendorSpecialtyId" Nullable="false" />
+    <Property Type="String" Name="VendorContactTelephone1" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="VendorContactTelephone2" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="VendorContactEmail" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Int32" Name="RoleId" Nullable="false" />
+    <Property Type="Boolean" Name="OnlineAccessEnbaled" Nullable="false" />
+    <Property Type="String" Name="UserAvartaImgUrl" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="7" />
+    <Property Type="DateTime" Name="UpdateDate" Nullable="false" Precision="7" />
+    <NavigationProperty Name="WorkOrders" Relationship="ProMasterPropertyDataModel.FK_WorkOrder_Vendor" FromRole="Vendor" ToRole="WorkOrder" />
+  </EntityType>
+  <Association Name="FK_WorkOrder_Vendor">
+    <End Type="ProMasterPropertyDataModel.Vendor" Role="Vendor" Multiplicity="1" />
+    <End Type="ProMasterPropertyDataModel.WorkOrder" Role="WorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vendor">
+        <PropertyRef Name="VendorId" />
+      </Principal>
+      <Dependent Role="WorkOrder">
+        <PropertyRef Name="VendorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Calendar">
+    <Key>
+      <PropertyRef Name="CalendarId" />
+    </Key>
+    <Property Type="Int32" Name="CalendarId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="CalendarTitle" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CalendarDesc" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="EventStart" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="EventEnd" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsAllDay" Nullable="false" />
+    <Property Type="String" Name="EventImgUrl" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="PmId" Nullable="false" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="7" />
+    <Property Type="DateTime" Name="UpdateDate" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="MessageId" />
+    </Key>
+    <Property Type="Int32" Name="MessageId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="SentByUserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ToUserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MessageSubject" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MessageBody" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="MessageTypeId" Nullable="false" />
+    <Property Type="Int32" Name="PropertyId" Nullable="false" />
+    <Property Type="Boolean" Name="ToAllTenants" />
+    <Property Type="Boolean" Name="ToAllLandlords" />
+    <Property Type="Boolean" Name="MessageReadStatus" />
+    <Property Type="DateTime" Name="SentDate" Nullable="false" Precision="7" />
+    <NavigationProperty Name="MessageType" Relationship="ProMasterPropertyDataModel.FK_Message_MessageType" FromRole="Message" ToRole="MessageType" />
+    <NavigationProperty Name="MessageReplies" Relationship="ProMasterPropertyDataModel.FK_MessageReply_Message" FromRole="Message" ToRole="MessageReply" />
+    <NavigationProperty Name="Property" Relationship="ProMasterPropertyDataModel.FK_Message_Property" FromRole="Message" ToRole="Property" />
+  </EntityType>
+  <EntityType Name="MessageReply">
+    <Key>
+      <PropertyRef Name="MessageReplyId" />
+    </Key>
+    <Property Type="Int32" Name="MessageReplyId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="MessageReplySubject" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MessageReplyBody" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="MessageReplyDate" Nullable="false" Precision="7" />
+    <Property Type="Int32" Name="MessageId" Nullable="false" />
+    <NavigationProperty Name="Message" Relationship="ProMasterPropertyDataModel.FK_MessageReply_Message" FromRole="MessageReply" ToRole="Message" />
+  </EntityType>
+  <EntityType Name="MessageType">
+    <Key>
+      <PropertyRef Name="MessageTypeId" />
+    </Key>
+    <Property Type="Int32" Name="MessageTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="MessageType1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Messages" Relationship="ProMasterPropertyDataModel.FK_Message_MessageType" FromRole="MessageType" ToRole="Message" />
+  </EntityType>
+  <Association Name="FK_Message_MessageType">
+    <End Type="ProMasterPropertyDataModel.MessageType" Role="MessageType" Multiplicity="1" />
+    <End Type="ProMasterPropertyDataModel.Message" Role="Message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MessageType">
+        <PropertyRef Name="MessageTypeId" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="MessageTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MessageReply_Message">
+    <End Type="ProMasterPropertyDataModel.Message" Role="Message" Multiplicity="1" />
+    <End Type="ProMasterPropertyDataModel.MessageReply" Role="MessageReply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Message">
+        <PropertyRef Name="MessageId" />
+      </Principal>
+      <Dependent Role="MessageReply">
+        <PropertyRef Name="MessageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="PropertyListingPicture">
+    <Key>
+      <PropertyRef Name="PropertyListingPictureId" />
+    </Key>
+    <Property Type="Int32" Name="PropertyListingPictureId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="PropertyPictureTitle" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ImgUrl" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Caption" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="7" />
+    <Property Type="DateTime" Name="UpdateDate" Nullable="false" Precision="7" />
+    <Property Type="Int32" Name="PropertyId" Nullable="false" />
+    <Property Type="String" Name="ImgUrlThumb" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ImgUrlMed" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Property" Relationship="ProMasterPropertyDataModel.FK_PropertyListingPicture_Property" FromRole="PropertyListingPicture" ToRole="Property" />
+  </EntityType>
+  <EntityType Name="Property">
+    <Key>
+      <PropertyRef Name="PropertyId" />
+    </Key>
+    <Property Type="Int32" Name="PropertyId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="PropertyName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PropertyDesc" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PropertyListDesc" MaxLength="450" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="PropertyTypeId" Nullable="false" />
+    <Property Type="Int32" Name="StrataCouncilId" />
+    <Property Type="Int32" Name="PropertyAddressId" Nullable="false" />
+    <Property Type="Int32" Name="PropertyFeatureId" Nullable="false" />
+    <Property Type="Int32" Name="PropertyFacilityId" Nullable="false" />
+    <Property Type="Int32" Name="PropertyOwnerId" Nullable="false" />
+    <Property Type="Int32" Name="PropertyManagerId" Nullable="false" />
+    <Property Type="String" Name="PropertyImgUrl" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PropertyVideoUrl" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="PropertyBuildYear" Nullable="false" />
+    <Property Type="Int32" Name="PropertyMgmntlStatusId" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsShared" Nullable="false" />
+    <Property Type="Int32" Name="RentalStatusId" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="7" />
+    <Property Type="DateTime" Name="UpdateDate" Nullable="false" Precision="7" />
+    <NavigationProperty Name="Leases" Relationship="ProMasterPropertyDataModel.FK_Lease_Property" FromRole="Property" ToRole="Lease" />
+    <NavigationProperty Name="ManagementEvents" Relationship="ProMasterPropertyDataModel.FK_Event_Property" FromRole="Property" ToRole="ManagementEvent" />
+    <NavigationProperty Name="Messages" Relationship="ProMasterPropertyDataModel.FK_Message_Property" FromRole="Property" ToRole="Message" />
+    <NavigationProperty Name="PropertyAddress" Relationship="ProMasterPropertyDataModel.FK_Property_PropertyAddress" FromRole="Property" ToRole="PropertyAddress" />
+    <NavigationProperty Name="PropertyFacility" Relationship="ProMasterPropertyDataModel.FK_Property_PropertyFacility" FromRole="Property" ToRole="PropertyFacility" />
+    <NavigationProperty Name="PropertyFeature" Relationship="ProMasterPropertyDataModel.FK_Property_PropertyFeature" FromRole="Property" ToRole="PropertyFeature" />
+    <NavigationProperty Name="PropertyManager" Relationship="ProMasterPropertyDataModel.FK_Property_PropertyManager" FromRole="Property" ToRole="PropertyManager" />
+    <NavigationProperty Name="PropertyOwner" Relationship="ProMasterPropertyDataModel.FK_Property_PropertyOwner" FromRole="Property" ToRole="PropertyOwner" />
+    <NavigationProperty Name="PropertyType" Relationship="ProMasterPropertyDataModel.FK_Property_PropertyType" FromRole="Property" ToRole="PropertyType" />
+    <NavigationProperty Name="RentalStatu" Relationship="ProMasterPropertyDataModel.FK_Property_RentalStatus" FromRole="Property" ToRole="RentalStatu" />
+    <NavigationProperty Name="PropertyLists" Relationship="ProMasterPropertyDataModel.FK_PropertyList_Property" FromRole="Property" ToRole="PropertyList" />
+    <NavigationProperty Name="PropertyListingPictures" Relationship="ProMasterPropertyDataModel.FK_PropertyListingPicture_Property" FromRole="Property" ToRole="PropertyListingPicture" />
+    <NavigationProperty Name="TenancyApplications" Relationship="ProMasterPropertyDataModel.FK_TenancyApplication_Property" FromRole="Property" ToRole="TenancyApplication" />
+    <NavigationProperty Name="WorkOrders" Relationship="ProMasterPropertyDataModel.FK_WorkOrder_Property" FromRole="Property" ToRole="WorkOrder" />
+  </EntityType>
+  <Association Name="FK_Lease_Property">
+    <End Type="ProMasterPropertyDataModel.Property" Role="Property" Multiplicity="1" />
+    <End Type="ProMasterPropertyDataModel.Lease" Role="Lease" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="Lease">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_Property">
+    <End Type="ProMasterPropertyDataModel.Property" Role="Property" Multiplicity="1" />
+    <End Type="ProMasterPropertyDataModel.ManagementEvent" Role="ManagementEvent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="ManagementEvent">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Message_Property">
+    <End Type="ProMasterPropertyDataModel.Property" Role="Property" Multiplicity="1" />
+    <End Type="ProMasterPropertyDataModel.Message" Role="Message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Property_PropertyAddress">
+    <End Type="ProMasterPropertyDataModel.PropertyAddress" Role="PropertyAddress" Multiplicity="1" />
+    <End Type="ProMasterPropertyDataModel.Property" Role="Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyAddress">
+        <PropertyRef Name="PropertyAddressId" />
+      </Principal>
+      <Dependent Role="Property">
+        <PropertyRef Name="PropertyAddressId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Property_PropertyFacility">
+    <End Type="ProMasterPropertyDataModel.PropertyFacility" Role="PropertyFacility" Multiplicity="1" />
+    <End Type="ProMasterPropertyDataModel.Property" Role="Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyFacility">
+        <PropertyRef Name="PropertyFacilityId" />
+      </Principal>
+      <Dependent Role="Property">
+        <PropertyRef Name="PropertyFacilityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Property_PropertyFeature">
+    <End Type="ProMasterPropertyDataModel.PropertyFeature" Role="PropertyFeature" Multiplicity="1" />
+    <End Type="ProMasterPropertyDataModel.Property" Role="Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyFeature">
+        <PropertyRef Name="PropertyFeatureId" />
+      </Principal>
+      <Dependent Role="Property">
+        <PropertyRef Name="PropertyFeatureId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Property_PropertyManager">
+    <End Type="ProMasterPropertyDataModel.PropertyManager" Role="PropertyManager" Multiplicity="1" />
+    <End Type="ProMasterPropertyDataModel.Property" Role="Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyManager">
+        <PropertyRef Name="PropertyManagerId" />
+      </Principal>
+      <Dependent Role="Property">
+        <PropertyRef Name="PropertyManagerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Property_PropertyOwner">
+    <End Type="ProMasterPropertyDataModel.PropertyOwner" Role="PropertyOwner" Multiplicity="1" />
+    <End Type="ProMasterPropertyDataModel.Property" Role="Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyOwner">
+        <PropertyRef Name="PropertyOwnerId" />
+      </Principal>
+      <Dependent Role="Property">
+        <PropertyRef Name="PropertyOwnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Property_PropertyType">
+    <End Type="ProMasterPropertyDataModel.PropertyType" Role="PropertyType" Multiplicity="1" />
+    <End Type="ProMasterPropertyDataModel.Property" Role="Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyType">
+        <PropertyRef Name="PropertyTypeId" />
+      </Principal>
+      <Dependent Role="Property">
+        <PropertyRef Name="PropertyTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Property_RentalStatus">
+    <End Type="ProMasterPropertyDataModel.RentalStatu" Role="RentalStatu" Multiplicity="1" />
+    <End Type="ProMasterPropertyDataModel.Property" Role="Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RentalStatu">
+        <PropertyRef Name="RentalStatusId" />
+      </Principal>
+      <Dependent Role="Property">
+        <PropertyRef Name="RentalStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PropertyList_Property">
+    <End Type="ProMasterPropertyDataModel.Property" Role="Property" Multiplicity="1" />
+    <End Type="ProMasterPropertyDataModel.PropertyList" Role="PropertyList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="PropertyList">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PropertyListingPicture_Property">
+    <End Type="ProMasterPropertyDataModel.Property" Role="Property" Multiplicity="1" />
+    <End Type="ProMasterPropertyDataModel.PropertyListingPicture" Role="PropertyListingPicture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="PropertyListingPicture">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TenancyApplication_Property">
+    <End Type="ProMasterPropertyDataModel.Property" Role="Property" Multiplicity="1" />
+    <End Type="ProMasterPropertyDataModel.TenancyApplication" Role="TenancyApplication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="TenancyApplication">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrder_Property">
+    <End Type="ProMasterPropertyDataModel.Property" Role="Property" Multiplicity="1" />
+    <End Type="ProMasterPropertyDataModel.WorkOrder" Role="WorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="WorkOrder">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,585 @@
+﻿<!DOCTYPE html>
+
+<html ng-app="ProMasterClient">
+<head>
+    <title>ProMaster v.1.0 - Mobile</title>
+    <link href="/content/assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <!-- UI Styles -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- UI Styles -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link href="content/styles/bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="content/styles/metro-bootstrap.css" rel="stylesheet" />
+
+    <link href="content/styles/custom_live-tile.css" rel="stylesheet" />
+
+    <link href="content/styles/Custom_MetroJS.css" rel="stylesheet" />
+
+    <link href="content/styles/metro-bootstrap.css" rel="stylesheet" />
+
+
+    <link href="content/styles/MetroJs.css" rel="stylesheet" />
+
+    <!-- Custom Site Style -->
+    <link href="content/styles/site.css" rel="stylesheet" />
+
+    <link href="content/styles/ngDialog-theme-default.css" rel="stylesheet" />
+    <link href="content/styles/ngDialog.css" rel="stylesheet" />
+
+</head>
+<body ng-controller="homeController">
+
+    <div class="home-container">
+        <div class="container">
+            <div class="row" style="margin-bottom: 1em;">
+                <div class="col-md-6" ng-cloak="">
+                    <div id="date">{{day | dayName}} {{date}}</div>
+                </div>
+                <div class="col-md-3"></div>
+                <div class="col-md-3 ">
+                    <div class="account_info ">
+                        <button ng-click="openLogin()" class="cus-btn-xs btn btn-primary" style="color:rgb(249, 255, 0);">LOGIN</button>
+                    </div>
+
+                </div>
+            </div>
+            <br />
+
+        </div>
+    </div>
+    <div class="home-container banner metro">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" style="margin-top: -2.75em;">
+                    <div id="logo" class="img-responsive ">
+                        <img src="content/assets/images/logo.png" />
+                    </div>
+                    <div id="tag_line">Your property managenment solution provider</div>
+                </div>
+                <div class="col-md-6"></div>
+                <div id="search_panel" class="col-md-2">
+                    <form id="search">
+                        <div class=" input-group input-group-sm">
+                            <input type="text" class="center-block form-control input-sm" title="Site search." placeholder="Search...">
+                            <span class="input-group-btn"><button class="btn btn-sm btn-primary" type="button"><i class="fa fa-search"></i></button></span>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6"></div>
+                <div class="col-lg-6">
+                    <!--<nav class="navbar navbar-default nav-pos" style="border-width: 0;">
+
+                        </nav>-->
+
+                    <ul id="menu">
+                        <li class="active" id="home"><a href="Index.html#/RentList"><span class="focus"><!-- <i class="fa fa-home fa-fw"></i>-->HOME</span></a></li>
+                        <!--<li><a href="Manage.html#/Properties">MANAGE</a></li>
+                        <li><a href="Docs.html">DOCS</a></li>
+                        <li><a href="Tools.html">TOOLS</a></li>
+                        <li><a href="Report.html">REPORT</a></li>-->
+                        <li id="about"><a href="Index.html#/About">ABOUT</a></li>
+                    </ul>
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+    <div id="list_banner">
+
+    </div>
+    <div class="wrapper metro">
+        <div class="container" style="background-color: rgb(250, 250, 228);">
+
+            <hr>
+            <div class="row">
+                <div class="col-md-6" ng-controller="propertyController">
+                    <div class="panel panel-default" styel="border-color: #fffefe" ;>
+                        <!--<div class="panel-heading" style="background-image: linear-gradient(to bottom, #00AAAA 0%, #98EAE8 100%); color: rgb(234, 229, 219); text-align: center;text-shadow: 2px 2px 3px #989880;"><h3><i class="fa fa-th-list"></i> &nbsp; Marketplace</h3></div>-->
+                        <div class="panel-body" style="padding: 0;">
+                            <!--<p>
+                <button class="btn btn-primary"
+                        ng-click="loadData()">
+                    Load Data
+                </button>
+            </p>-->
+                            <div ng-view></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" ng-controller="propertyController">
+                    <div class="panel panel-default" style="border-color: #fffefe;">
+                        <!--<div class="panel-heading" style="background-image: linear-gradient(to bottom, #f54b25 0, #f1836a 100%); color: rgb(62, 56, 40); text-align: center;text-shadow: 2px 2px 3px #909085;"><h3><i class="fa fa-user"></i> &nbsp; Ownership</h3></div>-->
+
+                        <div class="panel-body" style="padding: 0;">
+                            <div id="loginbox" style="margin-top:0;" ng-controller="loginController">
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        <div class="panel-title"><i class="fa fa-key" style="color: #419641;"></i> Login</div>
+                                        <div style="float:right; font-size: 80%; position: relative; top:-10px"><a ng-click="openDefault()" href="">Forgot password?</a></div>
+                                    </div>
+                                    <div style="padding-top:30px" class="panel-body">
+
+                                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                                        <form name="loginForm" id="loginform" class="form-horizontal" role="form">
+
+                                            <div style="margin-bottom: 25px" class="input-group">
+                                                <span class="input-group-addon"><i class="icon-user-2"></i></span>
+                                                <input id="login-username" type="text" class="form-control" ng-model="username" name="username" value="" placeholder="username" autofocus="" required="" >
+                                            </div>
+
+                                            <div style="margin-bottom: 25px" class="input-group">
+                                                <span class="input-group-addon"><i class="icon-locked"></i></span>
+                                                <input id="login-password" type="password" class="form-control" ng-model="password" name="password" placeholder="password" required="">
+                                            </div>
+
+
+
+                                            <div class="input-group">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input id="login-remember" ng-model="rememberme" type="checkbox" name="remember" value="1"> Remember me
+                                                    </label>
+                                                </div>
+                                            </div>
+
+
+                                            <div style="margin-top:10px" class="form-group">
+
+                                                <div class="col-sm-12 controls">
+                                                   <!-- <a id="btn-login"  href="" class="btn btn-success">Login  </a>
+                                                    <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>-->
+                                                    <button type="submit" class="btn btn-primary btn-success" ng-click="login()" ng-disabled="loginForm.$invalid">LOGIN</button>
+                                                </div>
+                                            </div>
+                                            
+                                            <!--<div ng-hide="{{loginForm.$valid}}" class="well">
+                                                Message:
+                                                <div>
+                                                    Valid: {{loginForm.$valid}}
+                                                </div>
+                                            </div>-->
+
+                                            <div ng-hide="message == ''">{{message}}</div>
+                                            <div class="form-group">
+                                                <div class="col-md-12 control">
+                                                    <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+                                                        If you are existing tenant or property owner, you can request
+                                                        <a href="" onclick="$('#loginbox').hide(); $('#signupbox').show();" style="font-weight: 800; color:#7777e8;">
+                                                            ONLINE ACCESS ACCOUNT.
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div id="signupbox" style="display:none; margin-top:0">
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        <div class="panel-title">Account Request</div>
+                                        <div style="float:right; font-size: 85%; position: relative; top:-10px">Already have an account? &nbsp;&nbsp;<a id="signinlink" href="" onclick="$('#signupbox').hide(); $('#loginbox').show();"><span style="font-weight:800; color:#1e90ff;">Login</span></a></div>
+                                    </div>
+                                    <div class="panel-body">
+                                        <form name="signupform" id="signupform" class="form-horizontal" role="form">
+
+                                            <div id="signupalert" style="display:none" class="alert alert-danger">
+                                                <p>Error:</p>
+                                                <span></span>
+                                            </div>
+
+
+
+                                            <div class="form-group">
+                                                <label for="email" class="col-md-3 control-label">Email</label>
+                                                <div class="col-md-9">
+                                                    <input type="email" class="form-control" name="email" ng-model="email" placeholder="Email Address" autofocus="" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="firstname" class="col-md-3 control-label">First Name</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" name="firstname" ng-model="fname" placeholder="First Name" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="lastname" class="col-md-3 control-label">Last Name</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" name="lastname" ng-model="lname" placeholder="Last Name" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="password" class="col-md-3 control-label">Property </label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" name="property" ng-model="property" placeholder="12345 Street Name, City" required>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="form-group">
+                                                <!-- Button -->
+                                                <div class="col-md-offset-3 col-md-9">
+                                                    <button id="btn-signup" type="button" class="btn btn-info" ng-disabled="signupform.$invalid">Send Request</button>
+
+                                                </div>
+                                            </div>
+
+                                            <div style="border-top: 1px solid #999; padding-top:20px" class="form-group">
+
+                                                <div class="col-md-offset-3 col-md-9" style="color:firebrick; margin-left: 1em; width: 90%;">
+                                                    By sending the request, you agreed with the <a href="">AGREEMENT OF USAGE</a>.
+                                                </div>
+
+                                            </div>
+
+
+
+                                        </form>
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+        <br /><br />
+    </div>
+
+
+
+
+
+
+
+
+    <div id="footer">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="text-pos" id="copyright-info">All rights reserved 2013-{{year}} &#169; &nbsp; <a href="#">MB Technologies, Inc.</a>
+
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-2">
+                <p class="text-pos" id="footer-info"><i class="fa fa-facebook-square facebook"></i>  &nbsp;<i class="fa fa-twitter twitter"></i> &nbsp;<i class="fa fa-linkedin-square linkedin_color"></i> &nbsp; <i class="fa fa-google-plus google_p"></i> &nbsp;<i class="fa fa-rss-square rss_color"></i></p>
+
+            </div>
+        </div>
+
+
+        <div class="container">
+
+        </div>
+    </div>
+
+    
+
+    <!--<input type="text" ng-model="models.helloAngular" />
+        <h1>{{models.helloAngular}}</h1>
+        <br />
+        <ul>
+            <li>
+                <a href="/#/">Home</a>
+            </li>
+            <li>
+                <a href="#/RouteOne">Route One</a>
+            </li>
+            <li>
+                <a href="#/RouteTwo/1">Route Two</a>
+            </li>
+            <li>
+                <a href="#/About">About</a>
+            </li>
+        </ul>
+        <br />
+        <div ng-view></div>-->
+    <!-- ********************************************************************************************** -->
+    <!--                                     Reference Section                                          -->
+    <!-- ********************************************************************************************** -->
+    <!-- References CDN Links -->
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.12/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.12/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.12/angular-cookies.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.12/angular-resource.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap.min.js"></script>
+
+
+    <!-- Local reference
+       <script src="scripts/angular.js"></script>
+       <script src="scripts/angular-route.min.js"></script>
+    -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <!--<script src="scripts/angular-ui/ui-bootstrap.min.js"></script>-->
+    <!-- Local References -->
+    <!--<script src="../scripts/bootstrap.js"></script>-->
+    <!-- ********************************************************************************************** -->
+    <!--                                     AngularJS Modules Section                                  -->
+    <!-- ********************************************************************************************** -->
+    <!-- Main App -->
+    <script src="app.js"></script>
+    <script src="common/routes.js"></script>
+    
+    <script src="scripts/vendors/ngDialog.min.js"></script>
+    
+    
+
+    <!-- Controllers -->
+    <script src="controllers/homeController.js"></script>
+    <script src="controllers/propertyController.js"></script>
+    <script src="controllers/loginController.js"></script>
+    
+    
+    
+
+    <!-- Services -->
+    <script src="services/authService.js"></script>
+    <script src="services/base64Factory.js"></script>
+    <script src="services/authHeaderInterceptorFactory.js"></script>
+    
+    
+    
+
+    <!-- Filters -->
+    <script src="filters/dayNameFilter.js"></script>
+    
+    <!-- Directives -->
+   
+    
+    
+    
+    
+    
+    <!-- Jquery scripts -->
+    <script type="text/javascript">
+        $("#home").click(function() {
+            $(this).addClass('active');
+            $("#about").removeClass('active');
+        });
+
+        $("#about").click(function() {
+            $(this).addClass('active');
+            $("#home").removeClass('active');
+        });
+    </script>
+    
+    
+    <!-- Forgot Password Dialog Script -->
+    <script type="text/ng-template" id="firstDialogId">
+        <form name="forgotpass" id="forgotPass" class="form-horizontal metro" role="form">
+            <div style="margin-bottom:1em;">Enter your email and reset your password:</div>
+            <div style="margin-bottom: 25px" class="input-group">
+                <span class="input-group-addon"><i class="icon-mail"></i></span>
+                <input id="login-username" type="email" class="form-control" name="username" value="" ng-model="email_acct" placeholder="your email" autofocus="" required />
+            </div>
+            <!--<div class="error"
+                ng-show="myForm.userEmail.$invalid && myForm.userEmail.$dirty">
+                <span ng-show="myForm.userEmail.$error.email">
+                    Please enter a valid email address
+                </span>
+                <span ng-show="myForm.userEmail.$error.required">
+                    Please enter a value
+                </span>
+            </div>-->
+            <div style="margin-top:10px" class="form-group">
+
+                <div class="col-sm-12 controls">
+                    <a id="btn-login" href="#" class="btn btn-success" ng-disabled="forgotpass.$invalid">Rest Password</a>
+                    <!--<a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>-->
+
+                </div>
+            </div>
+        </form>
+</script>
+    
+    
+    <!-- Login Dialog Script -->
+    <script type="text/ng-template" id="loginDialogId">
+        
+        <div class="panel-body metro" style="padding: 0; margin: -15px;" ng-controller="loginController">
+
+            <div id="loginbox1" style="margin-top:0;">
+                <div class="panel panel-info" style="margin-bottom:0;">
+                    <div class="panel-heading">
+                        <div class="panel-title"><i class="fa fa-key" style="color: #419641;"></i> Login</div>
+                        <!--<div style="float:right; font-size: 80%; position: relative; top:-10px"><a ng-click="openDefault()" href="">Forgot password?</a></div>-->
+                    </div>
+                    <div style="padding-top:30px" class="panel-body">
+
+                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                        <form name="loginForm1" id="loginform" class="form-horizontal" role="form">
+
+                            <div style="margin-bottom: 25px" class="input-group">
+                                <span class="input-group-addon"><i class="icon-user-2"></i></span>
+                                <input id="login-username" type="text" class="form-control" ng-model="username" name="username" value="" placeholder="username" ngfocus="" required>
+                            </div>
+
+                            <div style="margin-bottom: 25px" class="input-group">
+                                <span class="input-group-addon"><i class="icon-locked"></i></span>
+                                <input id="login-password" type="password" class="form-control" ng-model="password" name="password" placeholder="password" required>
+                            </div>
+
+
+
+                            <div class="input-group">
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="login-remember" ng-model="rememberme" type="checkbox" name="remember" value="1"> Remember me
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <div style="margin-top:10px" class="form-group">
+
+                                <div class="col-sm-12 controls">
+                                    <!--<a id="btn-login" href="#" class="btn btn-success">Login  </a>
+                                <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>-->
+                                    <button type="submit" class="btn btn-primary btn-success" ng-click="login()" ng-disabled="loginForm1.$invalid">LOGIN</button>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class="col-md-12 control">
+                                    <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+                                        If you are existing tenant or property owner, you can request an
+                                        <a href="" onclick="$('#loginbox1').hide(); $('#signupbox1').show();" style="font-weight: 800; color:#7777e8;">
+                                            ONLINE ACCESS ACCOUNT.
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="signupbox1" style="display:none; margin-top:0">
+                <div class="panel panel-info" style="margin-bottom:0;">
+                    <div class="panel-heading">
+                        <div class="panel-title">Account Request</div>
+                        <div style="float:right; font-size: 85%; position: relative; top:-10px">Already have an account? &nbsp;&nbsp;<a id="signinlink" href="" onclick="$('#signupbox1').hide(); $('#loginbox1').show();"><span style="font-weight:800; color:#1e90ff;">Login</span></a></div>
+                    </div>
+                    <div class="panel-body">
+                        <form name="signupform1" id="signupform" class="form-horizontal" role="form">
+
+                            <div id="signupalert" style="display:none" class="alert alert-danger">
+                                <p>Error:</p>
+                                <span></span>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label for="email" class="col-md-3 control-label">Email</label>
+                                <div class="col-md-9">
+                                    <input type="email" class="form-control" name="email" ng-model="email" placeholder="Email Address" autofocus="" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="firstname" class="col-md-3 control-label">First Name</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="firstname" ng-model="fname" placeholder="First Name" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname" class="col-md-3 control-label">Last Name</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="lastname" ng-model="lname" placeholder="Last Name" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="property" class="col-md-3 control-label">Property </label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="property" ng-model="property" placeholder="12345 Street Name, City" required>
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <!-- Button -->
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button type="submit" class="btn btn-info" ng-disabled="signupform1.$invalid">Send Request</button>
+
+                                </div>
+                            </div>
+
+
+                            <!--<div ng-hide="{{sigupform1.$valid}}" class="well">
+                            Message:
+                            <div>
+                                Valid: {{sigupform1.$valid}}
+                            </div>
+                        </div>-->
+
+                            <div style="border-top: 1px solid #999; padding-top:20px" class="form-group">
+
+                                <div class="col-md-offset-3 col-md-9" style="color:firebrick; margin-left: 1em; width: 90%;">
+                                    By sending the request, you agreed with the <a href="">AGREEMENT OF USAGE</a>.
+                                </div>
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    
+    </script>
+    
+
+</body>
+</html>

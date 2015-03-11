@@ -1,0 +1,124 @@
+﻿@model ProMaster.Core.Tenant.ViewModels.TenantScreenViewModel
+
+@{
+    ViewBag.Title = "Teancy Applications";
+}
+
+
+<div class="content-wrapper">
+    <aside> 
+        <p><!-- Left Panel/Column -->
+          <div id="left">
+      
+      	    <div class="side_title-logo">
+        	    <img src="@Url.Content("~/Content/Images/TenacyApp.png")" alt="" title="Manage" />
+            
+            </div>
+            <div class="side_title_caption metro">
+        	    <h3>Tenancy Applications and Screening</h3>
+        	    <br>
+                <span>Manage and marketing your properties listing for rent.</span>	
+                <br/><br/>
+                <span><i class="icon-new-tab rss_color"></i> Quick Access</span>
+                <div class="side-widget">
+                    <a href="@Url.Content("~/Tools/Messaging")" title="Messaging"><div class="tile amarelo" id="p1"><span><i class="fa fa-envelope-o"></i></span><br /><br /> Messaging</div></a>
+                    <a href="@Url.Content("~/Tools/Calendar")" title="Calendar"><div class="tile vermelho" id="p2"><span><i class="fa fa-calendar-o"></i></span><br /><br /> Calendar</div></a>
+                    <a href="@Url.Content("~/Tools/Resources")" title="Resources"><div class="tile metro_dark_blue" id="p3"><span><i class="fa fa-user"></i></span><br /><br /> Resources</div></a>
+                    <a href="@Url.Content("~/Tools/DocTool")" title="Document Tools"><div class="tile purple" id="p4"><span><i class="icon-clipboard-2"></i></span><br /><br /> Document Tools</div></a>
+                </div>
+            </div>
+          </div> <!-- End of left -->
+        </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+    </aside> <!-- End of aside -->
+
+    <div class="main metro">	
+    	<div id="manage-tabs" class="tabs-style">
+          <ul>
+            <li><a href="#tabs-1"><i class="icon-home"></i> <span>Active Applications</span></a></li>
+            <li><a href="#tabs-2"><i class="icon-home"></i> <span>Completed Applications</span></a></li>          
+          </ul>
+  		  <div id="tabs-1"> 
+            <div id="filter">
+                Property: @Html.DropDownListFor(modelItem => modelItem.PropertyId, Model.ListedProperty, "All", new { @id = "list" })
+            </div>         
+          	<p></p>
+    		<p>These are active applications waiting for processing.</p>
+            <p></p>
+
+                <div id="alist">@Html.Partial("_ApplicationList")</div>
+            
+  		  </div>
+          <div id="tabs-2">
+              <div id="filter2">
+                  Property: @Html.DropDownListFor(modelItem => modelItem.PropertyId, Model.AllProperty, "All", new  { @id="list1" })
+              </div>  
+            <p></p>
+    		<p>These applications are not active. They are approved, rejected or expired.</p>
+            <p></p>
+              <div id="clist">@Html.Partial("_CompletedApplicationList")</div>
+              
+          </div>
+		</div>    
+    </div> <!-- End of main -->
+
+
+</div><!-- end of content-wrapper -->
+
+
+<script type="text/javascript">
+    $(function () {
+        $("#manage-tabs").tabs();
+    });
+</script>
+
+<!-- Filter Script -->
+<script type="text/javascript">
+    $("#list").change(function () {
+        var item = $(this);
+        
+        if (item.val() != "")
+        {
+            var url = "/Tools/GetActiveApplicationListByProperty";
+            var q = "id=" + item.val();
+            $.get(url, q, function (data) {
+                $("#alist").html(data);
+            });
+        }
+        else
+        {
+            //alert("we are here!");
+            var url = "/Tools/GetActiveApplicationList";
+            //var q = "id=" + item.val();
+            $.get(url, function (data) {
+                $("#alist").html(data);
+            });
+        }
+
+        
+    });
+
+    $("#list1").change(function () {
+        var item = $(this);
+        //alert(item.val());
+
+        if (item.val() != "") {
+            var url = "/Tools/GetCompletedApplicationListByProperty";
+            var q = "id=" + item.val();
+            $.get(url, q, function (data) {
+                $("#clist").html(data);
+            });
+        }
+        else {
+            //alert("we are here!");
+            var url = "/Tools/GetCompletedApplicationList";
+            //var q = "id=" + item.val();
+            $.get(url, function (data) {
+                $("#clist").html(data);
+            });
+        }
+
+    });
+
+</script>

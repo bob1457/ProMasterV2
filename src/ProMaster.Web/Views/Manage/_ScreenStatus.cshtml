@@ -1,0 +1,148 @@
+﻿@model ProMaster.Core.Tenant.ViewModels.TenantScreenViewModel
+
+@{
+    ViewBag.Title = "_ScreenStatus";
+}
+
+<h4>_ScreenStatus</h4>
+<p></p>
+<ul>
+        @foreach (var item in Model.Screening)
+        {
+            <li>
+                @item.ScreenCheckType
+                @item.ScreenCheckStatus 
+                <!-- @item.ScreenCheckStatusId   -->            
+                <a href="#" id="@item.ScreenCheckTypeId" class="editLink">Update</a>
+            </li> 
+        
+
+<!---->
+            
+<div item="@item.ScreenCheckTypeId" title="Update Status" style="display:none;">
+*****Update*****
+<p>
+Screen Process: <div id="type"><strong>@item.ScreenCheckTypeId</strong></div><br /> <!-- - @item.ScreenCheckTypeId -->
+Current Ssatus: <div id="update">@item.ScreenCheckStatus</div><br /> <!-- - @item.ScreenCheckStatusId -->
+Update: 
+     <select name ="@item.ScreenCheckTypeId">
+        <option value="1" >NOT STARTED</option>
+        <option value="2" >PENDING</option>
+        <option value="3" >PASS</option>
+        <option value="4" >FAIL</option>
+        <option value="5" >N/A</option>        
+    </select><br />
+App ID: <div id="appId">@item.ApplicationId</div>
+    <textarea itemref = "@item.ScreenCheckTypeId" style="width:330px;"></textarea>
+</p>
+
+</div>
+
+<script type="text/javascript">
+    
+    $(document).ready(function () {
+        $(".editLink").button();
+
+        $('#@item.ScreenCheckTypeId').click(function () {
+
+            var appId = @(item.ApplicationId); 
+             // @(item.ScreenCheckStatusId); 
+            $("[name='@item.ScreenCheckTypeId']").prop('selectedIndex', @item.ScreenCheckStatusId -1);
+
+            //Load existing notes content
+            //
+            $.ajax({
+                type: "POST",
+                url: "/Manage/GetNotes",
+                data: "id=" + appId + "&tId=" + @(item.ScreenCheckTypeId),		               
+		        contenType: "",
+		        dataType: "json",
+		        success: Completed
+            });
+
+            function Completed(data) {
+                $("[itemref='@item.ScreenCheckTypeId']").val(data);    
+            }
+
+
+            var dialogOpts = {
+                autoOpen: false,
+                modal: true,
+                resizable: false,
+                draggable: false,
+                width: 400,
+                title: 'Update Status ...',
+                buttons: {
+                    "Cancel": function () {
+                        $(this).dialog("close");
+                    },
+                    "Update": function () {
+                                              
+                     var status = $("[name='@item.ScreenCheckTypeId']").val();   
+                     //alert(status);
+                     //alert(appId);
+                        //alert(@(item.ScreenCheckTypeId));
+                     var notes = $("[itemref='@item.ScreenCheckTypeId']").val();
+                        
+                     
+                       // alert(notes);
+
+                        $.ajax({
+		                    type: "POST",
+		                    url: "/Manage/UpdateStatus",
+		                    data: "id=" + appId + "&sId=" + status + "&tId=" + @(item.ScreenCheckTypeId) + "&notes=" + notes,
+		                
+		                    contenType: "",
+		                    dataType: "json",
+		                    success: Suceeded
+		                });
+
+                         $(this).dialog("close");
+
+                        function Suceeded(data) {
+		                
+		                $('#updated').html(data);
+                        
+                        $('#updated').delay(5000).fadeOut(400);
+
+                        // Refresh the status view
+                        //
+                        var url="/Manage/GetScreenStatusByAppId/";
+                        var q="id=" + appId;
+                        //alert(q);
+                            $.get(url, q, function(data){                                
+                            $("#state").html(data);            
+                           });
+                        return false;
+		            }
+                  }
+
+                }
+            }
+
+
+
+            $("[item='@item.ScreenCheckTypeId']").dialog(dialogOpts).dialog('open');
+
+            return false;
+
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+        }            
+        
+</ul>
+
+<div id="msg"></div>
+<div id="updated"></div>

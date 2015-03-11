@@ -1,0 +1,25 @@
+﻿@model ProMaster.Core.Reporting.ViewModels.AccountingCostViewModel
+
+<div id="property">
+    <div class="title_icon">
+                    <img src="@Url.Content("~/Content/Images/houses2.png")" alt="" title="All Properties" />
+                    </div>
+                    <!----> <div class="title_text"><h5>Rent Revenue Report for All Managed Properties</h5><br /><br />
+                        <span class="title_caption">Revenue includes all rent payments for all properties<br /></span>
+                    </div>  
+   
+</div><br />
+<p></p>
+<div id="report_title">Property Rent Revenue Report</div>
+<div id="report_data">
+    Rent Revenue:
+    <br /><br />
+        @Html.Partial("_RentRevenue") 
+    <p></p><br />
+    
+    Total Rent Revenue: &nbsp;
+    <span  class="total">$@ViewBag.totalrevenue</span>
+        <p></p><br /><br /></bt>
+
+     <p><a class="left-aligned edit_button button_border" id="pdf" href="@Url.Content("~/Reporting/ExportReportPDF/?id=" + @ViewBag.pid + "&tId=3&startDate=" + @ViewBag.start + "&endDate=" + @ViewBag.end)"  target="_blank">Export in PDF</a></p>
+</div>

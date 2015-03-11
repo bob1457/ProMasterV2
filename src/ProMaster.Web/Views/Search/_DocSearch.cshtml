@@ -1,0 +1,37 @@
+﻿@model ProMaster.Core.SiteSearch.ViewModels.DocSearchViewModel
+
+<fieldset>
+    <div>
+
+        @if (Model.Documents.Count() != 0)
+        {
+            <ul>
+                @foreach (var item in Model.Documents)
+                {
+                    <li>
+                        <a href="@Url.Content("~/Document/DocumentDetails/" + @item.DocumentId)">@item.DocumentTitle</a><br />
+                        @if (@item.DocumentDetails.Length > 30)
+                        {
+                            <span>
+                                @item.DocumentDetails.Substring(0, 30);
+                                @*<a href="#">...more</a>*@
+                            </span>
+                        }
+                        else
+                        {
+                            <span>@item.DocumentDetails</span>
+                        }
+                    </li>
+                }
+
+
+            </ul>
+        }
+        else
+        {
+            <em>No results.</em>
+        }
+    </div>
+
+</fieldset>
+

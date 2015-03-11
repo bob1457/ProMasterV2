@@ -1,0 +1,85 @@
+﻿@model ProMaster.Core.Tenant.ViewModels.TenantScreenViewModel
+
+<table>
+    <thead>
+        <tr>
+            <td colspan="10" class="table-h asphalt">
+                <span><i class="fa fa-th-list"></i></span> Application List
+            </td>
+        </tr>
+    </thead>
+    <tr>
+        <th>ID &nbsp;</th>
+        <th> First Name</th>
+        <th> Last Name</th>
+        <th> Tel</th>
+        <th> Email</th>
+        <th> Property</th>
+        <th> No. of Tenants</th>
+        <th> Reference Avail.</th>
+        <th> Application Date</th>
+        <th></th>
+
+
+    </tr>
+
+    @if (Model.ApplicationList.Count() != 0)
+    {
+        foreach (var item in Model.ApplicationList)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApplicationId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApplicantFirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApplicantLastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApplicantContactTel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApplicantContactEmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PropertyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberOfOccupantse)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsAuthorizedToCheckReference)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApplicaitonDate)
+                </td>
+
+                <td>
+                    <div class="table-button"><a href="@Url.Action("ApplicationDetails", "Tools", new { id = item.ApplicationId })"><img src="@Url.Content("~/Content/Images/details.png")" title="Details" /></a></div>
+                </td>
+            </tr>
+        }
+
+    }
+    else
+    {
+        <tr>
+            <td colspan="10">No records.</td>
+        </tr>
+    }
+
+
+    <tfoot>
+        <tr>
+            <td colspan="10"><span><i class="fa fa-th"></i></span></td>
+        </tr>
+    </tfoot>
+</table>
+<div class="more">
+    @if (Model.ApplicationList.Count() > 10)
+    {
+        <a href="@Url.Content("~/Tools/AllApplicatioinList")">More...</a>
+    }
+</div>

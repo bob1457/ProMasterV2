@@ -1,0 +1,81 @@
+﻿@model ProMaster.Core.Property.ViewModels.ListingViewModel
+
+<ul class="img_list">
+     @if (Model.PropertyPictures == null)
+     { 
+        <span>No pictures</span>
+                                
+     }
+     else
+     {
+        foreach (var item in Model.PropertyPictures)
+         {
+            <li>
+                <div id="list_container">
+                    <div class="thumb_img" ><img id="@item.PropertyListPictureId" src="@Url.Content(@item.ListPictureImgUrlThumb)" title="@item.PropertyPictureTitle" /></div>
+                    <div class="del" itemid="@item.PropertyListPictureId"><a href="#" title="Delete Picture">X</a></div>
+                </div>
+                <p></p>
+            
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $(".del").hide();
+
+                        $("#@item.PropertyListPictureId").mouseover(function () {
+
+                            $("[itemid='@item.PropertyListPictureId']").show();
+                        });
+
+                        $(".del").mouseleave(function () {
+
+                            $("[itemid='@item.PropertyListPictureId']").hide();
+                        });
+                    
+
+                        $("[itemid=@(item.PropertyListPictureId)]").click(function () { //Delete the picture by it's id
+                            deleteLinkObj = $(this);
+
+                            $.ajax({
+                                type: "POST",
+		                        url: "/Tools/DeletePropertyPicture",
+		                        data: "id=" + @(item.PropertyListPictureId),
+		                
+		                        contenType: "",
+		                        dataType: "json",
+		                        success: Suceeded                        
+                        
+                            });
+
+                            function Suceeded(data) {
+		                
+                            $('#msg').html(data);
+                        
+                            $('#msg').delay(5000).fadeOut(400);
+                            //refresh picture list
+                                //
+                            //$("#@item.PropertyListPictureId").hide();
+                                //$("[itemid='@item.PropertyListPictureId']").hide();
+
+                                deleteLinkObj.closest("li").hide('fast');
+
+                            @*var url="/Tools/GetPictureList/";
+                            var q = "id=" + @Model.PropertyId
+                                $.get(url, q, function(data){                                
+                                    $("#img_list").html(data);            
+                                });*@
+                             return false;
+		                }
+                        });
+
+                    });
+                </script>
+            </li>               
+         }
+     }
+</ul>
+
+<br />
+<a href="#" id="add">Add Picture...</a>
+
+
+ 

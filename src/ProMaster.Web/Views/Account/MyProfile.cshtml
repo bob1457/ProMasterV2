@@ -1,0 +1,241 @@
+﻿@model ProMaster.Infrastructure.UserProfile.ViewModels.MyProfileViewModel
+
+@{
+    ViewBag.Title = "My Profile";
+}
+
+<div class="content-wrapper">
+    <aside> 
+    <p><!-- Left Panel/Column -->
+      <div id="left">
+      	<div class="profile_logo">
+        	<img src="@Url.Content(@Model.AvartaImgUrl)" alt="" title="@Html.DisplayFor(model => model.FirstName)  @Html.DisplayFor(model => model.LastName)" />
+            
+        </div>
+        <div class="profile_caption metro">
+        	<h3>@Html.DisplayFor(model => model.FirstName)  @Html.DisplayFor(model => model.LastName)</h3>
+        	<br />
+            <span>
+            	    <div class="display-label">
+                       Profile Created on:
+                    </div><br />
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.CreationDate)
+                    </div><br />
+
+                    <div class="display-label">
+                        Last Updated on:
+                    </div><br />
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.UpdateDate)
+                    </div><br />
+                </span>
+            
+        	</div>
+        
+         
+      </div>
+      
+      
+      
+      
+ 
+    
+  </aside> 
+  <!-- End of aside -->
+    
+    <div class="main">	
+    	<div id="manage-tabs" class="tabs-style">
+          <ul>
+            <li><a href="#tabs-1"><i class="fa fa-list-alt"></i> &nbsp;<span>General</span></a></li>
+            <li><a href="#tabs-2"><i class="fa fa-th-large"></i> &nbsp;Settings</a></li>
+            @*<li><a href="#tabs-3"><i class="fa fa-tasks"></i> &nbsp;Other</a></li>*@            
+          </ul>
+  		  <div id="tabs-1">
+
+                <div class="tab_content_field">
+                     <fieldset>
+                        <legend><span>Basic Information</span></legend>
+
+                        <div class="basic">
+                                           
+                            <div class="display-label">
+                                <span class="grey-font">Username:</span>
+                            </div>
+                            <div class="display-field">
+                                <span class="grey-font">@Html.DisplayFor(model => model.UserName) (login name)</span>
+                            </div> 
+                            <br />
+                                    <br />
+                            <div class="display-label">
+                                First Name:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.FirstName)
+                            </div> 
+                            <br />
+                            <div class="display-label">
+                                Last Name:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.LastName)
+                            </div>
+                            <br />
+                            <div class="display-label">
+                                Email:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.ContactEmail)
+                            </div>
+                            <br />
+                            <div class="display-label">
+                                Telephone 1:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.ContactTelephone1)
+                            </div>
+                            <br />
+                            <div class="display-label">
+                                Telephone 2:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.ContactTelephone2)
+                            </div>
+                            <br />
+                        
+                        
+                    </div>   
+                    
+                    </fieldset>
+
+                    <div class="right-aligned"><div id="edit_button" class="edit_button button-med">@Html.ActionLink("Edit", "EditProfile", new { })</div></div>
+
+
+
+                </div>
+    		
+  		  </div>
+          <div id="tabs-2">
+              <div class="tab_content metro">
+                  <div class="tab_content_title">
+
+                  </div>
+                  
+                  <div class="tab_content_field">
+                      <fieldset>
+                          <legend><span style="color: #AC8E31; font-weight: normal"><i class="fa fa-gear"></i></span> My Settings</legend>
+                          <span style="font-size:.85em; font-style:italic;">No additional settings</span>
+                      </fieldset>
+                      <fieldset>
+                          <legend><span style="color: #C52D2D; font-weight: normal"><i class="fa fa-lock"></i></span> Change Password </legend>
+
+                          <div id="err"></div><div id="msg"></div>
+                          <br />
+
+                          <div class="basic" >
+                              <div class="display-label">
+                                  Current Password:
+                              </div>
+                              <div class="display-field">
+                                  <input id="oldpass" type="password" autofocus="" style="outline: none;" />
+                              </div><br />
+                              <div class="display-label">
+                                  New Password:
+                              </div>
+                              <div class="display-field">
+                                  <input id="newpass" type="password" style="outline: none;" />
+                              </div><br />
+                              <div class="display-label">
+                                  Confirm New Password:
+                              </div>
+                              <div class="display-field">
+                                  <input id="newpass2" type="password" style="outline: none;" />
+                              </div>
+                              <br />
+                              <br />
+                              <div class="button-med edit_button"><a id="pwd" href="#">Change</a></div>
+                          </div>
+                      </fieldset>
+
+                  </div>
+
+
+              </div>
+          </div>
+          @*<div id="tabs-3">
+            <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
+            <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
+          </div>*@
+          
+		</div>  
+    </div> 
+    <!-- End of main -->
+
+
+</div><!-- End of content-wrapper -->
+
+
+
+
+
+
+<script type="text/javascript" type="text/javascript">
+  $(function() {
+    $( "#manage-tabs" ).tabs();
+  });
+</script>
+
+
+<!-- Change password script -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#pwd').click(function () {
+            var oldPass = $("#oldpass").val();
+            var newPass = $("#newpass").val();
+            var newPass2 = $("#newpass2").val();
+
+            if (newPass.length < 6) {
+
+                $('#err').html("The password must be at least six(6) character long!");
+
+            }
+            else {
+                if (newPass == newPass2) {
+
+                    $.ajax({
+                        type: "POST",
+                        url: "/Account/ChangePassword",
+                        data: "oldpass=" + oldPass + "&newpass=" + newPass,
+                        contenType: "",
+                        dataType: "json",
+                        success: Suceeded
+                    });
+
+                    function Suceeded(data) {
+                        //alert('success');
+                        $('#msg').html(data);
+                        $('#err').html(""); //clear error message if exists
+
+                        $('#oldpass').val("");
+                        $('#newpass').val("");
+                        $('#newpass2').val("");
+
+                        $('#msg').delay(5000).fadeOut(400);
+
+                        return false;
+                    }
+                }
+                else {
+                    $('#err').html("The password does not match!");
+
+                }
+            }
+
+            return false;
+        });
+
+    });
+
+
+</script>
+

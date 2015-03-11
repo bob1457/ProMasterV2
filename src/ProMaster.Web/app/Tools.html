@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html>
+
+<html ng-app="ProMasterClientTools">
+<head>
+    <title>ProMaster v.1.0 - Mobile</title>
+    <link href="content/assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <!-- UI Styles -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- UI Styles -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    
+    <link href="content/styles/bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="content/styles/metro-bootstrap.css" rel="stylesheet" />
+    
+    <link href="content/styles/custom_live-tile.css" rel="stylesheet" />
+
+    <link href="content/styles/Custom_MetroJS.css" rel="stylesheet" />
+
+    <link href="content/styles/metro-bootstrap.css" rel="stylesheet" />
+
+
+    <link href="content/styles/MetroJs.css" rel="stylesheet" />
+
+    <!-- Custom Site Style -->
+    <link href="content/styles/site.css" rel="stylesheet" />
+    
+    
+    <style type="text/css">
+        .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+            color: #E01E1E;
+        }
+    </style>
+
+    
+
+</head>
+    <body ng-controller="homeController">
+        
+        <div class="home-container">
+            <div class="container">
+                <div class="row" style="margin-bottom: 1em;">
+                    <div class="col-md-6" ng-cloak="">
+                        <div id="date">{{day | dayName}} {{date}}</div>
+                    </div>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-3 ">
+                        <div class="account_info ">Hello bob, <img src="content/assets/images/user_default.png" height="24" width="24" />&nbsp;<a href="" ng-click="logout()" style="color:#e04242; font-size: 1.3em;top: 2px;position: relative;" title="Logout"> &nbsp;<i class="fa fa-sign-out"></i></a></div>
+                    </div>
+
+                </div>
+            </div>
+            <br />
+
+        </div>
+        
+        <div class="home-container banner metro" >
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4" style="margin-top: -2.75em;">
+                        <div id="logo" class="img-responsive ">
+                            <img src="content/assets/images/logo.png" />
+                        </div>
+                        <div id="tag_line">Your property managenment solution provider</div>
+                    </div>
+                    <div class="col-md-6"></div>
+                    <div id="search_panel" class="col-md-2">
+                        <form id="search" >
+                            <div class=" input-group input-group-sm">
+                                <input type="text" class="center-block form-control input-sm" title="Site search." placeholder="Search...">
+                                <span class="input-group-btn"><button class="btn btn-sm btn-primary" type="button"><i class="fa fa-search"></i></button></span>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6"></div>
+                    <div class="col-lg-6">
+                        <!--<nav class="navbar navbar-default nav-pos" style="border-width: 0;">
+                            
+                            </nav>-->
+                        
+                        <ul id="menu" >
+                            
+                            <li><a href="/app/Manage.html#/Properties">MANAGE</a></li>
+                            <li><a href="/app/Docs.html#/BrowseDocs">DOCS</a></li>
+                            <li class="active_menu">TOOLS</li>
+                            <li><a href="/app/Report.html#/Financial">REPORT</a></li>
+                            
+                        </ul>
+                       
+
+                    </div>
+                </div>
+               
+
+            </div>
+
+
+
+        </div>
+
+        <div class="wrapper metro">
+            <div class="container" style="background-color: rgb(250, 250, 228);">
+
+                <hr>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="panel panel-default" >
+                            <div class="panel-heading" style="background-image: linear-gradient(to bottom, #37aa06 0%, #75d74b 100%); color: rgb(234, 229, 219); text-align: center;text-shadow: 2px 2px 3px #989880;"><h3><i class=" icon-tools"></i> &nbsp;Documents</h3></div>
+                            <div class="panel-body">
+                                <div class="icon_img"><img src="/content/assets/images/tools.png" /></div>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
+                                Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
+                                dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
+                                Aliquam in felis sit amet augue.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="panel panel-default" style="border-top-width: 0; border-right-width: 0;">
+                            <!--<div class="panel-heading" style="background-image: linear-gradient(to bottom, #00AAAA 0, #98EAE8 100%); color: rgb(62, 56, 40); text-align: center;text-shadow: 2px 2px 3px #909085;"><h3><i class="fa fa-user"></i> &nbsp; Ownership</h3></div>-->
+
+                            <ul class="nav nav-tabs">
+                                <li id="calendar" class="active"><a href="#/Calendar"><i class="icon-calendar"></i>  Calendar</a></li>
+                                <li id="marketing"><a href="#/ListingProcess"><i class="icon-volume-3"></i> Marketing</a></li>
+                                <li id="application"><a href="#/Applications"><i class="icon-bookmark"></i> Application and Screening</a></li>
+                                <!--<li><a href="#/LeaseDocs"><i class="icon-bookmark-3"></i>  Leases</a></li>
+            <li><a href="#/ContractDocs"><i class="icon-clipboard-2"></i> Contracts</a></li>
+            <li><a href="#/SearchDocs"><i class="icon-cone"></i> Vendors</a></li>-->
+                            </ul>
+
+
+
+                            <div class="table-responsive">
+                                <!--<div class="icon_img"><img src="/content/assets/images/2.png" /></div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
+                Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
+                dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
+                Aliquam in felis sit amet augue.
+
+            -->
+                                <br />
+
+                                <div ng-view=""></div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                
+
+
+            </div>
+            <br /><br />
+        </div>
+
+        <div id="footer">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-pos" id="copyright-info">All rights reserved 2013-{{year}} &#169; &nbsp; <a href="#">MB Technologies, Inc.</a>
+
+                </div>
+                <div class="col-md-4"></div>
+                <div class="col-md-2">
+                    <p class="text-pos" id="footer-info" ><i class="fa fa-facebook-square facebook"></i>  &nbsp;<i class="fa fa-twitter twitter"></i> &nbsp;<i class="fa fa-linkedin-square linkedin_color"></i> &nbsp; <i class="fa fa-google-plus google_p"></i> &nbsp;<i class="fa fa-rss-square rss_color"></i></p>
+
+                </div>
+            </div>
+
+
+            <div class="container">
+
+            </div>
+        </div>
+
+        <!--<input type="text" ng-model="models.helloAngular" />
+            <h1>{{models.helloAngular}}</h1>
+            <br />
+            <ul>
+                <li>
+                    <a href="/#/">Home</a>
+                </li>
+                <li>
+                    <a href="#/RouteOne">Route One</a>
+                </li>
+                <li>
+                    <a href="#/RouteTwo/1">Route Two</a>
+                </li>
+                <li>
+                    <a href="#/About">About</a>
+                </li>
+            </ul>
+            <br />
+            <div ng-view></div>-->
+        <!-- ********************************************************************************************** -->
+        <!--                                     Reference Section                                          -->
+        <!-- ********************************************************************************************** -->
+
+        <!-- References CDN Links -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.12/angular-animate.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.12/angular-route.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.12/angular-cookies.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.12/angular-resource.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap.min.js"></script>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+        <!-- Local References -->
+        <!--<script src="scripts/angular-ui/ui-bootstrap.min.js"></script>-->
+
+        
+
+        <!-- ********************************************************************************************** -->
+        <!--                                     AngularJS Modules Section                                  -->
+        <!-- ********************************************************************************************** -->
+
+        <!-- Main App -->
+        <script src="app.js"></script>
+        <script src="common/routes.js"></script>
+        
+        <script src="scripts/vendors/ngDialog.min.js"></script>
+
+        <!-- Controllers -->
+        <script src="controllers/homeController.js"></script>
+        <script src="controllers/propertyController.js"></script>
+        <script src="controllers/loginController.js"></script>
+
+        <!-- Services -->
+        <script src="services/authService.js"></script>
+        <script src="services/authHeaderInterceptorFactory.js"></script>
+        
+        
+
+        <!-- Filters -->
+        <script src="filters/dayNameFilter.js"></script>
+        
+        
+        
+        
+        
+        <!-- Jquery scripts -->
+        <script type="text/javascript">
+            $("#calendar").click(function () {
+                $(this).addClass('active');
+                $("#marketing").removeClass('active');
+                $("#application").removeClass('active');
+            });
+
+            $("#marketing").click(function () {
+                $(this).addClass('active');
+                $("#calendar").removeClass('active');
+                $("#application").removeClass('active');
+            });
+
+            $("#application").click(function () {
+                $(this).addClass('active');
+                $("#marketing").removeClass('active');
+                $("#calendar").removeClass('active');
+
+            });
+
+            
+
+        </script>
+    </body>
+</html>

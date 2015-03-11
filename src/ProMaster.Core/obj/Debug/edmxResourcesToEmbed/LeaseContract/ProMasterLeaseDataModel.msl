@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProMasterLeaseDataModelStoreContainer" CdmEntityContainer="ProMasterLeaseDataEntities">
+    <EntitySetMapping Name="Addenda">
+      <EntityTypeMapping TypeName="ProMasterLeaseDataModel.Addendum">
+        <MappingFragment StoreEntitySet="Addendum">
+          <ScalarProperty Name="AddendumId" ColumnName="AddendumId" />
+          <ScalarProperty Name="AddendumContent" ColumnName="AddendumContent" />
+          <ScalarProperty Name="LeaseId" ColumnName="LeaseId" />
+          <ScalarProperty Name="AddendumDocUrl" ColumnName="AddendumDocUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Leases">
+      <EntityTypeMapping TypeName="ProMasterLeaseDataModel.Lease">
+        <MappingFragment StoreEntitySet="Lease">
+          <ScalarProperty Name="LeaseId" ColumnName="LeaseId" />
+          <ScalarProperty Name="LeaseTitle" ColumnName="LeaseTitle" />
+          <ScalarProperty Name="LeaseDesc" ColumnName="LeaseDesc" />
+          <ScalarProperty Name="PropertyId" ColumnName="PropertyId" />
+          <ScalarProperty Name="LeaseStartDate" ColumnName="LeaseStartDate" />
+          <ScalarProperty Name="LeaseEndDate" ColumnName="LeaseEndDate" />
+          <ScalarProperty Name="LeaseTermId" ColumnName="LeaseTermId" />
+          <ScalarProperty Name="RentFrequency" ColumnName="RentFrequency" />
+          <ScalarProperty Name="RentAmount" ColumnName="RentAmount" />
+          <ScalarProperty Name="RentDueOn" ColumnName="RentDueOn" />
+          <ScalarProperty Name="DamageDepositAmount" ColumnName="DamageDepositAmount" />
+          <ScalarProperty Name="PetDepositAmount" ColumnName="PetDepositAmount" />
+          <ScalarProperty Name="LeaseSignDate" ColumnName="LeaseSignDate" />
+          <ScalarProperty Name="LeaseAgreementDocUrl" ColumnName="LeaseAgreementDocUrl" />
+          <ScalarProperty Name="Addendum" ColumnName="Addendum" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeaseTerms">
+      <EntityTypeMapping TypeName="ProMasterLeaseDataModel.LeaseTerm">
+        <MappingFragment StoreEntitySet="LeaseTerm">
+          <ScalarProperty Name="LeaseTermId" ColumnName="LeaseTermId" />
+          <ScalarProperty Name="LeaaseTerm" ColumnName="LeaaseTerm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Properties">
+      <EntityTypeMapping TypeName="ProMasterLeaseDataModel.Property">
+        <MappingFragment StoreEntitySet="Property">
+          <ScalarProperty Name="PropertyId" ColumnName="PropertyId" />
+          <ScalarProperty Name="PropertyName" ColumnName="PropertyName" />
+          <ScalarProperty Name="PropertyDesc" ColumnName="PropertyDesc" />
+          <ScalarProperty Name="PropertyTypeId" ColumnName="PropertyTypeId" />
+          <ScalarProperty Name="PropertyAddressId" ColumnName="PropertyAddressId" />
+          <ScalarProperty Name="PropertyFeatureId" ColumnName="PropertyFeatureId" />
+          <ScalarProperty Name="PropertyFacilityId" ColumnName="PropertyFacilityId" />
+          <ScalarProperty Name="PropertyOwnerId" ColumnName="PropertyOwnerId" />
+          <ScalarProperty Name="PropertyManagerId" ColumnName="PropertyManagerId" />
+          <ScalarProperty Name="PropertyImgUrl" ColumnName="PropertyImgUrl" />
+          <ScalarProperty Name="PropertyVideoUrl" ColumnName="PropertyVideoUrl" />
+          <ScalarProperty Name="PropertyBuildYear" ColumnName="PropertyBuildYear" />
+          <ScalarProperty Name="PropertyRentalStatusId" ColumnName="PropertyRentalStatusId" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsShared" ColumnName="IsShared" />
+          <ScalarProperty Name="RentalStatusId" ColumnName="RentalStatusId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tenants">
+      <EntityTypeMapping TypeName="ProMasterLeaseDataModel.Tenant">
+        <MappingFragment StoreEntitySet="Tenant">
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="ContactEmail" ColumnName="ContactEmail" />
+          <ScalarProperty Name="ContactTelephone1" ColumnName="ContactTelephone1" />
+          <ScalarProperty Name="ContactTelephone2" ColumnName="ContactTelephone2" />
+          <ScalarProperty Name="OnlineAccessEnbaled" ColumnName="OnlineAccessEnbaled" />
+          <ScalarProperty Name="UserAvartaImgUrl" ColumnName="UserAvartaImgUrl" />
+          <ScalarProperty Name="LeaseId" ColumnName="LeaseId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ManagedBy" ColumnName="ManagedBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

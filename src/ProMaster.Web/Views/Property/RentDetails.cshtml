@@ -1,0 +1,207 @@
+﻿@model ProMaster.Core.Property.ViewModels.ListingViewModel
+
+@{
+    ViewBag.Title = "Rental Property Details";
+}
+
+
+<div class="content-wrapper">
+    <aside>
+        <p>
+            <!-- Left Panel/Column -->
+            <div id="left">
+                <div class="side_details_logo">
+                    <img src="@Url.Content(@Model.PropertyImageUrl)" alt="" title="Rental Property Details" />
+                </div>
+                <div class="side_details_caption">
+                    <h3>@Html.DisplayFor(model => model.PorpertyListingTitle)</h3>
+                    <br />
+                    <span>
+                        Detailed property information
+                    </span>
+                    <div class="side_details_content">                       
+
+                        <div class="display-label">
+                            Address:
+                        </div><br />
+
+                        
+
+                        <div class="display-label">
+                            Rental Description:
+                        </div><br />
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.PropertyListDesc)
+                        </div><br />
+
+                        <div class="display-label">
+                            Property Type:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.PropertyType)
+                        </div><br />
+                        <div class="display-label">
+                            Built in:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.PropertyBuildYear)
+                        </div><br />
+                        <div class="display-label">
+                            Rental Status:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.PropertyStatus)
+                        </div><br />
+
+                       
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </p>
+    </aside>
+
+
+
+</div>
+
+
+
+
+    <fieldset>
+        <legend>ListingViewModel</legend>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.PropertyId)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.PropertyId)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.PropertyName)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.PropertyName)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.PropertyListDesc)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.PropertyListDesc)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.PropertyImageUrl)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.PropertyImageUrl)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.PropertyBuildYear)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.PropertyBuildYear)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.PropertyType)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.PropertyType)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.PropertyTypeId)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.PropertyTypeId)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.RentStatus)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.RentStatus)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.RentalStatusId)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.RentalStatusId)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.PropertyListingId)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.PropertyListingId)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.PorpertyListingTitle)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.PorpertyListingTitle)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.IsListedExternally)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.IsListedExternally)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.ListedRentAmount)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.ListedRentAmount)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Notes)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Notes)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.RecordCreateDate)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.RecordCreateDate)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.RecordUpdateDate)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.RecordUpdateDate)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.ListedDate)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.ListedDate)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.ListingUpdateDate)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.ListingUpdateDate)
+        </div>
+    </fieldset>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>

@@ -1,0 +1,793 @@
+﻿@using ProMaster.Core.ViewModels
+@model ProMaster.Core.ViewModels.ManageDisplayViewModel
+
+@{
+    ViewBag.Title = "Manage";
+}
+
+<!-- <div class="content-wrapper"><div class="breadcrum">Home <i class="fa fa-caret-right"></i> Manage</div></div> -->
+
+<div class="content-wrapper">
+    <aside>
+        <p>
+            <!-- Left Panel/Column -->
+            <div id="left">
+
+                <div class="side_title-logo">
+                    <img src="@Url.Content("~/Content/Images/manage.png")" alt="" title="Manage" />
+
+                </div>
+                <div class="side_title_caption metro">
+                    <h3>Manage</h3>
+                    <br>
+                    <span>Manage your properties, tenants, leasese and management contracts.</span>	<br /><br /><br /><br />
+                    @if (User.IsInRole("PropertyManager"))
+                    {
+                        <span><i class="icon-new-tab rss_color"></i> Quick Access</span>
+                        <div class="side-widget">
+                            <a href="@Url.Content("~/Tools/Messaging")" title="Messaging"><div class="tile amarelo" id="p1"><span><i class="fa fa-envelope-o"></i></span><br /><br /> Messaging</div></a>
+                            <a href="@Url.Content("~/Tools/Calendar")" title="Calendar"><div class="tile vermelho" id="p2"><span><i class="fa fa-calendar-o"></i></span><br /><br /> Calendar</div></a>
+                            <a href="@Url.Content("~/Tools/Resources")" title="Resources"><div class="tile metro_dark_blue" id="p3"><span><i class="fa fa-user"></i></span><br /><br /> Resources</div></a>
+                            <a href="@Url.Content("~/Tools/DocTool")" title="Document Tools"><div class="tile purple" id="p4"><span><i class="icon-clipboard-2"></i></span><br /><br /> Document Tools</div></a>
+                        </div>
+                    }
+                </div> 
+            </div> <!-- End of left -->
+        </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+    </aside> <!-- End of aside -->
+
+    <div class="main metro">
+        @if (User.IsInRole("PropertyManager"))
+        {
+            <div class="GetStart">
+                @*<a href="~/Manage/GetStarted" title="Get Started"><i class="icon-arrow-right-3"></i> GET STARTED</a>*@ <!-- to be implemented with wizard -->
+            </div>
+
+            <div id="manage-tabs" class="tabs-style">
+                <ul>
+                    <li><a href="#tabs-1"><i class="fa fa-home"></i> <span>Properties</span></a></li>
+                    <li><a href="#tabs-2"><i class="fa fa-user"></i> Tenants</a></li>
+                    <li><a href="#tabs-3"><i class="fa fa-user"></i> Owners</a></li>
+                    <li><a href="#tabs-4"><i class="fa fa-file"></i> Leases</a></li>
+                    <li><a href="#tabs-5"><i class="fa fa-file-o"></i> Contracts</a></li>
+                    <li><a href="#tabs-6"><i class="fa fa-users"></i> Councils</a></li>
+                    <li><a href="#tabs-7"><i class="fa fa-users"></i> Vendors</a></li>
+                </ul>
+                <div id="tabs-1">
+                    <div class="button-med edit_button">@Html.ActionLink("Add New", "AddProperty")</div>
+                    <p></p>
+                    <p>
+                        Most recent active properties under management. &nbsp;
+                        @if (Model.MyProperty.Count() > 5)
+                        {
+                            <span class="link"><a href="@Url.Content("~/Manage/AllPropertiesByPm")">Full List</a></span>
+                        }
+                        
+                    </p>
+                    <p></p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td colspan="10" class="table-h asphalt">
+                                    <span><i class="fa fa-th-list"></i></span> Property List
+                                </td>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <th>ID &nbsp;</th>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                            <th>Added</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+
+
+                        @if (Model.MyProperty.Count() != 0)
+                        {
+                            foreach (ManageDisplayViewModel item in Model.MyProperty.Take(5))
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PropertyId)
+                                    </td>
+                                    <td>
+                                        <div class="table_img"><img src="@Url.Content(@item.PropertyImageUrl)" title="@item.PropertyName" /></div>
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PropertyName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PropertyDesc)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.pType)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RentalStatus)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CreateDate)
+                                    </td>
+
+                                    <td>
+                                        <div class="table-button"><a href="@Url.Action("PropertyDetails", "Manage", new {id = item.PropertyId})"><img src="@Url.Content("~/Content/Images/details.png")" title="Details" /></a></div>
+                                    </td>
+                                    <td>
+                                        <div class="table-button"><a class="delete-link" href="@Url.Action("DeleteProperty", "Manage", new {id = item.PropertyId})"><img src="@Url.Content("~/Content/Images/delete.png")" title="Delete" /></a></div>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="10">No records!</td>
+                            </tr>
+                        }
+
+
+
+
+                        <tfoot>
+                            <tr>
+                                <td colspan="10"><span><i class="fa fa-th"></i></span></td>
+
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <div class="more">
+                        @if (Model.MyProperty.Count() > 10)
+                        {
+                            <a href="@Url.Content("~/Manage/AllPropertiesByPmId")">More...</a>
+                        }
+                    </div>
+                </div>
+
+                <div id="tabs-2">
+                    <div class="button-med edit_button">@Html.ActionLink("Add New", "AddTenant")</div>
+                    <p></p>
+                    @*<p>All existing tenants with active lease agreement.</p>*@
+                    <div class="edit_field">
+                        <input class="rlabel" id="active" type="radio" name="ppt" />Active Tenants
+                        <input class="rlabel" id="candidate" type="radio" name="ppt" />Pending Tenants
+                        &nbsp;
+                        @if (Model.Tenants.Count() > 10)
+                        {
+                            <span class="link"><a href="@Url.Content("~/Manage/AllTenantsByPm")">Full List</a></span>
+                        }
+                        
+                    </div>
+                    <p></p>
+                    <div id="tList">@Html.Partial("_TenantDisplayList")</div>
+                </div>
+
+                <div id="tabs-3">
+                    <div class="button-med edit_button">@Html.ActionLink("Add New", "AddPropertyOwner")</div>
+                    <p></p>
+                    <p>
+                        Most recent active property owners. &nbsp;
+                        @if (Model.LandlordList.Count() > 10)
+                        {
+                            <a href="@Url.Content("~/Manage/AllLandlordsByPm")">Full List</a>
+                        }
+                    </p>
+                    <p></p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td colspan="9" class="table-h verde">
+                                    <span><i class="fa fa-th-list"></i></span> Landlord List
+                                </td>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <th>ID &nbsp;</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Telephone</th>
+                            <th>Telephone2</th>
+                            <th>Email</th>
+                            <th>Added Date</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+
+
+                        @if (Model.LandlordList.Count() != 0)
+                        {
+                            foreach (ManageDisplayViewModel item in Model.LandlordList.Take(10))
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LandlordId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FistName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LastName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ContactTelephone1)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ContactTelephone2)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ContactEmail)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LandlordCreationDate)
+                                    </td>
+
+                                    <td>
+                                        <div class="table-button"><a href="@Url.Action("PropertyOwnerDetails", "Manage", new {id = item.LandlordId})"><img src="@Url.Content("~/Content/Images/details.png")" title="Details" /></a></div>
+                                    </td>
+                                    <td>
+                                        <div class="table-button"><a class="delete-link" href="@Url.Action("DeleteOwner", "Manage", new {id = item.LandlordId})"><img src="@Url.Content("~/Content/Images/delete.png")" title="Delete" /></a></div>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="9">No records!</td>
+                            </tr>
+                        }
+
+                        <tfoot>
+                            <tr>
+                                <td colspan="9"><span><i class="fa fa-th"></i></span></td>
+
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <div class="more">
+                        @if (Model.LandlordList.Count() > 10)
+                        {
+                            <a href="#">More...</a>
+                        }
+                    </div>
+
+                </div>
+
+                <div id="tabs-4">
+                    <div class="button-med edit_button">@Html.ActionLink("Add New", "AddLease")</div>
+                    <p></p>
+                    @*<p>Most recent active lease agreement. </p>*@
+                    <div class="edit_field">
+                        <input class="rlabel" id="active_lease" type="radio" name="ppl" />Active Leases
+                        <input class="rlabel" id="candidate_lease" type="radio" name="ppl" />Pending Leases
+                        &nbsp;
+                        @if (Model.LandlordList.Count() > 10)
+                        {
+                            <span class="link"><a href="@Url.Content("~/Manage/AllLeaseByPm")">Full List</a></span>
+                        }
+                    </div>
+                   
+                    <p></p>
+                    
+                    <div id="lease_list">@Html.Partial("_LeaseDisplayList")</div>
+
+
+
+                </div>
+
+
+                <div id="tabs-5">
+                    <div class="button-med edit_button">@Html.ActionLink("Add New", "AddManagementContract")</div>
+                    <p></p>
+                    <p>Most recent active management contractds. </p>
+                    &nbsp;
+                    @if (Model.MyContractList.Count() > 10)
+                    {
+                        <span class="link"><a href="@Url.Content("~/Manage/AllContractByPm")">Full List</a></span>
+                    }
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <td colspan="9" class="table-h verde">
+                                    <span><i class="fa fa-th-list"></i></span> Management Contract List
+                                </td>
+                            </tr>
+                        </thead>
+                        <tr>
+
+                            <th>ID &nbsp;</th>
+                            <th>Contract Title</th>
+                            <th>Owner Name</th>
+                            <th>Sign Date</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Fee</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+
+
+                        @if (Model.MyContractList.Count() != 0)
+                        {
+                            foreach (ManageDisplayViewModel item in Model.MyContractList.Take(10))
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ContractId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ContractTitle)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LandlordName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SignDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.StartDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EndDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ListingFeeScale)
+                                    </td>
+
+                                    <td>
+                                        <div class="table-button"><a href="@Url.Action("ContractDetails", "Manage", new {id = item.ContractId})"><img src="@Url.Content("~/Content/Images/details.png")" title="Details" /></a></div>
+                                    </td>
+                                    <td>
+                                        <div class="table-button"><a class="delete-link" href="@Url.Action("DeleteContract", "Manage", new {id = item.ContractId})"><img src="@Url.Content("~/Content/Images/delete.png")" title="Delete" /></a></div>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="9">No records!</td>
+
+                            </tr>
+                        }
+
+                        <tfoot>
+                            <tr>
+                                <td colspan="9"><span><i class="fa fa-th"></i></span></td>
+
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <div class="more">
+                        @if (Model.MyContractList.Count() > 10)
+                        {
+                            <a href="#">More...</a>
+                        }
+                    </div>
+
+
+                </div>
+
+
+                <div id="tabs-6">
+                    <div class="button-med edit_button">@Html.ActionLink("Add New", "AddStrataCouncil")</div>
+                    <p></p>
+                    <p>Most recent active strata councils. </p>
+                    &nbsp;
+                    @if (Model.StrataCouncilList.Count() > 10)
+                    {
+                        <span class="link"><a href="#">Full List</a></span>
+                    }
+                    <p></p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td colspan="9" class="table-h verde">
+                                    <span><i class="fa fa-th-list"></i></span> Starat Council List
+                                </td>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <th>ID &nbsp;</th>
+                            <th>Strata Council Name</th>
+                            <th>Manager Name</th>
+                            <th>Manager Telephone</th>
+                            <th>Manager Email</th>
+                            <th>Mailing Address</th>
+                            <th>Added Date</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+
+
+                        @if (Model.StrataCouncilList.Count() != 0)
+                        {
+                            foreach (ManageDisplayViewModel item in Model.StrataCouncilList.Take(10))
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.StrataCouncilId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.StrataCouncilName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.StrataManageFirstName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.StrataManagerContactTel)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.StrataManagerContactEmail)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.StrataCounvilMailingAddress)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.StrataCreationDate)
+                                    </td>
+
+                                    <td>
+                                        <div class="table-button"><a href="@Url.Action("StrataCouncilDetails", "Manage", new {id = item.StrataCouncilId})"><img src="@Url.Content("~/Content/Images/details.png")" title="Details" /></a></div>
+                                    </td>
+                                    <td>
+                                        <div class="table-button"><a class="delete-link" href="@Url.Action("DeleteStrataCouncil", "Manage", new {id = item.StrataCouncilId})"><img src="@Url.Content("~/Content/Images/delete.png")" title="Delete" /></a></div>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="9">No records!</td>
+                            </tr>
+                        }
+
+                        <tfoot>
+                            <tr>
+                                <td colspan="9"><span><i class="fa fa-th"></i></span></td>
+
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <div class="more">
+                        @if (Model.StrataCouncilList.Count() > 10)
+                        {
+                            <a href="#">More...</a>
+                        }
+                    </div>
+
+                </div>
+
+                <div id="tabs-7">
+                    <div class="button-med edit_button">@Html.ActionLink("Add New", "AddVendor")</div>
+                    <p></p>
+                    <p>Most recent active vendors. </p>
+                    &nbsp;
+                    @if (Model.VendorList.Count() > 10)
+                    {
+                        <span class="link"><a href="#">Full List</a></span>
+                    }
+                    <p></p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td colspan="9" class="table-h verde">
+                                    <span><i class="fa fa-th-list"></i></span> Vendor List
+                                </td>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <th>ID &nbsp;</th>
+                            <th>Vendor</th>
+                            <th>Contracor Name</th>
+                            <th>Contractor Email</th>
+                            <th>Contractor Telephone </th>
+                            <th>Vendor Specialty</th>
+                            <th>Added Date</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+
+
+                        @if (Model.VendorList.Count() != 0)
+                        {
+                            foreach (ManageDisplayViewModel item in Model.VendorList.Take(10))
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.VendorId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.VendorBusinessName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.VendorLastName), @Html.DisplayFor(modelItem => item.VendorFirstName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.VendorContactEmail)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.VendorContactTelephone1)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.VendorSepcialtyName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.AddDate)
+                                    </td>
+
+                                    <td>
+                                        <div class="table-button"><a href="@Url.Action("VendorDetails", "Manage", new {id = item.VendorId})"><img src="@Url.Content("~/Content/Images/details.png")" title="Details" /></a></div>
+                                    </td>
+                                    <td>
+                                        <div class="table-button"><a class="delete-link" href="@Url.Action("DeleteVendor", "Manage", new {id = item.VendorId})"><img src="@Url.Content("~/Content/Images/delete.png")" title="Delete" /></a></div>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="9">No records!</td>
+                            </tr>
+                        }
+
+                        <tfoot>
+                            <tr>
+                                <td colspan="9"><span><i class="fa fa-th"></i></span></td>
+
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <div class="more">
+                        @if (Model.VendorList.Count() > 10)
+                        {
+                            <a href="#">More...</a>
+                        }
+                    </div>
+
+                </div>
+            </div>
+        }
+        else
+        {
+            <em>You have no permission to view this page!</em>
+        }
+
+    </div> <!-- End of main -->
+
+
+</div><!-- End of content-wrapper -->
+<!-- The confirmation dialog content -->
+<div id="delete-dialog" title="Confirmation" style="display: none">
+    <p><p><span class="dialog-icon"><i class="fa fa-exclamation-triangle"></i></span> Are you sure to delete this item?</p>
+</div>
+<br />
+<div id="result"></div>
+
+<!-- Delete Confirmation Script -->
+<script type="text/javascript">
+    $('.delete-link').click(function () {
+        var deleteLinkObj = $(this);
+        $('#delete-dialog').dialog();
+        return false;
+    });
+
+    $(function () {
+        $('.delete-link').click(function () {
+            var dialogOpts = {
+                autoOpen: false,
+                modal: true,
+                resizable: false,
+                draggable: false,
+                title: 'Delete Confirmation!',
+                buttons: {
+                    "Cancel": function () {
+                        $(this).dialog("close");
+                    },
+
+                    "Continue": function () {
+                        $.post(deleteLinkObj[0].href, function (data) {
+                            if (data == '@Boolean.TrueString') {
+                                deleteLinkObj.closest("tr").hide('fast');
+                                $("#result").text("The record has been successfully deactivated!");
+                            } else {
+                                $("#result").text("error occured!");
+                            }
+                        });
+                        $(this).dialog("close");
+
+                    }
+                }
+            };
+
+
+            $('#delete-dialog').dialog(dialogOpts).dialog('open');
+            return false;
+        });
+    });
+
+</script>
+
+
+
+<!-- Create Tabs -->
+<script type="text/javascript">
+    $(function () {
+        $("#manage-tabs").tabs();
+    });
+</script>
+
+<!-- Create User Dialog -->
+<div id="account">
+    <strong>Create User Account</strong>
+    <p></p>
+    <input id="uname" name="uname" value="" placeholder="Enter User Name" /><br />
+    <input id="pwd" name="pwd" type="password" value="" placeholder="Enter Password" /><br />
+    <input id="pwd2" name="ped2" type="password" value="" placeholder="Confirm Passwrod" /><br />
+    <!-- <input id="submit" name="submit" type="button" value="Create" />
+        <input id="cancel" name="cancel"  type="button" value="Cancel" /> -->
+    <div id="msg" style="color: red"></div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#account").hide();
+
+        $(".info").button();
+
+        $('#info').click(function () {
+
+        });
+
+    });
+
+</script>
+
+<!---->
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        var currentUrl = window.location.href;
+
+        //alert(currentUrl);
+
+        var finalUrl; //alert(currentUrl.indexOf("#")); // > -1);
+        if (!(currentUrl.indexOf("#") > -1)) {
+            finalUrl = currentUrl;
+        } else {
+            finalUrl = currentUrl.substring(0, currentUrl.indexOf("#"));
+        }
+
+
+        //alert(finalUrl);
+
+        $("#manage-tabs").tabs({
+            activate: function (e, ui) {
+                var currentTabIndex = ui.newTab.index() + 1;
+
+                var url = finalUrl + "#tabs-" + currentTabIndex; //selectedTab;
+
+                //alert(url);
+
+                window.name = url; //to pass to another page
+            }
+        });
+
+        //$("#manage-tabs").click(function () { //"tabsselect", function (event, ui) {
+
+        //});
+
+
+    });
+
+</script>
+
+
+<!-- Script to display tenants/leases -->
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#active").prop('checked', true);
+
+        $("#active_lease").prop('checked', true);
+
+        $("#candidate").change(function () {
+
+            var isChecked = $(this).is(':checked');
+
+            //alert(isChecked);
+
+            if (isChecked) {
+                var url = "/Manage/GetCandidateTenants";
+
+                //var q = "id=" + item.val(); + "&startPeriod=" + sDate + "&endPeriod=" + eDate;
+                $.get(url, function (data) {
+                    $("#tList").html(data);
+                    //$("#report").show();
+                    // $("#generate").show();
+
+                    return false;
+
+                });
+
+            }
+
+
+        });
+        $("#active").change(function () {
+
+            var isChecked = $(this).is(':checked');
+
+            //alert(isChecked);
+
+            if (isChecked) {
+                var url = "/Manage/GetActiveTenants";
+
+                //var q = "id=" + item.val(); + "&startPeriod=" + sDate + "&endPeriod=" + eDate;
+                $.get(url, function (data) {
+                    $("#tList").html(data);
+                    //$("#report").show();
+                    // $("#generate").show();
+
+                    return false;
+
+                });
+
+            }
+        });
+
+        $("#candidate_lease").change(function () {
+
+            var isChecked = $(this).is(':checked');
+
+            //alert(isChecked);
+
+            if (isChecked) {
+                var url = "/Manage/GetCandidateLeases";
+
+                //var q = "id=" + item.val(); + "&startPeriod=" + sDate + "&endPeriod=" + eDate;
+                $.get(url, function (data) {
+                    $("#lease_list").html(data);
+                    //$("#report").show();
+                    // $("#generate").show();
+
+                    return false;
+
+                });
+
+            }
+
+
+        });
+        $("#active_lease").change(function () {
+
+            var isChecked = $(this).is(':checked');
+
+            //alert(isChecked);
+
+            if (isChecked) {
+                var url = "/Manage/GetActiveLeases";
+
+                //var q = "id=" + item.val(); + "&startPeriod=" + sDate + "&endPeriod=" + eDate;
+                $.get(url, function (data) {
+                    $("#lease_list").html(data);
+                    //$("#report").show();
+                    // $("#generate").show();
+
+                    return false;
+
+                });
+
+            }
+        });
+    });
+</script>

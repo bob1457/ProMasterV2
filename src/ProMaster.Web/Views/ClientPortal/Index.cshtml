@@ -1,0 +1,1332 @@
+﻿@model ProMaster.Core.ClientPortal.ViewModels.DisplayClientPortalViewModel
+@using System.Web.Security;
+@using PagedList.Mvc;
+
+
+@{
+    ViewBag.Title = "Client Portal";
+}
+
+<style type="text/css">
+    .ui-button .ui-button-text {
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        font-size:0.85em;  
+        padding-top: 2px; 
+        padding-bottom: 2px;     
+    }
+</style>
+<div class="content-wrapper">
+    <aside>
+        <!-- Left Panel/Column -->
+        <div id="left">
+            <div class="side_details_logo">
+                <img src="@Url.Content(Model.ClientAvatarImgUrl)" alt="" title="@Model.ClientFirstName" />
+
+            </div>
+            <div class="side_details_caption">
+    @{
+                    string[] userRoles = Roles.GetRolesForUser(User.Identity.Name);
+    }
+
+    <h3>Client Details (@userRoles[0])</h3>
+    <br />
+    <span>
+        @Model.ClientLastName, @Model.ClientFirstName
+    </span>
+    <p></p><p></p>
+                @if (@userRoles[0] == "Tenant")
+                {
+                    <!-- Tenant content -->
+                    <h6>Rental Propoerty</h6>
+                    <div class="side_details_content">
+
+                        <div class="display-label">
+                            Name/Alias:
+                        </div><br />
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.PropertyName)
+                        </div><br />
+
+                        <div class="display-label">
+                            Description:
+                        </div><br />
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.PropertyDesc)
+                        </div><br />
+
+                        <div class="display-label">
+                            Built year:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.PropertyBuildYear)
+                        </div><br />
+
+                    </div>
+                }
+                else
+                {
+                    <!-- Landlord content -->
+                    <h6>Owned Propoerties</h6>
+                    <div class="side_details_content">
+                        <ul>
+                            @foreach (var item in Model.PropertyList)
+                            {
+                                <li><i class="icon-home"></i> &nbsp; @item.PropertyName</li>
+                            }
+
+                        </ul>
+
+                        <p>
+                    </div>
+                }
+
+        </div>
+        </div>
+
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+    </aside><!-- End of aside -->
+    <div class="main metro">
+    @if (@userRoles[0] == "Tenant")
+    {
+        <!-- Tenant content -->
+        <div id="manage-tabs" class="tabs-style">
+            <ul>
+                <li><a href="#tabs-1"><i class="fa fa-list-alt"></i> &nbsp;<span>Lease Agreement</span></a></li>
+                <li><a href="#tabs-2"><i class="fa fa-th"></i> &nbsp;Rent Payment History</a></li>
+                @*<li><a href="#tabs-3"><i class="icon-clipboard-2"></i> &nbsp;Document</a></li>
+                    <li><a href="#tabs-4"><i class="icon-list"></i> &nbsp;Rent Payment</a></li>*@
+
+            </ul>
+            <div id="tabs-1">
+                <div class="tab_content">
+                    <div class="tab_content_title">
+                        <span class="title_icon"><img src="@Url.Content("~/Content/Images/documents2.png")" alt="" title="Lease Details" /></span>
+                        <span class="title_text"><h5>@Model.LeaseTitle</h5></span>
+                        <br />
+                        <span class="title_caption">@Html.DisplayFor(model => model.LeaseDesc)</span>
+                    </div>
+                    <div class="tab_content_field">
+
+                        <fieldset>
+                            <legend><span><i class=" icon-address-book"></i> Basic Information</span></legend>
+                            <div class="basic">
+                                <div class="display-label">
+                                    Lease Title:
+                                </div>
+                                <div class="display-field">
+                                    @Html.DisplayFor(model => model.LeaseTitle)
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                    Description:
+                                </div>
+                                <div class="display-field">
+                                    @Html.DisplayFor(model => model.LeaseDesc)
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                    Start Date:
+                                </div>
+                                <div class="display-field">
+                                    @Html.DisplayFor(model => model.LeaseStartDate)
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                    End Date:
+                                </div>
+                                <div class="display-field">
+                                    @Html.DisplayFor(model => model.LeaseEndDate)
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                    Lease Term:
+                                </div>
+                                <div class="display-field">
+                                    @Html.DisplayFor(model => model.LeaseTerm)
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                    Rent Frequency:
+                                </div>
+                                <div class="display-field">
+                                    @Html.DisplayFor(model => model.RentFrequency)
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                    Rent Amount:
+                                </div>
+                                <div class="display-field">
+                                    $@Html.DisplayFor(model => model.RentAmount)
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                    Damage Deposit Amount:
+                                </div>
+                                <div class="display-field">
+                                    $@Html.DisplayFor(model => model.DamageDepositAmount)
+                                </div>
+                                <br />
+
+                                <div class="display-label">
+                                    Pet Deposit amount:
+                                </div>
+                                <div class="display-field">
+                                    @Html.DisplayFor(model => model.PetDepositAmount)
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                    Rent Due On:
+                                </div>
+                                <div class="display-field">
+                                    @Html.DisplayFor(model => model.RentDueOn)@*<em> day of the month</em>*@
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                    Addendum:
+                                </div>
+                                <div class="display-field">
+                                    @Html.DisplayFor(model => model.Addendum)
+                                </div>
+                                <br />
+
+                                <div class="display-label">
+                                    Lease Sign Date:
+                                </div>
+                                <div class="display-field">
+                                    @Html.DisplayFor(model => model.LeaseSignDate)
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                    Notes:
+                                </div>
+                                <div class="display-field">
+                                    @Html.DisplayFor(model => model.Notes)
+                                </div>
+
+
+                            </div>
+
+                        </fieldset>
+
+                        <fieldset>
+                            <legend><span><i class=" icon-address-book"></i> Documents</span></legend>
+                            <div id="content_info">
+                                <div id="list" style="text-align:left;" class="doc_list">@*@Html.Partial("_TenantDocumentList")*@
+                                    <ul>
+                                        @foreach(var item in Model.DocumentList)
+                                        {
+                                            <li>
+                                                <img src="@Url.Content("~/Content/Images/doc_file.png")" />
+                                                @item.DocumentName
+                                                <a href="@Url.Content(@item.DocumentUrl)" target="_blank">View Document</a>
+                                            </li>
+                                        }
+                                    </ul>
+                                
+                                </div>
+
+                            </div>
+                        </fieldset>
+
+                    </div>
+                </div>
+            </div>
+            <div id="tabs-2">
+                <div class="tab_content">
+                    <div class="tab_content_title">
+                        <span class="title_icon"><img src="@Url.Content("~/Content/Images/documents2.png")" alt="" title="Rent Payment History" /></span>
+                        <span class="title_text"><h5>Rent Payment History</h5></span>
+                        <br />
+                        <span class="title_caption">@Html.DisplayFor(model => model.LeaseDesc)</span><br />
+                    </div><br />
+                    <fieldset>
+                        <legend><span><i class="icon-list"></i> Payment History</span></legend>
+                        <div class="content_info">
+                            <div class="edit_field">
+                                <input class="rlabel" id="all" type="radio" name="ppt" />All<br>
+                                <input class="rlabel" id="indi" type="radio" name="ppt" />Selected Period
+                            </div>
+                            <div id="p_period">
+                                <fieldset>
+                                    <div id="choose">
+                                        <span>From:</span>
+                                        <div class="display-field">
+                                            <input style="width:16em;" id="sDate" type="text" class="datepicker" value="@DateTime.Now.ToString("M/d/yyyy")" />
+                                        </div>
+                                    </div>
+                                    <div id='choose1'>
+                                        <span>TO:</span>
+                                        <input style="width:16em;" type="text" id="eDate" class="datepicker" value="@DateTime.Now.ToString("M/d/yyyy")" />
+                                    </div><br />
+                                    <div id="get" class="ui-button-text" style="cursor:pointer;">GO</div>
+                                </fieldset>
+                                
+                            </div>
+
+                            <div id="rentlist">                             
+                                @Html.Partial("_RentPaymentHistory")
+                            </div>
+
+                            <br />
+
+                        </div>
+
+                        <!-- -->
+
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <!-- Landlord content -->
+        <div id="manage-tabs" class="tabs-style">
+            <ul>
+                <li><a href="#tabs-1"><i class="fa fa-list-alt"></i> &nbsp;<span>Management Contract</span></a></li>
+                <li><a href="#tabs-2"><i class="fa fa-th"></i> &nbsp;Rent Revenue</a></li>
+                <li><a href="#tabs-3"><i class="icon-grid"></i> &nbsp;Fee Payment</a></li>
+                <li><a href="#tabs-4"><i class="icon-list"></i> &nbsp;Costs</a></li>
+                <li><a href="#tabs-5"><i class="icon-clipboard-2"></i> &nbsp;Reporting</a></li>
+            </ul>
+            <div id="tabs-1">
+                <div class="tab_content_title">
+                    <span class="title_icon"><img src="@Url.Content("~/Content/Images/documents2.png")" alt="" title="" /></span>
+                    <span class="title_text"><h5>Contract Information</h5></span>
+                    <br />
+                    <span class="title_caption">Management contract information, including term, service fees, etc.</span>
+                </div>
+                <div class="tab_content_field">
+                    <fieldset>
+                        <legend><span><i class="fa fa-info-circle"></i> Contract Information</span></legend>
+                        <div class="content_info">
+                            
+                            <table>
+                                <thead class="table_head">
+                                    <tr>
+                                        <td colspan="6" class="table-h table_head">
+                                            <span><i class="icon-home"></i></span> Management Contract List
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tr>
+                                    <th class="table_th">ID</th>
+                                    <th class="table_th">Name</th>
+                                    <th class="table_th">Start Date</th>
+                                    <th class="table_th">Signed On</th>
+                                    <th class="table_th">last Updated On</th>
+                                    <th class="table_th"></th>
+                                    
+                                </tr>
+                                @if (Model.ContractList.Count() != 0)
+                                {
+                                    foreach (var item in Model.ContractList)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ManagementContractId)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ManagementContractTitile)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.StartDate)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ContractSignDate)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.UpdateDate)
+                                            </td>
+
+                                            <td>
+                                                <div class="table-button"><a href="@Url.Action("ContractDetails", "Manage", new { id = item.ManagementContractId })"><img src="@Url.Content("~/Content/Images/details.png")" title="Details" /></a></div>
+                                            </td>                                            
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td colspan="6">No Contracts</td>
+                                    </tr>
+                                }
+
+                                <tfoot class="table_th">
+                                    <tr>
+                                        <td colspan="7"><span><i class="icon-clipboard-2"></i></span></td>
+
+                                    </tr>
+                                </tfoot>
+                            </table>
+
+
+
+                        </div>
+
+                       
+                    </fieldset>
+
+
+                </div>
+
+
+
+            </div>
+            
+            <div id="tabs-2">
+                <div class="tab_content_title">
+                    <span class="title_icon"><img src="@Url.Content("~/Content/Images/documents2.png")" alt="" title="" /></span>
+                    <span class="title_text"><h5>Rent Revenue</h5></span>
+                    <br />
+                    <span class="title_caption">Rent revenue for rental property</span>
+                </div>
+                <div class="tab_content_field">
+                    <fieldset>
+                        <legend><span><i class="icon-list"></i> Rent Revenue History</span></legend>
+                        <div id="filter2" style="margin-bottom:1em; margin-left:1em;">
+                            Owned Property: @Html.DropDownListFor(modelItem => modelItem.PropertyId, Model.OwnerPropertyList, new { @id = "list1" })
+                        </div>
+
+                        <div class="content_info">
+
+                            <div class="edit_field">
+                                <input class="rlabel" id="allr" type="radio" name="pptr" />All<br>
+                                <input class="rlabel" id="indir" type="radio" name="pptr" />Selected Period
+                            </div>
+                            <div id="r_period">
+                                <fieldset>
+                                    <div id="r_choose">
+                                        <span>From:</span>
+                                        <div class="display-field">
+                                            <input style="width:16em;" id="r_sDate" type="text" class="datepicker" value="@DateTime.Now.ToString("M/d/yyyy")" />
+                                        </div>
+                                    </div>
+                                    <div id='r_choose1'>
+                                        <span>TO:</span>
+                                        <input style="width:16em;" type="text" id="r_eDate" class="datepicker" value="@DateTime.Now.ToString("M/d/yyyy")" />
+                                    </div><br />                                    
+                                    <div id="r_get" class="button-mini linkedin_color" style="cursor:pointer;vertical-align: bottom; background-color: #4EAEDF; color: #E9E9E9;">GO</div>
+                                </fieldset>
+
+                            </div>
+
+
+                            <div id="rentlist1">
+
+                                <div id="clist">@Html.Partial("_OwnedPropertyList")</div> <!-- the partial view is actually list of rent revenue -->
+                                
+                            </div>
+
+                            <br /><br />
+
+                        </div>
+
+                        <!-- -->
+
+                    </fieldset>
+                </div>
+            </div>
+            <div id="tabs-3">
+                <div class="tab_content_title">
+                    <span class="title_icon"><img src="@Url.Content("~/Content/Images/documents2.png")" alt="" title="" /></span>
+                    <span class="title_text"><h5>Fee Payment Information</h5></span>
+                    <br />
+                    <span class="title_caption">Management fee payment for the managed properties.</span>
+                </div>
+                <div class="tab_content_field">
+                    <fieldset>
+                        <legend><span><i class="icon-list"></i> Fee Payment History</span></legend>
+                        <div id="filter2" style="margin-bottom:1em; margin-left:1em;">
+                            Management Contracts: @Html.DropDownListFor(modelItem => modelItem.ContractId, Model.OwnerContractList, new { @id = "list2" })
+                        </div>
+
+                        <div class="content_info">
+
+                            <div class="edit_field">
+                                <input class="rlabel" id="allf" type="radio" name="pptf" />All<br>
+                                <input class="rlabel" id="indif" type="radio" name="pptf" />Selected Period
+                            </div>
+                            <div id="f_period">
+                                <fieldset>
+                                    <div id="r_choose">
+                                        <span>From:</span>
+                                        <div class="display-field">
+                                            <input style="width:16em;" id="f_sDate" type="text" class="datepicker" value="@DateTime.Now.ToString("M/d/yyyy")" />
+                                        </div>
+                                    </div>
+                                    <div id='r_choose1'>
+                                        <span>TO:</span>
+                                        <input style="width:16em;" type="text" id="f_eDate" class="datepicker" value="@DateTime.Now.ToString("M/d/yyyy")" />
+                                    </div><br />                                    
+                                    <div id="f_get" class="button-mini linkedin_color" style="cursor:pointer;vertical-align: bottom; background-color: #4EAEDF; color: #E9E9E9;">GO</div>
+                                </fieldset>
+
+                            </div>
+
+                            <div id="feelist">
+
+                                <div id="flist">@Html.Partial("_FeePaymentList")</div> <!-- the partial view is actually list of rent revenue -->
+
+                            </div>
+
+                            <br /><br />
+
+                        </div>
+
+                        <!-- -->
+
+                    </fieldset>
+                </div>
+            </div>
+            <div id="tabs-4">
+                <div class="tab_content_title">
+                    <span class="title_icon"><img src="@Url.Content("~/Content/Images/documents2.png")" alt="" title="" /></span>
+                    <span class="title_text"><h5>Repair Work Orders and Costs</h5></span>
+                    <br />
+                    <span class="title_caption">Repair and other costs for the rental properties</span>
+                </div>
+                <div class="tab_content_field">
+                    <fieldset>
+                        <legend><span><i class="icon-list"></i> Repair Costs History</span></legend>
+                        <div id="filter2" style="margin-bottom:1em; margin-left:1em;">
+                            Owned Property: @Html.DropDownListFor(modelItem => modelItem.PropertyId, Model.OwnerPropertyList, new { @id = "list3" })
+                        </div>
+
+                        <div class="content_info">
+
+                            <div class="edit_field">
+                                <input class="rlabel" id="allc" type="radio" name="pptc" />All<br>
+                                <input class="rlabel" id="indic" type="radio" name="pptc" />Selected Period
+                            </div>
+                            <div id="c_period">
+                                <fieldset>
+                                    <div id="r_choose">
+                                        <span>From:</span>
+                                        <div class="display-field">
+                                            <input style="width:16em;" id="c_sDate" type="text" class="datepicker" value="@DateTime.Now.ToString("M/d/yyyy")" />
+                                        </div>
+                                    </div>
+                                    <div id='r_choose1'>
+                                        <span>TO:</span>
+                                        <input style="width:16em;" type="text" id="c_eDate" class="datepicker" value="@DateTime.Now.ToString("M/d/yyyy")" />
+                                    </div><br />
+                                    <div id="c_get" class="button-mini linkedin_color" style="cursor:pointer;vertical-align: bottom; background-color: #4EAEDF; color: #E9E9E9;">GO</div>
+                                </fieldset>
+
+                            </div>
+
+                            <div id="feelist">
+
+                                <div id="wlist">@Html.Partial("_WorkOrderList")</div> <!-- the partial view is actually list of rent revenue -->
+
+                            </div>
+
+                            <br /><br />
+
+                        </div>
+
+                        <!-- -->
+
+                    </fieldset>
+                </div>
+            </div>
+            <div id="tabs-5">
+                <div class="tab_content_title">
+                    <span class="title_icon"><img src="@Url.Content("~/Content/Images/documents2.png")" alt="" title="" /></span>
+                    <span class="title_text"><h5>Client Financial Reporting</h5></span>
+                    <br />
+                    <span class="title_caption">Financial reports for rental properties</span>
+                </div>
+                <div class="tab_content_field">
+                    <fieldset>
+                        <legend><span><i class="fa fa-calculator"></i> Generate Reports</span></legend>
+                        <div id="filter2" style="margin-bottom:1em; margin-left:1em;">
+                            <span id="period">Property: @Html.DropDownListFor(modelItem => modelItem.PropertyId, Model.OwnerPropertyList, new { @id = "list5" })</span>
+                            <span id="r_period">&nbsp;
+                                Reporting Period:
+                                <select id="month">
+                                    <option value="1">January</option>
+                                    <option value="2">February</option>
+                                    <option value="3">March</option>
+                                    <option value="4">April</option>
+                                    <option value="5">May</option>
+                                    <option value="1">June</option>
+                                    <option value="2">July</option>
+                                    <option value="3">August</option>
+                                    <option value="4">September</option>
+                                    <option value="5">October</option>
+                                    <option value="1">November</option>
+                                    <option value="2">December</option>
+                                    
+                                </select>
+                            </span>
+                            <span>
+                                <select id="year">
+                                    <option value="1">2014</option>
+                                    <option value="2">2015</option>
+                                    <option value="3">2016</option>
+                                    <option value="4">2017</option>
+                                    <option value="5">2018</option>
+                                </select>
+                            </span>
+                            <div id="getReport" class="button-mini linkedin_color" style="cursor:pointer;vertical-align: bottom; background-color: #4EAEDF; color: #E9E9E9;">Get Report</div> <div id="loading"></div>
+                        </div>
+
+                        <div class="content_info">
+
+                            <!-- 
+                            <div class="edit_field">
+                                <input class="rlabel" id="allc" type="radio" name="pptc" />All<br>
+                                    <input class="rlabel" id="indic" type="radio" name="pptc" />Selected Period
+                            </div>
+                            <div id="c_period">
+                                <fieldset>
+                                    <div id="r_choose">
+                                        <span>From:</span>
+                                        <div class="display-field">
+                                            <input style="width:16em;" id="c_sDate" type="text" class="datepicker" value="@DateTime.Now.ToString("M/d/yyyy")" />
+                                        </div>
+                                    </div>
+                                    <div id='r_choose1'>
+                                        <span>TO:</span>
+                                        <input style="width:16em;" type="text" id="c_eDate" class="datepicker" value="@DateTime.Now.ToString("M/d/yyyy")" />
+                                    </div><br />
+                                    <div id="c_get" class="button-mini linkedin_color" style="cursor:pointer;">GO</div>
+                                </fieldset>
+
+                            </div>
+                            -->
+
+
+                            
+
+                                <div id="reports"></div> <!-- the partial view is actually list of rent revenue -->
+
+                          
+
+                            <br /><br />
+
+                        </div>
+
+                        <!-- -->
+
+                    </fieldset>
+                </div>
+            </div>
+            
+        </div>
+    }
+    </div><!-- End of main -->
+
+ </div><!-- End of content-wrapper -->
+
+<!--Jquery ui tabs Script -->
+<script type="text/javascript">
+    $(function () {
+        $("#manage-tabs").tabs();
+    });
+</script>
+
+
+<!-- Rent revenue script -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        var item = $("#list1 option:selected");
+
+        //alert(item.val());
+
+        var url = "/ClientPortal/GetRentRevenueHistory";
+        var q = "id=" + item.val();
+        $.get(url, q, function (data) {
+            $("#clist").html(data);
+        });
+
+        $("#list1").change(function () { 
+           
+            var item2 = $("#list1 option:selected");
+
+            //alert(item2.val());
+
+            var url = "/ClientPortal/GetRentRevenueHistory";
+            var q = "id=" + item2.val();
+            $.get(url, q, function (data) {
+                $("#clist").html(data);
+            });
+           
+
+
+        });
+    });
+
+    
+
+</script>
+
+
+<!-- fee payment script -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        var item = $("#list2 option:selected");
+
+        //alert(item.val());
+
+        var url = "/ClientPortal/GetFeePaymentHistory";
+        var q = "id=" + item.val();
+        $.get(url, q, function (data) {
+            $("#flist").html(data);
+        });
+
+        $("#list2").change(function () {
+
+            var item2 = $("#list2 option:selected");
+
+            //alert(item2.val());
+
+            var url = "/ClientPortal/GetFeePaymentHistory";
+            var q = "id=" + item2.val();
+            $.get(url, q, function (data) {
+                $("#flist").html(data);
+            });
+
+
+
+        });
+    });
+
+
+
+</script>
+
+<!-- work order script -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        var item = $("#list3 option:selected");
+
+        //alert(item.val());
+
+        var url = "/ClientPortal/GetWorkOrderList";
+        var q = "id=" + item.val();
+        $.get(url, q, function (data) {
+            $("#wlist").html(data);
+        });
+
+        $("#list3").change(function () {
+
+            var item2 = $("#list3 option:selected");
+
+            //alert(item2.val());
+
+            var url = "/ClientPortal/GetWorkOrderList";
+            var q = "id=" + item2.val();
+            $.get(url, q, function (data) {
+                $("#wlist").html(data);
+            });
+
+
+
+        });
+    });
+
+
+
+</script>
+
+<script type="text/ecmascript">
+    $(function () {
+        $(".datepicker").datepicker();
+    });
+</script>
+
+<!-- Script to get history for a period -->
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var role ="@ViewBag.ClientRole";
+
+        var item = $("#list1 option:selected");
+
+        //alert("the role is: " + role);
+
+        if (role == "tenant") //for tenant
+        {
+
+
+            $("#all").prop('checked', true);
+            $("#p_period").hide();
+            //$("#report").hide();
+            $("#generate").hide();
+
+            $("#indi").change(function () {
+
+                var isChecked = $(this).is(':checked');
+
+
+
+                if (isChecked) {
+                    $("#p_period").show();
+
+                    var sDate = $("#sDate").val();
+                    var eDate = $("#eDate").val();
+                    var tenantId = @ViewBag.tenantId;
+
+                    //Get logs by period
+                    //
+                    var url = "/ClientPortal/GetRentPaymentHistoryByPeriod";
+
+                    var q = "id=" + tenantId + "&sDate=" + sDate + "&eDate=" + eDate;
+                    $.get(url, q, function (data) {
+                        $("#rentlist").html(data);
+                        //$("#report").show();
+                        // $("#generate").show();
+
+
+                        $("#loading").fadeOut("1000");
+
+                        return false;
+
+                    });
+
+                }
+                else {
+                    $("#p_period").hide();
+                }
+            });
+
+            $("#all").change(function () {
+
+                var isChecked = $("#indi").is(':checked');
+
+                //var sDate = $("#sDate").val();
+                //var eDate = $("#eDate").val();
+                var tenantId = @ViewBag.TenantId;
+
+
+
+
+                if (isChecked) {
+                    $("#p_period").show();
+                }
+                else
+                {
+                    $("#p_period").hide();
+
+                    //Get all logs
+                    //
+                    var url = "/ClientPortal/GetRentPaymentHistory";
+
+                    var q = "id=" + tenantId; //+ "&startPeriod=" + sDate + "&endPeriod=" + eDate;
+                    $.get(url, q, function (data) {
+                        $("#rentlist").html(data);
+                        //$("#report").show();
+                        // $("#generate").show();
+
+
+                        $("#loading").fadeOut("1000");
+
+                        return false;
+
+                    });
+                }
+
+
+
+            });
+
+            $("#get").click(function(){
+
+                var sDate = $("#sDate").val();
+                var eDate = $("#eDate").val();
+                var tenantId = @ViewBag.tenantId;
+
+                //Get logs by period
+                //
+                var url = "/ClientPortal/GetRentPaymentHistoryByPeriod";
+
+                var q = "id=" + tenantId + "&sDate=" + sDate + "&eDate=" + eDate;
+                $.get(url, q, function (data) {
+                    $("#rentlist").html(data);
+                    //$("#report").show();
+                    // $("#generate").show();
+
+
+                    $("#loading").fadeOut("1000");
+
+                    return false;
+
+                });
+
+
+
+            });            
+
+        }
+        else //for landlord/owner
+        {
+            //Rent revenue history
+            //alert("here");
+            $("#allr").prop('checked', true);
+            $("#r_period").hide();
+            //$("#report").hide();
+            $("#generate").hide();
+
+            $("#indir").change(function () {
+
+                var isChecked = $(this).is(':checked');
+
+
+
+                if (isChecked) {
+                    $("#r_period").show();
+
+                    var sDate = $("#r_sDate").val();
+                    var eDate = $("#r_eDate").val();
+                    var propertyId = $("#list1").val();   //@ViewBag.LandlordId;
+
+                    
+                    //Get logs by period
+                    //
+                    var url = "/ClientPortal/GetRentRevenueHistoryByPeriod";
+
+                    var q = "id=" + propertyId + "&sDate=" + sDate + "&eDate=" + eDate;
+                    $.get(url, q, function (data) {
+                        $("#clist").html(data);
+                        //$("#report").show();
+                        // $("#generate").show();
+
+
+                        $("#loading").fadeOut("1000");
+
+                        return false;
+
+                    });
+
+                }
+                else {
+                    $("#r_period").hide();
+                }
+            });
+
+            $("#allr").change(function () {
+
+                var isChecked = $("#indir").is(':checked');
+
+                //var sDate = $("#sDate").val();
+                //var eDate = $("#eDate").val();
+                var propertyId =$("#list1").val(); // @ViewBag.LandlordId;
+
+
+
+
+                if (isChecked) {
+                    $("#r_period").show();
+                }
+                else
+                {
+                    $("#r_period").hide();
+
+                    //Get all logs
+                    //
+                    var url = "/ClientPortal/GetRentRevenueHistory";
+
+                    var q = "id=" + propertyId; //+ "&startPeriod=" + sDate + "&endPeriod=" + eDate;
+                    $.get(url, q, function (data) {
+                        $("#clist").html(data);
+                        //$("#report").show();
+                        // $("#generate").show();
+
+
+                        $("#loading").fadeOut("1000");
+
+                        return false;
+
+                    });
+                }
+
+
+
+            });
+
+            $("#r_get").click(function(){
+
+                var sDate = $("#r_sDate").val();
+                var eDate = $("#r_eDate").val();
+                var landlordId = @ViewBag.LandlordId;
+
+                //Get logs by period
+                //
+                var url = "/ClientPortal/GetRentRevenueHistoryByPeriod";
+
+                var q = "id=" + landlordId + "&sDate=" + sDate + "&eDate=" + eDate;
+                $.get(url, q, function (data) {
+                    $("#clist").html(data);
+                    //$("#report").show();
+                    // $("#generate").show();
+
+
+                    $("#loading").fadeOut("1000");
+
+                    return false;
+
+                });
+
+            });
+
+
+
+
+
+            //Fee payment history
+
+            $("#allf").prop('checked', true);
+            $("#f_period").hide();
+            //$("#report").hide();
+            $("#generate").hide();
+
+            $("#indif").change(function () {
+
+                var isChecked = $(this).is(':checked');
+
+
+
+                if (isChecked) {
+                    $("#f_period").show();
+
+                    var sDate = $("#f_sDate").val();
+                    var eDate = $("#f_eDate").val();
+
+
+                    var item = $("#list2 option:selected");
+
+                    //Get logs by period
+                    //
+                    var url = "/ClientPortal/GetFeePaymentHistoryByPeriod";
+
+                    var q = "id=" + item.val() + "&sDate=" + sDate + "&eDate=" + eDate;
+                    $.get(url, q, function (data) {
+                        $("#flist").html(data);
+                        //$("#report").show();
+                        // $("#generate").show();
+
+
+                        $("#loading").fadeOut("1000");
+
+                        return false;
+
+                    });
+
+                }
+                else {
+                    $("#f_period").hide();
+                }
+            });
+
+            $("#allf").change(function () {
+
+                var isChecked = $("#indif").is(':checked');
+
+                //var sDate = $("#sDate").val();
+                //var eDate = $("#eDate").val();
+                @*var landlordId = @ViewBag.LandlordId;*@
+
+                var item = $("#list2 option:selected");;
+
+
+                if (isChecked) {
+                    $("#f_period").show();
+                }
+                else
+                {
+                    $("#f_period").hide();
+
+                    //Get all logs
+                    //
+                    var url = "/ClientPortal/GetFeePaymentHistory";
+
+                    var q = "id=" + item.val(); //+ "&startPeriod=" + sDate + "&endPeriod=" + eDate;
+                    $.get(url, q, function (data) {
+                        $("#flist").html(data);
+                        //$("#report").show();
+                        // $("#generate").show();
+
+
+                        $("#loading").fadeOut("1000");
+
+                        return false;
+
+                    });
+                }
+
+
+
+            });
+
+            $("#f_get").click(function(){
+
+                var sDate = $("#f_sDate").val();
+                var eDate = $("#f_eDate").val();
+
+                @*var landlordId = @ViewBag.LandlordId;*@
+                var item = $("#list2 option:selected");
+
+                //Get logs by period
+                //
+                var url = "/ClientPortal/GetFeePaymentHistoryByPeriod";
+
+                var q = "id=" + item.val() + "&sDate=" + sDate + "&eDate=" + eDate;
+                $.get(url, q, function (data) {
+                    $("#flist").html(data);
+                    //$("#report").show();
+                    // $("#generate").show();
+
+
+                    $("#loading").fadeOut("1000");
+
+                    return false;
+
+                });
+
+            });
+
+
+
+
+
+            //Cost history
+
+            $("#allc").prop('checked', true);
+            $("#c_period").hide();
+            //$("#report").hide();
+            $("#generate").hide();
+
+            $("#indic").change(function () {
+
+                var isChecked = $(this).is(':checked');
+
+
+
+                if (isChecked) {
+                    $("#c_period").show();
+
+
+                    var sDate = $("#c_sDate").val();
+                    var eDate = $("#c_eDate").val();
+
+
+                    var item = $("#list3 option:selected");
+
+                    //Get logs by period
+                    //
+                    var url = "/ClientPortal/GetWorkOrderListByPeriod";
+
+                    var q = "id=" + item.val() + "&sDate=" + sDate + "&eDate=" + eDate;
+                    $.get(url, q, function (data) {
+                        $("#wlist").html(data);
+                        //$("#report").show();
+                        // $("#generate").show();
+
+
+                        $("#loading").fadeOut("1000");
+
+                        return false;
+
+                    });
+
+
+                }
+                else {
+                    $("#c_period").hide();
+                }
+            });
+
+            $("#allc").change(function () {
+
+                var isChecked = $("#indic").is(':checked');
+
+                //var sDate = $("#sDate").val();
+                //var eDate = $("#eDate").val();
+                @*var landlordId = @ViewBag.LandlordId;*@
+
+                var item = $("#list3 option:selected");;
+
+
+                if (isChecked) {
+                    $("#c_period").show();
+                }
+                else
+                {
+                    $("#c_period").hide();
+
+                    //Get all logs
+                    //
+                    var url = "/ClientPortal/GetWorkOrderList";
+
+                    var q = "id=" + item.val(); //+ "&startPeriod=" + sDate + "&endPeriod=" + eDate;
+                    $.get(url, q, function (data) {
+                        $("#wlist").html(data);
+                        //$("#report").show();
+                        // $("#generate").show();
+
+
+                        $("#loading").fadeOut("1000");
+
+                        return false;
+
+                    });
+                }
+
+
+
+            });
+
+            $("#c_get").click(function(){
+
+                var sDate = $("#c_sDate").val();
+                var eDate = $("#c_eDate").val();
+
+                @*var landlordId = @ViewBag.LandlordId;*@
+                var item = $("#list3 option:selected");
+
+                //Get logs by period
+                //
+                var url = "/ClientPortal/GetWorkOrderListByPeriod";
+
+                var q = "id=" + item.val() + "&sDate=" + sDate + "&eDate=" + eDate;
+                $.get(url, q, function (data) {
+                    $("#wlist").html(data);
+                    //$("#report").show();
+                    // $("#generate").show();
+
+
+                    $("#loading").fadeOut("1000");
+
+                    return false;
+
+                });
+
+            });
+
+
+
+
+        }
+
+
+
+
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#getReport").button();
+        $("#c_get").button();
+        $("#f_get").button();
+        $("#r_get").button();
+
+        $("#get").button();
+
+
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#loading").hide();
+        $("#getReport").click(function(){
+            
+            $("#loading").show();
+
+            var sDate;
+            var eDate;
+            //var fsDate;
+            //var feDate;
+
+            var year = $("#year option:selected").text();
+
+            switch($("#month option:selected").text())
+            {
+                case "January":
+                    sDate = year + "-01-01";
+                    eDate = year + "-01-31";
+                    break;
+                case "February":
+                    sDate = year + "-02-01";
+                    eDate = year + "-02-31";
+                    break;
+                case "March":
+                    sDate = year + "-03-01";
+                    eDate = year + "-03-31";
+                    break;
+                case "April":
+                    sDate = year + "-04-01";;
+                    eDate = year + "-03-30";;
+                    break;
+                case "May":
+                    sDate = year + "-05-01";;
+                    eDate = year + "-03-31";;
+                    break;
+                case "June":
+                    sDate = year + "-06-01";;
+                    eDate = year + "-06-30";;
+                    break;
+                case "July":
+                    sDate = year + "-07-01";;
+                    eDate = year + "-07-31";;
+                    break;
+                case "August":
+                    sDate = year + "-08-01";;
+                    eDate = year + "-03-31";;
+                    break;
+                case "September":
+                    sDate = year + "-09-01";;
+                    eDate = year + "-09-30";;
+                    break;
+                case "October":
+                    sDate = year + "-10-01";;
+                    eDate = year + "-10-31";;
+                    break;
+                case "November":
+                    sDate = year + "-11-01";;
+                    eDate = year + "-11-30";;
+                    break;
+                case "December":
+                    sDate = year + "-12-01";;
+                    eDate = year + "-12-31";;
+                    break;
+                default:
+                    sDate = "";
+                    eDate = "";
+                    break;
+            }
+
+
+
+
+            var propertyId = $("#list5 option:selected").val();
+
+           // alert(propertyId);
+            //alert(sDate);
+
+            var url = "/ClientPortal/GetMonthlyFinancialStatement/";
+
+            var q = "id=" + propertyId + "&startPeriod=" + sDate + "&endPeriod=" + eDate;
+
+            $.get(url, q, function (data) {
+                $("#reports").html(data);
+                //$("#report").show();
+                // $("#generate").show();
+
+
+                $("#loading").fadeOut("1000");
+
+                return false;
+
+            });
+
+        });
+    
+    });
+</script>
+

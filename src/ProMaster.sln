@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProMaster.Web", "ProMaster.Web\ProMaster.Web.csproj", "{4A568246-63C3-43E3-9024-EDB9E73D0A06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProMaster.Core", "ProMaster.Core\ProMaster.Core.csproj", "{3FBC5EC4-325A-4986-831C-789CEB0E53F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProMaster.ApplicationManager", "ProMaster.ApplicationManager\ProMaster.ApplicationManager.csproj", "{8811490C-191F-42F2-AB01-B7E0718B9806}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProMaster.DAL", "ProMaster.DAL\ProMaster.DAL.csproj", "{31C26F41-0111-4673-B46D-B2656EE4B676}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProMaster.Infrastructure", "ProMaster.Infrastructure\ProMaster.Infrastructure.csproj", "{A1D29A60-AD5D-41BD-8130-291F471941EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProMaster.Repository", "ProMaster.Repository\ProMaster.Repository.csproj", "{483D6CE9-9003-43DE-8331-E7953661F505}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProMaster.WebApi", "ProMaster.WebApi\ProMaster.WebApi.csproj", "{5B05EAE1-9109-42CE-BFE7-CA5882796F4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A568246-63C3-43E3-9024-EDB9E73D0A06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A568246-63C3-43E3-9024-EDB9E73D0A06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A568246-63C3-43E3-9024-EDB9E73D0A06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A568246-63C3-43E3-9024-EDB9E73D0A06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FBC5EC4-325A-4986-831C-789CEB0E53F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FBC5EC4-325A-4986-831C-789CEB0E53F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FBC5EC4-325A-4986-831C-789CEB0E53F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FBC5EC4-325A-4986-831C-789CEB0E53F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8811490C-191F-42F2-AB01-B7E0718B9806}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8811490C-191F-42F2-AB01-B7E0718B9806}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8811490C-191F-42F2-AB01-B7E0718B9806}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8811490C-191F-42F2-AB01-B7E0718B9806}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31C26F41-0111-4673-B46D-B2656EE4B676}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31C26F41-0111-4673-B46D-B2656EE4B676}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31C26F41-0111-4673-B46D-B2656EE4B676}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31C26F41-0111-4673-B46D-B2656EE4B676}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1D29A60-AD5D-41BD-8130-291F471941EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1D29A60-AD5D-41BD-8130-291F471941EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1D29A60-AD5D-41BD-8130-291F471941EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1D29A60-AD5D-41BD-8130-291F471941EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{483D6CE9-9003-43DE-8331-E7953661F505}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{483D6CE9-9003-43DE-8331-E7953661F505}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{483D6CE9-9003-43DE-8331-E7953661F505}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{483D6CE9-9003-43DE-8331-E7953661F505}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B05EAE1-9109-42CE-BFE7-CA5882796F4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B05EAE1-9109-42CE-BFE7-CA5882796F4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B05EAE1-9109-42CE-BFE7-CA5882796F4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B05EAE1-9109-42CE-BFE7-CA5882796F4A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

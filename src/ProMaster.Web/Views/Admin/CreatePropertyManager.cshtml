@@ -1,0 +1,116 @@
+﻿@model ProMaster.Infrastructure.UserProfile.ViewModels.CreateProfileViewModel
+
+@{
+    ViewBag.Title = "Create Property Manager";
+}
+
+
+<div class="content-wrapper">
+    <aside> 
+    
+      <div id="left">        
+         
+      	    <div class="profile_logo">
+        	    <img src="@Url.Content("~/Content/Images/manager.png")" alt="" title="Add Lease" />        
+            </div>
+            <div class="profile_caption metro">
+        	    <h3>Add New Property Manager</h3>
+                <br />
+                <span>
+            	   Create account for new property managers
+                </span>
+            </div>
+             
+
+      </div>
+      
+      <div class="side-widget tile-margin metro">
+      <p></p>
+        <div class="side-inner">
+          <a href=@Url.Content("~/Manage/Messaging")"" title="Messaging"><div class="tile amarelo" id="p1"><span><i class="fa fa-envelope-o"></i></span><br /><br /> Messaging</div></a>
+          <a href="@Url.Content("~/Manage/Calendar")" title="Calendar"><div class="tile vermelho" id="p2"><span><i class="fa fa-calendar-o"></i></span><br /><br /> Calendar</div></a>
+          <a href="@Url.Content("~/Admin/ManagePMs")" title="Manage PMs"><div class="tile azul" id="p3"><span><i class=" icon-user-3"></i></span><br /><br /> Manage PMs</div></a>
+          <a href="@Url.Content("~/Manage/Reporting")" title="Business Reporting"><div class="tile verde" id="p4"><span><i class="icon-stats"></i></span><br /><br /> Business Reporting</div></a>
+        </div>
+      
+      </div> 
+    
+  </aside><!-- End of aside -->
+
+
+  <div class="main metro">
+       <div id="add_edit_panel">
+           <h3><i class="fa fa-th"></i> &nbsp; ADD PROPERTY MANAGER        	
+              <span>Please fill/Update all required fields and click "Add".</span>
+           </h3>
+
+            @using (Html.BeginForm()) {
+                @Html.ValidationSummary(true)
+
+                 <div class="edit_field">
+                     <fieldset>
+                         <legend><span><i class="fa fa-info-circle"></i> Basic Information</span></legend>
+                                   
+                
+                        <div class="display-label">
+                            First Name:
+                        </div>
+                        <div class="display-field">
+                            @Html.TextBoxFor(model => model.FirstName, new { autofocus = "", required = "Required" })
+                            @Html.ValidationMessageFor(model => model.FirstName)
+                        </div>
+
+                        <div class="display-label">
+                            Last Name:
+                        </div>
+                        <div class="display-field">
+                             @Html.TextBoxFor(model => model.LastName, new { required = "Required" })
+                             @Html.ValidationMessageFor(model => model.LastName)
+                        </div>                   
+
+                         
+
+                        <div class="display-label">
+                           Contact Email:
+                        </div>
+                        <div class="display-field">
+                            @Html.TextBoxFor(model => model.ContactEmail, new { required = "Required" })
+                            @Html.ValidationMessageFor(model => model.ContactEmail)
+                        </div>
+
+                        <div class="display-label">
+                            Telephone 1:
+                        </div>
+                        <div class="display-field">
+                             @Html.TextBoxFor(model => model.ContactTelephone1, new { required = "Required" })
+                            @Html.ValidationMessageFor(model => model.ContactTelephone1)
+                        </div>
+
+                         <div class="display-label">
+                            Telephone 2:
+                        </div>
+                        <div class="display-field">
+                             @Html.TextBoxFor(model => model.ContactTelephone2)
+                            @Html.ValidationMessageFor(model => model.ContactTelephone2)
+                        </div>
+
+                </fieldset>
+               
+                </div>  
+                         
+                <div class="right-aligned"><input type="submit" value="Add" /></div>
+            }
+
+        </div>  
+
+  </div>
+
+</div>
+      
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,215 @@
+﻿@model ProMaster.Core.StrataCouncil.ViewModels.CreateStrataCouncilViewModel
+
+@{
+    ViewBag.Title = "Add Strata Council";
+}
+
+
+<div class="content-wrapper">
+    <aside> 
+    
+      <div id="left">        
+         
+      	    <div class="profile_logo">
+        	    <img src="@Url.Content("~/Content/Images/councils.png")" alt="" title="Add Strata Council" />        
+            </div>
+            <div class="profile_caption metro">
+        	    <h3>New Stara Council</h3>
+                <br />
+                <span>
+            	    Add new strata council 
+                </span>
+            </div>
+             
+
+      <p></p>
+      
+          <div class="side_title_caption metro">
+              <br /><br />
+              <div>Note:</div>
+              <br />
+              <span>You need all the required information ready, it is very importatnt to keep the communication channel open with the council. Managed properties under the Council can be added later on.</span>
+              <br /><br /><br /><br />
+              <span><i class="icon-new-tab rss_color"></i> Quick Access</span>
+              <div class="side-widget">
+                  <a href="@Url.Content("~/Tools/Messaging")" title="Messaging"><div class="tile amarelo" id="p1"><span><i class="fa fa-envelope-o"></i></span><br /><br /> Messaging</div></a>
+                  <a href="@Url.Content("~/Tools/Calendar")" title="Calendar"><div class="tile vermelho" id="p2"><span><i class="fa fa-calendar-o"></i></span><br /><br /> Calendar</div></a>
+                  <a href="@Url.Content("~/Tools/Resources")" title="Resources"><div class="tile metro_dark_blue" id="p3"><span><i class="fa fa-user"></i></span><br /><br /> Resources</div></a>
+                  <a href="@Url.Content("~/Tools/DocTool")" title="Document Tools"><div class="tile purple" id="p4"><span><i class="icon-clipboard-2"></i></span><br /><br /> Document Tools</div></a>
+              </div>
+          </div>    
+
+      </div>      
+    
+  </aside><!-- End of aside -->
+
+   <div class="main metro">
+       <div id="add_edit_panel">
+           <h3><i class="fa fa-th"></i> &nbsp; ADD STRATA COUNCIL        	
+              <span>Please fill/Update all required fields and click "Add".</span>
+           </h3>
+
+           @using (Html.BeginForm())
+           {
+                @Html.ValidationSummary(true)
+
+                 <div class="edit_field">
+                     <fieldset>
+                         <legend><span><i class="fa fa-info-circle"></i> Basic Information</span></legend>
+                                   
+                
+                        <div class="display-label">
+                            Coouncil Name:
+                        </div>
+                        <div class="display-field">
+                            @Html.TextBoxFor(model => model.StrataCouncilName, new { autofocus="", required = "required" })
+                            @Html.ValidationMessageFor(model => model.StrataCouncilName)
+                        </div>
+
+                        <div class="display-label">
+                            Manager First Name:
+                        </div>
+                        <div class="display-field">
+                            @Html.TextBoxFor(model => model.StrataManageFirstName, new { required = "required" })
+                            @Html.ValidationMessageFor(model => model.StrataManageFirstName)
+                        </div>
+
+                         <div class="display-label">
+                            Manager Last Name:
+                        </div>
+                        <div class="display-field">
+                            @Html.TextBoxFor(model => model.StrataManagerLastName, new { required = "required"})
+                            @Html.ValidationMessageFor(model => model.StrataManagerLastName)
+                        </div>
+                        
+                        <div class="display-label">
+                            Mailing Address:
+                        </div>
+                        <div class="display-field">
+                               @Html.TextAreaFor(model => model.StrataCounvilMailingAddress, new { required = "required"})
+                               @Html.ValidationMessageFor(model => model.StrataCounvilMailingAddress)
+                        </div>                    
+
+                        <div class="display-label">
+                          Contact Email:
+                        </div>
+                        <div class="display-field">
+                            @Html.TextBoxFor(model => model.StrataManagerContactEmail, new { required = "required"})
+                            @Html.ValidationMessageFor(model => model.StrataManagerContactEmail)
+                        </div>
+                         
+
+                        <div class="display-label">
+                           Contact Telephone:
+                        </div>
+                        <div class="display-field">
+                           @Html.TextBoxFor(model => model.StrataManagerContactTel, new { required = "required"})
+                           @Html.ValidationMessageFor(model => model.StrataManagerContactTel)
+                        </div>
+
+                        <div class="display-label">
+                            Notes:
+                        </div>
+                        <div class="display-field">
+                             @Html.TextAreaFor(model => model.Notes)  
+                        </div>
+                        
+
+
+                </fieldset>
+
+                
+               
+                </div>  
+                         
+                <div class="right-aligned"><input type="submit" value="Add" /></div>
+           }
+
+       </div>
+
+   </div><!-- End of main -->
+
+</div><!-- End of content-wrapper -->
+
+
+
+
+
+
+<!--
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>CreateStrataCouncilViewModel</legend>
+                
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StrataCouncilName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StrataCouncilName)
+            @Html.ValidationMessageFor(model => model.StrataCouncilName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StrataManageFirstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StrataManageFirstName)
+            @Html.ValidationMessageFor(model => model.StrataManageFirstName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StrataManagerLastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StrataManagerLastName)
+            @Html.ValidationMessageFor(model => model.StrataManagerLastName)
+        </div>
+
+         <div class="editor-label">
+            @Html.LabelFor(model => model.StrataCounvilMailingAddress)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.StrataCounvilMailingAddress)
+            @Html.ValidationMessageFor(model => model.StrataCounvilMailingAddress)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StrataManagerContactEmail)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StrataManagerContactEmail)
+            @Html.ValidationMessageFor(model => model.StrataManagerContactEmail)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StrataManagerContactTel)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StrataManagerContactTel)
+            @Html.ValidationMessageFor(model => model.StrataManagerContactTel)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Notes)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Notes)           
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+-->
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

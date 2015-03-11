@@ -1,0 +1,133 @@
+﻿@model ProMaster.Core.Accounting.ViewModels.AccountingCostViewModel
+
+@{
+    ViewBag.Title = "CostAndRevenueByProperty";
+}
+
+<h2>CostAndRevenueByProperty</h2>
+
+
+Property Information:
+@Html.DisplayFor(model => model.PropertyName)
+FROM:<br />
+<div >@Html.TextBoxFor(model => model.StartPeriod, new { @id="sDate", @class = "datepicker", @Value = System.DateTime.Now.ToString("M/d/yyyy") })<br /></div>
+TO:<br />
+<div >@Html.TextBoxFor(model => model.EndPeriod, new { @id="eDate", @class = "datepicker", @Value = System.DateTime.Now.ToString("M/d/yyyy") })</div>
+
+
+<p id="gen"><a href="#" id="fs">Generate Fianacial Statement</a></p>
+
+
+<div id="data">
+    @Html.Partial("_OtherCost") 
+
+    <p></p>
+
+    @Html.Partial("_RepairCost") 
+
+    <p></p>
+
+    @Html.Partial("_RentRevenue") 
+
+    <p></p>
+
+    @Html.Partial("_ManagementFee") 
+
+    
+    <p>
+        <h3>Total Expenses:</h3>
+    </p>
+    $@ViewBag.totalExpenses
+
+    <p>
+    <h3>Total Rent Revenue:</h3>
+    $@ViewBag.totalRevenue
+
+    </p>
+    <h3>Total Net Income:</h3>
+    $@ViewBag.totalNetIncome
+
+</div>
+
+<p>
+    
+    <div id="period">
+        Period:<br />
+        <div id="s"></div> To <div id="e"></div>    
+    </div>
+</p>
+
+<div id="statement"></div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#data").hide();
+        $("#gen").button();
+        $("#period").hide();
+
+        $("#fs").click(function () {
+            $("#period").show();
+
+            var sDate = $("#sDate").val();
+            var eDate = $("#eDate").val();
+            var propertyId = @(Model.PropertyId);
+
+            $("#s").html(sDate);
+            $("#e").html(eDate);
+
+            //alert(propertyId);
+
+               
+
+                var url="/Accounting/FinancialStatementByProperty/";
+                var q="id=" + @(Model.PropertyId) + "&startPeriod=" + sDate + "&endPeriod=" + eDate;
+                $.get(url, q, function(data){                                
+                     $("#statement").html(data);    
+                     return false;        
+                
+               
+                
+               // Suceeded 
+            
+            });
+
+            //function Suceeded(data) {		        
+
+		        //$('#ganerated').html(data);
+                        
+                //$('#ganerated').delay(5000).fadeOut(400);
+
+                // Refresh the financial statement
+                //
+                //var url="/Accounting/FinancialStatementByProperty/";
+                //var q="id=" + @(Model.PropertyId);
+                //$.get(url, q, function(data){                                
+                //     $("#ListingView").html(data);            
+                //});
+
+                //$("#statement").html(data);
+                //return false;
+		    //}
+
+            //return false;
+
+        });
+
+
+
+
+
+    });
+
+    $(function () {
+        $(".datepicker").datepicker();
+    });
+
+
+
+</script>
+
+
+
+<p></p>
+

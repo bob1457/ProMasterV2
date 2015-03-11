@@ -1,0 +1,133 @@
+﻿@model ProMaster.Core.Documents.ViewModels.CreateDcoumentViewModel
+
+@{
+    ViewBag.Title = "AddDocument";
+}
+
+<h2>AddDocument</h2>
+
+
+
+@using (Html.BeginForm("AddDocument", "Document", FormMethod.Post, new { id = ViewData["uid"], @encType = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>CreateDcoumentViewModel</legend>
+                
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DocumentType)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.DocumentTypeId, Model.DocumentTypeList)
+            @Html.ValidationMessageFor(model => model.DocumentType)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DocumentPrincipal)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.DocumentPrincipalTypeId, Model.DocumentTyPrincipalpeList)
+            @Html.ValidationMessageFor(model => model.DocumentType)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DocumentTitle)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DocumentTitle)
+            @Html.ValidationMessageFor(model => model.DocumentTitle)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DocumentDetails)Add
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.DocumentDetails)
+            @Html.ValidationMessageFor(model => model.DocumentDetails)
+        </div>        
+
+        
+        <p>
+            <input type="file" id="fileToUpload"  name="file" />
+        </p>
+        <p>
+            <input type="submit" id="btnSubmit" value="Add" />
+            <!-- @FileUpload.GetHtml(initialNumberOfFiles: 1, allowMoreFilesToBeAdded: false, addText: "", uploadText: "Save")  -->
+        </p>
+    </fieldset>
+}
+
+<div id="msg"></div>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<!-- 
+<script type="text/javascript">
+    function getFileNameFromPath(filePath) {
+        var objRE = new RegExp(/([^\/\\])$/); 
+        var Name = objRE.exec(filePath);
+
+        if(name == null)
+        {
+            return null;
+        }
+        else
+        {
+            return Name[0];
+        }
+
+    }
+
+    $("#btnSubmit").live("", function(){
+        if($("fileToUpload").val() == "")
+        {
+            $("#spanFile").html("Please selce file to upload");
+            return false;
+        }
+        else
+        {
+            return checkFile();
+        }
+    
+    
+    });
+
+    function checkFile()
+    {
+        var file = getFileNameFromPath($("#fileToUpload").val());
+        if (file != null)
+        {
+            var extension = file.substr((file.lastIndexOf('.') + 1));
+            switch (extension) {
+                case 'jpg':
+                case 'gif':
+                case 'png':
+                case 'pdf':
+                    flag = true;
+                    break;
+                default:
+                    flag = false;
+            }
+
+        }
+        else
+        {
+            $("#msg").text("Please select correct file type");
+        }
+    }
+
+    $(function(){
+        $("#fileToUpload").change(function(){
+            checkFile();
+        });
+    
+    });
+</script>
+
+-->

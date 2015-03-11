@@ -1,0 +1,203 @@
+﻿@model IEnumerable<ProMaster.Core.Property.ViewModels.MessagingVieModel>
+
+@{
+    ViewBag.Title = "Message";
+}
+
+<h2>Message</h2>
+
+<p>
+    <!-- @Html.ActionLink("Create New", "Create") -->
+    <a href="#" id="compose">Compose a message</a><br />
+    <div id="note"></div>
+</p>
+<div id="mList">
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MessageId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MessageSubject)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MessageBody)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SentByUserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SentByFullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MessageType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsRead)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Propertyid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PropertyName)
+            </th>
+            
+            <th></th>
+        </tr>
+ 
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MessageId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MessageSubject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MessageBody)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SentByUserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SentByFullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MessageType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsRead)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Propertyid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropertyName)
+            </td>
+            
+            <td>
+                @Html.ActionLink("Details", "MessageDetails", new {  id=item.MessageId /**/ }) |
+                @Html.ActionLink("Reply", "ReplyMessage", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>
+</div>
+
+<div id="mail">
+<strong>Compose Message</strong>
+<p></p>
+TO: <br />
+<input id="to" type="text" name="to" /><strong id="error"></strong><br /><br />
+
+<br />
+
+
+Subject: <br />
+<input id="subject" type="text" name="subject" /><br />
+Message: <br />
+<textarea id="body"></textarea>
+</div>
+
+
+<!-- Send message script -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mail").hide();
+        $('#compose').button();
+    });
+
+    var $dialog = $('#mail')
+		.dialog({
+		    autoOpen: false,
+		    modal: true,
+		    position: [200, 200],
+		    resizable: false,
+		    draggable: false,
+		    width: 'auto',
+		    title: 'Compose a Message',
+		    buttons: {
+		        "Cancel": function () {
+		            $(this).dialog("close");
+		        },
+
+		        "Send": function () {
+		            // Add ajax call to pass the tag name and objId to the action in Controller
+		            var to = $("#to").val();
+		            var subject = $("#subject").val();
+		            var body = $("#body").val();
+
+		           
+
+		            if (to == "") {
+		                $("#error").text("Required!"); 
+                        //alert(to);
+		            }
+		            else {
+
+
+
+		                $.ajax({
+		                    type: "POST",
+		                    url: "/Manage/SendMessage",
+		                    data: "to=" + to + "&subject=" + subject + "&body=" + body,
+
+		                    contenType: "",
+		                    dataType: "json",
+		                    success: Suceeded
+		                });
+
+		                function Suceeded(data) {
+		                    // $('#go').hide();
+		                    
+		                    $('#note').html(data);
+
+		                    $('#note').delay(5000).fadeOut(400);
+
+		                    // Refresh the message view
+		                    //
+		                    /*
+		                    var url="/Manage/GetMessageList/";
+		                    var q="id=1";
+		                    $.get(url, q, function(data){                                
+		                    $("#mList").html(data);            
+		                    });*/
+		                    return false;
+		                }
+
+		                $(this).dialog("close");
+		            }
+		        }
+
+		    }
+
+
+
+		});
+
+		$('#compose').click(function () {
+		    //deleteLinkObj = $(this);
+		    $("#to").val("");
+		    $("#error").text("");
+		    $dialog.dialog('open');
+		    // prevent the default action, e.g., following a link
+
+		    return false;
+		});
+
+        $(function () {
+            $("#to").autocomplete({
+                source: '@Url.Action("GetOnlineUserName")'
+            });
+        });
+
+</script>

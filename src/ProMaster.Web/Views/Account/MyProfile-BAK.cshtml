@@ -1,0 +1,77 @@
+﻿@model ProMaster.Infrastructure.UserProfile.ViewModels.MyProfileViewModel
+
+@{
+    ViewBag.Title = "MyProfile";
+}
+
+<h2>MyProfile</h2>
+
+<fieldset>
+    <legend>MyProfileViewModel</legend>
+     
+    <img src="@Url.Content(@Model.AvartaImgUrl)" alt="@Model.UserName" height="56px" width="56px"/>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ContactEmail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ContactEmail)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ContactTelephone1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ContactTelephone1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ContactTelephone2)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ContactTelephone2)
+    </div>
+
+    
+    
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreationDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreationDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UpdateDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UpdateDate)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "EditProfile", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

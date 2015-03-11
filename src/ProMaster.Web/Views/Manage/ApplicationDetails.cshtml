@@ -1,0 +1,196 @@
+﻿@model ProMaster.Core.Property.ViewModels.DisplayApplicationViewModel
+
+@{
+    ViewBag.Title = "ApplicationDetails";
+}
+
+<h2>ApplicationDetails</h2>
+
+<fieldset>
+    <legend>DisplayApplicationViewModel</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ApplicationId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ApplicationId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ApplicantFirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ApplicantFirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ApplicantLastName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ApplicantLastName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CurrentAddress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CurrentAddress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ApplicantContactEmail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ApplicantContactEmail)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ApplicatnContactTel)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ApplicatnContactTel)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NumberOfOccupants)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NumberOfOccupants)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NumberOfChildren)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NumberOfChildren)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CurrentEmployerContact)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CurrentEmployerContact)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CurrentLandlordContact)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CurrentLandlordContact)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AuthorizedRefCheck)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AuthorizedRefCheck)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdenticationAvailable)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdenticationAvailable)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreditScore)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreditScore)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ApplyDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ApplyDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsApproved)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsApproved)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PropertyId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PropertyId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MonthlyIncome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MonthlyIncome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PropertyName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PropertyName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PropertyDesc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PropertyDesc)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PropertyImageUrl)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PropertyImageUrl)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PropertyBuildYear)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PropertyBuildYear)
+    </div>
+
+    
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreationDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreationDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UpdateDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UpdateDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PropertyType)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PropertyType)
+    </div>
+           
+</fieldset>
+<p>
+    <!-- @Html.ActionLink("Evaluate", "EvaluateApplicant", new {  id=Model.ApplicationId /**/ }) | -->
+    @Html.ActionLink("Screen Tenant", "TenantScreen", new { id = Model.ApplicationId /**/ }) |
+    @if(Model.IsApproved == true)
+    {
+        <b>Approved</b>
+    }
+    else
+    {
+        @Html.ActionLink("Approve", "ApproveApplicant", new {  id=Model.ApplicationId, pid = Model.PropertyId /**/ }) 
+    }
+    
+    | @Html.ActionLink("Back to List", "Index")
+</p>

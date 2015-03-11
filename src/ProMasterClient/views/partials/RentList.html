@@ -1,0 +1,35 @@
+<!--<div class="panel-heading" style="background-image: linear-gradient(to bottom, #00AAAA 0%, #98EAE8 100%); color: rgb(234, 229, 219); text-align: center;text-shadow: 2px 2px 3px #989880;"><h3><span stye="margin-top: -10px;"> <i class="fa fa-th-list"></i> &nbsp; Marketplace</span></h3></div>
+    <div class="panel-body">
+        <div class="icon_img"><img src="/content/assets/images/1.png" /></div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
+        Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
+        dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
+        Aliquam in felis sit amet augue.
+    </div>-->
+
+<div class="bar">
+    <div style ="float:left; font-size: 2em; color: #E77524; display: inline;"><i class="fa fa-th-list"></i>&nbsp; <span style="font-size: 0.75em; color:aliceblue;">{{title}}</span></div>
+    <!-- These two buttons switch the layout varaible,
+        which causes the correct UL to be shown. -->
+
+    <a href="" class="list-icon" ng-class="{active: layout == 'list'}" ng-click="layout = 'list'"></a>
+    <a href="" class="grid-icon" ng-class="{active: layout == 'grid'}" ng-click="layout = 'grid'"></a>
+</div>
+
+<ul ng-show="layout == 'list'" class="list">
+    <!-- A compact view smaller photos and titles -->
+    <div ng-hide="{{propertyListing.length}}">No Data</div>
+    <li ng-repeat="p in propertyListing">
+        <a href="{{p.imgUrl}}" target="_blank" ><img ng-src="{{p.imgUrl}}" style="width: 10%; height: auto;" /></a>
+        <p>{{p.title}}</p>
+        <p ng-bind="p.desc"></p>
+        <p ng-bind="p.city"></p>
+    </li>
+</ul>
+
+<ul ng-show="layout == 'grid'" class="grid">
+    <!-- A view with big photos and no text -->
+    <li ng-repeat="p in propertyListing">
+        <a href="{{p.imgUrl}}" target="_blank" ><img ng-src="{{p.imgUrl}}" title="{{p.title}}" style="width: 75%; height: auto;" /></a>
+    </li>
+</ul>

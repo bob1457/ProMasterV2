@@ -1,0 +1,344 @@
+﻿@model IEnumerable<ProMaster.Core.Property.ViewModels.DisplayPropertyViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>All Properties For Rent</h2>
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            @item.PropertyName
+            @item.PropertyAddressCity
+            $@item.MonthlyRent
+            @item.RentStatus
+            @Html.ActionLink("Details", "PropertyDetails", new { id = item.PropertyId})
+            @Html.ActionLink("Apply", "Apply", new { id = item.PropertyId })
+        </li> 
+    }
+</ul>
+
+<!--
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyImageUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyBuildYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyTypeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RentStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LandlordId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LandlordFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LandlordLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LandlordContactEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LandlordContactTelephone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyAddressId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyAddressStreetNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyAddressSuiteNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyAddressStreetName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyAddressCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyAddressProvState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyAddressPostZipCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyAddressCountry)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyFeatureId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberOfBedrooms)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberOfBathrooms)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberOfFloors)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberOfParkings)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalLivingArea)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BasementAvailable)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsShared)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Notes1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyFacilityId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Stove)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Refrigerator)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dishwasher)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AireConditioner)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Blinds)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Laundry)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CommonFacility)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Security)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FireAlarm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TVInternet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Others)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Notes2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Furniture)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RentalStatusId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenantId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyImageUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyBuildYear)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyTypeId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RentStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LandlordId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LandlordFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LandlordLastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LandlordContactEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LandlordContactTelephone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyAddressId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyAddressStreetNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyAddressSuiteNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyAddressStreetName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyAddressCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyAddressProvState)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyAddressPostZipCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyAddressCountry)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyFeatureId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberOfBedrooms)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberOfBathrooms)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberOfFloors)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberOfParkings)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalLivingArea)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BasementAvailable)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsShared)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Notes1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyFacilityId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Stove)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Refrigerator)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dishwasher)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AireConditioner)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Blinds)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Laundry)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CommonFacility)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Security)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FireAlarm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TVInternet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Others)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Notes2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Furniture)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RentalStatusId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenantId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
+
+-->

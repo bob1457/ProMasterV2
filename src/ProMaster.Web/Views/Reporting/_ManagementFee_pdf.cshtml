@@ -1,0 +1,57 @@
+﻿@model ProMaster.Core.Reporting.ViewModels.AccountingCostViewModel
+
+@{
+    ViewBag.Title = "_Management Fee";
+}
+
+
+@if (Model.FeeList.Count() != 0)
+{
+    <table>
+                                
+            	                <tr>
+                                    
+                	                <th class="table_th" style="width:2em">ID</th>
+                                    <th class="table_th">Fee Amount</th>
+                                    <th class="table_th">Fee Type</th>
+                                    <th class="table_th">Paid Date</th>                                   
+                                    <th class="table_th"></th>                  
+                                </tr>
+                                @foreach (var item in Model.FeeList)
+                                {
+                                    <tr>
+                                        
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ManagementFeeId)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ManagementFeeAmount)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.IsManagementFeeReceived)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ManagementFeeType)
+                                        </td>                                         
+                                        <td>
+                    	                    
+                                        </td>
+                                        
+                                     </tr>  
+                                }
+                                <!--<tfoot class="table_th">
+                	                <tr>
+                                        <td colspan="7"><span><i class="icon-clipboard-2"></i></span></td>
+                        
+                	                </tr>                
+                                </tfoot>-->
+                            </table>
+    
+    
+    <p></p>
+    <div  class="total">Total Management Cost: $@ViewBag.totalfee</div>
+}
+else
+{
+    <div class="no_r" >No Management Costs.</div>
+}

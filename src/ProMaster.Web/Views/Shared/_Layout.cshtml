@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - ProMaster v.1.0</title>
+        
+        
+        
+        <link href="@Url.Content("~/Content/Images/favicon.ico")" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        
+        
+ 
+        <link href="@Url.Content("~/Content/Styles/reset.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/Styles/desktop.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/Styles/tablet.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/Styles/mobile.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/Styles/css/font-awesome.min.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/Styles/datepicker.css")" rel="stylesheet" type="text/css" />
+
+        <!-- Font Awesome -->
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        
+
+        <!----><link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+        
+        <link rel="stylesheet" href="@Url.Content("~/Content/Styles/tabs.css")" type="text/css" />
+        
+        <!--<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>-->
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+        <!--<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        
+
+        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />-->
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+
+
+        <!-- Metro UI Font Icon -->
+        <link  href="@Url.Content("~/Content/Styles/css/metro-bootstrap.css")" rel="stylesheet" type="text/css">
+        <!-- <script src="@Url.Content("~/metro.min.js")" type="text/javascript" ></script> -->
+        
+        <!-- fullCalendar Plugin -->
+        <script type="text/javascript" src="@Url.Content("~/Scripts/fullcalendar.js")"></script>
+        <link href="@Url.Content("~/Content/fullcalendar.css")" rel="Stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/customfc.css")" rel="Stylesheet" type="text/css" /> <!-- Custom Full Calendar Style -->
+
+        <link href="@Url.Content("~/Content/Styles/datepicker.css")" rel="stylesheet" type="text/css" />
+         <!----><link href="@Url.Content("~/Content/Styles/dialog.css")" rel="stylesheet" type="text/css" /> 
+        <link href="@Url.Content("~/Content/Styles/accord.css")" rel="stylesheet" type="text/css" />
+
+        <!-- Custom pagination style -->
+        <link href="@Url.Content("~/Content/Styles/CustomPagedList.css")" rel="Stylesheet" type="text/css" />
+
+        <script type="text/javascript" src="~/Scripts/jquery.validate.min.js"></script>
+
+        
+
+    </head>
+
+    <body  id="@ViewBag.CurrentPage">
+        <header>
+            <div id="top-bar">    	
+   	          <div class="content-wrapper metro">
+      	        <div id='time'><span class="google_p_Color"><i class="icon-calendar"></i></span> &nbsp; @String.Format("{0:dddd, MMMM d, yyyy}", DateTime.Now)</div><!-- <div id="accountinfo">Hello Bob!<img src="Images/users.png" alt="" name="avatar" width="15" height="15" id="avatar" /> My Account <span class="button-mini button-color-red"><a href="">LOGIN</a></span></div> -->
+                <div id="accountinfo">@Html.Partial("_LoginPartial")</div>
+              </div>  <!-- End of content-wrapper -->      
+            </div> <!-- End of top-bar -->
+
+	    <div id="header-logo">
+    	    <div class="content-wrapper metro">
+            <!-- header logo area -->
+                <div id="site-title">
+                      <img src="@Url.Content("~/Content/Images/logo.png")" height="84px" width="157px" /> <!-- Image size here will NOT be used in final release, modiry the image to get required size in graphics app -->
+                      <div id="tagline">Your Property Management Solution Provider</div>
+                </div>
+        
+            <div id="searchbox">
+                @using (Html.BeginForm("SiteSearch","Search", FormMethod.Post))
+                {
+        	        @Html.TextBox("searchText")
+                    
+                    <input type="submit" value="Search" /> 
+                }
+                           
+            </div>
+        
+            <nav>
+        	    <ul id="menu">
+            	    <li>@Html.ActionLink("HOME", "Index", "Home", null, new { area = "", @id ="home" })</li>
+                    <li>@Html.ActionLink("MANAGE", "Index", "Manage", null, new { area = "", @id ="manage" })</li>
+                    <li>@Html.ActionLink("DOCUMENT", "Index", "Document", null, new { area = "", @id ="document" })</li>                
+                    @*<li>@Html.ActionLink("REPORTING", "Index", "Reporting", null, new { area = "", @id ="reporting" })</li>*@
+                    <li>@Html.ActionLink("TOOLS", "Index", "Tools", null, new { area = "", @id ="tools" })</li>
+                    <li>@Html.ActionLink("ABOUT", "About", "Home", null, new { area = "", @id ="about" })</li>
+                    @if (User.Identity.IsAuthenticated && Roles.GetRolesForUser(User.Identity.Name).Contains("SuperAdmin"))
+                    {
+                        <li><a href="@Url.Action("Index", "Admin")" id="admin"><img src="@Url.Content("~/Content/Images/admin.png")"  title="Site Admin" /></a></li>            
+           
+                    }
+                    
+                </ul>
+            </nav>
+        
+            </div> <!-- End of content-wrapper -->
+        </div> <!-- End of header-logo -->
+
+	    <!-- <div class="content-wrapper"><div class="breadcrum">Home &nbsp;<i class="fa fa-caret-right"></i> &nbsp;Manage</div></div> -->
+
+        </header> <!-- End of header -->
+
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section>
+                <!----> <div class="content-wrapper"><div class="breadcrum  ">@Html.MvcSiteMap().SiteMapPath()</div></div>
+                @RenderBody()
+            </section>
+        </div> <!-- End of body -->
+
+
+        <footer>
+
+            <!-- <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+                </div>
+            </div> -->
+
+            <div class="content-wrapper metro">  
+		        <div id="copyright" class="footer_panel"><span>© Copyright 2013-@DateTime.Now.Year</span>
+                    <br /><br />
+                    <span>
+                    <span class="start">ProMaster</span> is an online solution for landlords and property managers to meet the property management needs. 
+                        It also serves tenants as a communication tool with their landlords and managers. 
+                </span> 
+		        </div>
+                
+                 
+                <div id="contact" class="footer_panel">
+        	        <i class="icon-cc-share-2 metro"></i> Meet Us
+                    <br /><br />
+                    <span>            	        
+                        <i class="icon-facebook facebook_color"></i>&nbsp; <i class="icon-twitter twitter_color"></i>&nbsp;  
+                        <i class="fa fa-google-plus google_p_Color"></i>&nbsp; <i class="fa fa-linkedin linkedin_color"></i>&nbsp; <i class="fa fa-rss rss_color"></i>
+        	        </span>        
+                </div>
+                <div id="services" class="footer_panel">
+        	        <i class="fa fa-heart"></i> Services
+        	        <br /><br />
+            	        <span>We are providing the following services:</span>    
+                    <br />        
+                </div>		  
+	        </div> <!-- End of content-wrapper -->
+
+        </footer>
+
+<!--
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+        
+-->
+
+    </body>
+
+</html>

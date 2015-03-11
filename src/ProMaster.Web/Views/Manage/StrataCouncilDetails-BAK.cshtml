@@ -1,0 +1,163 @@
+﻿@model ProMaster.Core.StrataCouncil.ViewModels.DisplayStrataCouncilViewModel
+
+@{
+    ViewBag.Title = "StrataCouncilDetails";
+}
+
+<h2>StrataCouncil Details</h2>
+
+<fieldset>
+        <legend>CreateStrataCouncilViewModel</legend>
+                
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StrataCouncilName)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.StrataCouncilName)
+           
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StrataManageFirstName)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.StrataManageFirstName)
+           
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StrataManagerLastName)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.StrataManagerLastName)
+            
+        </div>
+
+         <div class="editor-label">
+            @Html.LabelFor(model => model.StrataCounvilMailingAddress)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.StrataCounvilMailingAddress)
+            
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StrataManagerContactEmail)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.StrataManagerContactEmail)
+            
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StrataManagerContactTel)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.StrataManagerContactTel)
+            
+        </div>
+
+             
+
+        
+    </fieldset>
+    <br />
+    @Html.ActionLink("Edit", "EditStrataCouncil", new { id=Model.StrataCouncilId /**/ })
+    <p></p>
+    <a id ="property" href="#">Add Property</a><a id="cancel" href="#">Cancel</a>
+    <br />
+    <div id="add">        
+       Select Property to be added to the Strata Council:
+       <br />
+       <div id="list">
+        <select id="list2">
+        </select>
+       </div>       
+       <a href="#" id="go">Add</a>
+    </div>
+
+<p></p>
+<div id="condolist">@Html.Partial("_CondoList")</div>
+<!--
+@if (Model.PropertyList != null)
+{
+<ul>
+    @foreach (var item in Model.PropertyList)
+    {
+        <li>
+            @item.PropertyId
+            @item.PropertyName
+            @item.Status
+        </li>
+     
+    }
+</ul>
+}
+else
+{ 
+    <strong>No Properties</strong>
+}
+-->
+<br />
+<div id="msg"></div>
+<p></p>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#add").hide();
+        $("#cancel").hide();
+
+        var url = "@(Url.Content("~/Manage/GetCondoList"))";
+        var option = $('<option />');
+
+        $.getJSON(url, function (data) {
+            $("#list2").empty(); 
+
+            /* alert(data);*/
+
+            $.each(data, function () {
+                $("#list2").append($("<option />").val(this.id).html(this.name));
+            });
+        });
+
+        return false;
+    });
+</script>
+
+<script type="text/javascript">
+    $("#property").click(function () {
+        $("#add").show();
+        $("#property").hide();
+        $("#cancel").show();
+    });
+
+    $("#cancel").click(function () {
+        $("#add").hide();
+        $("#property").show();
+        $("#cancel").hide();
+    });
+
+    $("#go").click(function () {
+
+        var id = $("#list2").val();
+
+        $.ajax({
+            type: "POST",
+            url: "/Manage/AddCondoToStrata",
+            data: "id=" + id +"&sid=" + @(Model.StrataCouncilId),
+
+            contenType: "",
+            dataType: "json",
+            success: Suceeded
+        });
+
+        function Suceeded(data) {
+            $('#msg').html(data);
+            $("#msg").delay(5000).fadeOut(400);
+
+            return false;
+        }
+
+
+    });
+</script>

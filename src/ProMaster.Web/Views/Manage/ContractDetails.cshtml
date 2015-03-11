@@ -1,0 +1,665 @@
+﻿@model ProMaster.Core.Contract.ViewModels.DisplayContractViewModel
+
+@{
+    ViewBag.Title = "Management Contract Details1";
+}
+
+
+<div class="content-wrapper">
+    <aside>
+    <!-- Left Panel/Column -->
+      <div id="left">
+      	<div class="side_details_logo">
+        	<img src="@Url.Content("~/Content/Images/documents3.png")" alt="" title="Contract Details" />          
+        </div>
+        <div class="side_details_caption metro">
+        	<h3>Contract Details</h3>
+        	<br />
+            <span>
+                 <!-- 	  Detailed tenant information -->
+                 @Model.ContractTitle
+                <p></p>
+                    <div class="display-label">
+                       Contract Entered on:
+                    </div><br />
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.CreateDate)
+                    </div><br />
+
+                    <div class="display-label">
+                        Last Updated on:
+                    </div><br />
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.UpdateDate)
+                    </div><br />
+            </span>
+            <p></p><p></p>
+            <h6>Managed Propoerty</h6>
+            <div class="side_details_content">
+                 @Html.DisplayFor(model => model.PropertyName)
+                
+            
+            </div>
+        </div>
+      </div>
+      
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+    </aside><!-- End of aside -->
+
+    <div class="main metro">
+        <div id="manage-tabs" class="tabs-style">
+          <ul>
+            <li><a href="#tabs-1"><i class="fa fa-list-alt"></i> &nbsp;<span>General</span></a></li>
+            <li><a href="#tabs-2"><i class="icon-user-2"></i> &nbsp;Landlord</a></li>
+            <li><a href="#tabs-3"><i class="icon-clipboard"></i> &nbsp;Documents</a></li>
+            <li><a href="#tabs-4"><i class="icon-clipboard"></i> &nbsp;Management Fee Payment</a></li>
+            
+          </ul>
+
+  		  <div id="tabs-1">    		
+            <div class="tab_content">
+                <div class="tab_content_title">
+                    <span class="title_icon"><img src="@Url.Content("~/Content/Images/documents2.png")" alt="" title="" /></span>
+                    <span class="title_text"><h5>Management Contract Information</h5></span>
+                    <br />
+                    <span class="title_caption">Property management contract information, including terms, conditions on duties and costs, etc.</span><p></p>
+                </div>  
+                <div class="tab_content_field">
+                                        
+                    <fieldset>
+                        <legend><span><i class=" icon-address-book"></i> Basic Information</span></legend>
+                        <div class="basic">
+                            <div class="display-label">
+                            Contract ID:
+                        </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.ContractId)
+                            </div> 
+                            <br />
+                            <div class="basic">
+                            <div class="display-label">
+                            Contract Title:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.ContractTitle)
+                        </div> 
+                        <br />
+                        <div class="display-label">
+                            Start Date:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.StartDate)
+                        </div> 
+                        <br />
+                        <div class="display-label">
+                            End Date:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.EndDate)
+                        </div>
+                        <br />
+                        <div class="display-label">
+                            Sign Date:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.SignDate)
+                        </div>
+                        <br />
+                        <div class="display-label">
+                            Service Fee Rate:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.FeeScale)
+                        </div>
+                        <br />
+                        <div class="display-label">
+                            Placement Fee:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.ListingFeeScale)
+                        </div> 
+                        <br />
+                        <div class="display-label">
+                            Fee Frequency:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.ManagementFeeFrequency)
+                        </div>
+                        <br />
+                        
+                    </div>                     
+                        </div>
+                    </fieldset> 
+                    
+                    <div class="left-aligned backbutton"><a id="back" href="@Url.Content("~/Manage")" title="Back..."><span class="backbutton_format"><i class="icon-arrow-left-3"></i></span> Back to List...</a></div>
+                    @if (Roles.GetRolesForUser(User.Identity.Name).Contains("PropertyManager"))
+                    {
+                        <div class="right-aligned"><div class="edit_button button-med ">@Html.ActionLink("Edit", "EditContract", new { id = Model.ContractId /**/ })</div></div>
+                    }
+                    
+                </div>
+            
+            
+  		  </div>
+         
+		</div>
+
+          <div id="tabs-2">
+                <!-- <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p> -->
+                <div class="tab_content">
+                    <div class="tab_content_title">
+                        <span class="title_icon"><img src="@Url.Content("~/Content/Images/landlord.png")" alt="" title="" /></span>
+                        <span class="title_text"><h5>Landlord Information</h5></span>
+                        <br />
+                        <span class="title_caption">Landlord information, such as contact telephone number and email.</span>
+                    </div>
+
+                    <div class="tab_content_field">
+                         <fieldset>
+                            <legend><span><i class="fa fa-info-circle"></i> Landlord Information</span></legend>
+                                <div class="basic">
+                                    <div class="display-label">
+                                        First Name:
+                                    </div>
+                                    <div class="display-field">
+                                        @Html.DisplayFor(model => model.LandlordFirstName)
+                                    </div> 
+                                    <br />
+                                         <div class="display-label">
+                                        Last Name:
+                                    </div>
+                                    <div class="display-field">
+                                        @Html.DisplayFor(model => model.LandlordLastName)
+                                    </div> 
+                                    <br />
+                                         <div class="display-label">
+                                        Email:
+                                    </div>
+                                    <div class="display-field">
+                                        @Html.DisplayFor(model => model.LandlordEmail)
+                                    </div> 
+                                    <br />
+                                    <div class="display-label">
+                                        Telephone:
+                                    </div>
+                                    <div class="display-field">
+                                        @Html.DisplayFor(model => model.LandlordTelepone)
+                                    </div> 
+                                    <br />
+                            </div>
+                         </fieldset>
+
+                        @if (Roles.GetRolesForUser(User.Identity.Name).Contains("PropertyManager"))
+                        {
+                            <div class="right-aligned"><div class="edit_button button-med ">@Html.ActionLink("Details", "PropertyOwnerDetails", new { id = Model.LandlordId /**/ })</div></div>
+                        }
+                        
+
+                    </div>
+                    
+            
+            
+                </div>
+          </div>
+            
+          <div id="tabs-3">
+          <div class="tab_content">
+                <div class="tab_content_title">
+                    <span class="title_icon"><img src="@Url.Content("~/Content/Images/documents2.png")" alt="" title="" /></span>
+                    <span class="title_text"><h5>Contract Information</h5></span>
+                    <br />
+                    <span class="title_caption">Management contract information, including term, service fees, etc.</span><p></p>
+                </div>
+
+                <div class="tab_content_field">
+                    <fieldset>
+                        <legend><span><i class="fa fa-info-circle"></i> Contract Information</span></legend>
+                            <div class="content_info">
+
+                                @*<div class="button-med edit_button"></div>*@
+                                @if (Roles.GetRolesForUser(User.Identity.Name).Contains("PropertyManager"))
+                                {
+                                    <a href="@Url.Content("~/Document/AddDocument")" id="add">Add New</a>
+                                }
+                                    
+                                
+                                <p></p>
+                                                                          
+                             <div id="doc">@Html.Partial("_ContractDocumentList")</div>   
+                        
+                        
+                        </div>   
+                    
+                        @*<div class="right-aligned"><div class="edit_button button-med"></div></div>*@
+                    </fieldset>
+                
+                
+                </div>
+                    
+            
+            
+            </div>
+            
+          </div>
+            <div id="tabs-4">
+                <div class="tab_content_title">
+
+                </div>
+                <div class="tab_content_field">
+                    <fieldset>
+                        <legend><span><i class="icon-list"></i> Management Fee Payment </span></legend>
+                        <div class="content_info">
+                            <div id="feelist">
+                                @Html.Partial("_FeePaymentLog")
+                                @*<div><strong> Number of late payment: @ViewBag.late</strong></div>*@
+                            </div>
+                            <p></p>
+                            <br /><br />
+
+                            <div id="option"><a href="#" id="open"><span style="color:#1A864E;"><i class="icon-plus"></i></span> Add Fee Payment</a><a href="#" id="close"><span style="color:#ff6a00;"><i class="icon-minus"></i></span> Close</a></div>
+                            <br />
+                            <div class="edit_p">
+                                <fieldset>
+                                    <legend><span><i class="fa fa-info-circle"></i> Add Fee Payment </span></legend>
+                                    <div id="enterhistory">
+
+                                        <div class="display-label">
+                                            Fee Paid Date:
+                                        </div>
+                                        <div class="display-field">
+                                            <input id="date" type="text" value="@DateTime.Now.ToString("M/d/yyyy")" />
+                                        </div><br />
+                                        <div class="display-label">
+                                            Fee Paid Amount:
+                                        </div>
+                                        <div class="display-field">
+                                            <input id="amount" type="text" value="" placeholder="Rent Paid Amount" />
+                                        </div><br />
+                                        <div class="display-label">
+                                            Fee Type:
+                                        </div>
+                                        <div class="display-field">
+                                            <select id="type">
+                                                <option value="1" selected>Monthly Fee</option>
+                                                <option value="2">Placement Fee</option>
+                                            </select>
+                                        </div><br />
+                                    <div id="m_fee">
+                                        <div class="display-label">
+                                            Fee for Month:
+                                        </div>
+                                        <div class="display-field">
+                                            <select id="month">
+                                                <option value="1" selected>January</option>
+                                                <option value="2">Februray</option>
+                                                <option value="3">March</option>
+                                                <option value="4">April</option>
+                                                <option value="5">May</option>
+                                                <option value="6">June</option>
+                                                <option value="7">July</option>
+                                                <option value="8">August</option>
+                                                <option value="9">September</option>
+                                                <option value="10">October</option>
+                                                <option value="11">November</option>
+                                                <option value="12">December</option>
+                                            </select>
+                                        </div><br />
+                                        <div class="display-label">
+                                            Fee for Year:
+                                        </div>
+                                        <div class="display-field">
+                                            <select id="year">
+                                                <option value="2014" selected>2014</option>
+                                                <option value="2015">2015</option>
+                                                <option value="2016">2016</option>
+                                                <option value="2017">2017</option>
+                                                <option value="2018">2018</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2020">2020</option>
+                                            </select>
+                                        </div><br />
+                                    </div>
+                                        
+                                        
+
+
+                                        <div class="display-label">
+                                            Notes:
+                                        </div>
+                                        <div class="display-field">
+                                            <textarea id="notes" rows="5" placeholder="Enter Notes"></textarea>
+                                            <p></p>
+                                            <div><div class="edit_button button-med"> <a href="#" id="submit">Add</a></div></div>
+                                        </div>
+
+                                    </div> <!-- <input id="submit" type="submit"  value="Enter" /> -->
+                        
+                    </fieldset>
+                </div>
+                            <div id="paymentadded" style="font-size:.8em; color:#28b93b;"></div>
+
+                        </div>
+
+                        <!-- -->
+
+                    </fieldset>
+                </div>
+            </div>
+     </div>
+        
+
+     </div><!-- end of main -->
+
+
+</div><!-- end of content-wrapper- -->
+
+
+
+
+<!-- Add Fee History Script -->
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#submit").click(function () {            
+            var paidDate = $("#date").val();
+            var paidAmount = $("#amount").val();
+            var paidMonth;
+            var paidYear;
+
+            if($("#type").val() == 1)
+            {
+                paidMonth = $("#month").val();
+                paidYear = $("#year").val();
+            }
+            else
+            {
+                paidMonth = 0;
+                paidYear = 0;
+            }
+            
+
+
+            var paidMethodId = $("#method").val();
+            var feeTypeId = $("#type").val();
+
+            /**/ debugger; 
+            
+
+            var notes = $("#notes").val();
+
+            
+
+            $.ajax({
+		                type: "POST",
+		                url: "/Manage/AddFeePaymentByContract",
+		                data: "id=" + @(Model.ContractId) + "&paydate=" + paidDate + "&paymonth=" + paidMonth +"&payyear=" + paidYear +"&payamount=" + 
+                        paidAmount +"&paytypeid=" + feeTypeId + "&notes=" + notes,
+		                
+		                contenType: "",
+		                dataType: "json",
+		                success: suceeded
+		            });
+
+                    function suceeded(data) {
+		                //alert('success');
+		                //$('#tagAdded').html(data);
+                        $('#paymentadded').html(data);
+                        
+                        $('#paymentadded').delay(5000).fadeOut(400);
+                        //refresh comments
+                        //
+                        var url="/Manage/GetFeePaymentByContract/";
+                        var q="id=" + @(Model.ContractId);
+                            $.get(url, q, function(data){                                
+                                $("#feelist").html(data);            
+                            });
+                         return false;
+		            }
+
+                    /* Clear the fields for new entry */
+
+                    paidDate = $("#date").val();
+                    paidAmount = $("#amount").val('');
+
+                    /* paidMonth = $("#month").val('');
+                    paidYear = $("#year").val(''); */
+                    paidMethodId = $("#method").val();
+            notes = $("#notes").val('');
+        });
+
+});
+</script>
+
+<!-- Get/refresh history -->
+<script type="text/javascript">
+$(document).ready(function () { 
+        var url="/Manage/GetFeePaymentByContract/";
+                        var q="id=" + @(Model.ContractId);
+                            $.get(url, q, function(data){                                
+                                $("#feelist").html(data);            
+                            });
+    });
+</script>
+
+<!-- The confirmation dialog content -->
+<div id ="delete-dialog" title="Confirmation" style="display:none">
+    <p>Are you sure to delete this document?</p>    
+</div>
+<br />
+<div id="result"></div>
+
+<!-- Delete Confirmation Script -->
+<script type="text/javascript">
+    $('.delete-link').click(function () {
+        deleteLinkObj = $(this);
+        $('#delete-dialog').dialog();
+        return false;
+    });
+
+    $(function () {
+        $('.delete-link').click(function () {
+            var dialogOpts = {
+                autoOpen: false,
+                modal: true,
+                resizable: false,
+                draggable: false,
+                title: 'Delete Confirmation!',
+                buttons: {
+                    "Cancel": function () {
+                        $(this).dialog("close");
+                    },
+
+                    "Continue": function () {
+                        $.post(deleteLinkObj[0].href, function (data) {
+                            if (data == '@Boolean.TrueString') {
+                                //deleteLinkObj.closest("li").hide('fast');
+                                deleteLinkObj.closest("tr").hide('fast');
+                                $("#result").text("The document has been successfully deleted!");
+                            }
+                            else {
+                                $("#result").text("error occured!");
+                            }
+                        });
+                        $(this).dialog("close");
+
+                    }
+                }
+            };
+
+
+            $('#delete-dialog').dialog(dialogOpts).dialog('open');
+            return false;
+        });
+    });
+
+</script>
+
+<div id="add_doc">
+
+    <p></p>
+    <h4 class="ui-dia">
+        <i class="fa fa-th"></i> &nbsp; ADD NEW DOCUMENT
+
+    </h4>
+    <form id="form" action="@Url.Content("/Document/AddDocument/" + @Model.ContractId)" method="post" enctype="multipart/form-data">
+        <div class="edit_field ui-dia">
+
+            <fieldset class="ui-dia">
+                <div class="display-label">
+                    Document Type:
+                </div>
+                <div class="display-field">
+                    <div id="doctype">@Html.DropDownListFor(model => model.DocumentTypeId, Model.DocumentTypeList)</div>
+                </div>
+                <div class="display-label">
+                    <div id="pltype">Document Category:</div>
+                </div>
+                <div class="display-field">
+                    @Html.DropDownListFor(model => model.DocumentPrincipalTypeId, Model.DocumentTyPrincipalList, new { @id = "t" })
+                </div>
+                <div class="display-label">
+                    Document Title:
+                </div>
+                <div class="display-field">
+                    @Html.TextBoxFor(model => model.DocumentTitle, new { @id = "title", placeholder = "Required " }) <br />  <!--   <input id="title" type="text" value="" placeholder="Enter Document Title" /><br /> -->
+                    @Html.ValidationMessageFor(model => model.DocumentTitle)
+                </div>
+                <div class="display-label">
+                    Document Details:
+                </div>
+                <div class="display-field">
+                    @Html.TextAreaFor(model => model.DocumentDetails, new { @id = "details", placeholder = "Document Details... " }) <br />
+                </div>
+                <div class="display-label">
+                    Upload file:
+                </div>
+                <div class="display-field">
+                    <input id="upload" type="file" name="file" />
+                </div>
+
+
+            </fieldset>
+            <input class="edit_button" id="submit1" type="submit" value="Add" />
+            <input class="edit_button" type="button" value="Cancel" id="btncancel" />
+            <p></p>
+        </div>
+    </form>
+    
+ </div>
+
+<!-- Add Document Script -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#add_doc").hide();
+        //$("#pltype").hide();  
+    });
+
+    $("#add").button();
+    
+
+    $('#add').click(function () {
+    
+        $("#t").val(2);
+
+
+        var dialogOpts = {
+            autoOpen: false,
+            modal: true,
+            resizable: false,
+            draggable: false,
+            width: 480,
+            title: 'Add Document ...'
+           
+
+        };
+
+        $("#add_doc").dialog(dialogOpts).dialog('open');
+
+        return false;
+    });
+
+    $("#submit1").click(function() {
+
+        //Upload file
+        
+        $("#add_doc").dialog('close');
+        
+
+        //Reload least document partial view
+        var url = "/Manage/GetDocumentList/";
+        var q="id=" + @Model.ContractId +"pid=3";
+        //alert(q);
+            $.get(url, q, function(data){                                
+                $("#list").html(data);            
+            });
+    });   
+
+
+        $("#btncancel").click(function() {
+            $("#add_doc").dialog('close');
+        });   
+
+</script>
+
+<!--Jquery ui tabs Script -->
+<script type="text/javascript">
+    $(function () {
+        $("#manage-tabs").tabs();
+    });
+</script>
+
+<!-- Datepicker Script -->
+<script type="text/javascript">
+    $(function () {
+        $("#date").datepicker();        
+    });
+</script>
+
+<!---->
+<script type="text/javascript">
+    $(document).ready(function(){
+        //alert(window.name);
+
+        //write url for back to list button
+        //
+        $("#back").attr("href", window.name);   
+        
+        $("#close").hide();
+        $(".edit_p").hide();
+
+        $("#open").click(function(){
+            $(".edit_p").show();
+            $("#close").show();
+            $("#open").hide();
+        });
+
+        $("#close").click(function(){
+            $(".edit_p").hide();
+            $("#close").hide();
+            $("#open").show();
+        });
+
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        $("#type").change(function(){
+
+            var feeType = $("#type").val();
+
+            //alert(fee_type);
+
+            if(feeType == 2)
+            {
+                $("#m_fee").hide();
+            }
+            else
+            {
+                $("#m_fee").show();
+            }
+        });
+    });
+</script>

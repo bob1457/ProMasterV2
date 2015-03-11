@@ -1,0 +1,277 @@
+﻿@model ProMaster.Core.Property.ViewModels.PropertyMarketingViewModel
+
+@{
+    ViewBag.Title = "Marketing Management";
+}
+
+
+<div class="content-wrapper">
+    <aside>
+        <p>
+            <!-- Left Panel/Column -->
+            <div id="left">
+
+                <div class="side_title-logo">
+                    <img src="@Url.Content("~/Content/Images/marketing.png")" alt="" title="Manage" />
+
+                </div>
+                <div class="side_title_caption metro">
+                    <h3>Marketing & Listing</h3>
+                    <br>
+                    <span>Manage and marketing your properties listing.</span>
+                    <br /><br />
+                    <span><i class="icon-new-tab rss_color"></i> Quick Access</span>
+                    <div class="side-widget">
+                        <a href="@Url.Content("~/Tools/Messaging")" title="Messaging"><div class="tile amarelo" id="p1"><span><i class="fa fa-envelope-o"></i></span><br /><br /> Messaging</div></a>
+                        <a href="@Url.Content("~/Tools/Calendar")" title="Calendar"><div class="tile vermelho" id="p2"><span><i class="fa fa-calendar-o"></i></span><br /><br /> Calendar</div></a>
+                        <a href="@Url.Content("~/Tools/Resources")" title="Resources"><div class="tile metro_dark_blue" id="p3"><span><i class="fa fa-user"></i></span><br /><br /> Resources</div></a>
+                        <a href="@Url.Content("~/Tools/DocTool")" title="Document Tools"><div class="tile purple" id="p4"><span><i class="icon-clipboard-2"></i></span><br /><br /> Document Tools</div></a>
+                    </div>
+                </div>
+            </div> <!-- End of left -->
+        </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+    </aside> <!-- End of aside -->
+
+    <div class="main metro">	
+    	<div id="manage-tabs" class="tabs-style">
+          <ul>
+            <li><a href="#tabs-1"><i class="icon-home"></i> <span>Pre-listing</span></a></li>
+            <li><a href="#tabs-2"><i class="icon-home"></i> Listed </a></li> 
+            <li><a href="#tabs-3"><i class="icon-home"></i> Rented </a></li>           
+          </ul>
+  		  <div id="tabs-1">          
+          	<p></p>
+    		<p>The properties in pre-listing status are in the process of negotiating management contract with the owners.</p>
+            <p></p>
+            <table>
+            <thead>
+            	<tr>
+                	<td colspan="6" class="table-h asphalt">
+                    <span><i class="fa fa-th-list"></i></span> Property List
+                    </td>                    
+                </tr>	
+            </thead>
+            	<tr>
+                	<th>ID &nbsp;</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Type</th> 
+                    <th>Added</th>
+                    <th></th> 
+                                      
+                </tr>
+                
+                @if (Model.PendingProperty.Count() != 0)
+                { 
+                    foreach (var item in Model.PendingProperty)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PropertyId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PropertyName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PropertyDesc)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PropertyType)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CreateDate)
+                            </td>
+                        
+                            <td>
+                    	                <div class="table-button"><a href="@Url.Action("ListingPublish", "Tools", new { id = item.PropertyId })" id="publish"><img src="@Url.Content("~/Content/Images/publish.png")" title="Update" /></a></div>	
+                            </td>
+                         </tr>  
+                    }
+                    
+                }
+                else
+                {
+                   <tr>
+                       <td colspan="6">No records.</td>
+                   </tr>     
+                }
+            
+                
+                <tfoot>
+                	<tr>
+                        <td colspan="6"><span><i class="fa fa-th"></i></span></td>
+                        
+                	</tr>                
+                </tfoot>
+            </table>
+            <div class="more">
+                @if (Model.PendingProperty.Count() > 10)
+                { 
+                    <a href="@Url.Content("~/Manage/AllPropertiesByPmId")">More...</a>
+                }
+            </div>
+  		  </div>
+
+          <div id="tabs-2">          
+          	<p></p>
+    		<p>The properties in listing status are listed for public and ready for rent.</p>
+            <p></p>
+            <table>
+            <thead>
+            	<tr>
+                	<td colspan="6" class="table-h asphalt">
+                    <span><i class="fa fa-th-list"></i></span> Property List
+                    </td>                    
+                </tr>	
+            </thead>
+            	<tr>
+                	<th>ID &nbsp;</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Type</th> 
+                    <th>Added</th>
+                    <th></th> 
+                                      
+                </tr>
+                
+                 
+                @if (Model.PropertiesForRent.Count() != 0)
+                {
+            
+                    foreach (var item in Model.PropertiesForRent)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PropertyId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PropertyName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PropertyDesc)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PropertyType)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CreateDate)
+                            </td>
+
+                        
+                            <td>
+                    	                <div class="table-button"><a href="@Url.Action("PropertyUpdate", "Tools", new { id = item.PropertyId })"><img src="@Url.Content("~/Content/Images/update.png")" title="Update" /></a></div>	
+                            </td>
+                         </tr>  
+                    }
+                }
+                else
+                {
+                   <tr>
+                       <td colspan="6">No records.</td>
+                   </tr> 
+                }
+                <tfoot>
+                	<tr>
+                        <td colspan="6"><span><i class="fa fa-th"></i></span></td>                        
+                	</tr>                
+                </tfoot>
+            </table>
+            <div class="more">
+                @if (Model.PropertiesForRent.Count() > 10)
+                { 
+                    <a href="@Url.Content("~/Manage/AllPropertiesByPmId")">More...</a>
+                }
+            </div>
+            
+          </div>
+
+          <div id="tabs-3">            
+          	<p></p>
+    		<p>The properties in rented status are occupied by tenants under lease agreements.</p>
+            <p>The status is updated when the current lease expires and the property is back to the market.</p>
+            <p></p>
+            <table>
+            <thead>
+            	<tr>
+                	<td colspan="6" class="table-h asphalt">
+                    <span><i class="fa fa-th-list"></i></span> Property List
+                    </td>                    
+                </tr>	
+            </thead>
+            	<tr>
+                	<th>ID &nbsp;</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Type</th> 
+                    <th>Added</th>
+                    <th></th> 
+                                    
+                </tr>
+                
+                
+            
+                 @if (Model.RentedPropertyList.Count() != 0)
+                {
+            
+                    foreach (var item in Model.RentedPropertyList)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PropertyId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PropertyName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PropertyDesc)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PropertyType)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CreateDate)
+                            </td>
+
+                        
+                            <td>
+                    	                <div class="table-button"><a href="@Url.Action("PropertyDetails", "Manage", new { id = item.PropertyId })"><img src="@Url.Content("~/Content/Images/details.png")" title="Update" /></a></div>	
+                            </td>
+                         </tr>  
+                    }
+                }
+                else
+                {
+                   <tr>
+                       <td colspan="6">No records.</td>
+                   </tr> 
+                }
+                <tfoot>
+                	<tr>
+                        <td colspan="6"><span><i class="fa fa-th"></i></span></td>
+                        
+                	</tr>                
+                </tfoot>
+            </table>
+            <div class="more">
+                @if (Model.RentedPropertyList.Count() > 10)
+                { 
+                    <a href="@Url.Content("~/Manage/AllPropertiesByPmId")">More...</a>
+                }
+            </div>
+            
+          </div>
+          
+		</div>    
+    </div> <!-- End of main -->
+    
+
+</div><!-- End of content-wrapper -->
+
+
+<script type="text/javascript">
+    $(function () {
+        $("#manage-tabs").tabs();
+    });
+</script>

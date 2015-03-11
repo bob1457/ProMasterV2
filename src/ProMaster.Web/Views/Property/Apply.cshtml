@@ -1,0 +1,167 @@
+﻿@model ProMaster.Core.Property.ViewModels.CreateApplicationViewModel
+
+@{
+    ViewBag.Title = "Apply";
+}
+
+<h2>Apply</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>CreateApplicationViewModel</legend>
+
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ApplicantFirstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ApplicantFirstName)
+            @Html.ValidationMessageFor(model => model.ApplicantFirstName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ApplicantLastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ApplicantLastName)
+            @Html.ValidationMessageFor(model => model.ApplicantLastName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SIN)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SIN)
+            @Html.ValidationMessageFor(model => model.SIN)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CurrentAddress)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.CurrentAddress)
+            @Html.ValidationMessageFor(model => model.CurrentAddress)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PreviousAddress)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.PreviousAddress)
+            @Html.ValidationMessageFor(model => model.CurrentAddress)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ApplicantContactEmail)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ApplicantContactEmail)
+            @Html.ValidationMessageFor(model => model.ApplicantContactEmail)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ApplicatnContactTel)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ApplicatnContactTel)
+            @Html.ValidationMessageFor(model => model.ApplicatnContactTel)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NumberOfOccupants)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.NumberOfOccupants)
+            @Html.ValidationMessageFor(model => model.NumberOfOccupants)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NumberOfChildren)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.NumberOfChildren)
+            @Html.ValidationMessageFor(model => model.NumberOfChildren)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CurrentEmployerContact)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CurrentEmployerContact)
+            @Html.ValidationMessageFor(model => model.CurrentEmployerContact)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PreviousEmployerContact)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PreviousEmployerContact)
+            @Html.ValidationMessageFor(model => model.CurrentEmployerContact)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CurrentLandlordContact)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CurrentLandlordContact)
+            @Html.ValidationMessageFor(model => model.CurrentLandlordContact)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PrevioustLandlordContact)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PrevioustLandlordContact)
+            @Html.ValidationMessageFor(model => model.CurrentLandlordContact)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MonthlyIncome)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.MonthlyIncome)
+            @Html.ValidationMessageFor(model => model.MonthlyIncome)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AuthorizedRefCheck)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AuthorizedRefCheck)
+            @Html.ValidationMessageFor(model => model.AuthorizedRefCheck)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdenticationAvailable)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IdenticationAvailable)
+            @Html.ValidationMessageFor(model => model.IdenticationAvailable)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CreditScore)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CreditScore)
+            @Html.ValidationMessageFor(model => model.CreditScore)
+        </div>
+
+        
+        
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

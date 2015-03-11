@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProMasterLeaseDataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="ProMasterLeaseDataEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Addenda" EntityType="ProMasterLeaseDataModel.Addendum" />
+    <EntitySet Name="Leases" EntityType="ProMasterLeaseDataModel.Lease" />
+    <EntitySet Name="LeaseTerms" EntityType="ProMasterLeaseDataModel.LeaseTerm" />
+    <EntitySet Name="Properties" EntityType="ProMasterLeaseDataModel.Property" />
+    <EntitySet Name="Tenants" EntityType="ProMasterLeaseDataModel.Tenant" />
+    <AssociationSet Name="FK_Addendum_Lease" Association="ProMasterLeaseDataModel.FK_Addendum_Lease">
+      <End Role="Lease" EntitySet="Leases" />
+      <End Role="Addendum" EntitySet="Addenda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lease_LeaseTerm" Association="ProMasterLeaseDataModel.FK_Lease_LeaseTerm">
+      <End Role="LeaseTerm" EntitySet="LeaseTerms" />
+      <End Role="Lease" EntitySet="Leases" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lease_Property" Association="ProMasterLeaseDataModel.FK_Lease_Property">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="Lease" EntitySet="Leases" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Addendum">
+    <Key>
+      <PropertyRef Name="AddendumId" />
+    </Key>
+    <Property Name="AddendumId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AddendumContent" Type="Binary" Nullable="false" MaxLength="500" FixedLength="false" />
+    <Property Name="LeaseId" Type="Int32" Nullable="false" />
+    <Property Name="AddendumDocUrl" Type="Binary" MaxLength="100" FixedLength="false" />
+    <NavigationProperty Name="Lease" Relationship="ProMasterLeaseDataModel.FK_Addendum_Lease" FromRole="Addendum" ToRole="Lease" />
+  </EntityType>
+  <EntityType Name="Lease">
+    <Key>
+      <PropertyRef Name="LeaseId" />
+    </Key>
+    <Property Name="LeaseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LeaseTitle" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LeaseDesc" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+    <Property Name="PropertyId" Type="Int32" Nullable="false" />
+    <Property Name="LeaseStartDate" Type="DateTime" Nullable="false" />
+    <Property Name="LeaseEndDate" Type="DateTime" Nullable="false" />
+    <Property Name="LeaseTermId" Type="Int32" Nullable="false" />
+    <Property Name="RentFrequency" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="RentAmount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="RentDueOn" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="DamageDepositAmount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="PetDepositAmount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="LeaseSignDate" Type="DateTime" Nullable="false" />
+    <Property Name="LeaseAgreementDocUrl" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Addendum" Type="Boolean" Nullable="false" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" />
+    <Property Name="UpdateDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Addenda" Relationship="ProMasterLeaseDataModel.FK_Addendum_Lease" FromRole="Lease" ToRole="Addendum" />
+    <NavigationProperty Name="LeaseTerm" Relationship="ProMasterLeaseDataModel.FK_Lease_LeaseTerm" FromRole="Lease" ToRole="LeaseTerm" />
+    <NavigationProperty Name="Property" Relationship="ProMasterLeaseDataModel.FK_Lease_Property" FromRole="Lease" ToRole="Property" />
+  </EntityType>
+  <EntityType Name="LeaseTerm">
+    <Key>
+      <PropertyRef Name="LeaseTermId" />
+    </Key>
+    <Property Name="LeaseTermId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LeaaseTerm" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Leases" Relationship="ProMasterLeaseDataModel.FK_Lease_LeaseTerm" FromRole="LeaseTerm" ToRole="Lease" />
+  </EntityType>
+  <EntityType Name="Property">
+    <Key>
+      <PropertyRef Name="PropertyId" />
+    </Key>
+    <Property Name="PropertyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PropertyName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="PropertyDesc" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="PropertyTypeId" Type="Int32" Nullable="false" />
+    <Property Name="PropertyAddressId" Type="Int32" Nullable="false" />
+    <Property Name="PropertyFeatureId" Type="Int32" Nullable="false" />
+    <Property Name="PropertyFacilityId" Type="Int32" Nullable="false" />
+    <Property Name="PropertyOwnerId" Type="Int32" Nullable="false" />
+    <Property Name="PropertyManagerId" Type="Int32" Nullable="false" />
+    <Property Name="PropertyImgUrl" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="PropertyVideoUrl" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="PropertyBuildYear" Type="Int32" Nullable="false" />
+    <Property Name="PropertyRentalStatusId" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsShared" Type="Boolean" Nullable="false" />
+    <Property Name="RentalStatusId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+    <Property Name="UpdateDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Leases" Relationship="ProMasterLeaseDataModel.FK_Lease_Property" FromRole="Property" ToRole="Lease" />
+  </EntityType>
+  <EntityType Name="Tenant">
+    <Key>
+      <PropertyRef Name="TenantId" />
+    </Key>
+    <Property Name="TenantId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ContactEmail" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ContactTelephone1" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="ContactTelephone2" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="OnlineAccessEnbaled" Type="Boolean" Nullable="false" />
+    <Property Name="UserAvartaImgUrl" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="LeaseId" Type="Int32" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="ManagedBy" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" />
+    <Property Name="UpdateDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Addendum_Lease">
+    <End Role="Lease" Type="ProMasterLeaseDataModel.Lease" Multiplicity="1" />
+    <End Role="Addendum" Type="ProMasterLeaseDataModel.Addendum" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lease">
+        <PropertyRef Name="LeaseId" />
+      </Principal>
+      <Dependent Role="Addendum">
+        <PropertyRef Name="LeaseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lease_LeaseTerm">
+    <End Role="LeaseTerm" Type="ProMasterLeaseDataModel.LeaseTerm" Multiplicity="1" />
+    <End Role="Lease" Type="ProMasterLeaseDataModel.Lease" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LeaseTerm">
+        <PropertyRef Name="LeaseTermId" />
+      </Principal>
+      <Dependent Role="Lease">
+        <PropertyRef Name="LeaseTermId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lease_Property">
+    <End Role="Property" Type="ProMasterLeaseDataModel.Property" Multiplicity="1" />
+    <End Role="Lease" Type="ProMasterLeaseDataModel.Lease" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="Lease">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

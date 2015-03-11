@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PromMasterVendorDataModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="PromMasterVendorDataEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="Properties" EntityType="PromMasterVendorDataModel.Property" />
+    <EntitySet Name="WorkOrderTypes" EntityType="PromMasterVendorDataModel.WorkOrderType" />
+    <EntitySet Name="VendorSpecialties" EntityType="PromMasterVendorDataModel.VendorSpecialty" />
+    <EntitySet Name="WorkOrderStatus" EntityType="PromMasterVendorDataModel.WorkOrderStatu" />
+    <EntitySet Name="WorkOrderCategories" EntityType="PromMasterVendorDataModel.WorkOrderCategory" />
+    <EntitySet Name="WorkOrders" EntityType="PromMasterVendorDataModel.WorkOrder" />
+    <AssociationSet Name="FK_WorkOrder_Property" Association="PromMasterVendorDataModel.FK_WorkOrder_Property">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="WorkOrder" EntitySet="WorkOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrder_WorkOrderCategory" Association="PromMasterVendorDataModel.FK_WorkOrder_WorkOrderCategory">
+      <End Role="WorkOrderCategory" EntitySet="WorkOrderCategories" />
+      <End Role="WorkOrder" EntitySet="WorkOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrder_WorkOrderStatus" Association="PromMasterVendorDataModel.FK_WorkOrder_WorkOrderStatus">
+      <End Role="WorkOrderStatu" EntitySet="WorkOrderStatus" />
+      <End Role="WorkOrder" EntitySet="WorkOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrder_WorkOrderType" Association="PromMasterVendorDataModel.FK_WorkOrder_WorkOrderType">
+      <End Role="WorkOrderType" EntitySet="WorkOrderTypes" />
+      <End Role="WorkOrder" EntitySet="WorkOrders" />
+    </AssociationSet>
+    <EntitySet Name="Vendors" EntityType="PromMasterVendorDataModel.Vendor" />
+    <AssociationSet Name="FK_Vendor_VendorSpecialty" Association="PromMasterVendorDataModel.FK_Vendor_VendorSpecialty">
+      <End Role="VendorSpecialty" EntitySet="VendorSpecialties" />
+      <End Role="Vendor" EntitySet="Vendors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrder_Vendor" Association="PromMasterVendorDataModel.FK_WorkOrder_Vendor">
+      <End Role="Vendor" EntitySet="Vendors" />
+      <End Role="WorkOrder" EntitySet="WorkOrders" />
+    </AssociationSet>
+    <EntitySet Name="Documents" EntityType="PromMasterVendorDataModel.Document" />
+    <EntitySet Name="DocumentPrincipalTypes" EntityType="PromMasterVendorDataModel.DocumentPrincipalType" />
+    <EntitySet Name="DocumentTypes" EntityType="PromMasterVendorDataModel.DocumentType" />
+    <AssociationSet Name="FK_Document_DocumentPrincipalType" Association="PromMasterVendorDataModel.FK_Document_DocumentPrincipalType">
+      <End Role="DocumentPrincipalType" EntitySet="DocumentPrincipalTypes" />
+      <End Role="Document" EntitySet="Documents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Document_DocumentType" Association="PromMasterVendorDataModel.FK_Document_DocumentType">
+      <End Role="DocumentType" EntitySet="DocumentTypes" />
+      <End Role="Document" EntitySet="Documents" />
+    </AssociationSet>
+    <EntitySet Name="CostCategories" EntityType="PromMasterVendorDataModel.CostCategory" />
+    <EntitySet Name="OtherCosts" EntityType="PromMasterVendorDataModel.OtherCost" />
+    <AssociationSet Name="FK_Cost_CostCategory" Association="PromMasterVendorDataModel.FK_Cost_CostCategory">
+      <End Role="CostCategory" EntitySet="CostCategories" />
+      <End Role="OtherCost" EntitySet="OtherCosts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cost_Property" Association="PromMasterVendorDataModel.FK_Cost_Property">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="OtherCost" EntitySet="OtherCosts" />
+    </AssociationSet>
+    <EntitySet Name="PropertyAddresses" EntityType="PromMasterVendorDataModel.PropertyAddress" />
+    <AssociationSet Name="FK_Property_PropertyAddress" Association="PromMasterVendorDataModel.FK_Property_PropertyAddress">
+      <End Role="PropertyAddress" EntitySet="PropertyAddresses" />
+      <End Role="Property" EntitySet="Properties" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Property">
+    <Key>
+      <PropertyRef Name="PropertyId" />
+    </Key>
+    <Property Name="PropertyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="PropertyName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="PropertyDesc" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="PropertyTypeId" Type="Int32" Nullable="false" />
+    <Property Name="PropertyAddressId" Type="Int32" Nullable="false" />
+    <Property Name="PropertyFeatureId" Type="Int32" Nullable="false" />
+    <Property Name="PropertyFacilityId" Type="Int32" Nullable="false" />
+    <Property Name="PropertyOwnerId" Type="Int32" Nullable="false" />
+    <Property Name="PropertyManagerId" Type="Int32" Nullable="false" />
+    <Property Name="PropertyImgUrl" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="PropertyVideoUrl" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="PropertyBuildYear" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsShared" Type="Boolean" Nullable="false" />
+    <Property Name="RentalStatusId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="UpdateDate" Type="DateTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="WorkOrders" Relationship="PromMasterVendorDataModel.FK_WorkOrder_Property" FromRole="Property" ToRole="WorkOrder" />
+    <Property Type="Int32" Name="StrataCouncilId" />
+    <NavigationProperty Name="OtherCosts" Relationship="PromMasterVendorDataModel.FK_Cost_Property" FromRole="Property" ToRole="OtherCost" />
+    <Property Type="String" Name="PropertyListDesc" MaxLength="450" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="PropertyMgmntlStatusId" Nullable="false" />
+    <NavigationProperty Name="PropertyAddress" Relationship="PromMasterVendorDataModel.FK_Property_PropertyAddress" FromRole="Property" ToRole="PropertyAddress" />
+  </EntityType>
+  <EntityType Name="WorkOrderType">
+    <Key>
+      <PropertyRef Name="WorkOrderTypeId" />
+    </Key>
+    <Property Type="Int32" Name="WorkOrderTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="WorkOrderTypeName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="WorkOrders" Relationship="PromMasterVendorDataModel.FK_WorkOrder_WorkOrderType" FromRole="WorkOrderType" ToRole="WorkOrder" />
+  </EntityType>
+  <EntityType Name="VendorSpecialty">
+    <Key>
+      <PropertyRef Name="VendorSpecialtyId" />
+    </Key>
+    <Property Type="Int32" Name="VendorSpecialtyId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="VendorSpecialtyName" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Vendors" Relationship="PromMasterVendorDataModel.FK_Vendor_VendorSpecialty" FromRole="VendorSpecialty" ToRole="Vendor" />
+  </EntityType>
+  <EntityType Name="WorkOrderStatu">
+    <Key>
+      <PropertyRef Name="WorkOrderStatusId" />
+    </Key>
+    <Property Type="Int32" Name="WorkOrderStatusId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="WorkOrderStatus" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="WorkOrders" Relationship="PromMasterVendorDataModel.FK_WorkOrder_WorkOrderStatus" FromRole="WorkOrderStatu" ToRole="WorkOrder" />
+  </EntityType>
+  <EntityType Name="WorkOrderCategory">
+    <Key>
+      <PropertyRef Name="WorkOrderCategoryId" />
+    </Key>
+    <Property Type="Int32" Name="WorkOrderCategoryId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="CategoryName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="WorkOrders" Relationship="PromMasterVendorDataModel.FK_WorkOrder_WorkOrderCategory" FromRole="WorkOrderCategory" ToRole="WorkOrder" />
+  </EntityType>
+  <EntityType Name="WorkOrder">
+    <Key>
+      <PropertyRef Name="WorkOrderId" />
+    </Key>
+    <Property Type="Int32" Name="WorkOrderId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="WorkOrderName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="WorkOrderDetails" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="WorkOrderCategoryId" Nullable="false" />
+    <Property Type="Int32" Name="PropertyId" Nullable="false" />
+    <Property Type="Int32" Name="VendorId" Nullable="false" />
+    <Property Type="Int32" Name="WorkOrderTypeId" Nullable="false" />
+    <Property Type="Decimal" Name="InvoiceAmount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="InvoiceDocUrl" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="InvoiceDate" Nullable="false" Precision="7" />
+    <Property Type="DateTime" Name="StartDate" Nullable="false" Precision="7" />
+    <Property Type="DateTime" Name="EndDate" Nullable="false" Precision="7" />
+    <Property Type="Boolean" Name="IsAuthorized" Nullable="false" />
+    <Property Type="Int32" Name="WorkOrderStatusId" Nullable="false" />
+    <Property Type="Boolean" Name="IsPaid" Nullable="false" />
+    <Property Type="DateTime" Name="PaymentDate" Nullable="false" Precision="7" />
+    <Property Type="DateTime" Name="RecordCreationDate" Nullable="false" Precision="7" />
+    <NavigationProperty Name="Property" Relationship="PromMasterVendorDataModel.FK_WorkOrder_Property" FromRole="WorkOrder" ToRole="Property" />
+    <NavigationProperty Name="WorkOrderCategory" Relationship="PromMasterVendorDataModel.FK_WorkOrder_WorkOrderCategory" FromRole="WorkOrder" ToRole="WorkOrderCategory" />
+    <NavigationProperty Name="WorkOrderStatu" Relationship="PromMasterVendorDataModel.FK_WorkOrder_WorkOrderStatus" FromRole="WorkOrder" ToRole="WorkOrderStatu" />
+    <NavigationProperty Name="WorkOrderType" Relationship="PromMasterVendorDataModel.FK_WorkOrder_WorkOrderType" FromRole="WorkOrder" ToRole="WorkOrderType" />
+    <Property Type="String" Name="PaymentMethod" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="RecordUpdateDate" Precision="7" />
+    <Property Type="Decimal" Name="PaymentAmount" Precision="18" Scale="2" />
+    <NavigationProperty Name="Vendor" Relationship="PromMasterVendorDataModel.FK_WorkOrder_Vendor" FromRole="WorkOrder" ToRole="Vendor" />
+  </EntityType>
+  <Association Name="FK_WorkOrder_Property">
+    <End Type="PromMasterVendorDataModel.Property" Role="Property" Multiplicity="1" />
+    <End Type="PromMasterVendorDataModel.WorkOrder" Role="WorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="WorkOrder">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrder_WorkOrderCategory">
+    <End Type="PromMasterVendorDataModel.WorkOrderCategory" Role="WorkOrderCategory" Multiplicity="1" />
+    <End Type="PromMasterVendorDataModel.WorkOrder" Role="WorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkOrderCategory">
+        <PropertyRef Name="WorkOrderCategoryId" />
+      </Principal>
+      <Dependent Role="WorkOrder">
+        <PropertyRef Name="WorkOrderCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrder_WorkOrderStatus">
+    <End Type="PromMasterVendorDataModel.WorkOrderStatu" Role="WorkOrderStatu" Multiplicity="1" />
+    <End Type="PromMasterVendorDataModel.WorkOrder" Role="WorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkOrderStatu">
+        <PropertyRef Name="WorkOrderStatusId" />
+      </Principal>
+      <Dependent Role="WorkOrder">
+        <PropertyRef Name="WorkOrderStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrder_WorkOrderType">
+    <End Type="PromMasterVendorDataModel.WorkOrderType" Role="WorkOrderType" Multiplicity="1" />
+    <End Type="PromMasterVendorDataModel.WorkOrder" Role="WorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkOrderType">
+        <PropertyRef Name="WorkOrderTypeId" />
+      </Principal>
+      <Dependent Role="WorkOrder">
+        <PropertyRef Name="WorkOrderTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Vendor">
+    <Key>
+      <PropertyRef Name="VendorId" />
+    </Key>
+    <Property Type="Int32" Name="VendorId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="VendorBusinessName" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="VendorDesc" MaxLength="450" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="VendorSpecialtyId" Nullable="false" />
+    <Property Type="String" Name="VendorContactTelephone1" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="VendorContactTelephone2" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="VendorContactEmail" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Int32" Name="RoleId" Nullable="false" />
+    <Property Type="Boolean" Name="OnlineAccessEnbaled" Nullable="false" />
+    <Property Type="String" Name="UserAvartaImgUrl" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="7" />
+    <Property Type="DateTime" Name="UpdateDate" Nullable="false" Precision="7" />
+    <NavigationProperty Name="VendorSpecialty" Relationship="PromMasterVendorDataModel.FK_Vendor_VendorSpecialty" FromRole="Vendor" ToRole="VendorSpecialty" />
+    <NavigationProperty Name="WorkOrders" Relationship="PromMasterVendorDataModel.FK_WorkOrder_Vendor" FromRole="Vendor" ToRole="WorkOrder" />
+  </EntityType>
+  <Association Name="FK_Vendor_VendorSpecialty">
+    <End Type="PromMasterVendorDataModel.VendorSpecialty" Role="VendorSpecialty" Multiplicity="1" />
+    <End Type="PromMasterVendorDataModel.Vendor" Role="Vendor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VendorSpecialty">
+        <PropertyRef Name="VendorSpecialtyId" />
+      </Principal>
+      <Dependent Role="Vendor">
+        <PropertyRef Name="VendorSpecialtyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrder_Vendor">
+    <End Type="PromMasterVendorDataModel.Vendor" Role="Vendor" Multiplicity="1" />
+    <End Type="PromMasterVendorDataModel.WorkOrder" Role="WorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vendor">
+        <PropertyRef Name="VendorId" />
+      </Principal>
+      <Dependent Role="WorkOrder">
+        <PropertyRef Name="VendorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Document">
+    <Key>
+      <PropertyRef Name="DocumentId" />
+    </Key>
+    <Property Type="Int32" Name="DocumentId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="DocumentTypeId" Nullable="false" />
+    <Property Type="String" Name="DocumentName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DcoumentDetails" Nullable="false" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="DocumentPrincipalTypeId" Nullable="false" />
+    <Property Type="Int32" Name="DocumentPrincipalId" Nullable="false" />
+    <Property Type="String" Name="DocumentUrl" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="7" />
+    <Property Type="DateTime" Name="UpdateDate" Nullable="false" Precision="7" />
+    <NavigationProperty Name="DocumentPrincipalType" Relationship="PromMasterVendorDataModel.FK_Document_DocumentPrincipalType" FromRole="Document" ToRole="DocumentPrincipalType" />
+    <NavigationProperty Name="DocumentType" Relationship="PromMasterVendorDataModel.FK_Document_DocumentType" FromRole="Document" ToRole="DocumentType" />
+  </EntityType>
+  <EntityType Name="DocumentPrincipalType">
+    <Key>
+      <PropertyRef Name="DocumentPrincipalTypeId" />
+    </Key>
+    <Property Type="Int32" Name="DocumentPrincipalTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="DocumentPrincipalType1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Documents" Relationship="PromMasterVendorDataModel.FK_Document_DocumentPrincipalType" FromRole="DocumentPrincipalType" ToRole="Document" />
+  </EntityType>
+  <EntityType Name="DocumentType">
+    <Key>
+      <PropertyRef Name="DocumentTypeId" />
+    </Key>
+    <Property Type="Int32" Name="DocumentTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="DocumentType1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Documents" Relationship="PromMasterVendorDataModel.FK_Document_DocumentType" FromRole="DocumentType" ToRole="Document" />
+  </EntityType>
+  <Association Name="FK_Document_DocumentPrincipalType">
+    <End Type="PromMasterVendorDataModel.DocumentPrincipalType" Role="DocumentPrincipalType" Multiplicity="1" />
+    <End Type="PromMasterVendorDataModel.Document" Role="Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentPrincipalType">
+        <PropertyRef Name="DocumentPrincipalTypeId" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="DocumentPrincipalTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Document_DocumentType">
+    <End Type="PromMasterVendorDataModel.DocumentType" Role="DocumentType" Multiplicity="1" />
+    <End Type="PromMasterVendorDataModel.Document" Role="Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentType">
+        <PropertyRef Name="DocumentTypeId" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="DocumentTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="CostCategory">
+    <Key>
+      <PropertyRef Name="CostCategoryId" />
+    </Key>
+    <Property Type="Int32" Name="CostCategoryId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="CostCategoryName" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="OtherCosts" Relationship="PromMasterVendorDataModel.FK_Cost_CostCategory" FromRole="CostCategory" ToRole="OtherCost" />
+  </EntityType>
+  <EntityType Name="OtherCost">
+    <Key>
+      <PropertyRef Name="OtherCostId" />
+    </Key>
+    <Property Type="Int32" Name="OtherCostId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="CostName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CostDesc" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="CostCategoryId" Nullable="false" />
+    <Property Type="Decimal" Name="CostAmount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Boolean" Name="IsPaid" Nullable="false" />
+    <Property Type="Int32" Name="PropertyId" Nullable="false" />
+    <Property Type="DateTime" Name="CostAddedDate" Nullable="false" Precision="7" />
+    <NavigationProperty Name="CostCategory" Relationship="PromMasterVendorDataModel.FK_Cost_CostCategory" FromRole="OtherCost" ToRole="CostCategory" />
+    <NavigationProperty Name="Property" Relationship="PromMasterVendorDataModel.FK_Cost_Property" FromRole="OtherCost" ToRole="Property" />
+    <Property Type="String" Name="CostInvoiceDocUrl" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CostUpdateDate" Precision="7" />
+  </EntityType>
+  <Association Name="FK_Cost_CostCategory">
+    <End Type="PromMasterVendorDataModel.CostCategory" Role="CostCategory" Multiplicity="1" />
+    <End Type="PromMasterVendorDataModel.OtherCost" Role="OtherCost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CostCategory">
+        <PropertyRef Name="CostCategoryId" />
+      </Principal>
+      <Dependent Role="OtherCost">
+        <PropertyRef Name="CostCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cost_Property">
+    <End Type="PromMasterVendorDataModel.Property" Role="Property" Multiplicity="1" />
+    <End Type="PromMasterVendorDataModel.OtherCost" Role="OtherCost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="OtherCost">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="PropertyAddress">
+    <Key>
+      <PropertyRef Name="PropertyAddressId" />
+    </Key>
+    <Property Name="PropertyAddressId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="PropertySuiteNumber" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="PropertyNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="PropertyStreet" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PropertyCity" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="PropertyStateProvince" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="PropertyCountry" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="PropertyZipPostCode" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="GPSLongitudeValue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GPSLatitudeValue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Properties" Relationship="PromMasterVendorDataModel.FK_Property_PropertyAddress" FromRole="PropertyAddress" ToRole="Property" />
+  </EntityType>
+  <Association Name="FK_Property_PropertyAddress">
+    <End Type="PromMasterVendorDataModel.PropertyAddress" Role="PropertyAddress" Multiplicity="1" />
+    <End Type="PromMasterVendorDataModel.Property" Role="Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyAddress">
+        <PropertyRef Name="PropertyAddressId" />
+      </Principal>
+      <Dependent Role="Property">
+        <PropertyRef Name="PropertyAddressId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

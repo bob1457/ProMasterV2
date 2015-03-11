@@ -1,0 +1,191 @@
+﻿@model ProMaster.Core.Lease.ViewModels.EditLeaseViewModel
+
+@{
+    ViewBag.Title = "EditLease";
+}
+
+<h2>EditLease</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>CreateLeaseViewModel</legend>
+
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LeaseTitle)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LeaseTitle)
+            @Html.ValidationMessageFor(model => model.LeaseTitle)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LeaseDesc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LeaseDesc)
+            @Html.ValidationMessageFor(model => model.LeaseDesc)
+        </div>
+
+        <div id = "tenant2">
+            <a href="" id="addtnt">Add New Tenant</a> 
+        </div>
+        <div id = "cancel">
+            <a href="" id="cls">Cancel</a> 
+        </div>
+        <br />
+
+        <div id="newlist" >          
+            @Html.DropDownListFor(model => model.TenantId, Model.TenantList, "--Select Tenant--")
+        
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LeaseStartDate)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.LeaseStartDate, new { @class = "datepicker", @Value = Model.LeaseStartDate })
+            @Html.ValidationMessageFor(model => model.LeaseStartDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LeaseEndDate)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.LeaseEndDate, new { @class = "datepicker", @Value = Model.LeaseEndDate })
+            @Html.ValidationMessageFor(model => model.LeaseEndDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LeaseTermList)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.LeaseTermId, Model.LeaseTermList)
+            @Html.ValidationMessageFor(model => model.RentFrequency)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RentFrequency)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RentFrequency)
+            @Html.ValidationMessageFor(model => model.RentFrequency)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RentAmount)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RentAmount)
+            @Html.ValidationMessageFor(model => model.RentAmount)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DamageDepositAmount)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DamageDepositAmount)
+            @Html.ValidationMessageFor(model => model.DamageDepositAmount)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PetDepositAmount)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PetDepositAmount)
+            @Html.ValidationMessageFor(model => model.PetDepositAmount)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RentDueOn)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RentDueOn)
+            @Html.ValidationMessageFor(model => model.RentDueOn)
+        </div>        
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Addendum)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Addendum)
+            @Html.ValidationMessageFor(model => model.Addendum)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LeaseUpdateDate)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.LeaseUpdateDate)
+            
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Notes)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Notes)
+            
+        </div>
+        
+
+ <!-- 
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OnLineAccessEnabled)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OnLineAccessEnabled)
+            @Html.ValidationMessageFor(model => model.OnLineAccessEnabled)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsActive)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsActive)
+            @Html.ValidationMessageFor(model => model.IsActive)
+        </div>
+-->
+        
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#newlist").hide();
+        $("#cls").hide();
+    });
+
+    $(function () {
+        $(".datepicker").datepicker();
+    });
+
+    $("#tenant2").click(function () {
+        $("#newlist").show();
+        $("#tenant2").hide();
+        $("#cls").show();
+        return false;
+    });
+
+    $("#cls").click(function () {
+        $("#newlist").hide();
+        $("#tenant2").show();
+        $("#cls").hide();
+        return false;
+    });
+</script>

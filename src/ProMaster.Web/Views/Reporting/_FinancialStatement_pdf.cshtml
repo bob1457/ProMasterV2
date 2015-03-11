@@ -1,0 +1,83 @@
+﻿@model ProMaster.Core.Reporting.ViewModels.AccountingCostViewModel
+
+<div id="property">
+    
+                    <div class="title_icon">
+                        <img src="@Url.Content(@Model.PropertyImageUrl)" alt="" title="@Model.PropertyName" />
+                    </div>
+                    <!----> <div class="title_text"><h5>@Html.DisplayFor(model => model.PropertyName)</h5><br /><br />
+                        <span class="title_caption">@Html.DisplayFor(model => model.PropertyDesc)<br /></span>
+                    </div> 
+                    
+                     <div id="addr"><br />
+                        @Html.DisplayFor(model => model.PropertyAddressSuiteNumber)
+                        @Html.DisplayFor(model => model.PropertyAddressStreetNumber)
+                        @Html.DisplayFor(model => model.PropertyAddressStreetName)<br />
+                        @Html.DisplayFor(model => model.PropertyAddressCity),
+                        @Html.DisplayFor(model => model.PropertyAddressProvState)<br />
+                        @Html.DisplayFor(model => model.PropertyAddressPostZipCode)<br />
+                        @Html.DisplayFor(model => model.PropertyAddressCountry)<br />
+                    </div>
+                    
+                
+   
+</div><br />
+<p></p>
+<div id="report_title">Property Financail Statement</div>
+<div id="report_data">
+    
+    Rent Revenue: &nbsp;
+    <div id="revenue">
+        <br /><br />
+            @Html.Partial("_RentRevenue_pdf") 
+        <p></p><br />
+    </div>
+    <span  class="total">$@Model.TotalRentRevenue</span>
+    <br /><br />
+    Costs: &nbsp;
+        <br />Repair Cost:
+        <div id="r_cost"><br /><br />
+            @Html.Partial("_RepairCost_pdf") <p></p><br />
+            
+            <br />
+        </div>
+        <span  class="total">$@Model.TotalRepairCost</span><br />
+        Other (Misc.) Cost:
+        <div id="o_cost">
+            @Html.Partial("_OtherCost_pdf") <p></p><br />
+            
+        </div>
+        <span  class="total">$@Model.TotalOtherCost</span>
+        <br />
+        Management Cost:
+    <div id="m_cost">
+            @Html.Partial("_ManagementFee_pdf") <p></p><br />
+            
+        </div>
+        <span  class="total">$@Model.TotalFee</span>
+        
+        <p></p><br />
+    Total Costs: &nbsp;
+    <span  class="total">$@Model.totalMaintenanceCosts</span>
+        <p></p><br /><br /><br />
+    Net Income: &nbsp;
+    <span  class="total">$@Model.totalNetIncome</span>
+    <p></p><br /><br /><br />
+
+    <p><a class="left-aligned edit_button button_border" id="pdf" href="@Url.Content("~/Reporting/ExportReportPDF/?id=" + @ViewBag.pid + "&tId=4&startDate=" + @ViewBag.start + "&endDate=" + @ViewBag.end)"  target="_blank">Export in PDF</a></p>
+
+</div>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#revenue").hide();
+        $("#r_cost").hide();
+        $("#o_cost").hide();
+        $("#m_cost").hide();
+    });    
+    
+</script>
+
+ 

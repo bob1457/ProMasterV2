@@ -1,0 +1,74 @@
+﻿@model ProMaster.Core.Reporting.ViewModels.AccountingCostViewModel
+
+@{
+    ViewBag.Title = "_RentRevenue";
+}
+
+<h4>Rent Revenue</h4>
+@if (Model.RentRevenueList.Count() != 0)
+{
+    <!--<ul>
+            @foreach (var item in Model.RentRevenueList)
+            { 
+                <li>
+                    @item.RentPaymentId
+                    @item.RentPaymentMonth
+                    @item.RentPamentYear
+                    @item.RentPaymentAmount
+                </li>
+            }
+    
+    </ul>  -->
+    
+     <table>
+                                
+            	                <tr>
+                                    
+                	                <th class="table_th" style="width:2em">ID</th>
+                                    <th class="table_th">Rent Month</th>
+                                    <th class="table_th">Rent Year</th>
+                                    <th class="table_th">Amount</th>                                    
+                                    <th class="table_th">Date</th> 
+                                    <th class="table_th"></th>                  
+                                </tr>
+                                @foreach (var item in Model.RentRevenueList)
+                                {
+                                    <tr>
+                                        
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.RentPaymentId)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.RentPaymentMonth)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.RentPamentYear)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.RentPaymentAmount)
+                                        </td>
+                                         <td>
+                                            @Html.DisplayFor(modelItem => item.PaidDate)
+                                        </td>
+                                        
+                                        <td>
+                    	                    <div class="table-button"><a href="@Url.Action("RentPaymentDetails", "Manage", new { id=item.RentPaymentId })"><img src="@Url.Content("~/Content/Images/details.png")" title="Details" /></a></div>
+                                        </td>
+                                        
+                                     </tr>  
+                                }
+                                <!--<tfoot class="table_th">
+                	                <tr>
+                                        <td colspan="7"><span><i class="icon-clipboard-2"></i></span></td>
+                        
+                	                </tr>                
+                                </tfoot>-->
+                            </table>
+
+    <p></p> 
+    <strong>Total Rent Revenue: $@ViewBag.totalrevenue</strong>
+}
+else
+{
+    <i>No Rent Revenue.</i> 
+}

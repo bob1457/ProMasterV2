@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ProMaster.Core.Tenant.TenantScreening>
+
+@{
+    ViewBag.Title = "StatusUpdate";
+}
+
+<h2>StatusUpdate</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TeancyApplicationId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ScreeningCheckTypeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ScreeningCheckStatusId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ScreenCheckUpdateDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TeancyApplicationId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ScreeningCheckTypeId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ScreeningCheckStatusId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ScreenCheckUpdateDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TenantScreeningId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TenantScreeningId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TenantScreeningId })
+        </td>
+    </tr>
+}
+
+</table>

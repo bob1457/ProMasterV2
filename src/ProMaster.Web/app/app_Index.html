@@ -1,0 +1,341 @@
+﻿<!DOCTYPE html>
+
+<html ng-app="ProMasterMobile" ng-controller="homeController">
+<head>
+    <title>ProMaster v.1.0 - Mobile</title>
+    <link href="/app/content/assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <!-- UI Styles -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- UI Styles -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    
+    <link href="content/styles/bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="content/styles/metro-bootstrap.css" rel="stylesheet" />
+    
+    <link href="content/styles/custom_live-tile.css" rel="stylesheet" />
+
+    <link href="content/styles/Custom_MetroJS.css" rel="stylesheet" />
+
+    <link href="content/styles/metro-bootstrap.css" rel="stylesheet" />
+
+
+    <link href="content/styles/MetroJs.css" rel="stylesheet" />
+
+    <!-- Custom Site Style -->
+    <link href="content/styles/site.css" rel="stylesheet" />
+    
+    <link href="../Content/Styles/dialog.css" rel="stylesheet" />
+    <link href="../Content/Styles/desktop.css" rel="stylesheet" />
+
+</head>
+    <body ng-controller="homeController">
+        
+        <div class="home-container">
+            <div class="container">
+                <div class="row" style="margin-bottom: 1em;">
+                    <div class="col-md-6">
+                        <div id="date">{{day}} {{date}}</div>
+                    </div>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-3 ">
+                        <div class="account_info ">Hello bob, <img src="/app/content/assets/images/user_default.png" height="28" width="28" />&nbsp;<a id="sign_in" href="#" class="cus-btn-xs btn btn-primary" style="color:rgb(249, 255, 0);">LOGIN</a></div>
+                    </div>
+
+                </div>
+            </div>
+            <br />
+
+        </div>
+        
+        <div class="home-container banner metro" >
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4" style="margin-top: -2.75em;">
+                        <div id="logo" class="img-responsive ">
+                            <img src="/app/content/assets/images/logo.png" />
+                        </div>
+                        <div id="tag_line">Your property managenment solution provider</div>
+                    </div>
+                    <div class="col-md-6"></div>
+                    <div id="search_panel" class="col-md-2">
+                        <form id="search" >
+                            <div class=" input-group input-group-sm">
+                                <input type="text" class="center-block form-control input-sm" title="Site search." placeholder="Search...">
+                                <span class="input-group-btn"><button class="btn btn-sm btn-primary" type="button"><i class="fa fa-search"></i></button></span>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6"></div>
+                    <div class="col-lg-6">
+                        <!--<nav class="navbar navbar-default nav-pos" style="border-width: 0;">
+                            
+                            </nav>-->
+                        
+                        <ul id="menu" >
+                            <li class="active"><a href="#"><span class="focus"><!-- <i class="fa fa-home fa-fw"></i>-->HOME</span></a></li>
+                            <li><a href="#">MANAGE</a></li>
+                            <li><a href="#">DOCS</a></li>
+                            <li><a href="#">TOOLS</a></li>
+                            <li><a href="#">REPORT</a></li>
+                            <li><a href="#">ABOUT</a></li>
+                        </ul>
+                       
+
+                    </div>
+                </div>
+               
+
+            </div>
+
+
+
+        </div>
+
+        <div class="wrapper metro">
+            <div class="container" style="background-color: rgb(250, 250, 228);">
+
+                <hr>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="panel panel-default" >
+                            <div class="panel-heading" style="background-image: linear-gradient(to bottom, #00AAAA 0%, #98EAE8 100%); color: rgb(234, 229, 219); text-align: center;text-shadow: 2px 2px 3px #989880;"><h3><i class="fa fa-th-list"></i> &nbsp; Marketplace</h3></div>
+                            <div class="panel-body">
+                                <br />
+                                <div id="msg"></div>
+                                <br/>
+                                <div class="icon_img"><img src="/app/content/assets/images/1.png" /></div>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
+                                Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
+                                dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
+                                Aliquam in felis sit amet augue.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" style="background-image: linear-gradient(to bottom, #E56C19 0, #DCBA90 100%); color: rgb(62, 56, 40); text-align: center;text-shadow: 2px 2px 3px #909085;"><h3><i class="fa fa-user"></i> &nbsp; Ownership</h3></div>
+                            <div class="panel-body">
+                                <div class="icon_img"><img src="/app/content/assets/images/3.png" /></div>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
+                                Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
+                                dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
+                                Aliquam in felis sit amet augue.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" style="background-image: linear-gradient(to bottom, #00C13F 0, #A3DE9E 100%); color: #6F8FD3; text-align: center;text-shadow: 2px 2px 3px #A2A29C;"><h3><i class="icon-user-2"></i> &nbsp;Tenancy</h3></div>
+                            <div class="panel-body">
+                                <div class="icon_img"><img src="/app/content/assets/images/4.png" /></div>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
+                                Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
+                                dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
+                                Aliquam in felis sit amet augue.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" style="background-image: linear-gradient(to bottom, #FF1D77 0, #E97882 100%); color: #CEF77A; text-align: center;text-shadow: 2px 2px 3px #AAAAA0; "><h3><i class="icon-user-3"></i> &nbsp;Management</h3></div>
+                            <div class="panel-body">
+                                <div class="icon_img"><img src="/app/content/assets/images/2.png" /></div>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
+                                Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
+                                dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
+                                Aliquam in felis sit amet augue.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+
+
+            </div>
+            <br /><br />
+        </div>
+
+        <div id="footer">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-pos" id="copyright-info">All rights reserved 2013-{{year}} &#169; &nbsp; <a href="#">MB Technologies, Inc.</a>
+
+                </div>
+                <div class="col-md-4"></div>
+                <div class="col-md-2">
+                    <p class="text-pos" id="footer-info" ><i class="fa fa-facebook-square facebook"></i>  &nbsp;<i class="fa fa-twitter twitter"></i> &nbsp;<i class="fa fa-linkedin-square linkedin_color"></i> &nbsp; <i class="fa fa-google-plus google_p"></i> &nbsp;<i class="fa fa-rss-square rss_color"></i></p>
+
+                </div>
+            </div>
+
+
+            <div class="container">
+
+            </div>
+        </div>
+
+        <!--<input type="text" ng-model="models.helloAngular" />
+            <h1>{{models.helloAngular}}</h1>
+            <br />
+            <ul>
+                <li>
+                    <a href="/#/">Home</a>
+                </li>
+                <li>
+                    <a href="#/RouteOne">Route One</a>
+                </li>
+                <li>
+                    <a href="#/RouteTwo/1">Route Two</a>
+                </li>
+                <li>
+                    <a href="#/About">About</a>
+                </li>
+            </ul>
+            <br />
+            <div ng-view></div>-->
+        <!-- ********************************************************************************************** -->
+        <!--                                     Reference Section                                          -->
+        <!-- ********************************************************************************************** -->
+        <!-- References CDN Links -->
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"></script>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+        <!-- Local References -->
+        <!--<script src="../scripts/bootstrap.js"></script>-->
+
+
+        <script src="../Scripts/jquery.base64.min.js"></script>
+
+        <!-- Application Specific References -->
+        <!-- Controllers -->
+        <script src="controllers/homeController.js"></script>
+
+        <div id="login_form" class="apply_form metro" style="display:none; background-color: #AAAAA0;">
+            <div class="edit_field">
+                <div class="display-label">
+                    User Name:
+                </div>
+                <div class="display-field " >
+                    <input id="uname" type="text" placeholder="User Name" />
+                </div>
+                <div class="display-label">
+                    Password:
+                </div>
+                <div class="display-field " >
+                    <input id="pwd" type="password" placeholder="Password" />
+                </div>
+            
+            </div>
+        </div>
+
+            <!-- ********************************************************************************************** -->
+            <!--                                     AngularJS Modules Section                                  -->
+            <!-- ********************************************************************************************** -->
+            <!-- Main App -->
+            <script src="app.js"></script>
+
+            <!-- Controllers -->
+        <script src="controllers/homeController.js"></script>
+        
+        
+
+        <!-- JQuery script -->
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('#sign_in').click(function () {
+
+                        $('#login_form').dialog();
+                        return false;
+                    });
+
+                    function getAuthorizationHeader(username, password) {
+                        var authType;
+
+                        if (password == "") {
+                            authType = "Cookie " + $.base64.encode(username);
+                        }
+                        else {
+                            var up = $.base64.encode(username + ":" + password);
+                            authType = "Basic " + up;
+                        };
+                        return authType;
+                    };
+
+                    function ajaxSuccessHandler(data) {
+                        $("#msg").text(data);
+                    };
+
+                    function ajaxErrHandler(jqXHR, textStatus, errorThrown) {
+                        $("#msg").text(errorThrown + " : " + textStatus);
+                    }
+
+                    $(function () {
+                        $('#sign_in').click(function () {
+                            var dialogOpts = {
+                                autoOpen: false,
+                                modal: true,
+                                resizable: false,
+                                draggable: false,
+                                title: 'Login',
+                                buttons: {
+                                    "Cancel": function () {
+                                        $(this).dialog("close");
+                                    },
+
+                                    "Login": function () {
+                                        var uname =  $("#uname").val();
+                                        var pwd =  $("#pwd").val();
+
+                                        $.ajax({
+                                            url: "/api/Login",
+                                            type: "GET",
+                                            beforeSend: function(xhr) {
+                                                xhr.setRequestHeader("Authorization", getAuthorizationHeader(uname, pwd));
+                                            },
+                                            success: ajaxSuccessHandler,
+                                            error: ajaxErrHandler
+
+                                        });
+
+                                        $(this).dialog("close");
+
+                                    }
+                                }
+                            };
+
+
+                            $('#login_form').dialog(dialogOpts).dialog('open');
+                            return false;
+                        });
+                    });
+
+                });
+
+            </script>
+
+            <script type="text/javascript">
+                $(document).ready(function () {
+
+                });
+            </script>
+</body>
+
+    
+
+
+</html>

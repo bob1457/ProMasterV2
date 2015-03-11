@@ -1,0 +1,29 @@
+﻿@model ProMaster.Core.Reporting.ViewModels.AccountingCostViewModel
+
+@{
+    ViewBag.Title = "_Management Fee";
+}
+
+
+@if (Model.FeeList.Count() != 0)
+{
+    <ul>
+            @foreach (var item in Model.FeeList)
+            { 
+                <li>
+                    @item.ManagementFeeId
+                    @item.ManagementFeeAmount
+                    @item.IsManagementFeeReceived
+                    
+                </li>
+            }
+    
+    </ul>  
+
+    <p></p> 
+    <strong>Total Management Fees: $@ViewBag.totalfee</strong>
+}
+else
+{
+    <i>No Fees Found</i> 
+}

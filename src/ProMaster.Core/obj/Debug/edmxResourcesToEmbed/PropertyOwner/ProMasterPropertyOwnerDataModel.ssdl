@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProMasterPropertyOwnerDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Document">
+    <Key>
+      <PropertyRef Name="DocumentId" />
+    </Key>
+    <Property Name="DocumentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DocumentTypeId" Type="int" Nullable="false" />
+    <Property Name="DocumentName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DcoumentDetails" Type="varchar" MaxLength="350" Nullable="false" />
+    <Property Name="DocumentPrincipalTypeId" Type="int" Nullable="false" />
+    <Property Name="DocumentPrincipalId" Type="int" Nullable="false" />
+    <Property Name="DocumentUrl" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="UpdateDate" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DocumentPrincipalType">
+    <Key>
+      <PropertyRef Name="DocumentPrincipalTypeId" />
+    </Key>
+    <Property Name="DocumentPrincipalTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DocumentPrincipalType" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DocumentType">
+    <Key>
+      <PropertyRef Name="DocumentTypeId" />
+    </Key>
+    <Property Name="DocumentTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DocumentType" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Lease">
+    <Key>
+      <PropertyRef Name="LeaseId" />
+    </Key>
+    <Property Name="LeaseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LeaseTitle" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LeaseDesc" Type="varchar" MaxLength="4000" />
+    <Property Name="PropertyId" Type="int" Nullable="false" />
+    <Property Name="LeaseStartDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="LeaseEndDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="LeaseTermId" Type="int" Nullable="false" />
+    <Property Name="RentFrequency" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RentAmount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="RentDueOn" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DamageDepositAmount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="PetDepositAmount" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="LeaseSignDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="LeaseAgreementDocUrl" Type="varchar" MaxLength="10" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="Addendum" Type="bit" Nullable="false" />
+    <Property Name="Notes" Type="varchar" MaxLength="500" />
+    <Property Name="CreationDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="UpdateDate" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LeaseTerm">
+    <Key>
+      <PropertyRef Name="LeaseTermId" />
+    </Key>
+    <Property Name="LeaseTermId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LeaaseTerm" Type="varchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ManagementContract">
+    <Key>
+      <PropertyRef Name="ManagementContractId" />
+    </Key>
+    <Property Name="ManagementContractId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ManagementContractTitile" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="StartDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="EndDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="ListingFeeScale" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ManagementFeeScale" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ManagementFeeFrequencyId" Type="int" Nullable="false" />
+    <Property Name="ContractSignDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="PropertyId" Type="int" Nullable="false" />
+    <Property Name="ManagementContractDocUrl" Type="varchar" MaxLength="150" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="UpdateDate" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Property">
+    <Key>
+      <PropertyRef Name="PropertyId" />
+    </Key>
+    <Property Name="PropertyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PropertyName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PropertyDesc" Type="varchar" MaxLength="250" />
+    <Property Name="PropertyListDesc" Type="varchar" MaxLength="450" />
+    <Property Name="PropertyTypeId" Type="int" Nullable="false" />
+    <Property Name="StrataCouncilId" Type="int" />
+    <Property Name="PropertyAddressId" Type="int" Nullable="false" />
+    <Property Name="PropertyFeatureId" Type="int" Nullable="false" />
+    <Property Name="PropertyFacilityId" Type="int" Nullable="false" />
+    <Property Name="PropertyOwnerId" Type="int" Nullable="false" />
+    <Property Name="PropertyManagerId" Type="int" Nullable="false" />
+    <Property Name="PropertyImgUrl" Type="varchar" MaxLength="100" />
+    <Property Name="PropertyVideoUrl" Type="varchar" MaxLength="100" />
+    <Property Name="PropertyBuildYear" Type="int" Nullable="false" />
+    <Property Name="PropertyMgmntlStatusId" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsShared" Type="bit" Nullable="false" />
+    <Property Name="RentalStatusId" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="UpdateDate" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PropertyManager">
+    <Key>
+      <PropertyRef Name="PropertyManagerId" />
+    </Key>
+    <Property Name="PropertyManagerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ContactEmail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ContactTelephone1" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="ContactTelephone2" Type="varchar" MaxLength="25" />
+    <Property Name="UserAvartaImgUrl" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="UpdateDate" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PropertyOwner">
+    <Key>
+      <PropertyRef Name="PropertyOwnerId" />
+    </Key>
+    <Property Name="PropertyOwnerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ContactEmail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ContactTelephone1" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="ContactTelephone2" Type="varchar" MaxLength="25" />
+    <Property Name="OnlineAccessEnbaled" Type="bit" Nullable="false" />
+    <Property Name="UserAvartaImgUrl" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="AddedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AddProperty" Type="bit" />
+    <Property Name="CreationDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="UpdateDate" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tenant">
+    <Key>
+      <PropertyRef Name="TenantId" />
+    </Key>
+    <Property Name="TenantId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ContactEmail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ContactTelephone1" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="ContactTelephone2" Type="varchar" MaxLength="25" />
+    <Property Name="OnlineAccessEnbaled" Type="bit" Nullable="false" />
+    <Property Name="UserAvartaImgUrl" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="LeaseId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="ManagedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="UpdateDate" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Document_DocumentPrincipalType">
+    <End Role="DocumentPrincipalType" Type="Self.DocumentPrincipalType" Multiplicity="1" />
+    <End Role="Document" Type="Self.Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentPrincipalType">
+        <PropertyRef Name="DocumentPrincipalTypeId" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="DocumentPrincipalTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Document_DocumentType">
+    <End Role="DocumentType" Type="Self.DocumentType" Multiplicity="1" />
+    <End Role="Document" Type="Self.Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentType">
+        <PropertyRef Name="DocumentTypeId" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="DocumentTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lease_LeaseTerm">
+    <End Role="LeaseTerm" Type="Self.LeaseTerm" Multiplicity="1" />
+    <End Role="Lease" Type="Self.Lease" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LeaseTerm">
+        <PropertyRef Name="LeaseTermId" />
+      </Principal>
+      <Dependent Role="Lease">
+        <PropertyRef Name="LeaseTermId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lease_Property">
+    <End Role="Property" Type="Self.Property" Multiplicity="1" />
+    <End Role="Lease" Type="Self.Lease" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="Lease">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ManagementContract_Property">
+    <End Role="Property" Type="Self.Property" Multiplicity="1" />
+    <End Role="ManagementContract" Type="Self.ManagementContract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="ManagementContract">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Property_PropertyManager">
+    <End Role="PropertyManager" Type="Self.PropertyManager" Multiplicity="1" />
+    <End Role="Property" Type="Self.Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyManager">
+        <PropertyRef Name="PropertyManagerId" />
+      </Principal>
+      <Dependent Role="Property">
+        <PropertyRef Name="PropertyManagerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Property_PropertyOwner">
+    <End Role="PropertyOwner" Type="Self.PropertyOwner" Multiplicity="1" />
+    <End Role="Property" Type="Self.Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyOwner">
+        <PropertyRef Name="PropertyOwnerId" />
+      </Principal>
+      <Dependent Role="Property">
+        <PropertyRef Name="PropertyOwnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ProMasterPropertyOwnerDataModelStoreContainer">
+    <EntitySet Name="Document" EntityType="Self.Document" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="DocumentPrincipalType" EntityType="Self.DocumentPrincipalType" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="DocumentType" EntityType="Self.DocumentType" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Lease" EntityType="Self.Lease" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="LeaseTerm" EntityType="Self.LeaseTerm" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="ManagementContract" EntityType="Self.ManagementContract" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Property" EntityType="Self.Property" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="PropertyManager" EntityType="Self.PropertyManager" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="PropertyOwner" EntityType="Self.PropertyOwner" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Tenant" EntityType="Self.Tenant" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <AssociationSet Name="FK_Document_DocumentPrincipalType" Association="Self.FK_Document_DocumentPrincipalType">
+      <End Role="DocumentPrincipalType" EntitySet="DocumentPrincipalType" />
+      <End Role="Document" EntitySet="Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Document_DocumentType" Association="Self.FK_Document_DocumentType">
+      <End Role="DocumentType" EntitySet="DocumentType" />
+      <End Role="Document" EntitySet="Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lease_LeaseTerm" Association="Self.FK_Lease_LeaseTerm">
+      <End Role="LeaseTerm" EntitySet="LeaseTerm" />
+      <End Role="Lease" EntitySet="Lease" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lease_Property" Association="Self.FK_Lease_Property">
+      <End Role="Property" EntitySet="Property" />
+      <End Role="Lease" EntitySet="Lease" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ManagementContract_Property" Association="Self.FK_ManagementContract_Property">
+      <End Role="Property" EntitySet="Property" />
+      <End Role="ManagementContract" EntitySet="ManagementContract" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Property_PropertyManager" Association="Self.FK_Property_PropertyManager">
+      <End Role="PropertyManager" EntitySet="PropertyManager" />
+      <End Role="Property" EntitySet="Property" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Property_PropertyOwner" Association="Self.FK_Property_PropertyOwner">
+      <End Role="PropertyOwner" EntitySet="PropertyOwner" />
+      <End Role="Property" EntitySet="Property" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

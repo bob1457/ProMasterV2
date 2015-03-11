@@ -1,0 +1,1291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ProMasterTenantDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CreditReport">
+          <Key>
+            <PropertyRef Name="CreditReportId" />
+          </Key>
+          <Property Name="CreditReportId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenancyApplicanionId" Type="int" Nullable="false" />
+          <Property Name="CreditReportScore" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="CreditReportAddDate" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Document">
+          <Key>
+            <PropertyRef Name="DocumentId" />
+          </Key>
+          <Property Name="DocumentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DocumentTypeId" Type="int" Nullable="false" />
+          <Property Name="DocumentName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DcoumentDetails" Type="varchar" MaxLength="350" Nullable="false" />
+          <Property Name="DocumentPrincipalTypeId" Type="int" Nullable="false" />
+          <Property Name="DocumentPrincipalId" Type="int" Nullable="false" />
+          <Property Name="DocumentUrl" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreationDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UpdateDate" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DocumentCheckList">
+          <Key>
+            <PropertyRef Name="DocumentCheckListId" />
+          </Key>
+          <Property Name="DocumentCheckListId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenancyApplicanionId" Type="int" Nullable="false" />
+          <Property Name="IsIdentificationProvided" Type="bit" Nullable="false" />
+          <Property Name="IsLandLordReferenceProvided" Type="bit" Nullable="false" />
+          <Property Name="IsEmployerReferenceProvided" Type="bit" Nullable="false" />
+          <Property Name="IsIncomeStatementProvided" Type="bit" Nullable="false" />
+          <Property Name="IsCreditReportProvided" Type="bit" Nullable="false" />
+          <Property Name="DocumentCheckListCompletionDate" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DocumentPrincipalType">
+          <Key>
+            <PropertyRef Name="DocumentPrincipalTypeId" />
+          </Key>
+          <Property Name="DocumentPrincipalTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DocumentPrincipalType" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DocumentType">
+          <Key>
+            <PropertyRef Name="DocumentTypeId" />
+          </Key>
+          <Property Name="DocumentTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DocumentType" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Lease">
+          <Key>
+            <PropertyRef Name="LeaseId" />
+          </Key>
+          <Property Name="LeaseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LeaseTitle" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LeaseDesc" Type="varchar" MaxLength="4000" />
+          <Property Name="PropertyId" Type="int" Nullable="false" />
+          <Property Name="LeaseStartDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="LeaseEndDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="LeaseTermId" Type="int" Nullable="false" />
+          <Property Name="RentFrequency" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="RentAmount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="RentDueOn" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DamageDepositAmount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="PetDepositAmount" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="LeaseSignDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="LeaseAgreementDocUrl" Type="varchar" MaxLength="10" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="Addendum" Type="bit" Nullable="false" />
+          <Property Name="Notes" Type="varchar" MaxLength="500" />
+          <Property Name="CreationDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UpdateDate" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LeaseTerm">
+          <Key>
+            <PropertyRef Name="LeaseTermId" />
+          </Key>
+          <Property Name="LeaseTermId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LeaaseTerm" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Property">
+          <Key>
+            <PropertyRef Name="PropertyId" />
+          </Key>
+          <Property Name="PropertyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PropertyName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PropertyDesc" Type="varchar" MaxLength="250" />
+          <Property Name="PropertyListDesc" Type="varchar" MaxLength="450" />
+          <Property Name="PropertyTypeId" Type="int" Nullable="false" />
+          <Property Name="StrataCouncilId" Type="int" />
+          <Property Name="PropertyAddressId" Type="int" Nullable="false" />
+          <Property Name="PropertyFeatureId" Type="int" Nullable="false" />
+          <Property Name="PropertyFacilityId" Type="int" Nullable="false" />
+          <Property Name="PropertyOwnerId" Type="int" Nullable="false" />
+          <Property Name="PropertyManagerId" Type="int" Nullable="false" />
+          <Property Name="PropertyImgUrl" Type="varchar" MaxLength="100" />
+          <Property Name="PropertyVideoUrl" Type="varchar" MaxLength="100" />
+          <Property Name="PropertyBuildYear" Type="int" Nullable="false" />
+          <Property Name="PropertyMgmntlStatusId" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsShared" Type="bit" Nullable="false" />
+          <Property Name="RentalStatusId" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UpdateDate" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RentPayment">
+          <Key>
+            <PropertyRef Name="RentPaymentId" />
+          </Key>
+          <Property Name="RentPaymentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenantId" Type="int" Nullable="false" />
+          <Property Name="RentIsPaidOntime" Type="bit" Nullable="false" />
+          <Property Name="RentPaymentDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="RentPaymentMonth" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="RentPaymentYear" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="RentPaidAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="NumberOfLatePayment" Type="int" Nullable="false" />
+          <Property Name="Balance" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RentPaymentMethodId" Type="int" Nullable="false" />
+          <Property Name="IsCollectedInPerson" Type="bit" Nullable="false" />
+          <Property Name="IsDepositForOwner" Type="bit" Nullable="false" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="Notes" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="RentPaymentMethod">
+          <Key>
+            <PropertyRef Name="RentPaymentMethodId" />
+          </Key>
+          <Property Name="RentPaymentMethodId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RentPaymentMethod" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Notes" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="ScreeningCheckStatus">
+          <Key>
+            <PropertyRef Name="ScreeningCheckStatusId" />
+          </Key>
+          <Property Name="ScreeningCheckStatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ScreeningCheckStatusName" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ScreeningCheckType">
+          <Key>
+            <PropertyRef Name="ScreeningCheckTypeId" />
+          </Key>
+          <Property Name="ScreeningCheckTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ScreeningCheckTypeName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ScreenProcess">
+          <Key>
+            <PropertyRef Name="ScreenProcessId" />
+          </Key>
+          <Property Name="ScreenProcessId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenancyApplicanionId" Type="int" Nullable="false" />
+          <Property Name="CurrentLandlordCheckStatus" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="PrevioustLandlordCheckStatus" Type="varchar" MaxLength="25" />
+          <Property Name="CurrentEmploerCheckStatus" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="PreviousEmploerCheckStatus" Type="varchar" MaxLength="25" />
+          <Property Name="CreditReportCheckStatus" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="RentToIncomeRatioCheckStatus" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="IsScreenProcessCompleted" Type="bit" Nullable="false" />
+          <Property Name="ScreenFinalStatus" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="ScreenProcessCompletionDate" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TenancyApplication">
+          <Key>
+            <PropertyRef Name="TenancyApplicationId" />
+          </Key>
+          <Property Name="TenancyApplicationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ApplicantFirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ApplicantLastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ApplicantSIN" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="PropertyId" Type="int" Nullable="false" />
+          <Property Name="CurrentAddress" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="PreviousAddress" Type="varchar" MaxLength="250" />
+          <Property Name="ApplicantContactTel" Type="varchar" MaxLength="15" />
+          <Property Name="ApplicantContactEmail" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NumberOfTenant" Type="int" Nullable="false" />
+          <Property Name="NumberOfChildren" Type="int" />
+          <Property Name="CurrentEmployerContact" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="PreviousEmployerContact" Type="varchar" MaxLength="250" />
+          <Property Name="CurrentMonthlyIncome" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="IsAuthorizedForRefCheck" Type="bit" Nullable="false" />
+          <Property Name="CurrentLandlordContact" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="PreviousLandlordContact" Type="varchar" MaxLength="250" />
+          <Property Name="IsIdentificationDocAvailalbe" Type="bit" Nullable="false" />
+          <Property Name="IsApproved" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreditReportScore" Type="varchar" MaxLength="50" />
+          <Property Name="ApplicationSentDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="ScreeningNotes" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Tenant">
+          <Key>
+            <PropertyRef Name="TenantId" />
+          </Key>
+          <Property Name="TenantId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ContactEmail" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ContactTelephone1" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="ContactTelephone2" Type="varchar" MaxLength="25" />
+          <Property Name="OnlineAccessEnbaled" Type="bit" Nullable="false" />
+          <Property Name="UserAvartaImgUrl" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="LeaseId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="ManagedBy" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UpdateDate" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TenantScreening">
+          <Key>
+            <PropertyRef Name="TenantScreeningId" />
+          </Key>
+          <Property Name="TenantScreeningId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TeancyApplicationId" Type="int" Nullable="false" />
+          <Property Name="ScreeningCheckTypeId" Type="int" Nullable="false" />
+          <Property Name="ScreeningCheckStatusId" Type="int" Nullable="false" />
+          <Property Name="ScreenNotes" Type="varchar" MaxLength="800" />
+          <Property Name="ScreenCheckUpdateDate" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Disabled" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CreditReport_TenancyApplication">
+          <End Role="TenancyApplication" Type="Self.TenancyApplication" Multiplicity="1" />
+          <End Role="CreditReport" Type="Self.CreditReport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TenancyApplication">
+              <PropertyRef Name="TenancyApplicationId" />
+            </Principal>
+            <Dependent Role="CreditReport">
+              <PropertyRef Name="TenancyApplicanionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Document_DocumentPrincipalType">
+          <End Role="DocumentPrincipalType" Type="Self.DocumentPrincipalType" Multiplicity="1" />
+          <End Role="Document" Type="Self.Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DocumentPrincipalType">
+              <PropertyRef Name="DocumentPrincipalTypeId" />
+            </Principal>
+            <Dependent Role="Document">
+              <PropertyRef Name="DocumentPrincipalTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Document_DocumentType">
+          <End Role="DocumentType" Type="Self.DocumentType" Multiplicity="1" />
+          <End Role="Document" Type="Self.Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DocumentType">
+              <PropertyRef Name="DocumentTypeId" />
+            </Principal>
+            <Dependent Role="Document">
+              <PropertyRef Name="DocumentTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DocumentCheckList_TenancyApplication">
+          <End Role="TenancyApplication" Type="Self.TenancyApplication" Multiplicity="1" />
+          <End Role="DocumentCheckList" Type="Self.DocumentCheckList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TenancyApplication">
+              <PropertyRef Name="TenancyApplicationId" />
+            </Principal>
+            <Dependent Role="DocumentCheckList">
+              <PropertyRef Name="TenancyApplicanionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Lease_LeaseTerm">
+          <End Role="LeaseTerm" Type="Self.LeaseTerm" Multiplicity="1" />
+          <End Role="Lease" Type="Self.Lease" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LeaseTerm">
+              <PropertyRef Name="LeaseTermId" />
+            </Principal>
+            <Dependent Role="Lease">
+              <PropertyRef Name="LeaseTermId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Lease_Property">
+          <End Role="Property" Type="Self.Property" Multiplicity="1" />
+          <End Role="Lease" Type="Self.Lease" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Property">
+              <PropertyRef Name="PropertyId" />
+            </Principal>
+            <Dependent Role="Lease">
+              <PropertyRef Name="PropertyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RentPayment_RentPaymentMethod">
+          <End Role="RentPaymentMethod" Type="Self.RentPaymentMethod" Multiplicity="1" />
+          <End Role="RentPayment" Type="Self.RentPayment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RentPaymentMethod">
+              <PropertyRef Name="RentPaymentMethodId" />
+            </Principal>
+            <Dependent Role="RentPayment">
+              <PropertyRef Name="RentPaymentMethodId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RentPayment_Tenant">
+          <End Role="Tenant" Type="Self.Tenant" Multiplicity="1" />
+          <End Role="RentPayment" Type="Self.RentPayment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tenant">
+              <PropertyRef Name="TenantId" />
+            </Principal>
+            <Dependent Role="RentPayment">
+              <PropertyRef Name="TenantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScreenProcess_TenancyApplication">
+          <End Role="TenancyApplication" Type="Self.TenancyApplication" Multiplicity="1" />
+          <End Role="ScreenProcess" Type="Self.ScreenProcess" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TenancyApplication">
+              <PropertyRef Name="TenancyApplicationId" />
+            </Principal>
+            <Dependent Role="ScreenProcess">
+              <PropertyRef Name="TenancyApplicanionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TenancyApplication_Property">
+          <End Role="Property" Type="Self.Property" Multiplicity="1" />
+          <End Role="TenancyApplication" Type="Self.TenancyApplication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Property">
+              <PropertyRef Name="PropertyId" />
+            </Principal>
+            <Dependent Role="TenancyApplication">
+              <PropertyRef Name="PropertyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TenantScreening_ScreeningCheckStatus">
+          <End Role="ScreeningCheckStatus" Type="Self.ScreeningCheckStatus" Multiplicity="1" />
+          <End Role="TenantScreening" Type="Self.TenantScreening" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ScreeningCheckStatus">
+              <PropertyRef Name="ScreeningCheckStatusId" />
+            </Principal>
+            <Dependent Role="TenantScreening">
+              <PropertyRef Name="ScreeningCheckStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TenantScreening_ScreeningCheckType">
+          <End Role="ScreeningCheckType" Type="Self.ScreeningCheckType" Multiplicity="1" />
+          <End Role="TenantScreening" Type="Self.TenantScreening" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ScreeningCheckType">
+              <PropertyRef Name="ScreeningCheckTypeId" />
+            </Principal>
+            <Dependent Role="TenantScreening">
+              <PropertyRef Name="ScreeningCheckTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TenantScreening_TenancyApplication">
+          <End Role="TenancyApplication" Type="Self.TenancyApplication" Multiplicity="1" />
+          <End Role="TenantScreening" Type="Self.TenantScreening" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TenancyApplication">
+              <PropertyRef Name="TenancyApplicationId" />
+            </Principal>
+            <Dependent Role="TenantScreening">
+              <PropertyRef Name="TeancyApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ProMasterTenantDataModelStoreContainer">
+          <EntitySet Name="CreditReport" EntityType="Self.CreditReport" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Document" EntityType="Self.Document" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="DocumentCheckList" EntityType="Self.DocumentCheckList" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="DocumentPrincipalType" EntityType="Self.DocumentPrincipalType" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="DocumentType" EntityType="Self.DocumentType" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Lease" EntityType="Self.Lease" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="LeaseTerm" EntityType="Self.LeaseTerm" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Property" EntityType="Self.Property" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="RentPayment" EntityType="Self.RentPayment" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="RentPaymentMethod" EntityType="Self.RentPaymentMethod" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="ScreeningCheckStatus" EntityType="Self.ScreeningCheckStatus" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="ScreeningCheckType" EntityType="Self.ScreeningCheckType" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="ScreenProcess" EntityType="Self.ScreenProcess" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="TenancyApplication" EntityType="Self.TenancyApplication" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Tenant" EntityType="Self.Tenant" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="TenantScreening" EntityType="Self.TenantScreening" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <AssociationSet Name="FK_CreditReport_TenancyApplication" Association="Self.FK_CreditReport_TenancyApplication">
+            <End Role="TenancyApplication" EntitySet="TenancyApplication" />
+            <End Role="CreditReport" EntitySet="CreditReport" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Document_DocumentPrincipalType" Association="Self.FK_Document_DocumentPrincipalType">
+            <End Role="DocumentPrincipalType" EntitySet="DocumentPrincipalType" />
+            <End Role="Document" EntitySet="Document" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Document_DocumentType" Association="Self.FK_Document_DocumentType">
+            <End Role="DocumentType" EntitySet="DocumentType" />
+            <End Role="Document" EntitySet="Document" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DocumentCheckList_TenancyApplication" Association="Self.FK_DocumentCheckList_TenancyApplication">
+            <End Role="TenancyApplication" EntitySet="TenancyApplication" />
+            <End Role="DocumentCheckList" EntitySet="DocumentCheckList" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Lease_LeaseTerm" Association="Self.FK_Lease_LeaseTerm">
+            <End Role="LeaseTerm" EntitySet="LeaseTerm" />
+            <End Role="Lease" EntitySet="Lease" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Lease_Property" Association="Self.FK_Lease_Property">
+            <End Role="Property" EntitySet="Property" />
+            <End Role="Lease" EntitySet="Lease" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RentPayment_RentPaymentMethod" Association="Self.FK_RentPayment_RentPaymentMethod">
+            <End Role="RentPaymentMethod" EntitySet="RentPaymentMethod" />
+            <End Role="RentPayment" EntitySet="RentPayment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RentPayment_Tenant" Association="Self.FK_RentPayment_Tenant">
+            <End Role="Tenant" EntitySet="Tenant" />
+            <End Role="RentPayment" EntitySet="RentPayment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScreenProcess_TenancyApplication" Association="Self.FK_ScreenProcess_TenancyApplication">
+            <End Role="TenancyApplication" EntitySet="TenancyApplication" />
+            <End Role="ScreenProcess" EntitySet="ScreenProcess" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TenancyApplication_Property" Association="Self.FK_TenancyApplication_Property">
+            <End Role="Property" EntitySet="Property" />
+            <End Role="TenancyApplication" EntitySet="TenancyApplication" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TenantScreening_ScreeningCheckStatus" Association="Self.FK_TenantScreening_ScreeningCheckStatus">
+            <End Role="ScreeningCheckStatus" EntitySet="ScreeningCheckStatus" />
+            <End Role="TenantScreening" EntitySet="TenantScreening" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TenantScreening_ScreeningCheckType" Association="Self.FK_TenantScreening_ScreeningCheckType">
+            <End Role="ScreeningCheckType" EntitySet="ScreeningCheckType" />
+            <End Role="TenantScreening" EntitySet="TenantScreening" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TenantScreening_TenancyApplication" Association="Self.FK_TenantScreening_TenancyApplication">
+            <End Role="TenancyApplication" EntitySet="TenancyApplication" />
+            <End Role="TenantScreening" EntitySet="TenantScreening" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProMasterTenantDataModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="ProMasterTenantDataEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="Users" EntityType="ProMasterTenantDataModel.User" />
+          <EntitySet Name="Leases" EntityType="ProMasterTenantDataModel.Lease" />
+          <EntitySet Name="Properties" EntityType="ProMasterTenantDataModel.Property" />
+          <AssociationSet Name="FK_Lease_Property" Association="ProMasterTenantDataModel.FK_Lease_Property">
+            <End Role="Property" EntitySet="Properties" />
+            <End Role="Lease" EntitySet="Leases" />
+          </AssociationSet>
+          <EntitySet Name="Tenants" EntityType="ProMasterTenantDataModel.Tenant" />
+          <EntitySet Name="Documents" EntityType="ProMasterTenantDataModel.Document" />
+          <EntitySet Name="DocumentPrincipalTypes" EntityType="ProMasterTenantDataModel.DocumentPrincipalType" />
+          <EntitySet Name="DocumentTypes" EntityType="ProMasterTenantDataModel.DocumentType" />
+          <AssociationSet Name="FK_Document_DocumentPrincipalType" Association="ProMasterTenantDataModel.FK_Document_DocumentPrincipalType">
+            <End Role="DocumentPrincipalType" EntitySet="DocumentPrincipalTypes" />
+            <End Role="Document" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Document_DocumentType" Association="ProMasterTenantDataModel.FK_Document_DocumentType">
+            <End Role="DocumentType" EntitySet="DocumentTypes" />
+            <End Role="Document" EntitySet="Documents" />
+          </AssociationSet>
+          <EntitySet Name="LeaseTerms" EntityType="ProMasterTenantDataModel.LeaseTerm" />
+          <AssociationSet Name="FK_Lease_LeaseTerm" Association="ProMasterTenantDataModel.FK_Lease_LeaseTerm">
+            <End Role="LeaseTerm" EntitySet="LeaseTerms" />
+            <End Role="Lease" EntitySet="Leases" />
+          </AssociationSet>
+          <EntitySet Name="CreditReports" EntityType="ProMasterTenantDataModel.CreditReport" />
+          <EntitySet Name="DocumentCheckLists" EntityType="ProMasterTenantDataModel.DocumentCheckList" />
+          <EntitySet Name="TenancyApplications" EntityType="ProMasterTenantDataModel.TenancyApplication" />
+          <AssociationSet Name="FK_CreditReport_TenancyApplication" Association="ProMasterTenantDataModel.FK_CreditReport_TenancyApplication">
+            <End Role="TenancyApplication" EntitySet="TenancyApplications" />
+            <End Role="CreditReport" EntitySet="CreditReports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DocumentCheckList_TenancyApplication" Association="ProMasterTenantDataModel.FK_DocumentCheckList_TenancyApplication">
+            <End Role="TenancyApplication" EntitySet="TenancyApplications" />
+            <End Role="DocumentCheckList" EntitySet="DocumentCheckLists" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TenancyApplication_Property" Association="ProMasterTenantDataModel.FK_TenancyApplication_Property">
+            <End Role="Property" EntitySet="Properties" />
+            <End Role="TenancyApplication" EntitySet="TenancyApplications" />
+          </AssociationSet>
+          <EntitySet Name="ScreeningCheckStatus" EntityType="ProMasterTenantDataModel.ScreeningCheckStatu" />
+          <EntitySet Name="ScreeningCheckTypes" EntityType="ProMasterTenantDataModel.ScreeningCheckType" />
+          <EntitySet Name="TenantScreenings" EntityType="ProMasterTenantDataModel.TenantScreening" />
+          <AssociationSet Name="FK_TenantScreening_ScreeningCheckStatus" Association="ProMasterTenantDataModel.FK_TenantScreening_ScreeningCheckStatus">
+            <End Role="ScreeningCheckStatu" EntitySet="ScreeningCheckStatus" />
+            <End Role="TenantScreening" EntitySet="TenantScreenings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TenantScreening_ScreeningCheckType" Association="ProMasterTenantDataModel.FK_TenantScreening_ScreeningCheckType">
+            <End Role="ScreeningCheckType" EntitySet="ScreeningCheckTypes" />
+            <End Role="TenantScreening" EntitySet="TenantScreenings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TenantScreening_TenancyApplication" Association="ProMasterTenantDataModel.FK_TenantScreening_TenancyApplication">
+            <End Role="TenancyApplication" EntitySet="TenancyApplications" />
+            <End Role="TenantScreening" EntitySet="TenantScreenings" />
+          </AssociationSet>
+          <EntitySet Name="ScreenProcesses" EntityType="ProMasterTenantDataModel.ScreenProcess" />
+          <AssociationSet Name="FK_ScreenProcess_TenancyApplication" Association="ProMasterTenantDataModel.FK_ScreenProcess_TenancyApplication">
+            <End Role="TenancyApplication" EntitySet="TenancyApplications" />
+            <End Role="ScreenProcess" EntitySet="ScreenProcesses" />
+          </AssociationSet>
+          <EntitySet Name="RentPayments" EntityType="ProMasterTenantDataModel.RentPayment" />
+          <AssociationSet Name="FK_RentPayment_Tenant" Association="ProMasterTenantDataModel.FK_RentPayment_Tenant">
+            <End Role="Tenant" EntitySet="Tenants" />
+            <End Role="RentPayment" EntitySet="RentPayments" />
+          </AssociationSet>
+          <EntitySet Name="RentPaymentMethods" EntityType="ProMasterTenantDataModel.RentPaymentMethod" />
+          <AssociationSet Name="FK_RentPayment_RentPaymentMethod" Association="ProMasterTenantDataModel.FK_RentPayment_RentPaymentMethod">
+            <End Role="RentPaymentMethod" EntitySet="RentPaymentMethods" />
+            <End Role="RentPayment" EntitySet="RentPayments" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Disabled" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Lease">
+          <Key>
+            <PropertyRef Name="LeaseId" />
+          </Key>
+          <Property Type="Int32" Name="LeaseId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="LeaseTitle" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LeaseDesc" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="PropertyId" Nullable="false" />
+          <Property Type="DateTime" Name="LeaseStartDate" Nullable="false" Precision="7" />
+          <Property Type="DateTime" Name="LeaseEndDate" Nullable="false" Precision="7" />
+          <Property Type="Int32" Name="LeaseTermId" Nullable="false" />
+          <Property Type="String" Name="RentFrequency" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="RentAmount" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="RentDueOn" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="DamageDepositAmount" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="PetDepositAmount" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="LeaseSignDate" Nullable="false" Precision="7" />
+          <Property Type="String" Name="LeaseAgreementDocUrl" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Addendum" Nullable="false" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="7" />
+          <Property Type="DateTime" Name="UpdateDate" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Property" Relationship="ProMasterTenantDataModel.FK_Lease_Property" FromRole="Lease" ToRole="Property" />
+          <NavigationProperty Name="LeaseTerm" Relationship="ProMasterTenantDataModel.FK_Lease_LeaseTerm" FromRole="Lease" ToRole="LeaseTerm" />
+          <Property Type="String" Name="Notes" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Property">
+          <Key>
+            <PropertyRef Name="PropertyId" />
+          </Key>
+          <Property Type="Int32" Name="PropertyId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="PropertyName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PropertyDesc" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="PropertyTypeId" Nullable="false" />
+          <Property Type="Int32" Name="PropertyAddressId" Nullable="false" />
+          <Property Type="Int32" Name="PropertyFeatureId" Nullable="false" />
+          <Property Type="Int32" Name="PropertyFacilityId" Nullable="false" />
+          <Property Type="Int32" Name="PropertyOwnerId" Nullable="false" />
+          <Property Type="Int32" Name="PropertyManagerId" Nullable="false" />
+          <Property Type="String" Name="PropertyImgUrl" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PropertyVideoUrl" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="PropertyBuildYear" Nullable="false" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="Boolean" Name="IsShared" Nullable="false" />
+          <Property Type="Int32" Name="RentalStatusId" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="7" />
+          <Property Type="DateTime" Name="UpdateDate" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Leases" Relationship="ProMasterTenantDataModel.FK_Lease_Property" FromRole="Property" ToRole="Lease" />
+          <Property Type="Int32" Name="StrataCouncilId" />
+          <NavigationProperty Name="TenancyApplications" Relationship="ProMasterTenantDataModel.FK_TenancyApplication_Property" FromRole="Property" ToRole="TenancyApplication" />
+          <Property Type="String" Name="PropertyListDesc" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="PropertyMgmntlStatusId" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Lease_Property">
+          <End Type="ProMasterTenantDataModel.Property" Role="Property" Multiplicity="1" />
+          <End Type="ProMasterTenantDataModel.Lease" Role="Lease" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Property">
+              <PropertyRef Name="PropertyId" />
+            </Principal>
+            <Dependent Role="Lease">
+              <PropertyRef Name="PropertyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Tenant">
+          <Key>
+            <PropertyRef Name="TenantId" />
+          </Key>
+          <Property Type="Int32" Name="TenantId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ContactEmail" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ContactTelephone1" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ContactTelephone2" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="OnlineAccessEnbaled" Nullable="false" />
+          <Property Type="String" Name="UserAvartaImgUrl" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="LeaseId" Nullable="false" />
+          <Property Type="Int32" Name="RoleId" Nullable="false" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="String" Name="ManagedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="7" />
+          <Property Type="DateTime" Name="UpdateDate" Nullable="false" Precision="7" />
+          <NavigationProperty Name="RentPayments" Relationship="ProMasterTenantDataModel.FK_RentPayment_Tenant" FromRole="Tenant" ToRole="RentPayment" />
+        </EntityType>
+        <EntityType Name="Document">
+          <Key>
+            <PropertyRef Name="DocumentId" />
+          </Key>
+          <Property Type="Int32" Name="DocumentId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="DocumentTypeId" Nullable="false" />
+          <Property Type="String" Name="DocumentName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DcoumentDetails" Nullable="false" MaxLength="350" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="DocumentPrincipalTypeId" Nullable="false" />
+          <Property Type="Int32" Name="DocumentPrincipalId" Nullable="false" />
+          <Property Type="String" Name="DocumentUrl" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="7" />
+          <Property Type="DateTime" Name="UpdateDate" Nullable="false" Precision="7" />
+          <NavigationProperty Name="DocumentPrincipalType" Relationship="ProMasterTenantDataModel.FK_Document_DocumentPrincipalType" FromRole="Document" ToRole="DocumentPrincipalType" />
+          <NavigationProperty Name="DocumentType" Relationship="ProMasterTenantDataModel.FK_Document_DocumentType" FromRole="Document" ToRole="DocumentType" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DocumentPrincipalType">
+          <Key>
+            <PropertyRef Name="DocumentPrincipalTypeId" />
+          </Key>
+          <Property Type="Int32" Name="DocumentPrincipalTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="DocumentPrincipalType1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Documents" Relationship="ProMasterTenantDataModel.FK_Document_DocumentPrincipalType" FromRole="DocumentPrincipalType" ToRole="Document" />
+        </EntityType>
+        <EntityType Name="DocumentType">
+          <Key>
+            <PropertyRef Name="DocumentTypeId" />
+          </Key>
+          <Property Type="Int32" Name="DocumentTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="DocumentType1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Documents" Relationship="ProMasterTenantDataModel.FK_Document_DocumentType" FromRole="DocumentType" ToRole="Document" />
+        </EntityType>
+        <Association Name="FK_Document_DocumentPrincipalType">
+          <End Type="ProMasterTenantDataModel.DocumentPrincipalType" Role="DocumentPrincipalType" Multiplicity="1" />
+          <End Type="ProMasterTenantDataModel.Document" Role="Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DocumentPrincipalType">
+              <PropertyRef Name="DocumentPrincipalTypeId" />
+            </Principal>
+            <Dependent Role="Document">
+              <PropertyRef Name="DocumentPrincipalTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Document_DocumentType">
+          <End Type="ProMasterTenantDataModel.DocumentType" Role="DocumentType" Multiplicity="1" />
+          <End Type="ProMasterTenantDataModel.Document" Role="Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DocumentType">
+              <PropertyRef Name="DocumentTypeId" />
+            </Principal>
+            <Dependent Role="Document">
+              <PropertyRef Name="DocumentTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="LeaseTerm">
+          <Key>
+            <PropertyRef Name="LeaseTermId" />
+          </Key>
+          <Property Type="Int32" Name="LeaseTermId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="LeaaseTerm" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Leases" Relationship="ProMasterTenantDataModel.FK_Lease_LeaseTerm" FromRole="LeaseTerm" ToRole="Lease" />
+        </EntityType>
+        <Association Name="FK_Lease_LeaseTerm">
+          <End Type="ProMasterTenantDataModel.LeaseTerm" Role="LeaseTerm" Multiplicity="1" />
+          <End Type="ProMasterTenantDataModel.Lease" Role="Lease" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LeaseTerm">
+              <PropertyRef Name="LeaseTermId" />
+            </Principal>
+            <Dependent Role="Lease">
+              <PropertyRef Name="LeaseTermId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CreditReport">
+          <Key>
+            <PropertyRef Name="CreditReportId" />
+          </Key>
+          <Property Type="Int32" Name="CreditReportId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="TenancyApplicanionId" Nullable="false" />
+          <Property Type="String" Name="CreditReportScore" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreditReportAddDate" Nullable="false" Precision="7" />
+          <NavigationProperty Name="TenancyApplication" Relationship="ProMasterTenantDataModel.FK_CreditReport_TenancyApplication" FromRole="CreditReport" ToRole="TenancyApplication" />
+        </EntityType>
+        <EntityType Name="DocumentCheckList">
+          <Key>
+            <PropertyRef Name="DocumentCheckListId" />
+          </Key>
+          <Property Type="Int32" Name="DocumentCheckListId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="TenancyApplicanionId" Nullable="false" />
+          <Property Type="Boolean" Name="IsIdentificationProvided" Nullable="false" />
+          <Property Type="Boolean" Name="IsLandLordReferenceProvided" Nullable="false" />
+          <Property Type="Boolean" Name="IsEmployerReferenceProvided" Nullable="false" />
+          <Property Type="Boolean" Name="IsIncomeStatementProvided" Nullable="false" />
+          <Property Type="Boolean" Name="IsCreditReportProvided" Nullable="false" />
+          <Property Type="DateTime" Name="DocumentCheckListCompletionDate" Nullable="false" Precision="7" />
+          <NavigationProperty Name="TenancyApplication" Relationship="ProMasterTenantDataModel.FK_DocumentCheckList_TenancyApplication" FromRole="DocumentCheckList" ToRole="TenancyApplication" />
+        </EntityType>
+        <EntityType Name="TenancyApplication">
+          <Key>
+            <PropertyRef Name="TenancyApplicationId" />
+          </Key>
+          <Property Type="Int32" Name="TenancyApplicationId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="ApplicantFirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ApplicantLastName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="PropertyId" Nullable="false" />
+          <Property Type="String" Name="CurrentAddress" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PreviousAddress" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ApplicantContactTel" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ApplicantContactEmail" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="NumberOfTenant" Nullable="false" />
+          <Property Type="Int32" Name="NumberOfChildren" />
+          <Property Type="String" Name="CurrentEmployerContact" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PreviousEmployerContact" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="CurrentMonthlyIncome" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Boolean" Name="IsAuthorizedForRefCheck" Nullable="false" />
+          <Property Type="String" Name="CurrentLandlordContact" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PreviousLandlordContact" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsIdentificationDocAvailalbe" Nullable="false" />
+          <Property Type="Boolean" Name="IsApproved" Nullable="false" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="String" Name="CreditReportScore" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="ApplicationSentDate" Nullable="false" Precision="7" />
+          <NavigationProperty Name="CreditReports" Relationship="ProMasterTenantDataModel.FK_CreditReport_TenancyApplication" FromRole="TenancyApplication" ToRole="CreditReport" />
+          <NavigationProperty Name="DocumentCheckLists" Relationship="ProMasterTenantDataModel.FK_DocumentCheckList_TenancyApplication" FromRole="TenancyApplication" ToRole="DocumentCheckList" />
+          <NavigationProperty Name="Property" Relationship="ProMasterTenantDataModel.FK_TenancyApplication_Property" FromRole="TenancyApplication" ToRole="Property" />
+          <Property Type="String" Name="ApplicantSIN" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TenantScreenings" Relationship="ProMasterTenantDataModel.FK_TenantScreening_TenancyApplication" FromRole="TenancyApplication" ToRole="TenantScreening" />
+          <NavigationProperty Name="ScreenProcesses" Relationship="ProMasterTenantDataModel.FK_ScreenProcess_TenancyApplication" FromRole="TenancyApplication" ToRole="ScreenProcess" />
+          <Property Name="ScreeningNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_CreditReport_TenancyApplication">
+          <End Type="ProMasterTenantDataModel.TenancyApplication" Role="TenancyApplication" Multiplicity="1" />
+          <End Type="ProMasterTenantDataModel.CreditReport" Role="CreditReport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TenancyApplication">
+              <PropertyRef Name="TenancyApplicationId" />
+            </Principal>
+            <Dependent Role="CreditReport">
+              <PropertyRef Name="TenancyApplicanionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DocumentCheckList_TenancyApplication">
+          <End Type="ProMasterTenantDataModel.TenancyApplication" Role="TenancyApplication" Multiplicity="1" />
+          <End Type="ProMasterTenantDataModel.DocumentCheckList" Role="DocumentCheckList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TenancyApplication">
+              <PropertyRef Name="TenancyApplicationId" />
+            </Principal>
+            <Dependent Role="DocumentCheckList">
+              <PropertyRef Name="TenancyApplicanionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TenancyApplication_Property">
+          <End Type="ProMasterTenantDataModel.Property" Role="Property" Multiplicity="1" />
+          <End Type="ProMasterTenantDataModel.TenancyApplication" Role="TenancyApplication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Property">
+              <PropertyRef Name="PropertyId" />
+            </Principal>
+            <Dependent Role="TenancyApplication">
+              <PropertyRef Name="PropertyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ScreeningCheckStatu">
+          <Key>
+            <PropertyRef Name="ScreeningCheckStatusId" />
+          </Key>
+          <Property Type="Int32" Name="ScreeningCheckStatusId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="ScreeningCheckStatusName" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TenantScreenings" Relationship="ProMasterTenantDataModel.FK_TenantScreening_ScreeningCheckStatus" FromRole="ScreeningCheckStatu" ToRole="TenantScreening" />
+        </EntityType>
+        <EntityType Name="ScreeningCheckType">
+          <Key>
+            <PropertyRef Name="ScreeningCheckTypeId" />
+          </Key>
+          <Property Type="Int32" Name="ScreeningCheckTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="ScreeningCheckTypeName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TenantScreenings" Relationship="ProMasterTenantDataModel.FK_TenantScreening_ScreeningCheckType" FromRole="ScreeningCheckType" ToRole="TenantScreening" />
+        </EntityType>
+        <EntityType Name="TenantScreening">
+          <Key>
+            <PropertyRef Name="TenantScreeningId" />
+          </Key>
+          <Property Type="Int32" Name="TenantScreeningId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="TeancyApplicationId" Nullable="false" />
+          <Property Type="Int32" Name="ScreeningCheckTypeId" Nullable="false" />
+          <Property Type="Int32" Name="ScreeningCheckStatusId" Nullable="false" />
+          <Property Type="DateTime" Name="ScreenCheckUpdateDate" Nullable="false" Precision="7" />
+          <NavigationProperty Name="ScreeningCheckStatu" Relationship="ProMasterTenantDataModel.FK_TenantScreening_ScreeningCheckStatus" FromRole="TenantScreening" ToRole="ScreeningCheckStatu" />
+          <NavigationProperty Name="ScreeningCheckType" Relationship="ProMasterTenantDataModel.FK_TenantScreening_ScreeningCheckType" FromRole="TenantScreening" ToRole="ScreeningCheckType" />
+          <NavigationProperty Name="TenancyApplication" Relationship="ProMasterTenantDataModel.FK_TenantScreening_TenancyApplication" FromRole="TenantScreening" ToRole="TenancyApplication" />
+          <Property Type="String" Name="ScreenNotes" MaxLength="800" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_TenantScreening_ScreeningCheckStatus">
+          <End Type="ProMasterTenantDataModel.ScreeningCheckStatu" Role="ScreeningCheckStatu" Multiplicity="1" />
+          <End Type="ProMasterTenantDataModel.TenantScreening" Role="TenantScreening" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ScreeningCheckStatu">
+              <PropertyRef Name="ScreeningCheckStatusId" />
+            </Principal>
+            <Dependent Role="TenantScreening">
+              <PropertyRef Name="ScreeningCheckStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TenantScreening_ScreeningCheckType">
+          <End Type="ProMasterTenantDataModel.ScreeningCheckType" Role="ScreeningCheckType" Multiplicity="1" />
+          <End Type="ProMasterTenantDataModel.TenantScreening" Role="TenantScreening" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ScreeningCheckType">
+              <PropertyRef Name="ScreeningCheckTypeId" />
+            </Principal>
+            <Dependent Role="TenantScreening">
+              <PropertyRef Name="ScreeningCheckTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TenantScreening_TenancyApplication">
+          <End Type="ProMasterTenantDataModel.TenancyApplication" Role="TenancyApplication" Multiplicity="1" />
+          <End Type="ProMasterTenantDataModel.TenantScreening" Role="TenantScreening" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TenancyApplication">
+              <PropertyRef Name="TenancyApplicationId" />
+            </Principal>
+            <Dependent Role="TenantScreening">
+              <PropertyRef Name="TeancyApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ScreenProcess">
+          <Key>
+            <PropertyRef Name="ScreenProcessId" />
+          </Key>
+          <Property Type="Int32" Name="ScreenProcessId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="TenancyApplicanionId" Nullable="false" />
+          <Property Type="String" Name="CurrentLandlordCheckStatus" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PrevioustLandlordCheckStatus" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CurrentEmploerCheckStatus" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PreviousEmploerCheckStatus" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CreditReportCheckStatus" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RentToIncomeRatioCheckStatus" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsScreenProcessCompleted" Nullable="false" />
+          <Property Type="String" Name="ScreenFinalStatus" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="ScreenProcessCompletionDate" Nullable="false" Precision="7" />
+          <NavigationProperty Name="TenancyApplication" Relationship="ProMasterTenantDataModel.FK_ScreenProcess_TenancyApplication" FromRole="ScreenProcess" ToRole="TenancyApplication" />
+        </EntityType>
+        <Association Name="FK_ScreenProcess_TenancyApplication">
+          <End Type="ProMasterTenantDataModel.TenancyApplication" Role="TenancyApplication" Multiplicity="1" />
+          <End Type="ProMasterTenantDataModel.ScreenProcess" Role="ScreenProcess" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TenancyApplication">
+              <PropertyRef Name="TenancyApplicationId" />
+            </Principal>
+            <Dependent Role="ScreenProcess">
+              <PropertyRef Name="TenancyApplicanionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="RentPayment">
+          <Key>
+            <PropertyRef Name="RentPaymentId" />
+          </Key>
+          <Property Type="Int32" Name="RentPaymentId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="TenantId" Nullable="false" />
+          <Property Type="Boolean" Name="RentIsPaidOntime" Nullable="false" />
+          <Property Type="DateTime" Name="RentPaymentDate" Nullable="false" Precision="7" />
+          <Property Type="String" Name="RentPaymentMonth" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RentPaymentYear" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="RentPaidAmount" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="NumberOfLatePayment" Nullable="false" />
+          <Property Type="Decimal" Name="Balance" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="RentPaymentMethodId" Nullable="false" />
+          <Property Type="Boolean" Name="IsCollectedInPerson" Nullable="false" />
+          <Property Type="Boolean" Name="IsDepositForOwner" Nullable="false" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="3" />
+          <Property Type="String" Name="Notes" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Tenant" Relationship="ProMasterTenantDataModel.FK_RentPayment_Tenant" FromRole="RentPayment" ToRole="Tenant" />
+          <NavigationProperty Name="RentPaymentMethod" Relationship="ProMasterTenantDataModel.FK_RentPayment_RentPaymentMethod" FromRole="RentPayment" ToRole="RentPaymentMethod" />
+        </EntityType>
+        <Association Name="FK_RentPayment_Tenant">
+          <End Type="ProMasterTenantDataModel.Tenant" Role="Tenant" Multiplicity="1" />
+          <End Type="ProMasterTenantDataModel.RentPayment" Role="RentPayment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tenant">
+              <PropertyRef Name="TenantId" />
+            </Principal>
+            <Dependent Role="RentPayment">
+              <PropertyRef Name="TenantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="RentPaymentMethod">
+          <Key>
+            <PropertyRef Name="RentPaymentMethodId" />
+          </Key>
+          <Property Type="Int32" Name="RentPaymentMethodId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="RentPaymentMethod1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Notes" MaxLength="250" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="RentPayments" Relationship="ProMasterTenantDataModel.FK_RentPayment_RentPaymentMethod" FromRole="RentPaymentMethod" ToRole="RentPayment" />
+        </EntityType>
+        <Association Name="FK_RentPayment_RentPaymentMethod">
+          <End Type="ProMasterTenantDataModel.RentPaymentMethod" Role="RentPaymentMethod" Multiplicity="1" />
+          <End Type="ProMasterTenantDataModel.RentPayment" Role="RentPayment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RentPaymentMethod">
+              <PropertyRef Name="RentPaymentMethodId" />
+            </Principal>
+            <Dependent Role="RentPayment">
+              <PropertyRef Name="RentPaymentMethodId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProMasterTenantDataModelStoreContainer" CdmEntityContainer="ProMasterTenantDataEntities">
+          <EntitySetMapping Name="Users"><EntityTypeMapping TypeName="ProMasterTenantDataModel.User"><MappingFragment StoreEntitySet="User">
+            <ScalarProperty Name="Disabled" ColumnName="Disabled" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="UserName" ColumnName="UserName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Leases">
+            <EntityTypeMapping TypeName="ProMasterTenantDataModel.Lease">
+              <MappingFragment StoreEntitySet="Lease">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="Addendum" ColumnName="Addendum" />
+                <ScalarProperty Name="LeaseAgreementDocUrl" ColumnName="LeaseAgreementDocUrl" />
+                <ScalarProperty Name="LeaseSignDate" ColumnName="LeaseSignDate" />
+                <ScalarProperty Name="PetDepositAmount" ColumnName="PetDepositAmount" />
+                <ScalarProperty Name="DamageDepositAmount" ColumnName="DamageDepositAmount" />
+                <ScalarProperty Name="RentDueOn" ColumnName="RentDueOn" />
+                <ScalarProperty Name="RentAmount" ColumnName="RentAmount" />
+                <ScalarProperty Name="RentFrequency" ColumnName="RentFrequency" />
+                <ScalarProperty Name="LeaseTermId" ColumnName="LeaseTermId" />
+                <ScalarProperty Name="LeaseEndDate" ColumnName="LeaseEndDate" />
+                <ScalarProperty Name="LeaseStartDate" ColumnName="LeaseStartDate" />
+                <ScalarProperty Name="PropertyId" ColumnName="PropertyId" />
+                <ScalarProperty Name="LeaseDesc" ColumnName="LeaseDesc" />
+                <ScalarProperty Name="LeaseTitle" ColumnName="LeaseTitle" />
+                <ScalarProperty Name="LeaseId" ColumnName="LeaseId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Properties">
+            <EntityTypeMapping TypeName="ProMasterTenantDataModel.Property">
+              <MappingFragment StoreEntitySet="Property">
+                <ScalarProperty Name="PropertyMgmntlStatusId" ColumnName="PropertyMgmntlStatusId" />
+                <ScalarProperty Name="PropertyListDesc" ColumnName="PropertyListDesc" />
+                <ScalarProperty Name="StrataCouncilId" ColumnName="StrataCouncilId" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="RentalStatusId" ColumnName="RentalStatusId" />
+                <ScalarProperty Name="IsShared" ColumnName="IsShared" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="PropertyBuildYear" ColumnName="PropertyBuildYear" />
+                <ScalarProperty Name="PropertyVideoUrl" ColumnName="PropertyVideoUrl" />
+                <ScalarProperty Name="PropertyImgUrl" ColumnName="PropertyImgUrl" />
+                <ScalarProperty Name="PropertyManagerId" ColumnName="PropertyManagerId" />
+                <ScalarProperty Name="PropertyOwnerId" ColumnName="PropertyOwnerId" />
+                <ScalarProperty Name="PropertyFacilityId" ColumnName="PropertyFacilityId" />
+                <ScalarProperty Name="PropertyFeatureId" ColumnName="PropertyFeatureId" />
+                <ScalarProperty Name="PropertyAddressId" ColumnName="PropertyAddressId" />
+                <ScalarProperty Name="PropertyTypeId" ColumnName="PropertyTypeId" />
+                <ScalarProperty Name="PropertyDesc" ColumnName="PropertyDesc" />
+                <ScalarProperty Name="PropertyName" ColumnName="PropertyName" />
+                <ScalarProperty Name="PropertyId" ColumnName="PropertyId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tenants">
+            <EntityTypeMapping TypeName="ProMasterTenantDataModel.Tenant">
+              <MappingFragment StoreEntitySet="Tenant">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ManagedBy" ColumnName="ManagedBy" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="LeaseId" ColumnName="LeaseId" />
+                <ScalarProperty Name="UserAvartaImgUrl" ColumnName="UserAvartaImgUrl" />
+                <ScalarProperty Name="OnlineAccessEnbaled" ColumnName="OnlineAccessEnbaled" />
+                <ScalarProperty Name="ContactTelephone2" ColumnName="ContactTelephone2" />
+                <ScalarProperty Name="ContactTelephone1" ColumnName="ContactTelephone1" />
+                <ScalarProperty Name="ContactEmail" ColumnName="ContactEmail" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Documents">
+            <EntityTypeMapping TypeName="ProMasterTenantDataModel.Document">
+              <MappingFragment StoreEntitySet="Document">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="DocumentUrl" ColumnName="DocumentUrl" />
+                <ScalarProperty Name="DocumentPrincipalId" ColumnName="DocumentPrincipalId" />
+                <ScalarProperty Name="DocumentPrincipalTypeId" ColumnName="DocumentPrincipalTypeId" />
+                <ScalarProperty Name="DcoumentDetails" ColumnName="DcoumentDetails" />
+                <ScalarProperty Name="DocumentName" ColumnName="DocumentName" />
+                <ScalarProperty Name="DocumentTypeId" ColumnName="DocumentTypeId" />
+                <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocumentPrincipalTypes">
+            <EntityTypeMapping TypeName="ProMasterTenantDataModel.DocumentPrincipalType">
+              <MappingFragment StoreEntitySet="DocumentPrincipalType">
+                <ScalarProperty Name="DocumentPrincipalType1" ColumnName="DocumentPrincipalType" />
+                <ScalarProperty Name="DocumentPrincipalTypeId" ColumnName="DocumentPrincipalTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocumentTypes">
+            <EntityTypeMapping TypeName="ProMasterTenantDataModel.DocumentType">
+              <MappingFragment StoreEntitySet="DocumentType">
+                <ScalarProperty Name="DocumentType1" ColumnName="DocumentType" />
+                <ScalarProperty Name="DocumentTypeId" ColumnName="DocumentTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LeaseTerms">
+            <EntityTypeMapping TypeName="ProMasterTenantDataModel.LeaseTerm">
+              <MappingFragment StoreEntitySet="LeaseTerm">
+                <ScalarProperty Name="LeaaseTerm" ColumnName="LeaaseTerm" />
+                <ScalarProperty Name="LeaseTermId" ColumnName="LeaseTermId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CreditReports">
+            <EntityTypeMapping TypeName="ProMasterTenantDataModel.CreditReport">
+              <MappingFragment StoreEntitySet="CreditReport">
+                <ScalarProperty Name="CreditReportAddDate" ColumnName="CreditReportAddDate" />
+                <ScalarProperty Name="CreditReportScore" ColumnName="CreditReportScore" />
+                <ScalarProperty Name="TenancyApplicanionId" ColumnName="TenancyApplicanionId" />
+                <ScalarProperty Name="CreditReportId" ColumnName="CreditReportId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocumentCheckLists">
+            <EntityTypeMapping TypeName="ProMasterTenantDataModel.DocumentCheckList">
+              <MappingFragment StoreEntitySet="DocumentCheckList">
+                <ScalarProperty Name="DocumentCheckListCompletionDate" ColumnName="DocumentCheckListCompletionDate" />
+                <ScalarProperty Name="IsCreditReportProvided" ColumnName="IsCreditReportProvided" />
+                <ScalarProperty Name="IsIncomeStatementProvided" ColumnName="IsIncomeStatementProvided" />
+                <ScalarProperty Name="IsEmployerReferenceProvided" ColumnName="IsEmployerReferenceProvided" />
+                <ScalarProperty Name="IsLandLordReferenceProvided" ColumnName="IsLandLordReferenceProvided" />
+                <ScalarProperty Name="IsIdentificationProvided" ColumnName="IsIdentificationProvided" />
+                <ScalarProperty Name="TenancyApplicanionId" ColumnName="TenancyApplicanionId" />
+                <ScalarProperty Name="DocumentCheckListId" ColumnName="DocumentCheckListId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TenancyApplications">
+            <EntityTypeMapping TypeName="ProMasterTenantDataModel.TenancyApplication">
+              <MappingFragment StoreEntitySet="TenancyApplication">
+                <ScalarProperty Name="ScreeningNotes" ColumnName="ScreeningNotes" />
+                <ScalarProperty Name="ApplicantSIN" ColumnName="ApplicantSIN" />
+                <ScalarProperty Name="ApplicationSentDate" ColumnName="ApplicationSentDate" />
+                <ScalarProperty Name="CreditReportScore" ColumnName="CreditReportScore" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="IsIdentificationDocAvailalbe" ColumnName="IsIdentificationDocAvailalbe" />
+                <ScalarProperty Name="PreviousLandlordContact" ColumnName="PreviousLandlordContact" />
+                <ScalarProperty Name="CurrentLandlordContact" ColumnName="CurrentLandlordContact" />
+                <ScalarProperty Name="IsAuthorizedForRefCheck" ColumnName="IsAuthorizedForRefCheck" />
+                <ScalarProperty Name="CurrentMonthlyIncome" ColumnName="CurrentMonthlyIncome" />
+                <ScalarProperty Name="PreviousEmployerContact" ColumnName="PreviousEmployerContact" />
+                <ScalarProperty Name="CurrentEmployerContact" ColumnName="CurrentEmployerContact" />
+                <ScalarProperty Name="NumberOfChildren" ColumnName="NumberOfChildren" />
+                <ScalarProperty Name="NumberOfTenant" ColumnName="NumberOfTenant" />
+                <ScalarProperty Name="ApplicantContactEmail" ColumnName="ApplicantContactEmail" />
+                <ScalarProperty Name="ApplicantContactTel" ColumnName="ApplicantContactTel" />
+                <ScalarProperty Name="PreviousAddress" ColumnName="PreviousAddress" />
+                <ScalarProperty Name="CurrentAddress" ColumnName="CurrentAddress" />
+                <ScalarProperty Name="PropertyId" ColumnName="PropertyId" />
+                <ScalarProperty Name="ApplicantLastName" ColumnName="ApplicantLastName" />
+                <ScalarProperty Name="ApplicantFirstName" ColumnName="ApplicantFirstName" />
+                <ScalarProperty Name="TenancyApplicationId" ColumnName="TenancyApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ScreeningCheckStatus">
+            <EntityTypeMapping TypeName="ProMasterTenantDataModel.ScreeningCheckStatu">
+              <MappingFragment StoreEntitySet="ScreeningCheckStatus">
+                <ScalarProperty Name="ScreeningCheckStatusName" ColumnName="ScreeningCheckStatusName" />
+                <ScalarProperty Name="ScreeningCheckStatusId" ColumnName="ScreeningCheckStatusId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ScreeningCheckTypes">
+            <EntityTypeMapping TypeName="ProMasterTenantDataModel.ScreeningCheckType">
+              <MappingFragment StoreEntitySet="ScreeningCheckType">
+                <ScalarProperty Name="ScreeningCheckTypeName" ColumnName="ScreeningCheckTypeName" />
+                <ScalarProperty Name="ScreeningCheckTypeId" ColumnName="ScreeningCheckTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TenantScreenings">
+            <EntityTypeMapping TypeName="ProMasterTenantDataModel.TenantScreening">
+              <MappingFragment StoreEntitySet="TenantScreening">
+                <ScalarProperty Name="ScreenNotes" ColumnName="ScreenNotes" />
+                <ScalarProperty Name="ScreenCheckUpdateDate" ColumnName="ScreenCheckUpdateDate" />
+                <ScalarProperty Name="ScreeningCheckStatusId" ColumnName="ScreeningCheckStatusId" />
+                <ScalarProperty Name="ScreeningCheckTypeId" ColumnName="ScreeningCheckTypeId" />
+                <ScalarProperty Name="TeancyApplicationId" ColumnName="TeancyApplicationId" />
+                <ScalarProperty Name="TenantScreeningId" ColumnName="TenantScreeningId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ScreenProcesses">
+            <EntityTypeMapping TypeName="ProMasterTenantDataModel.ScreenProcess">
+              <MappingFragment StoreEntitySet="ScreenProcess">
+                <ScalarProperty Name="ScreenProcessCompletionDate" ColumnName="ScreenProcessCompletionDate" />
+                <ScalarProperty Name="ScreenFinalStatus" ColumnName="ScreenFinalStatus" />
+                <ScalarProperty Name="IsScreenProcessCompleted" ColumnName="IsScreenProcessCompleted" />
+                <ScalarProperty Name="RentToIncomeRatioCheckStatus" ColumnName="RentToIncomeRatioCheckStatus" />
+                <ScalarProperty Name="CreditReportCheckStatus" ColumnName="CreditReportCheckStatus" />
+                <ScalarProperty Name="PreviousEmploerCheckStatus" ColumnName="PreviousEmploerCheckStatus" />
+                <ScalarProperty Name="CurrentEmploerCheckStatus" ColumnName="CurrentEmploerCheckStatus" />
+                <ScalarProperty Name="PrevioustLandlordCheckStatus" ColumnName="PrevioustLandlordCheckStatus" />
+                <ScalarProperty Name="CurrentLandlordCheckStatus" ColumnName="CurrentLandlordCheckStatus" />
+                <ScalarProperty Name="TenancyApplicanionId" ColumnName="TenancyApplicanionId" />
+                <ScalarProperty Name="ScreenProcessId" ColumnName="ScreenProcessId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RentPayments">
+            <EntityTypeMapping TypeName="ProMasterTenantDataModel.RentPayment">
+              <MappingFragment StoreEntitySet="RentPayment">
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="IsDepositForOwner" ColumnName="IsDepositForOwner" />
+                <ScalarProperty Name="IsCollectedInPerson" ColumnName="IsCollectedInPerson" />
+                <ScalarProperty Name="RentPaymentMethodId" ColumnName="RentPaymentMethodId" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="NumberOfLatePayment" ColumnName="NumberOfLatePayment" />
+                <ScalarProperty Name="RentPaidAmount" ColumnName="RentPaidAmount" />
+                <ScalarProperty Name="RentPaymentYear" ColumnName="RentPaymentYear" />
+                <ScalarProperty Name="RentPaymentMonth" ColumnName="RentPaymentMonth" />
+                <ScalarProperty Name="RentPaymentDate" ColumnName="RentPaymentDate" />
+                <ScalarProperty Name="RentIsPaidOntime" ColumnName="RentIsPaidOntime" />
+                <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+                <ScalarProperty Name="RentPaymentId" ColumnName="RentPaymentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RentPaymentMethods">
+            <EntityTypeMapping TypeName="ProMasterTenantDataModel.RentPaymentMethod">
+              <MappingFragment StoreEntitySet="RentPaymentMethod">
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="RentPaymentMethod1" ColumnName="RentPaymentMethod" />
+                <ScalarProperty Name="RentPaymentMethodId" ColumnName="RentPaymentMethodId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ProMasterTenantDataModel">
+        <EntityTypeShape EntityType="ProMasterTenantDataModel.User" Width="1.5" PointX="2.75" PointY="0.75" Height="1.2636116536458335" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProMasterTenantDataModel.Lease" Width="1.5" PointX="8.5" PointY="3.625" Height="4.0575162760416656" />
+        <EntityTypeShape EntityType="ProMasterTenantDataModel.Property" Width="1.5" PointX="5.625" PointY="0.75" Height="4.0575162760416674" />
+        <AssociationConnector Association="ProMasterTenantDataModel.FK_Lease_Property">
+          <ConnectorPoint PointX="7.125" PointY="4.38060546875" />
+          <ConnectorPoint PointX="8.5" PointY="4.38060546875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ProMasterTenantDataModel.Tenant" Width="1.875" PointX="2.375" PointY="2.375" Height="3.0714322916666674" />
+        <EntityTypeShape EntityType="ProMasterTenantDataModel.Document" Width="1.875" PointX="11.5" PointY="1" Height="2.5783902994791665" />
+        <EntityTypeShape EntityType="ProMasterTenantDataModel.DocumentPrincipalType" Width="2" PointX="8.375" PointY="1.625" Height="1.4279589843749996" />
+        <EntityTypeShape EntityType="ProMasterTenantDataModel.DocumentType" Width="1.75" PointX="14" PointY="1.5" Height="1.4279589843749996" />
+        <AssociationConnector Association="ProMasterTenantDataModel.FK_Document_DocumentPrincipalType">
+          <ConnectorPoint PointX="9.875" PointY="2.3389794921875" />
+          <ConnectorPoint PointX="10.625" PointY="2.3389794921875" />
+        </AssociationConnector>
+        <AssociationConnector Association="ProMasterTenantDataModel.FK_Document_DocumentType">
+          <ConnectorPoint PointX="13.125" PointY="2.2139794921875" />
+          <ConnectorPoint PointX="12.125" PointY="2.2139794921875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ProMasterTenantDataModel.LeaseTerm" Width="1.5" PointX="5.625" PointY="6.25" Height="1.4279589843749996" />
+        <AssociationConnector Association="ProMasterTenantDataModel.FK_Lease_LeaseTerm">
+          <ConnectorPoint PointX="7.125" PointY="6.2139794921875" />
+          <ConnectorPoint PointX="8.5" PointY="6.2139794921875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ProMasterTenantDataModel.CreditReport" Width="2" PointX="6.875" PointY="8.75" Height="1.7566536458333317" />
+        <EntityTypeShape EntityType="ProMasterTenantDataModel.DocumentCheckList" Width="2.875" PointX="6.25" PointY="13.5" Height="2.4140429687499996" />
+        <EntityTypeShape EntityType="ProMasterTenantDataModel.TenancyApplication" Width="2" PointX="3.625" PointY="9.25" Height="5.0436002604166745" />
+        <AssociationConnector Association="ProMasterTenantDataModel.FK_CreditReport_TenancyApplication">
+          <ConnectorPoint PointX="5.625" PointY="9.8783268229166659" />
+          <ConnectorPoint PointX="6.875" PointY="9.8783268229166659" />
+        </AssociationConnector>
+        <AssociationConnector Association="ProMasterTenantDataModel.FK_DocumentCheckList_TenancyApplication">
+          <ConnectorPoint PointX="5.625" PointY="12.082021484375" />
+          <ConnectorPoint PointX="6.875" PointY="12.082021484375" />
+        </AssociationConnector>
+        <AssociationConnector Association="ProMasterTenantDataModel.FK_TenancyApplication_Property">
+          <ConnectorPoint PointX="5.625" PointY="2.1943058268229167" />
+          <ConnectorPoint PointX="5.1875" PointY="2.1943058268229167" />
+          <ConnectorPoint PointX="5.1875" PointY="9.25" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ProMasterTenantDataModel.ScreeningCheckStatu" Width="2.125" PointX="0.5" PointY="6.875" Height="1.4279589843749996" />
+        <EntityTypeShape EntityType="ProMasterTenantDataModel.ScreeningCheckType" Width="1.875" PointX="3.375" PointY="6.875" Height="1.4279589843749996" />
+        <EntityTypeShape EntityType="ProMasterTenantDataModel.TenantScreening" Width="2.125" PointX="0.5" PointY="10.375" Height="2.2496956380208388" />
+        <AssociationConnector Association="ProMasterTenantDataModel.FK_TenantScreening_ScreeningCheckStatus">
+          <ConnectorPoint PointX="1.5" PointY="8.177958984375" />
+          <ConnectorPoint PointX="1.5" PointY="9.375" />
+        </AssociationConnector>
+        <AssociationConnector Association="ProMasterTenantDataModel.FK_TenantScreening_ScreeningCheckType" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.4321657966486026" PointY="8.177958984375" />
+          <ConnectorPoint PointX="3.4321657966486026" PointY="9.8388787434895839" />
+          <ConnectorPoint PointX="2.375" PointY="9.8388787434895839" />
+        </AssociationConnector>
+        <AssociationConnector Association="ProMasterTenantDataModel.FK_TenantScreening_TenancyApplication">
+          <ConnectorPoint PointX="3.625" PointY="10.794287190755211" />
+          <ConnectorPoint PointX="2.375" PointY="10.794287190755211" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ProMasterTenantDataModel.ScreenProcess" Width="2.375" PointX="9.5" PointY="11.25" />
+        <AssociationConnector Association="ProMasterTenantDataModel.FK_ScreenProcess_TenancyApplication" />
+        <EntityTypeShape EntityType="ProMasterTenantDataModel.RentPayment" Width="1.5" PointX="0.75" PointY="13.375" />
+        <AssociationConnector Association="ProMasterTenantDataModel.FK_RentPayment_Tenant" />
+        <EntityTypeShape EntityType="ProMasterTenantDataModel.RentPaymentMethod" Width="1.5" PointX="3.8168402536850614" PointY="18.27794534819105" />
+        <AssociationConnector Association="ProMasterTenantDataModel.FK_RentPayment_RentPaymentMethod" />
+        </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

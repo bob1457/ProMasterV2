@@ -1,0 +1,239 @@
+﻿@model IEnumerable<ProMaster.Infrastructure.UserProfile.PropertyManager>
+
+@{
+    ViewBag.Title = "Manage Property Managers";
+}
+
+<div class="content-wrapper">
+    <aside>
+        <p>
+            <!-- Left Panel/Column -->
+            <div id="left">
+
+                <div class="side_title-logo">
+                    <img src="@Url.Content("~/Content/Images/admin-large.png")" alt="" title="Manage" />
+
+                </div>
+                <div class="side_title_caption metro">
+                    <h3>Managing Property Managers</h3>
+                    <br>
+                    <span>Manage property managers.</span>
+
+                    <br />
+                    <br />
+                    <br />
+
+                </div> <!-- End of left -->
+        </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+    </aside> <!-- End of aside -->
+
+    <div class="main">
+        <div id="manage-tabs" class="tabs-style">
+            <ul>
+                <li><a href="#tabs-1"><i class="fa fa-home"></i> <span>Property Managers</span></a></li>                
+            </ul>
+            <div id="tabs-1">
+                <div class="button-med edit_button">@Html.ActionLink("Add New", "CreatePropertyManager")</div>
+                <p></p>
+                <p>Most recent added active property managers.</p>
+                <p></p>
+
+                <div class="edit_field">
+                    <input class="rlabel" id="active" type="radio" name="ppt" />Active Managers
+                    <input class="rlabel" id="all" type="radio" name="ppt" />All Managers
+                </div>
+
+                <div id="list">@Html.Partial("_ManagerList")</div>
+
+                <div id="result"></div>
+                <!-- 
+                <table>
+                    <thead>
+                        <tr>
+                            <td colspan="9" class="table-h asphalt">
+                                <span><i class="fa fa-th-list"></i></span> Property List
+                            </td>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <th>ID &nbsp;</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Telephone</th>
+                        <th>Added</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+
+
+                    @if (Model.Count() != 0)
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PropertyManagerId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FirstName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LastName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ContactEmail)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ContactTelephone1)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CreationDate))
+                                </td>
+
+                                <td>
+                                    <div class="table-button"><a href="@Url.Action("ManagerDetails", "Admin", new { id = item.PropertyManagerId })"><img src="@Url.Content("~/Content/Images/details.png")" title="Details" /></a></div>
+                                </td>
+                                <td>
+                                    <div class="table-button"><a class="delete-link" href="@Url.Action("DeleteManager", "Admin", new { id = item.PropertyManagerId })"><img src="@Url.Content("~/Content/Images/delete.png")" title="Delete" /></a></div>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="9">No records!</td>
+                        </tr>
+                    }
+
+
+
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="9"><span><i class="fa fa-th"></i></span></td>
+
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <div class="more">
+                    @if (Model.Count() > 10)
+                    {
+                        <a href="@Url.Content("~/Admin/AllPropertiesManagers")">More...</a>
+                    }
+                </div>
+                    
+                    -->
+
+            </div>
+
+            </div>
+
+
+            </div>
+
+
+
+
+        </div><!-- End of main -->
+
+</div><!-- End of content-wrapper -->
+<!-- Create Tabs -->
+<script>
+    $(function () {
+        $("#manage-tabs").tabs();
+    });
+</script>
+
+<!-- The confirmation dialog content -->
+<div id="delete-dialog" title="Confirmation" style="display:none">
+    <p><span class="dialog-icon"><i class="fa fa-exclamation-triangle"></i></span> Are you sure to delete this property manager?</p>
+</div>
+<br />
+
+
+<!-- Delete Confirmation Script -->
+<script type="text/javascript">
+    $('.delete-link').click(function () {
+        deleteLinkObj = $(this);
+        $('#delete-dialog').dialog();
+        return false;
+    });
+
+    $(function () {
+        $('.delete-link').click(function () {
+            var dialogOpts = {
+                autoOpen: false,
+                modal: true,
+                resizable: false,
+                draggable: false,
+                title: 'Delete Confirmation!',
+                buttons: {
+                    "Cancel": function () {
+                        $(this).dialog("close");
+                    },
+
+                    "Continue": function () {
+                        $.post(deleteLinkObj[0].href, function (data) {
+                            if (data == '@Boolean.TrueString') {
+                                deleteLinkObj.closest("tr").hide('fast');
+                                $("#result").text("The record has been successfully deactivated!");
+                            }
+                            else {
+                                $("#result").text("error occured!");
+                            }
+                        });
+                        $(this).dialog("close");
+
+                    }
+                }
+            };
+
+
+            $('#delete-dialog').dialog(dialogOpts).dialog('open');
+            return false;
+        });
+    });
+
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#active").prop('checked', true);
+
+        $("#all").change(function () {
+
+            var isChecked = $(this).is(':checked');           
+
+            if (isChecked) {
+                var url = "/Admin/GetAllManagers";
+                $.get(url, function (data) {
+                    $("#list").html(data);
+                });
+            }
+            else {
+                var url = "/Admin/GetActiveManagers";
+                $.get(url, function (data) {
+                    $("#list").html(data);
+                });
+            }
+        });
+
+
+        $("#active").change(function () {
+            var isChecked = $(this).is(':checked');
+
+            if (isChecked) {
+                var url = "/Admin/GetActiveManagers";
+                $.get(url, function (data) {
+                    $("#list").html(data);
+                });
+            }
+        });
+    });
+
+</script>

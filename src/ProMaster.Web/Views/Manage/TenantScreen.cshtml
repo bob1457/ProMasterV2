@@ -1,0 +1,305 @@
+﻿@model ProMaster.Core.Tenant.ViewModels.TenantScreenViewModel
+
+@{
+    ViewBag.Title = "TenantScreen";
+}
+
+<h2>TenantScreen</h2>
+
+<fieldset>
+    <legend>TenantScreenViewModel</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ApplicationId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ApplicationId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ApplicantFirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ApplicantFirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ApplicantLastName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ApplicantLastName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ApplicantSIN)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ApplicantSIN)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ApplicantCurrentAddress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ApplicantCurrentAddress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ApplicantPreviousAddress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ApplicantPreviousAddress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ApplicantContactEmail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ApplicantContactEmail)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ApplicantContactTel)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ApplicantContactTel)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ApplicantCurrentLandlorContact)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ApplicantCurrentLandlorContact)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ApplicantPreviousLandlorContact)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ApplicantPreviousLandlorContact)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ApplicantPreviousEmploerContact)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ApplicantPreviousEmploerContact)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ApplicantCurrentEmploerContact)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ApplicantCurrentEmploerContact)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ApplicantEmploymentIncome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ApplicantEmploymentIncome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ApplicantOtherIncome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ApplicantOtherIncome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ApplicantCreditReportId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ApplicantCreditReportId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ApplicantCreditReport)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ApplicantCreditReport)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ApplicantCreditScore)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ApplicantCreditScore)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NumberOfOccupantse)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NumberOfOccupantse)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NumberOfChildren)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NumberOfChildren)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsApplicationActive)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsApplicationActive)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ApplicaitonDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ApplicaitonDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsAuthorizedToCheckReference)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsAuthorizedToCheckReference)
+    </div>
+<p>
+   <!-- Document Checklist -->
+<p>    
+    <h3> Document Checklist</h3>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdentificationDocAvailable)
+    </div>
+    <div class="display-field">
+        @Html.EditorFor(model => model.IdentificationDocAvailable)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IncomeDocAvailable)
+    </div>
+    <div class="display-field">
+        @Html.EditorFor(model => model.IncomeDocAvailable)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EmployerReferenceDocAvailable)
+    </div>
+    <div class="display-field">
+        @Html.EditorFor(model => model.EmployerReferenceDocAvailable)
+    </div>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LandlordReferenceDocAvailable)
+    </div>
+    <div class="display-field">
+        @Html.EditorFor(model => model.LandlordReferenceDocAvailable)
+    </div>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsCreditReportAvailable)
+    </div>
+    <div class="display-field">
+        @Html.EditorFor(model => model.IsCreditReportAvailable)
+    </div>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsAllDocumentsReady)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsAllDocumentsReady)
+    </div>
+<!--
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ScreenCheckStatus)
+    </div>
+    <div class="display-field">
+        @Html.EditorFor(model => model.ScreenCheckStatus)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ScreenCheckStatusId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ScreenCheckStatusId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CurrentLandLordReferenceCheckStatus)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CurrentLandLordReferenceCheckStatus)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PreviousLandlordReferenceCheckStatus)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PreviousLandlordReferenceCheckStatus)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CurrentEmployerReferenceCheckStatus)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CurrentEmployerReferenceCheckStatus)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PreviousEmployerReferenceCheckStatus)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PreviousEmployerReferenceCheckStatus)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreditReportCheckStatus)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreditReportCheckStatus)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IncomeCheckStatus)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IncomeCheckStatus)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EmploymentHistoryReferenceCheckStatus)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EmploymentHistoryReferenceCheckStatus)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ScreenCheckType)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ScreenCheckType)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsScreenProcessCompleted)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsScreenProcessCompleted)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FinalScreeningStatus)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FinalScreeningStatus)
+    </div>
+
+-->
+
+
+
+</fieldset>
+
+<div id="state">@Html.Partial("_ScreenStatus")</div>
+
+<div id="updated"></div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

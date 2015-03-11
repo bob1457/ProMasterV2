@@ -1,0 +1,349 @@
+﻿@model ProMaster.Core.Lease.ViewModels.RentPaymentViewModel
+
+    @{
+        ViewBag.Title = "Fee Payment Details";
+    }
+
+<style>
+    .ui-widget-content a {
+        color:#2980be;
+        text-decoration:none;
+    }
+
+    .ui-widget-content a:hover {
+        color:#2980be;
+        text-decoration:underline;
+    }
+
+    .edit_field .display-field {
+        width: 20.25em;
+    }
+</style>
+
+    <div class="content-wrapper">
+        <aside>
+            <!-- Left Panel/Column -->
+            <div id="left">
+                <div class="side_details_logo">
+                    <img src="@Url.Content("~/Content/Images/documents3.png")" alt="" title="Rent Payment Details" />
+                </div>
+                <div class="side_details_caption metro">
+                    <h3>Payment Details</h3>
+                    <br />
+                    <span>
+                        Rent payment information
+                    </span>
+                    <p></p><p></p>
+                    @*<h6>Rental Propoerty</h6>*@
+                    <div class="side_details_content">
+                        @*<div class="display-label">
+                            Property Name:
+                        </div><br />
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model)
+                        </div><br />*@
+
+
+                    </div>
+                    @*<h6>Tenant(s) Information</h6>*@
+                    <div class="side_details_content">
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+        </aside><!-- End of aside -->
+        <div class="main metro">
+            <div id="manage-tabs" class="tabs-style">
+                <ul>
+                    <li><a href="#tabs-1"><i class="fa fa-list-alt"></i> &nbsp;<span>General</span></a></li>
+                </ul>
+                <div id="tabs-1">
+                    <div class="tab_content">
+                        <div class="tab_content_title">
+                            <span class="title_icon"><img src="@Url.Content("~/Content/Images/documents2.png")" alt="" title="" /></span>
+                            <span class="title_text"><h5>Rent Payment Information</h5></span>
+                            <br />
+                            <span class="title_caption">Rent payment/revenue information.</span><p></p>
+                        </div>
+                        <div class="tab_content_field">
+                            <fieldset>
+                                <legend><span><i class=" icon-address-book"></i> Basic Information</span></legend>
+                                <div class="basic">
+                                    <div class="display-label">
+                                        Payment Period:
+                                    </div>
+                                    <div class="display-field">
+                                        @Html.DisplayFor(model => model.PaymentMonth)/@Html.DisplayFor(model => model.PaymentYear)
+                                    </div>
+                                    <br />
+                                    <div class="display-label">
+                                        Payment Amount:
+                                    </div>
+                                    <div class="display-field">
+                                        $@Html.DisplayFor(model => model.PaymenAmount)
+                                    </div>
+                                    <br />
+                                    <div class="display-label">
+                                        Payment Date:
+                                    </div>
+                                    <div class="display-field">
+                                        @Html.DisplayFor(model => model.PaymentDate)
+                                    </div>
+                                    <br />
+                                    <div class="display-label">
+                                        Payment Method:
+                                    </div>
+                                    <div class="display-field">
+                                        @Html.DisplayFor(model => model.RentPaymentMethod)
+                                    </div>
+                                    <br />
+
+                                    @*<div class="display-label">
+                                        Transferred to Owner:
+                                    </div>
+                                    <div class="display-field">
+                                        @Html.DisplayFor(model => model.IsRentTransferred)
+                                    </div>*@
+                                    <div id="status">@Html.Partial("_TransferStatus")</div>
+                                    <br />
+
+                                    @if (Model.IsRentTransferred == true)
+                                    {
+                                        <div class="display-label">
+                                            Transferred Method:
+                                        </div>
+                                        <div class="display-field">
+                                            @Html.DisplayFor(model => model.TransferMethod)<br />
+                                            @if(Model.TransferMethod.ToString().Contains("Bank"))
+                                            {
+                                                <span>to</span> @Html.DisplayFor(model => model.Bank)
+                                            }
+                                        </div>
+                                        <br />
+                                        <div class="display-label">
+                                            Transferred Date:
+                                        </div>
+                                        <div class="display-field">
+                                            @Html.DisplayFor(model => model.TransferDate)
+                                        </div>
+                                        <br />
+                                    }
+                                    else
+                                    {
+                                        <span style="margin-left: 1em; color:#22618f;"><a id="action" href="#">Transfer</a></span>
+                                    }
+
+                                </div>
+                            </fieldset>
+
+                            @*<div class="right-aligned"><div class="edit_button button-med ">@Html.ActionLink("Edit", "EditRentPayment", new { id = Model.RentPaymentId /**/ })</div></div>*@
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+<!-- Transfer Dialog -->
+<div id="transf" class="edit_field ui-dia">
+
+    <fieldset class="ui-dia">
+
+        <div id="transfer">
+            <div class="display-label">
+                Transfer Date:
+            </div>
+            <div class="display-field" >
+                <input id="date1" type="text" value="@DateTime.Now.ToString("M/d/yyyy")" />
+            </div><br />
+            <div class="display-label">
+                Transfer Amount:
+            </div>
+
+            <div class="display-field">
+                <input id="amount1" type="text" value="" placeholder="Transfer or Depoist Amount" />
+            </div><br />
+
+            <div class="display-label" style="width:20em;">
+                <input class="rlabel" id="direct" type="radio" name="ppt" />Direct transfer with cash/cheque<br />
+                <input class="rlabel" id="transfer" type="radio" name="ppt" />Bank Transfer/Deposit
+            </div><br />
+
+            <div id="bank_transfer">
+                <div class="display-label">
+                    Bank:
+                </div>
+                <div class="display-field">
+                    <select id="bank">
+                        <option value="1" selected>Royal Bank</option>
+                        <option value="2">Bank of Montreal</option>
+                        <option value="3">TD Bank</option>
+                        <option value="4">Scotial Bank</option>
+                        <option value="5">CIBC</option>
+                        <option value="6">Hong Kong Bank</option>
+                    </select>
+                </div><br />
+            </div>
+        </div><br />
+
+    </fieldset>
+    <div id="msg"></div>
+</div>
+
+
+<script type="text/javascript">
+    
+    $(document).ready(function () {
+
+        
+
+        
+    });
+    
+</script>
+
+
+<!--Jquery ui tabs Script -->
+<script type="text/javascript">
+    $(function () {
+        $("#manage-tabs").tabs();
+    });
+</script>
+
+<!-- rent transfer script -->
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#transf").hide();
+
+        $("#direct").prop('checked', true);
+        $("#bank_transfer").hide();
+
+        $("#transfer").change(function () {
+            //var isChecked = $("#transfer").is(':checked');
+            var isChecked = $("#direct").is(':checked');            
+
+            if (isChecked) {
+                $("#bank_transfer").hide();
+            }
+            else {
+                $("#bank_transfer").show();
+            }
+
+        });
+
+
+        $("#direct").change(function () {
+            //var isChecked = $(this).is(':checked');
+            var isChecked = $(this).is(':checked');
+
+            if (isChecked) {                
+                $("#bank_transfer").hide();
+            }
+            else {
+                $("#bank_transfer").show();
+            }
+            
+        });
+
+
+        $("#action").click(function () {
+
+            //var username = $("#uname").val();
+            //var passwd = $("#pwd").val();
+            //var passwd2 = $("#pwd2").val();
+
+            //alert(username);
+
+            var dialog = {
+                autoOpen: false,
+                modal: true,
+                resizable: false,
+                draggable: false,
+                width: 410,
+                title: 'Transfer Rent to Owner',
+                buttons: {
+                    'Transfer': function () {
+
+                        var item = $("#bank option:selected");
+
+                        
+
+                        var amount = @Model.PaymenAmount;  
+                        
+                        var NottoBaank = $("#direct").is(':checked');
+
+                        alert(!NottoBaank);
+
+                        if(!NottoBaank)
+                        {
+                            var bankId =item.val();
+                        }
+                        else
+                        {
+                            var bankId = 0;
+                        }
+                        
+                        //var d = new Date();
+
+                        //alert(username);
+                        //if (passwd == passwd2) {
+                            $.ajax({
+                                type: "POST",
+                                url: "/Manage/TransferRent",
+                                data: "id=" + @Model.RentPaymentId + "&amount=" + amount +"&bankId=" + bankId,
+                                contenType: "",
+                                dataType: "json",
+                                success: Suceeded
+                            });
+
+                            function Suceeded(data) {
+
+                                var url = "/Manage/GetTransferStatus";
+                                var q = "id=" + @Model.RentPaymentId;
+                                $.get(url, q, function (data) {
+                                    $("#status").html(data);
+                                    $("#action").hide();
+                                });
+
+
+                                $("#msg").html(data);
+
+                                //alert("enabled!");
+
+                                $('#msg').delay(5000).fadeOut(400);
+
+                                return false;
+                            }
+
+
+                            $(this).dialog('close');
+                        //}
+                        //else {
+                        //    $("#msg").html("Password not match!");
+                        //}
+                    },
+
+                    'Cancel': function () {
+                        $(this).dialog('close');
+                    }
+                }
+            }
+
+            $("#transf").dialog(dialog).dialog('open');
+        });
+    });
+
+
+</script>
+
+
+

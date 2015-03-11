@@ -1,0 +1,524 @@
+﻿@model ProMaster.Core.Vendor.ViewModels.CreateWorkOrderViewModel
+
+@{
+    ViewBag.Title = "Add WorkOrder";
+}
+
+
+<div class="content-wrapper">
+    <aside> 
+    <p><!-- Left Panel/Column -->
+      <div id="left">        
+         
+      	    <div class="profile_logo">
+        	    <img src="@Url.Content("~/Content/Images/maintenance.png")" alt="" title="Add Work Order" />        
+            </div>
+            <div class="profile_caption metro">
+        	    <h3>New Work Order</h3>
+                <br />
+                <span>
+            	    Add new work order 
+                </span>
+            </div>
+             
+
+      <p></p>
+      
+      <div class="side-widget tile-margin metro">
+      <p></p>
+        <div class="side-inner">
+          <a href="" title="Add New Tenant"><div class="tile amarelo" id="p1"><span><i class="icon-user"></i></span><br /><br /> Add New Tenant</div></a>
+          <a href="" title="Add New Lease"><div class="tile vermelho" id="p2"><span><i class="fa fa-file-text-o"></i></span><br /><br /> Add New Lease</div></a>
+          <a href="" title="Add New Landlord"><div class="tile azul" id="p3"><span><i class="fa fa-user"></i></span><br /><br /> Add New Landlord</div></a>
+          <a href="" title="Add New Contract"><div class="tile verde" id="p4"><span><i class="icon-clipboard-2"></i></span><br /><br /> <span style="font-size:0.97em;">Add New Contract</span></div></a>	
+        </div>
+      
+      </div>      
+
+      </div>      
+    </p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </aside><!-- End of aside -->
+
+    <div class="main metro">
+       <div id="add_edit_panel">
+           <h3><i class="fa fa-th"></i> &nbsp; ADD WORK ORDER        	
+              <span>Please fill/Update all required fields and click "Add".</span>
+           </h3>
+
+           @using (Html.BeginForm())
+           {
+                @Html.ValidationSummary(true)
+
+                 <div class="edit_field">
+                     <fieldset>
+                         <legend><span><i class="fa fa-info-circle"></i> Basic Information</span></legend>
+                                   
+                
+                        <div class="display-label">
+                            Work Order Name:
+                        </div>
+                        <div class="display-field">
+                            @Html.TextBoxFor(model => model.WorkOrderName, new { autofocus="" })
+                            @Html.ValidationMessageFor(model => model.WorkOrderName)
+                        </div>
+
+                        <div class="display-label">
+                           Work Order Details:
+                        </div>
+                        <div class="display-field">
+                            @Html.TextAreaFor(model => model.WorkOrderDetails)
+                            @Html.ValidationMessageFor(model => model.WorkOrderDetails)
+                        </div>
+
+                         <div class="display-label">
+                            Category:
+                        </div>
+                        <div class="display-field">
+                             @Html.DropDownListFor(model => model.WorkOrderCategoryId, Model.CategoryList)
+                        </div>
+                        
+                        <div class="display-label">
+                            Vendor:
+                        </div>
+                        <div class="display-field">                                                            
+                            <div id="lst">@Html.Partial("_venList")</div>
+                           <!-- @Html.ActionLink("Add Vendor", "AddVendor")-->
+                            <a id="addVen" href="#"> Add Vendor</a><div id="msg"></div>
+                        </div>                    
+
+                        <div class="display-label">
+                            Work Type:
+                        </div>
+                        <div class="display-field">
+                           @Html.DropDownListFor(model => model.WorkOrderTypeId, Model.TypeList)                            
+                        </div>
+                         
+
+                        <div class="display-label">
+                           Work Start Date
+                        </div>
+                        <div class="display-field">
+                           @Html.TextBoxFor(model => model.StartDate, new { @class = "date", @Value = System.DateTime.Now.ToString("M/d/yyyy") })
+                        </div>
+
+                         <div class="display-label">
+                           Work End Date:
+                        </div>
+                        <div class="display-field">
+                           @Html.TextBoxFor(model => model.EndDate, new { @class = "date", @Value = System.DateTime.Now.ToString("M/d/yyyy") })
+                        </div>
+
+                        <div class="display-label">
+                            Is Authorized:
+                        </div>
+                        <div class="display-field">
+                             @Html.EditorFor(model => model.IsAuthorized)
+                        </div>
+                         <div class="display-label">
+                            Work Order Status:
+                        </div>
+                        <div class="display-field">
+                            @Html.DropDownListFor(model => model.WorkOrderStatusId, Model.StatusList)
+                        </div>
+                        
+                         <div class="display-label">
+                            Is Paid:
+                        </div>
+                        <div class="display-field">
+                             @Html.EditorFor(model => model.IsPaid, new  { @id="ok"})
+                        </div>
+
+                   <div id="pay">
+                        <div class="display-label">
+                            Invoice Amount:
+                        </div>
+                        <div class="display-field">
+                             @Html.EditorFor(model => model.InvoiceAmount)
+                        </div>
+                       
+                        <div class="display-label">
+                           Invoice Date:
+                        </div>
+                        <div class="display-field">
+                           @Html.TextBoxFor(model => model.InvoiceDate, new { @class = "date", @Value = System.DateTime.Now.ToString("M/d/yyyy") })
+                        </div>
+
+                        <div class="display-label">
+                            Payment Amount:
+                        </div>
+                        <div class="display-field">
+                             @Html.EditorFor(model => model.PaymentAmount)
+                        </div>
+
+                         <div class="display-label">
+                            Payment Method:
+                        </div>
+                        <div class="display-field">
+                              @Html.DropDownListFor(model => model.PaymentMethod, ViewBag.DropdownData as List<SelectListItem>)
+                        </div>
+                        <div class="display-label">
+                           Payment Date:
+                        </div>
+                        <div class="display-field">
+                           @Html.TextBoxFor(model => model.PaidDate, new { @class = "date", @Value = System.DateTime.Now.ToString("M/d/yyyy") })
+                        </div>
+                    </div>    
+
+
+                </fieldset>
+
+                
+               
+                </div>  
+                         
+                <div class="right-aligned"><input type="submit" value="Add" /></div>
+           }
+
+       </div>
+
+   </div><!-- End of main -->
+
+
+
+</div><!-- end of content-wrapper -->
+
+
+
+
+<!-- Add vendor dialog -->
+<div id="add_ven" title="Property Details">
+
+    <h4 class="ui-dia"><i class="fa fa-th"></i> &nbsp; ADD VENDOR</h4>
+
+    <div class="edit_field ui-dia">
+
+        <fieldset class="ui-dia">
+            <div class="display-label">
+                Vendor Business Name:
+            </div>
+            <div class="display-field">
+                <input id="bname" type="text" required />
+            </div>
+
+            <div class="display-label">
+                Vendor Description:
+            </div>
+            <div class="display-field">
+                <textarea id="desc"  ></textarea>
+            </div>
+            <div class="display-label">
+                Vendor Specialty:
+            </div>
+            <div id="list" style="margin-left:-4.5em;">
+                <select id="list2"></select>
+            </div> 
+
+
+            <div class="display-label">
+                Fist Name:
+            </div>
+            <div class="display-field">
+                <input id="fname" type="text" required />
+            </div>
+            <div class="display-label">
+                Last Name:
+            </div>
+            <div class="display-field">
+                <input id="lname" type="text" required />
+            </div>
+            <div class="display-label">
+                Contact Email:
+            </div>
+            <div class="display-field">
+                <input id="email" type="text" required />
+            </div>
+            <div class="display-label">
+                Telephone 1:
+            </div>
+            <div class="display-field">
+                <input id="tele" type="text" required />
+            </div>
+            <div class="display-label">
+                Telephone 2:
+            </div>
+            <div class="display-field">
+                <input id="tele2" type="text" />
+            </div>              
+
+        </fieldset>
+    </div>
+    <p></p>
+</div>
+
+
+
+
+
+
+
+<!--
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>CreateWorkOrderViewModel</legend>
+
+        
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WorkOrderName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WorkOrderName)
+            @Html.ValidationMessageFor(model => model.WorkOrderName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WorkOrderDetails)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.WorkOrderDetails)
+            @Html.ValidationMessageFor(model => model.WorkOrderDetails)
+        </div>
+
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WorkOrderCategory)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.WorkOrderCategoryId, Model.CategoryList)
+            
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.VendorName)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.VendorId, Model.VendorList)
+            @Html.ValidationMessageFor(model => model.VendorId)
+            @Html.ActionLink("Add Vendor", "AddVendor")
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WorkOrderTypeName)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.WorkOrderTypeId, Model.TypeList)           
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StartDate)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.StartDate, new { @class = "date", @Value = System.DateTime.Now.ToString("M/d/yyyy") })
+            @Html.ValidationMessageFor(model => model.StartDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EndDate)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.EndDate, new { @class = "date", @Value = System.DateTime.Now.ToString("M/d/yyyy") })
+            @Html.ValidationMessageFor(model => model.EndDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsAuthorized)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsAuthorized)
+            @Html.ValidationMessageFor(model => model.IsAuthorized)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WorkOrderStatus)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.WorkOrderStatusId, Model.StatusList)
+            @Html.ValidationMessageFor(model => model.WorkOrderStatus)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsPaid)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsPaid, new  { @id="ok"})
+            @Html.ValidationMessageFor(model => model.IsPaid)
+        </div>
+        
+<div id="pay">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.InvoiceAmount)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.InvoiceAmount)
+            @Html.ValidationMessageFor(model => model.InvoiceAmount)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.InvoiceDate)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.InvoiceDate, new { @class = "date", @Value = System.DateTime.Now.ToString("M/d/yyyy") })
+            @Html.ValidationMessageFor(model => model.InvoiceDate)
+        </div>
+
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PaymentMethod)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.PaymentMethod, ViewBag.DropdownData as List<SelectListItem>)
+           
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PaidDate)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.PaidDate, new { @class = "date", @Value = System.DateTime.Now.ToString("M/d/yyyy") })
+            @Html.ValidationMessageFor(model => model.PaidDate)
+        </div>
+        
+</div>
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+    -->
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+<!-- Datepicker Script -->
+<script type="text/javascript">
+    $(function () {
+        $(".date").datepicker();
+    });
+
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#pay").hide();
+
+    });
+
+    $("#IsPaid").change(function () {
+        if (this.checked) {
+            $("#pay").show();
+        }
+        else {
+            $("#pay").hide();
+         }
+
+    });
+
+</script>
+
+
+<!-- Add new vendor script -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#add_ven").hide();
+
+        $("#addVen").click(function () {
+
+            var dialogOpts = {
+                autoOpen: false,
+                modal: true,
+                resizable: false,
+                draggable: false,
+                width: 480,
+                title: 'Add Vendor',
+                buttons: {
+                    "Cancel": function () {
+                        $(this).dialog("close");
+                    },
+
+                    "Continue": function () {
+
+                        var bn = $("#bname").val();
+                        var desc = $("#desc").val();
+                        var sp = $("#list2").val();
+                        var fn = $("#fname").val();
+                        var ln = $("#lname").val();
+                        var email = $("#email").val();
+                        var tel1 = $("#tele").val();
+                        var tel2 = $("#tele2").val();
+
+                        alert("here now...");
+
+                        $.ajax({
+                            type: "POST",
+                            url: "/Manage/AddVendorToList",
+                            data: "businessName=" + bn + "&description=" + desc + "&specialtyId=" + sp + "&firstName=" + fn +
+                                "&lastName=" + ln + "&eMail=" + email + "&telePhone=" + tel1 + "&telePhone2=" + tel2,
+
+                            contenType: "",
+                            dataType: "json",
+                            success: Suceeded
+                        });
+
+                        function Suceeded(data) {
+                            $("#msg").text(data);
+
+                            $('#msg').delay(5000).fadeOut(3000);
+
+                            //refresh listing
+                            //
+                            var url = "/Manage/GetVendorList/";
+                            //var q=""
+                            $.get(url, function (data) {
+                                $("#lst").html(data);
+                            });
+
+                        }
+
+                        $(this).dialog("close");
+                    }
+                }
+
+            }
+
+            $("#add_ven").dialog(dialogOpts).dialog('open');
+
+            return false;
+
+
+        });
+
+
+    });
+
+
+</script>
+
+<!-- Get Vendor Specialty List -->
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var url = "/Manage/GetVendorSpecialtyList/";
+        var option = $('<option />');
+
+        $.getJSON(url, function (data) {
+            $("#list2").empty();
+
+            //$("#list2").html(data);
+            $.each(data, function () {
+                $("#list2").append($("<option />").val(this.id).html(this.name));
+            });
+
+        });
+
+    });
+</script>

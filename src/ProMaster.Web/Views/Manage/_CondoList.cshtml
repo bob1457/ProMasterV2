@@ -1,0 +1,34 @@
+﻿@model ProMaster.Core.StrataCouncil.ViewModels.DisplayStrataCouncilViewModel
+
+
+<p></p>
+<div id="doc_cat" class="accrd-style">
+    @if (Model.PropertyList != null)
+    {
+    
+            <ul>
+                @foreach (var item in Model.PropertyList)
+                {
+                    <li>                        
+                        <a href="@Url.Content("~/Manage/PropertyDetails/" + @item.PropertyId)">@item.PropertyName</a><br />
+                        @if(@item.PropertyDesc.Length > 30)
+                                {
+                                    <span>&nbsp;@item.PropertyDesc.Substring(0, 30);
+                                                                          <a href="#">...more</a></span>
+                                }
+                                else
+                                {
+                                    <span style="color:#808080;">@item.PropertyDesc</span>
+                                }
+                        
+                    </li>
+     
+                }
+            </ul>
+    }
+    else
+        { 
+           <strong>No Properties</strong>
+    }
+
+</div>

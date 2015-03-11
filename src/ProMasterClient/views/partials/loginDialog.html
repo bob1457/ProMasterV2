@@ -1,0 +1,131 @@
+﻿<div class="panel-body metro" style="padding: 0; margin: -15px;">
+
+    <div id="loginbox1" style="margin-top:0;">
+        <div class="panel panel-info" style="margin-bottom:0;">
+            <div class="panel-heading">
+                <div class="panel-title"><i class="fa fa-key" style="color: #419641;"></i> Login</div>
+                <div style="float:right; font-size: 80%; position: relative; top:-10px"><a ng-click="openDefault()" href="">Forgot password?</a></div>
+            </div>
+            <div style="padding-top:30px" class="panel-body">
+
+                <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                <form name="loginForm1" id="loginform" class="form-horizontal" role="form">
+
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="icon-user-2"></i></span>
+                        <input id="login-username" type="text" class="form-control" ng-model="username" name="username" value="" placeholder="username" autofocus="" required>
+                    </div>
+
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="icon-locked"></i></span>
+                        <input id="login-password" type="password" class="form-control" ng-model="password" name="password" placeholder="password" required>
+                    </div>
+
+
+
+                    <div class="input-group">
+                        <div class="checkbox">
+                            <label>
+                                <input id="login-remember" ng-model="rememberme" type="checkbox" name="remember" value="1"> Remember me
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <div style="margin-top:10px" class="form-group">
+
+                        <div class="col-sm-12 controls">
+                            <!--<a id="btn-login" href="#" class="btn btn-success">Login  </a>
+                            <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>-->
+                            <button type="submit" class="btn btn-primary btn-success" ng-disabled="loginForm1.$invalid">LOGIN</button>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-md-12 control">
+                            <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+                                If you are existing tenant or property owner, you can request
+                                <a href="" onclick="$('#loginbox1').hide(); $('#signupbox1').show();" style="font-weight: 800; color:#7777e8;">
+                                    ONLINE ACCESS ACCOUNT.
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <div id="signupbox1" style="display:none; margin-top:0">
+        <div class="panel panel-info" style="margin-bottom:0;">
+            <div class="panel-heading">
+                <div class="panel-title">Account Request</div>
+                <div style="float:right; font-size: 85%; position: relative; top:-10px">Already have an account? &nbsp;&nbsp;<a id="signinlink" href="" onclick="$('#signupbox1').hide(); $('#loginbox1').show();"><span style="font-weight:800; color:#1e90ff;">Login</span></a></div>
+            </div>
+            <div class="panel-body">
+                <form name="signupform1" id="signupform" class="form-horizontal" role="form">
+
+                    <div id="signupalert" style="display:none" class="alert alert-danger">
+                        <p>Error:</p>
+                        <span></span>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="email" class="col-md-3 control-label">Email</label>
+                        <div class="col-md-9">
+                            <input type="email" class="form-control" name="email" ng-model="email" placeholder="Email Address" autofocus="" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="firstname" class="col-md-3 control-label">First Name</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="firstname" ng-model="fname" placeholder="First Name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname" class="col-md-3 control-label">Last Name</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="lastname" ng-model="lname" placeholder="Last Name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="property" class="col-md-3 control-label">Property </label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="property" ng-model="property" placeholder="12345 Street Name, City" required>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <!-- Button -->
+                        <div class="col-md-offset-3 col-md-9">
+                            <button type="submit" class="btn btn-info" ng-disabled="signupform1.$invalid">Send Request</button>
+
+                        </div>
+                    </div>
+
+                    <div style="border-top: 1px solid #999; padding-top:20px" class="form-group">
+
+                        <div class="col-md-offset-3 col-md-9" style="color:firebrick; margin-left: 1em; width: 90%;">
+                            By sending the request, you agreed with the <a href="">AGREEMENT OF USAGE</a>.
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</div>

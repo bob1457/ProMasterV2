@@ -1,0 +1,75 @@
+﻿@model IEnumerable<ProMaster.Core.ViewModels.ManageDisplayViewModel>
+
+<table>
+            <thead>
+            	<tr>
+                	<td colspan="9" class="table-h verde">
+                    <span><i class="fa fa-th-list"></i></span> Management Contract List
+                    </td>                    
+                </tr>	
+            </thead>
+            	<tr>
+                	
+                    <th>ID</th>
+                    <th>Property</th>
+                    <th>Owner Name</th>
+                    <th>Sign Date</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Fee</th>
+                    <th></th> 
+                    <th></th>                   
+                </tr>
+                @if (Model.Count() != 0)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ContractId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PropertyName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LandlordName)
+                            </td>
+                             <td>
+                                @Html.DisplayFor(modelItem => item.SignDate)
+                            </td>                       
+                            <td>
+                                @Html.DisplayFor(modelItem => item.StartDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EndDate)
+                            </td>
+                            <td>
+                                $@Html.DisplayFor(modelItem => item.ListingFeeScale)
+                            </td>
+
+                            <td>
+                    	                <div class="table-button"><a href="@Url.Action("ContractDetails", "Manage", new { id=item.ContractId })"><img src="@Url.Content("~/Content/Images/details.png")" title="Details" /></a></div>
+                            </td>
+                            <td>
+                    	                <div class="table-button"><a href="@Url.Action("DeleteContract", "Manage", new { id=item.ContractId })"><img src="@Url.Content("~/Content/Images/delete.png")" title="Delete" /></a></div>	
+                            </td>
+                         </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="10">No records</td>
+
+                    </tr>
+
+                }
+               
+
+                <tfoot>
+                	<tr>
+                        <td colspan="9"><span><i class="fa fa-th"></i></span></td>
+                        
+                	</tr>                
+                </tfoot>
+            </table>

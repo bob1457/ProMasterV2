@@ -1,0 +1,123 @@
+﻿@model ProMaster.Core.Contract.ViewModels.DisplayContractViewModel
+
+<table>
+    <thead class="table_head">
+        <tr>
+            <td colspan="6" class="table-h table_head">
+                <span><i class="icon-clipboard-2"></i></span> Document List
+            </td>
+        </tr>
+    </thead>
+    <tr>
+        <th class="table_th">Month/Year</th>
+        <th class="table_th">Paid Date</th>
+        <th class="table_th">Payment Amount</th>
+        <th class="table_th">Fee Type</th>
+        <th class="table_th">Notes</th>
+        <th class="table_th"></th>
+    </tr>
+    @if (Model.FeeHistoryList.Count() != 0)
+    {
+        foreach (var item in Model.FeeHistoryList)
+        {
+            <tr>
+                <td>
+                    @if(@Model.FeeYear != "0")
+                    {
+                        @Html.DisplayFor(modelItem => item.FeeMonth)<span>/</span> @Html.DisplayFor(modelItem => item.FeeYear)
+                    }
+                    else
+                    {
+                        <span>Placement Fee</span>
+                    }
+                    
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FeePaidDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FeePaidAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FeeType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FeeNotes)
+                </td>
+
+                <td>
+                    <div class="table-button"><a href="@Url.Action("FeePaymentDetails", "Manage", new { id = item.FeePaymentId })"><img src="@Url.Content("~/Content/Images/details.png")" title="Details" /></a></div>
+                </td>
+
+            </tr>
+        }
+    }
+    else
+    {
+        <tr>
+            <td colspan="6">No records</td>
+
+        </tr>
+    }
+   
+    <tfoot class="table_th">
+        <tr>
+            <td colspan="6"><span><i class="icon-clipboard-2"></i></span></td>
+
+        </tr>
+    </tfoot>
+</table><br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+@if (Model.FeeHistoryList == null)
+{ 
+    <h5>No Hisotry</h5>
+}
+else
+{
+<table>
+    @foreach (var item in Model.FeeHistoryList)
+    { 
+        <tr>            
+            <td>Fee Payment Date: </td>
+            <td>@item.FeePaidDate.ToString("M/d/yyyy")</td>
+        </tr>
+        <tr>
+            
+            <td>Fee Payment Amount: </td>
+            <td>$@item.FeePaidAmount for @item.FeeMonth/@item.FeeYear</td>
+        </tr>      
+        
+        <tr>
+            <td>Notes:</td>
+            <td>@item.FeeNotes</td>
+        </tr>
+        <tr>
+            <td colspan="2"><a href="@Url.Content("~/Manage/GenerateFeeRecipt/" + @item.ContractId)">Generate Recipt</a></td>
+        </tr>
+        <tr>
+            <td colspan="2"><hr /></td>
+        </tr>
+        
+    <br />
+    }
+    
+</table>
+}
+    -->

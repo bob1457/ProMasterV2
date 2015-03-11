@@ -1,0 +1,53 @@
+﻿@model PagedList.IPagedList<ProMaster.Core.ViewModels.ManageDisplayViewModel>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "All Contracts";
+}
+
+<<div class="content-wrapper"><div class="breadcrum">Home <i class="fa fa-caret-right"></i> Manage</div></div>
+
+<div class="content-wrapper">
+    <aside> 
+    <p><!-- Left Panel/Column -->
+      <div id="left">
+      	<div class="side_title-logo">
+        	<img src="@Url.Content("~/Content/Images/contract.png")" alt="" title="Management Contract" />
+            
+        </div>
+        <div class="side_title_caption">
+        	<h3>Full List of Management Contracts</h3>
+        	<br>
+            <span></span>
+        
+        </div>
+      </div>
+      
+    </p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </aside> <!-- End of aside -->
+
+    <div class="main metro">	
+
+        <div class="list_panel">
+            <h3><i class="icon-list"></i> &nbsp; ALL PROPERTY MANAGEMENT CONTRACTS        	
+                <span></span>
+            </h3>
+            <P></P>
+            <div id="new_button"><div class="button-med edit_button ">@Html.ActionLink("Add New", "AddManagementContract")</div></div>
+            <div id="list">
+                @Html.Partial("_ContractList")   
+                
+                @Html.PagedListPager(Model, page => Url.Action("AllPropertiesByPm", new { page, currenFilter = ViewBag.CurrentFiler }))
+                
+                   
+            </div>
+        
+    </div>  
+
+    </div><!-- End of main -->
+
+
+</div><!-- end of content-wrapper -->
+

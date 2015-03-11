@@ -1,0 +1,55 @@
+﻿ <ul>
+                @foreach (var item in Model.Screening)
+                {
+                    <li>
+                        @item.ScreenCheckType
+                       
+                        @item.ScreenCheckStatus                                             
+                        
+                        <a href="#"  itemid ="@item.ScreenCheckTypeId" class="update">Update</a>
+                        <select id="@item.ScreenCheckTypeId" class="status">
+                            <option value="1">Not Started</option>
+                            <option value="2">Pending</option>
+                            <option value="3">Fail</option>
+                            <option value="4">Passed</option>
+                            <option value="5">N/A</option>
+                        </select>
+                        <p>
+                    </li> 
+                
+                <script type="text/javascript">
+                $(document).ready(function () {
+                    $(".status").hide();
+                    $("[itemid=@item.ScreenCheckTypeId]").mouseover(function () {
+                        $("#@item.ScreenCheckTypeId").show();
+                        $("[itemid=@item.ScreenCheckTypeId]").hide();
+                    });
+                    $(".status").mouseout(function () {
+                        $(".status").hide();
+                        $(".update").show();
+                    });
+                });
+
+                </script>
+                    
+                    
+                <script type="text/javascript">
+                
+                    var TypeId = $("#@item.ScreenCheckTypeId").val();
+                    var StatusId = $("#@item.ScreenCheckStatusId").prop("selectedIndex");    
+
+
+                    $.ajax({
+
+
+                    });
+
+                    function Suceeded(data) {
+
+                    }
+
+
+                </script>
+                }
+
+            </ul>

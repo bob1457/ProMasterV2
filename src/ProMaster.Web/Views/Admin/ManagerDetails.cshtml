@@ -1,0 +1,229 @@
+﻿@model ProMaster.Core.ViewModels.AdminViewModel
+
+@{
+    ViewBag.Title = "Property Manager Details";
+}
+
+<div class="content-wrapper">
+<aside>
+    <!-- Left Panel/Column -->
+    <div id="left">
+        <div class="side_details_logo">
+            <img src="@Url.Content("~/Content/Images/landlord.png")" alt="" title="Landlord Details" />
+        </div>
+        <div class="side_details_caption metro">
+            <h3>Property Manager Details</h3>
+            <br />
+            <span>
+                @Model.PMLastName, @Model.PMFirstName<!-- 	  Detailed tenant information -->
+            </span>
+            <p></p><p></p>
+            <h6>Managed Propoerties</h6>
+            <div class="side_details_content">
+                @if (Model.ManagedPropertyList != null)
+                {
+                    <ul>
+                        @foreach (var item in Model.ManagedPropertyList)
+                        {
+                            <li><i class="icon-home"></i> &nbsp; @item.PropertyName</li>
+                        }
+
+                    </ul>
+                }
+                else
+                {
+                    <div id="add_p">No properites.<br /></div>
+                }
+                <p>
+
+
+
+            </div>
+        </div>
+
+
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        </div>
+</aside><!-- End of aside -->
+
+<div class="main metro">
+    <div id="manage-tabs" class="tabs-style">
+        <ul>
+            <li><a href="#tabs-1"><i class="fa fa-list-alt"></i> &nbsp;<span>General</span></a></li>
+            <li><a href="#tabs-2"><i class="icon-home"></i> &nbsp;Properties</a></li>          
+
+        </ul>
+
+        <div id="tabs-1">
+            <div class="tab_content">
+                <div class="tab_content_title">
+                    <span class="title_icon"><img src="@Url.Content(@Model.PMAvatarImgUrl)" alt="" title="" /></span>
+                    <span class="title_text"><h5>Property Manager Information</h5></span>
+                    <br /><br />
+                    <span class="title_caption">Property manager information, including contact email and telephone number.</span>
+                </div>
+                <div class="tab_content_field">
+                    <!-- <div class="display-label">
+                        Property Address:
+                    </div> -->
+
+                    <fieldset>
+                        <legend><span><i class=" icon-address-book"></i> Address</span></legend>
+
+                        <div class="basic">
+                            <div class="display-label">
+                                First Name:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.PMFirstName)
+                            </div>
+                            <br />
+                            <div class="display-label">
+                                Last Name:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.PMLastName)
+                            </div>
+                            <br />
+                            <div class="display-label">
+                                Email:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.PMEmail)
+                            </div>
+                            <br />
+                            <div class="display-label">
+                                Telephone 1:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.PMTelephone1)
+                            </div>
+                            <br />
+                            <div class="display-label">
+                                Telephone 2:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.PMTelephone2)
+                            </div>
+
+
+                        </div>
+
+
+                    </fieldset>
+                </div>
+
+               
+
+
+
+                <div class="right-aligned"><div class="edit_button button-med ">@Html.ActionLink("Edit", "EditPropertyManager", new { id = Model.PropertyManagerId /**/ })</div></div>
+            </div>
+
+
+        </div>
+        <div id="tabs-2">
+            <!-- <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p> -->
+            <div class="tab_content">
+                <div class="tab_content_title">
+                    <span class="title_icon"><img src="@Url.Content("~/Content/Images/property.png")" alt="" title="" /></span>
+                    <span class="title_text"><h5>Mabaged Property Information</h5></span>
+                    <br />
+                    <br />
+                    <span class="title_caption">Property information, including address, type, build year, etc.</span>
+                </div>
+                <div class="tab_content_field">
+                    <fieldset>
+                        <legend><span><i class="fa fa-info-circle"></i> Property Information</span></legend>
+                        <!--
+                                                 <ul>
+                                                     @foreach (var item in Model.ManagedPropertyList)
+                                                     {
+                                                         <li>PropertyNam: &nbsp; @item.PropertyName</li>
+                                                     }
+
+                                                 </ul>
+                        -->
+                        <div class="content_info">                            
+                            <p></p>
+                            <table>
+                                <thead class="table_head">
+                                    <tr>
+                                        <td colspan="7" class="table-h table_head">
+                                            <span><i class="icon-home"></i></span> Property List
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tr>
+                                    <th class="table_th">ID</th>
+                                    <th class="table_th">Name</th>
+                                    <th class="table_th">Description</th>
+                                    <th class="table_th">Added On</th>
+                                    <th class="table_th"></th>
+                                    <th class="table_th"></th>
+                                </tr>
+                                @if (Model.ManagedPropertyList.Count() != 0)
+                                {
+                                    foreach (var item in Model.ManagedPropertyList)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.PropertyId)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.PropertyName)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.PropertyDesc)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.CreationDate)
+                                            </td>
+
+                                            <td>
+                                                <div class="table-button"><a href="@Url.Action("PropertyDetails", "Manage", new { id = item.PropertyId })"><img src="@Url.Content("~/Content/Images/details.png")" title="Details" /></a></div>
+                                            </td>
+                                            <td>
+                                                <div class="table-button"><a class="delete-link" href="~/Document/DeleteProperty/@item.PropertyId"><img src="@Url.Content("~/Content/Images/delete.png")" title="Delete" /></a></div>
+                                            </td>
+                                        </tr>
+                                    }
+
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td colspan="7">No properties!</td>
+                                    </tr>
+                                }
+
+                                <tfoot class="table_th">
+                                    <tr>
+                                        <td colspan="7"><span><i class="icon-clipboard-2"></i></span></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+
+                    </fieldset>
+
+                </div>
+
+
+
+            </div>
+        </div>       
+        
+
+    </div>
+
+</div><!-- End of main -->
+</div><!-- End of content-wrapper -->
+
+<!--Jquery ui tabs Script -->
+<script type="text/javascript">
+    $(function () {
+        $("#manage-tabs").tabs();
+    });
+</script>

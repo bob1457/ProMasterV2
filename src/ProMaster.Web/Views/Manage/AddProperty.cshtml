@@ -1,0 +1,525 @@
+﻿@model ProMaster.Core.Property.ViewModels.CreatePropertyViewModel
+
+@{
+    ViewBag.Title = "Add Property";
+}
+
+
+<div class="content-wrapper">
+    <aside> 
+    
+      <div id="left">        
+         
+      	    <div class="profile_logo">
+        	    <img src="@Url.Content("~/Content/Images/property.png")" alt="" title="Add Property" />        
+            </div>
+            <div class="profile_caption metro">
+        	    <h3>New Property</h3>
+                <br />
+                <span>
+            	    Add new property 
+                </span>
+            </div>
+             
+
+      <p></p>
+      
+          <div class="side_title_caption metro">
+              <br /><br />
+              <div>Note:</div>
+              <br />
+              <span>You need to have the following information ready: property address and existing property owner, or you need property owner's information to be added to the system at the same time.</span>
+              <br /><br /><br /><br />
+              <span><i class="icon-new-tab rss_color"></i> Quick Access</span>
+              <div class="side-widget">
+                  <a href="@Url.Content("~/Tools/Messaging")" title="Messaging"><div class="tile amarelo" id="p1"><span><i class="fa fa-envelope-o"></i></span><br /><br /> Messaging</div></a>
+                  <a href="@Url.Content("~/Tools/Calendar")" title="Calendar"><div class="tile vermelho" id="p2"><span><i class="fa fa-calendar-o"></i></span><br /><br /> Calendar</div></a>
+                  <a href="@Url.Content("~/Tools/Resources")" title="Resources"><div class="tile metro_dark_blue" id="p3"><span><i class="fa fa-user"></i></span><br /><br /> Resources</div></a>
+                  <a href="@Url.Content("~/Tools/DocTool")" title="Document Tools"><div class="tile purple" id="p4"><span><i class="icon-clipboard-2"></i></span><br /><br /> Document Tools</div></a>
+              </div>
+          </div>
+        
+      </div>      
+
+        
+    
+   
+  </aside><!-- End of aside -->
+
+
+  <div class="main metro">
+       <div id="add_edit_panel">
+           <h3><i class="fa fa-th"></i> &nbsp; ADD PROPERTY        	
+              <span>Please fill/Update all required fields and click "Add".</span>
+           </h3>
+
+            @using (Html.BeginForm()) {
+                @Html.ValidationSummary(true)
+
+                 <div class="edit_field">
+                     <fieldset>
+                         <legend><span><i class="fa fa-info-circle"></i> Basic Information</span></legend>
+                                   
+                
+                        <div class="display-label">
+                            Name/Alias:
+                        </div>
+                        <div class="display-field">
+                            @Html.TextBoxFor(model => model.PropertyName, new { autofocus = "", required = "Required" })
+                            @Html.ValidationMessageFor(model => model.PropertyName)
+                        </div>
+
+                        <div class="display-label">
+                            Description:
+                        </div>
+                        <div class="display-field">
+                            @Html.TextAreaFor(model => model.PropertyDesc)
+                            @Html.ValidationMessageFor(model => model.PropertyDesc)
+                        </div>                   
+
+                        <div class="display-label">
+                           Built Year:
+                        </div>
+                        <div class="display-field">
+                            @Html.TextBoxFor(model => model.PropertyBuildYear)
+                            @Html.ValidationMessageFor(model => model.PropertyBuildYear)
+                        </div>
+
+                        <div class="display-label">
+                            Property Type:
+                        </div>
+                        <div class="display-field">
+                            @Html.DropDownListFor(model => model.PropertyTypeId, Model.PropertyType)
+            
+                        </div>
+
+                        <div class="display-label">
+                           Landlord:
+                        </div>
+                        <div class="display-field">
+                            <!--@Html.DropDownListFor(model => model.LandlordId, Model.LandlordList)
+                            @Html.ActionLink("Add Landlord", "AddPropertyOwner") -->
+                            
+                            <div id="lst">@Html.Partial("_ownerList")</div>
+                            <a id="addOwner" href="#"> Add Owner</a><div id="msg"></div>
+                        </div>
+
+                        <div class="display-label">
+                           Is Active:
+                        </div>
+                        <div class="display-field">
+                            @Html.EditorFor(model => model.IsActive)
+                            @Html.ValidationMessageFor(model => model.IsActive)
+                        </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend><span><i class=" icon-address-book"></i> Address</span></legend>
+
+                    <div class="display-label">
+                        Suite Number:
+                    </div>
+                    <div class="display-field">
+                        @Html.EditorFor(model => model.PropertyAddressSuiteNumber)
+                        @Html.ValidationMessageFor(model => model.PropertyAddressSuiteNumber)
+                    </div>
+
+                    <div class="display-label">
+                       Street Number:
+                    </div>
+                    <div class="display-field">
+                        @Html.TextBoxFor(model => model.PropertyAddressStreetNumber, new { required = "Required" })
+                        @Html.ValidationMessageFor(model => model.PropertyAddressStreetNumber)
+                    </div>
+
+                    <div class="display-label">
+                       Street Name:
+                    </div>
+                    <div class="display-field">
+                        @Html.TextBoxFor(model => model.PropertyAddressStreetName, new { required = "Required" })
+                        @Html.ValidationMessageFor(model => model.PropertyAddressStreetName)
+                    </div>
+
+                    <div class="display-label">
+                        City:
+                    </div>
+                    <div class="display-field">
+                        @Html.TextBoxFor(model => model.PropertyAddressCity, new { required = "Required" })
+                        @Html.ValidationMessageFor(model => model.PropertyAddressCity)
+                    </div>
+
+                    <div class="display-label">
+                       Province/State:
+                    </div>
+                    <div class="display-field">
+                        @*@Html.TextBoxFor(model => model.PropertyAddressProvState, new { required = "Required" })*@
+                        @Html.DropDownListFor(model => model.PropertyAddressProvState, ViewBag.DropdownData5 as List<SelectListItem>)
+                        @Html.ValidationMessageFor(model => model.PropertyAddressProvState)
+                    </div>
+
+                    <div class="display-label">
+                        Post/Zip Code:
+                    </div>
+                    <div class="display-field">
+                        @Html.TextBoxFor(model => model.PropertyAddressPostZipCode, new { required = "Required" })                       
+                        @Html.ValidationMessageFor(model => model.PropertyAddressPostZipCode)
+                    </div>
+
+                    <div class="display-label">
+                        Country:
+                    </div>
+                    <div class="display-field">
+                        @*@Html.TextBoxFor(model => model.PropertyAddressCountry, new { required = "Required" })*@
+                        @Html.DropDownListFor(model => model.PropertyAddressCountry, ViewBag.DropdownData6 as List<SelectListItem>)
+                        @Html.ValidationMessageFor(model => model.PropertyAddressCountry)
+                    </div>
+
+                </fieldset>
+                         <br /><br />
+
+                <fieldset>
+                       <legend><span><i class="fa fa-indent"></i> Features</span></legend>
+
+                    <div class="display-label">
+                        Number of Bedrooms:
+                    </div>
+                    <div class="display-field">
+                        @Html.DropDownListFor(model => model.NumberOfBedrooms, ViewBag.DropdownData1 as List<SelectListItem>)
+                        @Html.ValidationMessageFor(model => model.NumberOfBedrooms)
+                    </div>
+
+                    <div class="display-label">
+                       Number of Bathrooms:
+                    </div>
+                    <div class="display-field">
+                        @Html.DropDownListFor(model => model.NumberOfBathrooms, ViewBag.DropdownData2 as List<SelectListItem>)
+                        @Html.ValidationMessageFor(model => model.NumberOfBathrooms)
+                    </div>
+
+                    <div class="display-label">
+                       Number of Stories:
+                    </div>
+                    <div class="display-field">
+                        @Html.DropDownListFor(model => model.NumberOfFloors, ViewBag.DropdownData3 as List<SelectListItem>)
+                        @Html.ValidationMessageFor(model => model.NumberOfFloors)
+                    </div>
+
+                    <div class="display-label">
+                       Number of Parking:
+                    </div>
+                    <div class="display-field">
+                        @Html.DropDownListFor(model => model.NumberOfParkings, ViewBag.DropdownData4 as List<SelectListItem>)
+                        @Html.ValidationMessageFor(model => model.NumberOfParkings)
+                    </div>
+
+                    <div class="display-label">
+                       Total Living Area (sqft.):
+                    </div>
+                    <div class="display-field">
+                        @Html.TextBoxFor(model => model.TotalLivingArea)
+                        @Html.ValidationMessageFor(model => model.TotalLivingArea)
+                    </div>
+
+                    <div class="display-label">
+                        Basement Available:
+                    </div>
+                    <div class="display-field">
+                        @Html.EditorFor(model => model.BasementAvailable)
+                        @Html.ValidationMessageFor(model => model.BasementAvailable)
+                    </div>
+
+                    <div class="display-label">
+                        Is Shared:
+                    </div>
+                    <div class="display-field">
+                        @Html.EditorFor(model => model.IsShared)
+                        @Html.ValidationMessageFor(model => model.IsShared)
+                    </div>
+
+                    <div class="display-label">
+                       Notes:
+                    </div>
+                    <div class="display-field">
+                        @Html.TextAreaFor(model => model.Notes1)
+                        @Html.ValidationMessageFor(model => model.Notes1)
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend><span><i class="fa fa-cog"></i> Facilities</span></legend>
+<!-- 
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Stove)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Stove)
+                        @Html.ValidationMessageFor(model => model.Stove)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Refrigerator)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Refrigerator)
+                        @Html.ValidationMessageFor(model => model.Refrigerator)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Dishwasher)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Dishwasher)
+                        @Html.ValidationMessageFor(model => model.Dishwasher)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.AireConditioner)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.AireConditioner)
+                        @Html.ValidationMessageFor(model => model.AireConditioner)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Furniture)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Furniture)
+                        @Html.ValidationMessageFor(model => model.Furniture)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Blinds)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Blinds)
+                        @Html.ValidationMessageFor(model => model.Blinds)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Laundry)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Laundry)
+                        @Html.ValidationMessageFor(model => model.Laundry)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.CommonFacility)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.CommonFacility)
+                        @Html.ValidationMessageFor(model => model.CommonFacility)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Security)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Security)
+                        @Html.ValidationMessageFor(model => model.Security)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.FireAlarm)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.FireAlarm)
+                        @Html.ValidationMessageFor(model => model.FireAlarm)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.TVInternet)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.TVInternet)
+                        @Html.ValidationMessageFor(model => model.TVInternet)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Others)
+                    </div>
+                    <div class="editor-field">
+                        @Html.TextAreaFor(model => model.Others)
+                        @Html.ValidationMessageFor(model => model.Others)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Notes2)
+                    </div>
+                    <div class="editor-field">
+                        @Html.TextAreaFor(model => model.Notes2)
+                        @Html.ValidationMessageFor(model => model.Notes2)
+                    </div>
+
+  -->      
+                        <ul class="features">                                        
+                              <li>Stove:&nbsp; @Html.EditorFor(model => model.Stove)</li>
+                              <li>Refrigerator: &nbsp;@Html.EditorFor(model => model.Refrigerator)</li>
+                              <li>Laundray: &nbsp;@Html.EditorFor(model => model.Laundry)</li>
+                              <li>Diswasher: &nbsp;@Html.EditorFor(model => model.Dishwasher)</li>
+                              <li>Blinds: &nbsp;@Html.EditorFor(model => model.Blinds)</li>
+                              <li>TV/Internet&nbsp; @Html.EditorFor(model => model.TVInternet)</li>
+                              <li>Furnture: &nbsp;@Html.EditorFor(model => model.Furniture)</li>
+                              <li>Alarm: &nbsp;@Html.EditorFor(model => model.FireAlarm)</li>
+                              <li>Common Area: &nbsp;@Html.EditorFor(model => model.CommonFacility)</li>
+                         </ul>
+        
+<!-- 
+                    <p>
+                        <input type="submit" value="Create" />
+                    </p>
+-->
+                </fieldset>
+               
+     </div>           
+                <div class="right-aligned"><input type="submit" value="Add" /></div>
+            }
+
+            <div>
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+
+
+
+        </div>  
+
+  </div>
+
+
+<!-- Add landlord dialog -->
+    <div id="add_owner" title="Property Details" >
+
+        <h4 class="ui-dia"><i class="fa fa-th"></i> &nbsp; ADD PROPERTY OWNER</h4>
+        
+                                      <div class="edit_field ui-dia">
+
+                                        <fieldset class="ui-dia">
+                                            <div class="display-label">
+                                                Fist Name:       
+                                            </div>
+                                            <div class="display-field">
+                                                <input id="fname" type="text" />                   
+                                            </div>
+                                            <div class="display-label">
+                                                Last Name:       
+                                            </div>
+                                            <div class="display-field">
+                                               <input id="lname" type="text" />            
+                                            </div>
+                                            <div class="display-label">
+                                                Contact Email:       
+                                            </div>
+                                            <div class="display-field">
+                                                <input id="email" type="text" />                   
+                                            </div>
+                                            <div class="display-label">
+                                                Telephone 1:       
+                                            </div>
+                                            <div class="display-field">
+                                                <input id="tele" type="text" />                   
+                                            </div> 
+                                             <div class="display-label">
+                                                Telephone 2:       
+                                            </div>
+                                            <div class="display-field">
+                                                <input id="tele2" type="text" />                   
+                                            </div>                   
+                
+                                    </fieldset>
+                                    
+                                     <p></p>
+                                      </div>
+                               
+                                
+    </div>
+
+
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#add_owner").hide();
+
+   
+/*
+    var dlg = $("#add_owner").dialog({
+        dialogClass: "profile-details",
+        autoOpen: false
+
+    });
+*/
+    $("#addOwner").click(function () {
+       
+        //var fn = $("#fname").val();
+        
+
+        
+
+        var dialogOpts = {
+            autoOpen: false,
+            modal: true,
+            resizable: false,
+            draggable: false,
+            width: 480,
+            title: 'Add Property Owner',
+            buttons: {
+                "Cancel": function () {
+                    $(this).dialog("close");
+                },
+
+                "Continue": function () {
+
+                    var fn = $("#fname").val();
+                    var ln = $("#lname").val();
+                    var email = $("#email").val();
+                    var tel1 = $("#tele").val();
+                    var tel2 = $("#tele2").val();
+
+                    $.ajax({
+                        type: "POST",
+                        url: "/Manage/AddOwner",
+                        data: "firstName=" + fn + "&lastName=" + ln + "&eMail=" + email + "&telePhone=" + tel1 + "&telePhone2=" + tel2, 
+
+                        contenType: "",
+                        dataType: "json",
+                        success: Suceeded
+                    });
+
+                    function Suceeded(data) {
+                        $("#msg").text(data);
+
+                        $('#msg').delay(5000).fadeOut(3000);
+
+                        //refresh listing
+                        //
+                        var url="/Manage/GetPropertyOwners/";
+                        //var q="" 
+                        $.get(url, function(data){                                
+                            $("#lst").html(data);            
+                        });
+                        
+                    }
+
+                    $(this).dialog("close");
+                }
+            }
+
+        }
+
+        $("#add_owner").dialog(dialogOpts).dialog('open');
+
+        return false;
+
+       
+    });
+
+
+ });
+
+
+</script>

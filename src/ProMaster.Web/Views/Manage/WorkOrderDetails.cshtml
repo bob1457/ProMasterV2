@@ -1,0 +1,422 @@
+﻿@model ProMaster.Core.Vendor.ViewModels.DisplayWorkOrderViewModel
+
+@{
+    ViewBag.Title = "Work Order Details";
+}
+
+
+<div class="content-wrapper">
+    <aside>
+    <!-- Left Panel/Column -->
+      <div id="left">
+      	<div class="side_details_logo">
+        	<img src="@Url.Content("~/Content/Images/documents3.png")" alt="" title="@Model.WorkOrderName" />          
+        </div>
+        <div class="side_details_caption metro">
+        	<h3>Work Order Details</h3>
+        	<br />
+            <span>
+                 <!-- 	  Detailed tenant information -->
+                 @Model.WorkOrderName
+                <p></p>
+                    <div class="display-label">
+                       Started Date:
+                    </div><br />
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.StartDate)
+                    </div><br />
+
+                    <div class="display-label">
+                        Completed Date:
+                    </div><br />
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.EndDate)
+                    </div><br />
+
+                        @if (@Model.IsPaid == true)
+                        {
+                            <div class="display-label">
+                                    Is Paid:
+                                </div>
+                                <div class="display-field">
+                                     @Html.DisplayFor(model => model.IsPaid, new { @id = "ok" })
+                                </div><br />
+                            
+                            <div class="display-label">
+                                Invoice Amount:
+                            </div>
+                            <div class="display-field">
+                                 @Html.DisplayFor(model => model.InvoiceAmount)
+                            </div>
+                            <div class="display-label">
+                               Invoice Date:
+                            </div>
+                            <div class="display-field">
+                               @Html.DisplayFor(model => model.InvoiceDate, new { @class = "date", @Value = System.DateTime.Now.ToString("M/d/yyyy") })
+                            </div>
+                             <div class="display-label">
+                                Payment Method:
+                            </div>
+                            <div class="display-field">
+                                  @Html.DisplayFor(model => model.PaymentMethod)
+                            </div>
+                            <div class="display-label">
+                               Payment Date:
+                            </div>
+                            <div class="display-field">
+                               @Html.DisplayFor(model => model.PaidDate, new { @class = "date", @Value = System.DateTime.Now.ToString("M/d/yyyy") })
+                            </div>
+                            
+                        }
+
+            </span>
+            <p></p>
+            <h6>Serviced Propoerties</h6>
+            <div class="side_details_content">               
+                <div class="display-field">
+                    @if(Model.PropertyAddressSuoteNumber == "")
+                    {
+                        @Html.DisplayFor(model => model.PropertyAddressNumber) <span>&nbsp;</span> @Html.DisplayFor(model => model.PropertyAddressStreet)
+                    }
+                    else
+                    {
+                        <em>#</em> @Html.DisplayFor(model => model.PropertyAddressSuoteNumber) <em>-</em> @Html.DisplayFor(model => model.PropertyAddressNumber) <span>&nbsp;</span> @Html.DisplayFor(model => model.PropertyAddressStreet)
+                    }                    
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.PropertyAddressCity),<span>&nbsp;</span> @Html.DisplayFor(model => model.PropertyAddressProvState) <span>&nbsp;</span> @Html.DisplayFor(model => model.PropertyAddressPostZipCodet)
+                </div>
+            </div>
+        </div>
+      </div>
+      
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+    </aside><!-- End of aside -->
+
+    <div class="main metro">
+        <div id="manage-tabs" class="tabs-style">
+          <ul>
+            <li><a href="#tabs-1"><i class="fa fa-list-alt"></i> &nbsp;<span>Work Order Details</span></a></li>    
+            <li><a href="#tabs-2"><i class="fa fa-list-alt"></i> &nbsp;<span>Vendor</span></a></li>  
+          </ul>
+             <div id="tabs-1">    		
+            <div class="tab_content">
+                <div class="tab_content_title">
+                    <span class="title_icon"><img src="@Url.Content("~/Content/Images/doc.png")" alt="" title="" /></span>
+                    <span class="title_text"><h5>Work Order Information</h5></span>
+                    <br />
+                    <span class="title_caption">Work order information, including address, features and facilities, etc.</span>
+                </div>  
+                <div class="tab_content_field">
+                                        
+                    <fieldset>
+                        <legend><span><i class=" icon-address-book"></i> Basic Information</span></legend>
+                        <div class="basic">
+                        <div class="display-label">
+                            Work Order ID:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.WorkOrderId)
+                        </div> 
+                        <br />
+                        <div class="display-label">
+                                Work Order Title:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.WorkOrderName)
+                            </div> <br />
+                            <div class="display-label">
+                                Descripton:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.WorkOrderDetails)
+                            </div> 
+                            <br />
+                            <div class="display-label">
+                                Work Order Type:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.WorkOrderTypeName)
+                            </div>
+                                <br /> 
+                            <div class="display-label">
+                                Work Order Category:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.WorkOrderCategory)
+                            </div>
+                            <br />
+                            <div class="display-label">
+                                Work Order Status:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.WorkOrderStatus)
+                            </div>
+                            <br />
+                            <div class="display-label">
+                                Invoice Date:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.InvoiceDate)
+                            </div>
+                            <br />
+                            <div class="display-label">
+                                Invoice Amount:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.InvoiceAmount)
+                            </div>
+                            <br />
+                            <div class="display-label">
+                                Is Paid:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.IsPaid)
+                            </div>
+                            <br />
+                        
+                        
+                        </div>                     
+                    
+                            
+                    </fieldset> 
+                    
+                   
+                    @if(Roles.GetRolesForUser(User.Identity.Name).Contains("Propertymanager"))
+                    {
+                        <div class="right-aligned"><div class="edit_button button-med ">@Html.ActionLink("Edit", "EditWorkOrder", new { id=Model.WorkOrderId/**/ })</div></div>
+                    }
+                    
+                </div>
+            
+            
+  		  </div>
+         
+		</div>
+  		  <div id="tabs-2">    		
+            <div class="tab_content">
+                <div class="tab_content_title">
+                    <span class="title_icon"><img src="@Url.Content("~/Content/Images/vendor2.png")" alt="" title="" /></span>
+                    <span class="title_text"><h5>Vendor Information</h5></span>
+                    <br />
+                    <span class="title_caption">Vendor information, including address, features and facilities, etc.</span>
+                </div>  
+                <div class="tab_content_field">
+                                        
+                    <fieldset>
+                        <legend><span><i class=" icon-address-book"></i> Basic Information</span></legend>
+                        <div class="basic">
+                            <div class="display-label">
+                            Vendor ID:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.VendorId)
+                        </div> 
+                        <br />
+                        <div class="basic">
+                            <div class="display-label">
+                            Business Name:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.VendorName)
+                        </div> 
+                        <br />
+                        
+                        
+                        
+                    </div>                     
+                    
+                    </fieldset> 
+                    
+                   
+                    @if (Roles.GetRolesForUser(User.Identity.Name).Contains("PropertyManager"))
+                    {
+                        <div class="right-aligned"><div class="edit_button button-med ">@Html.ActionLink("Details", "VendorDetails", new { id = Model.VendorId/**/ })</div></div>
+                    }
+                    
+                </div>
+            
+            
+  		  </div>
+         
+		</div>
+         
+            
+    
+     
+     </div>
+        
+    </div><!-- end of main -->
+
+</div><!-- end of content-wrapper- -->
+
+<!--Jquery ui tabs Script -->
+<script type="text/javascript">
+    $(function () {
+        $("#manage-tabs").tabs();
+    });
+</script>
+
+<!-- 
+<h2>WorkOrderDetails</h2>
+
+<fieldset>
+    <legend>DisplayWorkOrderViewModel</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.WorkOrderId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WorkOrderId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.WorkOrderName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WorkOrderName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.WorkOrderDetails)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WorkOrderDetails)
+    </div>
+
+    
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.WorkOrderCategory)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WorkOrderCategory)
+    </div>
+
+    
+
+    
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.VendorName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VendorName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.StartDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.StartDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EndDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EndDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.InvoiceAmount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.InvoiceAmount)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.InvoiceDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.InvoiceDate)
+    </div>
+
+    
+
+    
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.WorkOrderStatus)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WorkOrderStatus)
+    </div>
+
+    
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.WorkOrderTypeName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WorkOrderTypeName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsAuthorized)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsAuthorized)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsPaid)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsPaid)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PaymentAmount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PaymentAmount)
+    </div>
+
+    @if (Model.IsPaid == true)
+    { 
+       <div class="display-label">
+         @Html.DisplayNameFor(model => model.PaidDate)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.PaidDate)
+        </div>
+
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.PaymentMethod)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.PaymentMethod)
+        </div> 
+        
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.PaymentAmount)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.PaymentAmount)
+        </div> 
+
+    }
+    
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RecordCreationDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RecordCreationDate)
+    </div>
+
+    <div class="display-label">
+             @Html.DisplayNameFor(model => model.RecordUpdateDate)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.RecordUpdateDate)
+        </div> 
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "EditWorkOrder", new { id = Model.WorkOrderId /**/ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+-->

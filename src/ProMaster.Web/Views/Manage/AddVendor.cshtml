@@ -1,0 +1,234 @@
+﻿@model ProMaster.Core.Vendor.ViewModels.CreateVendorViewModel
+
+@{
+    ViewBag.Title = "Add Vendor";
+}
+
+
+<div class="content-wrapper">
+    <aside> 
+    <p><!-- Left Panel/Column -->
+      <div id="left">        
+         
+      	    <div class="profile_logo">
+        	    <img src="@Url.Content("~/Content/Images/vendor.png")" alt="" title="Add Vendor" />        
+            </div>
+            <div class="profile_caption metro">
+        	    <h3>New Vendor</h3>
+                <br />
+                <span>
+            	    Add new vendor 
+                </span>
+            </div>
+             
+      </div>
+      <p></p>
+      
+        <div class="side_title_caption metro">
+            <br /><br />
+            <div>Note:</div>
+            <br />
+            <span>Collect all the required information for the vendor for easy and quick access.</span>
+            <br /><br /><br /><br />
+            <span><i class="icon-new-tab rss_color"></i> Quick Access</span>
+            <div class="side-widget">
+                <a href="@Url.Content("~/Tools/Messaging")" title="Messaging"><div class="tile amarelo" id="p1"><span><i class="fa fa-envelope-o"></i></span><br /><br /> Messaging</div></a>
+                <a href="@Url.Content("~/Tools/Calendar")" title="Calendar"><div class="tile vermelho" id="p2"><span><i class="fa fa-calendar-o"></i></span><br /><br /> Calendar</div></a>
+                <a href="@Url.Content("~/Tools/Resources")" title="Resources"><div class="tile metro_dark_blue" id="p3"><span><i class="fa fa-user"></i></span><br /><br /> Resources</div></a>
+                <a href="@Url.Content("~/Tools/DocTool")" title="Document Tools"><div class="tile purple" id="p4"><span><i class="icon-clipboard-2"></i></span><br /><br /> Document Tools</div></a>
+            </div>
+        </div>       
+    
+   
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </aside><!-- End of aside -->
+
+   <div class="main metro">
+       <div id="add_edit_panel">
+           <h3><i class="fa fa-th"></i> &nbsp; ADD VENDOR        	
+              <span>Please fill/Update all required fields and click "Add".</span>
+           </h3>
+
+           @using (Html.BeginForm())
+           {
+                @Html.ValidationSummary(true)
+
+                 <div class="edit_field">
+                     <fieldset>
+                         <legend><span><i class="fa fa-info-circle"></i> Basic Information</span></legend>
+                                   
+                
+                        <div class="display-label">
+                            Vendor Name:
+                        </div>
+                        <div class="display-field">
+                             @Html.TextBoxFor(model => model.VendorBusinessName, new { autofocus = "", required="Required" })
+                             @Html.ValidationMessageFor(model => model.VendorBusinessName)
+                        </div>
+
+                        <div class="display-label">
+                             Description:
+                        </div>
+                        <div class="display-field">
+                               @Html.TextAreaFor(model => model.VendorDesc)
+                               @Html.ValidationMessageFor(model => model.VendorDesc)
+                        </div>
+                         
+                        <div class="display-label">
+                          Vendor Specialty:
+                        </div>
+                        <div class="display-field">
+                            @Html.DropDownListFor(model => model.VendorSpecialtyId, Model.VendorSpecialtyList)
+                            @Html.ValidationMessageFor(model => model.VendorSpecialtyId)
+                        </div> 
+
+                        <div class="display-label">
+                            Contact First Name:
+                        </div>
+                        <div class="display-field">
+                            @Html.TextBoxFor(model => model.FistName, new { required = "Required" })
+                            @Html.ValidationMessageFor(model => model.FistName)
+                        </div>
+
+                         <div class="display-label">
+                            Contact Last Name:
+                        </div>
+                        <div class="display-field">
+                             @Html.TextBoxFor(model => model.LastName, new { required = "Required" })
+                             @Html.ValidationMessageFor(model => model.LastName)
+                        </div>
+                        
+                         
+
+
+                        <div class="display-label">
+                            Contact Email:
+                        </div>
+                        <div class="display-field">
+                            @Html.TextBoxFor(model => model.ContactEmail, new { required = "Required" })
+                            @Html.ValidationMessageFor(model => model.ContactEmail)
+                        </div>
+
+                        <div class="display-label">
+                            Telephone 1:
+                        </div>
+                        <div class="display-field">
+                            @Html.TextBoxFor(model => model.ContactTelephone1, new { required = "Required" })
+                            @Html.ValidationMessageFor(model => model.ContactTelephone1)
+                        </div>
+
+                        <div class="display-label">
+                            Telephone 2:
+                        </div>
+                        <div class="display-field">
+                            @Html.EditorFor(model => model.ContactTelephone2)
+                            @Html.ValidationMessageFor(model => model.ContactTelephone2)                   
+                        </div>
+
+                </fieldset>
+
+                
+               
+                </div>  
+                         
+                <div class="right-aligned"><input type="submit" value="Add" /></div>
+           }
+
+       </div>
+
+   </div><!-- End of main -->
+
+</div><!-- End of content-wrapper -->
+
+
+
+<!--
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>CreateVendorViewModel</legend>
+
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.VendorBusinessName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.VendorBusinessName)
+            @Html.ValidationMessageFor(model => model.VendorBusinessName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FistName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FistName)
+            @Html.ValidationMessageFor(model => model.FistName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LastName)
+            @Html.ValidationMessageFor(model => model.LastName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.VendorDesc)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.VendorDesc)
+            @Html.ValidationMessageFor(model => model.VendorDesc)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.VendorSepcialtyName)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.VendorSpecialtyId, Model.VendorSpecialtyList)
+            @Html.ValidationMessageFor(model => model.ContactEmail)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ContactEmail)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ContactEmail)
+            @Html.ValidationMessageFor(model => model.ContactEmail)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ContactTelephone1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ContactTelephone1)
+            @Html.ValidationMessageFor(model => model.ContactTelephone1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ContactTelephone2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ContactTelephone2)
+            @Html.ValidationMessageFor(model => model.ContactTelephone2)
+        </div>
+        
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+    -->
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

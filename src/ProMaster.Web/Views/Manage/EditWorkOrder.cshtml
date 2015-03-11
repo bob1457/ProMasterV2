@@ -1,0 +1,262 @@
+﻿@model ProMaster.Core.Vendor.ViewModels.CreateWorkOrderViewModel
+
+@{
+    ViewBag.Title = "Edit Work Order";
+}
+
+
+<div class="content-wrapper">
+    <aside>
+    <!-- Left Panel/Column -->
+      <div id="left">
+      	<div class="side_details_logo">
+        	<img src="@Url.Content("~/Content/Images/documents3.png")" alt="" title="Vendor Details" />          
+        </div>
+        <div class="side_details_caption metro">
+        	<h3>Contract Details</h3>
+        	<br />
+            <span>
+                 <!-- 	  Detailed tenant information -->
+                 @Model.WorkOrderName
+                <p></p>
+                    <div class="display-label">
+                       Started Date:
+                    </div><br />
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.StartDate)
+                    </div><br />
+
+                    <div class="display-label">
+                        Completed Date:
+                    </div><br />
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.EndDate)
+                    </div><br />
+
+                @if (@Model.IsPaid == true)
+                        {
+                            <div class="display-label">
+                                    Is Paid:
+                                </div>
+                                <div class="display-field">
+                                     @Html.DisplayFor(model => model.IsPaid, new { @id = "ok" })
+                                </div><br />
+                            
+                            <div class="display-label">
+                                Invoice Amount:
+                            </div>
+                            <div class="display-field">
+                                 @Html.DisplayFor(model => model.InvoiceAmount)
+                            </div>
+                            <div class="display-label">
+                               Invoice Date:
+                            </div>
+                            <div class="display-field">
+                               @Html.DisplayFor(model => model.InvoiceDate, new { @class = "date", @Value = System.DateTime.Now.ToString("M/d/yyyy") })
+                            </div>
+                             <div class="display-label">
+                                Payment Method:
+                            </div>
+                            <div class="display-field">
+                                  @Html.DisplayFor(model => model.PaymentMethod)
+                            </div>
+                            <div class="display-label">
+                               Payment Date:
+                            </div>
+                            <div class="display-field">
+                               @Html.DisplayFor(model => model.PaidDate, new { @class = "date", @Value = System.DateTime.Now.ToString("M/d/yyyy") })
+                            </div>
+                            
+                        }
+
+
+            </span>
+            <p></p><p></p>
+            <h6>Serviced Propoerties</h6>
+            <div class="side_details_content">               
+                
+            
+            </div>
+        </div>
+      </div>
+      
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+    </aside><!-- End of aside -->
+
+    <div class="main metro">
+    <div id="add_edit_panel">
+        <h3><i class="fa fa-th"></i> &nbsp; EDIT WORK ORDER
+          <span>Please fill/Update all required fields and click "Save".</span>
+        </h3>
+                <!-- <fieldset class="edit"> 
+                <legend><span></span></legend> --><!-- </fieldset>  -->
+                
+                @using (Html.BeginForm()) 
+                { 
+                    <div class="edit_field">
+                         <fieldset>
+                            <legend><span><i class="fa fa-info-circle"></i> Basic Information</span></legend>
+                            
+                                           
+                                <div class="display-label">
+                                    <span class="grey-font">Work Order ID: </span>
+                                </div>
+                                <div class="display-field">
+                                    <span class="grey-font">@Html.DisplayFor(model => model.WorkOrderId)</span>
+                                </div> 
+                                <br /><br />
+                                    <br />
+                                <div class="display-label">
+                                    Work Order Name:
+                                </div>
+                                <div class="display-field">
+                                    @Html.TextBoxFor(model => model.WorkOrderName, new { autofocus = "" })
+                                    @Html.ValidationMessageFor(model => model.WorkOrderName)
+                                </div> 
+                                <br />
+                                <div class="display-label">
+                                    Description:
+                                </div>
+                                <div class="display-field">
+                                    @Html.TextAreaFor(model => model.WorkOrderDetails)                                
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                    Vendor:
+                                </div>
+                                <div class="display-field">
+                                    @Html.DropDownListFor(model => model.VendorId, Model.VendorList)                                      
+                                </div>
+                                <div class="display-label">
+                                    Work Category:
+                                </div>
+                                <div class="display-field">
+                                    @Html.DropDownListFor(model => model.WorkOrderCategoryId, Model.CategoryList)                                    
+                                </div> 
+                                <br />
+
+                                <div class="display-label">
+                                    Work Type:
+                                </div>
+                                <div class="display-field">
+                                    @Html.DropDownListFor(model => model.WorkOrderTypeId, Model.TypeList)                                    
+                                </div> 
+                                <br />
+                                <div class="display-label">
+                                   Work Start Date
+                                </div>
+                                <div class="display-field">
+                                   @Html.TextBoxFor(model => model.StartDate, new { @class = "date", @Value = System.DateTime.Now.ToString("M/d/yyyy") })
+                                </div>
+
+                                 <div class="display-label">
+                                   Work End Date:
+                                </div>
+                                <div class="display-field">
+                                   @Html.TextBoxFor(model => model.EndDate, new { @class = "date", @Value = System.DateTime.Now.ToString("M/d/yyyy") })
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                   Work Status:
+                                </div>
+                                <div class="display-field">
+                                   @Html.DropDownListFor(model => model.WorkOrderStatusId, Model.StatusList)
+                                </div>
+                                <br />
+
+                             @if(Model.IsPaid == false){
+
+                                <div class="display-label">
+                                    Is Paid:
+                                </div>
+                                <div class="display-field">
+                                     @Html.EditorFor(model => model.IsPaid, new { @id = "ok" })
+                                </div>
+                             }
+
+                        
+                            <div id="pay">
+                                <div class="display-label">
+                                    Invoice Amount:
+                                </div>
+                                <div class="display-field">
+                                     @Html.EditorFor(model => model.InvoiceAmount)
+                                </div>
+                                <div class="display-label">
+                                   Invoice Date:
+                                </div>
+                                <div class="display-field">
+                                   @Html.TextBoxFor(model => model.InvoiceDate, new { @class = "date", @Value = System.DateTime.Now.ToString("M/d/yyyy") })
+                                </div>
+                                <div class="display-label">
+                                    Payment Amount:
+                                </div>
+                                <div class="display-field">
+                                     @Html.EditorFor(model => model.PaymentAmount)
+                                </div>
+                                <div class="display-label">
+                                   Payment Date:
+                                </div>
+                                <div class="display-field">
+                                   @Html.TextBoxFor(model => model.PaidDate, new { @class = "date", @Value = System.DateTime.Now.ToString("M/d/yyyy") })
+                                </div>
+                                <div class="display-label">
+                                    Payment Method:
+                                </div>
+                                <div class="display-field">
+                                      @Html.DropDownListFor(model => model.PaymentMethod, ViewBag.DropdownData as List<SelectListItem>)
+                                </div>
+                                
+                        </div>
+                          
+                                
+                            </fieldset>
+                                <br />
+
+                        </div> 
+                    
+                    <div class="right-aligned"><input type="submit" value="Save" /></div>
+                } 
+
+             </div> 
+  
+  
+  </div><!-- end of main -->
+
+</div><!-- end of content-wrapper- -->
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<!-- Datepicker Script -->
+<script type="text/javascript">
+    $(function () {
+        $(".date").datepicker();
+    });
+
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+      
+            $("#pay").hide();
+        
+
+    });
+
+    $("#IsPaid").change(function () {
+        if (this.checked) {
+            $("#pay").show();
+        }
+        else {
+            $("#pay").hide();
+        }
+
+    });
+
+</script>

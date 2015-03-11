@@ -1,0 +1,80 @@
+﻿@model ProMaster.Core.ViewModels.ManageDisplayViewModel
+
+<table>
+    <thead>
+        <tr>
+            <td colspan="9" class="table-h amarelo">
+                <span><i class="fa fa-th"></i></span> Tenant List
+            </td>
+        </tr>
+    </thead>
+    <tr>
+        <th>ID &nbsp;</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Telephone</th>
+        <th>Telephone2</th>
+        <th>Email</th>
+        <th>Added Date</th>
+        <th></th>
+        <th></th>
+    </tr>
+
+
+    @if (Model.Tenants.Count() != 0)
+    {
+        foreach (var item in Model.Tenants.Take(10))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenantId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenantFirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenantLastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenantContactTelephone1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenantContactTelephone2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenantContactEmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenantAddedDate)
+                </td>
+
+                <td>
+                    <div class="table-button"><a href="@Url.Action("TenantDetails", "Manage", new { id = item.TenantId })"><img src="@Url.Content("~/Content/Images/details.png")" title="Details" /></a></div>
+                </td>
+                <td>
+                    <div class="table-button"><a class="delete-link" href="@Url.Action("DeleteTenant", "Manage", new { id = item.TenantId })"><img src="@Url.Content("~/Content/Images/delete.png")" title="Delete" /></a></div>
+                </td>
+            </tr>
+        }
+    }
+    else
+    {
+        <tr>
+            <td colspan="9">No records!</td>
+        </tr>
+    }
+
+    <tfoot>
+        <tr>
+            <td colspan="9"><span><i class="fa fa-th"></i></span></td>
+
+        </tr>
+    </tfoot>
+</table>
+
+<div class="more">
+    @if (Model.Tenants.Count() > 10)
+    {
+        <a href="#">More...</a>
+    }
+</div>

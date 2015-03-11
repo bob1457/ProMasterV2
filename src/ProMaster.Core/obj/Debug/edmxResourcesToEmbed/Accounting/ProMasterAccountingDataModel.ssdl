@@ -1,0 +1,531 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProMasterAccountingDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ProMasterAccountingDataModelStoreContainer">
+    <EntitySet Name="CostCategory" EntityType="ProMasterAccountingDataModel.Store.CostCategory" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Lease" EntityType="ProMasterAccountingDataModel.Store.Lease" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="ManagementContract" EntityType="ProMasterAccountingDataModel.Store.ManagementContract" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="ManagementEvent" EntityType="ProMasterAccountingDataModel.Store.ManagementEvent" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="ManagementFee" EntityType="ProMasterAccountingDataModel.Store.ManagementFee" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="ManagementFeeFrequency" EntityType="ProMasterAccountingDataModel.Store.ManagementFeeFrequency" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="ManagementFeeType" EntityType="ProMasterAccountingDataModel.Store.ManagementFeeType" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="OtherCost" EntityType="ProMasterAccountingDataModel.Store.OtherCost" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Property" EntityType="ProMasterAccountingDataModel.Store.Property" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="PropertyOwner" EntityType="ProMasterAccountingDataModel.Store.PropertyOwner" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="PropertyType" EntityType="ProMasterAccountingDataModel.Store.PropertyType" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="RentalStatus" EntityType="ProMasterAccountingDataModel.Store.RentalStatus" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="RentPayment" EntityType="ProMasterAccountingDataModel.Store.RentPayment" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Tenant" EntityType="ProMasterAccountingDataModel.Store.Tenant" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="WorkOrder" EntityType="ProMasterAccountingDataModel.Store.WorkOrder" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="WorkOrderCategory" EntityType="ProMasterAccountingDataModel.Store.WorkOrderCategory" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="WorkOrderStatus" EntityType="ProMasterAccountingDataModel.Store.WorkOrderStatus" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="WorkOrderType" EntityType="ProMasterAccountingDataModel.Store.WorkOrderType" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <AssociationSet Name="FK_Cost_CostCategory" Association="ProMasterAccountingDataModel.Store.FK_Cost_CostCategory">
+      <End Role="CostCategory" EntitySet="CostCategory" />
+      <End Role="OtherCost" EntitySet="OtherCost" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cost_Property" Association="ProMasterAccountingDataModel.Store.FK_Cost_Property">
+      <End Role="Property" EntitySet="Property" />
+      <End Role="OtherCost" EntitySet="OtherCost" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_Property" Association="ProMasterAccountingDataModel.Store.FK_Event_Property">
+      <End Role="Property" EntitySet="Property" />
+      <End Role="ManagementEvent" EntitySet="ManagementEvent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lease_Property" Association="ProMasterAccountingDataModel.Store.FK_Lease_Property">
+      <End Role="Property" EntitySet="Property" />
+      <End Role="Lease" EntitySet="Lease" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ManagementContract_ManagementFeeFrequency" Association="ProMasterAccountingDataModel.Store.FK_ManagementContract_ManagementFeeFrequency">
+      <End Role="ManagementFeeFrequency" EntitySet="ManagementFeeFrequency" />
+      <End Role="ManagementContract" EntitySet="ManagementContract" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ManagementContract_Property" Association="ProMasterAccountingDataModel.Store.FK_ManagementContract_Property">
+      <End Role="Property" EntitySet="Property" />
+      <End Role="ManagementContract" EntitySet="ManagementContract" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ManagementFee_ManagementContract" Association="ProMasterAccountingDataModel.Store.FK_ManagementFee_ManagementContract">
+      <End Role="ManagementContract" EntitySet="ManagementContract" />
+      <End Role="ManagementFee" EntitySet="ManagementFee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ManagementFee_ManagementFeeType" Association="ProMasterAccountingDataModel.Store.FK_ManagementFee_ManagementFeeType">
+      <End Role="ManagementFeeType" EntitySet="ManagementFeeType" />
+      <End Role="ManagementFee" EntitySet="ManagementFee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Property_PropertyOwner" Association="ProMasterAccountingDataModel.Store.FK_Property_PropertyOwner">
+      <End Role="PropertyOwner" EntitySet="PropertyOwner" />
+      <End Role="Property" EntitySet="Property" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Property_PropertyType" Association="ProMasterAccountingDataModel.Store.FK_Property_PropertyType">
+      <End Role="PropertyType" EntitySet="PropertyType" />
+      <End Role="Property" EntitySet="Property" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Property_RentalStatus" Association="ProMasterAccountingDataModel.Store.FK_Property_RentalStatus">
+      <End Role="RentalStatus" EntitySet="RentalStatus" />
+      <End Role="Property" EntitySet="Property" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RentPayment_Tenant" Association="ProMasterAccountingDataModel.Store.FK_RentPayment_Tenant">
+      <End Role="Tenant" EntitySet="Tenant" />
+      <End Role="RentPayment" EntitySet="RentPayment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrder_Property" Association="ProMasterAccountingDataModel.Store.FK_WorkOrder_Property">
+      <End Role="Property" EntitySet="Property" />
+      <End Role="WorkOrder" EntitySet="WorkOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrder_WorkOrderCategory" Association="ProMasterAccountingDataModel.Store.FK_WorkOrder_WorkOrderCategory">
+      <End Role="WorkOrderCategory" EntitySet="WorkOrderCategory" />
+      <End Role="WorkOrder" EntitySet="WorkOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrder_WorkOrderStatus" Association="ProMasterAccountingDataModel.Store.FK_WorkOrder_WorkOrderStatus">
+      <End Role="WorkOrderStatus" EntitySet="WorkOrderStatus" />
+      <End Role="WorkOrder" EntitySet="WorkOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrder_WorkOrderType" Association="ProMasterAccountingDataModel.Store.FK_WorkOrder_WorkOrderType">
+      <End Role="WorkOrderType" EntitySet="WorkOrderType" />
+      <End Role="WorkOrder" EntitySet="WorkOrder" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CostCategory">
+    <Key>
+      <PropertyRef Name="CostCategoryId" />
+    </Key>
+    <Property Name="CostCategoryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CostCategoryName" Type="varchar" Nullable="false" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Lease">
+    <Key>
+      <PropertyRef Name="LeaseId" />
+    </Key>
+    <Property Name="LeaseId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LeaseTitle" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="LeaseDesc" Type="varchar" MaxLength="4000" />
+    <Property Name="PropertyId" Type="int" Nullable="false" />
+    <Property Name="LeaseStartDate" Type="datetime2" Nullable="false" />
+    <Property Name="LeaseEndDate" Type="datetime2" Nullable="false" />
+    <Property Name="LeaseTermId" Type="int" Nullable="false" />
+    <Property Name="RentFrequency" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="RentAmount" Type="decimal" Nullable="false" />
+    <Property Name="RentDueOn" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="DamageDepositAmount" Type="decimal" Nullable="false" />
+    <Property Name="PetDepositAmount" Type="decimal" />
+    <Property Name="LeaseSignDate" Type="datetime2" Nullable="false" />
+    <Property Name="LeaseAgreementDocUrl" Type="varchar" MaxLength="10" />
+    <Property Name="IsLeaseActive" Type="bit" />
+    <Property Name="Addendum" Type="bit" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="Notes" Type="varchar" MaxLength="500" />
+    <Property Name="CreationDate" Type="datetime2" Nullable="false" />
+    <Property Name="UpdateDate" Type="datetime2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ManagementContract">
+    <Key>
+      <PropertyRef Name="ManagementContractId" />
+    </Key>
+    <Property Name="ManagementContractId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ManagementContractTitile" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="StartDate" Type="datetime2" Nullable="false" />
+    <Property Name="EndDate" Type="datetime2" Nullable="false" />
+    <Property Name="ListingFeeScale" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ManagementFeeScale" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ManagementFeeFrequencyId" Type="int" Nullable="false" />
+    <Property Name="ContractSignDate" Type="datetime2" Nullable="false" />
+    <Property Name="PropertyId" Type="int" Nullable="false" />
+    <Property Name="ManagementContractDocUrl" Type="varchar" MaxLength="150" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime2" Nullable="false" />
+    <Property Name="UpdateDate" Type="datetime2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ManagementEvent">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EventName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="EventDetails" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="EventDate" Type="datetime2" Nullable="false" />
+    <Property Name="EventTypeId" Type="int" Nullable="false" />
+    <Property Name="PropertyId" Type="int" Nullable="false" />
+    <Property Name="MileageIncurred" Type="decimal" Nullable="false" />
+    <Property Name="TimeSpent" Type="decimal" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ManagementFee">
+    <Key>
+      <PropertyRef Name="ManagementFeeId" />
+    </Key>
+    <Property Name="ManagementFeeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ManagementFeeTypeId" Type="int" Nullable="false" />
+    <Property Name="ManagementFeeAmount" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="ManagementFeeMonth" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="ManagementFeeYear" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="IsReceived" Type="bit" Nullable="false" />
+    <Property Name="ManagementDueDate" Type="datetime2" Nullable="false" />
+    <Property Name="ReceivedDate" Type="datetime2" Nullable="false" />
+    <Property Name="ManagementContractId" Type="int" Nullable="false" />
+    <Property Name="Notes" Type="varchar" MaxLength="450" />
+  </EntityType>
+  <EntityType Name="ManagementFeeFrequency">
+    <Key>
+      <PropertyRef Name="ManagementFeeFrequencyId" />
+    </Key>
+    <Property Name="ManagementFeeFrequencyId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ManagementFeeFrequency" Type="varchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="ManagementFeeType">
+    <Key>
+      <PropertyRef Name="ManagementFeeTypeId" />
+    </Key>
+    <Property Name="ManagementFeeTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ManagementFeeType" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="OtherCost">
+    <Key>
+      <PropertyRef Name="OtherCostId" />
+    </Key>
+    <Property Name="OtherCostId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CostName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CostDesc" Type="varchar" MaxLength="500" />
+    <Property Name="CostCategoryId" Type="int" Nullable="false" />
+    <Property Name="CostAmount" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="IsPaid" Type="bit" Nullable="false" />
+    <Property Name="PropertyId" Type="int" Nullable="false" />
+    <Property Name="CostInvoiceDocUrl" Type="varchar" MaxLength="250" />
+    <Property Name="CostAddedDate" Type="datetime2" Nullable="false" />
+    <Property Name="CostUpdateDate" Type="datetime2" />
+  </EntityType>
+  <EntityType Name="Property">
+    <Key>
+      <PropertyRef Name="PropertyId" />
+    </Key>
+    <Property Name="PropertyId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PropertyName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="PropertyDesc" Type="varchar" MaxLength="250" />
+    <Property Name="PropertyListDesc" Type="varchar" MaxLength="450" />
+    <Property Name="PropertyTypeId" Type="int" Nullable="false" />
+    <Property Name="StrataCouncilId" Type="int" />
+    <Property Name="PropertyAddressId" Type="int" Nullable="false" />
+    <Property Name="PropertyFeatureId" Type="int" Nullable="false" />
+    <Property Name="PropertyFacilityId" Type="int" Nullable="false" />
+    <Property Name="PropertyOwnerId" Type="int" Nullable="false" />
+    <Property Name="PropertyManagerId" Type="int" Nullable="false" />
+    <Property Name="PropertyImgUrl" Type="varchar" MaxLength="100" />
+    <Property Name="PropertyVideoUrl" Type="varchar" MaxLength="100" />
+    <Property Name="PropertyBuildYear" Type="int" Nullable="false" />
+    <Property Name="PropertyRentalStatusId" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsShared" Type="bit" Nullable="false" />
+    <Property Name="RentalStatusId" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime2" Nullable="false" />
+    <Property Name="UpdateDate" Type="datetime2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PropertyOwner">
+    <Key>
+      <PropertyRef Name="PropertyOwnerId" />
+    </Key>
+    <Property Name="PropertyOwnerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ContactEmail" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ContactTelephone1" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="ContactTelephone2" Type="varchar" MaxLength="25" />
+    <Property Name="OnlineAccessEnbaled" Type="bit" Nullable="false" />
+    <Property Name="UserAvartaImgUrl" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="AddedBy" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="AddProperty" Type="bit" />
+    <Property Name="CreationDate" Type="datetime2" Nullable="false" />
+    <Property Name="UpdateDate" Type="datetime2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PropertyType">
+    <Key>
+      <PropertyRef Name="PropertyTypeId" />
+    </Key>
+    <Property Name="PropertyTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PropertyType" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="RentalStatus">
+    <Key>
+      <PropertyRef Name="RentalStatusId" />
+    </Key>
+    <Property Name="RentalStatusId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="varchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="RentPayment">
+    <Key>
+      <PropertyRef Name="RentPaymentId" />
+    </Key>
+    <Property Name="RentPaymentId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TenantId" Type="int" Nullable="false" />
+    <Property Name="RentIsPaidOntime" Type="bit" Nullable="false" />
+    <Property Name="RentPaymentDate" Type="datetime2" Nullable="false" />
+    <Property Name="RentPaymentMonth" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="RentPaymentYear" Type="varchar" Nullable="false" MaxLength="4" />
+    <Property Name="RentPaidAmount" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="NumberOfLatePayment" Type="int" Nullable="false" />
+    <Property Name="Balance" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="RentPaymentMethodId" Type="int" Nullable="false" />
+    <Property Name="IsCollectedInPerson" Type="bit" Nullable="false" />
+    <Property Name="IsDepositForOwner" Type="bit" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="Notes" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Tenant">
+    <Key>
+      <PropertyRef Name="TenantId" />
+    </Key>
+    <Property Name="TenantId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ContactEmail" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ContactTelephone1" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="ContactTelephone2" Type="varchar" MaxLength="25" />
+    <Property Name="OnlineAccessEnbaled" Type="bit" Nullable="false" />
+    <Property Name="UserAvartaImgUrl" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="LeaseId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="ManagedBy" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime2" Nullable="false" />
+    <Property Name="UpdateDate" Type="datetime2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WorkOrder">
+    <Key>
+      <PropertyRef Name="WorkOrderId" />
+    </Key>
+    <Property Name="WorkOrderId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WorkOrderName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="WorkOrderDetails" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="WorkOrderCategoryId" Type="int" Nullable="false" />
+    <Property Name="PropertyId" Type="int" Nullable="false" />
+    <Property Name="VendorId" Type="int" Nullable="false" />
+    <Property Name="WorkOrderTypeId" Type="int" Nullable="false" />
+    <Property Name="InvoiceAmount" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="InvoiceDocUrl" Type="varchar" MaxLength="150" />
+    <Property Name="InvoiceDate" Type="datetime2" Nullable="false" />
+    <Property Name="StartDate" Type="datetime2" Nullable="false" />
+    <Property Name="EndDate" Type="datetime2" Nullable="false" />
+    <Property Name="IsAuthorized" Type="bit" Nullable="false" />
+    <Property Name="WorkOrderStatusId" Type="int" Nullable="false" />
+    <Property Name="IsPaid" Type="bit" Nullable="false" />
+    <Property Name="PaymentDate" Type="datetime2" Nullable="false" />
+    <Property Name="PaymentMethod" Type="varchar" MaxLength="50" />
+    <Property Name="PaymentAmount" Type="decimal" Scale="2" />
+    <Property Name="RecordCreationDate" Type="datetime2" Nullable="false" />
+    <Property Name="RecordUpdateDate" Type="datetime2" />
+  </EntityType>
+  <EntityType Name="WorkOrderCategory">
+    <Key>
+      <PropertyRef Name="WorkOrderCategoryId" />
+    </Key>
+    <Property Name="WorkOrderCategoryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WorkOrderStatus">
+    <Key>
+      <PropertyRef Name="WorkOrderStatusId" />
+    </Key>
+    <Property Name="WorkOrderStatusId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WorkOrderStatus" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WorkOrderType">
+    <Key>
+      <PropertyRef Name="WorkOrderTypeId" />
+    </Key>
+    <Property Name="WorkOrderTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WorkOrderTypeName" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Cost_CostCategory">
+    <End Role="CostCategory" Type="ProMasterAccountingDataModel.Store.CostCategory" Multiplicity="1" />
+    <End Role="OtherCost" Type="ProMasterAccountingDataModel.Store.OtherCost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CostCategory">
+        <PropertyRef Name="CostCategoryId" />
+      </Principal>
+      <Dependent Role="OtherCost">
+        <PropertyRef Name="CostCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cost_Property">
+    <End Role="Property" Type="ProMasterAccountingDataModel.Store.Property" Multiplicity="1" />
+    <End Role="OtherCost" Type="ProMasterAccountingDataModel.Store.OtherCost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="OtherCost">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_Property">
+    <End Role="Property" Type="ProMasterAccountingDataModel.Store.Property" Multiplicity="1" />
+    <End Role="ManagementEvent" Type="ProMasterAccountingDataModel.Store.ManagementEvent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="ManagementEvent">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lease_Property">
+    <End Role="Property" Type="ProMasterAccountingDataModel.Store.Property" Multiplicity="1" />
+    <End Role="Lease" Type="ProMasterAccountingDataModel.Store.Lease" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="Lease">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ManagementContract_ManagementFeeFrequency">
+    <End Role="ManagementFeeFrequency" Type="ProMasterAccountingDataModel.Store.ManagementFeeFrequency" Multiplicity="1" />
+    <End Role="ManagementContract" Type="ProMasterAccountingDataModel.Store.ManagementContract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManagementFeeFrequency">
+        <PropertyRef Name="ManagementFeeFrequencyId" />
+      </Principal>
+      <Dependent Role="ManagementContract">
+        <PropertyRef Name="ManagementFeeFrequencyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ManagementContract_Property">
+    <End Role="Property" Type="ProMasterAccountingDataModel.Store.Property" Multiplicity="1" />
+    <End Role="ManagementContract" Type="ProMasterAccountingDataModel.Store.ManagementContract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="ManagementContract">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ManagementFee_ManagementContract">
+    <End Role="ManagementContract" Type="ProMasterAccountingDataModel.Store.ManagementContract" Multiplicity="1" />
+    <End Role="ManagementFee" Type="ProMasterAccountingDataModel.Store.ManagementFee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManagementContract">
+        <PropertyRef Name="ManagementContractId" />
+      </Principal>
+      <Dependent Role="ManagementFee">
+        <PropertyRef Name="ManagementContractId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ManagementFee_ManagementFeeType">
+    <End Role="ManagementFeeType" Type="ProMasterAccountingDataModel.Store.ManagementFeeType" Multiplicity="1" />
+    <End Role="ManagementFee" Type="ProMasterAccountingDataModel.Store.ManagementFee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManagementFeeType">
+        <PropertyRef Name="ManagementFeeTypeId" />
+      </Principal>
+      <Dependent Role="ManagementFee">
+        <PropertyRef Name="ManagementFeeTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Property_PropertyOwner">
+    <End Role="PropertyOwner" Type="ProMasterAccountingDataModel.Store.PropertyOwner" Multiplicity="1" />
+    <End Role="Property" Type="ProMasterAccountingDataModel.Store.Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyOwner">
+        <PropertyRef Name="PropertyOwnerId" />
+      </Principal>
+      <Dependent Role="Property">
+        <PropertyRef Name="PropertyOwnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Property_PropertyType">
+    <End Role="PropertyType" Type="ProMasterAccountingDataModel.Store.PropertyType" Multiplicity="1" />
+    <End Role="Property" Type="ProMasterAccountingDataModel.Store.Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyType">
+        <PropertyRef Name="PropertyTypeId" />
+      </Principal>
+      <Dependent Role="Property">
+        <PropertyRef Name="PropertyTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Property_RentalStatus">
+    <End Role="RentalStatus" Type="ProMasterAccountingDataModel.Store.RentalStatus" Multiplicity="1" />
+    <End Role="Property" Type="ProMasterAccountingDataModel.Store.Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RentalStatus">
+        <PropertyRef Name="RentalStatusId" />
+      </Principal>
+      <Dependent Role="Property">
+        <PropertyRef Name="RentalStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RentPayment_Tenant">
+    <End Role="Tenant" Type="ProMasterAccountingDataModel.Store.Tenant" Multiplicity="1" />
+    <End Role="RentPayment" Type="ProMasterAccountingDataModel.Store.RentPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tenant">
+        <PropertyRef Name="TenantId" />
+      </Principal>
+      <Dependent Role="RentPayment">
+        <PropertyRef Name="TenantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrder_Property">
+    <End Role="Property" Type="ProMasterAccountingDataModel.Store.Property" Multiplicity="1" />
+    <End Role="WorkOrder" Type="ProMasterAccountingDataModel.Store.WorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="WorkOrder">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrder_WorkOrderCategory">
+    <End Role="WorkOrderCategory" Type="ProMasterAccountingDataModel.Store.WorkOrderCategory" Multiplicity="1" />
+    <End Role="WorkOrder" Type="ProMasterAccountingDataModel.Store.WorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkOrderCategory">
+        <PropertyRef Name="WorkOrderCategoryId" />
+      </Principal>
+      <Dependent Role="WorkOrder">
+        <PropertyRef Name="WorkOrderCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrder_WorkOrderStatus">
+    <End Role="WorkOrderStatus" Type="ProMasterAccountingDataModel.Store.WorkOrderStatus" Multiplicity="1" />
+    <End Role="WorkOrder" Type="ProMasterAccountingDataModel.Store.WorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkOrderStatus">
+        <PropertyRef Name="WorkOrderStatusId" />
+      </Principal>
+      <Dependent Role="WorkOrder">
+        <PropertyRef Name="WorkOrderStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrder_WorkOrderType">
+    <End Role="WorkOrderType" Type="ProMasterAccountingDataModel.Store.WorkOrderType" Multiplicity="1" />
+    <End Role="WorkOrder" Type="ProMasterAccountingDataModel.Store.WorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkOrderType">
+        <PropertyRef Name="WorkOrderTypeId" />
+      </Principal>
+      <Dependent Role="WorkOrder">
+        <PropertyRef Name="WorkOrderTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

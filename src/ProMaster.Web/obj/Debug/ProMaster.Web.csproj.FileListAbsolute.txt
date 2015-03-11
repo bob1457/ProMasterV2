@@ -1,0 +1,1054 @@
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\ProMaster.Web.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\ProMaster.Web.pdb
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\Antlr3.Runtime.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\DotNetOpenAuth.AspNet.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\DotNetOpenAuth.Core.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\DotNetOpenAuth.OAuth.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\DotNetOpenAuth.OpenId.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\EntityFramework.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\Microsoft.Web.Infrastructure.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\Newtonsoft.Json.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\ProMaster.ApplicationManager.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\ProMaster.Core.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\ProMaster.DAL.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\ProMaster.Infrastructure.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\ProMaster.Repository.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\System.Net.Http.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\System.Net.Http.Formatting.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\System.Net.Http.WebRequest.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\System.Web.Helpers.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\System.Web.Http.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\System.Web.Http.WebHost.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\System.Web.Mvc.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\System.Web.Optimization.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\System.Web.Razor.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\System.Web.WebPages.Deployment.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\System.Web.WebPages.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\System.Web.WebPages.Razor.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\WebGrease.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\WebMatrix.Data.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\WebMatrix.WebData.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\ProMaster.ApplicationManager.pdb
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\ProMaster.Core.pdb
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\ProMaster.DAL.pdb
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\ProMaster.Infrastructure.pdb
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\ProMaster.Repository.pdb
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\EntityFramework.xml
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\Newtonsoft.Json.xml
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\System.Net.Http.xml
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\System.Net.Http.Formatting.xml
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\System.Net.Http.WebRequest.xml
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\System.Web.Helpers.xml
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\System.Web.Http.xml
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\System.Web.Http.WebHost.xml
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\System.Web.Mvc.xml
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\System.Web.Razor.xml
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\System.Web.WebPages.xml
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\System.Web.WebPages.Deployment.xml
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\System.Web.WebPages.Razor.xml
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\WebMatrix.Data.xml
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\WebMatrix.WebData.xml
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\DotNetOpenAuth.AspNet.xml
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\DotNetOpenAuth.Core.xml
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\DotNetOpenAuth.OAuth.xml
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\DotNetOpenAuth.OpenId.xml
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\obj\Debug\ResolveAssemblyReference.cache
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\obj\Debug\ProMaster.Web.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\obj\Debug\ProMaster.Web.pdb
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Web\bin\Ninject.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Web.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Web.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\Antlr3.Runtime.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.AspNet.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.Core.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OAuth.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OpenId.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\EntityFramework.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\Newtonsoft.Json.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\Ninject.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\ProMaster.ApplicationManager.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Core.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\ProMaster.DAL.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Infrastructure.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Repository.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\System.Net.Http.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\System.Net.Http.Formatting.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\System.Net.Http.WebRequest.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\System.Web.Helpers.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\System.Web.Http.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\System.Web.Http.WebHost.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\System.Web.Mvc.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\System.Web.Optimization.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\System.Web.Razor.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\System.Web.WebPages.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\System.Web.WebPages.Razor.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\WebGrease.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\WebMatrix.Data.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\WebMatrix.WebData.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\ProMaster.ApplicationManager.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Core.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\ProMaster.DAL.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Infrastructure.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Repository.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\EntityFramework.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\Newtonsoft.Json.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\System.Net.Http.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\System.Net.Http.Formatting.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\System.Net.Http.WebRequest.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\System.Web.Helpers.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\System.Web.Http.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\System.Web.Http.WebHost.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\System.Web.Mvc.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\System.Web.Razor.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\System.Web.WebPages.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\System.Web.WebPages.Razor.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\WebMatrix.Data.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\WebMatrix.WebData.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.AspNet.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.Core.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OAuth.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OpenId.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\obj\Debug\ProMaster.Web.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\obj\Debug\ProMaster.Web.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\obj\Debug\ProMaster.Web.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\ProMaster.Web.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\ProMaster.Web.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\Antlr3.Runtime.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\DotNetOpenAuth.AspNet.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\DotNetOpenAuth.Core.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\DotNetOpenAuth.OAuth.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\DotNetOpenAuth.OpenId.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\EntityFramework.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\Newtonsoft.Json.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\Ninject.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\ProMaster.ApplicationManager.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\ProMaster.Core.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\ProMaster.DAL.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\ProMaster.Infrastructure.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\ProMaster.Repository.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\System.Net.Http.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\System.Net.Http.Formatting.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\System.Net.Http.WebRequest.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\System.Web.Helpers.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\System.Web.Http.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\System.Web.Http.WebHost.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\System.Web.Mvc.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\System.Web.Optimization.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\System.Web.Razor.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\System.Web.WebPages.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\System.Web.WebPages.Razor.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\WebGrease.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\WebMatrix.Data.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\WebMatrix.WebData.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\ProMaster.ApplicationManager.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\ProMaster.Core.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\ProMaster.DAL.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\ProMaster.Infrastructure.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\ProMaster.Repository.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\EntityFramework.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\Newtonsoft.Json.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\System.Net.Http.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\System.Net.Http.Formatting.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\System.Net.Http.WebRequest.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\System.Web.Helpers.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\System.Web.Http.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\System.Web.Http.WebHost.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\System.Web.Mvc.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\System.Web.Razor.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\System.Web.WebPages.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\System.Web.WebPages.Razor.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\WebMatrix.Data.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\WebMatrix.WebData.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\DotNetOpenAuth.AspNet.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\DotNetOpenAuth.Core.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\DotNetOpenAuth.OAuth.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\DotNetOpenAuth.OpenId.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\obj\Debug\ProMaster.Web.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\itextsharp.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\RazorPDF.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Web\bin\System.Web.Mvc.Html5.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Web.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Web.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\Antlr3.Runtime.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.Core.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\EntityFramework.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\itextsharp.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\Newtonsoft.Json.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\Ninject.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\ProMaster.ApplicationManager.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Core.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\ProMaster.DAL.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Infrastructure.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Repository.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\RazorPDF.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\System.Net.Http.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\System.Net.Http.Formatting.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\System.Net.Http.WebRequest.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\System.Web.Helpers.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\System.Web.Http.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\System.Web.Http.WebHost.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\System.Web.Mvc.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\System.Web.Mvc.Html5.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\System.Web.Optimization.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\System.Web.Razor.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\System.Web.WebPages.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\WebGrease.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\WebMatrix.Data.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\WebMatrix.WebData.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\ProMaster.ApplicationManager.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Core.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\ProMaster.DAL.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Infrastructure.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Repository.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\EntityFramework.xml
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\Newtonsoft.Json.xml
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\System.Net.Http.xml
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\System.Net.Http.Formatting.xml
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\System.Net.Http.WebRequest.xml
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\System.Web.Helpers.xml
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\System.Web.Http.xml
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\System.Web.Http.WebHost.xml
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\System.Web.Mvc.xml
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\System.Web.Razor.xml
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\System.Web.WebPages.xml
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\WebMatrix.Data.xml
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\WebMatrix.WebData.xml
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.Core.xml
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\obj\Debug\ProMaster.Web.csprojResolveAssemblyReference.cache
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\obj\Debug\ProMaster.Web.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\obj\Debug\ProMaster.Web.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\MvcSiteMapProvider.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\WebActivatorEx.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\itextsharp.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\MvcSiteMapProvider.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\RazorPDF.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\System.Web.Mvc.Html5.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\WebActivatorEx.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\PagedList.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\PagedList.Mvc.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\PagedList.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Web\bin\PagedList.Mvc.xml
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\PagedList.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\PagedList.Mvc.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\PagedList.xml
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\PagedList.Mvc.xml
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Web.dll.config
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Web.dll.config
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Web.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Web.pdb
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\Antlr3.Runtime.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.AspNet.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.Core.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OAuth.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OpenId.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\EntityFramework.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\itextsharp.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\MvcSiteMapProvider.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\Newtonsoft.Json.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\Ninject.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\PagedList.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\PagedList.Mvc.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\ProMaster.ApplicationManager.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Core.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\ProMaster.DAL.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Infrastructure.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Repository.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\RazorPDF.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\System.Net.Http.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\System.Net.Http.Formatting.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\System.Net.Http.WebRequest.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\System.Web.Helpers.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\System.Web.Http.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\System.Web.Http.WebHost.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\System.Web.Mvc.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\System.Web.Mvc.Html5.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\System.Web.Optimization.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\System.Web.Razor.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\System.Web.WebPages.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\System.Web.WebPages.Razor.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\WebActivatorEx.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\WebGrease.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\WebMatrix.Data.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\WebMatrix.WebData.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\ProMaster.ApplicationManager.pdb
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Core.pdb
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\ProMaster.DAL.pdb
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Infrastructure.pdb
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Repository.pdb
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\PagedList.xml
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\PagedList.Mvc.xml
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\System.Web.Helpers.xml
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\System.Web.Mvc.xml
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\System.Web.Razor.xml
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\System.Web.WebPages.xml
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\System.Web.WebPages.Razor.xml
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\EntityFramework.xml
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\Newtonsoft.Json.xml
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\System.Net.Http.xml
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\System.Net.Http.Formatting.xml
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\System.Net.Http.WebRequest.xml
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\System.Web.Http.xml
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\System.Web.Http.WebHost.xml
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\WebMatrix.Data.xml
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\WebMatrix.WebData.xml
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.AspNet.xml
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.Core.xml
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OAuth.xml
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OpenId.xml
+C:\Development\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Development\Projects\ProMaster\ProMaster.Web\obj\Debug\ProMaster.Web.csprojResolveAssemblyReference.cache
+C:\Development\Projects\ProMaster\ProMaster.Web\obj\Debug\ProMaster.Web.dll
+C:\Development\Projects\ProMaster\ProMaster.Web\obj\Debug\ProMaster.Web.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\ProMaster.Web.dll.config
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\ProMaster.Web.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\ProMaster.Web.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\Antlr3.Runtime.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.Core.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\EntityFramework.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\itextsharp.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\MvcSiteMapProvider.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\Newtonsoft.Json.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\Ninject.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\PagedList.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\PagedList.Mvc.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\ProMaster.ApplicationManager.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\ProMaster.Core.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\ProMaster.DAL.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\ProMaster.Infrastructure.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\ProMaster.Repository.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\RazorPDF.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\System.Net.Http.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\System.Net.Http.Formatting.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\System.Net.Http.WebRequest.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\System.Web.Helpers.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\System.Web.Http.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\System.Web.Http.WebHost.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\System.Web.Mvc.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\System.Web.Mvc.Html5.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\System.Web.Optimization.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\System.Web.Razor.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\System.Web.WebPages.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\WebActivatorEx.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\WebGrease.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\WebMatrix.Data.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\WebMatrix.WebData.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\ProMaster.ApplicationManager.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\ProMaster.Core.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\ProMaster.DAL.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\ProMaster.Infrastructure.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\ProMaster.Repository.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\PagedList.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\PagedList.Mvc.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\System.Web.Helpers.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\System.Web.Mvc.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\System.Web.Razor.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\System.Web.WebPages.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\EntityFramework.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\Newtonsoft.Json.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\System.Net.Http.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\System.Net.Http.Formatting.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\System.Net.Http.WebRequest.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\System.Web.Http.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\System.Web.Http.WebHost.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\WebMatrix.Data.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\WebMatrix.WebData.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.Core.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\obj\Debug\ProMaster.Web.csprojResolveAssemblyReference.cache
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\obj\Debug\ProMaster.Web.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\obj\Debug\ProMaster.Web.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\log4net.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Web\bin\log4net.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\ProMaster.Web.dll.config
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\ProMaster.Web.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\ProMaster.Web.pdb
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\Antlr3.Runtime.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\DotNetOpenAuth.AspNet.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\DotNetOpenAuth.Core.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\DotNetOpenAuth.OAuth.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\DotNetOpenAuth.OpenId.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\EntityFramework.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\itextsharp.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\log4net.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\MvcSiteMapProvider.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\Newtonsoft.Json.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\Ninject.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\PagedList.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\PagedList.Mvc.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\ProMaster.ApplicationManager.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\ProMaster.Core.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\ProMaster.DAL.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\ProMaster.Infrastructure.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\ProMaster.Repository.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\RazorPDF.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\System.Net.Http.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\System.Net.Http.WebRequest.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\System.Web.Helpers.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\System.Web.Mvc.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\System.Web.Mvc.Html5.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\System.Web.Optimization.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\System.Web.Razor.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\System.Web.WebPages.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\System.Web.WebPages.Razor.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\WebActivatorEx.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\WebGrease.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\WebMatrix.Data.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\WebMatrix.WebData.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\ProMaster.ApplicationManager.pdb
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\ProMaster.Core.pdb
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\ProMaster.DAL.pdb
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\ProMaster.Infrastructure.pdb
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\ProMaster.Repository.pdb
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\log4net.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\PagedList.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\PagedList.Mvc.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\System.Web.Helpers.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\System.Web.Mvc.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\System.Web.Razor.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\System.Web.WebPages.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\System.Web.WebPages.Razor.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\EntityFramework.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\Newtonsoft.Json.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\System.Net.Http.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\System.Net.Http.WebRequest.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\WebMatrix.Data.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\WebMatrix.WebData.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\DotNetOpenAuth.AspNet.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\DotNetOpenAuth.Core.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\DotNetOpenAuth.OAuth.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\DotNetOpenAuth.OpenId.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\obj\Debug\ProMaster.Web.csprojResolveAssemblyReference.cache
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\obj\Debug\ProMaster.Web.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\obj\Debug\ProMaster.Web.pdb
+C:\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Web.dll.config
+C:\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Web.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Web.pdb
+C:\Projects\ProMaster\ProMaster.Web\bin\Antlr3.Runtime.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.AspNet.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.Core.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OAuth.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OpenId.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\EntityFramework.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\itextsharp.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\log4net.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\MvcSiteMapProvider.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\Newtonsoft.Json.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\Ninject.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\PagedList.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\PagedList.Mvc.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\ProMaster.ApplicationManager.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Core.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\ProMaster.DAL.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Infrastructure.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Repository.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\RazorPDF.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\System.Net.Http.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\System.Net.Http.WebRequest.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\System.Web.Helpers.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\System.Web.Mvc.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\System.Web.Mvc.Html5.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\System.Web.Optimization.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\System.Web.Razor.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\System.Web.WebPages.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\System.Web.WebPages.Razor.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\WebActivatorEx.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\WebGrease.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\WebMatrix.Data.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\WebMatrix.WebData.dll
+C:\Projects\ProMaster\ProMaster.Web\bin\ProMaster.ApplicationManager.pdb
+C:\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Core.pdb
+C:\Projects\ProMaster\ProMaster.Web\bin\ProMaster.DAL.pdb
+C:\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Infrastructure.pdb
+C:\Projects\ProMaster\ProMaster.Web\bin\ProMaster.Repository.pdb
+C:\Projects\ProMaster\ProMaster.Web\bin\log4net.xml
+C:\Projects\ProMaster\ProMaster.Web\bin\PagedList.xml
+C:\Projects\ProMaster\ProMaster.Web\bin\PagedList.Mvc.xml
+C:\Projects\ProMaster\ProMaster.Web\bin\System.Web.Helpers.xml
+C:\Projects\ProMaster\ProMaster.Web\bin\System.Web.Mvc.xml
+C:\Projects\ProMaster\ProMaster.Web\bin\System.Web.Razor.xml
+C:\Projects\ProMaster\ProMaster.Web\bin\System.Web.WebPages.xml
+C:\Projects\ProMaster\ProMaster.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Projects\ProMaster\ProMaster.Web\bin\System.Web.WebPages.Razor.xml
+C:\Projects\ProMaster\ProMaster.Web\bin\EntityFramework.xml
+C:\Projects\ProMaster\ProMaster.Web\bin\Newtonsoft.Json.xml
+C:\Projects\ProMaster\ProMaster.Web\bin\System.Net.Http.xml
+C:\Projects\ProMaster\ProMaster.Web\bin\System.Net.Http.WebRequest.xml
+C:\Projects\ProMaster\ProMaster.Web\bin\WebMatrix.Data.xml
+C:\Projects\ProMaster\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Projects\ProMaster\ProMaster.Web\bin\WebMatrix.WebData.xml
+C:\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.AspNet.xml
+C:\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.Core.xml
+C:\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OAuth.xml
+C:\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OpenId.xml
+C:\Projects\ProMaster\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Projects\ProMaster\ProMaster.Web\obj\Debug\ProMaster.Web.csprojResolveAssemblyReference.cache
+C:\Projects\ProMaster\ProMaster.Web\obj\Debug\ProMaster.Web.dll
+C:\Projects\ProMaster\ProMaster.Web\obj\Debug\ProMaster.Web.pdb
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\ProMaster.Web.dll.config
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\ProMaster.Web.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\ProMaster.Web.pdb
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\Antlr3.Runtime.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\DotNetOpenAuth.AspNet.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\DotNetOpenAuth.Core.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\DotNetOpenAuth.OAuth.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\DotNetOpenAuth.OpenId.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\EntityFramework.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\itextsharp.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\log4net.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\MvcSiteMapProvider.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\Newtonsoft.Json.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\Ninject.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\PagedList.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\PagedList.Mvc.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\ProMaster.ApplicationManager.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\ProMaster.Core.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\ProMaster.DAL.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\ProMaster.Infrastructure.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\ProMaster.Repository.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\RazorPDF.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\System.Web.Helpers.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\System.Web.Mvc.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\System.Web.Mvc.Html5.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\System.Web.Optimization.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\System.Web.Razor.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\System.Web.WebPages.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\System.Web.WebPages.Razor.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\WebActivatorEx.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\WebGrease.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\WebMatrix.Data.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\WebMatrix.WebData.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\ProMaster.ApplicationManager.pdb
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\ProMaster.Core.pdb
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\ProMaster.DAL.pdb
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\ProMaster.Infrastructure.pdb
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\ProMaster.Repository.pdb
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\log4net.xml
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\PagedList.xml
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\PagedList.Mvc.xml
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\System.Web.Helpers.xml
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\System.Web.Mvc.xml
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\System.Web.Razor.xml
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\System.Web.WebPages.xml
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\System.Web.WebPages.Razor.xml
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\EntityFramework.xml
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\Newtonsoft.Json.xml
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\WebMatrix.Data.xml
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\WebMatrix.WebData.xml
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\DotNetOpenAuth.AspNet.xml
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\DotNetOpenAuth.Core.xml
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\DotNetOpenAuth.OAuth.xml
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\DotNetOpenAuth.OpenId.xml
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\obj\Debug\ProMaster.Web.csprojResolveAssemblyReference.cache
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\obj\Debug\ProMaster.Web.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Web\obj\Debug\ProMaster.Web.pdb
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\ProMaster.Web.dll.config
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\ProMaster.Web.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\ProMaster.Web.pdb
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\Antlr3.Runtime.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\DotNetOpenAuth.AspNet.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\DotNetOpenAuth.Core.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\DotNetOpenAuth.OAuth.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\DotNetOpenAuth.OpenId.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\EntityFramework.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\itextsharp.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\log4net.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\MvcSiteMapProvider.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\Newtonsoft.Json.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\Ninject.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\PagedList.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\PagedList.Mvc.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\ProMaster.ApplicationManager.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\ProMaster.Core.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\ProMaster.DAL.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\ProMaster.Infrastructure.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\ProMaster.Repository.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\RazorPDF.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\System.Net.Http.Formatting.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\System.Web.Helpers.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\System.Web.Http.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\System.Web.Http.WebHost.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\System.Web.Mvc.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\System.Web.Mvc.Html5.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\System.Web.Optimization.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\System.Web.Razor.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\System.Web.WebPages.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\System.Web.WebPages.Razor.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\WebActivatorEx.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\WebGrease.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\WebMatrix.Data.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\WebMatrix.WebData.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\ProMaster.ApplicationManager.pdb
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\ProMaster.Core.pdb
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\ProMaster.DAL.pdb
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\ProMaster.Infrastructure.pdb
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\ProMaster.Repository.pdb
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\log4net.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\PagedList.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\PagedList.Mvc.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\System.Web.Helpers.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\System.Web.Mvc.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\System.Web.Razor.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\System.Web.WebPages.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\System.Web.WebPages.Razor.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\EntityFramework.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\Newtonsoft.Json.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\System.Net.Http.Formatting.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\System.Web.Http.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\System.Web.Http.WebHost.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\WebMatrix.Data.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\WebMatrix.WebData.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\DotNetOpenAuth.AspNet.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\DotNetOpenAuth.Core.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\DotNetOpenAuth.OAuth.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\DotNetOpenAuth.OpenId.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\obj\Debug\ProMaster.Web.csprojResolveAssemblyReference.cache
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\obj\Debug\ProMaster.Web.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Web\obj\Debug\ProMaster.Web.pdb
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\ProMaster.Web.dll.config
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\ProMaster.Web.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\ProMaster.Web.pdb
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\Antlr3.Runtime.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\DotNetOpenAuth.AspNet.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\DotNetOpenAuth.Core.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\DotNetOpenAuth.OAuth.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\DotNetOpenAuth.OpenId.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\EntityFramework.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\itextsharp.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\log4net.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\MvcSiteMapProvider.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\Newtonsoft.Json.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\Ninject.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\PagedList.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\PagedList.Mvc.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\ProMaster.ApplicationManager.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\ProMaster.Core.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\ProMaster.DAL.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\ProMaster.Infrastructure.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\ProMaster.Repository.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\RazorPDF.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\System.Net.Http.Formatting.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\System.Web.Helpers.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\System.Web.Http.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\System.Web.Http.WebHost.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\System.Web.Mvc.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\System.Web.Mvc.Html5.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\System.Web.Optimization.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\System.Web.Razor.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\System.Web.WebPages.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\System.Web.WebPages.Razor.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\WebActivatorEx.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\WebGrease.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\WebMatrix.Data.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\WebMatrix.WebData.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\ProMaster.ApplicationManager.pdb
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\ProMaster.Core.pdb
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\ProMaster.DAL.pdb
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\ProMaster.Infrastructure.pdb
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\ProMaster.Repository.pdb
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\EntityFramework.xml
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\log4net.xml
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\PagedList.xml
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\PagedList.Mvc.xml
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\System.Web.Helpers.xml
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\System.Web.Mvc.xml
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\System.Web.Razor.xml
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\System.Web.WebPages.xml
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\System.Web.WebPages.Razor.xml
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\Newtonsoft.Json.xml
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\System.Net.Http.Formatting.xml
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\System.Web.Http.xml
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\System.Web.Http.WebHost.xml
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\WebMatrix.Data.xml
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\WebMatrix.WebData.xml
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\DotNetOpenAuth.AspNet.xml
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\DotNetOpenAuth.Core.xml
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\DotNetOpenAuth.OAuth.xml
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\DotNetOpenAuth.OpenId.xml
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\obj\Debug\ProMaster.Web.csprojResolveAssemblyReference.cache
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\obj\Debug\ProMaster.Web.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Web\obj\Debug\ProMaster.Web.pdb
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\ProMaster.Web.dll.config
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\ProMaster.Web.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\ProMaster.Web.pdb
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\Antlr3.Runtime.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\DotNetOpenAuth.AspNet.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\DotNetOpenAuth.Core.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\DotNetOpenAuth.OAuth.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\DotNetOpenAuth.OpenId.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\EntityFramework.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\itextsharp.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\log4net.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\MvcSiteMapProvider.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\Newtonsoft.Json.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\Ninject.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\PagedList.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\PagedList.Mvc.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\ProMaster.ApplicationManager.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\ProMaster.Core.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\ProMaster.DAL.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\ProMaster.Infrastructure.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\ProMaster.Repository.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\RazorPDF.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\System.Web.Helpers.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\System.Web.Mvc.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\System.Web.Mvc.Html5.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\System.Web.Optimization.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\System.Web.Razor.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\System.Web.WebPages.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\System.Web.WebPages.Razor.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\WebActivatorEx.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\WebGrease.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\WebMatrix.Data.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\WebMatrix.WebData.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\ProMaster.ApplicationManager.pdb
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\ProMaster.Core.pdb
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\ProMaster.DAL.pdb
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\ProMaster.Infrastructure.pdb
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\ProMaster.Repository.pdb
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\EntityFramework.xml
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\log4net.xml
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\PagedList.xml
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\PagedList.Mvc.xml
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\System.Web.Helpers.xml
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\System.Web.Mvc.xml
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\System.Web.Razor.xml
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\System.Web.WebPages.xml
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\System.Web.WebPages.Razor.xml
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\Newtonsoft.Json.xml
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\WebMatrix.Data.xml
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\WebMatrix.WebData.xml
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\DotNetOpenAuth.AspNet.xml
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\DotNetOpenAuth.Core.xml
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\DotNetOpenAuth.OAuth.xml
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\DotNetOpenAuth.OpenId.xml
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\obj\Debug\ProMaster.Web.csprojResolveAssemblyReference.cache
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\obj\Debug\ProMaster.Web.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Web\obj\Debug\ProMaster.Web.pdb
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\ProMaster.Web.dll.config
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\ProMaster.Web.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\ProMaster.Web.pdb
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\Antlr3.Runtime.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\DotNetOpenAuth.AspNet.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\DotNetOpenAuth.Core.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\DotNetOpenAuth.OAuth.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\DotNetOpenAuth.OpenId.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\EntityFramework.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\itextsharp.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\log4net.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\MvcSiteMapProvider.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\Newtonsoft.Json.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\Ninject.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\PagedList.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\PagedList.Mvc.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\ProMaster.ApplicationManager.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\ProMaster.Core.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\ProMaster.DAL.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\ProMaster.Infrastructure.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\ProMaster.Repository.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\RazorPDF.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\System.Web.Helpers.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\System.Web.Mvc.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\System.Web.Mvc.Html5.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\System.Web.Optimization.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\System.Web.Razor.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\System.Web.WebPages.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\System.Web.WebPages.Razor.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\WebActivatorEx.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\WebGrease.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\WebMatrix.Data.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\WebMatrix.WebData.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\ProMaster.ApplicationManager.pdb
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\ProMaster.Core.pdb
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\ProMaster.DAL.pdb
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\ProMaster.Infrastructure.pdb
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\ProMaster.Repository.pdb
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\EntityFramework.xml
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\log4net.xml
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\PagedList.xml
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\PagedList.Mvc.xml
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\System.Web.Helpers.xml
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\System.Web.Mvc.xml
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\System.Web.Razor.xml
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\System.Web.WebPages.xml
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\System.Web.WebPages.Razor.xml
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\Newtonsoft.Json.xml
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\WebMatrix.Data.xml
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\WebMatrix.WebData.xml
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\DotNetOpenAuth.AspNet.xml
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\DotNetOpenAuth.Core.xml
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\DotNetOpenAuth.OAuth.xml
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\DotNetOpenAuth.OpenId.xml
+C:\Projects\Release\ProMasterRC\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Projects\Release\ProMasterRC\ProMaster.Web\obj\Debug\ProMaster.Web.csprojResolveAssemblyReference.cache
+C:\Projects\Release\ProMasterRC\ProMaster.Web\obj\Debug\ProMaster.Web.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Web\obj\Debug\ProMaster.Web.pdb
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\ProMaster.Web.dll.config
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\ProMaster.Web.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\ProMaster.Web.pdb
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\Antlr3.Runtime.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\DotNetOpenAuth.AspNet.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\DotNetOpenAuth.Core.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\DotNetOpenAuth.OAuth.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\DotNetOpenAuth.OpenId.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\EntityFramework.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\itextsharp.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\log4net.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\MvcSiteMapProvider.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\Newtonsoft.Json.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\Ninject.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\PagedList.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\PagedList.Mvc.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\ProMaster.ApplicationManager.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\ProMaster.Core.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\ProMaster.DAL.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\ProMaster.Infrastructure.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\ProMaster.Repository.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\RazorPDF.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\System.Net.Http.Formatting.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\System.Web.Helpers.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\System.Web.Http.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\System.Web.Http.WebHost.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\System.Web.Mvc.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\System.Web.Mvc.Html5.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\System.Web.Optimization.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\System.Web.Razor.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\System.Web.WebPages.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\System.Web.WebPages.Razor.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\WebActivatorEx.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\WebGrease.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\WebMatrix.Data.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\WebMatrix.WebData.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\ProMaster.ApplicationManager.pdb
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\ProMaster.Core.pdb
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\ProMaster.DAL.pdb
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\ProMaster.Infrastructure.pdb
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\ProMaster.Repository.pdb
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\EntityFramework.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\log4net.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\PagedList.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\PagedList.Mvc.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\System.Web.Helpers.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\System.Web.Mvc.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\System.Web.Razor.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\System.Web.WebPages.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\System.Web.WebPages.Razor.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\Newtonsoft.Json.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\System.Net.Http.Formatting.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\System.Web.Http.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\System.Web.Http.WebHost.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\WebMatrix.Data.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\WebMatrix.WebData.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\DotNetOpenAuth.AspNet.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\DotNetOpenAuth.Core.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\DotNetOpenAuth.OAuth.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\DotNetOpenAuth.OpenId.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\obj\Debug\ProMaster.Web.csprojResolveAssemblyReference.cache
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\obj\Debug\ProMaster.Web.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Web\obj\Debug\ProMaster.Web.pdb
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\ProMaster.Web.dll.config
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\ProMaster.Web.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\ProMaster.Web.pdb
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\Antlr3.Runtime.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\DotNetOpenAuth.AspNet.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\DotNetOpenAuth.Core.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\DotNetOpenAuth.OAuth.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\DotNetOpenAuth.OpenId.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\EntityFramework.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\itextsharp.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\log4net.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\MvcSiteMapProvider.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\Newtonsoft.Json.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\Ninject.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\PagedList.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\PagedList.Mvc.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\ProMaster.ApplicationManager.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\ProMaster.Core.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\ProMaster.DAL.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\ProMaster.Infrastructure.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\ProMaster.Repository.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\RazorPDF.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\System.Net.Http.Formatting.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\System.Web.Helpers.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\System.Web.Http.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\System.Web.Http.WebHost.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\System.Web.Mvc.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\System.Web.Mvc.Html5.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\System.Web.Optimization.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\System.Web.Razor.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\System.Web.WebPages.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\System.Web.WebPages.Razor.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\WebActivatorEx.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\WebGrease.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\WebMatrix.Data.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\WebMatrix.WebData.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\ProMaster.ApplicationManager.pdb
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\ProMaster.Core.pdb
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\ProMaster.DAL.pdb
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\ProMaster.Infrastructure.pdb
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\ProMaster.Repository.pdb
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\EntityFramework.xml
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\log4net.xml
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\PagedList.xml
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\PagedList.Mvc.xml
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\System.Web.Helpers.xml
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\System.Web.Mvc.xml
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\System.Web.Razor.xml
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\System.Web.WebPages.xml
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\System.Web.WebPages.Razor.xml
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\Newtonsoft.Json.xml
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\System.Net.Http.Formatting.xml
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\System.Web.Http.xml
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\System.Web.Http.WebHost.xml
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\WebMatrix.Data.xml
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\WebMatrix.WebData.xml
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\DotNetOpenAuth.AspNet.xml
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\DotNetOpenAuth.Core.xml
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\DotNetOpenAuth.OAuth.xml
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\DotNetOpenAuth.OpenId.xml
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\obj\Debug\ProMaster.Web.csprojResolveAssemblyReference.cache
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\obj\Debug\ProMaster.Web.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\obj\Debug\ProMaster.Web.pdb

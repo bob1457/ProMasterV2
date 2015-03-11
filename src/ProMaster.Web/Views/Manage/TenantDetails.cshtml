@@ -1,0 +1,1371 @@
+﻿@model ProMaster.Core.Tenant.ViewModels.DisplayTenantViewModel
+
+
+@{
+    ViewBag.Title = "Tenant Details";
+}
+
+<script src="~/Scripts/tab_navi.js"></script>
+
+<div class="content-wrapper">
+    <aside> 
+    <!-- Left Panel/Column -->
+      <div id="left">
+      	<div class="side_details_logo">
+        	<img src="@Url.Content(Model.AvartaImgUrl)" alt="" title="@Model.FistName" />
+            
+        </div>
+        <div class="side_details_caption">
+        	<h3>Tenant Details</h3>
+        	<br />
+            <span>
+                @Model.LastName, @Model.FistName <!-- 	  Detailed tenant information -->
+            </span>
+            <p></p><p></p>
+            <h6>Rental Propoerty</h6>
+            <div class="side_details_content">
+                
+                <div class="display-label">
+                    Property Name:
+                </div><br />
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.PropertyName)
+                </div><br />
+
+                <div class="display-label">
+                    Description:
+                </div><br />
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.PropertyDesc)
+                </div><br />
+            
+                <div class="display-label">
+                    Built year:
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.PropertyBuildYear)
+                </div><br />
+            
+            </div>
+           
+        </div>
+      </div>
+      
+    
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+    </aside><!-- End of aside -->
+
+    <div class="main metro">
+        <div id="manage-tabs" class="tabs-style">
+          <ul>
+            <li><a href="#tabs-1"><i class="fa fa-list-alt"></i> &nbsp;<span>General</span></a></li>
+            <li><a href="#tabs-2"><i class="fa fa-th"></i> &nbsp;Lease</a></li>
+            <li><a href="#tabs-3"><i class="icon-clipboard-2"></i> &nbsp;Document</a></li>
+            <li><a href="#tabs-4"><i class="icon-list"></i> &nbsp;Rent Payment</a></li>            
+            
+          </ul>
+  		  <div id="tabs-1">    		
+            <div class="tab_content metro">
+                <div class="tab_content_title">
+                    
+                </div>  
+                <div class="tab_content_field">
+
+                    <fieldset>
+                        <legend><span><i class="fa fa-info-circle"></i> Tenant Information</span></legend>
+                        <div class="basic">
+
+                            <div class="display-label">
+                                Tenant ID:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.TenantId)
+                            </div>
+                            <br />
+                            <div class="display-label">
+                                First Name:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.FistName)
+                            </div>
+                            <br />
+                            <div class="display-label">
+                                Last Name:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.LastName)
+                            </div>
+                            <br />
+                            <div class="display-label">
+                                Email:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.ContactEmail)
+                            </div>
+                            <br />
+                            <div class="display-label">
+                                Telephone 1:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.ContactTelephone1)
+                            </div>
+                            <br />
+                            <div class="display-label">
+                                Telephone 2:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.ContactTelephone2)
+                            </div>
+                            <br />
+
+                            @*<div class="display-label">
+                            Online Access:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.OnLineAccessEnabled)
+                            </div>
+                            <br />*@
+                            <div class="display-label">
+                                Is Active
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.IsActive)
+                            </div>
+                            <br />
+                            @if(Model.LeaseId !=0)
+                            {
+                                @*@if(@Model.OnLineAccessEnabled == true)
+    {*@
+                                <div id="disable" class="button-med edit_button" style="display: none; color: #363535; margin-left: 1em; margin-top: 1em; cursor: pointer;">Disaable Online Access</div>
+                                @*}
+                                    else
+                                    {*@
+                                <div id="enable" class="button-med edit_button" style="display: none; color: #363535; margin-left: 1em; margin-top: 1em; cursor: pointer;">Enable Online Access</div>
+                                @*}*@
+                            }
+                            
+
+
+                        </div>
+                        <div id="msg1" style="color:#28b93b;"></div>
+                        <br />
+                        @*<div id="msg1"></div>*@
+
+
+                    </fieldset>
+
+                </div>
+
+                    <div class="left-aligned backbutton"><a id="back" href="@Url.Content("~/Manage")" title="Back..."><span class="backbutton_format"><i class="icon-arrow-left-3"></i></span> Back to List...</a></div><div class="right-aligned"><div class="button-med edit_button">@Html.ActionLink("Edit", "EditTenant", new { id=Model.TenantId /**/ })</div></div>
+                </div>
+            
+            </div>
+  		  
+          <div id="tabs-2">
+            <!-- <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p> -->
+            <div class="tab_content">
+                <div class="tab_content_title">
+                    
+                </div>
+                <div class="tab_content_field">
+                     <fieldset>
+                        <legend><span><i class="fa fa-info-circle"></i> Lease Information</span></legend>
+
+                         @if (Model.LeaseInfo != null)
+                         {
+                            <div class="basic">
+
+                                <div class="display-label">
+                                    Lease ID:
+                                </div>
+                                <div class="display-field">
+                                    @Html.DisplayFor(model => model.LeaseId)
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                    Lease Title:
+                                </div>
+                                <div class="display-field">
+                                    @Html.DisplayFor(model => model.LeaseTitle)
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                    Lease Description:
+                                </div>
+                                <div class="display-field">
+                                    @Html.DisplayFor(model => model.LeaseDesc)
+                                </div>
+                                <br />
+                                <br />
+                                <div class="display-label">
+                                    Lease Start Date:
+                                </div>
+                                <div class="display-field">
+                                    @Html.DisplayFor(model => model.LeaseStartDate)
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                    Lease Term:
+                                </div>
+                                <div class="display-field">
+                                    @Html.DisplayFor(model => model.LeaseTerm)
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                    Rent Frequency
+                                </div>
+                                <div class="display-field">
+                                    @Html.DisplayFor(model => model.RentFrequency)
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                    Monthly Rent
+                                </div>
+                                <div class="display-field">
+                                    $@Html.DisplayFor(model => model.RentAmount)
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                    Lease Agreement Last Updated
+                                </div>
+                                <div class="display-field">
+                                    @Html.DisplayFor(model => model.UpdateDate)
+                                </div>
+                                <br />
+
+
+
+                            </div>
+                         }
+                         else
+                         {
+                            <span>No lease information</span><br /><br />
+                            <div id="addTen" class="button-med edit_button"><a href="#">Add Tenant to Lease</a></div>
+                         }
+                       
+                     </fieldset>
+
+                     @if (Model.LeaseInfo != null)
+                     {
+                        <div class="right-aligned"><div class="button-med edit_button">@Html.ActionLink("Details", "LeaseDetails", new { id = Model.LeaseId /**/ })</div></div>
+                     }
+                    
+
+                </div>
+                    
+            
+            
+            </div>
+          </div>
+          <div id="tabs-3">
+          <div class="tab_content">
+                <div class="tab_content_title">
+                    
+                </div>
+                <div class="tab_content_field">
+                    <fieldset>
+                        <legend><span><i class="fa fa-file"></i> Tenant Documents</span></legend>
+                        <div id="content_info">                             
+                            
+                            <div class="button-med edit_button">@Html.ActionLink("Add New", "AddDocument", "Document", new { id="add"})</div>      
+                                            
+                            <div id="list">@Html.Partial("_TenantDocumentList")</div>
+
+                            <br /><br />
+                            
+
+                        </div>   
+                    
+                       
+                    </fieldset>
+                    <br />
+                    <div id="msg"></div>
+                
+                </div>
+                    
+            
+            
+            </div>
+            
+          </div>
+          <div id="tabs-4">
+              <div class="tab_content_title">
+                    
+              </div>
+              <div class="tab_content_field">
+                  <fieldset>
+                    <legend><span><i class="icon-list"></i> Rent Payment History</span></legend>
+                        <div class="content_info">
+
+                            @if (Model.LeaseInfo != null)
+                            { 
+                                <div id="rentlist">
+                                    @Html.Partial("_RentPaymentLog")
+                                    <div><strong> Number of late payment: @ViewBag.late</strong></div>
+                                </div>
+                            
+                                <p></p>
+                                <br /><br />
+                            }
+                            else
+                            {
+                                <span>No rent payment information</span>
+                            }
+
+                            <div id="option"><a href="#" id="open"><span style="color:#1A864E;"><i class="icon-plus"></i></span> Add Rent Payment</a><a href="#" id="close"><span style="color:#ff6a00;"><i class="icon-minus"></i></span> Close</a></div>
+                            <br />
+
+                                <div class="edit_p" id="pay">
+                                    <fieldset>
+                                        <legend><span><i class="fa fa-info-circle"></i> Add Payment </span></legend>
+                                        <div id="enterhistory">
+
+                                            <div class="display-label">
+                                                Rent Paid Date:
+                                            </div>
+                                            <div class="display-field">
+                                                <input id="date" type="text" value="@DateTime.Now.ToString("M/d/yyyy")" />
+                                            </div><br />
+                                            <div class="display-label">
+                                                Rent Paid Amount:
+                                            </div>
+                                            <div class="display-field">
+                                                <input id="amount" type="text" value="" placeholder="Rent Paid Amount" />
+                                            </div><br />
+                                            <div class="display-label">
+                                                Rent for Month:
+                                            </div>
+                                            <div class="display-field">
+                                                <select id="month">
+                                                    <option value="1" selected>January</option>
+                                                    <option value="2">Februray</option>
+                                                    <option value="3">March</option>
+                                                    <option value="4">April</option>
+                                                    <option value="5">May</option>
+                                                    <option value="6">June</option>
+                                                    <option value="7">July</option>
+                                                    <option value="8">August</option>
+                                                    <option value="9">September</option>
+                                                    <option value="10">October</option>
+                                                    <option value="11">November</option>
+                                                    <option value="12">December</option>
+                                                </select>
+                                            </div><br />
+                                            <div class="display-label">
+                                                Rent for Year:
+                                            </div>
+                                            <div class="display-field">
+                                                <select id="year">
+                                                    <option value="2014" selected>2014</option>
+                                                    <option value="2015">2015</option>
+                                                    <option value="2016">2016</option>
+                                                    <option value="2017">2017</option>
+                                                    <option value="2018">2018</option>
+                                                    <option value="2019">2019</option>
+                                                    <option value="2020">2020</option>
+                                                </select>
+                                            </div><br />
+                                            <div class="display-label">
+                                                Rent Payment Method:
+                                            </div>
+                                            <div class="display-field">
+                                                <select id="method">
+                                                    <option value="1" selected>Cash</option>
+                                                    <option value="2">Personal Cheque</option>
+                                                    <option value="3">Money Order/Bank Draft</option>
+                                                    <option value="4">Electronic Transfer</option>
+                                                    <option value="5">Bank Fund Transfer</option>
+                                                    <option value="6">Credit Card</option>
+                                                    <option value="7">Others</option>
+                                                </select>
+                                            </div><br />
+                                            <div class="display-label">
+                                                Collected in Person:
+                                            </div>
+                                            <div class="display-field">
+                                                <input id="collect" type="checkbox" name="collect" />
+                                            </div><br />
+                                            <div class="display-label">
+                                                Transfer to Owner:
+                                            </div>
+                                            <div class="display-field">
+                                                <input id="deposit" type="checkbox" />
+                                            </div><br />
+                                            
+
+
+                                            <div id="transfer">
+                                                <div class="display-label">
+                                                    Transfer Date:
+                                                </div>
+                                                <div class="display-field">
+                                                    <input id="date1" type="text" value="@DateTime.Now.ToString("M/d/yyyy")" />
+                                                </div><br />
+                                                <div class="display-label">
+                                                    Transfer Amount:
+                                                </div>
+
+                                                <div class="display-field">
+                                                    <input id="amount1" type="text" value="" placeholder="Transfer or Depoist Amount" />
+                                                </div><br />
+
+                                                <div class="display-label" style="width:20em; margin-bottom:2em; margin-left:11.5em;">
+                                                    <input class="rlabel" id="direct" type="radio" name="ppt" />Direct transfer with cash/cheque<br />
+                                                    <input class="rlabel" id="transfer" type="radio" name="ppt" />Bank Transfer/Deposit
+                                                </div><br />
+
+                                                <div id="bank_transfer">
+                                                    <div class="display-label">
+                                                        Bank:
+                                                    </div>
+                                                    <div class="display-field">
+                                                        <select id="bank">
+                                                            <option value="1" selected>Royal Bank</option>
+                                                            <option value="2">Bank of Montreal</option>
+                                                            <option value="3">TD Bank</option>
+                                                            <option value="4">Scotial Bank</option>
+                                                            <option value="5">CIBC</option>
+                                                            <option value="6">Hong Kong Bank</option>
+                                                        </select>
+                                                    </div><br />
+                                                </div>
+                                            </div><br />
+
+                                            <div class="display-label">
+                                                Notes:
+                                            </div>
+                                            <div class="display-field">
+                                                <textarea id="notes" rows="5" placeholder="Enter Notes"></textarea>
+                                                <p></p>
+                                                <div><div class="edit_button button-med"> <a href="#" id="submit">Add</a></div></div>
+                                            </div>
+
+
+                                    
+                                        </div>
+
+                                    </fieldset>
+                                </div>
+                            
+
+                                <div id="paymentadded" style="font-size:.8em; color:#28b93b;"></div>
+                           
+                            
+
+                            
+
+                </div>
+
+                            <!-- -->
+                           
+                    </fieldset>     
+                        </div>
+                  
+             
+          </div>
+          
+        
+        
+        </div>          
+          
+		</div><!-- End of main -->
+
+
+    </div><!-- End of content-wrapper -->
+
+<!-- Create User/Enable Online Dialog -->
+<div id="account" style="display:none;">
+    @*<strong>Create User Account</strong>
+    <p></p>*@
+    <div style="margin-bottom: 1em; color: #1A864E;">Create a user account for online access.</div>
+    <div class="edit_field ui-dia">
+        <fieldset style="width:460px;">
+            <div class="display-label">
+                User Name:
+            </div>
+            <div class="display-field" style="width:14em;">
+                <input id="uname" name="uname" value="" placeholder="Enter User Name"  style="margin:5px; padding:0 9px; height:25px;"/>
+            </div><br />
+            <div class="display-label">
+                Password:
+            </div>
+            <div class="display-field" style="width:14em;">
+                <input id="pwd" name="pwd" type="password" value="" placeholder="Enter Password" />
+            </div><br />
+            <div class="display-label">
+                Confirm Password:
+            </div>
+            <div class="display-field" style="width:14em;">
+                <input id="pwd2" name="ped2" type="password" value="" placeholder="Confirm Passwrod" />
+            </div><br />
+
+</fieldset>
+            <div id="msg" style="color:red"></div>
+</div>
+</div>
+
+    <!-- ***************************************************** -->
+    <!-- ***************** Scripts Section ******************* -->
+    <!-- ***************************************************** -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var online = "@Model.OnLineAccessEnabled";
+
+        //alert(online);
+
+        if (online == "True")
+        {
+            //alert("here!");
+            $("#disable").show();
+        }
+        else 
+        {
+            //alert("or...here!");
+            $("#enable").show();
+        }
+
+    });
+</script>
+
+<!-- Script to disable online access -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#confirm").hide();
+
+        $("#disalbe").click(function () {
+            deleteLinkObj = $(this);
+            $('#confirm').dialog();
+            return false;
+        });
+
+
+
+        $(function () {
+            $("#disable").click(function () {
+                var dialogOpts = {
+                    autoOpen: false,
+                    modal: true,
+                    resizable: false,
+                    draggable: false,
+                    title: 'Confirmation',
+                    buttons: {
+                        "Cancel": function () {
+                            $(this).dialog("close");
+                        },
+
+                        "Continue": function () {
+
+                            var uname = "@Model.UserName";
+
+                            $.ajax({
+                                type: "POST",
+                                url: "/Account/DisableClientOnlineAccess",
+                                data: "id=" + @Model.TenantId + "&UserName=" + uname + "&rId=3",
+                                contenType: "",
+                                dataType: "json",
+                                success: Suceeded                                
+                            });
+
+                            $(this).dialog("close");
+
+                            function Suceeded(data) {
+                                $("#msg").html(data);
+
+                                //alert("disabled!");
+
+                                $("#disable").hide();
+                                $("#enable").show();
+
+                                $('#msg').delay(5000).fadeOut(400);
+
+                                return false;
+                            }
+
+                        }
+                    }
+                };
+
+
+                $('#confirm').dialog(dialogOpts).dialog('open');
+                return false;
+            });
+        });
+
+
+
+        
+    });
+</script>
+
+    <!-- Disable online access confirmation -->
+    <div id="confirm" style="display:none;">
+        <p><p><span class="dialog-icon"><i class="fa fa-exclamation-triangle"></i></span>Are you sure to disable online access for this client?</p> 
+    </div>
+
+<!-- script to eanble online access -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#enable").click(function () {
+
+            var username = $("#uname").val();
+            var passwd = $("#pwd").val();
+            var passwd2 = $("#pwd2").val();
+
+            //alert(username);
+
+            var dialog = {
+                autoOpen: false,
+                modal: true,
+                resizable: false,
+                draggable: false,
+                width: 485,
+                title: 'Enable Online Access',
+                buttons: {
+                    'Submit': function () {
+
+                        var username = $("#uname").val();
+                        var passwd = $("#pwd").val();
+                        var passwd2 = $("#pwd2").val();
+
+                        //alert(username);
+                        if (passwd == passwd2) {
+                            $.ajax({
+                                type: "POST",
+                                url: "/Account/EnableClientOnlineAccess",
+                                data: "id=" + @Model.TenantId + "&rId=3" + "&UserName=" + username + "&PassWd=" + passwd,
+                                contenType: "",
+                                dataType: "json",
+                                success: Suceeded
+                            });
+
+                            function Suceeded(data) {
+                                $("#msg").html(data);
+
+                                //alert("enabled!");
+
+                                $("#disable").show();
+                                $("#enable").hide();
+
+                                $('#msg').delay(5000).fadeOut(400);
+
+                                return false;
+                            }
+
+
+                            $(this).dialog('close');
+                        }
+                        else {
+                            $("#msg").html("Password not match!");
+                        }
+                    },
+
+                    'Cancel': function () {
+                        $(this).dialog('close');
+                    }
+                }
+            }
+
+            $("#account").dialog(dialog).dialog('open');
+        });
+    });
+
+
+</script>
+
+
+<div id="add_doc">
+        
+    
+        <p></p>
+        <h4 class="ui-dia"><i class="fa fa-th"></i> &nbsp; ADD NEW DOCUMENT        	
+          
+        </h4>
+         <form id="form" action="@Url.Content("/Document/AddDocument/" + @Model.TenantId)" method="post" enctype="multipart/form-data">
+              <div class="edit_field ui-dia">
+
+                <fieldset class="ui-dia">
+                    <div class="display-label">
+                        Document Type:       
+                    </div>
+                    <div class="display-field">
+                        <div id="doctype" >@Html.DropDownListFor(model=>model.DocumentTypeId, Model.DocumentTypeList)</div>                   
+                    </div>
+                     <div class="display-label">
+                        <div id="pltype" >Document Category:</div>
+                    </div>
+                    <div class="display-field">
+                        @Html.DropDownListFor(model => model.DocumentPrincipalTypeId, Model.DocumentTyPrincipalpeList, new {@id="t" })
+                    </div> 
+                    <div class="display-label">
+                        Document Title:       
+                    </div>
+                    <div class="display-field">
+                        @Html.TextBoxFor(model => model.DocumentTitle, new { @id="title", placeholder = "Required "}) <br />  <!--   <input id="title" type="text" value="" placeholder="Enter Document Title" /><br /> -->             
+                        @Html.ValidationMessageFor(model => model.DocumentTitle)
+                    </div>
+                    <div class="display-label">
+                        Document Details:       
+                    </div>
+                     <div class="display-field">
+                        @Html.TextAreaFor(model => model.DocumentDetails, new { @id="details", placeholder = "Document Details... "}) <br />
+                    </div>
+                    <div class="display-label">
+                        Upload file:     
+                    </div>
+                    <div class="display-field">
+                        <input id="upload" type="file" name="file" />
+                    </div>
+                    
+                
+            </fieldset>
+             <input class="edit_button" id="submit1" type="submit"  value="Add" />
+             <input class="edit_button" type="button" value="Cancel" id="btncancel" />
+<p></p>
+              </div>
+</form>
+    
+ </div>
+
+
+<!-- add tenant to lease -->
+<div id="add_ten" title="Property Details">
+
+    <h4 class="ui-dia"><i class="fa fa-th"></i> &nbsp; ADD TENANT TO LEASE</h4>
+
+    <div class="edit_field ui-dia">
+
+        @*<div class="edit_field">
+            <input class="rlabel" id="new" type="radio" name="ppt" />Add New Tenant
+            <input class="rlabel" id="existing" type="radio" name="ppt" />Select Existing Tenant
+        </div>*@
+
+        <!-- 
+        <div id="create">
+
+            <fieldset class="ui-dia">
+                <legend>Add New Tenant</legend>
+                <div class="display-label">
+                    Fist Name:
+                </div>
+                <div class="display-field">
+                    <input id="fname" type="text" />
+                </div>
+                <div class="display-label">
+                    Last Name:
+                </div>
+                <div class="display-field">
+                    <input id="lname" type="text" />
+                </div>
+                <div class="display-label">
+                    Contact Email:
+                </div>
+                <div class="display-field">
+                    <input id="email" type="text" />
+                </div>
+                <div class="display-label">
+                    Telephone 1:
+                </div>
+                <div class="display-field">
+                    <input id="tele" type="text" />
+                </div>
+                <div class="display-label">
+                    Telephone 2:
+                </div>
+                <div class="display-field">
+                    <input id="tele2" type="text" />
+                </div>
+
+            </fieldset>
+        </div>
+-->
+        <div id="addnew">
+            <fieldset class="ui-dia">
+                <legend>Select Lease Agreement</legend>
+
+                <div id="list">
+                    <select id="list2"></select>
+                </div>
+
+            </fieldset>
+        </div>
+
+
+        <p></p>
+    </div>
+
+
+</div>
+
+
+
+<!-- Add Document Script -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#add_doc").hide();
+        //$("#pltype").hide();  
+    });
+
+    //$("#add").button();
+    
+
+    $('#add').click(function () {
+    
+        $("#t").val(3);
+
+
+        var dialogOpts = {
+            autoOpen: false,
+            modal: true,
+            resizable: false,
+            draggable: false,
+            width: 480,
+            title: 'Add Document ...'
+           
+
+        }
+
+        $("#add_doc").dialog(dialogOpts).dialog('open');
+
+        return false;
+    });
+
+    $("#submit1").click(function() {
+
+        //Upload file
+        
+            $("#add_doc").dialog('close');
+        
+
+            //Reload least document partial view
+            var url = "/Manage/GetDocumentList/";
+            var q="id=" + @Model.TenantId +"pid=3";
+            //alert(q);
+            $.get(url, q, function(data){                                
+                $("#list").html(data);            
+            });
+    });   
+
+
+    $("#btncancel").click(function() {
+        $("#add_doc").dialog('close');
+    });   
+
+</script>
+
+
+<!-- The confirmation dialog content -->
+<div id ="delete-dialog" title="Confirmation" style="display:none">
+    <p>Are you sure to delete this document?</p>    
+</div>
+<br />
+<div id="result"></div>
+
+<!-- Delete Confirmation Script -->
+<script type="text/javascript">
+    $('.delete-link').click(function () {
+        deleteLinkObj = $(this);
+        $('#delete-dialog').dialog();
+        return false;
+    });
+
+    $(function () {
+        $('.delete-link').click(function () {
+            var dialogOpts = {
+                autoOpen: false,
+                modal: true,
+                resizable: false,
+                draggable: false,
+                title: 'Delete Confirmation!',
+                buttons: {
+                    "Cancel": function () {
+                        $(this).dialog("close");
+                    },
+
+                    "Continue": function () {
+                        $.post(deleteLinkObj[0].href, function (data) {
+                            if (data == '@Boolean.TrueString') {
+                                deleteLinkObj.closest("tr").hide('fast');
+                                $("#result").text("The document has been successfully deleted!");
+                            }
+                            else {
+                                $("#result").text("error occured!");
+                            }
+                        });
+                        $(this).dialog("close");
+
+                    }
+                }
+            };
+
+
+            $('#delete-dialog').dialog(dialogOpts).dialog('open');
+            return false;
+        });
+    });
+
+</script>
+
+<!--Jquery ui tabs Script -->
+<script type="text/javascript">
+    $(function () {
+        $("#manage-tabs").tabs();
+    });
+</script>
+
+<!-- Not implemented 
+<script type="text/javascript">
+$(document).ready(function () { 
+
+    var file_data = $("#doc").prop("files")[0];
+    var form_data = new FormData();
+    form_data.append("file", file_data)
+    form_data.append("id", @(Model.TenantId))
+    form_data.append("pId", 3)
+
+    var $dialog = $('#addbox')
+		.dialog({
+		    autoOpen: false,
+		    modal: true,
+		    position: [200, 200],
+		    resizable: false,
+		    draggable: false,
+            width: 350,
+		    title: 'Add Document',
+		    buttons: {
+		        "Cancel": function () {
+		            $(this).dialog("close");
+		        },
+
+		        "Add": function () {
+		            // Add ajax call to pass the tag name and objId to the action in Controller
+		            var title = $("#docTitle").val();
+		            var rent = $("#docDetails").val();
+                    var type = $("#type").val();
+
+		            $.ajax({
+		                type: "POST",
+		                url: "/Document/AddDocument",
+		                data: form_data, /* "id=" + @(Model.TenantId) + "&pId=3", */
+		                
+		                contenType: "script",
+		                dataType: "json",
+		                success: Suceeded
+		            });
+
+		            function Suceeded(data) {
+		                $('#go').hide();
+
+		                $('#docAdded').html(data);
+                        
+                        $('#docAdded').delay(5000).fadeOut(400);
+                        /*
+                        // Refresh the tag view
+                        //
+                        var url="/PhotoGallery/GetListingInfo/";
+                        var q="id=" + @(Model.PropertyId);
+                            $.get(url, q, function(data){                                
+                                $("#ListingView").html(data);            
+                            });
+                         return false;
+                         */
+		            }
+
+		            $(this).dialog("close");
+		        }
+		    }
+    
+    });
+
+    $('#add').click(function () {
+            deleteLinkObj = $(this);
+            $dialog.dialog('open');
+            // prevent the default action, e.g., following a link
+
+            return false;
+     });
+
+
+ });   
+   
+   
+</script>
+
+
+<p></p>
+<h4>Tenant Documents</h4>
+<ul>
+    @foreach (var item in Model.DocumentInfo)
+    { 
+        <li>
+        @item.DocumentId
+        @item.DocumentName
+        @item.DcoumentDetails
+        @item.CreationDate
+        @Html.ActionLink("Details", "DocumentDetails", "Document", new { id = @item.DocumentId }, null)
+        @Html.ActionLink("Delete", "DeleteDocument", "Document", new { id = @item.DocumentId }, new { @class = "delete-link" })
+        </li>
+    
+    }
+</ul>
+    
+-->
+
+<!-- Datepicker Script -->
+<script type="text/javascript">
+    $(function () {
+        $("#date").datepicker();
+        $("#date1").datepicker();
+    });
+</script>
+
+<!-- Add Rent History Script -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#transfer").hide();
+        
+        $("#direct").prop('checked', true);
+        $("#bank_transfer").hide();
+
+        $("#direct").change(function () {
+            var isChecked = $(this).is(':checked');
+
+            
+
+            if (isChecked) {
+                $("#bank_transfer").hide();
+            }
+            else {
+                $("#bank_transfer").show();
+            }
+        });
+
+        $("#transfer").change(function () {
+            var isChecked = $("#direct").is(':checked');
+
+            //alert(isChecked);
+
+            if (isChecked) {
+
+                $("#bank_transfer").hide();
+            }
+            else {
+                $("#bank_transfer").show();
+            }
+        });
+
+
+        $("#submit").click(function () {            
+            var paidDate = $("#date").val();
+            var paidAmount = $("#amount").val();
+
+            var paidMonth = $("#month").val();
+            var paidYear = $("#year").val();
+            var paidMethodId = $("#method").val();
+
+            /**/ debugger; 
+
+            var collect = $("#collect").prop('checked');
+            var deposit = $("#deposit").prop('checked');
+            
+            
+            var temp = $("#amount1").val();
+
+            if (temp !="")
+            {
+                var transferamount = $("#amount1").val();
+                
+            }
+            else
+            {
+                var transferamount = 0.00;
+                
+            }
+
+            
+            var bandkid = $("#bank").val();
+            var transferdate = $("#date1").val();
+
+            var notes = $("#notes").val();
+            var direct = $("#direct").is(':checked');
+
+            /* alert(transferamount); 
+            alert(direct);*/
+
+            $.ajax({
+                type: "POST",
+                url: "/Manage/AddRentPayment",
+                data: "id=" + @(Model.TenantId) + "&paydate=" + paidDate + "&paymonth=" + paidMonth +"&payyear=" + paidYear +"&payamount=" + 
+                        paidAmount +"&paymethodid=" + paidMethodId + "&collected=" + collect +"&deposit=" + deposit + "&notes=" + notes +"&bankId=" + 
+                        bandkid + "&transferAmt=" + transferamount + "&tranferDate=" + transferdate + "&direct=" + direct,
+		                
+		                contenType: "",
+		                dataType: "json",
+		                success: Suceeded
+            });
+
+            function Suceeded(data) {
+                //alert('success');
+                //$('#tagAdded').html(data);
+                $('#paymentadded').html(data);
+                        
+                $('#paymentadded').delay(5000).fadeOut(400);
+                //refresh comments
+                //
+                var url="/Manage/GetPaymentByTenant/";
+                var q="id=" + @Model.TenantId
+                        $.get(url, q, function(data){                                
+                            $("#rentlist").html(data);            
+                        });
+                        return false;
+                    }
+
+            /* Clear the fields for new entry */
+
+            aidDate = $("#date").val();
+            paidAmount = $("#amount").val('');
+
+            /* paidMonth = $("#month").val('');
+            paidYear = $("#year").val(''); */
+            paidMethodId = $("#method").val();
+
+            collect = $("#collect").attr('checked', false);
+            deposit = $("#deposit").attr('checked', false);
+
+            $("#transfer").hide();
+
+            var notes = $("#notes").val('');
+        });
+
+        $("#deposit").change(function () {
+
+            if(this.checked)
+            {
+                $("#transfer").show();
+            }
+            else
+            {
+                $("#transfer").hide();
+            }
+       
+            /* $("#deposit1").attr('checked', true); 
+           $("#hide-show1").show();
+           $("#hide-show").hide();
+   
+           Debuging Code 
+   
+           var temp1 = $("#deposit1").prop('checked');
+           var temp3 = $("#deposit").prop('checked');
+   
+           alert("deposit= " + temp1);
+           alert("deposit1= " + temp1);
+           
+           */
+        });
+    
+        $("#deposit1").click(function () {
+            $("#transfer").hide();
+            $("#hide-show").show();
+            $("#deposit").attr('checked', false);
+            $("#deposit1").attr('checked', true); 
+            $("#hide-show1").hide();
+
+
+            /* Debuging Code
+    
+            var temp2 = $("#deposit").prop('checked');
+            var temp4 = $("#deposit1").prop('checked');
+    
+            alert("deposit= " + temp2);
+            alert("deposit1= " + temp2); 
+            
+            */
+
+        });
+
+    });
+</script>
+
+<!-- Get/refresh history -->
+<script type="text/javascript">
+    $(document).ready(function () { 
+        var url="/Manage/GetPaymentByTenant/";
+        var q="id=" + @Model.TenantId
+        $.get(url, q, function(data){                                
+            $("#rentlist").html(data);            
+        });
+});
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        if(@Model.LeaseId == 0)
+        {
+            $("#pay").hide();
+        }
+    });
+</script>
+
+
+<!-- Add Tenant to Lease script -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#add_ten").hide();
+
+        $("#addTen").click(function () {
+
+            var dialogOpts = {
+                autoOpen: false,
+                modal: true,
+                resizable: false,
+                draggable: false,
+                width: 480,
+                title: 'Add Tenant to Lease',
+                buttons: {
+                    "Cancel": function () {
+                        $(this).dialog("close");
+                    },
+
+                    "Add": function () {
+
+                        var tenantId = @(Model.TenantId);
+
+                        var leaseId = $("#list2").val();
+
+                            $.ajax({
+                                type: "POST",
+                                url: "/Manage/AddTenantToLease",
+                                data: "id=" + tenantId + "&leaseId=" + leaseId,
+                                //data: "id=" + tenantId + "&LeaseId=" + leaseId,
+                                contenType: "",
+                                dataType: "json",
+                                success: Suceeded
+                            });
+                        
+                        function Suceeded(data) {
+                            $("#msg").text(data);
+
+                            $('#msg').delay(5000).fadeOut(3000);
+
+                            //refresh listing
+                            //
+                            //var url = "/Manage/UpdatedTenantList/";
+                            //var q="id=" + leaseId;
+                            //$.get(url, q, function (data) {
+                            //    $("#tenant_list").html(data);
+                            //});
+                            $("#addten").hide();
+
+                        }
+
+                        $(this).dialog("close");
+                    }
+                }
+
+            }
+
+            $("#add_ten").dialog(dialogOpts).dialog('open');
+
+            return false;
+
+
+        });
+
+
+    });
+
+
+</script>
+
+<!-- Load new agreement script -->
+<script type="text/javascript">
+    $(document).ready(function () {
+
+
+
+        var url = "@(Url.Content("~/Manage/GetNewLeases"))";
+
+        var option = $('<option />');
+
+        $.getJSON(url, function (data) {
+            $("#list2").empty();
+
+            /* alert(data);*/
+
+            $.each(data, function () {
+                $("#list2").append($("<option />").val(this.id).html(this.name));
+            });
+
+        });
+
+
+        return false;
+
+    });
+
+
+</script>
+
+
+<!-- Add tenant to lease options script 
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#new").prop('checked', true);
+        $("#addnew").hide();
+        $("#create").show();
+
+        $("#existing").change(function () {
+
+            var isChecked = $(this).is(':checked');
+
+            //alert(isChecked);
+
+            if (isChecked) {
+                $("#addnew").show();
+                $("#create").hide();
+            }
+
+        });
+
+
+        $("#new").change(function () {
+            var isChecked = $(this).is(':checked');
+
+            if (isChecked) {
+                $("#addnew").hide();
+                $("#create").show();
+            }
+        });
+    });
+
+</script>
+
+-->
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        //alert(window.name);
+
+        //write url for back to list button
+        //
+        $("#back").attr("href", window.name);
+
+        $("#close").hide();
+        $(".edit_p").hide();
+
+        $("#open").click(function(){
+            $(".edit_p").show();
+            $("#close").show();
+            $("#open").hide();
+        });
+
+        $("#close").click(function(){
+            $(".edit_p").hide();
+            $("#close").hide();
+            $("#open").show();
+        });
+
+    });
+</script>

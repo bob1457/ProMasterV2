@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProMasterTenancyDataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="ProMasterTenancyDataEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Leases" EntityType="ProMasterTenancyDataModel.Lease" />
+    <EntitySet Name="LeaseTerms" EntityType="ProMasterTenancyDataModel.LeaseTerm" />
+    <EntitySet Name="Properties" EntityType="ProMasterTenancyDataModel.Property" />
+    <EntitySet Name="PropertyTypes" EntityType="ProMasterTenancyDataModel.PropertyType" />
+    <EntitySet Name="Tenants" EntityType="ProMasterTenancyDataModel.Tenant" />
+    <AssociationSet Name="FK_Lease_LeaseTerm" Association="ProMasterTenancyDataModel.FK_Lease_LeaseTerm">
+      <End Role="LeaseTerm" EntitySet="LeaseTerms" />
+      <End Role="Lease" EntitySet="Leases" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lease_Property" Association="ProMasterTenancyDataModel.FK_Lease_Property">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="Lease" EntitySet="Leases" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Property_PropertyType" Association="ProMasterTenancyDataModel.FK_Property_PropertyType">
+      <End Role="PropertyType" EntitySet="PropertyTypes" />
+      <End Role="Property" EntitySet="Properties" />
+    </AssociationSet>
+    <EntitySet Name="Events" EntityType="ProMasterTenancyDataModel.Event" />
+    <EntitySet Name="EventTypes" EntityType="ProMasterTenancyDataModel.EventType" />
+    <EntitySet Name="PropertyOwners" EntityType="ProMasterTenancyDataModel.PropertyOwner" />
+    <EntitySet Name="RentPayments" EntityType="ProMasterTenancyDataModel.RentPayment" />
+    <EntitySet Name="RentPaymentMethods" EntityType="ProMasterTenancyDataModel.RentPaymentMethod" />
+    <EntitySet Name="Vendors" EntityType="ProMasterTenancyDataModel.Vendor" />
+    <EntitySet Name="WorkOrders" EntityType="ProMasterTenancyDataModel.WorkOrder" />
+    <EntitySet Name="WorkOrderStatus" EntityType="ProMasterTenancyDataModel.WorkOrderStatu" />
+    <AssociationSet Name="FK_Event_EventType" Association="ProMasterTenancyDataModel.FK_Event_EventType">
+      <End Role="EventType" EntitySet="EventTypes" />
+      <End Role="Event" EntitySet="Events" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_Property" Association="ProMasterTenancyDataModel.FK_Event_Property">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="Event" EntitySet="Events" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Property_PropertyOwner" Association="ProMasterTenancyDataModel.FK_Property_PropertyOwner">
+      <End Role="PropertyOwner" EntitySet="PropertyOwners" />
+      <End Role="Property" EntitySet="Properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrder_Property" Association="ProMasterTenancyDataModel.FK_WorkOrder_Property">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="WorkOrder" EntitySet="WorkOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RentPayment_RentPaymentMethod" Association="ProMasterTenancyDataModel.FK_RentPayment_RentPaymentMethod">
+      <End Role="RentPaymentMethod" EntitySet="RentPaymentMethods" />
+      <End Role="RentPayment" EntitySet="RentPayments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RentPayment_Tenant" Association="ProMasterTenancyDataModel.FK_RentPayment_Tenant">
+      <End Role="Tenant" EntitySet="Tenants" />
+      <End Role="RentPayment" EntitySet="RentPayments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrder_Vendor" Association="ProMasterTenancyDataModel.FK_WorkOrder_Vendor">
+      <End Role="Vendor" EntitySet="Vendors" />
+      <End Role="WorkOrder" EntitySet="WorkOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrder_WorkOrderStatus" Association="ProMasterTenancyDataModel.FK_WorkOrder_WorkOrderStatus">
+      <End Role="WorkOrderStatu" EntitySet="WorkOrderStatus" />
+      <End Role="WorkOrder" EntitySet="WorkOrders" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Lease">
+    <Key>
+      <PropertyRef Name="LeaseId" />
+    </Key>
+    <Property Name="LeaseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LeaseTitle" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LeaseDesc" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+    <Property Name="PropertyId" Type="Int32" Nullable="false" />
+    <Property Name="LeaseStartDate" Type="DateTime" Nullable="false" />
+    <Property Name="LeaseEndDate" Type="DateTime" Nullable="false" />
+    <Property Name="LeaseTermId" Type="Int32" Nullable="false" />
+    <Property Name="RentFrequency" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="RentAmount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="RentDueOn" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="DamageDepositAmount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="PetDepositAmount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="LeaseSignDate" Type="DateTime" Nullable="false" />
+    <Property Name="LeaseAgreementDocUrl" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Addendum" Type="Boolean" Nullable="false" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" />
+    <Property Name="UpdateDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="LeaseTerm" Relationship="ProMasterTenancyDataModel.FK_Lease_LeaseTerm" FromRole="Lease" ToRole="LeaseTerm" />
+    <NavigationProperty Name="Property" Relationship="ProMasterTenancyDataModel.FK_Lease_Property" FromRole="Lease" ToRole="Property" />
+  </EntityType>
+  <EntityType Name="LeaseTerm">
+    <Key>
+      <PropertyRef Name="LeaseTermId" />
+    </Key>
+    <Property Name="LeaseTermId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LeaaseTerm" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Leases" Relationship="ProMasterTenancyDataModel.FK_Lease_LeaseTerm" FromRole="LeaseTerm" ToRole="Lease" />
+  </EntityType>
+  <EntityType Name="Property">
+    <Key>
+      <PropertyRef Name="PropertyId" />
+    </Key>
+    <Property Name="PropertyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PropertyName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="PropertyDesc" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="PropertyTypeId" Type="Int32" Nullable="false" />
+    <Property Name="PropertyAddressId" Type="Int32" Nullable="false" />
+    <Property Name="PropertyFeatureId" Type="Int32" Nullable="false" />
+    <Property Name="PropertyFacilityId" Type="Int32" Nullable="false" />
+    <Property Name="PropertyOwnerId" Type="Int32" Nullable="false" />
+    <Property Name="PropertyManagerId" Type="Int32" Nullable="false" />
+    <Property Name="PropertyImgUrl" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="PropertyVideoUrl" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="PropertyBuildYear" Type="Int32" Nullable="false" />
+    <Property Name="PropertyRentalStatusId" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsShared" Type="Boolean" Nullable="false" />
+    <Property Name="RentalStatusId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+    <Property Name="UpdateDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Leases" Relationship="ProMasterTenancyDataModel.FK_Lease_Property" FromRole="Property" ToRole="Lease" />
+    <NavigationProperty Name="PropertyType" Relationship="ProMasterTenancyDataModel.FK_Property_PropertyType" FromRole="Property" ToRole="PropertyType" />
+    <NavigationProperty Name="Events" Relationship="ProMasterTenancyDataModel.FK_Event_Property" FromRole="Property" ToRole="Event" />
+    <NavigationProperty Name="PropertyOwner" Relationship="ProMasterTenancyDataModel.FK_Property_PropertyOwner" FromRole="Property" ToRole="PropertyOwner" />
+    <NavigationProperty Name="WorkOrders" Relationship="ProMasterTenancyDataModel.FK_WorkOrder_Property" FromRole="Property" ToRole="WorkOrder" />
+  </EntityType>
+  <EntityType Name="PropertyType">
+    <Key>
+      <PropertyRef Name="PropertyTypeId" />
+    </Key>
+    <Property Name="PropertyTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PropertyType1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Properties" Relationship="ProMasterTenancyDataModel.FK_Property_PropertyType" FromRole="PropertyType" ToRole="Property" />
+  </EntityType>
+  <EntityType Name="Tenant">
+    <Key>
+      <PropertyRef Name="TenantId" />
+    </Key>
+    <Property Name="TenantId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ContactEmail" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ContactTelephone1" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="ContactTelephone2" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="OnlineAccessEnbaled" Type="Boolean" Nullable="false" />
+    <Property Name="UserAvartaImgUrl" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="LeaseId" Type="Int32" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="ManagedBy" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" />
+    <Property Name="UpdateDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="RentPayments" Relationship="ProMasterTenancyDataModel.FK_RentPayment_Tenant" FromRole="Tenant" ToRole="RentPayment" />
+  </EntityType>
+  <Association Name="FK_Lease_LeaseTerm">
+    <End Role="LeaseTerm" Type="ProMasterTenancyDataModel.LeaseTerm" Multiplicity="1" />
+    <End Role="Lease" Type="ProMasterTenancyDataModel.Lease" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LeaseTerm">
+        <PropertyRef Name="LeaseTermId" />
+      </Principal>
+      <Dependent Role="Lease">
+        <PropertyRef Name="LeaseTermId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lease_Property">
+    <End Role="Property" Type="ProMasterTenancyDataModel.Property" Multiplicity="1" />
+    <End Role="Lease" Type="ProMasterTenancyDataModel.Lease" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="Lease">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Property_PropertyType">
+    <End Role="PropertyType" Type="ProMasterTenancyDataModel.PropertyType" Multiplicity="1" />
+    <End Role="Property" Type="ProMasterTenancyDataModel.Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyType">
+        <PropertyRef Name="PropertyTypeId" />
+      </Principal>
+      <Dependent Role="Property">
+        <PropertyRef Name="PropertyTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Event">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Type="Int32" Name="EventId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="EventName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="EventDetails" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="EventDate" Nullable="false" />
+    <Property Type="Int32" Name="EventTypeId" Nullable="false" />
+    <Property Type="Int32" Name="PropertyId" Nullable="false" />
+    <Property Type="Decimal" Name="MileageIncurred" Nullable="false" Precision="18" Scale="0" />
+    <NavigationProperty Name="EventType" Relationship="ProMasterTenancyDataModel.FK_Event_EventType" FromRole="Event" ToRole="EventType" />
+    <NavigationProperty Name="Property" Relationship="ProMasterTenancyDataModel.FK_Event_Property" FromRole="Event" ToRole="Property" />
+  </EntityType>
+  <EntityType Name="EventType">
+    <Key>
+      <PropertyRef Name="EventTypeId" />
+    </Key>
+    <Property Type="Int32" Name="EventTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="EventType1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Events" Relationship="ProMasterTenancyDataModel.FK_Event_EventType" FromRole="EventType" ToRole="Event" />
+  </EntityType>
+  <EntityType Name="PropertyOwner">
+    <Key>
+      <PropertyRef Name="PropertyOwnerId" />
+    </Key>
+    <Property Type="Int32" Name="PropertyOwnerId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ContactEmail" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ContactTelephone1" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ContactTelephone2" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="OnlineAccessEnbaled" Nullable="false" />
+    <Property Type="String" Name="UserAvartaImgUrl" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Int32" Name="RoleId" Nullable="false" />
+    <Property Type="String" Name="AddedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="AddProperty" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+    <Property Type="DateTime" Name="UpdateDate" Nullable="false" />
+    <NavigationProperty Name="Properties" Relationship="ProMasterTenancyDataModel.FK_Property_PropertyOwner" FromRole="PropertyOwner" ToRole="Property" />
+  </EntityType>
+  <EntityType Name="RentPayment">
+    <Key>
+      <PropertyRef Name="RentPaymentId" />
+    </Key>
+    <Property Type="Int32" Name="RentPaymentId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="TenantId" Nullable="false" />
+    <Property Type="Boolean" Name="RentIsPaidOntime" Nullable="false" />
+    <Property Type="DateTime" Name="RentPaymentDate" Nullable="false" />
+    <Property Type="String" Name="RentPaymentMonth" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RentPaymentYear" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="RentPaymentMethodId" Nullable="false" />
+    <Property Type="Boolean" Name="DepositForOwner" Nullable="false" />
+    <Property Type="DateTime" Name="DepositDate" />
+    <Property Type="Int32" Name="BankId" Nullable="false" />
+    <Property Type="String" Name="Notes" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="RentPaymentMethod" Relationship="ProMasterTenancyDataModel.FK_RentPayment_RentPaymentMethod" FromRole="RentPayment" ToRole="RentPaymentMethod" />
+    <NavigationProperty Name="Tenant" Relationship="ProMasterTenancyDataModel.FK_RentPayment_Tenant" FromRole="RentPayment" ToRole="Tenant" />
+  </EntityType>
+  <EntityType Name="RentPaymentMethod">
+    <Key>
+      <PropertyRef Name="RentPaymentMethodId" />
+    </Key>
+    <Property Type="Int32" Name="RentPaymentMethodId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="RentPaymentMethod1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Notes" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="RentPayments" Relationship="ProMasterTenancyDataModel.FK_RentPayment_RentPaymentMethod" FromRole="RentPaymentMethod" ToRole="RentPayment" />
+  </EntityType>
+  <EntityType Name="Vendor">
+    <Key>
+      <PropertyRef Name="VendorId" />
+    </Key>
+    <Property Type="Int32" Name="VendorId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Binary" Name="VendorBusinessName" Nullable="false" MaxLength="50" FixedLength="false" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="VendorDesc" MaxLength="450" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="VendorContactTelephone1" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="VendorContactTelephone2" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="VendorContactEmail" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Int32" Name="RoleId" Nullable="false" />
+    <Property Type="Boolean" Name="OnlineAccessEnbaled" Nullable="false" />
+    <Property Type="String" Name="UserAvartaImgUrl" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+    <Property Type="DateTime" Name="UpdateDate" Nullable="false" />
+    <NavigationProperty Name="WorkOrders" Relationship="ProMasterTenancyDataModel.FK_WorkOrder_Vendor" FromRole="Vendor" ToRole="WorkOrder" />
+  </EntityType>
+  <EntityType Name="WorkOrder">
+    <Key>
+      <PropertyRef Name="WorkOrderId" />
+    </Key>
+    <Property Type="Int32" Name="WorkOrderId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WorkOrderName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="WorkOrderDetails" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="PropertyId" Nullable="false" />
+    <Property Type="Int32" Name="VendorId" Nullable="false" />
+    <Property Type="Single" Name="InvoiceAmount" Nullable="false" />
+    <Property Type="Binary" Name="InvoiceDocUrl" MaxLength="50" FixedLength="false" />
+    <Property Type="DateTime" Name="InvoiceDate" Nullable="false" />
+    <Property Type="DateTime" Name="StartDate" Nullable="false" />
+    <Property Type="DateTime" Name="EndDate" Nullable="false" />
+    <Property Type="Boolean" Name="IsAuthorized" Nullable="false" />
+    <Property Type="Int32" Name="WorkOrderStatusId" Nullable="false" />
+    <Property Type="Boolean" Name="IsPaid" Nullable="false" />
+    <Property Type="Int32" Name="PaymentMethodId" Nullable="false" />
+    <Property Type="DateTime" Name="PaymentDate" Nullable="false" />
+    <Property Type="DateTime" Name="RecordCreationDate" Nullable="false" />
+    <NavigationProperty Name="Property" Relationship="ProMasterTenancyDataModel.FK_WorkOrder_Property" FromRole="WorkOrder" ToRole="Property" />
+    <NavigationProperty Name="Vendor" Relationship="ProMasterTenancyDataModel.FK_WorkOrder_Vendor" FromRole="WorkOrder" ToRole="Vendor" />
+    <NavigationProperty Name="WorkOrderStatu" Relationship="ProMasterTenancyDataModel.FK_WorkOrder_WorkOrderStatus" FromRole="WorkOrder" ToRole="WorkOrderStatu" />
+  </EntityType>
+  <EntityType Name="WorkOrderStatu">
+    <Key>
+      <PropertyRef Name="WorkOrderStatusId" />
+    </Key>
+    <Property Type="Int32" Name="WorkOrderStatusId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WorkOrderStatus" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="WorkOrders" Relationship="ProMasterTenancyDataModel.FK_WorkOrder_WorkOrderStatus" FromRole="WorkOrderStatu" ToRole="WorkOrder" />
+  </EntityType>
+  <Association Name="FK_Event_EventType">
+    <End Type="ProMasterTenancyDataModel.EventType" Role="EventType" Multiplicity="1" />
+    <End Type="ProMasterTenancyDataModel.Event" Role="Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EventType">
+        <PropertyRef Name="EventTypeId" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="EventTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_Property">
+    <End Type="ProMasterTenancyDataModel.Property" Role="Property" Multiplicity="1" />
+    <End Type="ProMasterTenancyDataModel.Event" Role="Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Property_PropertyOwner">
+    <End Type="ProMasterTenancyDataModel.PropertyOwner" Role="PropertyOwner" Multiplicity="1" />
+    <End Type="ProMasterTenancyDataModel.Property" Role="Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyOwner">
+        <PropertyRef Name="PropertyOwnerId" />
+      </Principal>
+      <Dependent Role="Property">
+        <PropertyRef Name="PropertyOwnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrder_Property">
+    <End Type="ProMasterTenancyDataModel.Property" Role="Property" Multiplicity="1" />
+    <End Type="ProMasterTenancyDataModel.WorkOrder" Role="WorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="WorkOrder">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RentPayment_RentPaymentMethod">
+    <End Type="ProMasterTenancyDataModel.RentPaymentMethod" Role="RentPaymentMethod" Multiplicity="1" />
+    <End Type="ProMasterTenancyDataModel.RentPayment" Role="RentPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RentPaymentMethod">
+        <PropertyRef Name="RentPaymentMethodId" />
+      </Principal>
+      <Dependent Role="RentPayment">
+        <PropertyRef Name="RentPaymentMethodId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RentPayment_Tenant">
+    <End Type="ProMasterTenancyDataModel.Tenant" Role="Tenant" Multiplicity="1" />
+    <End Type="ProMasterTenancyDataModel.RentPayment" Role="RentPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tenant">
+        <PropertyRef Name="TenantId" />
+      </Principal>
+      <Dependent Role="RentPayment">
+        <PropertyRef Name="TenantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrder_Vendor">
+    <End Type="ProMasterTenancyDataModel.Vendor" Role="Vendor" Multiplicity="1" />
+    <End Type="ProMasterTenancyDataModel.WorkOrder" Role="WorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vendor">
+        <PropertyRef Name="VendorId" />
+      </Principal>
+      <Dependent Role="WorkOrder">
+        <PropertyRef Name="VendorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrder_WorkOrderStatus">
+    <End Type="ProMasterTenancyDataModel.WorkOrderStatu" Role="WorkOrderStatu" Multiplicity="1" />
+    <End Type="ProMasterTenancyDataModel.WorkOrder" Role="WorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkOrderStatu">
+        <PropertyRef Name="WorkOrderStatusId" />
+      </Principal>
+      <Dependent Role="WorkOrder">
+        <PropertyRef Name="WorkOrderStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

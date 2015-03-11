@@ -1,0 +1,89 @@
+﻿@model ProMaster.Core.Documents.ViewModels.DisplayDcoumentViewModel
+
+@{
+    ViewBag.Title = "SearchDocuments";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SearchDocuments</h2>
+<h4>Property Documents</h4>
+<ul>
+    @foreach (var item in Model.PropertyDocuments)    
+    {
+        <li>
+            @item.DocumentId
+            @item.DocumentTitle
+            @item.DocumentDetails
+            @item.PropertyName
+            @item.TenantName
+            @item.CreateDate
+            @item.UpdateDate  
+            @Html.ActionLink("Details", "DocumentDetails", new {  id=item.DocumentId /**/ })          
+        </li>
+    }
+</ul>
+<br />
+    
+<h4>Tenant Documents</h4>
+<ul>
+    @foreach (var item in Model.TenantDocuments)    
+    {
+        <li>
+            @item.DocumentId
+            @item.DocumentTitle
+            @item.DocumentDetails
+            @item.PropertyName
+            @item.TenantName
+            @item.CreateDate
+            @item.UpdateDate  
+            @Html.ActionLink("Details", "DocumentDetails", new {  id=item.DocumentId /**/ })          
+        </li>
+    }
+</ul>
+
+<h4>Lease/Rental Documents</h4>
+@if (Model.LeaseDocuments != null)
+{ 
+<ul>
+    @foreach (var item in Model.LeaseDocuments)
+    {
+        <li>
+            @item.DocumentId
+            @item.DocumentTitle
+            @item.DocumentDetails
+            @item.PropertyName
+            @item.TenantName
+            @item.CreateDate
+            @item.UpdateDate  
+            @Html.ActionLink("Details", "DocumentDetails", new { id = item.DocumentId /**/ })          
+        </li>
+    }
+</ul>
+}
+else
+{ 
+    <h5>No results</h5>
+}
+<h4>Management Contract Documents</h4>
+@if (Model.ContractDocuments != null)
+{
+<ul>
+    @foreach (var item in Model.ContractDocuments)    
+    {
+        <li>
+            @item.DocumentId
+            @item.DocumentTitle
+            @item.DocumentDetails
+            @item.PropertyName
+            @item.TenantName
+            @item.CreateDate
+            @item.UpdateDate  
+            @Html.ActionLink("Details", "DocumentDetails", new {  id=item.DocumentId /**/ })          
+        </li>
+    }
+</ul>
+}
+else
+{ 
+    <h5>No results</h5>
+}

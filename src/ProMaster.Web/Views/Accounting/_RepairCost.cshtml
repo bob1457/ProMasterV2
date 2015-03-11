@@ -1,0 +1,34 @@
+﻿@model ProMaster.Core.Accounting.ViewModels.AccountingCostViewModel
+
+@{
+    ViewBag.Title = "_RepairCost";
+}
+
+<h4>_Repair Cost</h4>
+@if (Model.WorkOrderList.Count() != 0)
+{
+
+    <ul>
+            @foreach (var item in Model.WorkOrderList)
+            { 
+                <li>
+                    @item.WorkOrderId
+                    @item.WorkOrderName
+                    @item.WorkOrderStatus
+                    @item.PaymentAmount
+                    @item.IsPaid
+                    @item.CreationDate
+                </li>
+            }
+
+    
+    
+    
+    </ul>   
+    <p></p>
+    <strong>Total Repair Cost: $@ViewBag.total</strong>
+}
+else
+{
+    <i>No Work Orders Found!</i>
+}

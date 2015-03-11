@@ -1,0 +1,132 @@
+﻿@model ProMaster.Core.Contract.ViewModels.DisplayFeePaymentViewModel
+
+@{
+    ViewBag.Title = "Fee Payment Details";
+}
+
+<div class="content-wrapper">
+    <aside>
+        <!-- Left Panel/Column -->
+        <div id="left">
+            <div class="side_details_logo">
+                <img src="@Url.Content("~/Content/Images/documents3.png")" alt="" title="Fee Payment Details" />
+            </div>
+            <div class="side_details_caption metro">
+                <h3>Fee Payment Details</h3>
+                <br />
+                <span>
+                    Fee payment information
+                </span>
+                <p></p><p></p>
+                @*<h6>Rental Propoerty</h6>*@
+                <div class="side_details_content">
+                    @*<div class="display-label">
+                            Property Name:
+                        </div><br />
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model)
+                        </div><br />*@
+
+
+                </div>
+                @*<h6>Tenant(s) Information</h6>*@
+                <div class="side_details_content">
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+    </aside><!-- End of aside -->
+    <div class="main metro">
+        <div id="manage-tabs" class="tabs-style">
+            <ul>
+                <li><a href="#tabs-1"><i class="fa fa-list-alt"></i> &nbsp;<span>General</span></a></li>
+            </ul>
+            <div id="tabs-1">
+                <div class="tab_content">
+                    <div class="tab_content_title">
+                        <span class="title_icon"><img src="@Url.Content("~/Content/Images/documents2.png")" alt="" title="" /></span>
+                        <span class="title_text"><h5>Fee Payment Information</h5></span>
+                        <br />
+                        <span class="title_caption">Fee payment/revenue information.</span><p></p>
+                    </div>
+                    <div class="tab_content_field">
+                        <fieldset>
+                            <legend><span><i class=" icon-address-book"></i> Basic Information</span></legend>
+                            <div class="basic">
+                                <div class="display-label">
+                                    Payment Period:
+                                </div>
+                                <div class="display-field">
+                                    @Html.DisplayFor(model => model.FeeMonth)/@Html.DisplayFor(model => model.FeeYear)
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                    Payment Amount:
+                                </div>
+                                <div class="display-field">
+                                    @Html.DisplayFor(model => model.FeePaidAmount)
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                    Payment Date:
+                                </div>
+                                <div class="display-field">
+                                    @Html.DisplayFor(model => model.FeePaidDate)
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                    Payment Type:
+                                </div>
+                                <div class="display-field">
+                                    @Html.DisplayFor(model => model.FeeType)
+                                </div>
+                                <br />
+
+                                
+
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <fieldset>
+                        <legend>Owner Information</legend>
+                        <div class="basic">
+                            <div class="display-label">
+                                Owner Name:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.LandlordLastName), @Html.DisplayFor(model => model.LandlordFisrtName)
+                            </div>
+                            <br />
+                            <div class="display-label">
+                                Owner Email:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.LandlordContactEmail)
+                            </div>
+                            <br />
+                            
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</div>
+
+<!--Jquery ui tabs Script -->
+<script type="text/javascript">
+    $(function () {
+        $("#manage-tabs").tabs();
+    });
+</script>

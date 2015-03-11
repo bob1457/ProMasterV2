@@ -1,0 +1,215 @@
+﻿@charset "utf-8";
+/* CSS Document For Custom Jquery UI Tabs */
+
+/*body { font-size: 62.5%; }*/
+
+tabs-fieldset { padding: 0 0 1.5em; margin: 0 0 1.5em; border: 0; }
+p, tabs-label { padding: 0 0 .5em; margin: 0; line-height: 1.3; }
+p tabs-label { display: block; }
+
+/* ----- OVERRIDE RULES for jQuery UI widgets */
+/* tabs background styles go here */
+
+/* our override style rule 
+#manage-tabs.ui-tabs-nav {
+	padding: 0; border-width: 0;
+	
+	 
+
+}
+
+*/ 
+
+.tabs-style{
+    background: none;
+    width: 100%;
+}
+
+.tabs-style,
+.style-tabs ui-tabs-nav li a,
+.style-tabs.ui-tabs-nav {
+    padding: 0;
+}
+
+
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+
+.ui-tabs .ui-tabs-nav {
+	margin: 0;
+	padding: 0;
+    font-size:0.9em;
+}
+
+
+.tabs-style .ui-tabs-nav li .icon {
+    color: #787878;
+    background-position: center 3px;
+    padding-top: 40px;
+    font-weight: bold;
+    font-size: 0.75em;
+    text-align: center;
+    
+	background: none;
+    width: 100%;
+}
+
+
+
+.tabs-style .ui-widget-header {
+    border: none;
+    background: url(images/TabMenu.png) repeat;
+    /*height: 74px;*/
+    width: 100%;
+    
+}
+
+.tabs-style .ui-corner-all {
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+.tabs-style .ui-tabs-nav li {
+    position: relative;
+    cursor: pointer;
+    margin: 0;
+	padding:0;
+    top: 0;
+}
+
+.ui-widget{
+	font-size: 1em;
+	font-weight:800;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	}
+	
+.ui-tabs-nav li.ui-tabs-active,
+.ui-tabs-nav li:hover {
+    background: url(images/SelectedMiddle.png) repeat;
+	background-color:#e7e7ea; /*0a4c75;*/
+}
+
+.tabs-style .ui-tabs .ui-tabs-nav li.ui-tabs-active{
+	padding-bottom:0;
+	}
+
+
+.tabs-style .ui-state-active, .ui-widget-content .ui-state-active, 
+.ui-widget-header .ui-state-active{
+	border-width:0;
+	color:#FFF;
+	font-weight: 600;		
+	}
+	
+#manage-tabs .ui-widget-content{
+	background-color:#e7e7ea;
+	margin-top:0px;
+	}
+	
+#manage-tabs .ui-state-default, .ui-widget-content .ui-state-default, 
+.ui-widget-header .ui-state-default{
+	border-width:0;
+	color:#FFF;
+	font-weight: 600;;	
+	}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl{
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	}
+	
+.tabs-style .ui-tabs-nav li .icon {
+    color: #787878;
+    background-position: center 3px;
+    padding-top: 40px;
+    font-weight: bold;
+    font-size: 0.75em;
+    text-align: center;
+    width: 80px;
+}
+
+#manage-tabss .ui-tabs-nav li.ui-tabs-active .icon,
+.ui-tabs-nav li:hover .icon {
+    color: #414141;
+}
+
+.tabs-style .ui-tabs-nav li.ui-tabs-active .icon:before,
+.ui-tabs-nav li:hover .icon:before {
+    content: url(images/SelectedSides.png);
+    position: absolute;
+    right: 0;
+    top: 0;
+	
+	
+}
+
+.tabs-style .ui-tabs .ui-tabs-nav {
+	margin: 0;
+}
+
+.tabs-style .ui-tabs-nav li.ui-tabs-active .icon:after,
+.ui-tabs-nav li:hover .icon:after {
+    content: url(images/SelectedSides.png);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.tabs-style .ui-tabs-nav li a {
+    outline: none;
+}
+
+.tabs-style .ui-tabs-nav li.ui-tabs-active a {
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+#manage-tabs .ui-widget-header{
+	background-color:#f2f2f2;
+	}
+
+#manage-tabs .ui-tabs-panel{
+	padding: 3em 1.8em 1.4em;
+	}	
+	
+#manage-tabs li.ui-tabs-active .ui-tabs-anchor {
+	color:#000;
+	background-color:#e7e7ea;
+	}
+	
+	
+#manage-tabs .ui-state-default a:hover {
+	color:#000;
+	background-color:#e7e7ea;
+	}
+	
+	
+#manage-tabs li.ui-tabs-active .ui-tabs-anchor {
+	color:#000;}
+	
+#manage-tabs .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited{
+	color:#999;
+	background-color:#f2f2f2;}
+
+#manage-tabs .ui-widget-content
+{
+    font-family: WeblySleek;
+    font-weight: normal;
+}
+#manage-tabs .ui-widget
+{
+    font-family:WeblySleekSb;
+
+}
+
+
+/*#manage-tabs .ui-widget-content{}*/

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProMasterLogReportingDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="aspnet_WebEvent_ErrorCodes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="EventCode" Type="int" Nullable="false" />
+    <Property Name="Level" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ProMaster3.dbo.Log4Net_Error' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Log4Net_Error">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="Thread" />
+      <PropertyRef Name="Level" />
+      <PropertyRef Name="Logger" />
+      <PropertyRef Name="Message" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Thread" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Level" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Logger" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Message" Type="varchar" MaxLength="4000" Nullable="false" />
+    <Property Name="Exception" Type="varchar" MaxLength="2000" />
+  </EntityType>
+  <EntityContainer Name="ProMasterLogReportingDataModelStoreContainer">
+    <EntitySet Name="aspnet_WebEvent_ErrorCodes" EntityType="Self.aspnet_WebEvent_ErrorCodes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Log4Net_Error" EntityType="Self.Log4Net_Error" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Log4Net_Error].[Id] AS [Id], 
+[Log4Net_Error].[Date] AS [Date], 
+[Log4Net_Error].[Thread] AS [Thread], 
+[Log4Net_Error].[Level] AS [Level], 
+[Log4Net_Error].[Logger] AS [Logger], 
+[Log4Net_Error].[Message] AS [Message], 
+[Log4Net_Error].[Exception] AS [Exception]
+FROM [dbo].[Log4Net_Error] AS [Log4Net_Error]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

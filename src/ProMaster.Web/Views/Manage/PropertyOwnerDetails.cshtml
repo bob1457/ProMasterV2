@@ -1,0 +1,741 @@
+﻿@model ProMaster.Core.PropertyOwner.ViewModels.ShowLandlordViewModel
+
+@{
+    ViewBag.Title = "Landlord Details";
+}
+
+
+<div class="content-wrapper">
+    <aside> 
+    <!-- Left Panel/Column -->
+      <div id="left">
+      	<div class="side_details_logo">
+        	<img src="@Url.Content("~/Content/Images/landlord.png")" alt="" title="Landlord Details" />          
+        </div>
+        <div class="side_details_caption metro">
+        	<h3>Landlord Details</h3>
+        	<br />
+            <span>
+                 @Model.LandlordLastName, @Model.LandlordFirstName<!-- 	  Detailed tenant information -->
+            </span>
+            <p></p><p></p>
+            <h6>Owned Propoerties</h6>
+            <div class="side_details_content">
+            @if (Model.PropertyList.Count() != 0)
+            {
+                <ul>
+                    @foreach (var item in Model.PropertyList)
+                    {
+                        <li><i class="icon-home"></i> &nbsp; @item.PropertyName</li> 
+                    }
+
+                </ul>
+            }
+            else
+            {
+                <div id="add_p"><a href="">No properites.<br /></a></div> 
+            }
+            <p>
+                        
+            
+           
+        </div>
+      </div>
+      
+    
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+      </div>
+    </aside><!-- End of aside -->
+
+    <div class="main metro">	
+    	<div id="manage-tabs" class="tabs-style">
+          <ul>
+            <li><a href="#tabs-1"><i class="fa fa-list-alt"></i> &nbsp;<span>General</span></a></li>
+            <li><a href="#tabs-2"><i class="icon-home"></i> &nbsp;Properties</a></li>
+            <li><a href="#tabs-3"><i class="icon-user-2"></i> &nbsp;Management Contract</a></li>
+            <li><a href="#tabs-4"><i class="icon-clipboard-2"></i> &nbsp;Landlord Douments</a></li>
+            
+          </ul>
+  		  <div id="tabs-1">    		
+            <div class="tab_content">
+                <div class="tab_content_title">
+                    <span class="title_icon"><img src="@Url.Content(@Model.LandlordAvartaImgUrl)" alt="" title="" /></span>
+                    <span class="title_text"><h5>Property Information</h5></span>
+                    <br />
+                    <span class="title_caption">Property information, including address, features and facilities, etc.</span>
+                </div>  
+                <div class="tab_content_field">
+                    <!-- <div class="display-label">
+                        Property Address:
+                    </div> -->
+                    
+                    <fieldset>
+                        <legend><span><i class=" icon-address-book"></i> Address</span></legend>
+                        <div class="basic">
+                            <div class="display-label">
+                                First Name:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.LandlordFirstName)
+                            </div>
+                            <br />
+                            <div class="display-label">
+                                Last Name:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.LandlordLastName)
+                            </div>
+                            <br />
+                            <div class="display-label">
+                                Email:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.LandlordContactEmail)
+                            </div>
+                            <br />
+                            <div class="display-label">
+                                Telephone 1:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.LandlordContactTelephone1)
+                            </div>
+                            <br />
+                            <div class="display-label">
+                                Telephone 2:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.LandlordContactTelephone2)
+                            </div>
+                            <br />
+
+                            <div id="disable" class="button-med edit_button" style="display: none; color: #363535; margin-left: 1em; margin-top: 1em; cursor: pointer;">Disaable Online Access</div>
+                            <div id="enable" class="button-med edit_button" style="display: none; color: #363535; margin-left: 1em; margin-top: 1em; cursor: pointer;">Enable Online Access</div>
+
+                        </div>
+
+                    </fieldset>
+                    <div id="msg1" style="color:#28b93b;"></div>  
+                    </div>   
+                    
+                     
+                    
+                   
+
+                <div class="left-aligned backbutton"><a id="back" href="@Url.Content("~/Manage")" title="Back..."><span class="backbutton_format"><i class="icon-arrow-left-3"></i></span> Back to List...</a></div><div class="right-aligned"><div class="edit_button button-med ">@Html.ActionLink("Edit", "EditLandlord", new { id=Model.LandlordId /**/ })</div></div>
+                </div>
+            
+            
+  		  </div>
+          <div id="tabs-2">
+            <!-- <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p> -->
+            <div class="tab_content">
+                <div class="tab_content_title">
+                    <span class="title_icon"><img src="@Url.Content("~/Content/Images/property.png")" alt="" title="" /></span>
+                    <span class="title_text"><h5>Property Information</h5></span>
+                    <br />
+                    <span class="title_caption">Property information, including address, type, build year, etc.</span>
+                </div>
+                <div class="tab_content_field">
+                     <fieldset>
+                        <legend><span><i class="fa fa-info-circle"></i> Property Information</span></legend>
+<!--
+                         <ul>
+                             @foreach (var item in Model.PropertyList)
+                             {
+                                 <li>PropertyNam: &nbsp; @item.PropertyName</li> 
+                             }
+
+                         </ul>
+-->
+                        <div class="content_info">
+                        <div class="button-med edit_button"><a href="@Url.Content("~/Manage/AddProperty")" >Add New</a></div>
+                        <p></p>
+                         <table>
+                                <thead class="table_head">
+            	                    <tr>
+                	                    <td colspan="7" class="table-h table_head">
+                                        <span><i class="icon-home"></i></span> Property List
+                                        </td>                    
+                                    </tr>	
+                                </thead>
+            	                <tr>                                   
+                	                <th class="table_th">ID</th>
+                                    <th class="table_th">Name</th>
+                                    <th class="table_th">Description</th>
+                                    <th class="table_th">Added On</th>
+                                    <th class="table_th"></th> 
+                                    <th class="table_th"></th>                   
+                                </tr>
+                                 @if (Model.PropertyList.Count() != 0)
+                                 {
+                                     foreach (var item in Model.PropertyList)
+                                     {
+                                        <tr> 
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.PropertyId)
+                                            </td>                                       
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.PropertyName)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.PropertyDesc)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.CreatedDate)
+                                            </td>                                        
+                                        
+                                            <td>
+                    	                        <div class="table-button"><a href="@Url.Action("PropertyDetails", "Manage", new { id = item.PropertyId })"><img src="@Url.Content("~/Content/Images/details.png")" title="Details" /></a></div>
+                                            </td>
+                                            <td>
+                    	                        <div class="table-button"><a class="delete-link" href="~/Document/DeleteProperty/@item.PropertyId"><img src="@Url.Content("~/Content/Images/delete.png")" title="Delete" /></a></div>	
+                                            </td>
+                                         </tr>  
+                                     }
+
+                                 }
+                                 else
+                                 {
+                                    <tr>
+                                        <td colspan="7">No properties!</td>
+                	                </tr> 
+                                 }
+                                
+                                <tfoot class="table_th">
+                	                <tr>
+                                        <td colspan="7"><span><i class="icon-clipboard-2"></i></span></td>                        
+                	                </tr>                
+                                </tfoot>
+                            </table>
+                        </div>
+
+                     </fieldset>
+
+                </div>
+                    
+            
+            
+            </div>
+          </div>
+          <div id="tabs-3">
+          <div class="tab_content">
+                <div class="tab_content_title">
+                    <span class="title_icon"><img src="@Url.Content("~/Content/Images/documents2.png")" alt="" title="" /></span>
+                    <span class="title_text"><h5>Contract Information</h5></span>
+                    <br />
+                    <span class="title_caption">Management contract information, including term, service fees, etc.</span>
+                </div>
+                <div class="tab_content_field">
+                    <fieldset>
+                        <legend><span><i class="fa fa-info-circle"></i> Contract Information</span></legend>
+                            <div class="content_info">
+                            <div class="button-med edit_button"><a href="@Url.Content("~/Manage/AddManagementContract")" >Add New</a></div>
+                            <p></p>
+                            <table>
+                                <thead class="table_head">
+            	                    <tr>
+                	                    <td colspan="7" class="table-h table_head">
+                                        <span><i class="icon-home"></i></span> Management Contract List
+                                        </td>                    
+                                    </tr>	
+                                </thead>
+            	                <tr>                                   
+                	                <th class="table_th">ID</th>
+                                    <th class="table_th">Name</th>                                    
+                                    <th class="table_th">Start Date</th>
+                                    <th class="table_th">Signed On</th>
+                                    <th class="table_th">last Updated On</th>
+                                    <th class="table_th"></th> 
+                                    <th class="table_th"></th>                   
+                                </tr>
+                                @if (Model.ContractList.Count() != 0)
+                                {
+                                    foreach (var item in Model.ContractList)
+                                    {
+                                        <tr> 
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ManagementContractId)
+                                            </td>                                       
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ManagementContractTitile)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.StartDate)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ContractSignDate)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.UpdateDate)
+                                            </td>                                        
+                                        
+                                            <td>
+                    	                        <div class="table-button"><a href="@Url.Action("ContractDetails", "Manage", new { id = item.ManagementContractId })"><img src="@Url.Content("~/Content/Images/details.png")" title="Details" /></a></div>
+                                            </td>
+                                            <td>
+                    	                        <div class="table-button"><a class="delete-link" href="~/Document/DeleteProperty/@item.ManagementContractId"><img src="@Url.Content("~/Content/Images/delete.png")" title="Delete" /></a></div>	
+                                            </td>
+                                         </tr>  
+                                    }
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td colspan="7">No Contracts</td>
+                                    </tr>
+                                }
+                                
+                                <tfoot class="table_th">
+                	                <tr>
+                                        <td colspan="7"><span><i class="icon-clipboard-2"></i></span></td>
+                        
+                	                </tr>                
+                                </tfoot>
+                            </table>               
+                                
+                        
+                        
+                        </div>   
+                    
+                        @*<div class="right-aligned"><div class="edit_button button-med"></div></div>*@
+                    </fieldset>
+                
+                
+                </div>
+                    
+            
+            
+            </div>
+            
+          </div>
+            <div id="tabs-4">
+                <div class="tab_content">
+                    <div class="tab_content_title">
+                        <span class="title_icon"><img src="@Url.Content("~/Content/Images/documents3.png")" alt="" title="" /></span>
+                        <span class="title_text"><h5>Landlord Document</h5></span>
+                        <br />
+                        <span class="title_caption">Documents about landord(s), or property owner, including ID, and other support documents.</span>
+                    </div>
+                    <div class="tab_content_field">
+                        <fieldset>
+                            @*<legend><span><i class="fa fa-file"></i> Owner Document List</span></legend>
+            <div id="content_info">
+
+                <div class="button-med edit_button"><a href="#" id="add">Add New</a></div>
+                <p></p>
+                <table>
+                    <thead class="table_head">
+                        <tr>
+                            <td colspan="7" class="table-h table_head">
+                                <span><i class="icon-clipboard-2"></i></span> Document List
+                            </td>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <th class="table_th"></th>
+                        <th class="table_th">ID</th>
+                        <th class="table_th">Title</th>
+                        <th class="table_th">Description</th>
+                        <th class="table_th">Added On</th>
+                        <th class="table_th"></th>
+                        <th class="table_th"></th>
+                    </tr>
+                    @if (Model.DocumentInfo.Count() != 0)
+                    {
+                        foreach (var item in Model.DocumentInfo)
+                        {
+                            <tr>
+                                <td><span class="doc_icon"><img src="@Url.Content("~/Content/Images/pdf.png")" /></span></td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DocumentId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DocumentName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DcoumentDetails)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CreationDate)
+                                </td>
+
+                                <td>
+                                    <div class="table-button"><a href="@Url.Action("DocumentDetails", "Document", new { id = item.DocumentId })"><img src="@Url.Content("~/Content/Images/details.png")" title="Details" /></a></div>
+                                </td>
+                                <td>
+                                    <div class="table-button"><a class="delete-link" href="~/Document/DeleteDocument/@item.DocumentId"><img src="@Url.Content("~/Content/Images/delete.png")" title="Delete" /></a></div>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="7">No Contracts</td>
+                        </tr>
+                    }
+                    <tfoot class="table_th">
+                        <tr>
+                            <td colspan="7"><span><i class="icon-clipboard-2"></i></span></td>
+
+                        </tr>
+                    </tfoot>
+                </table>
+
+            </div>
+                            *@
+
+
+                            <strong>Manage documents for property owner in the document seciton/tab of Management Contract!</strong>
+                        </fieldset>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+         
+         
+		</div> 
+        
+
+    </div><!-- End of main -->
+
+
+</div><!-- End of content-wrapper -->
+
+<!-- Create User/Enable Online Dialog -->
+<div id="account" style="display:none;">
+    @*<strong>Create User Account</strong>
+        <p></p>*@
+    <div class="edit_field ui-dia">
+        <div style="margin-bottom: 1em; color: #1A864E;">Create a user account for online access.</div>
+        <fieldset style="width:460px;">
+            <div class="display-label">
+                User Name:
+            </div>
+            <div class="display-field" style="width:14em;">
+                <input id="uname" name="uname" value="" placeholder="Enter User Name" style="margin:5px; padding:0 9px; height:25px;" />
+            </div><br />
+            <div class="display-label">
+                Password:
+            </div>
+            <div class="display-field" style="width:14em;">
+                <input id="pwd" name="pwd" type="password" value="" placeholder="Enter Password" />
+            </div><br />
+            <div class="display-label">
+                Confirm Password:
+            </div>
+            <div class="display-field" style="width:14em;">
+                <input id="pwd2" name="ped2" type="password" value="" placeholder="Confirm Passwrod" />
+            </div><br />
+
+        </fieldset>
+        <div id="msg" style="color:red"></div>
+    </div>
+</div>
+
+
+<!--Jquery ui tabs Script -->
+<script type="text/javascript">
+    $(function() {
+        $( "#manage-tabs" ).tabs();
+    });
+</script>
+
+<!-- The confirmation dialog content -->
+<div id ="delete-dialog" title="Confirmation" style="display:none">
+    <p>Are you sure to delete this document?</p>    
+</div>
+<br />
+<div id="result"></div>
+
+<!-- Delete Confirmation Script -->
+<script type="text/javascript">
+    $('.delete-link').click(function () {
+        deleteLinkObj = $(this);
+        $('#delete-dialog').dialog();
+        return false;
+    });
+
+    $(function () {
+        $('.delete-link').click(function () {
+            var dialogOpts = {
+                autoOpen: false,
+                modal: true,
+                resizable: false,
+                draggable: false,
+                title: 'Delete Confirmation!',
+                buttons: {
+                    "Cancel": function () {
+                        $(this).dialog("close");
+                    },
+
+                    "Continue": function () {
+                        $.post(deleteLinkObj[0].href, function (data) {
+                            if (data == '@Boolean.TrueString') {
+                                deleteLinkObj.closest("li").hide('fast');
+                                $("#result").text("The document has been successfully deleted!");
+                            }
+                            else {
+                                $("#result").text("error occured!");
+                            }
+                        });
+                        $(this).dialog("close");
+
+                    }
+                }
+            };
+
+
+            $('#delete-dialog').dialog(dialogOpts).dialog('open');
+            return false;
+        });
+    });
+
+</script>
+
+
+<!-- Document for landord is DISABLED !!! -->
+    <!-- Add Document Script -Disabled no documents for landlord
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#add_doc").hide();
+            //$("#pltype").hide();
+        });
+
+        //$("#add").button();
+
+
+        $('#add').click(function () {
+
+            $("#t").val(3);
+
+
+            var dialogOpts = {
+                autoOpen: false,
+                modal: true,
+                resizable: false,
+                draggable: false,
+                width: 480,
+                title: 'Add Document ...'
+
+
+            }
+
+            $("#add_doc").dialog(dialogOpts).dialog('open');
+
+            return false;
+        });
+
+        $("#submit1").click(function () {
+
+            //Upload file
+
+            $("#add_doc").dialog('close');
+
+
+            //Reload least document partial view
+            var url = "/Manage/GetDocumentList/";
+            var q = "id=" + @Model.TenantId +"pid=3";
+            //alert(q);
+            $.get(url, q, function (data) {
+                $("#list").html(data);
+            });
+        });
+
+
+        $("#btncancel").click(function () {
+            $("#add_doc").dialog('close');
+        });
+
+    </script>
+-->
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var online = "@Model.OnLineAccessEnabled";
+
+        //alert(online);
+
+        if (online == "True") {
+            //alert("here!");
+            $("#disable").show();
+        }
+        else {
+            //alert("or...here!");
+            $("#enable").show();
+        }
+
+    });
+</script>
+
+
+<!-- Script to disable online access -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#confirm").hide();
+
+        $("#disalbe").click(function () {
+            deleteLinkObj = $(this);
+            $('#confirm').dialog();
+            return false;
+        });
+
+
+
+        $(function () {
+            $("#disable").click(function () {
+                var dialogOpts = {
+                    autoOpen: false,
+                    modal: true,
+                    resizable: false,
+                    draggable: false,
+                    title: 'Confirmation',
+                    buttons: {
+                        "Cancel": function () {
+                            $(this).dialog("close");
+                        },
+
+                        "Continue": function () {
+
+                            var uname = "@Model.UserName";
+
+                            //alert(uname);
+
+                            $.ajax({
+                                type: "POST",
+                                url: "/Account/DisableClientOnlineAccess",
+                                data: "id=" + @Model.LandlordId + "&UserName=" + uname + "&rId=4",
+                                contenType: "",
+                                dataType: "json",
+                                success: Suceeded
+                            });
+
+                            $(this).dialog("close");
+
+                            function Suceeded(data) {
+                                $("#msg").html(data);
+
+                                //alert("disabled!");
+
+                                $("#disable").hide();
+                                $("#enable").show();
+
+                                $('#msg').delay(5000).fadeOut(400);
+
+                                return false;
+                            }
+
+                        }
+                    }
+                };
+
+
+                $('#confirm').dialog(dialogOpts).dialog('open');
+                return false;
+            });
+        });
+
+
+
+
+    });
+</script>
+
+<!-- script to eanble online access -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#account").hide();
+    });
+
+    $("#enable").click(function () {
+
+        //var username = $("#uname").val();
+        //var passwd = $("#pwd").val();
+        //var passwd2 = $("#pwd2").val();
+
+        //alert(username);
+
+        var dialog = {
+            autoOpen: false,
+            modal: true,
+            resizable: false,
+            draggable: false,
+            width: 545,
+            title: 'Enable Online Access',
+            buttons: {
+                'Submit': function () {
+
+                    var username = $("#uname").val();
+                    var passwd = $("#pwd").val();
+                    var passwd2 = $("#pwd2").val();
+
+                    //alert(username);
+                    if (passwd == passwd2) {
+
+                        $.ajax({
+                            type: "POST",
+                            url: "/Account/EnableClientOnlineAccess",
+                            data: "id=" + @Model.LandlordId + "&rId=4" + "&UserName=" + username + "&PassWd=" + passwd,
+                            contenType: "",
+                            dataType: "json",
+                            success: Suceeded
+                        });
+
+                        function Suceeded(data) {
+                            $("#msg1").html(data);
+
+                            //alert("enabled!");
+
+                            $("#disable").show();
+                            $("#enable").hide();
+
+                            $('#msg1').delay(5000).fadeOut(400);
+
+                            return false;
+                        }
+
+                        $(this).dialog('close');
+                    }
+                    else
+                    {
+                        $("#msg").html("Password not match!");
+                    }
+
+                },
+
+                'Cancel': function () {
+                    $(this).dialog('close');
+                }
+            }
+        }
+
+        $("#account").dialog(dialog).dialog('open');
+    });
+
+</script>
+
+<div id="confirm" style="display:none;">
+    <p><p><span class="dialog-icon"><i class="fa fa-exclamation-triangle"></i></span>Are you sure to disable online access for this client?</p>
+</div>
+
+<!---->
+<script type="text/javascript">
+    $(document).ready(function () {
+        //alert(window.name);
+
+        //write url for back to list button
+        //
+        $("#back").attr("href", window.name);
+
+    });
+</script>
+
+

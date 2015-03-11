@@ -1,0 +1,242 @@
+﻿@model ProMaster.Core.Vendor.ViewModels.OtherCostViewModel
+
+@{
+    ViewBag.Title = "Other Cost Details";
+}
+
+
+<div class="content-wrapper">
+    <aside>
+    <!-- Left Panel/Column -->
+      <div id="left">
+      	<div class="side_details_logo">
+        	<img src="@Url.Content("~/Content/Images/documents3.png")" alt="" title="Vendor Details" />          
+        </div>
+        <div class="side_details_caption metro">
+        	<h3>Contract Details</h3>
+        	<br />
+            <span>
+                 <!-- 	  Detailed tenant information -->
+                 @Model.OtherCostName
+                <p></p>
+                    <div class="display-label">
+                       Started Date:
+                    </div><br />
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.CostAddDate)
+                    </div><br />
+
+                   
+
+                @if (@Model.IsPaid == true)
+                        {
+                            <div class="display-label">
+                                    Is Paid:
+                                </div>
+                                <div class="display-field">
+                                     @Html.DisplayFor(model => model.IsPaid, new { @id = "ok" })
+                                </div><br />
+                            
+                            <div class="display-label">
+                                Invoice Amount:
+                            </div>
+                            <div class="display-field">
+                                 @Html.DisplayFor(model => model.CostAmount)
+                            </div>
+                            <div class="display-label">
+                               Invoice Date:
+                            </div>
+                            <div class="display-field">
+                               @Html.DisplayFor(model => model.CostAddDate, new { @class = "date", @Value = System.DateTime.Now.ToString("M/d/yyyy") })
+                            </div>
+                            
+                        }
+
+            </span>
+            <p></p><p></p>
+            <h6>Serviced Propoerties</h6>
+            <div class="side_details_content">
+                
+                
+            
+            </div>
+        </div>
+      </div>
+      
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+    </aside><!-- End of aside -->
+
+    <div class="main metro">
+        <div id="manage-tabs" class="tabs-style">
+          <ul>
+            <li><a href="#tabs-1"><i class="fa fa-list-alt"></i> &nbsp;<span>Other Cost Details</span></a></li>    
+            <li><a href="#tabs-2"><i class="fa fa-list-alt"></i> &nbsp;<span>Notes</span></a></li>  
+          </ul>
+            <div id="tabs-1">    		
+            <div class="tab_content">
+                <div class="tab_content_title">
+                    <span class="title_icon"><img src="" alt="" title="" /></span>
+                    <span class="title_text"><h5>Work Order Information</h5></span>
+                    <br />
+                    <span class="title_caption">Work order information, including address, features and facilities, etc.</span>
+                </div>  
+                <div class="tab_content_field">
+                                        
+                    <fieldset>
+                        <legend><span><i class=" icon-address-book"></i> Basic Information</span></legend>
+                        <div class="basic">
+                        <div class="display-label">
+                            Cost ID:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.OtherCostId)
+                        </div> 
+                        <br />
+                        <div class="display-label">
+                               Cost Name:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.OtherCostName)
+                            </div> <br />
+                            <div class="display-label">
+                                Descripton:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.CostDetails)
+                            </div> 
+                            <br />
+                            
+                            <div class="display-label">
+                                Invoice Date:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.CostAddDate)
+                            </div>
+                            <br />
+                            <div class="display-label">
+                                Invoice Amount:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.CostAmount)
+                            </div>
+                            <br />
+                            <div class="display-label">
+                                Is Paid:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.IsPaid)
+                            </div>
+                            <br />
+                        
+                        
+                        </div>                     
+                    
+                            
+                    </fieldset> 
+                    
+                   
+
+                    <div class="right-aligned"><div class="edit_button button-med ">@Html.ActionLink("Edit", "EditOtherCost", new { id=Model.OtherCostId/**/ })</div></div>
+                </div>
+            
+            
+  		  </div>
+         
+		</div>
+  		  <div id="tabs-2">    		
+            <div class="tab_content">
+                <div class="tab_content_title">
+                    <span class="title_icon"><img src="" alt="" title="" /></span>
+                    <span class="title_text"><h5>Management Contract Information</h5></span>
+                    <br />
+                    <span class="title_caption">Vendor information, including address, features and facilities, etc.</span>
+                </div>  
+                <div class="tab_content_field">
+                </div>            
+  		  </div>
+         
+		</div>
+
+    </div><!-- end of main -->
+
+</div><!-- end of content-wrapper- -->
+
+    <!--Jquery ui tabs Script -->
+<script type="text/javascript">
+    $(function () {
+        $("#manage-tabs").tabs();
+    });
+</script>
+
+
+<!--
+
+<fieldset>
+    <legend>OtherCostViewModel</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OtherCostId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OtherCostId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PropertyName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PropertyName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OtherCostName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OtherCostName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CostDetails)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CostDetails)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CostCategory)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CostCategory)
+    </div>
+
+    
+
+    
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CostAddDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CostAddDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CostAmount)
+    </div>
+    <div class="display-field">
+        $@Html.DisplayFor(model => model.CostAmount)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsPaid)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsPaid)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "EditOtherCost", new {  id=Model.OtherCostId /**/ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+-->

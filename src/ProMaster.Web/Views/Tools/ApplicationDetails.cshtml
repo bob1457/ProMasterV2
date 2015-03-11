@@ -1,0 +1,237 @@
+﻿@model ProMaster.Core.Tenant.ViewModels.TenantScreenViewModel
+
+@{
+    ViewBag.Title = "Tenancy Application Details";
+}
+
+<div class="content-wrapper">
+    <aside> 
+    <!-- Left Panel/Column -->
+      <div id="left">
+      	<div class="side_details_logo">
+        	<img src="@Url.Content("~/Content/Images/application.png")" alt="" title="" />
+            
+        </div>
+        <div class="side_details_caption">
+        	<h3>Tenancy Application Details</h3>
+        	<br />
+            <span>
+                @Model.ApplicantLastName,  @Model.ApplicantFirstName<!-- 	  Detailed tenant information -->
+            </span>
+            <p></p><p></p>
+            <h6>Rental Propoerty</h6>
+            <div class="side_details_content">
+                
+                <div class="display-label">
+                    Name/Alias:
+                </div><br />
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.PropertyName)
+                </div><br />
+
+                <div class="display-label">
+                    Description:
+                </div><br />
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.PropertyDesc)
+                </div><br />
+            
+                <div class="display-label">
+                    Built year:
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.PropertyBuildYear)
+                </div><br />
+            
+            </div>
+           
+        </div>
+      </div>
+      
+    
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+    </aside><!-- End of aside -->
+
+
+    <div class="main metro">
+        <div id="manage-tabs" class="tabs-style">
+          <ul>
+            <li><a href="#tabs-1"><i class="fa fa-list-alt"></i> &nbsp;<span>General</span></a></li>
+                      
+            
+          </ul>
+  		  <div id="tabs-1">    		
+            <div class="tab_content">
+                <div class="tab_content_title">
+                    <span class="title_icon"><img src="@Url.Content("~/Content/Images/app.png")" alt="" title="" /></span>
+                    <span class="title_text">
+                        <h5>Rental Unit:                        
+                            @if(@Model.PropertyName.Length > 15) 
+                            {
+                                 @Model.PropertyName.Substring(0,15)<em>...</em>
+                            }
+                            else
+                            {
+                                @Model.PropertyName
+                            }
+                        </h5></span>
+                    <br /><br />
+                    <span class="title_caption">Application received on @Model.ApplicaitonDate<br />
+                        @*Application status: @Model.FinalScreeningStatus*@
+
+                    </span>
+                    
+                </div>  
+                <div class="tab_content_field">
+                                        
+                    <fieldset>
+                        <legend><span>
+                            <i class="fa fa-info-circle"></i> Application Details - Status: 
+                            @if (Model.IsApplicationApproved)
+                            {
+                                <strong><span style="color:#47a021;">Approved</span></strong> 
+                            }
+                            @if (!Model.IsApplicationApproved && Model.IsApplicationActive == true)
+                            {
+                                <strong><span style="color:#0f5383;">In Progress</span></strong> 
+                            }
+                            @if (!Model.IsApplicationApproved && Model.IsApplicationActive == false)
+                            {
+                                <strong><span style="color:#f31f32;">Declined</span></strong> 
+                            }
+                        </span></legend>
+                        <div class="basic">
+                                           
+                        <div class="display-label">
+                            Application ID:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.ApplicationId)
+                        </div> 
+                        <br />
+                        <div class="display-label">
+                            First Name:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.ApplicantFirstName)
+                        </div> 
+                        <br />
+                        <div class="display-label">
+                            Last Name:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.ApplicantLastName)
+                        </div> 
+                        <br />
+                        <div class="display-label">
+                            Email:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.ApplicantContactEmail)
+                        </div> 
+                        <br />
+                        <div class="display-label">
+                            Telephone:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.ApplicantContactTel)
+                        </div> 
+                        <br />                        
+                        
+                        <div class="display-label">
+                            Number of Occupeants:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.NumberOfOccupantse)
+                        </div> 
+                        <br />
+                        <div class="display-label">
+                            No. of children
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.NumberOfChildren)
+                        </div> 
+                        <br />
+                        <div class="display-label">
+                           Current Landlord
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.ApplicantCurrentLandlorContact)
+                        </div> 
+                        <br /> <div class="display-label">
+                            Previous Landlord:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.ApplicantPreviousLandlorContact)
+                        </div> 
+                        <br /> <div class="display-label">
+                            Current Employer
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.ApplicantCurrentEmploerContact)
+                        </div> 
+                        <br /> <div class="display-label">
+                            Previous Employer
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.ApplicantPreviousEmploerContact)
+                        </div> 
+                        <br /> <div class="display-label">
+                            Montly Income:
+                        </div>
+                        <div class="display-field">
+                            $@Html.DisplayFor(model => model.ApplicantEmploymentIncome)
+                        </div> 
+                        <br /> <div class="display-label">
+                            Credit Report Score:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.ApplicantCreditScore)
+                        </div> 
+                        <br /> 
+                        
+                        @if (!@Model.IsApplicationActive)
+                        {
+                            <div class="display-label">
+                                Screening Notes:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.ScreeningNotes)
+                            </div>
+                            <br />
+                        }
+                            
+
+
+                    </div>   
+                    
+                    </fieldset> 
+                    
+                    
+
+                    <div class="left-aligned backbutton"><a href="@Url.Content("~/Tools/Applications")" title="Back..."><span class="backbutton_format"><i class="icon-arrow-left-3"></i></span> Back to List...</a></div>
+                    
+                    @if (Model.IsApplicationActive == true)
+                    {
+                        <div class="right-aligned"><div class="button-med edit_button">@Html.ActionLink("Process Application", "ProcessApp", new { id = Model.ApplicationId /**/ })</div></div>
+                    }
+                </div>
+            
+            </div>
+  		  </div>
+
+          </div>          
+          
+		</div><!-- End of main -->
+
+
+
+</div><!-- End of content-wrapper -->
+
+<!--Jquery ui tabs Script -->
+<script type="text/javascript">
+    $(function () {
+        $("#manage-tabs").tabs();
+    });
+</script>

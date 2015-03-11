@@ -1,0 +1,171 @@
+﻿@model ProMaster.Web.Models.LoginModel
+
+@{
+    ViewBag.Title = "Log in";
+}
+
+<!--
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+</hgroup>
+-->
+<div id="login-panel">
+    	<h3><b><span style="color:#860717;"><i class="fa fa-key"></span></i></b> LOGIN</h3>
+        @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        	    <p class="label"><label>Username:</label></p>
+        	<p>@Html.TextBoxFor(m => m.UserName, new { autofocus = "", required = "Required" })</p>
+            <p class="label"><label>Password:</label></p>
+        	<p> @Html.PasswordFor(m => m.Password)</p>
+            <p class="remember_me">
+            	<label>
+                	<label>
+                         @Html.CheckBoxFor(m => m.RememberMe)
+                    	 @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+                    </label>
+                </label>
+            </p>
+            <p class="submit" style="margin-right: 0.5em;"><input type="submit" name="commit" value="Login"></p>        
+        
+        
+        <div class="login-help">
+    		<p><a id="fword" href="#">Forgot your password?</a>.</p>
+            <br />
+            <div id="message" style="color:#2ab73c;"></div>
+  		</div>
+        }
+    </div> 
+
+<!-- End of login-panel --
+
+
+<!-- 
+<section id="loginForm">
+<h2>Use a local account to log in.</h2>
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Log in Form</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+            </li>
+            <li>
+                @Html.CheckBoxFor(m => m.RememberMe)
+                @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+            </li>
+        </ol>
+        <input type="submit" value="Log in" />
+    </fieldset>
+    <p>
+        @Html.ActionLink("Register", "Register") if you don't have an account.
+    </p>
+}
+</section>
+
+<section class="social" id="socialLoginForm">
+    <h2>Use another service to log in.</h2>
+    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+</section>
+
+    -->
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<!-- Forget password dialog -->
+<div id="forgetpass" style="display:none;">
+    <div class="edit_field ui-dia">
+        <div class="display-label" style="width:15%;">
+            UserName:
+        </div>
+        <div class="display-field" style="width:14em;">
+            <input id="uname" name="uname" value="" placeholder="Enter your username" style="margin:5px; padding:0 9px; height:25px;" />
+        </div><br />
+
+            <div class="display-label" style="width:15%;">
+                User Email:
+            </div>
+            <div class="display-field" style="width:14em;">
+                <input id="email" name="email" value="" placeholder="Enter your email address" style="margin:5px; padding:0 9px; height:25px;" />
+            </div><br />
+      
+        @*<div id="msg" style="color:red"></div>*@
+    </div>
+</div>
+
+
+<!-- Forget password script -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#fword").click(function () {
+            var dialog = {
+                autoOpen: false,
+                modal: true,
+                resizable: false,
+                draggable: false,
+                width: 370,
+                title: 'Forgot password?',
+                buttons: {
+                    'Submit': function () {
+
+                        var userEmail = $("#email").val();
+                        var userName = $("#uname").val();
+
+                        //alert(username);
+                        $.ajax({
+                            type: "POST",
+                            url: "/Account/ResetPassword/",
+                            data: "userName=" + userName + "&userEmail=" + userEmail,//"id="
+                            contenType: "",
+                            dataType: "json",
+                            success: Suceeded
+                        });
+                        
+
+                        function Suceeded(data) {
+                            $("#message").html(data);
+
+                            $("#email").val("");
+                            $("#uname").val("");
+                            //alert("enabled!");
+
+                            //$("#disable").show();
+                            //$("#enable").hide();
+
+                            $('#message').delay(5000).fadeOut(400);
+
+                            return false;
+                        }
+
+
+                        $(this).dialog('close');
+                    }
+                        
+                },
+
+                'Cancel': function () {
+                    $(this).dialog('close');
+                }
+            } 
+            
+            $("#forgetpass").dialog(dialog).dialog('open');
+        });
+
+
+        });
+    
+
+</script>

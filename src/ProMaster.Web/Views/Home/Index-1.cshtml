@@ -1,0 +1,160 @@
+﻿@model IEnumerable<ProMaster.Core.Property.ViewModels.ListingViewModel>
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout_H.cshtml";
+}
+
+
+
+<div id="home-banner">
+	<div class="content-wrapper">
+        <div id="banner-content">
+        	<!-- <img src="@Url.Content("~/Content/Images/home_banner.jpg")" /> 
+            <h5>PROPERTY MANAGEMENT SOLUTIONS</h5>
+            <h2>We are Helping...</h2> --><img src="@Url.Content("~/Content/Images/hbanner.png")" />
+        </div>
+    </div> <!-- End of content-wrapper -->
+
+</div> <!-- End of home-banner -->
+
+
+<div class="content-wrapper metro"> 
+
+
+  <aside> 
+    <p><!-- Left Panel/Column -->
+      <div id="left">
+      <span class="title_icon"><img src="@Url.Content("~/Content/Images/property-rent.png")" /></span>
+      <h1>Marketplace</h1>
+      <br />
+      <h3>Property for rent</h3>
+      </div>
+      <div id="rent_display">
+          @if(Model.Count() !=0)
+           {   
+               <ul>
+                 @foreach (var item in Model)
+                  {
+                      <li>
+                        <div class="list_img"><img id="shot1" src="@Url.Content(@item.PropertyImageUrl)"  alt="" /></div>
+                        <h4>
+
+                            @item.PorpertyListingTitle
+
+                        </h4>
+                        <div class="list_caption">
+                            @if (@item.PropertyListDesc.Length > 30)
+                            { 
+                                 @item.PropertyListDesc.Substring(0, 30) <em>...</em> <br /> <br /><a href="#" id ="@item.PropertyListingId">More details...</a><!--@Html.ActionLink("Details...", "RentDetails", "Property", new { id = item.PropertyId }, null)-->
+                            }
+                            else
+                            {
+                                 @item.PropertyListDesc
+                            }
+                        </div>
+                        <br />
+
+                          <!-- Property Details Dialog -->
+                            <div itemid="@(item.PropertyListingId)" title="Property Details" >
+                                @item.PropertyListDesc<br /><br />
+                                Monthly rent: $@item.ListedRentAmount.
+                                <!-- More content and formating here -->
+                            </div>
+
+
+                          <script type="text/javascript">
+                              $(document).ready(function () {
+                                  $("[itemid=@(item.PropertyListingId)]").hide();
+                              });
+                              
+                              $("#@item.PropertyListingId").mouseenter(function () {
+                                  //alert(@item.PropertyListingId);
+                                  $("[itemid=@(item.PropertyListingId)]").show();
+                              });
+
+                              $("[itemid=@(item.PropertyListingId)]").mouseleave(function () {
+                                  $("[itemid=@(item.PropertyListingId)]").hide();
+                              });
+
+                          </script>
+                      </li>
+              
+                  }
+               </ul>
+          }
+          else
+          {
+             <em>No Listing at this time.</em>
+              
+          }
+          <a href="@Url.Content("~/Property")" style="margin-left:.75em;"><i class="icon-arrow-right-3"></i> full listing</a>
+      </div>
+            
+
+      
+      
+      
+    </p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </aside> 
+  <!-- End of aside -->
+    
+    <div class="main">	
+      <p>
+      <!-- main content area-->
+    	<div id="panel1">
+        	<div class="panel_title metro" ><i class="icon-user"></i> Tenants</div>
+        	<div class="panel_content">
+            	<div class="text_icon"><img src="@Url.Content("~/Content/Images/users.png")" /></div>Are you an existing tenant? 
+               	<p>
+                If you are, you can request an online access to see your rental details. If you do not have online access, you can request here.
+                </p>
+               	<p>&nbsp;</p>
+               	<p>&nbsp;</p>
+               	<p>&nbsp;</p>
+               	<p>&nbsp;</p>
+                
+            </div>
+        </div>
+        <div id="panel2">
+        	<div class="panel_title metro" ><i class="icon-user-2"></i> Landlords</div>
+        	<div class="panel_content">
+            	<div class="text_icon"><img src="@Url.Content("~/Content/Images/landlord.png")" /></div>Are you an existing landlord? 
+               	<p>
+                If you are, you can request an online access to see your rental details. If you do not have online access, you can request here.
+                </p>
+               	<p>&nbsp;</p>
+               	<p>&nbsp;</p>
+               	<p>&nbsp;</p>
+               	<p>&nbsp;</p>	
+            </div>
+        </div>
+        <div id="panel3">
+        	<div class="panel_title metro" ><i class="icon-user-3"></i> Property Managers</div>
+        	<div class="panel_content">
+            	<div class="text_icon"><img src="@Url.Content("~/Content/Images/manager.png")" /></div>This is for property manager:
+               	<p>
+                If you are, you can request an online access to see your rental details. If you do not have online access, you can request here.
+                </p>
+               	<p>&nbsp;</p>
+               	<p>&nbsp;</p>
+               	<p>&nbsp;</p>
+               	<p>&nbsp;</p>
+            </div>
+        </div>
+    </p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+    </div> 
+    <!-- End of main -->
+    
+    
+    
+
+</div> <!-- End of content-wrapper -->
+
+
+

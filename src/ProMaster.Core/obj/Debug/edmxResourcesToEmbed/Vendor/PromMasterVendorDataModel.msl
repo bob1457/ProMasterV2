@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PromMasterVendorDataModelStoreContainer" CdmEntityContainer="PromMasterVendorDataEntities">
+    <EntitySetMapping Name="Properties">
+      <EntityTypeMapping TypeName="PromMasterVendorDataModel.Property">
+        <MappingFragment StoreEntitySet="Property">
+          <ScalarProperty Name="PropertyMgmntlStatusId" ColumnName="PropertyMgmntlStatusId" />
+          <ScalarProperty Name="PropertyListDesc" ColumnName="PropertyListDesc" />
+          <ScalarProperty Name="StrataCouncilId" ColumnName="StrataCouncilId" />
+          <ScalarProperty Name="PropertyId" ColumnName="PropertyId" />
+          <ScalarProperty Name="PropertyName" ColumnName="PropertyName" />
+          <ScalarProperty Name="PropertyDesc" ColumnName="PropertyDesc" />
+          <ScalarProperty Name="PropertyTypeId" ColumnName="PropertyTypeId" />
+          <ScalarProperty Name="PropertyAddressId" ColumnName="PropertyAddressId" />
+          <ScalarProperty Name="PropertyFeatureId" ColumnName="PropertyFeatureId" />
+          <ScalarProperty Name="PropertyFacilityId" ColumnName="PropertyFacilityId" />
+          <ScalarProperty Name="PropertyOwnerId" ColumnName="PropertyOwnerId" />
+          <ScalarProperty Name="PropertyManagerId" ColumnName="PropertyManagerId" />
+          <ScalarProperty Name="PropertyImgUrl" ColumnName="PropertyImgUrl" />
+          <ScalarProperty Name="PropertyVideoUrl" ColumnName="PropertyVideoUrl" />
+          <ScalarProperty Name="PropertyBuildYear" ColumnName="PropertyBuildYear" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsShared" ColumnName="IsShared" />
+          <ScalarProperty Name="RentalStatusId" ColumnName="RentalStatusId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkOrderTypes">
+      <EntityTypeMapping TypeName="PromMasterVendorDataModel.WorkOrderType">
+        <MappingFragment StoreEntitySet="WorkOrderType">
+          <ScalarProperty Name="WorkOrderTypeName" ColumnName="WorkOrderTypeName" />
+          <ScalarProperty Name="WorkOrderTypeId" ColumnName="WorkOrderTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VendorSpecialties">
+      <EntityTypeMapping TypeName="PromMasterVendorDataModel.VendorSpecialty">
+        <MappingFragment StoreEntitySet="VendorSpecialty">
+          <ScalarProperty Name="VendorSpecialtyName" ColumnName="VendorSpecialtyName" />
+          <ScalarProperty Name="VendorSpecialtyId" ColumnName="VendorSpecialtyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkOrderStatus">
+      <EntityTypeMapping TypeName="PromMasterVendorDataModel.WorkOrderStatu">
+        <MappingFragment StoreEntitySet="WorkOrderStatus">
+          <ScalarProperty Name="WorkOrderStatus" ColumnName="WorkOrderStatus" />
+          <ScalarProperty Name="WorkOrderStatusId" ColumnName="WorkOrderStatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkOrderCategories">
+      <EntityTypeMapping TypeName="PromMasterVendorDataModel.WorkOrderCategory">
+        <MappingFragment StoreEntitySet="WorkOrderCategory">
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="WorkOrderCategoryId" ColumnName="WorkOrderCategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkOrders">
+      <EntityTypeMapping TypeName="PromMasterVendorDataModel.WorkOrder">
+        <MappingFragment StoreEntitySet="WorkOrder">
+          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+          <ScalarProperty Name="RecordUpdateDate" ColumnName="RecordUpdateDate" />
+          <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+          <ScalarProperty Name="RecordCreationDate" ColumnName="RecordCreationDate" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+          <ScalarProperty Name="WorkOrderStatusId" ColumnName="WorkOrderStatusId" />
+          <ScalarProperty Name="IsAuthorized" ColumnName="IsAuthorized" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+          <ScalarProperty Name="InvoiceDocUrl" ColumnName="InvoiceDocUrl" />
+          <ScalarProperty Name="InvoiceAmount" ColumnName="InvoiceAmount" />
+          <ScalarProperty Name="WorkOrderTypeId" ColumnName="WorkOrderTypeId" />
+          <ScalarProperty Name="VendorId" ColumnName="VendorId" />
+          <ScalarProperty Name="PropertyId" ColumnName="PropertyId" />
+          <ScalarProperty Name="WorkOrderCategoryId" ColumnName="WorkOrderCategoryId" />
+          <ScalarProperty Name="WorkOrderDetails" ColumnName="WorkOrderDetails" />
+          <ScalarProperty Name="WorkOrderName" ColumnName="WorkOrderName" />
+          <ScalarProperty Name="WorkOrderId" ColumnName="WorkOrderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vendors">
+      <EntityTypeMapping TypeName="PromMasterVendorDataModel.Vendor">
+        <MappingFragment StoreEntitySet="Vendor">
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="UserAvartaImgUrl" ColumnName="UserAvartaImgUrl" />
+          <ScalarProperty Name="OnlineAccessEnbaled" ColumnName="OnlineAccessEnbaled" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="VendorContactEmail" ColumnName="VendorContactEmail" />
+          <ScalarProperty Name="VendorContactTelephone2" ColumnName="VendorContactTelephone2" />
+          <ScalarProperty Name="VendorContactTelephone1" ColumnName="VendorContactTelephone1" />
+          <ScalarProperty Name="VendorSpecialtyId" ColumnName="VendorSpecialtyId" />
+          <ScalarProperty Name="VendorDesc" ColumnName="VendorDesc" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="VendorBusinessName" ColumnName="VendorBusinessName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="VendorId" ColumnName="VendorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documents">
+      <EntityTypeMapping TypeName="PromMasterVendorDataModel.Document">
+        <MappingFragment StoreEntitySet="Document">
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DocumentUrl" ColumnName="DocumentUrl" />
+          <ScalarProperty Name="DocumentPrincipalId" ColumnName="DocumentPrincipalId" />
+          <ScalarProperty Name="DocumentPrincipalTypeId" ColumnName="DocumentPrincipalTypeId" />
+          <ScalarProperty Name="DcoumentDetails" ColumnName="DcoumentDetails" />
+          <ScalarProperty Name="DocumentName" ColumnName="DocumentName" />
+          <ScalarProperty Name="DocumentTypeId" ColumnName="DocumentTypeId" />
+          <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentPrincipalTypes">
+      <EntityTypeMapping TypeName="PromMasterVendorDataModel.DocumentPrincipalType">
+        <MappingFragment StoreEntitySet="DocumentPrincipalType">
+          <ScalarProperty Name="DocumentPrincipalType1" ColumnName="DocumentPrincipalType" />
+          <ScalarProperty Name="DocumentPrincipalTypeId" ColumnName="DocumentPrincipalTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentTypes">
+      <EntityTypeMapping TypeName="PromMasterVendorDataModel.DocumentType">
+        <MappingFragment StoreEntitySet="DocumentType">
+          <ScalarProperty Name="DocumentType1" ColumnName="DocumentType" />
+          <ScalarProperty Name="DocumentTypeId" ColumnName="DocumentTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CostCategories">
+      <EntityTypeMapping TypeName="PromMasterVendorDataModel.CostCategory">
+        <MappingFragment StoreEntitySet="CostCategory">
+          <ScalarProperty Name="CostCategoryName" ColumnName="CostCategoryName" />
+          <ScalarProperty Name="CostCategoryId" ColumnName="CostCategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OtherCosts">
+      <EntityTypeMapping TypeName="PromMasterVendorDataModel.OtherCost">
+        <MappingFragment StoreEntitySet="OtherCost">
+          <ScalarProperty Name="CostUpdateDate" ColumnName="CostUpdateDate" />
+          <ScalarProperty Name="CostInvoiceDocUrl" ColumnName="CostInvoiceDocUrl" />
+          <ScalarProperty Name="CostAddedDate" ColumnName="CostAddedDate" />
+          <ScalarProperty Name="PropertyId" ColumnName="PropertyId" />
+          <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+          <ScalarProperty Name="CostAmount" ColumnName="CostAmount" />
+          <ScalarProperty Name="CostCategoryId" ColumnName="CostCategoryId" />
+          <ScalarProperty Name="CostDesc" ColumnName="CostDesc" />
+          <ScalarProperty Name="CostName" ColumnName="CostName" />
+          <ScalarProperty Name="OtherCostId" ColumnName="OtherCostId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PropertyAddresses">
+      <EntityTypeMapping TypeName="PromMasterVendorDataModel.PropertyAddress">
+        <MappingFragment StoreEntitySet="PropertyAddress">
+          <ScalarProperty Name="GPSLatitudeValue" ColumnName="GPSLatitudeValue" />
+          <ScalarProperty Name="GPSLongitudeValue" ColumnName="GPSLongitudeValue" />
+          <ScalarProperty Name="PropertyZipPostCode" ColumnName="PropertyZipPostCode" />
+          <ScalarProperty Name="PropertyCountry" ColumnName="PropertyCountry" />
+          <ScalarProperty Name="PropertyStateProvince" ColumnName="PropertyStateProvince" />
+          <ScalarProperty Name="PropertyCity" ColumnName="PropertyCity" />
+          <ScalarProperty Name="PropertyStreet" ColumnName="PropertyStreet" />
+          <ScalarProperty Name="PropertyNumber" ColumnName="PropertyNumber" />
+          <ScalarProperty Name="PropertySuiteNumber" ColumnName="PropertySuiteNumber" />
+          <ScalarProperty Name="PropertyAddressId" ColumnName="PropertyAddressId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

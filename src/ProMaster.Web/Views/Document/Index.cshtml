@@ -1,0 +1,382 @@
+﻿@model ProMaster.Core.Documents.ViewModels.DisplayDcoumentViewModel
+@using System.Web.Mvc.Html5;
+
+@{
+    ViewBag.Title = "Documents";
+}
+
+
+
+<div class="content-wrapper">
+    <aside>
+        <p>
+            <!-- Left Panel/Column -->
+            <div id="left">
+                <div class="side_title-logo">
+                    <img src="@Url.Content("~/Content/Images/documents.png")" alt="" title="Documents" />
+
+                </div>
+                <div class="side_title_caption">
+                    <h3>Dcoument & Records</h3>
+                    <br>
+                    <span>Manage all related documents and records</span>
+
+                </div>
+            </div>
+
+        </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+    </aside> <!-- End of aside -->
+
+    <div class="main metro">
+        <div id="manage-tabs" class="tabs-style">
+            <ul>
+                <li><a href="#tabs-1"><i class="fa fa-th"></i> Browse Documents</a></li>
+                <li><a href="#tabs-2"><i class="fa fa-search"></i> Search Dcouments</a></li>
+            </ul>
+            <div id="tabs-1">
+                <div id="doc_cat" class="accrd-style">
+                    <h3><a href="#">Property Dcouments</a></h3>
+                    <div>
+
+                        @if (Model.PropertyDocuments != null)
+                        {
+                            <ul>
+                                @foreach (var item in Model.PropertyDocuments.Take(10))
+                                {
+                                    <li>
+                                        <a href="@Url.Content("~/Document/DocumentDetails/" + @item.DocumentId)">@item.DocumentTitle for @item.PropertyName</a><br />
+                                        @if (@item.DocumentDetails.Length > 50)
+                                        {
+                                            <span>
+                                                @item.DocumentDetails.Substring(0, 30);
+                                                <a href="#">...more</a>
+                                            </span>
+                                        }
+                                        else
+                                        {
+                                            <span>@item.DocumentDetails</span>
+                                        }
+                                    </li>
+                                }
+
+
+                            </ul>
+    <br />
+                            if (Model.LeaseDocuments.Count() > 10)
+                            {
+                                <a href="#"><span style="color:rgb(237, 30, 79);">More...</span></a>
+
+                            }
+                        }
+                        else
+                        {
+                            <em>No records.</em>
+                        }
+                    </div>
+                    <h3><a href="#">Tenant Dcouments</a></h3>
+                    <div>
+
+                        @if (Model.TenantDocuments != null)
+                        {
+                            <ul>
+
+                                @foreach (var item in Model.TenantDocuments.Take(10))
+                                {
+                                    <li>
+                                        <a href="@Url.Content("~/Document/DocumentDetails/" + @item.DocumentId)">@item.DocumentTitle for @item.TenantName</a><br />
+                                        @if (@item.DocumentDetails.Length > 50)
+                                        {
+                                            <span>
+                                                @item.DocumentDetails.Substring(0, 30);
+                                                @*<a href="">...more</a>*@
+                                            </span>
+                                        }
+                                        else
+                                        {
+                                            <span>@item.DocumentDetails</span>
+                                        }
+                                    </li>
+                                }
+
+
+                            </ul>
+    <br />
+                            if (Model.LeaseDocuments.Count() > 10)
+                            {
+                                <a href="#"><span style="color:rgb(237, 30, 79);">More...</span></a>
+
+                            }
+                        }
+                        else
+                        {
+                            <em>No records.</em>
+                        }
+                    </div>
+                    <h3><a href="#">Lease Agreement Dcouments</a></h3>
+                    <div>
+                        @if (Model.LeaseDocuments != null)
+                        {
+                            <ul>
+
+                                @foreach (var item in Model.LeaseDocuments.Take(10))
+                                {
+                                    <li>
+                                        <a href="@Url.Content("~/Document/DocumentDetails/" + @item.DocumentId)">@item.DocumentTitle </a><br />
+                                        @if (@item.DocumentDetails.Length > 50)
+                                        {
+                                            <span>
+                                                @item.DocumentDetails.Substring(0, 30);
+                                                @*<a href="">...more</a>*@
+                                            </span>
+                                        }
+                                        else
+                                        {
+                                            <span>@item.DocumentDetails</span>
+                                        }
+                                    </li>
+                                }
+
+
+                            </ul>
+                            <br />
+                            if(Model.LeaseDocuments.Count() > 10)
+                            {
+                                <a href="#"><span style="color:rgb(237, 30, 79);">More...</span></a>
+     
+                            }
+                        }
+                        else
+                        {
+                            <em>No records.</em>
+                        }
+                    </div>
+                    <h3><a href="#">Management Contract Dcouments</a></h3>
+                    <div>
+                        @if (Model.ContractDocuments != null)
+                        {
+                            <ul>
+
+                                @foreach (var item in Model.ContractDocuments.Take(10))
+                                {
+                                    <li>
+                                        <a href="@Url.Content("~/Document/DocumentDetails/" + @item.DocumentId)">@item.DocumentTitle on @item.PropertyName with @item.LandlordName</a><br />
+                                        @if (@item.DocumentDetails.Length > 50)
+                                        {
+                                            <span>
+                                                @item.DocumentDetails.Substring(0, 30);
+                                                @*<a href="">...more</a>*@
+                                            </span>
+                                        }
+                                        else
+                                        {
+                                            <span>@item.DocumentDetails</span>
+                                        }
+                                    </li>
+                                }
+
+
+                            </ul>
+    <br />
+                            if (Model.LeaseDocuments.Count() > 10)
+                            {
+                                <a href="#"><span style="color:rgb(237, 30, 79);">More...</span></a>
+
+                            }
+                        }
+                        else
+                        {
+                            <em>No records.</em>
+                        }
+                    </div>
+                </div>
+
+            </div>
+            <div id="tabs-2">
+                <div class="tab_content a_search">
+
+                    @*@using (Html.BeginForm("DocumentSearch", "Search", FormMethod.Post))
+                        {*@
+                    <div class="edit_field a_search">
+
+                        <fieldset>
+                            <legend><span><i class="icon-search" style="color:#0bb421;"></i> Advnaced Search Dcouments</span></legend>
+                            <div class="edit_field">
+                                <div class="display-label right-aligned">
+                                    Term/Key words:
+                                </div>
+                                <div class="display-field ">
+                                    @*@Html.TextBoxFor(model => model.LeaseTitle, new { id = "key", autofocus = "" })*@
+                                    <input type="text" value="" id="key" autofocus="" />
+                                </div>
+                                <div class="display-label right-aligned">
+                                    Dcoument Type:
+                                </div>
+                                <div class="display-field ">
+                                    <select id="type">
+                                        <option value="1">Contract/Agreement</option>
+                                        <option value="2">Reference Materials</option>
+                                        <option value="3">Identifcations</option>
+                                        <option value="4">Records</option>
+                                    </select>
+                                </div>
+                                <div class="display-label right-aligned">
+                                    Category:
+                                </div>
+                                <div class="display-field ">
+                                    <select id="cate">
+                                        <option value="1">Property</option>
+                                        <option value="2">Landlord/Management</option>
+                                        <option value="3">Tenant</option>
+                                        <option value="4">Lease</option>
+                                    </select>
+                                </div>
+                                <div class="display-label right-aligned">
+                                    Created Since:
+                                </div>
+                                <div class="display-field ">
+                                    <input id="date" type="text" class="datepicker" value="@DateTime.Now.ToString("M/d/yyyy")" />
+
+                                </div>
+                            </div>
+
+                        </fieldset>
+
+                        @*<input class="right-aligned " type="submit" value="Find"  />*@
+                        <a href="#" id="find">Find</a><br />
+                        <div id="doclist" style="margin-top:2em; background-color: transparent;"></div>
+                    </div>
+
+
+                    @* }*@
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div><!-- End of main -->
+
+
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#manage-tabs").tabs();
+    });
+
+    $(function () {
+        $("#doc_cat").accordion({
+            heightStyle: "content",
+            clearStyle: true,
+            autoHeight: false
+        });
+    });
+
+    $(function () {
+        $(".datepicker").datepicker();
+    });
+
+</script>
+
+
+
+<!-- The confirmation dialog content -->
+<div id="delete-dialog" title="Confirmation" style="display:none">
+    <p>Are you sure to delete this document?</p>
+</div>
+<br />
+<div id="result"></div>
+
+<!-- Delete Confirmation Script -->
+<script type="text/javascript">
+    $('.delete-link').click(function () {
+        deleteLinkObj = $(this);
+        $('#delete-dialog').dialog();
+        return false;
+    });
+
+    $(function () {
+        $('.delete-link').click(function () {
+            var dialogOpts = {
+                autoOpen: false,
+                modal: true,
+                resizable: false,
+                draggable: false,
+                title: 'Delete Confirmation!',
+                buttons: {
+                    "Cancel": function () {
+                        $(this).dialog("close");
+                    },
+
+                    "Continue": function () {
+                        $.post(deleteLinkObj[0].href, function (data) {
+                            if (data == '@Boolean.TrueString') {
+                                deleteLinkObj.closest("tr").hide('fast');
+                                $("#result").text("The document has been successfully deleted!");
+                            }
+                            else {
+                                $("#result").text("error occured!");
+                            }
+                        });
+                        $(this).dialog("close");
+
+                    }
+                }
+            };
+
+
+            $('#delete-dialog').dialog(dialogOpts).dialog('open');
+            return false;
+        });
+    });
+
+</script>
+
+<!-- Document search script -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#find").button();
+
+
+
+        $("#find").click(function () {
+
+            var keywd = $("#key").val();
+            var type = $("#type option:selected").val();
+            var category = $("#cate option:selected").val();
+            var date = $("#date").val();
+
+            //alert(keywd);
+
+            var url = "/Search/DocumentSearch/";
+            var q = "keyword=" + keywd + "&type=" + type + "&category=" + category + "&lastPeriod=" + date;
+            $.get(url, q, function (data) {
+                $("#doclist").html(data);
+            });
+
+
+            //$.ajax({
+            //    url: "~/Search/DocumentSearch/",
+            //    type: "GET",
+            //    data: "keyword=" + keywd + "&type=" + type + "&category=" + category + "&lastPeriod=" + date,
+            //    cache: false,
+            //    success: function (result) {
+            //        $('#doclist').html(result);
+            //    }
+            //});
+            return false;
+
+
+
+        });
+
+
+
+
+
+
+    });
+</script>

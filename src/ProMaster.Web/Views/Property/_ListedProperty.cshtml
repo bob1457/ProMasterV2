@@ -1,0 +1,360 @@
+﻿@*@model  PagedList.IPagedList<ProMaster.Core.Property.ViewModels.ListingViewModel>*@
+@model  PagedList.IPagedList<ProMaster.Core.Property.ViewModels.ListingViewModel>
+@using PagedList.Mvc;
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            <div class="list_img"><img id="shot1" src="@Url.Content(@item.PropertyImageUrl)" alt="" /></div>
+            <h4>
+
+                @item.PorpertyListingTitle
+
+            </h4>
+            <div class="full_caption">
+                @item.PropertyListDesc <br /><br />
+
+            Rent: @item.ListedRentAmount per month.<br /><br />
+            @Html.ActionLink("More Details", "PropertyDetails", "Property", new { id = item.PropertyId }, null) &nbsp;@*<a href="#"  itemtype="@item.PropertyListingId">Map Lookup</a>&nbsp;*@ <a href="#" id="@item.PropertyListingId">Apply</a>
+        </div><br />
+        <br />
+        
+        
+            <ul class="imgList" itemscope="@item.PropertyId"></ul>
+
+        
+        <p></p>
+
+        <div id="result" style="margin-top:0.75em; color: #D03A17;"></div>
+            
+
+        <!-- Apply for Tenancy Dialog -->
+        <div itemid="@item.PropertyListingId" class="apply_form metro" style="display:none;">
+
+            <p></p>
+            <h4 class="ui-dia" style="margin-bottom: 1em;"><i class="fa fa-th"></i> &nbsp; TENANCY APPLICATION</h4>
+
+
+            <div class="edit_field">
+
+                <fieldset style="width:28em;">
+                    <p>
+                        <span style="color:#e91b1b;">All fields are required, lack of information will delay your applicaiton process!</span>
+                    </p>
+                    <div class="display-label">
+                        First Name:
+                    </div>
+                    <div class="display-field  field_sp " style="width:17em;">
+                        <input id="fname_@item.PropertyListingId" type="text" placeholder="First Name" />
+                    </div>
+                    <div class="display-label">
+                        Last Name:
+                    </div>
+                    <div class="display-field field_sp" style="width:17em;">
+                        <input id="lname_@item.PropertyListingId" type="text" placeholder="Last Name" />
+                    </div>
+                    <div class="display-label">
+                        SIN/SSN: <i class="icon-help"></i>
+                    </div>
+                    <div class="display-field field_sp" style="width:17em;">
+                        <input id="sin_@item.PropertyListingId" type="text" value="000-000-000" />
+                    </div>
+                    <div class="display-label">
+                        Contact Email:
+                    </div>
+                    <div class="display-field field_sp" style="width:17em;">
+                        <input id="email_@item.PropertyListingId" type="text" placeholder="Your Email" />
+                    </div>
+                    <div class="display-label">
+                        Contact Telephone:
+                    </div>
+                    <div class="display-field field_sp" style="width:17em;">
+                        <input id="tele_@item.PropertyListingId" type="text" placeholder="Your Phone number" />
+                    </div>
+                    <div class="display-label">
+                        Current Address:
+                    </div>
+                    <div class="display-field" style="width: 16.5em; height:4em; margin-left: -0.35em;">
+                        <textarea id="address_@item.PropertyListingId" placeholder="Your Current Address"></textarea>
+                    </div>
+                    <div class="display-label">
+                        Current Employer:
+                    </div>
+                    <div class="display-field field_sp" style="width:17em;">
+                        <input id="c_employer_@item.PropertyListingId" type="text" placeholder="Employer & Contact" />
+                    </div>
+                    <div class="display-label">
+                        Previous Employer:
+                    </div>
+                    <div class="display-field field_sp" style="width:17em;">
+                        <input id="p_employer_@item.PropertyListingId" type="text" placeholder="Employer & Contact" />
+                    </div>
+                    <div class="display-label">
+                        Current Landlord:
+                    </div>
+                    <div class="display-field field_sp" style="width:17em;">
+                        <input id="c_landlord_@item.PropertyListingId" type="text" placeholder="Landlord & Contact" />
+                    </div>
+                    <div class="display-label">
+                        Previous Landlord:
+                    </div>
+                    <div class="display-field field_sp" style="width:17em;">
+                        <input id="p_landlord_@item.PropertyListingId" type="text" placeholder="Landlord & Contact" />
+                    </div>
+                    <div class="display-label">
+                        Montly Income:
+                    </div>
+                    <div class="display-field field_sp" style="width:17em;">
+                        <input id="income_@item.PropertyListingId" type="text" placeholder="Your Gross Income" />
+                    </div>
+                    <div class="display-label">
+                        Credit Score: <i class="icon-help"></i>
+                    </div>
+                    <div class="display-field field_sp" style="width:17em;">
+                        <input id="score_@item.PropertyListingId" type="text" placeholder="Credit Score" />
+                    </div>
+
+                    <div class="display-label">
+                        No. of Occupants:
+                    </div>
+                    <div class="display-field field_sp" style="width:17em;">
+                        <input id="tenant_@item.PropertyListingId" type="text" placeholder="How Many Occupants" />
+                    </div>
+                    <div class="display-label">
+                        No. of Children:
+                    </div>
+                    <div class="display-field field_sp" style="width:17em;">
+                        <input id="child_@item.PropertyListingId" type="text" placeholder="How Many Children" />
+                    </div>
+                    <div class="display-label" style="width:20em; color:#ff0000;">
+                        By submitting the application form, I agree that the landlord/agent can check my references.
+                        <br /><br />
+                        <span style="color:#00ff21;">You will be notified by email!</span>
+                    </div>
+
+
+
+
+
+
+                </fieldset>
+                <!--<input class="edit_button" id="submit1" type="submit"  value="Add" />
+                <input class="edit_button" type="button" value="Cancel" id="btncancel" /> -->
+                <p>
+
+                </p>
+            </div>
+
+
+
+
+            <!-- Tenancy Apply Script -->
+            <script type="text/javascript">
+                $(document).ready(function () {
+
+                    $("#@item.PropertyListingId").click(function () {
+
+
+
+
+                        var dialogOpts = {
+                            autoOpen: false,
+                            modal: true,
+                            resizable: false,
+                            draggable: false,
+                            width: 535,
+                            title: 'Tenancy Application',
+                            buttons: {
+                                "Cancel": function () {
+                                    $(this).dialog("close");
+                                },
+
+                                "Continue": function () {
+
+                                    var counter = 0;
+
+                                    var fn = $("#fname_@item.PropertyListingId").val();
+                                    var ln = $("#lname_@item.PropertyListingId").val();
+                                    var sin = $("#sin_@item.PropertyListingId").val();
+                                    var email = $("#email_@item.PropertyListingId").val();
+                                    var tel = $("#tele_@item.PropertyListingId").val();
+                                    var address = $("#address_@item.PropertyListingId").val();
+                                    var cemp = $("#c_employer_@item.PropertyListingId").val();
+                                    var pemp = $("#p_employer_@item.PropertyListingId").val();
+                                    var clanl = $("#c_landlord_@item.PropertyListingId").val();
+                                    var planl = $("#p_landlord_@item.PropertyListingId").val();
+                                    var mincome = $("#income_@item.PropertyListingId").val();
+                                    var cscore = $("#score_@item.PropertyListingId").val();
+                                    var ten = $("#tenant_@item.PropertyListingId").val();
+                                    var chd = $("#child_@item.PropertyListingId").val();
+
+
+
+                                    //alert(fn);
+
+                                    //alert(tel);
+
+                                    //alert(@(item.PropertyId));
+
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "/Property/Apply",
+                                        data: "id=" + @(item.PropertyId) + "&firstName=" + fn + "&lastName=" + ln + "&sin=" + sin + "&eMail=" + email + "&telePhone=" + tel + "&currentAddr=" + address + "&currentEmp="
+                                            + cemp + "&previousEmp=" + pemp + "&currentLand=" + clanl + "&previousLand=" + planl + "&monthlyIncom=" + mincome + "&creditScore=" + cscore + "&NumTenant=" + ten + "&NumChild=" + chd,
+
+                                        contenType: "",
+                                        dataType: "json",
+                                        success: Suceeded
+                                    });
+
+                                    function Suceeded(data) {
+                                        $("#result").text(data);
+                                        $('#result').delay(3000).fadeOut(3000);
+                                    }
+
+                                    $(this).dialog("close");
+
+                                }
+
+                            }
+
+                        };
+
+
+                        $("[itemid=@(item.PropertyListingId)]").dialog(dialogOpts).dialog('open');
+
+                        return false;
+
+                    });
+
+
+                });
+
+
+
+
+
+            </script>
+
+
+        </div>
+
+        <!-- Map 
+        <div itemref="@item.PropertyListingId">
+            <h3>Map</h3>
+            <div id="map-canvas" style="height:200px; width:300px;" />
+
+
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $("[itemref=@(item.PropertyListingId)]").hide();
+                });
+
+                $("[itemtype=@(item.PropertyListingId)]").click(function () {
+                    var dialogOpts = {
+                        autoOpen: false,
+                        modal: true,
+                        resizable: false,
+                        draggable: false,
+                        width: 400,
+                        title: 'Location',
+                        buttons: {
+                            "Ok": function () {
+                                $(this).dialog("close");
+                            }
+                        }
+                    };
+
+                    $("[itemref=@(item.PropertyListingId)]").dialog(dialogOpts).dialog('open');
+
+                    return false;
+
+
+                });
+
+            </script>
+
+        </div>
+-->
+
+            <!-- Populate list with images -->
+            <script type="text/javascript">
+    $(document).ready(function () {
+
+        var url = "/Property/GetImagesForProperty";
+
+        var q = "id=" + @item.PropertyId;
+
+        $.getJSON(url, q, function (data) {
+            @*$("#@item.PropertyId").empty();*@
+
+                        var items = [];
+
+
+                        $.each(data, function (i, item) {
+
+                            items.push('<li><img src=' + item.name.substring(1) +  ' id="' + item.id + '"' +  ' style="width:45px;"></li>');
+                        });
+
+                        $("[itemscope=@(item.PropertyId)]").append(items.join(''));
+
+            return false;
+
+        });
+
+    });
+            </script>
+
+
+    </li>
+
+    }
+     
+    
+</ul>
+@*<div id="pager" style="float:right; position:absolute;">
+
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, filter = Request.QueryString["filter"] }), new PagedListRenderOptions
+                {
+
+                    LinkToFirstPageFormat = "<<",
+                    LinkToPreviousPageFormat = "<",
+                    LinkToNextPageFormat = ">",
+                    LinkToLastPageFormat = ">>",
+
+                })
+
+</div>*@
+
+ 
+           
+        
+
+
+
+
+
+
+<!-- Ajax paging script 
+<script type="text/javascript">
+
+    $('#pager').on('click', 'a', function () {
+
+       alert(this.href);
+
+        $.ajax({
+            url: this.href,
+            type: 'GET',
+            data: '',
+            cache: false,
+            success: function (result) {
+                $('#loglist').html(result);
+            }
+        });
+        return false;
+    });
+
+</script>
+
+-->

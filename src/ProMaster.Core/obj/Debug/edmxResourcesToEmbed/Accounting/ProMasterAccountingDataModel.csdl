@@ -1,0 +1,563 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProMasterAccountingDataModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="ProMasterAccountingDataEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="Leases" EntityType="ProMasterAccountingDataModel.Lease" />
+    <EntitySet Name="ManagementEvents" EntityType="ProMasterAccountingDataModel.ManagementEvent" />
+    <EntitySet Name="Properties" EntityType="ProMasterAccountingDataModel.Property" />
+    <EntitySet Name="PropertyOwners" EntityType="ProMasterAccountingDataModel.PropertyOwner" />
+    <EntitySet Name="Tenants" EntityType="ProMasterAccountingDataModel.Tenant" />
+    <EntitySet Name="WorkOrders" EntityType="ProMasterAccountingDataModel.WorkOrder" />
+    <AssociationSet Name="FK_Lease_Property" Association="ProMasterAccountingDataModel.FK_Lease_Property">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="Lease" EntitySet="Leases" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_Property" Association="ProMasterAccountingDataModel.FK_Event_Property">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="ManagementEvent" EntitySet="ManagementEvents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Property_PropertyOwner" Association="ProMasterAccountingDataModel.FK_Property_PropertyOwner">
+      <End Role="PropertyOwner" EntitySet="PropertyOwners" />
+      <End Role="Property" EntitySet="Properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrder_Property" Association="ProMasterAccountingDataModel.FK_WorkOrder_Property">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="WorkOrder" EntitySet="WorkOrders" />
+    </AssociationSet>
+    <EntitySet Name="RentPayments" EntityType="ProMasterAccountingDataModel.RentPayment" />
+    <AssociationSet Name="FK_RentPayment_Tenant" Association="ProMasterAccountingDataModel.FK_RentPayment_Tenant">
+      <End Role="Tenant" EntitySet="Tenants" />
+      <End Role="RentPayment" EntitySet="RentPayments" />
+    </AssociationSet>
+    <EntitySet Name="PropertyTypes" EntityType="ProMasterAccountingDataModel.PropertyType" />
+    <EntitySet Name="RentalStatus" EntityType="ProMasterAccountingDataModel.RentalStatu" />
+    <AssociationSet Name="FK_Property_PropertyType" Association="ProMasterAccountingDataModel.FK_Property_PropertyType">
+      <End Role="PropertyType" EntitySet="PropertyTypes" />
+      <End Role="Property" EntitySet="Properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Property_RentalStatus" Association="ProMasterAccountingDataModel.FK_Property_RentalStatus">
+      <End Role="RentalStatu" EntitySet="RentalStatus" />
+      <End Role="Property" EntitySet="Properties" />
+    </AssociationSet>
+    <EntitySet Name="WorkOrderCategories" EntityType="ProMasterAccountingDataModel.WorkOrderCategory" />
+    <EntitySet Name="WorkOrderTypes" EntityType="ProMasterAccountingDataModel.WorkOrderType" />
+    <AssociationSet Name="FK_WorkOrder_WorkOrderCategory" Association="ProMasterAccountingDataModel.FK_WorkOrder_WorkOrderCategory">
+      <End Role="WorkOrderCategory" EntitySet="WorkOrderCategories" />
+      <End Role="WorkOrder" EntitySet="WorkOrders" />
+    </AssociationSet>
+    <EntitySet Name="CostCategories" EntityType="ProMasterAccountingDataModel.CostCategory" />
+    <AssociationSet Name="FK_WorkOrder_WorkOrderType" Association="ProMasterAccountingDataModel.FK_WorkOrder_WorkOrderType">
+      <End Role="WorkOrderType" EntitySet="WorkOrderTypes" />
+      <End Role="WorkOrder" EntitySet="WorkOrders" />
+    </AssociationSet>
+    <EntitySet Name="OtherCosts" EntityType="ProMasterAccountingDataModel.OtherCost" />
+    <AssociationSet Name="FK_Cost_CostCategory" Association="ProMasterAccountingDataModel.FK_Cost_CostCategory">
+      <End Role="CostCategory" EntitySet="CostCategories" />
+      <End Role="OtherCost" EntitySet="OtherCosts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cost_Property" Association="ProMasterAccountingDataModel.FK_Cost_Property">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="OtherCost" EntitySet="OtherCosts" />
+    </AssociationSet>
+    <EntitySet Name="WorkOrderStatus" EntityType="ProMasterAccountingDataModel.WorkOrderStatu" />
+    <AssociationSet Name="FK_WorkOrder_WorkOrderStatus" Association="ProMasterAccountingDataModel.FK_WorkOrder_WorkOrderStatus">
+      <End Role="WorkOrderStatu" EntitySet="WorkOrderStatus" />
+      <End Role="WorkOrder" EntitySet="WorkOrders" />
+    </AssociationSet>
+    <EntitySet Name="ManagementContracts" EntityType="ProMasterAccountingDataModel.ManagementContract" />
+    <EntitySet Name="ManagementFees" EntityType="ProMasterAccountingDataModel.ManagementFee" />
+    <AssociationSet Name="FK_ManagementContract_Property" Association="ProMasterAccountingDataModel.FK_ManagementContract_Property">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="ManagementContract" EntitySet="ManagementContracts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ManagementFee_ManagementContract" Association="ProMasterAccountingDataModel.FK_ManagementFee_ManagementContract">
+      <End Role="ManagementContract" EntitySet="ManagementContracts" />
+      <End Role="ManagementFee" EntitySet="ManagementFees" />
+    </AssociationSet>
+    <EntitySet Name="ManagementFeeFrequencies" EntityType="ProMasterAccountingDataModel.ManagementFeeFrequency" />
+    <EntitySet Name="ManagementFeeTypes" EntityType="ProMasterAccountingDataModel.ManagementFeeType" />
+    <AssociationSet Name="FK_ManagementContract_ManagementFeeFrequency" Association="ProMasterAccountingDataModel.FK_ManagementContract_ManagementFeeFrequency">
+      <End Role="ManagementFeeFrequency" EntitySet="ManagementFeeFrequencies" />
+      <End Role="ManagementContract" EntitySet="ManagementContracts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ManagementFee_ManagementFeeType" Association="ProMasterAccountingDataModel.FK_ManagementFee_ManagementFeeType">
+      <End Role="ManagementFeeType" EntitySet="ManagementFeeTypes" />
+      <End Role="ManagementFee" EntitySet="ManagementFees" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Lease">
+    <Key>
+      <PropertyRef Name="LeaseId" />
+    </Key>
+    <Property Name="LeaseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="LeaseTitle" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LeaseDesc" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+    <Property Name="PropertyId" Type="Int32" Nullable="false" />
+    <Property Name="LeaseStartDate" Type="DateTime" Nullable="false" />
+    <Property Name="LeaseEndDate" Type="DateTime" Nullable="false" />
+    <Property Name="LeaseTermId" Type="Int32" Nullable="false" />
+    <Property Name="RentFrequency" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="RentAmount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="RentDueOn" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="DamageDepositAmount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="PetDepositAmount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="LeaseSignDate" Type="DateTime" Nullable="false" />
+    <Property Name="LeaseAgreementDocUrl" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Addendum" Type="Boolean" Nullable="false" />
+    <Property Name="Notes" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" />
+    <Property Name="UpdateDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Property" Relationship="ProMasterAccountingDataModel.FK_Lease_Property" FromRole="Lease" ToRole="Property" />
+    <Property Type="Boolean" Name="IsLeaseActive" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ManagementEvent">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="EventName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="EventDetails" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="EventDate" Type="DateTime" Nullable="false" />
+    <Property Name="EventTypeId" Type="Int32" Nullable="false" />
+    <Property Name="PropertyId" Type="Int32" Nullable="false" />
+    <Property Name="MileageIncurred" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="TimeSpent" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Property" Relationship="ProMasterAccountingDataModel.FK_Event_Property" FromRole="ManagementEvent" ToRole="Property" />
+  </EntityType>
+  <EntityType Name="Property">
+    <Key>
+      <PropertyRef Name="PropertyId" />
+    </Key>
+    <Property Name="PropertyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="PropertyName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="PropertyDesc" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="PropertyTypeId" Type="Int32" Nullable="false" />
+    <Property Name="PropertyAddressId" Type="Int32" Nullable="false" />
+    <Property Name="PropertyFeatureId" Type="Int32" Nullable="false" />
+    <Property Name="PropertyFacilityId" Type="Int32" Nullable="false" />
+    <Property Name="PropertyOwnerId" Type="Int32" Nullable="false" />
+    <Property Name="PropertyManagerId" Type="Int32" Nullable="false" />
+    <Property Name="PropertyImgUrl" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="PropertyVideoUrl" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="PropertyBuildYear" Type="Int32" Nullable="false" />
+    <Property Name="PropertyRentalStatusId" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsShared" Type="Boolean" Nullable="false" />
+    <Property Name="RentalStatusId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+    <Property Name="UpdateDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Leases" Relationship="ProMasterAccountingDataModel.FK_Lease_Property" FromRole="Property" ToRole="Lease" />
+    <NavigationProperty Name="ManagementEvents" Relationship="ProMasterAccountingDataModel.FK_Event_Property" FromRole="Property" ToRole="ManagementEvent" />
+    <NavigationProperty Name="PropertyOwner" Relationship="ProMasterAccountingDataModel.FK_Property_PropertyOwner" FromRole="Property" ToRole="PropertyOwner" />
+    <NavigationProperty Name="WorkOrders" Relationship="ProMasterAccountingDataModel.FK_WorkOrder_Property" FromRole="Property" ToRole="WorkOrder" />
+    <NavigationProperty Name="PropertyType" Relationship="ProMasterAccountingDataModel.FK_Property_PropertyType" FromRole="Property" ToRole="PropertyType" />
+    <NavigationProperty Name="RentalStatu" Relationship="ProMasterAccountingDataModel.FK_Property_RentalStatus" FromRole="Property" ToRole="RentalStatu" />
+    <Property Type="Int32" Name="StrataCouncilId" />
+    <NavigationProperty Name="OtherCosts" Relationship="ProMasterAccountingDataModel.FK_Cost_Property" FromRole="Property" ToRole="OtherCost" />
+    <NavigationProperty Name="ManagementContracts" Relationship="ProMasterAccountingDataModel.FK_ManagementContract_Property" FromRole="Property" ToRole="ManagementContract" />
+    <Property Type="String" Name="PropertyListDesc" MaxLength="450" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PropertyOwner">
+    <Key>
+      <PropertyRef Name="PropertyOwnerId" />
+    </Key>
+    <Property Name="PropertyOwnerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ContactEmail" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ContactTelephone1" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="ContactTelephone2" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="OnlineAccessEnbaled" Type="Boolean" Nullable="false" />
+    <Property Name="UserAvartaImgUrl" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="AddedBy" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="AddProperty" Type="Boolean" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" />
+    <Property Name="UpdateDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Properties" Relationship="ProMasterAccountingDataModel.FK_Property_PropertyOwner" FromRole="PropertyOwner" ToRole="Property" />
+  </EntityType>
+  <EntityType Name="Tenant">
+    <Key>
+      <PropertyRef Name="TenantId" />
+    </Key>
+    <Property Name="TenantId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ContactEmail" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ContactTelephone1" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="ContactTelephone2" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="OnlineAccessEnbaled" Type="Boolean" Nullable="false" />
+    <Property Name="UserAvartaImgUrl" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="LeaseId" Type="Int32" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="ManagedBy" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" />
+    <Property Name="UpdateDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="RentPayments" Relationship="ProMasterAccountingDataModel.FK_RentPayment_Tenant" FromRole="Tenant" ToRole="RentPayment" />
+  </EntityType>
+  <EntityType Name="WorkOrder">
+    <Key>
+      <PropertyRef Name="WorkOrderId" />
+    </Key>
+    <Property Name="WorkOrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="WorkOrderName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="WorkOrderDetails" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="WorkOrderCategoryId" Type="Int32" Nullable="false" />
+    <Property Name="PropertyId" Type="Int32" Nullable="false" />
+    <Property Name="VendorId" Type="Int32" Nullable="false" />
+    <Property Name="WorkOrderTypeId" Type="Int32" Nullable="false" />
+    <Property Name="InvoiceAmount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="InvoiceDocUrl" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="InvoiceDate" Type="DateTime" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" />
+    <Property Name="IsAuthorized" Type="Boolean" Nullable="false" />
+    <Property Name="WorkOrderStatusId" Type="Int32" Nullable="false" />
+    <Property Name="IsPaid" Type="Boolean" Nullable="false" />
+    <Property Name="PaymentDate" Type="DateTime" Nullable="false" />
+    <Property Name="PaymentMethod" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="PaymentAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="RecordCreationDate" Type="DateTime" Nullable="false" />
+    <Property Name="RecordUpdateDate" Type="DateTime" />
+    <NavigationProperty Name="Property" Relationship="ProMasterAccountingDataModel.FK_WorkOrder_Property" FromRole="WorkOrder" ToRole="Property" />
+    <NavigationProperty Name="WorkOrderCategory" Relationship="ProMasterAccountingDataModel.FK_WorkOrder_WorkOrderCategory" FromRole="WorkOrder" ToRole="WorkOrderCategory" />
+    <NavigationProperty Name="WorkOrderType" Relationship="ProMasterAccountingDataModel.FK_WorkOrder_WorkOrderType" FromRole="WorkOrder" ToRole="WorkOrderType" />
+    <NavigationProperty Name="WorkOrderStatu" Relationship="ProMasterAccountingDataModel.FK_WorkOrder_WorkOrderStatus" FromRole="WorkOrder" ToRole="WorkOrderStatu" />
+  </EntityType>
+  <Association Name="FK_Lease_Property">
+    <End Role="Property" Type="ProMasterAccountingDataModel.Property" Multiplicity="1" />
+    <End Role="Lease" Type="ProMasterAccountingDataModel.Lease" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="Lease">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_Property">
+    <End Role="Property" Type="ProMasterAccountingDataModel.Property" Multiplicity="1" />
+    <End Role="ManagementEvent" Type="ProMasterAccountingDataModel.ManagementEvent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="ManagementEvent">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Property_PropertyOwner">
+    <End Role="PropertyOwner" Type="ProMasterAccountingDataModel.PropertyOwner" Multiplicity="1" />
+    <End Role="Property" Type="ProMasterAccountingDataModel.Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyOwner">
+        <PropertyRef Name="PropertyOwnerId" />
+      </Principal>
+      <Dependent Role="Property">
+        <PropertyRef Name="PropertyOwnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrder_Property">
+    <End Role="Property" Type="ProMasterAccountingDataModel.Property" Multiplicity="1" />
+    <End Role="WorkOrder" Type="ProMasterAccountingDataModel.WorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="WorkOrder">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="RentPayment">
+    <Key>
+      <PropertyRef Name="RentPaymentId" />
+    </Key>
+    <Property Type="Int32" Name="RentPaymentId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="TenantId" Nullable="false" />
+    <Property Type="Boolean" Name="RentIsPaidOntime" Nullable="false" />
+    <Property Type="DateTime" Name="RentPaymentDate" Nullable="false" />
+    <Property Type="String" Name="RentPaymentMonth" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RentPaymentYear" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="RentPaidAmount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="NumberOfLatePayment" Nullable="false" />
+    <Property Type="Decimal" Name="Balance" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="RentPaymentMethodId" Nullable="false" />
+    <Property Type="Boolean" Name="IsCollectedInPerson" Nullable="false" />
+    <Property Type="Boolean" Name="IsDepositForOwner" Nullable="false" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+    <Property Type="String" Name="Notes" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Tenant" Relationship="ProMasterAccountingDataModel.FK_RentPayment_Tenant" FromRole="RentPayment" ToRole="Tenant" />
+  </EntityType>
+  <Association Name="FK_RentPayment_Tenant">
+    <End Type="ProMasterAccountingDataModel.Tenant" Role="Tenant" Multiplicity="1" />
+    <End Type="ProMasterAccountingDataModel.RentPayment" Role="RentPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tenant">
+        <PropertyRef Name="TenantId" />
+      </Principal>
+      <Dependent Role="RentPayment">
+        <PropertyRef Name="TenantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="PropertyType">
+    <Key>
+      <PropertyRef Name="PropertyTypeId" />
+    </Key>
+    <Property Type="Int32" Name="PropertyTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="PropertyType1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Properties" Relationship="ProMasterAccountingDataModel.FK_Property_PropertyType" FromRole="PropertyType" ToRole="Property" />
+  </EntityType>
+  <EntityType Name="RentalStatu">
+    <Key>
+      <PropertyRef Name="RentalStatusId" />
+    </Key>
+    <Property Type="Int32" Name="RentalStatusId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Properties" Relationship="ProMasterAccountingDataModel.FK_Property_RentalStatus" FromRole="RentalStatu" ToRole="Property" />
+  </EntityType>
+  <Association Name="FK_Property_PropertyType">
+    <End Type="ProMasterAccountingDataModel.PropertyType" Role="PropertyType" Multiplicity="1" />
+    <End Type="ProMasterAccountingDataModel.Property" Role="Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyType">
+        <PropertyRef Name="PropertyTypeId" />
+      </Principal>
+      <Dependent Role="Property">
+        <PropertyRef Name="PropertyTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Property_RentalStatus">
+    <End Type="ProMasterAccountingDataModel.RentalStatu" Role="RentalStatu" Multiplicity="1" />
+    <End Type="ProMasterAccountingDataModel.Property" Role="Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RentalStatu">
+        <PropertyRef Name="RentalStatusId" />
+      </Principal>
+      <Dependent Role="Property">
+        <PropertyRef Name="RentalStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="WorkOrderCategory">
+    <Key>
+      <PropertyRef Name="WorkOrderCategoryId" />
+    </Key>
+    <Property Type="Int32" Name="WorkOrderCategoryId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="CategoryName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="WorkOrders" Relationship="ProMasterAccountingDataModel.FK_WorkOrder_WorkOrderCategory" FromRole="WorkOrderCategory" ToRole="WorkOrder" />
+  </EntityType>
+  <EntityType Name="WorkOrderType">
+    <Key>
+      <PropertyRef Name="WorkOrderTypeId" />
+    </Key>
+    <Property Type="Int32" Name="WorkOrderTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="WorkOrderTypeName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="WorkOrders" Relationship="ProMasterAccountingDataModel.FK_WorkOrder_WorkOrderType" FromRole="WorkOrderType" ToRole="WorkOrder" />
+  </EntityType>
+  <Association Name="FK_WorkOrder_WorkOrderCategory">
+    <End Type="ProMasterAccountingDataModel.WorkOrderCategory" Role="WorkOrderCategory" Multiplicity="1" />
+    <End Type="ProMasterAccountingDataModel.WorkOrder" Role="WorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkOrderCategory">
+        <PropertyRef Name="WorkOrderCategoryId" />
+      </Principal>
+      <Dependent Role="WorkOrder">
+        <PropertyRef Name="WorkOrderCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="CostCategory">
+    <Key>
+      <PropertyRef Name="CostCategoryId" />
+    </Key>
+    <Property Type="Int32" Name="CostCategoryId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="CostCategoryName" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="OtherCosts" Relationship="ProMasterAccountingDataModel.FK_Cost_CostCategory" FromRole="CostCategory" ToRole="OtherCost" />
+  </EntityType>
+  <Association Name="FK_WorkOrder_WorkOrderType">
+    <End Type="ProMasterAccountingDataModel.WorkOrderType" Role="WorkOrderType" Multiplicity="1" />
+    <End Type="ProMasterAccountingDataModel.WorkOrder" Role="WorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkOrderType">
+        <PropertyRef Name="WorkOrderTypeId" />
+      </Principal>
+      <Dependent Role="WorkOrder">
+        <PropertyRef Name="WorkOrderTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="OtherCost">
+    <Key>
+      <PropertyRef Name="OtherCostId" />
+    </Key>
+    <Property Type="Int32" Name="OtherCostId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="CostName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CostDesc" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="CostCategoryId" Nullable="false" />
+    <Property Type="Decimal" Name="CostAmount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Boolean" Name="IsPaid" Nullable="false" />
+    <Property Type="Int32" Name="PropertyId" Nullable="false" />
+    <Property Type="String" Name="CostInvoiceDocUrl" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CostAddedDate" Nullable="false" />
+    <Property Type="DateTime" Name="CostUpdateDate" />
+    <NavigationProperty Name="CostCategory" Relationship="ProMasterAccountingDataModel.FK_Cost_CostCategory" FromRole="OtherCost" ToRole="CostCategory" />
+    <NavigationProperty Name="Property" Relationship="ProMasterAccountingDataModel.FK_Cost_Property" FromRole="OtherCost" ToRole="Property" />
+  </EntityType>
+  <Association Name="FK_Cost_CostCategory">
+    <End Type="ProMasterAccountingDataModel.CostCategory" Role="CostCategory" Multiplicity="1" />
+    <End Type="ProMasterAccountingDataModel.OtherCost" Role="OtherCost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CostCategory">
+        <PropertyRef Name="CostCategoryId" />
+      </Principal>
+      <Dependent Role="OtherCost">
+        <PropertyRef Name="CostCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cost_Property">
+    <End Type="ProMasterAccountingDataModel.Property" Role="Property" Multiplicity="1" />
+    <End Type="ProMasterAccountingDataModel.OtherCost" Role="OtherCost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="OtherCost">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="WorkOrderStatu">
+    <Key>
+      <PropertyRef Name="WorkOrderStatusId" />
+    </Key>
+    <Property Type="Int32" Name="WorkOrderStatusId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="WorkOrderStatus" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="WorkOrders" Relationship="ProMasterAccountingDataModel.FK_WorkOrder_WorkOrderStatus" FromRole="WorkOrderStatu" ToRole="WorkOrder" />
+  </EntityType>
+  <Association Name="FK_WorkOrder_WorkOrderStatus">
+    <End Type="ProMasterAccountingDataModel.WorkOrderStatu" Role="WorkOrderStatu" Multiplicity="1" />
+    <End Type="ProMasterAccountingDataModel.WorkOrder" Role="WorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkOrderStatu">
+        <PropertyRef Name="WorkOrderStatusId" />
+      </Principal>
+      <Dependent Role="WorkOrder">
+        <PropertyRef Name="WorkOrderStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ManagementContract">
+    <Key>
+      <PropertyRef Name="ManagementContractId" />
+    </Key>
+    <Property Type="Int32" Name="ManagementContractId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="ManagementContractTitile" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="StartDate" Nullable="false" />
+    <Property Type="DateTime" Name="EndDate" Nullable="false" />
+    <Property Type="String" Name="ListingFeeScale" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ManagementFeeScale" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="ManagementFeeFrequencyId" Nullable="false" />
+    <Property Type="DateTime" Name="ContractSignDate" Nullable="false" />
+    <Property Type="Int32" Name="PropertyId" Nullable="false" />
+    <Property Type="String" Name="ManagementContractDocUrl" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+    <Property Type="DateTime" Name="UpdateDate" Nullable="false" />
+    <NavigationProperty Name="Property" Relationship="ProMasterAccountingDataModel.FK_ManagementContract_Property" FromRole="ManagementContract" ToRole="Property" />
+    <NavigationProperty Name="ManagementFees" Relationship="ProMasterAccountingDataModel.FK_ManagementFee_ManagementContract" FromRole="ManagementContract" ToRole="ManagementFee" />
+    <NavigationProperty Name="ManagementFeeFrequency" Relationship="ProMasterAccountingDataModel.FK_ManagementContract_ManagementFeeFrequency" FromRole="ManagementContract" ToRole="ManagementFeeFrequency" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ManagementFee">
+    <Key>
+      <PropertyRef Name="ManagementFeeId" />
+    </Key>
+    <Property Type="Int32" Name="ManagementFeeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="ManagementFeeTypeId" Nullable="false" />
+    <Property Type="Decimal" Name="ManagementFeeAmount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="ManagementFeeMonth" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ManagementFeeYear" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsReceived" Nullable="false" />
+    <Property Type="DateTime" Name="ManagementDueDate" Nullable="false" />
+    <Property Type="DateTime" Name="ReceivedDate" Nullable="false" />
+    <Property Type="Int32" Name="ManagementContractId" Nullable="false" />
+    <Property Type="String" Name="Notes" MaxLength="450" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ManagementContract" Relationship="ProMasterAccountingDataModel.FK_ManagementFee_ManagementContract" FromRole="ManagementFee" ToRole="ManagementContract" />
+    <NavigationProperty Name="ManagementFeeType" Relationship="ProMasterAccountingDataModel.FK_ManagementFee_ManagementFeeType" FromRole="ManagementFee" ToRole="ManagementFeeType" />
+  </EntityType>
+  <Association Name="FK_ManagementContract_Property">
+    <End Type="ProMasterAccountingDataModel.Property" Role="Property" Multiplicity="1" />
+    <End Type="ProMasterAccountingDataModel.ManagementContract" Role="ManagementContract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="ManagementContract">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ManagementFee_ManagementContract">
+    <End Type="ProMasterAccountingDataModel.ManagementContract" Role="ManagementContract" Multiplicity="1" />
+    <End Type="ProMasterAccountingDataModel.ManagementFee" Role="ManagementFee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManagementContract">
+        <PropertyRef Name="ManagementContractId" />
+      </Principal>
+      <Dependent Role="ManagementFee">
+        <PropertyRef Name="ManagementContractId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ManagementFeeFrequency">
+    <Key>
+      <PropertyRef Name="ManagementFeeFrequencyId" />
+    </Key>
+    <Property Type="Int32" Name="ManagementFeeFrequencyId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="ManagementFeeFrequency1" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ManagementContracts" Relationship="ProMasterAccountingDataModel.FK_ManagementContract_ManagementFeeFrequency" FromRole="ManagementFeeFrequency" ToRole="ManagementContract" />
+  </EntityType>
+  <EntityType Name="ManagementFeeType">
+    <Key>
+      <PropertyRef Name="ManagementFeeTypeId" />
+    </Key>
+    <Property Type="Int32" Name="ManagementFeeTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="ManagementFeeType1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ManagementFees" Relationship="ProMasterAccountingDataModel.FK_ManagementFee_ManagementFeeType" FromRole="ManagementFeeType" ToRole="ManagementFee" />
+  </EntityType>
+  <Association Name="FK_ManagementContract_ManagementFeeFrequency">
+    <End Type="ProMasterAccountingDataModel.ManagementFeeFrequency" Role="ManagementFeeFrequency" Multiplicity="1" />
+    <End Type="ProMasterAccountingDataModel.ManagementContract" Role="ManagementContract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManagementFeeFrequency">
+        <PropertyRef Name="ManagementFeeFrequencyId" />
+      </Principal>
+      <Dependent Role="ManagementContract">
+        <PropertyRef Name="ManagementFeeFrequencyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ManagementFee_ManagementFeeType">
+    <End Type="ProMasterAccountingDataModel.ManagementFeeType" Role="ManagementFeeType" Multiplicity="1" />
+    <End Type="ProMasterAccountingDataModel.ManagementFee" Role="ManagementFee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManagementFeeType">
+        <PropertyRef Name="ManagementFeeTypeId" />
+      </Principal>
+      <Dependent Role="ManagementFee">
+        <PropertyRef Name="ManagementFeeTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

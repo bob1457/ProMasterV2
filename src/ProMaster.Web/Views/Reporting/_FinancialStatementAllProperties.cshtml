@@ -1,0 +1,74 @@
+﻿@model ProMaster.Core.Reporting.ViewModels.AccountingCostViewModel
+
+<div id="property">
+   <div class="title_icon">
+                    <img src="@Url.Content("~/Content/Images/houses2.png")" alt="" title="All Properties" />
+                    </div>
+                    <!----> <div class="title_text"><h5>Financial Statement for All Managed Properties</h5><br /><br />
+                        <span class="title_caption">Financial statement includes all revenue, cost and net income.<br /></span>
+                    </div>   
+                     
+                    
+                    
+                
+   
+</div><br />
+<p></p>
+<div id="report_title">Property Financail Statement</div>
+<div id="report_data">
+    
+    Rent Revenue: &nbsp;
+    <div id="revenue">
+        <br /><br />
+            @Html.Partial("_RentRevenue") 
+        <p></p><br />
+    </div>
+    <span  class="total">$@ViewBag.totalrevenue</span>
+    <br /><br />
+    Costs: &nbsp;
+        <br />Repair Cost:
+        <div id="r_cost"><br /><br />
+            @Html.Partial("_RepairCost") <p></p><br />
+            
+            <br />
+        </div>
+        <span  class="total">$@ViewBag.total</span><br />
+        Other (Misc.) Cost:
+        <div id="o_cost">
+            @Html.Partial("_OtherCost") <p></p><br />
+            
+        </div>
+        <span  class="total">$@ViewBag.totalcost</span>
+        <br />
+        Management Cost:
+    <div id="m_cost">
+            @Html.Partial("_ManagementFee") <p></p><br />
+            
+        </div>
+        <span  class="total">$@ViewBag.TotalFee</span>
+        
+        <p></p><br />
+    Total Costs: &nbsp;
+    <span  class="total">$@ViewBag.totalMaintCosts</span>
+        <p></p><br /><br /><br />
+    Net Income: &nbsp;
+    <span  class="total">$@ViewBag.totalNetIncome</span>
+    <p></p><br /><br /><br />
+
+    <p><a class="left-aligned edit_button button_border" id="pdf" href="@Url.Content("~/Reporting/ExportReportPDF/?id=" + @ViewBag.pid + "&tId=4&startDate=" + @ViewBag.start + "&endDate=" + @ViewBag.end)"  target="_blank">Export in PDF</a></p>
+
+</div>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#revenue").hide();
+        $("#r_cost").hide();
+        $("#o_cost").hide();
+        $("#m_cost").hide();
+    });    
+    
+</script>
+
+ 

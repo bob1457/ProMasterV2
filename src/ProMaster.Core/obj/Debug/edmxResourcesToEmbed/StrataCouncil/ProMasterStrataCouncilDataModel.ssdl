@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProMasterStrataCouncilDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ProMasterStrataCouncilDataModelStoreContainer">
+    <EntitySet Name="Document" EntityType="ProMasterStrataCouncilDataModel.Store.Document" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="DocumentPrincipalType" EntityType="ProMasterStrataCouncilDataModel.Store.DocumentPrincipalType" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="DocumentType" EntityType="ProMasterStrataCouncilDataModel.Store.DocumentType" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Lease" EntityType="ProMasterStrataCouncilDataModel.Store.Lease" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Property" EntityType="ProMasterStrataCouncilDataModel.Store.Property" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="PropertyOwner" EntityType="ProMasterStrataCouncilDataModel.Store.PropertyOwner" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="PropertyType" EntityType="ProMasterStrataCouncilDataModel.Store.PropertyType" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="RentalStatus" EntityType="ProMasterStrataCouncilDataModel.Store.RentalStatus" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="StrataCouncil" EntityType="ProMasterStrataCouncilDataModel.Store.StrataCouncil" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <AssociationSet Name="FK_Document_DocumentPrincipalType" Association="ProMasterStrataCouncilDataModel.Store.FK_Document_DocumentPrincipalType">
+      <End Role="DocumentPrincipalType" EntitySet="DocumentPrincipalType" />
+      <End Role="Document" EntitySet="Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Document_DocumentType" Association="ProMasterStrataCouncilDataModel.Store.FK_Document_DocumentType">
+      <End Role="DocumentType" EntitySet="DocumentType" />
+      <End Role="Document" EntitySet="Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lease_Property" Association="ProMasterStrataCouncilDataModel.Store.FK_Lease_Property">
+      <End Role="Property" EntitySet="Property" />
+      <End Role="Lease" EntitySet="Lease" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Property_PropertyOwner" Association="ProMasterStrataCouncilDataModel.Store.FK_Property_PropertyOwner">
+      <End Role="PropertyOwner" EntitySet="PropertyOwner" />
+      <End Role="Property" EntitySet="Property" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Property_PropertyType" Association="ProMasterStrataCouncilDataModel.Store.FK_Property_PropertyType">
+      <End Role="PropertyType" EntitySet="PropertyType" />
+      <End Role="Property" EntitySet="Property" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Property_RentalStatus" Association="ProMasterStrataCouncilDataModel.Store.FK_Property_RentalStatus">
+      <End Role="RentalStatus" EntitySet="RentalStatus" />
+      <End Role="Property" EntitySet="Property" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Document">
+    <Key>
+      <PropertyRef Name="DocumentId" />
+    </Key>
+    <Property Name="DocumentId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DocumentTypeId" Type="int" Nullable="false" />
+    <Property Name="DocumentName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="DcoumentDetails" Type="varchar" Nullable="false" MaxLength="350" />
+    <Property Name="DocumentPrincipalTypeId" Type="int" Nullable="false" />
+    <Property Name="DocumentPrincipalId" Type="int" Nullable="false" />
+    <Property Name="DocumentUrl" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime2" Nullable="false" />
+    <Property Name="UpdateDate" Type="datetime2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DocumentPrincipalType">
+    <Key>
+      <PropertyRef Name="DocumentPrincipalTypeId" />
+    </Key>
+    <Property Name="DocumentPrincipalTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DocumentPrincipalType" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DocumentType">
+    <Key>
+      <PropertyRef Name="DocumentTypeId" />
+    </Key>
+    <Property Name="DocumentTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DocumentType" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Lease">
+    <Key>
+      <PropertyRef Name="LeaseId" />
+    </Key>
+    <Property Name="LeaseId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LeaseTitle" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="LeaseDesc" Type="varchar" MaxLength="4000" />
+    <Property Name="PropertyId" Type="int" Nullable="false" />
+    <Property Name="LeaseStartDate" Type="datetime2" Nullable="false" />
+    <Property Name="LeaseEndDate" Type="datetime2" Nullable="false" />
+    <Property Name="LeaseTermId" Type="int" Nullable="false" />
+    <Property Name="RentFrequency" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="RentAmount" Type="decimal" Nullable="false" />
+    <Property Name="RentDueOn" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="DamageDepositAmount" Type="decimal" Nullable="false" />
+    <Property Name="PetDepositAmount" Type="decimal" />
+    <Property Name="LeaseSignDate" Type="datetime2" Nullable="false" />
+    <Property Name="LeaseAgreementDocUrl" Type="varchar" MaxLength="10" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="Addendum" Type="bit" Nullable="false" />
+    <Property Name="Notes" Type="varchar" MaxLength="500" />
+    <Property Name="CreationDate" Type="datetime2" Nullable="false" />
+    <Property Name="UpdateDate" Type="datetime2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Property">
+    <Key>
+      <PropertyRef Name="PropertyId" />
+    </Key>
+    <Property Name="PropertyId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PropertyName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="PropertyDesc" Type="varchar" MaxLength="250" />
+    <Property Name="PropertyListDesc" Type="varchar" MaxLength="450" />
+    <Property Name="PropertyTypeId" Type="int" Nullable="false" />
+    <Property Name="StrataCouncilId" Type="int" />
+    <Property Name="PropertyAddressId" Type="int" Nullable="false" />
+    <Property Name="PropertyFeatureId" Type="int" Nullable="false" />
+    <Property Name="PropertyFacilityId" Type="int" Nullable="false" />
+    <Property Name="PropertyOwnerId" Type="int" Nullable="false" />
+    <Property Name="PropertyManagerId" Type="int" Nullable="false" />
+    <Property Name="PropertyImgUrl" Type="varchar" MaxLength="100" />
+    <Property Name="PropertyVideoUrl" Type="varchar" MaxLength="100" />
+    <Property Name="PropertyBuildYear" Type="int" Nullable="false" />
+    <Property Name="PropertyMgmntlStatusId" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsShared" Type="bit" Nullable="false" />
+    <Property Name="RentalStatusId" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime2" Nullable="false" />
+    <Property Name="UpdateDate" Type="datetime2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PropertyOwner">
+    <Key>
+      <PropertyRef Name="PropertyOwnerId" />
+    </Key>
+    <Property Name="PropertyOwnerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ContactEmail" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ContactTelephone1" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="ContactTelephone2" Type="varchar" MaxLength="25" />
+    <Property Name="OnlineAccessEnbaled" Type="bit" Nullable="false" />
+    <Property Name="UserAvartaImgUrl" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="AddedBy" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="AddProperty" Type="bit" />
+    <Property Name="CreationDate" Type="datetime2" Nullable="false" />
+    <Property Name="UpdateDate" Type="datetime2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PropertyType">
+    <Key>
+      <PropertyRef Name="PropertyTypeId" />
+    </Key>
+    <Property Name="PropertyTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PropertyType" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="RentalStatus">
+    <Key>
+      <PropertyRef Name="RentalStatusId" />
+    </Key>
+    <Property Name="RentalStatusId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="varchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="StrataCouncil">
+    <Key>
+      <PropertyRef Name="StrataCouncilId" />
+    </Key>
+    <Property Name="StrataCouncilId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StrataCouncilTitle" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="StrataCouncilMailingAddress" Type="varchar" Nullable="false" MaxLength="250" />
+    <Property Name="StrataManagerFirstName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="StrataManagerLastName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="StrataManagerEmail" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="StrataManagerTelephone" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="Notes" Type="varchar" MaxLength="500" />
+    <Property Name="CreateDate" Type="datetime2" Nullable="false" />
+    <Property Name="UpdateDate" Type="datetime2" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Document_DocumentPrincipalType">
+    <End Role="DocumentPrincipalType" Type="ProMasterStrataCouncilDataModel.Store.DocumentPrincipalType" Multiplicity="1" />
+    <End Role="Document" Type="ProMasterStrataCouncilDataModel.Store.Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentPrincipalType">
+        <PropertyRef Name="DocumentPrincipalTypeId" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="DocumentPrincipalTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Document_DocumentType">
+    <End Role="DocumentType" Type="ProMasterStrataCouncilDataModel.Store.DocumentType" Multiplicity="1" />
+    <End Role="Document" Type="ProMasterStrataCouncilDataModel.Store.Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentType">
+        <PropertyRef Name="DocumentTypeId" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="DocumentTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lease_Property">
+    <End Role="Property" Type="ProMasterStrataCouncilDataModel.Store.Property" Multiplicity="1" />
+    <End Role="Lease" Type="ProMasterStrataCouncilDataModel.Store.Lease" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="Lease">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Property_PropertyOwner">
+    <End Role="PropertyOwner" Type="ProMasterStrataCouncilDataModel.Store.PropertyOwner" Multiplicity="1" />
+    <End Role="Property" Type="ProMasterStrataCouncilDataModel.Store.Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyOwner">
+        <PropertyRef Name="PropertyOwnerId" />
+      </Principal>
+      <Dependent Role="Property">
+        <PropertyRef Name="PropertyOwnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Property_PropertyType">
+    <End Role="PropertyType" Type="ProMasterStrataCouncilDataModel.Store.PropertyType" Multiplicity="1" />
+    <End Role="Property" Type="ProMasterStrataCouncilDataModel.Store.Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyType">
+        <PropertyRef Name="PropertyTypeId" />
+      </Principal>
+      <Dependent Role="Property">
+        <PropertyRef Name="PropertyTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Property_RentalStatus">
+    <End Role="RentalStatus" Type="ProMasterStrataCouncilDataModel.Store.RentalStatus" Multiplicity="1" />
+    <End Role="Property" Type="ProMasterStrataCouncilDataModel.Store.Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RentalStatus">
+        <PropertyRef Name="RentalStatusId" />
+      </Principal>
+      <Dependent Role="Property">
+        <PropertyRef Name="RentalStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

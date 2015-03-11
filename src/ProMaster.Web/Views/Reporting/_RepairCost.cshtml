@@ -1,0 +1,62 @@
+﻿@model ProMaster.Core.Reporting.ViewModels.AccountingCostViewModel
+
+@if (Model.WorkOrderList.Count() != 0)
+{
+
+  
+    <table>
+                                
+            	                <tr>
+                                    
+                	                <th class="table_th" style="width:2em">ID</th>
+                                    <th class="table_th">Cost Name</th>
+                                    <th class="table_th">Status</th>
+                                    <th class="table_th">Paid</th>
+                                    <th class="table_th">Amount</th> 
+                                    <th class="table_th">Date</th> 
+                                    <th class="table_th"></th>                  
+                                </tr>
+                                @foreach (var item in Model.WorkOrderList)
+                                {
+                                    <tr>
+                                        
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.WorkOrderId)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.WorkOrderName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.WorkOrderStatus)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.IsPaid)
+                                        </td>
+                                         <td>
+                                            @Html.DisplayFor(modelItem => item.PaymentAmount)
+                                        </td>
+                                         <td>
+                                            @Html.DisplayFor(modelItem => item.CreationDate)
+                                        </td>
+                                        <td>
+                    	                    <div class="table-button"><a href="@Url.Action("WorkOrderDetails", "Manage", new { id=item.WorkOrderId })"><img src="@Url.Content("~/Content/Images/details.png")" title="Details" /></a></div>
+                                        </td>
+                                        
+                                     </tr>  
+                                }
+                                <!--<tfoot class="table_th">
+                	                <tr>
+                                        <td colspan="7"><span><i class="icon-clipboard-2"></i></span></td>
+                        
+                	                </tr>                
+                                </tfoot>-->
+                            </table>
+    
+    
+    <p></p>
+    <div  class="total">Total Repair Cost: $@ViewBag.total</div>
+}
+else
+{
+    <div class="no_r" >No Management Costs.</div>
+}

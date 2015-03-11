@@ -1,0 +1,22 @@
+﻿@model ProMaster.Core.Reporting.ViewModels.ReportingViewModel
+
+<h3>Property List</h3>
+<ul>
+    @foreach (var item in Model.PropertyList)
+    { 
+       <li>
+           @item.PropertyId
+           @item.PropertyName
+           @item.PropertyDesc
+           @item.PropertyAddressStreetNumber
+           @item.PropertyAddressStreetName
+           @item.PropertyAddressCity
+           @item.PropertyAddressProvState
+           @item.PropertyAddressPostZipCode
+           @item.PropertyCreationDate
+           @Html.ActionLink("Details", "PropertyDetails", "Manage",  new { id=@item.PropertyId}, new { @class="details-link" /**/ })
+      </li>
+    
+    }
+</ul>
+

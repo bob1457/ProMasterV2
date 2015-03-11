@@ -1,0 +1,86 @@
+﻿.ui-dialog
+{
+    overflow:hidden;
+}
+
+.ui-dialog-title
+{
+   
+}
+
+.ui-dialog-titlebar {
+ background-image: none;
+ background-color: #2784A8;
+ color:#fff;
+ 
+}
+/*-------- excepted from jquery-ui-dialog-----*/
+
+.ui-dialog {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0; /*.2em;*/
+	outline: 0;
+    overflow-x:hidden;
+}
+.ui-dialog .ui-dialog-titlebar {
+	padding: 0; /*.4em 1em;*/
+	position: relative;
+    height:2.5em;
+    font-family:WeblySleekSb;
+    font-weight:800;
+    font-size:1.25em;
+}
+.ui-dialog .ui-dialog-title {
+	float: left;
+	margin: .5em 1em;
+	white-space: nowrap;
+	width: 90%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+    
+}
+.ui-dialog .ui-dialog-titlebar-close {
+	position: absolute;
+	right: .3em;
+	top: 50%;
+	width: 21px;
+	margin: -10px 0 0 0;
+	padding: 1px;
+	height: 20px;
+}
+.ui-dialog .ui-dialog-content {
+	position: relative;
+	border: 0;
+	padding: .5em 1em;
+	background: none;
+	overflow: hidden;
+    font-family:WeblySleek;
+}
+.ui-dialog .ui-dialog-buttonpane {
+	text-align: left;
+	border-width: 1px 0 0 0;
+	background-image: none;
+	margin-top: .5em;
+	padding: .3em 1em .5em .4em;
+	
+}
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+	float: right;
+	
+}
+.ui-dialog .ui-dialog-buttonpane button {
+	margin: .5em .4em .5em 0;
+	cursor: pointer;
+	
+	
+}
+
+.ui-button .ui-button-text
+{
+    background-color:#cde5ef;
+    border:solid thin #C7BFBF;
+    color:#000;
+    font-family:Century Gothic;
+    }

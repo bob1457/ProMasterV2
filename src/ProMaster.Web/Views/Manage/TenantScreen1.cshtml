@@ -1,0 +1,307 @@
+﻿@model ProMaster.Core.Tenant.ViewModels.TenantScreenViewModel
+
+@{
+    ViewBag.Title = "TenantScreen";
+}
+
+<h2>TenantScreen</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>TenantScreenViewModel</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ApplicationId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ApplicationId)
+            @Html.ValidationMessageFor(model => model.ApplicationId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ApplicantFirstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ApplicantFirstName)
+            @Html.ValidationMessageFor(model => model.ApplicantFirstName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ApplicantLastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ApplicantLastName)
+            @Html.ValidationMessageFor(model => model.ApplicantLastName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ApplicantSIN)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ApplicantSIN)
+            @Html.ValidationMessageFor(model => model.ApplicantSIN)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ApplicantCurrentAddress)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ApplicantCurrentAddress)
+            @Html.ValidationMessageFor(model => model.ApplicantCurrentAddress)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ApplicantPreviousAddress)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ApplicantPreviousAddress)
+            @Html.ValidationMessageFor(model => model.ApplicantPreviousAddress)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ApplicantContactEmail)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ApplicantContactEmail)
+            @Html.ValidationMessageFor(model => model.ApplicantContactEmail)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ApplicantContactTel)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ApplicantContactTel)
+            @Html.ValidationMessageFor(model => model.ApplicantContactTel)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ApplicantCurrentLandlorContact)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ApplicantCurrentLandlorContact)
+            @Html.ValidationMessageFor(model => model.ApplicantCurrentLandlorContact)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ApplicantPreviousLandlorContact)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ApplicantPreviousLandlorContact)
+            @Html.ValidationMessageFor(model => model.ApplicantPreviousLandlorContact)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ApplicantPreviousEmploerContact)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ApplicantPreviousEmploerContact)
+            @Html.ValidationMessageFor(model => model.ApplicantPreviousEmploerContact)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ApplicantCurrentEmploerContact)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ApplicantCurrentEmploerContact)
+            @Html.ValidationMessageFor(model => model.ApplicantCurrentEmploerContact)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ApplicantEmploymentIncome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ApplicantEmploymentIncome)
+            @Html.ValidationMessageFor(model => model.ApplicantEmploymentIncome)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ApplicantOtherIncome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ApplicantOtherIncome)
+            @Html.ValidationMessageFor(model => model.ApplicantOtherIncome)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ApplicantCreditReportId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ApplicantCreditReportId)
+            @Html.ValidationMessageFor(model => model.ApplicantCreditReportId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ApplicantCreditReport)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ApplicantCreditReport)
+            @Html.ValidationMessageFor(model => model.ApplicantCreditReport)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ApplicantCreditScore)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ApplicantCreditScore)
+            @Html.ValidationMessageFor(model => model.ApplicantCreditScore)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NumberOfOccupantse)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NumberOfOccupantse)
+            @Html.ValidationMessageFor(model => model.NumberOfOccupantse)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NumberOfChildren)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NumberOfChildren)
+            @Html.ValidationMessageFor(model => model.NumberOfChildren)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsApplicationActive)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsApplicationActive)
+            @Html.ValidationMessageFor(model => model.IsApplicationActive)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ApplicaitonDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ApplicaitonDate)
+            @Html.ValidationMessageFor(model => model.ApplicaitonDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsAuthorizedToCheckReference)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsAuthorizedToCheckReference)
+            @Html.ValidationMessageFor(model => model.IsAuthorizedToCheckReference)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ReferenceDocAvailable)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ReferenceDocAvailable)
+            @Html.ValidationMessageFor(model => model.ReferenceDocAvailable)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdentificationDocAvailable)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IdentificationDocAvailable)
+            @Html.ValidationMessageFor(model => model.IdentificationDocAvailable)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IncomeDocAvailable)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IncomeDocAvailable)
+            @Html.ValidationMessageFor(model => model.IncomeDocAvailable)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsAllDocumentsReady)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsAllDocumentsReady)
+            @Html.ValidationMessageFor(model => model.IsAllDocumentsReady)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CurrentLandLordReferenceCheckStatus)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CurrentLandLordReferenceCheckStatus)
+            @Html.ValidationMessageFor(model => model.CurrentLandLordReferenceCheckStatus)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PreviousLandlordReferenceCheckStatus)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PreviousLandlordReferenceCheckStatus)
+            @Html.ValidationMessageFor(model => model.PreviousLandlordReferenceCheckStatus)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CurrentEmployerReferenceCheckStatus)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CurrentEmployerReferenceCheckStatus)
+            @Html.ValidationMessageFor(model => model.CurrentEmployerReferenceCheckStatus)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PreviousEmployerReferenceCheckStatus)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PreviousEmployerReferenceCheckStatus)
+            @Html.ValidationMessageFor(model => model.PreviousEmployerReferenceCheckStatus)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CreditReportCheckStatus)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CreditReportCheckStatus)
+            @Html.ValidationMessageFor(model => model.CreditReportCheckStatus)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IncomeCheckStatus)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IncomeCheckStatus)
+            @Html.ValidationMessageFor(model => model.IncomeCheckStatus)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EmploymentHistoryReferenceCheckStatus)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EmploymentHistoryReferenceCheckStatus)
+            @Html.ValidationMessageFor(model => model.EmploymentHistoryReferenceCheckStatus)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsScreenProcessCompleted)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsScreenProcessCompleted)
+            @Html.ValidationMessageFor(model => model.IsScreenProcessCompleted)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FinalScreeningStatus)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FinalScreeningStatus)
+            @Html.ValidationMessageFor(model => model.FinalScreeningStatus)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

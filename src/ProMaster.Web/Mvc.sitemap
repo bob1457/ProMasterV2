@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvcSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0"
+            xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
+
+  <mvcSiteMapNode title="Home" controller="Home" action="Index">
+    <mvcSiteMapNode title="Manage" controller="Manage" action="Index">
+      <mvcSiteMapNode title="All Properties" controller="Manage" action="AllPropertiesByPm" preservedRouteParameters="id" />
+      <mvcSiteMapNode title="Property Details" controller="Manage" action="PropertyDetails" preservedRouteParameters="id" />
+      <mvcSiteMapNode title="Edit Property" controller="Manage" action="EditProperty" preservedRouteParameters="id"/>
+      <mvcSiteMapNode title="All Tenants" controller="Manage" action="AllTenantsByPm" preservedRouteParameters="id" />
+      <mvcSiteMapNode title="Tenant Details" controller="Manage" action="TenantDetails" preservedRouteParameters="id" />
+      <mvcSiteMapNode title="Edit Tenant" controller="Manage" action="EditTenant" preservedRouteParameters="id"/>
+      <mvcSiteMapNode title="All Owners" controller="Manage" action="AllLandlordsByPm" preservedRouteParameters="id" />
+      <mvcSiteMapNode title="Owner Details" controller="Manage" action="PropertyOwnerDetails" preservedRouteParameters="id" />
+      <mvcSiteMapNode title="Edit Owner" controller="Manage" action="EditLandlord" preservedRouteParameters="id"/>
+      <mvcSiteMapNode title="All Contracts" controller="Manage" action="AllContractsByPm" preservedRouteParameters="id" />
+      <mvcSiteMapNode title="Contract Details" controller="Manage" action="ContractDetails" preservedRouteParameters="id" />
+      <mvcSiteMapNode title="Edit Contract" controller="Manage" action="EditContract" preservedRouteParameters="id"/>
+      <mvcSiteMapNode title="Add Property" controller="Manage" action="AddProperty" preservedRouteParameters="id" />
+      <mvcSiteMapNode title="Add Tenant" controller="Manage" action="AddTenant" preservedRouteParameters="id" />
+      <mvcSiteMapNode title="Add Owner" controller="Manage" action="AddPropertyOwner" preservedRouteParameters="id"/>
+      <mvcSiteMapNode title="Add Contract" controller="Manage" action="AddManagementContract" preservedRouteParameters="id"/>
+      <mvcSiteMapNode title="Add Lease" controller="Manage" action="Addlease" preservedRouteParameters="id"/>
+      <mvcSiteMapNode title="Add Strata Council" controller="Manage" action="AddStrataCouncil" preservedRouteParameters="id"/>
+      <mvcSiteMapNode title="Add Vendor" controller="Manage" action="AddVendor" preservedRouteParameters="id"/>
+      <mvcSiteMapNode title="Site Search" controller="Manage" action="SiteSearch" preservedRouteParameters="id"/>
+      <mvcSiteMapNode title="Lease Details" controller="Manage" action="LeaseDetails" preservedRouteParameters="id" />
+      
+    </mvcSiteMapNode>
+    <mvcSiteMapNode title="Document" controller="Document" action="Index">
+      <mvcSiteMapNode title="Document Details" controller="Document" action="DocumentDetails" preservedRouteParameters="id"/>
+      <mvcSiteMapNode title="Edit Document" controller="Document" action="EditDocument" preservedRouteParameters="id"/>
+      <mvcSiteMapNode title="Search Document" controller="Document" action="SearchDocument" preservedRouteParameters="id"/>
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="Reporting" controller="Reporting" action="Index">
+      <mvcSiteMapNode title="Maintenance Costs" controller="Reporting" action="CostReportByProperty" preservedRouteParameters="id"/>
+      <mvcSiteMapNode title="Financial Statement" controller="Reporting" action="FinancialStatement" preservedRouteParameters="id"/>
+      <mvcSiteMapNode title="Management Costs" controller="Reporting" action="ManagementCostReportByProperty" preservedRouteParameters="id"/>
+      <mvcSiteMapNode title="Rent Revenue" controller="Reporting" action="RentRevenueReportByProperty" preservedRouteParameters="id"/>
+    </mvcSiteMapNode>
+    
+    <mvcSiteMapNode title="Tools" controller="Tools" action="Index">
+      <mvcSiteMapNode title="Calendar/Schedule" controller="Tools" action="Calendar" preservedRouteParameters="id"/>
+      <mvcSiteMapNode title="Marketing" controller="Tools" action="Marketing" preservedRouteParameters="id">
+        <mvcSiteMapNode title="Property Update" controller="Tools" action="PropertyUpdate" preservedRouteParameters="id"/>
+        <mvcSiteMapNode title="Property Listing" controller="Tools" action="ListingPublish" preservedRouteParameters="id"/>
+      </mvcSiteMapNode>
+      <mvcSiteMapNode title="Status Update" controller="Tools" action="StatusUpdate" preservedRouteParameters="id"/>
+      <mvcSiteMapNode title="Application Screening" controller="Tools" action="Applications" preservedRouteParameters="id">
+        <mvcSiteMapNode title="Applicaiton Details" controller="Tools" action="ApplicationDetails" preservedRouteParameters="id"/>
+        <mvcSiteMapNode title="Applicaiton Processing" controller="Tools" action="ProcessApp" preservedRouteParameters="id"/>
+      </mvcSiteMapNode>
+    </mvcSiteMapNode>
+    
+    <mvcSiteMapNode title="Property" controller="Property" action="Index">
+      <mvcSiteMapNode title="Property for Rent" controller="Property" action="Index" preservedRouteParameters="id"/>
+    </mvcSiteMapNode>
+    
+    <mvcSiteMapNode title="About" controller="Home" action="About"/>
+     
+    <mvcSiteMapNode title="Admin" controller="Admin" action="Index">
+      <mvcSiteMapNode title="Create PM" controller="Admin" action="CreatePropertyManager" preservedRouteParameters="id"/>
+      <mvcSiteMapNode title="Manage PM" controller="Admin" action="ManagePMs" preservedRouteParameters="id"/>      
+      <mvcSiteMapNode title="Edit PM" controller="Admin" action="EditPropertyManager" preservedRouteParameters="id"/>
+      <mvcSiteMapNode title="Manager Details" controller="Admin" action="ManagerDetails" preservedRouteParameters="id"/>
+    <mvcSiteMapNode title="Logs and Stats" controller="Tools" action="Logs" preservedRouteParameters="id"/>
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="Client Portal" controller="ClientPortal" action="Index">
+      <!--<mvcSiteMapNode title="" controller="Admin" action="CreatePropertyManager" preservedRouteParameters="id"/>-->
+    </mvcSiteMapNode> 
+  </mvcSiteMapNode>
+
+</mvcSiteMap>

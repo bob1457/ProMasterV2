@@ -1,0 +1,55 @@
+﻿@model ProMaster.Core.Accounting.ViewModels.AccountingCostViewModel
+
+<h3>Financial Statement</h3>
+
+
+Property Infomration:<br />
+@Html.DisplayFor(model => model.PropertyName)<br />
+@Html.DisplayFor(model=>model.PropertyAddressSuiteNumber)
+@Html.DisplayFor(model => model.PropertyAddressStreetNumber)<br />
+@Html.DisplayFor(model=>model.PropertyAddressStreetName)
+@Html.DisplayFor(model => model.PropertyAddressCity)<br />
+@Html.DisplayFor(model=>model.PropertyAddressProvState)
+@Html.DisplayFor(model => model.PropertyAddressPostZipCode)<br />
+@Html.DisplayFor(model=>model.PropertyAddressCountry)<br />
+<p>
+Total Other Cost:<br />
+    @Html.Partial("_OtherCost") 
+
+    <p></p>
+Total Repair Cost:<br />
+    @Html.Partial("_RepairCost") 
+
+    <p></p>
+
+    @Html.Partial("_RentRevenue") 
+
+    <p></p>
+Total Management Fee:<br />
+    @Html.Partial("_ManagementFee") 
+
+    
+    <p>
+        <h3>Total Expenses:</h3>
+    </p>
+    $@ViewBag.totalExpenses
+
+    <p>
+    <h3>Total Rent Revenue:</h3>
+    $@ViewBag.totalRevenue
+
+    </p>
+    <h3>Total Net Income:</h3>
+    $@ViewBag.totalNetIncome
+
+
+
+    <p><a id="pdf" href="@Url.Content("/Accounting/ExportPDF/")" target="_blank" >Export in PDF Format</a></p>
+
+
+<!-- <p><a id="pdf" href="@Url.Content("/Accounting/ExportPDF/" + @Model.PropertyId + @Model.StartPeriod + @Model.EndPeriod)">Export in PDF Format</a></p> -->
+
+    <script type="text/javascript">
+    
+    
+    </script>

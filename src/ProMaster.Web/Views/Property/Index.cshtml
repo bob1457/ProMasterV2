@@ -1,0 +1,226 @@
+﻿@model PagedList.IPagedList<ProMaster.Core.Property.ViewModels.ListingViewModel>
+@using PagedList.Mvc;
+
+
+@{
+    ViewBag.Title = "Properies for Rent";
+}
+
+<div class="content-wrapper">
+    <aside> 
+    <p><!-- Left Panel/Column -->
+      <div id="left">
+      	<div class="side_title-logo">
+        	<img src="@Url.Content("~/Content/Images/house_rent.png")" alt="" title="Tools" />
+            
+        </div>
+        <div class="side_title_caption">
+        	<h3>For Rent List</h3>
+        	<br>
+            <span>All that you need to find right house to rent</span>
+        
+        </div>
+      </div>
+      
+    </p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </aside> <!-- End of aside -->
+
+  <div class="main metro">	
+
+    <div class="list_panel">
+
+        <div id="full_rent_display">
+            @Html.Partial("_ListedProperty")
+
+        </div>
+        
+    </div>  
+      <div id="pager" style="float:left; margin-top: -3em;">
+
+          @Html.PagedListPager(Model, page => Url.Action("Index", new { page, filter = Request.QueryString["filter"] }), new PagedListRenderOptions
+                {
+
+                    LinkToFirstPageFormat = "<<",
+                    LinkToPreviousPageFormat = "<",
+                    LinkToNextPageFormat = ">",
+                    LinkToLastPageFormat = ">>",
+
+                })
+
+      </div>
+      
+  </div><!-- End of main -->
+
+  <br />
+</div><!-- end of content-wrapper -->
+
+<!-- Details Dialog -->
+<div id="details">
+
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".apply_form").hide();
+    });
+</script>
+
+
+<!-- Ajax paging script 
+<script type="text/javascript">
+
+    $('#pager').on('click', 'a', function () {
+
+        //alert(this.href);
+
+        $.ajax({
+            url: this.href,
+            type: 'GET',
+            data: '',
+            cache: false,
+            success: function (result) {
+                $('#full_rent_display').html(result);
+                //alert("done!")
+            }
+        });
+
+        
+        return false;
+    });
+
+</script>
+-->
+
+
+<!-- Google Map API v.3 -->
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+<script type="text/javascript">
+
+    //Initize a map
+    //
+    var geocoder;
+    var map;
+
+    function initialize() {
+
+        geocoder = new google.maps.Geocoder();
+        var latlng = new google.maps.LatLng(-34.397, 150.644);
+
+        //Map options
+        //
+        var mapOptions = {
+
+            center: new google.maps.LatLng(-34.397, 150.644),
+            zoom: 8, //16,
+
+
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            mapTypeControl: true,
+            mapTypeControlOptions:
+            {
+                //style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+                poistion: google.maps.ControlPosition.TOP_RIGHT,
+                mapTypeIds: [google.maps.MapTypeId.ROADMAP,
+                  google.maps.MapTypeId.TERRAIN,
+                  google.maps.MapTypeId.HYBRID,
+                  google.maps.MapTypeId.SATELLITE]
+            },
+            navigationControl: true,
+            navigationControlOptions:
+            {
+                style: google.maps.NavigationControlStyle.ZOOM_PAN
+            },
+            scaleControl: true,
+            disableDoubleClickZoom: true,
+            draggable: true,
+            streetViewControl: true,
+            draggableCursor: 'move'
+
+
+        };
+
+        //Load map
+        //
+        map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+
+        //Geocoder
+        //
+
+
+
+
+
+        //var latitude = 30.3296604;
+        //var longitude = -97.8743174;
+
+
+        //Marker
+        //
+        var marker = new google.maps.Marker
+        (
+            {
+                position: new google.maps.LatLng(-34.397, 150.644),
+                //position: new google.maps.LatLng(latitude, longitude),
+                map: map,
+                title: 'Click me'
+            }
+        );
+
+
+        //Info window
+        //
+        var infowindow = new google.maps.InfoWindow({
+            content: 'Location info: <br />Country Name:<br />LatLng:'
+        });
+
+        google.maps.event.addListener(marker, 'click', function () {
+            // Calling the open method of the infoWindow
+            infowindow.open(map, marker);
+        });
+
+
+    }
+
+
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+
+    function codeAddress() {
+
+        //var geocoder;
+        //var map;
+        var address = document.getElementById('address').value;
+
+        //alert(address);
+
+        geocoder.geocode({ 'address': address }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                map.setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                    map: map,
+                    title: 'Click me',
+                    position: results[0].geometry.location
+                });
+
+
+                //var latitude = results[0].geometry.location.lat();
+                //var longitude = results[0].geometry.location.lng();
+
+
+                //alert(latitude);
+                //alert(longitude);
+            }
+            else {
+                alert("Geocode was not successful for the following reason: " + status);
+            }
+        });
+
+    }
+
+</script>
+

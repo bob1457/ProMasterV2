@@ -1,0 +1,130 @@
+﻿@model PagedList.IPagedList<ProMaster.Core.ViewModels.ManageDisplayViewModel>
+@using PagedList.Mvc;
+
+<!-- <link href="@Url.Content("~/Content/Styles/CustomPagedList.css")" rel="Stylesheet" type="text/css" /> -->
+
+@{
+    ViewBag.Title = "All Properties";
+}
+
+
+<div class="content-wrapper">
+    <aside> 
+    <p><!-- Left Panel/Column -->
+      <div id="left">
+      	<div class="side_title-logo">
+        	<img src="@Url.Content("~/Content/Images/property.png")" alt="" title="Properties" />
+            
+        </div>
+        <div class="side_title_caption">
+        	<h3>Full List of Properites</h3>
+        	<br>
+            <span></span>
+        
+        </div>
+      </div>
+      
+    </p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </aside> <!-- End of aside -->
+
+     <div class="main metro">	
+
+        <div class="list_panel">
+            <h3><i class="icon-list"></i> &nbsp; ALL PROPERTIES UNDER MANAGEMENT        	
+                <span></span>
+            </h3>
+            <P></P>
+            <div id="new_button"><div class="button-med edit_button ">@Html.ActionLink("Add New", "AddProperty")</div></div>
+                <div id="list">
+                    
+                    <table>
+                        <thead>
+            	            <tr>
+                	            <td colspan="10" class="table-h asphalt">
+                                <span><i class="fa fa-th-list"></i></span> Property List
+                                </td>                    
+                            </tr>	
+                        </thead>
+            	            <tr>
+                	            <th>ID</th>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Type</th>                    
+                                <th>Status</th>
+                                <th>Added</th>
+                                <th>Updated</th>
+                                <th></th> 
+                                <th></th>                   
+                            </tr>
+                    @if (Model.Count() != 0)
+                    { 
+            
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PropertyId)
+                                    </td>
+                                    <td>
+                                        <div class="table_img"><img src="@Html.DisplayFor(modeItem => item.PropertyImageUrl)" title="@Html.DisplayFor(modelItem => item.PropertyName)" /></div>
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PropertyName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PropertyDesc)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.pType)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RentalStatus)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CreateDate)
+                                    </td>
+                                     <td>
+                                        @Html.DisplayFor(modelItem => item.UpdateDate)
+                                    </td>
+                                    <td>
+                    	                        <div class="table-button"><a href="@Url.Action("PropertyDetails", "Manage", new { id=item.PropertyId })"><img src="@Url.Content("~/Content/Images/details.png")" title="Details" /></a></div>
+                                    </td>
+                                    <td>
+                    	                        <div class="table-button"><a href="@Url.Action("DeleteProperty", "Manage", new { id=item.PropertyId })"><img src="@Url.Content("~/Content/Images/delete.png")" title="Delete" /></a></div>	
+                                    </td>
+                                 </tr>  
+                            }
+                    }
+                    else
+                    {
+                        <tr>
+                             <td colspan="10">No records></td>
+                        
+                       </tr> 
+               
+                    }
+                            <tfoot>
+                	            <tr>
+                                    <td colspan="10"><span><i class="fa fa-th"></i></span></td>
+                        
+                	            </tr>                
+                            </tfoot>
+            </table>
+
+            
+            @Html.PagedListPager(Model, page => Url.Action("AllPropertiesByPm", new { page, currenFilter = ViewBag.CurrentFiler }))
+
+
+        </div>
+        
+    </div>  
+
+    </div><!-- End of main -->
+
+</div><!-- end of content-wrapper -->
+
+
+

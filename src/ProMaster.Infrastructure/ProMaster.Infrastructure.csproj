@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A1D29A60-AD5D-41BD-8130-291F471941EC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProMaster.Infrastructure</RootNamespace>
+    <AssemblyName>ProMaster.Infrastructure</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc.Html5, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\System.Web.Mvc.Html5.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Email\SMTPService.cs" />
+    <Compile Include="Logging\aspnet_WebEvent_ErrorCodes.cs">
+      <DependentUpon>ProMasterLogReportingDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Logging\Log4NetLogger.cs" />
+    <Compile Include="Logging\Log4Net_Error.cs">
+      <DependentUpon>ProMasterLogReportingDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Logging\LogEvent.cs" />
+    <Compile Include="Logging\LogUtility.cs" />
+    <Compile Include="Logging\ProMasterLogReportingDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProMasterLogReportingDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Logging\ProMasterLogReportingDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProMasterLogReportingDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Logging\ProMasterLogReportingDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProMasterLogReportingDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Logging\ViewModels\LoggingDashBoardViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserProfile\Lease.cs">
+      <DependentUpon>ProMasterUserProfileDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile\LeaseTerm.cs">
+      <DependentUpon>ProMasterUserProfileDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile\Profile.cs">
+      <DependentUpon>ProMasterUserProfileDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile\ProMasterUserProfileDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProMasterUserProfileDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile\ProMasterUserProfileDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProMasterUserProfileDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile\ProMasterUserProfileDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProMasterUserProfileDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile\Property.cs">
+      <DependentUpon>ProMasterUserProfileDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile\PropertyManager.cs">
+      <DependentUpon>ProMasterUserProfileDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile\PropertyOwner.cs">
+      <DependentUpon>ProMasterUserProfileDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile\PropertyType.cs">
+      <DependentUpon>ProMasterUserProfileDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile\Tenant.cs">
+      <DependentUpon>ProMasterUserProfileDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile\User.cs">
+      <DependentUpon>ProMasterUserProfileDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile\ViewModels\CreateProfileViewModel.cs" />
+    <Compile Include="UserProfile\ViewModels\MyProfileViewModel.cs" />
+    <Compile Include="UserProfile\webpages_Membership.cs">
+      <DependentUpon>ProMasterUserProfileDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile\webpages_Roles.cs">
+      <DependentUpon>ProMasterUserProfileDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\FileProcessor.cs" />
+    <Compile Include="Utilities\ImageProcessor.cs" />
+    <Compile Include="Utilities\IPagedList.cs" />
+    <Compile Include="Utilities\PaginatedList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="UserProfile\ProMasterUserProfileDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProMasterUserProfileDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Logging\ProMasterLogReportingDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProMasterLogReportingDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Logging\ProMasterLogReportingDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProMasterLogReportingDataModel.edmx</DependentUpon>
+      <LastGenOutput>ProMasterLogReportingDataModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Logging\ProMasterLogReportingDataModel.edmx.diagram">
+      <DependentUpon>ProMasterLogReportingDataModel.edmx</DependentUpon>
+    </None>
+    <None Include="Logging\ProMasterLogReportingDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProMasterLogReportingDataModel.edmx</DependentUpon>
+      <LastGenOutput>ProMasterLogReportingDataModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="UserProfile\ProMasterUserProfileDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ProMasterUserProfileDataModel.Context.cs</LastGenOutput>
+      <DependentUpon>ProMasterUserProfileDataModel.edmx</DependentUpon>
+    </None>
+    <None Include="UserProfile\ProMasterUserProfileDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ProMasterUserProfileDataModel.cs</LastGenOutput>
+      <DependentUpon>ProMasterUserProfileDataModel.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Libs\System.Web.Mvc.Html5.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,40 @@
+﻿@model ProMaster.Core.Contract.ViewModels.DisplayFeePaymentViewModel
+
+@{
+    ViewBag.Title = "GenerateFeeRecipt";
+    Layout = "~/Views/Shared/_LayoutPDF.cshtml";
+}
+
+<paragraph style="font-family: Helvetica; font-size: 18; font-style: bold;">
+    <chunk><h3>Recipt of Management Fee Payment</h3></chunk>
+</paragraph>
+<newline />
+<paragraph style="font-family: Helvetica; font-size: 18; font-style: italic;">
+	<chunk red="255" green="0" blue="0">@ViewBag.Title</chunk>
+</paragraph>
+<paragraph>
+    <chunk style="font-family:Times;font-weight:bold;">Fee Payment Date: </chunk>
+    <chunk style="font-family:Times;">@Model.FeePaidDate.ToString("MM/dd/yyyy")</chunk>
+</paragraph>
+<paragraph>
+    <chunk style="font-family:Times;font-weight:bold;">Fee Payment Amount: </chunk>
+    <chunk style="font-family:Times;">$@Model.FeePaidAmount</chunk>
+</paragraph>
+<paragraph>
+    <chunk style="font-family:Times;font-weight:bold;">Property: </chunk>
+    <chunk style="font-family:Times;">@Model.PropertyName</chunk>
+</paragraph>
+<paragraph>
+    <chunk style="font-family:Times;font-weight:bold;">Landlord Name: </chunk>
+    <chunk style="font-family:Times;">@Model.LastName, @Model.FisrtName</chunk>
+</paragraph>
+
+<paragraph>
+    <chunk style="font-family:Times;font-weight:bold;">Landlord Email: </chunk>
+    <chunk style="font-family:Times;">@Model.ContactEmail</chunk>
+</paragraph>
+<br />
+<paragraph>
+    <chunk style="font-family:Times;font-weight:bold;">Recipt Generated Date: </chunk>
+    <chunk style="font-family:Times;">@DateTime.Now.ToString("MM/dd/yyyy")</chunk>
+</paragraph>

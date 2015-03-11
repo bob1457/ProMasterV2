@@ -1,0 +1,50 @@
+﻿@model IEnumerable<ProMaster.Core.Tenant.ViewModels.TenantScreenViewModel>
+
+@{
+    ViewBag.Title = "StatusUpdate";
+}
+
+<h2>StatusUpdate</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.ScreenCheckType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ScreenCheckTypeId)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.FinalScreeningStatus)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.ScreenCheckType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreditReportCheckStatus)
+           
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.ScreenCheckStatus)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

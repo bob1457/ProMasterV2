@@ -1,0 +1,132 @@
+﻿<h4>Tenant Information</h4>
+<p></p>
+    @Html.ActionLink("Add New Tenant", "AddTenant")<div id="msg1" style="display:inline"></div>
+    <br />
+<ul>
+    @foreach (var item in Model.Tenants)
+    { 
+        <li>
+            <a href="@Url.Content("~/Manage/TenantDetails/" + @item.TenantId)" title="@item.TenantFirstName @item.TenantLastName">@item.TenantFirstName @item.TenantLastName</a>
+            
+            @item.TenantContactEmail
+            @item.TenantContactTelephone1
+            @item.TenantAddedDate
+            @item.IsActive
+            @item.OnLineAccessEnabled
+            @if (item.IsActive == true)
+            {
+                @Html.ActionLink("Lease Information", "LeaseInfo", new { id=@item.TenantId }, new { @class = "info" })
+
+                if (item.OnLineAccessEnabled == true)
+                {
+                <strong>Online Access Enabled</strong>
+                }
+                else
+                {
+                <a  id="@item.TenantId" class="online" href="#">Enable Online Access</a>   
+                }
+                
+            }
+            else
+            {
+                @Html.ActionLink("Add to Lease", "AddTenantToLease", new { id = @item.TenantId }, new { @class = "info" })
+            }
+            
+
+            <!-- Enable Online Access Script -->
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $("#account").hide();
+                });
+
+                $('#@item.TenantId').click(function () {
+                    var dialogOpts = {
+                        autoOpen: false,
+                        modal: true,
+                        resizable: false,
+                        draggable: false,
+                        width: 400,
+                        title: 'Create User Account',
+                        buttons: {
+                            "Cancel": function () {
+                                $(this).dialog("close");
+                            },
+
+                            "Create": function () {
+                                var name = $("#uname").val();
+                                var pwd = $("#pwd").val();
+                                var pwd2 = $("#pwd2").val();
+
+                                if (name == "") {
+                                    
+                                    $("#msg").html("The user name is required!");
+                                }
+                                else
+                                {
+                                    if (pwd != pwd2) {
+                                        $("#msg").html("The password does not match!");
+                                    }
+                                    else {
+                                        $.ajax({
+                                            type: "POST",
+                                            url: "/Account/CreateAccount",
+                                            data: "userName=" + name + "&passWord=" + pwd + "&id=" + @item.TenantId + "&pId=3",
+                                            contenType: "",
+                                            dataType: "json",
+                                            success: Suceeded
+                                        });
+
+                                        function Suceeded(data) {
+
+                                            $('#msg1').html(data);
+
+                                            $('#msg1').delay(5000).fadeOut(400);
+
+                                            // Refresh the status view
+                                            //
+                                            var url = "/Manage/GetTenantInfo/";
+                                            var q = "";
+                                            //alert(q);
+                                            $.get(url, q, function (data) {
+                                                $("#tenantinfo").html(data);
+                                            });
+                                           
+                                            return false;
+                                        }
+
+
+                                        $(this).dialog("close");
+                                    }
+
+
+                                }
+                                //alert(name);
+                                                             
+                            }
+
+                        }
+                    }
+
+                    $("#account").dialog(dialogOpts).dialog('open');
+
+                    return false;
+                });
+            </script>
+
+        </li>
+    }
+
+</ul>
+<p></p>
+<div id="msg1"></div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".info").button();
+
+        $('#info').click(function () {
+
+        });
+
+    });
+
+</script>

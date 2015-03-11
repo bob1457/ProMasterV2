@@ -1,0 +1,1243 @@
+﻿@model ProMaster.Core.Property.ViewModels.DisplayPropertyViewModel
+
+@{
+    ViewBag.Title = "Property Details";
+}
+
+<!-- Google Map API v.3 -->
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+<div class="content-wrapper">
+
+    <aside> 
+    <p><!-- Left Panel/Column -->
+      <div id="left">
+      	<div class="side_details_logo">
+        	<img src="@Url.Content(@Model.PropertyImageUrl)" alt="" title="Property Details" />
+            
+        </div>
+        <div class="side_details_caption">
+        	<h3>Property Details</h3>
+        	<br />
+            <span>
+            	Detailed property information
+            </span>
+            <div class="side_details_content">
+                
+                <div class="display-label">
+                    Name/Alias:
+                </div><br />
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.PropertyName)
+                </div><br />
+
+                <div class="display-label">
+                    Description:
+                </div><br />
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.PropertyDesc)
+                </div><br />
+            
+                <div class="display-label">
+                    Built in:
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.PropertyBuildYear)
+                </div><br />
+
+                <div class="display-label">
+                    Property Type:
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.PropertyType)
+                </div><br />
+
+                <div class="display-label">
+                    Rental Status:
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Status)
+                </div><br />
+                
+                <div class="display-label">
+                    Record Created on:
+                </div><br />
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.CreationDate)
+                </div><br />
+
+                <div class="display-label">
+                    Record Last Updated on:
+                </div><br />
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.UpdateDate)
+                </div><br />
+            
+            </div>
+            <input id="address" type="hidden" value="@Html.DisplayFor(model => model.PropertyAddressStreetNumber), @Html.DisplayFor(model => model.PropertyAddressStreetName) @Html.DisplayFor(model => model.PropertyAddressCity) @Html.DisplayFor(model => model.PropertyAddressProvState)" />
+            <span id="lookup" style="margin-left: -3.5em;">                
+                <input type="button" value="Map Lookup" onclick="codeAddress()" />
+            </span><br />
+            <div id="map-canvas" style="height:200px; width:300px; margin-left:-3.5em; margin-top:10px; background-color: #f2f2f2; margin-bottom: 2em;"></div>
+
+        </div>
+      </div>
+      
+      
+      
+      
+    </p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </aside><!-- End of aside -->
+    
+    <div class="main metro">	
+    	<div id="manage-tabs" class="tabs-style">
+          <ul>
+            <li><a href="#tabs-1"><i class="fa fa-list-alt"></i> &nbsp;<span>General</span></a></li>
+            <li><a href="#tabs-2"><i class="icon-user"></i> &nbsp;Tenants</a></li>
+            <li><a href="#tabs-3"><i class="icon-user-2"></i> &nbsp;Owner</a></li>
+            <li><a href="#tabs-4"><i class="icon-clipboard-2"></i> &nbsp;Douments</a></li>
+            <li><a href="#tabs-5"><i class="icon-wrench"></i> &nbsp;Repairs/Costs</a></li>
+            <li><a href="#tabs-6"><i class="icon-list"></i> &nbsp;Events</a></li>
+          </ul>
+  		  <div id="tabs-1">    		
+            <div class="tab_content">
+                <div class="tab_content_title">
+                    <span class="title_icon"><img src="@Url.Content(@Model.PropertyImageUrl)" alt="" title="@Model.PropertyName" /></span>
+                    <span class="title_text"><h5>@Model.PropertyName</h5></span>
+                    <br />
+                    <div class="title_caption">@Model.PropertyDesc</div>
+                </div>  
+                <div class="tab_content_field">
+                    <!-- <div class="display-label">
+                        Property Address:
+                    </div> -->
+                    
+                    <fieldset>
+                        <legend><span><i class=" icon-address-book"></i> Address</span></legend>
+                        <div class="basic">
+                                           
+                        <div class="display-label">
+                            Suite Number:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.PropertyAddressSuiteNumber)
+                        </div> 
+                        <br />
+                        <div class="display-label">
+                            Street Number:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.PropertyAddressStreetNumber)
+                        </div> 
+                        <br />
+                        <div class="display-label">
+                            Street Name:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.PropertyAddressStreetName)
+                        </div>
+                        <br />
+                        <div class="display-label">
+                            City:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.PropertyAddressCity)
+                        </div>
+                        <br />
+                        <div class="display-label">
+                            Province/State:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.PropertyAddressProvState)
+                        </div>
+                        <br />
+                        <div class="display-label">
+                            Post Code/Zip Code:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.PropertyAddressPostZipCode)
+                        </div>
+                        <br />
+                        <div class="display-label">
+                            Country:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.PropertyAddressCountry)
+                        </div>
+                        
+                    </div>   
+                    
+                    </fieldset> 
+                    
+                    <fieldset>
+                        <legend><span><i class="fa fa-indent"></i> Features</span></legend>
+                        <ul class="features">
+                            <li>No. of Bedrooms: &nbsp; @Html.DisplayFor(model => model.NumberOfBedrooms)</li>
+                            <li>No. of Bathrooms: &nbsp;@Html.DisplayFor(model => model.NumberOfBathrooms)</li>
+                            <li>No. of Stories: &nbsp;@Html.DisplayFor(model => model.NumberOfFloors)</li>
+                            <li>No. of Parking: &nbsp;@Html.DisplayFor(model => model.NumberOfParkings)</li>
+                            <li>Total Living Area: &nbsp;@Html.DisplayFor(model => model.TotalLivingArea) sqft.</li>
+                            <li>Basedment Available: &nbsp;@Html.DisplayFor(model => model.BasementAvailable)</li>
+                            <li>Shared: &nbsp;@Html.DisplayFor(model => model.IsShared)</li>
+                        </ul>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend><span><i class="fa fa-cog"></i> Facilities</span></legend>
+                        <ul class="facilities">
+                            <li>Stove:&nbsp; @Html.DisplayFor(model=>model.Stove)</li>
+                            <li>Refrigerator: &nbsp;@Html.DisplayFor(model => model.Refrigerator)</li>
+                            <li>Laundray: &nbsp;@Html.DisplayFor(model => model.Laundry)</li>
+                            <li>Diswasher: &nbsp;@Html.DisplayFor(model => model.Dishwasher)</li>
+                            <li>Blinds: &nbsp;@Html.DisplayFor(model => model.Blinds)</li>
+                            <li>TV/Internet&nbsp; @Html.DisplayFor(model=>model.TVInternet)</li>
+                            <li>Furnture: &nbsp;@Html.DisplayFor(model => model.Furniture)</li>
+                            <li>Alarm: &nbsp;@Html.DisplayFor(model => model.FireAlarm)</li>
+                            <li>Common Ar.: &nbsp;@Html.DisplayFor(model => model.CommonFacility)</li>
+                        </ul>
+                        <div class="notes">
+                            Others and Notes: &nbsp; <br /><br />@Html.DisplayFor(model => model.Others)
+                        </div>
+                    </fieldset>
+
+                    <div class="left-aligned backbutton"><a id="back" href="@Url.Content("~/Manage")" title="Back..."><span class="backbutton_format"><i class="icon-arrow-left-3"></i></span> Back to List...</a></div><div class="right-aligned"><div class="button-med edit_button">@Html.ActionLink("Edit", "EditProperty", new { id=Model.PropertyId /**/ })</div></div>
+                </div>
+            
+            </div>
+  		  </div>
+          <div id="tabs-2">
+            <!-- <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p> -->
+            <div class="tab_content">
+                <div class="tab_content_title">
+                    <span class="title_icon"><img src="@Url.Content("~/Content/Images/users.png")" alt="" title="@Model.PropertyName" /></span>
+                    <span class="title_text"><h5>Tenant(s) Information</h5></span>
+                    <br />
+                    <div class="title_caption">Tenant(s) information, including name, contact inforation, etc.</div>
+                </div>
+                <div class="tab_content_field">
+                     <fieldset>
+                        <legend><span><i class="fa fa-info-circle"></i> Tenant Contact Information</span></legend>
+
+                         
+
+                         @if (Model.TenantInfo != null) 
+                         { 
+                             <ul class="content_list">
+                                         @foreach (var item in Model.TenantInfo) 
+                                         {
+                                             <li>
+                                                 <div id="content_info">
+                                           
+                                                <div class="display-label">
+                                                    First Name:
+                                                </div>
+                                                <div class="display-field">
+                                                    @item.FirstName
+                                                </div> 
+                                                <br />
+                                                <div class="display-label">
+                                                    Last Namer:
+                                                </div>
+                                                <div class="display-field">
+                                                    @item.LastName
+                                                </div> 
+                                                <br />
+                                                <div class="display-label">
+                                                    Contact Telephone:
+                                                </div>
+                                                <div class="display-field">
+                                                    @item.ContactTelephone1
+                                                </div>
+                                                <br />
+                                                <div class="display-label">
+                                                    Contact Email:
+                                                </div>
+                                                <div class="display-field">
+                                                    @item.ContactEmail
+                                                </div>
+                                                <br />                        
+                        
+                                                </div>   
+
+                                             </li>
+                                             
+                                             <div class="right-aligned"><div class="edit_button button-med">@Html.ActionLink("Details", "TenantDetails", new { id=@item.TenantId /**/ })</div></div>
+                                         }
+
+                             </ul>
+                             
+                            
+                         }
+                         else
+                         {
+                             <em>No records found!</em>
+                         }
+                       
+                     </fieldset>
+                    <!-- Future implementation
+                    @if(Model.LeaseInfo != null)
+                    {
+                        <div class="button-med edit_button">@Html.ActionLink("Add Tenant to Lease", "AddTenantToLease", new { id = @Model.LeaseId })</div> 
+                    }-->
+                              <p></p>
+
+                     <fieldset>
+                        <legend><span>Lease Agreement Information</span></legend>
+
+                        
+                          @if (Model.LeaseInfo != null) 
+                          { 
+                          <ul class="content_list">
+                                         @foreach (var item in Model.LeaseInfo) 
+                                         {
+                                             <li>
+                                                 <div id="content_info">
+                                           
+                                                <div class="display-label">
+                                                    Lease ID:
+                                                </div>
+                                                <div class="display-field">
+                                                    @item.LeaseId
+                                                </div> 
+                                                <br />
+                                                <div class="display-label">
+                                                    Lease Description:
+                                                </div>
+                                                <div class="display-field">
+                                                    @item.LeaseDesc
+                                                </div> 
+                                                <br />
+                                                <div class="display-label">
+                                                    Lease Sign Date:
+                                                </div>
+                                                <div class="display-field">
+                                                    @item.LeaseSignDate
+                                                </div>
+                                                <br />
+                                                     <div class="display-label">
+                                                    Lease Start Date:
+                                                </div>
+                                                <div class="display-field">
+                                                    @item.LeaseStartDate
+                                                </div>
+                                                <br />
+                                                <div class="display-label">
+                                                    Monthly Rent:
+                                                </div>
+                                                <div class="display-field">
+                                                    $@item.RentAmount
+                                                </div>
+                                                <br />                        
+                        
+                                                </div>   
+
+                                             </li>
+                                             
+                                              <div class="right-aligned"><div class="edit_button button-med">@Html.ActionLink("Details", "LeaseDetails", new { id=@item.LeaseId /**/ })</div></div>
+                                         }
+
+                             </ul>
+                         }
+                         else
+                         {
+                             <em>No records found!</em>
+                         }
+
+                     </fieldset>
+
+                </div>
+                    
+            
+            
+            </div>
+          </div>
+          <div id="tabs-3">
+             <div class="tab_content">
+                <div class="tab_content_title">
+                    <span class="title_icon"><img src="@Url.Content("~/Content/Images/landlord.png")" alt="" title="" /></span>
+                    <span class="title_text"><h5>Landlord(s) Information</h5></span>
+                    <br />
+                    <div class="title_caption">Landord(s), or property owner, information, including name, contact inforation, etc.</div>
+                </div>
+                <div class="tab_content_field">
+                    <fieldset>
+                        <legend><span><i class="fa fa-info-circle"></i> Landlord Contact Information</span></legend>
+
+                        <div class="basic">
+
+                            <div class="display-label">
+                                First Name:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.LandlordFirstName)
+                            </div>
+                            <br />
+                            <div class="display-label">
+                                Last Namer:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.LandlordLastName)
+                            </div>
+                            <br />
+                            <div class="display-label">
+                                Contact Telephone:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.LandlordContactTelephone)
+                            </div>
+                            <br />
+                            <div class="display-label">
+                                Contact Email:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.LandlordContactEmail)
+                            </div>
+                            <br />
+
+
+                        </div>   
+                    
+                        <div class="right-aligned"><div class="edit_button button-med">@Html.ActionLink("Details", "PropertyOwnerDetails", new { id=Model.LandlordId /**/ })</div></div>
+                    </fieldset>
+                
+                
+                </div>
+                    
+            
+            
+            </div>
+            
+          </div>
+
+          <div id="tabs-4">
+             <div class="tab_content">
+                 <div class="tab_content_title">
+                     <span class="title_icon"><img src="@Url.Content("~/Content/Images/documents2.png")" alt="" title="" /></span>
+                     <span class="title_text"><h5>Property Documents</h5></span>
+                     <br />
+                     <div class="title_caption">Property related documents, such as photos, inspection reports, etc.</div>
+                 </div>
+
+                 <div class="tab_content_field">
+                     <fieldset>
+                        <legend><span><i class="fa fa-info-circle"></i> Property Documents</span></legend>
+
+                          <div class="content_info">
+
+                              <div class="button-med edit_button">@Html.ActionLink("Add New", "AddDocument", "Document", new { id="add"})</div>
+                              <p></p>
+
+                              <div id="doc">@Html.Partial("_PropertyDocumentList")</div>
+                          </div>
+
+                     </fieldset>
+
+                 </div>
+             </div>
+          </div>          
+          <div id="tabs-5">
+             <div class="tab_content">
+                   <div class="tab_content_title">
+                    <span class="title_icon"><img src="@Url.Content("~/Content/Images/repair.png")" alt="" title="" /></span>
+                    <span class="title_text"><h5>Maintenance Records</h5></span>
+                    <br />
+                    <div class="title_caption">Property maintenance costs, including repair, replacement and others.</div>
+                </div>
+                   <div class="tab_content_field">
+                    <fieldset>
+                        <legend><span><i class="fa fa-file"></i> Work Order List</span></legend>
+                            <div class="content_info">
+
+                                <div class="button-med edit_button">@Html.ActionLink("Add New", "AddWorkOrder", new { id = @Model.PropertyId })</div>
+                              <p></p>
+
+                                <table>
+                                <thead class="table_head">
+            	                    <tr>
+                	                    <td colspan="9" class="table-h table_head">
+                                        <span><i class="icon-clipboard-2"></i></span> Work Order List
+                                        </td>                    
+                                    </tr>	
+                                </thead>
+            	                <tr>
+                                    
+                	                <th class="table_th">ID</th>
+                                    <th class="table_th">Name</th>
+                                    <th class="table_th">Description</th>
+                                    <th class="table_th">Start Date</th>
+                                    <th class="table_th">Status</th>
+                                    <th class="table_th">Amount</th>
+                                    <th class="table_th">Paid</th>                                    
+                                    <th class="table_th"></th> 
+                                                       
+                                </tr>
+                                @foreach (var item in Model.WorkOrderList)
+                                {
+                                    <tr>                                        
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.WorkOrderId)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.WorkOrderName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.WorkOrderDetails)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.StartDate)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.WorkOrderStatus)
+                                        </td>
+                                        <td>
+                                            $@Html.DisplayFor(modelItem => item.InvoiceAmount)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.IsPaid)
+                                        </td>
+                                        <td>
+                    	                    <div class="table-button"><a href="@Url.Action("WorkOrderDetails", "Manage", new { id=item.WorkOrderId })"><img src="@Url.Content("~/Content/Images/details.png")" title="Details" /></a></div>
+                                        </td>                                        
+                                     </tr>  
+                                }
+                                <tfoot class="table_th">
+                	                <tr>
+                                        <td colspan="9"><span><i class="icon-clipboard-2"></i></span></td>
+                        
+                	                </tr>                
+                                </tfoot>
+                            </table>
+                        
+                            </div>   
+                    
+                       
+                    </fieldset>
+
+                   <fieldset>
+                       <legend><i class="fa fa-file"></i> Other Cost List</legend>
+
+                        <div class="content_info">
+
+                                <div class="button-med edit_button">@Html.ActionLink("Add New", "AddOtherCost", new { id = @Model.PropertyId })</div>
+                              <p></p>
+
+                                <table>
+                                <thead class="table_head">
+            	                    <tr>
+                	                    <td colspan="7" class="table-h table_head">
+                                        <span><i class="icon-clipboard-2"></i></span> Other Cost List
+                                        </td>                    
+                                    </tr>	
+                                </thead>
+            	                <tr>
+                                    
+                	                <th class="table_th">ID</th>
+                                    <th class="table_th">Name</th>
+                                    <th class="table_th">Description</th>
+                                    <th class="table_th">Incurred Date</th>                                    
+                                    <th class="table_th">Amount</th>
+                                    <th class="table_th">Is Paid</th>                                    
+                                    <th class="table_th"></th> 
+                                                       
+                                </tr>
+                                @foreach (var item in Model.OtherCostList)
+                                {
+                                    <tr>                                        
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.OtherCostId)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CostName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CostDetails)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CostAddedDate)
+                                        </td>
+                                        <td>
+                                            $@Html.DisplayFor(modelItem => item.CostAmount)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.IsCostPaid)
+                                        </td>
+                                        
+                                        <td>
+                    	                    <div class="table-button"><a href="@Url.Action("OtherCostDetails", "Manage", new { id=item.OtherCostId })"><img src="@Url.Content("~/Content/Images/details.png")" title="Details" /></a></div>
+                                        </td>                                        
+                                     </tr>  
+                                }
+                                <tfoot class="table_th">
+                	                <tr>
+                                        <td colspan="7"><span><i class="icon-clipboard-2"></i></span></td>
+                        
+                	                </tr>                
+                                </tfoot>
+                            </table>
+                        
+                            </div> 
+
+
+                   </fieldset>
+                
+                
+                </div>
+
+
+               </div>
+            
+          </div>
+          <div id="tabs-6">
+              <div class="tab_content">
+                   <div class="tab_content_title">
+                    <span class="title_icon"><img src="@Url.Content("~/Content/Images/events.png")" alt="" title="" /></span>
+                    <span class="title_text"><h5>Management Activities</h5></span>
+                    <br />
+                    <div class="title_caption">Management event history, including visiting the property, appoinement and meetings with owner and/or tenants, etc.</div>
+                </div>
+                   <div class="tab_content_field">
+                    <fieldset>
+                        <legend><span><i class="fa fa-file"></i> Event Log</span></legend>
+                            <div class="content_info">
+                                <div id="eventList"><!-- Use a partial view for event list -->
+                                   @Html.Partial("_EventList")
+                                </div>
+                                <p></p>
+                                <div id="option"><a href="#" id="open"><span style="color:#1A864E;"><i class="icon-plus"></i></span> Add Event</a><a href="#" id="close"><span style="color:#ff6a00;"><i class="icon-minus"></i></span> Close</a></div>
+                                <br />
+
+                                <div id="event">                                      
+                                    <div class="edit_p">  
+                                                     <fieldset>
+                                                        <legend><span><i class="fa fa-info-circle"></i> Add Event</span></legend>   
+                                                                                                                                                                                
+                                                            <div id="enterevent">
+                                           
+                                                                <div class="display-label">
+                                                                    Event Date: 
+                                                                </div>
+                                                                <div class="display-field">
+                                                                    <input id="date1" type="text" value="@DateTime.Now.ToString("M/d/yyyy")" />
+                                                                </div><br />
+                                                                <div class="display-label">                                        
+                                                                    Evnet Title:
+                                                                </div>
+                                                                <div class="display-field">
+                                                                    <input id="title" type="text" value="" placeholder="Enter Event Subject" />
+                                                                </div><br />
+                                                                <div class="display-label">
+                                                                    Evnet Type: 
+                                                                </div>
+                                                                <div class="display-field">
+                                                                    <select id="type">
+                                                                        <option value="1" selected>Inspection</option>
+                                                                        <option value="2" >Collect Rent</option>
+                                                                        <option value="3" >Repair</option>
+                                                                        <option value="4" >Possession</option>
+                                                                        <option value="5" >Open House</option>
+                                                                        <option value="6" >Demo</option>
+                                                                        <option value="7" >Serve Notice(s)</option>
+                                                                        <option value="8" >Others</option>
+                                                                    </select>
+                                                                </div><br />     
+                                                                <div class="display-label">
+                                                                    Mileage Driven (KM): 
+                                                                </div>
+                                                                <div class="display-field">
+                                                                     <input id="mileage" type="text" placeholder="Enter mileage driven" />
+                                                                </div><br />
+                                                                <div class="display-label">                                        
+                                                                    Hours Spent:
+                                                                </div>
+                                                                <div class="display-field">
+                                                                    <input id="hour" type="text" value="" placeholder="Enter time spent" />
+                                                                </div><br />
+                                                                <div class="display-label">
+                                                                    Event Details: 
+                                                                </div>
+                                                                <div class="display-field">
+                                                                    <textarea id="details" rows = "5" placeholder="Enter Event Details"></textarea>
+                                                                    <p></p>
+                                                                    <div><div class="edit_button button-med"> <a href="#" id="submit">Add</a></div></div>
+                                                                </div><br />
+                                                                <p></p>
+                                                                
+
+                                                        </div>
+                                                     </fieldset>
+
+                                                    <div id="eventadded"></div>
+
+                                                </div>   
+                                </div>
+
+                        
+                        </div>   
+                    
+                       
+                    </fieldset>
+                
+                
+                </div>
+
+
+               </div>
+            
+          </div>		 
+         
+        </div>
+    </div><!-- End of main -->
+</div> <!-- End of content-wrapper -->
+
+
+
+<!-- ***************************************************** -->
+<!-- ***************** Scripts Section ******************* -->
+<!-- ***************************************************** -->
+
+
+<p></p>
+    <div id="ListingView"></div>
+
+
+<!-- The confirmation dialog content -->
+<div id ="delete-dialog" title="Confirmation" style="display:none">
+    <p><span class="dialog-icon"><i class="fa fa-exclamation-triangle"></i></span> Are you sure to delete this document?</p>    
+</div>
+<br />
+<div id="result"></div>
+
+<!-- Delete Confirmation Script -->
+<script type="text/javascript">
+    $('.delete-link').click(function () {
+        var deleteLinkObj = $(this);
+        $('#delete-dialog').dialog();
+        return false;
+    });
+
+    $(function () {
+        $('.delete-link').click(function () {
+            var dialogOpts = {
+                autoOpen: false,
+                modal: true,
+                resizable: false,
+                draggable: false,
+                title: 'Delete Confirmation!',
+                buttons: {
+                    "Cancel": function () {
+                        $(this).dialog("close");
+                    },
+
+                    "Continue": function () {
+                        $.post(deleteLinkObj[0].href, function (data) {
+                            if (data == '@Boolean.TrueString') {
+                                deleteLinkObj.closest("tr").hide('fast');
+                                $("#result").text("The document has been successfully deleted!");
+                            }
+                            else {
+                                $("#result").text("error occured!");
+                            }
+                        });
+                        $(this).dialog("close");
+
+                    }
+                }
+            };
+
+
+            $('#delete-dialog').dialog(dialogOpts).dialog('open');
+            return false;
+        });
+    });
+
+</script>
+
+
+
+
+
+
+<div id="Lstinginfo" style="display:none">
+    <h5>Listing Information</h5>
+    <br>
+    @Html.DisplayFor(model => model.MonthlyRent)
+    <br />
+    @Html.DisplayFor(model => model.ListingDate)
+
+</div>
+
+
+
+<p>
+    <a href="" id="elog" style="display:none">Event Log</a>
+</p>
+
+
+
+<!-- Show Listing Script -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#info1').hide();
+        $('#info').click(function () {
+            $('#Lstinginfo').show();
+            
+            $('#info').hide();
+            $('#info1').show();
+
+        });
+
+        $('#info1').click(function () {
+            $('#Lstinginfo').hide();
+
+            $('#info').show();
+            $('#info1').hide();
+
+        });
+
+
+    }); 
+    
+    
+/*
+    $(function () {
+        $('#showhide').accordion();
+    });*/
+</script>
+
+<!-- Event Script -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#submit").click(function () {             
+            var eventName = $("#title").val();
+            var eventTypeId = $("#type").val();
+            var eventDate = $("#date1").val();
+            var eventDetails = $("#details").val();
+            var mileage = $("#mileage").val();
+            var hours = $("#hour").val();
+
+           
+
+           // alert(Hours);
+            
+
+            $.ajax({
+		                type: "POST",
+		                url: "/Manage/AddEvent",
+		                data: "id=" + @(Model.PropertyId) + "&eventName=" + eventName + "&eventTypeId=" + eventTypeId +"&eventDate=" + eventDate +"&eventDetails=" + eventDetails +"&Mileage=" + mileage + "&TimeSpent=" + hours,
+		                
+                
+		                contenType: "",
+		                dataType: "json",
+		                success: suceeded
+		            });
+
+            //alert("ajax called!");
+
+                    function suceeded(data) {
+		                //alert('success');
+		                //$('#tagAdded').html(data);
+                        $('#eventadded').html(data);
+                        
+                        $('#eventadded').delay(5000).fadeOut(400);
+                        //refresh comments
+                        //
+                        var url="/Manage/GetEventsByProperty/";
+                        var q="id=" + @(Model.PropertyId);
+                            $.get(url, q, function(data){                                
+                                $("#eventList").html(data);            
+                            });
+                         return false;
+		            }
+
+                    /* Clear the fields for new entry*/
+
+                    eventName = $("#title").val('');
+                    // eventTypeId = $("#type").val('');
+                    // eventDate = $("#date1").val('');
+                    eventDetails = $("#details").val('');
+                    mileage = $("#mileage").val('');
+                    hours = $("#time").val('');
+        });
+
+
+
+
+
+        /* $('#showComment').click(function () { //being worked on
+            deleteLinkObj = $(this);
+            $dialog.dialog('open');
+            // prevent the default action, e.g., following a link
+
+            return false;
+        }); */
+    });
+</script>
+
+<!-- Datepicker Script -->
+<script type="text/javascript">
+    $(function () {
+        $("#date1").datepicker({        
+            inline: true,  
+            showOtherMonths: true,  
+            dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],  
+        });
+    });
+
+</script>
+
+<!-- Show/Refresh Event Listing -->
+<script type="text/javascript">
+    $(document).ready(function () { 
+        var url="/Manage/GetEventsByProperty/";
+                        var q="id=" + @(Model.PropertyId);
+                            $.get(url, q, function(data){                                
+                                $("#eventList").html(data);            
+                            });
+    });
+</script>
+
+
+<!-- Add Document Dialog -->
+<div id="add_doc">
+        
+    
+        <p></p>
+        <h4 class="ui-dia"><i class="fa fa-th"></i> &nbsp; ADD NEW DOCUMENT        	
+          
+        </h4>
+         <form id="form" action="@Url.Content("/Document/AddDocument/" + @Model.PropertyId)" method="post" enctype="multipart/form-data">
+              <div class="edit_field ui-dia">
+
+                <fieldset class="ui-dia">
+                    <div class="display-label">
+                        Document Type:       
+                    </div>
+                    <div class="display-field">
+                        <div id="doctype" >@Html.DropDownListFor(model=>model.DocumentTypeId, Model.DocumentTypeList)</div>                   
+                    </div>
+                     <div class="display-label">
+                        <div id="pltype" >Document Category:</div>
+                    </div>
+                    <div class="display-field">
+                        @Html.DropDownListFor(model => model.DocumentPrincipalTypeId, Model.DocumentTyPrincipalpeList, new {@id="t" })
+                    </div> 
+                    <div class="display-label">
+                        Document Title:       
+                    </div>
+                    <div class="display-field">
+                        @Html.TextBoxFor(model => model.DocumentTitle, new { @id="title", placeholder = "Required "}) <br />  <!--   <input id="title" type="text" value="" placeholder="Enter Document Title" /><br /> -->             
+                        @Html.ValidationMessageFor(model => model.DocumentTitle)
+                    </div>
+                    <div class="display-label">
+                        Document Details:       
+                    </div>
+                     <div class="display-field">
+                        @Html.TextAreaFor(model => model.DocumentDetails, new { @id="details", placeholder = "Document Details... "}) <br />
+                    </div>
+                    <div class="display-label">
+                        Upload file:     
+                    </div>
+                    <div class="display-field">
+                        <input id="upload" type="file" name="file" />
+                    </div>
+                    
+                
+            </fieldset>
+             <input class="edit_button" id="submit1" type="submit"  value="Add" />
+             <input class="edit_button" type="button" value="Cancel" id="btncancel" />
+<p></p>
+              </div>
+
+             <div id="progresssbox" style="display:none"><div id="progressbar"></div><div id="status">0%</div></div>
+             <div id="output"></div>
+             
+        </form>
+
+
+    <!-- loading icon -->
+    <div id="loading"></div>
+
+
+    
+ </div>
+
+<!-- Document Upload Script -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#add_doc").hide();
+       // $("#pltype").hide();  
+    });
+
+    //$("#add").button();
+
+    $('#add').click(function () {
+    
+        $("#t").val(1);
+
+
+        var dialogOpts = {
+            autoOpen: false,
+            modal: true,
+            resizable: false,
+            draggable: false,
+            width: 480,
+            title: 'Add Document'
+           
+
+        };
+
+        $("#add_doc").dialog(dialogOpts).dialog('open');
+
+        return false;
+    });
+
+    $("#submit1").click(function() {
+
+        //Upload file
+        
+        $("#add_doc").dialog('close');
+        
+
+        //Reload least document partial view
+        var url = "/Manage/GetDocumentList/";
+        var q="id=" + @Model.PropertyId +"pid=1";
+         //alert(q);
+            $.get(url, q, function(data){                                
+                $("#doc").html(data);            
+            });
+     });   
+
+
+        $("#btncancel").click(function() {
+            $("#add_doc").dialog('close');
+        });  
+
+
+
+</script>
+
+
+<!-- Add Rent Payment Log Script -->
+<script type="text/javascript">
+
+
+
+</script>
+
+<!--Jquery ui tabs Script -->
+<script type="text/javascript">
+    $(function() {
+        $( "#manage-tabs" ).tabs();
+    });
+</script>
+
+<!-- Loading progress icon script -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var option = {
+            target: '#output',
+            /*beforeSubmit: beforeSubmit,*/
+            uploadProgress: OnProgress,
+            success:true
+        };
+
+
+        $("form").submit(function () {
+            $(this).ajaxSubmit(option);
+            return false;
+        });
+    });
+
+    function OnProgress(event, position, total, percentComplete)
+    {
+        progressbar.width(percentComplete + '%');
+        status.html(percentComplete + '%');
+        if (percentComplete > 50)
+        {
+            status.css('color', '#fff');
+        }
+    }
+
+
+</script>
+
+
+<script type="text/javascript">
+
+    /*
+    $(document).ready(function () {
+        $("#loading").show();
+    })
+    */
+
+    /* -- remember, this type of showing loading icon must be put on the page that initiats the refresh or redirect (old or from page) -- */
+
+    $("form").submit(function () {
+        $("#loading").show();
+    });
+
+    /* -- remember, this type of showing loading icon must be put on the page that is the target of redirect (new or to page) -- */
+
+    $(window).load(function () {
+        $("#loading").fadeOut(1000);
+    });
+</script>
+
+<!-- Map Script -->
+<script type="text/javascript">
+
+    //Initize a map
+    //
+    var geocoder;
+    var map;
+
+    function initialize() {
+
+        geocoder = new google.maps.Geocoder();
+        //var latlng = new google.maps.LatLng(-34.397, 150.644); //not showing any map on page load
+
+        //Map options
+        //
+        var mapOptions = {
+
+            //center: new google.maps.LatLng(-34.397, 150.644), //not showing any map on page load
+            zoom: 13,
+
+
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            mapTypeControl: true,
+            mapTypeControlOptions:
+            {
+                //style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+                poistion: google.maps.ControlPosition.TOP_RIGHT,
+                mapTypeIds: [google.maps.MapTypeId.ROADMAP,
+                  google.maps.MapTypeId.TERRAIN,
+                  google.maps.MapTypeId.HYBRID,
+                  google.maps.MapTypeId.SATELLITE]
+            },
+            navigationControl: true,
+            navigationControlOptions:
+            {
+                style: google.maps.NavigationControlStyle.ZOOM_PAN
+            },
+            scaleControl: true,
+            disableDoubleClickZoom: true,
+            draggable: true,
+            streetViewControl: true,
+            draggableCursor: 'move'
+
+
+        };
+
+        //Load map
+        //
+        map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+
+        //Geocoder
+        //
+
+
+
+
+
+        //var latitude = 30.3296604;
+        //var longitude = -97.8743174;
+
+
+        //Marker
+        //
+        var marker = new google.maps.Marker
+        (
+            {
+                position: new google.maps.LatLng(-34.397, 150.644),
+                //position: new google.maps.LatLng(latitude, longitude),
+                map: map,
+                title: 'Click me'
+            }
+        );
+
+
+        //Info window
+        //
+        var infowindow = new google.maps.InfoWindow({
+            content: 'Location info: <br />Country Name:<br />LatLng:'
+        });
+
+        google.maps.event.addListener(marker, 'click', function () {
+            // Calling the open method of the infoWindow
+            infowindow.open(map, marker);
+        });
+
+
+    }
+
+
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+
+    function codeAddress() {
+
+        //var geocoder;
+        //var map;
+        var address = document.getElementById('address').value;
+        //var address = $("addressInfo").val();
+
+        //alert(address);
+
+        geocoder.geocode({ 'address': address }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                map.setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                    map: map,
+                    title: 'Click me',
+                    position: results[0].geometry.location
+                });
+
+
+                //var latitude = results[0].geometry.location.lat();
+                //var longitude = results[0].geometry.location.lng();
+
+
+                //alert(latitude);
+                //alert(longitude);
+                $("#map-canvas").show();
+            }
+            else {
+                alert("Geocode was not successful for the following reason: " + status);
+            }
+        });
+
+    }
+
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        //alert(window.name);
+
+        //write url for back to list button
+        //
+        $("#back").attr("href", window.name);
+
+        $("#close").hide();
+        $(".edit_p").hide();
+
+        $("#open").click(function(){
+            $(".edit_p").show();
+            $("#close").show();
+            $("#open").hide();
+        });
+
+        $("#close").click(function(){
+            $(".edit_p").hide();
+            $("#close").hide();
+            $("#open").show();
+        });
+
+    });
+</script>

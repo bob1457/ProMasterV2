@@ -1,0 +1,240 @@
+﻿@model ProMaster.Core.Contract.ViewModels.CreateContractViewModel
+
+@{
+    ViewBag.Title = "Add Management Contract";
+}
+
+
+
+<div class="content-wrapper">
+    <aside> 
+    <p><!-- Left Panel/Column -->
+      <div id="left">        
+         
+      	    <div class="profile_logo">
+        	    <img src="@Url.Content("~/Content/Images/contract.png")" alt="" title="Add Management Contract" />        
+            </div>
+            <div class="profile_caption metro">
+        	    <h3>New Management Contract</h3>
+                <br />
+                <span>
+            	    Add new management conttract 
+                </span>
+            </div>
+             
+
+      <p></p>
+      
+        <div class="side_title_caption metro">
+            <br/><br />
+            <div>Note:</div>
+            <br />
+            <span>You need all the required information ready. When added, the document in pdf format can be uploaded.</span>
+            <br /><br /><br /><br />
+            <span><i class="icon-new-tab rss_color"></i> Quick Access</span>
+            <div class="side-widget">
+                <a href="@Url.Content("~/Tools/Messaging")" title="Messaging"><div class="tile amarelo" id="p1"><span><i class="fa fa-envelope-o"></i></span><br /><br /> Messaging</div></a>
+                <a href="@Url.Content("~/Tools/Calendar")" title="Calendar"><div class="tile vermelho" id="p2"><span><i class="fa fa-calendar-o"></i></span><br /><br /> Calendar</div></a>
+                <a href="@Url.Content("~/Tools/Resources")" title="Resources"><div class="tile metro_dark_blue" id="p3"><span><i class="fa fa-user"></i></span><br /><br /> Resources</div></a>
+                <a href="@Url.Content("~/Tools/DocTool")" title="Document Tools"><div class="tile purple" id="p4"><span><i class="icon-clipboard-2"></i></span><br /><br /> Document Tools</div></a>
+            </div>
+
+        </div>      
+
+      </div>      
+    </p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </aside><!-- End of aside -->
+
+   <div class="main metro">
+       <div id="add_edit_panel">
+           <h3><i class="fa fa-th"></i> &nbsp; ADD MANAGEMENT CONTRACT        	
+              <span>Please fill/Update all required fields and click "Add".</span>
+           </h3>
+
+           @using (Html.BeginForm())
+           {
+                @Html.ValidationSummary(true)
+
+                 <div class="edit_field">
+                     <fieldset>
+                         <legend><span><i class="fa fa-info-circle"></i> Basic Information</span></legend>
+                                   
+                
+                        <div class="display-label">
+                            Contract Title:
+                        </div>
+                        <div class="display-field">
+                           @Html.TextBoxFor(model => model.ContractTitle, new { autofocus="", required = "required" })
+                           @Html.ValidationMessageFor(model => model.ContractTitle)
+                        </div>
+
+                        <div class="display-label">
+                            Start Date:
+                        </div>
+                        <div class="display-field">
+                              @Html.TextBoxFor(model => model.StartDate, new { @class = "datepicker", @Value = System.DateTime.Now.ToString("M/d/yyyy") })
+                              @Html.ValidationMessageFor(model => model.StartDate)
+                        </div>
+                        
+                        <div class="display-label">
+                            End Date:
+                        </div>
+                        <div class="display-field">
+                              @Html.TextBoxFor(model => model.EndDate, new { @class = "datepicker", @Value = System.DateTime.Now.ToString("M/d/yyyy") })
+                              @Html.ValidationMessageFor(model => model.EndDate)
+                        </div>                    
+
+                        <div class="display-label">
+                           Placement Fee:
+                        </div>
+                        <div class="display-field">
+                            @Html.TextBoxFor(model => model.ListingFeeScale, new { required = "required" })
+                            @Html.ValidationMessageFor(model => model.ListingFeeScale)
+                        </div>
+                         
+
+                        <div class="display-label">
+                           Management Fee (%):
+                        </div>
+                        <div class="display-field">
+                           @Html.TextBoxFor(model => model.FeeScale, new {required = "required" })
+                           @Html.ValidationMessageFor(model => model.FeeScale)
+                        </div>
+
+                        <div class="display-label">
+                            Fee Schedule:
+                        </div>
+                        <div class="display-field">
+                            @Html.DropDownListFor(model => model.FeeFrequencyId, Model.FeeFrequency)
+                        </div>
+
+                        <div class="display-label">
+                            Sign Date
+                        </div>
+                        <div class="display-field">
+                            @Html.TextBoxFor(model => model.SignDate, new { @class = "datepicker", @Value = System.DateTime.Now })
+                            @Html.ValidationMessageFor(model => model.SignDate)
+                        </div>                        
+
+                        <div class="display-label">
+                            Managed Property:
+                        </div>
+                        <div class="display-field">
+                            @Html.DropDownListFor(model => model.PropertyId, Model.Property)                            
+                        </div>
+
+
+                </fieldset>
+
+                
+               
+                </div>  
+                         
+                <div class="right-aligned"><input type="submit" value="Add" /></div>
+           }
+
+       </div>
+
+   </div><!-- End of main -->
+
+</div><!-- End of content-wrapper -->
+
+<!--
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>CreateContractViewModel</legend>
+
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ContractTitle)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ContractTitle)
+            @Html.ValidationMessageFor(model => model.ContractTitle)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StartDate)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.StartDate, new { @class = "datepicker", @Value = System.DateTime.Now.ToString("M/d/yyyy") })
+            @Html.ValidationMessageFor(model => model.StartDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EndDate)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.EndDate, new { @class = "datepicker", @Value = System.DateTime.Now.ToString("M/d/yyyy") })
+            @Html.ValidationMessageFor(model => model.EndDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ListingFeeScale)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ListingFeeScale)
+            @Html.ValidationMessageFor(model => model.ListingFeeScale)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FeeScale)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FeeScale)
+            @Html.ValidationMessageFor(model => model.FeeScale)
+        </div>
+
+
+
+        <div class="editor-label">
+           Management Fee Frequency:
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.FeeFrequencyId, Model.FeeFrequency)
+            
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SignDate)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.SignDate, new { @class = "datepicker", @Value = System.DateTime.Now })
+            @Html.ValidationMessageFor(model => model.SignDate)
+        </div>
+
+        <div class="editor-label">
+            Property:
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.PropertyId, Model.Property)
+            
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+-->
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script type="text/ecmascript">
+    $(function () {
+        $(".datepicker").datepicker();
+    });
+</script>

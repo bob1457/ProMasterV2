@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProMasterLeaseDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ProMasterLeaseDataModelStoreContainer">
+    <EntitySet Name="Addendum" EntityType="ProMasterLeaseDataModel.Store.Addendum" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Lease" EntityType="ProMasterLeaseDataModel.Store.Lease" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LeaseTerm" EntityType="ProMasterLeaseDataModel.Store.LeaseTerm" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Property" EntityType="ProMasterLeaseDataModel.Store.Property" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tenant" EntityType="ProMasterLeaseDataModel.Store.Tenant" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Addendum_Lease" Association="ProMasterLeaseDataModel.Store.FK_Addendum_Lease">
+      <End Role="Lease" EntitySet="Lease" />
+      <End Role="Addendum" EntitySet="Addendum" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lease_LeaseTerm" Association="ProMasterLeaseDataModel.Store.FK_Lease_LeaseTerm">
+      <End Role="LeaseTerm" EntitySet="LeaseTerm" />
+      <End Role="Lease" EntitySet="Lease" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lease_Property" Association="ProMasterLeaseDataModel.Store.FK_Lease_Property">
+      <End Role="Property" EntitySet="Property" />
+      <End Role="Lease" EntitySet="Lease" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Addendum">
+    <Key>
+      <PropertyRef Name="AddendumId" />
+    </Key>
+    <Property Name="AddendumId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AddendumContent" Type="varbinary" Nullable="false" MaxLength="500" />
+    <Property Name="LeaseId" Type="int" Nullable="false" />
+    <Property Name="AddendumDocUrl" Type="varbinary" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Lease">
+    <Key>
+      <PropertyRef Name="LeaseId" />
+    </Key>
+    <Property Name="LeaseId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LeaseTitle" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="LeaseDesc" Type="varchar" MaxLength="4000" />
+    <Property Name="PropertyId" Type="int" Nullable="false" />
+    <Property Name="LeaseStartDate" Type="datetime2" Nullable="false" />
+    <Property Name="LeaseEndDate" Type="datetime2" Nullable="false" />
+    <Property Name="LeaseTermId" Type="int" Nullable="false" />
+    <Property Name="RentFrequency" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="RentAmount" Type="decimal" Nullable="false" />
+    <Property Name="RentDueOn" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="DamageDepositAmount" Type="decimal" Nullable="false" />
+    <Property Name="PetDepositAmount" Type="decimal" />
+    <Property Name="LeaseSignDate" Type="datetime2" Nullable="false" />
+    <Property Name="LeaseAgreementDocUrl" Type="varchar" MaxLength="10" />
+    <Property Name="Addendum" Type="bit" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime2" Nullable="false" />
+    <Property Name="UpdateDate" Type="datetime2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LeaseTerm">
+    <Key>
+      <PropertyRef Name="LeaseTermId" />
+    </Key>
+    <Property Name="LeaseTermId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LeaaseTerm" Type="varchar" Nullable="false" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="Property">
+    <Key>
+      <PropertyRef Name="PropertyId" />
+    </Key>
+    <Property Name="PropertyId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PropertyName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="PropertyDesc" Type="varchar" MaxLength="250" />
+    <Property Name="PropertyTypeId" Type="int" Nullable="false" />
+    <Property Name="PropertyAddressId" Type="int" Nullable="false" />
+    <Property Name="PropertyFeatureId" Type="int" Nullable="false" />
+    <Property Name="PropertyFacilityId" Type="int" Nullable="false" />
+    <Property Name="PropertyOwnerId" Type="int" Nullable="false" />
+    <Property Name="PropertyManagerId" Type="int" Nullable="false" />
+    <Property Name="PropertyImgUrl" Type="varchar" MaxLength="100" />
+    <Property Name="PropertyVideoUrl" Type="varchar" MaxLength="100" />
+    <Property Name="PropertyBuildYear" Type="int" Nullable="false" />
+    <Property Name="PropertyRentalStatusId" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsShared" Type="bit" Nullable="false" />
+    <Property Name="RentalStatusId" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime2" Nullable="false" />
+    <Property Name="UpdateDate" Type="datetime2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tenant">
+    <Key>
+      <PropertyRef Name="TenantId" />
+    </Key>
+    <Property Name="TenantId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ContactEmail" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ContactTelephone1" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="ContactTelephone2" Type="varchar" MaxLength="25" />
+    <Property Name="OnlineAccessEnbaled" Type="bit" Nullable="false" />
+    <Property Name="UserAvartaImgUrl" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="LeaseId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="ManagedBy" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime2" Nullable="false" />
+    <Property Name="UpdateDate" Type="datetime2" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Addendum_Lease">
+    <End Role="Lease" Type="ProMasterLeaseDataModel.Store.Lease" Multiplicity="1" />
+    <End Role="Addendum" Type="ProMasterLeaseDataModel.Store.Addendum" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lease">
+        <PropertyRef Name="LeaseId" />
+      </Principal>
+      <Dependent Role="Addendum">
+        <PropertyRef Name="LeaseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lease_LeaseTerm">
+    <End Role="LeaseTerm" Type="ProMasterLeaseDataModel.Store.LeaseTerm" Multiplicity="1" />
+    <End Role="Lease" Type="ProMasterLeaseDataModel.Store.Lease" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LeaseTerm">
+        <PropertyRef Name="LeaseTermId" />
+      </Principal>
+      <Dependent Role="Lease">
+        <PropertyRef Name="LeaseTermId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lease_Property">
+    <End Role="Property" Type="ProMasterLeaseDataModel.Store.Property" Multiplicity="1" />
+    <End Role="Lease" Type="ProMasterLeaseDataModel.Store.Lease" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="Lease">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

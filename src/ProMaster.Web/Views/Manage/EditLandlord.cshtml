@@ -1,0 +1,274 @@
+﻿@model ProMaster.Core.Property.PropertyOwner
+
+@{
+    ViewBag.Title = "Edit Landlord";
+}
+
+
+<div class="content-wrapper">
+     <aside> 
+    <p><!-- Left Panel/Column -->
+        <div id="left">
+
+
+            <div class="profile_logo">
+                <img src="@Url.Content("~/Content/Images/landlord.png")" alt="" title="@Model.FirstName" />
+            </div>
+            <div class="profile_caption metro">
+                <h3>@Html.DisplayFor(model => model.LastName), @Html.DisplayFor(model => model.FirstName)</h3>
+                <br />
+
+                <span>
+                    <div class="display-label">
+                        Lease Added on:
+                    </div><br />
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.CreationDate)
+                    </div><br />
+
+                    <div class="display-label">
+                        Last Updated on:
+                    </div><br />
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.UpdateDate)
+                    </div><br />
+                </span>
+
+            </div>
+
+        </div>
+      <p></p>
+     
+         <div class="side_title_caption metro">
+             <p></p>
+             <span><i class="icon-new-tab rss_color"></i> Quick Access</span>
+             <div class="side-widget">
+                 <a href="@Url.Content("~/Tools/Messaging")" title="Messaging"><div class="tile amarelo" id="p1"><span><i class="fa fa-envelope-o"></i></span><br /><br /> Messaging</div></a>
+                 <a href="@Url.Content("~/Tools/Calendar")" title="Calendar"><div class="tile vermelho" id="p2"><span><i class="fa fa-calendar-o"></i></span><br /><br /> Calendar</div></a>
+                 <a href="@Url.Content("~/Tools/Resources")" title="Resources"><div class="tile metro_dark_blue" id="p3"><span><i class="fa fa-user"></i></span><br /><br /> Resources</div></a>
+                 <a href="@Url.Content("~/Tools/DocTool")" title="Document Tools"><div class="tile purple" id="p4"><span><i class="icon-clipboard-2"></i></span><br /><br /> Document Tools</div></a>
+             </div>
+
+         </div>      
+
+
+            
+    
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </aside><!-- End of aside -->
+
+  <div class="main metro">
+      <div id="add_edit_panel">
+        <h3><i class="fa fa-th"></i> &nbsp; EDIT PROPERTY OWNER         	
+          <span>Please fill/Update all required fields and click "Save".</span>
+        </h3>
+                <!-- <fieldset class="edit"> 
+                <legend><span></span></legend> --><!-- </fieldset>  -->
+                
+                @using (Html.BeginForm()) 
+                { 
+                    <div class="edit_field">
+                         <fieldset>
+                            <legend><span><i class="fa fa-info-circle"></i> Basic Information</span></legend>
+                            
+                                <div class="display-label">
+                                    <span class="grey-font">Landlord ID:</span>
+                                </div>
+                             <div class="display-field" style="padding-top: 5px;">
+                                 <span class="grey-font">@Html.DisplayFor(model => model.PropertyOwnerId)</span>
+                             </div> 
+                                <br /><br /><br />           
+                                <div class="display-label">
+                                    <span class="grey-font">First Name:</span>
+                                </div>
+                                <div class="display-field">
+                                    <span>@Html.TextBoxFor(model => model.FirstName, new { autofocus = "" })</span>
+                                </div> 
+                                <br />
+                                <div class="display-label">
+                                    Last Name:
+                                </div>
+                                <div class="display-field">
+                                    @Html.TextBoxFor(model => model.LastName)
+                                    @Html.ValidationMessageFor(model => model.LastName)
+                                </div> 
+                                <br />
+                                <div class="display-label">
+                                    Email:
+                                </div>
+                                <div class="display-field">
+                                    @Html.EditorFor(model => model.ContactEmail)
+                                    @Html.ValidationMessageFor(model => model.ContactEmail)                            
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                    Telephone 1:
+                                </div>
+                                <div class="display-field">
+                                    @Html.EditorFor(model => model.ContactTelephone1)
+                                    @Html.ValidationMessageFor(model => model.ContactTelephone1)
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                    Telephone 2:
+                                </div>
+                                <div class="display-field">
+                                   @Html.EditorFor(model => model.ContactTelephone2)
+                                   @Html.ValidationMessageFor(model => model.ContactTelephone2)                           
+                                </div>
+                                <br />
+                               <div class="display-label">
+                                    Is Active:
+                                </div>
+                                <div class="display-field">
+                                    @Html.EditorFor(model => model.IsActive)
+                                    @Html.ValidationMessageFor(model => model.IsActive)
+                                </div>
+                                <div class="display-label">
+                                    Enable Online Access:
+                                </div>
+                                <div class="display-field">
+                                    @Html.EditorFor(model => model.OnlineAccessEnbaled)
+                                    @Html.ValidationMessageFor(model => model.OnlineAccessEnbaled)
+                                </div>
+                                <br />
+                                
+                            </fieldset>
+                                <br />
+                                
+                                <!-- Address 
+                                <hr class="line-separator"></hr>-->
+                        
+
+                    </div> 
+                    
+                    <div class="right-aligned"><input type="submit" value="Save" /></div>
+                } 
+                    
+        </div>
+
+
+  </div>
+
+
+
+
+
+
+</div><!-- End of content-wrapper -->
+
+
+
+
+
+
+
+
+
+
+<!--
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>PropertyOwner</legend>
+
+        @Html.HiddenFor(model => model.PropertyOwnerId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserName)
+            @Html.ValidationMessageFor(model => model.UserName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FirstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FirstName)
+            @Html.ValidationMessageFor(model => model.FirstName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LastName)
+            @Html.ValidationMessageFor(model => model.LastName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ContactEmail)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ContactEmail)
+            @Html.ValidationMessageFor(model => model.ContactEmail)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ContactTelephone1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ContactTelephone1)
+            @Html.ValidationMessageFor(model => model.ContactTelephone1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ContactTelephone2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ContactTelephone2)
+            @Html.ValidationMessageFor(model => model.ContactTelephone2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OnlineAccessEnbaled)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.OnlineAccessEnbaled)
+            @Html.ValidationMessageFor(model => model.OnlineAccessEnbaled)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserAvartaImgUrl)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserAvartaImgUrl)
+            @Html.ValidationMessageFor(model => model.UserAvartaImgUrl)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsActive)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsActive)
+            @Html.ValidationMessageFor(model => model.IsActive)
+        </div>
+
+        
+
+        
+
+        
+
+        
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+    
+-->
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

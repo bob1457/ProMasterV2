@@ -1,0 +1,273 @@
+﻿@model ProMaster.Core.Documents.ViewModels.CreateDcoumentViewModel
+
+@{
+    ViewBag.Title = "Edit Document";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="content-wrapper">
+    <aside> 
+    <p><!-- Left Panel/Column -->
+      <div id="left">
+        
+         
+      	    <div class="profile_logo">
+        	    <img src="@Url.Content("~/Content/Documents/pdf_icon-1.png")" alt="" title="@Model.DocumentTitle" />            
+            </div>
+
+             <div class="profile_caption metro">
+        	    <h3>@Html.DisplayFor(model => model.DocumentTitle)</h3>
+        	    <br />
+
+                <span>
+            	    <div class="display-label">
+                       Document Added on:
+                    </div><br />
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.CreateDate)
+                    </div><br />
+
+                    <div class="display-label">
+                        Last Updated on:
+                    </div><br />
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.UpdateDate)
+                    </div><br />
+                </span>
+
+            @using (Html.BeginForm("EditDocument", "Document", FormMethod.Post, new { @encType = "multipart/form-data" }))
+            {
+               <div class="avatar_update">
+                   <p></p>
+                   <a id="show" href="">Replace Doc File</a><a id="cancel" href="#" >Cancel</a>
+                   <p></p>
+                   <div id="image">                       
+                           <h6>Select document to replace:</h6> 
+                           
+                           <input type="file" name="file" />
+                           <div class="file-upload-buttons">
+                              <input type="submit" name="Submit" value="Update" />
+                           </div>
+                           
+                   </div>
+
+                   
+               </div>            
+          } 
+    </div>
+
+      <p></p>
+      
+      <div class="side-widget tile-margin metro">
+      <p></p>
+        <div class="side-inner">
+          <a href="" title="Edit Tenant"><div class="tile amarelo" id="p1"><span><i class="icon-user"></i></span><br /><br /> Manage Tenants</div></a>
+          <a href="@Url.Content("~/Manage/Calendar")" title="Calendar"><div class="tile vermelho" id="p2"><span><i class="fa fa-file-text-o"></i></span><br /><br /> Manage Lease</div></a>
+          <a href="" title="Vendors"><div class="tile azul" id="p3"><span><i class="fa fa-user"></i></span><br /><br /> Manage Landlords</div></a>
+          <a href="" title="Tenancy Applications"><div class="tile verde" id="p4"><span><i class="icon-clipboard-2"></i></span><br /><br /> <span style="font-size:0.97em;">Manage Contract</span></div></a>	
+        </div>
+      
+      </div>     
+
+
+      </div>      
+    </p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </aside><!-- End of aside -->
+
+    <div class="main metro">
+       <div id="add_edit_panel">
+        <h3><i class="fa fa-th"></i> &nbsp; EDIT DOCUMENT        	
+          <span>Please fill/Update all required fields and click "Save".</span>
+        </h3>
+                <!-- <fieldset class="edit"> 
+                <legend><span></span></legend> --><!-- </fieldset>  -->
+                
+                @using (Html.BeginForm()) 
+                { 
+                    <div class="edit_field">
+                         <fieldset>
+                            <legend><span><i class="fa fa-info-circle"></i> Basic Information</span></legend>
+                            
+                                           
+                                <div class="display-label">
+                                    <span class="grey-font">Council ID:</span>
+                                </div>
+                                <div class="display-field">
+                                    <span class="grey-font">@Html.DisplayFor(model => model.DocumentId)</span>
+                                </div> 
+                                <br /><br />
+                                    <br />
+                                <div class="display-label">
+                                    Document Title:
+                                </div>
+                                <div class="display-field">
+                                    @Html.TextBoxFor(model => model.DocumentTitle, new { autofocus = "" })
+                                    @Html.ValidationMessageFor(model => model.DocumentTitle)
+                                </div> 
+                                <br />
+                                <div class="display-label">
+                                    Document Type:
+                                </div>
+                                <div class="display-field">
+                                   @Html.DropDownListFor(model => model.DocumentTypeId, Model.DocumentTypeList)                            
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                     Document Details:
+                                </div>
+                                <div class="display-field">
+                                    @Html.TextAreaFor(model => model.DocumentDetails)
+                                    @Html.ValidationMessageFor(model => model.DocumentDetails)
+                                </div>
+                                <br />
+                               
+                            </fieldset>
+                                <br />
+
+                        </div> 
+                    
+                    <div class="right-aligned"><input type="submit" value="Save" /></div>
+                } 
+                    
+        
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+</div><!-- End of content-wrapper -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Document</legend>
+
+        @Html.HiddenFor(model => model.DocumentId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DocumentType)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.DocumentTypeId, Model.DocumentTypeList)
+            @Html.ValidationMessageFor(model => model.DocumentType)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DocumentTitle)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DocumentTitle)
+            @Html.ValidationMessageFor(model => model.DocumentTitle)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DocumentDetails)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.DocumentDetails)
+            @Html.ValidationMessageFor(model => model.DocumentDetails)
+        </div>
+
+        
+
+        
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DocumentUrl)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DocumentUrl)
+            @Html.ValidationMessageFor(model => model.DocumentUrl)
+        </div>
+
+
+
+     
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>-->
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#cancel").hide();
+        $("#doc").hide();
+    });
+
+    $("#show").click(function () {
+        $("#doc").show();
+        $("#cancel").show();
+        $("#show").hide();
+        return false;
+    });
+</script>
+
+<script type="text/javascript">
+    $("#cancel").hide();
+    $("#image").hide();
+
+    $("#show").click(function () {
+        $("#image").show();
+        $("#show").hide();
+        $("#cancel").show();
+
+        return false;
+    });
+
+    $("#cancel").click(function () {
+        $("#image").hide();
+        $("#show").show();
+        $("#cancel").hide();
+    });
+</script>

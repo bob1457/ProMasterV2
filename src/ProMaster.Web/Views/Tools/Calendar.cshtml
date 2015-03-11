@@ -1,0 +1,594 @@
+﻿@{
+}
+
+
+<div class="content-wrapper">
+
+    <aside> 
+    <p><!-- Left Panel/Column -->
+      <div id="left">        
+         
+      	    <div class="profile_logo">
+        	    <img src="@Url.Content("~/Content/Images/cal.png")" alt="" title="Add Lease" />        
+            </div>
+            <div class="profile_caption metro">
+        	    <h3>Calendar and Schedule Tool</h3>
+                <br />
+                <span>
+            	Calendar and scheduel tool for property managers    
+                </span>
+            </div>
+            
+            
+
+      <p></p>
+      
+      <div class="side-widget tile-margin metro">
+      <p></p>
+        <div class="side-inner">
+	        <p>Recent and near future appointments and events</p>
+        </div>
+      
+      </div>      
+
+      </div>      
+    </p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </aside>
+
+  <div class="main metro">
+        <div id="cal_container">
+            <div id="calandar"></div>
+            
+        </div>
+  </div><!-- end of main -->
+
+</div><!-- end of content-wrapper -->
+
+
+
+<!-- Add Event Dialog -->
+<p></p>
+<div id="addevent" class="metro" style="display:none">
+
+    <!-- <h3><i class="icon-calendar"></i> Event</h3>
+    <p></p>-->
+
+    <p></p>
+        <h4 class="ui-dia"><i class="fa fa-th"></i> &nbsp; EVENT DETAILS</h4>
+    <div class="edit_field ui-dia">
+        <fieldset class="ui-dia">
+            <div class="display-label">
+               Event Subject:
+            </div>
+            <div class="display-field">
+                <input id="ename" name = "ename" value="" />
+            </div>
+            <div class="display-label">
+               Event Details:
+            </div>
+            <div class="display-field">
+                <textarea id="edetails" name = "edetails" value=""></textarea>
+            </div>
+            <div class="display-label">Date:
+            <div class="display-field">
+                <input id="edate" name = "edate" value="" />
+            </div>
+            <div class="display-field">Start: 
+                <select id="sHour">
+                    <option>00</option>
+                    <option>01</option>
+                    <option>02</option>
+                    <option>03</option>        
+                    <option>04</option>
+                    <option>05</option>
+                    <option>06</option>
+                    <option>07</option>
+                    <option>08</option>
+                    <option>09</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                    <option>16</option>
+                    <option>17</option>
+                    <option>18</option>
+                    <option>19</option>
+                    <option>20</option>
+                    <option>21</option>
+                    <option>22</option>
+                    <option>23</option>               
+                </select>
+                <select id="sMin">
+                    <option>00</option>        
+                    <option>30</option>               
+                </select>
+                </div>
+                <div class="display-field">End:&nbsp; 
+                     <select id="eHour">
+                        <option>00</option>
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>        
+                        <option>04</option>
+                        <option>05</option>
+                        <option>06</option>
+                        <option>07</option>
+                        <option>08</option>
+                        <option>09</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                        <option>13</option>
+                        <option>14</option>
+                        <option>15</option>
+                        <option>16</option>
+                        <option>17</option>
+                        <option>18</option>
+                        <option>19</option>
+                        <option>20</option>
+                        <option>21</option>
+                        <option>22</option>
+                        <option>23</option>        
+                    </select>
+                    <select id="eMin">
+                        <option>00</option>        
+                        <option>30</option>               
+                    </select>
+                </div>
+
+
+        </fieldset>
+       
+        <input id="allday" type="checkbox" /> All Day Event
+        <p></p>
+    
+    
+    
+    
+    </div>
+    
+    <!-- <input id="go" type="button" value="Add" /> -->
+    <p>
+    </p>
+    <div id="added"></div>
+</div>
+
+<!-- Event details dialog -->
+<div id="event">
+    <p></p>
+        <h4 class="ui-dia"><i class="fa fa-th"></i> &nbsp; EVENT DETAILS</h4>
+    <div class="edit_field ui-dia">
+        <fieldset class="ui-dia">            
+                <!-- <div id="calevent">@Html.Partial("_CalendarEvent")</div> -->
+                <div class="display-label">
+                    Event Tilte:
+                    </div>                    
+                <div class="display-field">
+                    <input type="text" id="title" name="title" />
+                </div>
+                <div class="display-label">
+                    Event Details:
+                </div>
+                <div class="display-field">
+                    <textarea id="details" name = "edetails"></textarea><br />
+                </div>
+                <div class="display-label">Date:
+                <div class="display-field">
+                    <input type="text" id="Date" />
+                </div>
+                <div class="display-field">Start:
+                   <select id="shour">
+                    <option>00</option>
+                    <option>01</option>
+                    <option>02</option>
+                    <option>03</option>        
+                    <option>04</option>
+                    <option>05</option>
+                    <option>06</option>
+                    <option>07</option>
+                    <option>08</option>
+                    <option>09</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                    <option>16</option>
+                    <option>17</option>
+                    <option>18</option>
+                    <option>19</option>
+                    <option>20</option>
+                    <option>21</option>
+                    <option>22</option>
+                    <option>23</option>               
+                </select>
+                <select id="smin">
+                    <option>00</option>        
+                    <option>30</option>               
+                </select>
+                </div>
+                <div class="display-field">End:&nbsp; 
+                <select id="ehour">
+                    <option>00</option>
+                    <option>01</option>
+                    <option>02</option>
+                    <option>03</option>        
+                    <option>04</option>
+                    <option>05</option>
+                    <option>06</option>
+                    <option>07</option>
+                    <option>08</option>
+                    <option>09</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                    <option>16</option>
+                    <option>17</option>
+                    <option>18</option>
+                    <option>19</option>
+                    <option>20</option>
+                    <option>21</option>
+                    <option>22</option>
+                    <option>23</option>        
+                </select>
+                <select id="emin">
+                    <option>00</option>        
+                    <option>30</option>               
+                </select>
+        </fieldset>
+        <input type="checkbox" id="allDay" />All Day    
+        
+    </div>
+    <p></p>
+
+</div>
+
+
+<!-- Calendar Script -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#info').click(function () {
+
+        });
+
+        $("#edate").datepicker({
+            dateFormat: 'yy-mm-dd'
+        });
+
+
+
+        $("#Date").datepicker({
+            dateFormat: 'yy-mm-dd'
+        });
+
+
+
+
+
+        $("#calandar").fullCalendar({
+            /**/
+            header: {
+                left: 'agendaDay, agendaWeek, month',
+                center: 'title',
+                right: 'today prev,next'
+            },
+
+            buttonText: {
+                today: 'Today',
+                day: 'Day',
+                week: 'Week',
+                month: 'Month'
+            },
+            events: "/Tools/GetCalendarEvents/",
+
+
+            /* *****************************
+            events: [
+            {
+            title: 'Event1',
+            start: '2014-02-18 11:30',
+            end: '2014-02-18 12:30',
+            allDay: false
+            },
+            {
+            title: 'Event2',
+            start: '2014-02-20 09:00',
+            end: '2014-02-20 11:30',
+            allDay: false
+            }
+
+            ], 
+             ******************************** 
+             */
+            
+            eventColor:'#c27d4f',
+            
+
+
+            eventClick: function (calEvent, jsEvent, view) {
+                // alert('Event: ' + calEvent.title);
+
+                $("#title").val(calEvent.title);
+                $("#details").val(calEvent.details);
+
+                // Get start date and time
+                //
+                var d = calEvent.start;
+                var da = d.getDate();
+                var mo = d.getMonth() + 1;
+                var ye = d.getFullYear();
+
+                if (da < 10)
+                {
+                    da = "0" + da;
+                }
+
+                if (mo < 10)
+                {
+                    mo = "0" + mo;
+                }
+
+                var DA = ye + "-" + mo + "-" + da;
+
+                $("#Date").val(DA);
+                
+                var ho = d.getHours();
+                var mi = d.getMinutes();
+                
+
+                if (ho < 10)
+                {
+                    ho = "0" + ho;
+                }
+
+                if (mi != "30") {
+                    mi = "00";
+                }
+                
+
+                $("#shour").val(ho);
+                $("#smin").val(mi);
+
+                // Get end time
+                //
+                var ed = calEvent.end;
+                //alert(ed);
+
+                var eho = ed.getHours();
+                var emi = ed.getMinutes();
+
+                //alert(emi);
+                if (emi != "30")
+                {
+                    emi = "00";
+                }
+                //alert(emi);
+
+                $("#ehour").val(eho);
+                $("#emin").val(emi);
+
+                //alert(emi);
+
+                $("#event").dialog({  
+
+                    modal: true,
+                    width: "485",                    
+                    buttons: {
+                        "Update": function () {
+                            var name = $("#title").val();
+                            var details = $("#details").val();
+                            var allday = $("#allDay").prop('checked');
+                            var date1 = $("#Date").val();
+                            var shour = $("#shour").val();
+                            var ehour = $("#ehour").val();
+                            var sMin = $("#smin").val();
+                            var eMin = $("#emin").val();
+                            var start = date1 + " " + shour + ":" + sMin;
+                            var end = date1 + " " + ehour + ":" + eMin;
+                            var id = calEvent.id;
+
+                            $.ajax({
+                                type: "POST",
+                                url: "/Tools/UpdateCalendarEvent/",
+                                data: "id=" + id + "&title=" + name + "&details=" + details + "&start=" + start + "&end=" + end + "&allday=" + allday,
+
+                                contenType: "",
+                                dataType: "json",
+                                success: Suceeded
+                            });
+
+                            function Suceeded(data) { //refresh-reload events to caleandar
+                                //$('#added').html(data);
+                                //$('#added').delay(5000).fadeOut(400);
+
+                                //debugger;
+                                $("#calandar").fullCalendar('removeEvents');
+                                $("#calandar").fullCalendar('addEventSource', '/Tools/GetCalendarEvents/');
+                                $("#calandar").fullCalendar('rerenderEvents');
+                                $("#event").dialog("close");
+                                //return false;
+                            }
+
+                        },
+                        "Delete": function () {
+                            if (confirm("Really delete event " + calEvent.title + " ?")) {
+                                jQuery.post(
+                                    "/Tools/DeleteCalendarEvent",
+                                    { "id": calEvent.id }, function () {
+                                        $("#calandar").fullCalendar('removeEvents');
+                                        $("#calandar").fullCalendar('addEventSource', '/Tools/GetCalendarEvents/');
+                                        $("#calandar").fullCalendar('rerenderEvents');
+                                        $("#event").dialog("close");
+                                    }
+                                );
+                               // $("#calandar").fullCalendar('removeEvents', calEvent.id);
+                                
+                            };
+                        },
+                        "Cancel": function () {
+                            $("#event").dialog("close");
+                        }
+
+                    },
+
+
+                    title: calEvent.title,// + calEvent.details, // + calEvent.id,
+                    id: calEvent.id,                    
+                    content: calEvent.details
+                    
+                });
+                
+            },
+
+            dayClick: function (date, allDay, jsEvent, view) {
+                // alert(date);
+                var d = new Date(date);
+                var day = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+
+                if (month < 10) {
+                    month = "0" + month;
+                }
+
+                if (day < 10) {
+                    day = "0" + day;
+                }
+
+                var D = year + "-" + month + "-" + day;
+                $("#edate").val(D);
+
+                var h = date.getHours(date);
+                var m = date.getMinutes(date);
+
+                
+
+                if (m < 10) {
+                    m = "0" + m;
+                }
+
+                if (h != 00) {
+
+                    if (h < 10) {
+                        var sh = "0" + h;
+                        $("#sHour").val(sh);
+                        var eh = h + 1;
+                        if (eh < 10) {
+                            $("#eHour").val("0" + eh);
+                        }
+                        else
+                        {
+                            $("#eHour").val(eh);
+                        }
+                       
+                    }
+                    else {
+
+                        $("#sHour").val(h);
+                        $("#eHour").val(h + 1);
+                    }
+                }
+                else
+                {
+                    $("#sHour").val(h);
+                    $("#eHour").val(h);
+                }
+               
+                $("#sMin").val(m);
+
+               // alert(h + ":" + m);
+
+                $("#addevent").dialog({
+                    title: "Add Event",
+                    modal: true,
+                    width: "485",
+                    buttons: {
+                        "Add": function () {
+                            var name = $("#ename").val();
+                            var details = $("#edetails").val();
+                            var allday = $("#allday").prop('checked');
+                            var date1 = $("#edate").val();
+                            var shour = $("#sHour").val();
+                            var ehour = $("#eHour").val();
+                            var sMin = $("#sMin").val();
+                            var eMin = $("#eMin").val();
+                            var start = date1 + " " + shour + ":" + sMin;
+                            var end = date1 + " " + ehour + ":" + eMin;
+                            /*
+                            alert(start);
+                            alert(end);
+                            alert(shour);
+                            alert(sMin);
+                            alert(start);
+                            alert(end);
+                            */
+
+                            $.ajax({
+                                type: "POST",
+                                url: "/Tools/AddCalendarEvent/",
+                                data: "eventTitle=" + name + "&eventDetails=" + details + "&start=" + start + "&end=" + end + "&allday=" + allday,
+
+                                contenType: "",
+                                dataType: "json",
+                                success: Suceeded
+                            });
+
+                            function Suceeded(data) { //refresh-reload events to caleandar
+                                //$('#added').html(data);
+                                //$('#added').delay(5000).fadeOut(400);
+                                
+                                //debugger;
+                                $("#calandar").fullCalendar('removeEvents');
+                                $("#calandar").fullCalendar('addEventSource', '/Manage/GetCalendarEvents/');
+                                $("#calandar").fullCalendar('rerenderEvents');
+                                //return false;
+                            }
+
+                            
+
+                            $("#addevent").dialog("close");
+                        },
+                        "Cancel": function () {                           
+                            $("#addevent").dialog("close");
+                        }
+
+
+                    }
+
+                });
+
+            },
+
+            //Add non-standard field
+            //
+            eventRender: function (event) {
+                var desc = event.details;            
+            },
+
+
+
+            defaultView: 'month',
+            height: 650,
+            editalbe: false,
+
+            weekends: true
+
+        })
+    });
+
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#event").hide();
+    });
+</script>

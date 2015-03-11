@@ -1,0 +1,70 @@
+﻿@model ProMaster.Core.Property.ViewModels.DisplayPropertyViewModel
+
+@{
+    ViewBag.Title = "_EventList";
+}
+
+
+@if (Model.EventList == null)
+{ 
+    <h5>No Events</h5>
+}
+else
+{
+    
+    <table>
+                                <thead class="table_head">
+            	                    <tr>
+                	                    <td colspan="7" class="table-h table_head">
+                                        <span><i class="icon-clipboard-2"></i></span> Property Visit History
+                                        </td>                    
+                                    </tr>	
+                                </thead>
+            	                <tr>
+                                    
+                	                <th class="table_th">ID</th>
+                                    <th class="table_th">Name</th>
+                                    <th class="table_th">Description</th>
+                                    <th class="table_th">Event Date</th>
+                                    <th class="table_th">Time Spent</th>
+                                    <th class="table_th">Mileage</th>                                                                        
+                                    <th class="table_th"></th> 
+                                                       
+                                </tr>
+                                @foreach (var item in Model.EventList)
+                                {
+                                    <tr>                                        
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.EventId)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.EventTitle)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.EventDetails)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.EventDate)
+                                        </td>
+                                         <td>
+                                            @Html.DisplayFor(modelItem => item.TimeSpent)Hr
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.MileageIncurred)Km
+                                        </td>
+                                        
+                                        <td>
+                    	                    <div class="table-button"><a href="@Url.Action("EventDetails", "manage", new { id=item.EventId })"><img src="@Url.Content("~/Content/Images/details.png")" title="Details" /></a></div>
+                                        </td>                                        
+                                     </tr>  
+                                }
+                                <tfoot class="table_th">
+                	                <tr>
+                                        <td colspan="7"><span><i class="icon-clipboard-2"></i></span></td>
+                        
+                	                </tr>                
+                                </tfoot>
+                            </table>
+    <br />
+    
+}

@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3FBC5EC4-325A-4986-831C-789CEB0E53F1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProMaster.Core</RootNamespace>
+    <AssemblyName>ProMaster.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ProMaster.Infrastructure\Libs\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accounting\ProMasterAccountingDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProMasterAccountingDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\ViewModels\AccountingCostViewModel.cs" />
+    <Compile Include="Accounting\ViewModels\DisplayDashboardViewModel.cs" />
+    <Compile Include="Accounting\ViewModels\FinancialStatementViewModel.cs" />
+    <Compile Include="Accounting\ViewModels\ManagingAccountingViewModel.cs" />
+    <Compile Include="ClientPortal\ViewModels\DisplayClientPortalViewModel.cs" />
+    <Compile Include="Contract\ProMasterManagementContractDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProMasterManagementContractDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\ViewModels\CreateContractViewModel.cs" />
+    <Compile Include="Contract\ViewModels\DisplayContractViewModel.cs" />
+    <Compile Include="Contract\ViewModels\DisplayFeePaymentViewModel.cs" />
+    <Compile Include="Documents\ProMasterDocumentDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProMasterDocumentDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\Validation.cs" />
+    <Compile Include="Documents\ViewModels\CreateDcoumentViewModel.cs" />
+    <Compile Include="Documents\ViewModels\DisplayDcoumentViewModel.cs" />
+    <Compile Include="Documents\ViewModels\DocumentSearchViewModel.cs" />
+    <Compile Include="Lease\ProMasterLeaseDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProMasterLeaseDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Lease\ViewModels\CreateLeaseViewModel.cs" />
+    <Compile Include="Lease\ViewModels\DisplayLeaseViewModel.cs" />
+    <Compile Include="Lease\ViewModels\EditLeaseViewModel.cs" />
+    <Compile Include="Lease\ViewModels\RentPaymentViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyOwner\ProMasterPropertyOwnerDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProMasterPropertyOwnerDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyOwner\ViewModels\CreateLandlordViewModel.cs" />
+    <Compile Include="PropertyOwner\ViewModels\ShowLandlordViewModel.cs" />
+    <Compile Include="Property\ProMasterPropertyDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProMasterPropertyDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Property\ViewModels\CalendarViewModel.cs" />
+    <Compile Include="Property\ViewModels\CreateApplicationViewModel.cs" />
+    <Compile Include="Property\ViewModels\CreateEventViewModel.cs" />
+    <Compile Include="Property\ViewModels\CreatePropertyViewModel.cs" />
+    <Compile Include="Property\ViewModels\DisplayApplicationViewModel.cs" />
+    <Compile Include="Property\ViewModels\DisplayPropertyViewModel.cs" />
+    <Compile Include="Property\ViewModels\ListingViewModel.cs" />
+    <Compile Include="Property\ViewModels\MessagingVieModel.cs" />
+    <Compile Include="Property\ViewModels\PropertyMarketingViewModel.cs" />
+    <Compile Include="Reporting\ProMasterReportingDataModel11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProMasterReportingDataModel1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\ViewModels\AccountingCostViewModel.cs" />
+    <Compile Include="Reporting\ViewModels\DisplayDashboardViewModel.cs" />
+    <Compile Include="Reporting\ViewModels\FinancialStatementViewModel.cs" />
+    <Compile Include="Reporting\ViewModels\ManagingAccountingViewModel.cs" />
+    <Compile Include="Reporting\ViewModels\ReportingViewModel.cs" />
+    <Compile Include="SiteSearch\ViewModels\DocSearchViewModel.cs" />
+    <Compile Include="SiteSearch\ViewModels\SiteSearchViewModel.cs" />
+    <Compile Include="StrataCouncil\ProMasterStrataCouncilDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProMasterStrataCouncilDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="StrataCouncil\ViewModels\CreateStrataCouncilViewModel.cs" />
+    <Compile Include="StrataCouncil\ViewModels\DisplayStrataCouncilViewModel.cs" />
+    <Compile Include="Tenant\ProMasterTenantDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProMasterTenantDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Tenant\ViewModels\CreateTenantViewModel.cs" />
+    <Compile Include="Tenant\ViewModels\DisplayTenantViewModel.cs" />
+    <Compile Include="Tenant\ViewModels\TenantScreenViewModel.cs" />
+    <Compile Include="Vendor\PromMasterVendorDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PromMasterVendorDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Vendor\ViewModels\OtherCostViewModel.cs" />
+    <Compile Include="Vendor\ViewModels\CreateVendorViewModel.cs" />
+    <Compile Include="Vendor\ViewModels\CreateWorkOrderViewModel.cs" />
+    <Compile Include="Vendor\ViewModels\DisplayVendorViewModel.cs" />
+    <Compile Include="Vendor\ViewModels\DisplayWorkOrderViewModel.cs" />
+    <Compile Include="ViewModels\AdminViewModel.cs" />
+    <Compile Include="ViewModels\ClientPortalViewModel.cs" />
+    <Compile Include="ViewModels\ManageDisplayViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Report\ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="PropertyOwner\ProMasterPropertyOwnerDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProMasterPropertyOwnerDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Accounting\ProMasterAccountingDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProMasterAccountingDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config" />
+    <EntityDeploy Include="Property\ProMasterPropertyDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProMasterPropertyDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Contract\ProMasterManagementContractDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProMasterManagementContractDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Tenant\ProMasterTenantDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProMasterTenantDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Lease\ProMasterLeaseDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProMasterLeaseDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Documents\ProMasterDocumentDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProMasterDocumentDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Vendor\PromMasterVendorDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PromMasterVendorDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="StrataCouncil\ProMasterStrataCouncilDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProMasterStrataCouncilDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Reporting\ProMasterReportingDataModel1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProMasterReportingDataModel11.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

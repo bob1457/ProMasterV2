@@ -1,0 +1,450 @@
+﻿@model ProMaster.Core.Lease.ViewModels.CreateLeaseViewModel
+
+@{
+    ViewBag.Title = "Add New Lease";
+}
+
+
+
+
+<div class="content-wrapper">
+    <aside> 
+    <!-- Left Panel/Column -->
+      <div id="left">        
+         
+      	    <div class="profile_logo">
+        	    <img src="@Url.Content("~/Content/Images/lease.png")" alt="" title="Add Lease" />        
+            </div>
+            <div class="profile_caption metro">
+        	    <h3>New Lease Agreement</h3>
+                <br />
+                <span>
+            	    Add new lease agreement 
+                </span>
+            </div>
+             
+
+      <p></p>
+      
+          <div class="side_title_caption metro">
+              <br /><br />
+              <div>Note:</div>
+              <br />
+              <span>You need all the required information ready. When added, the status of the lease agreement will be pending until tenant(s) are added.</span>
+              <br /><br /><br /><br />
+              <span><i class="icon-new-tab rss_color"></i> Quick Access</span>
+              <div class="side-widget">
+                  <a href="@Url.Content("~/Tools/Messaging")" title="Messaging"><div class="tile amarelo" id="p1"><span><i class="fa fa-envelope-o"></i></span><br /><br /> Messaging</div></a>
+                  <a href="@Url.Content("~/Tools/Calendar")" title="Calendar"><div class="tile vermelho" id="p2"><span><i class="fa fa-calendar-o"></i></span><br /><br /> Calendar</div></a>
+                  <a href="@Url.Content("~/Tools/Resources")" title="Resources"><div class="tile metro_dark_blue" id="p3"><span><i class="fa fa-user"></i></span><br /><br /> Resources</div></a>
+                  <a href="@Url.Content("~/Tools/DocTool")" title="Document Tools"><div class="tile purple" id="p4"><span><i class="icon-clipboard-2"></i></span><br /><br /> Document Tools</div></a>
+              </div>
+          </div>      
+
+      </div>      
+    
+    
+  </aside><!-- End of aside -->
+
+
+  <div class="main metro">
+       <div id="add_edit_panel">
+           <h3><i class="fa fa-th"></i> &nbsp; ADD LEASE AGREEMENT        	
+              <span>Please fill/Update all required fields and click "Add".</span>
+           </h3>
+
+            @using (Html.BeginForm()) {
+                @Html.ValidationSummary(true)
+
+                 <div class="edit_field">
+                     <fieldset>
+                         <legend><span><i class="fa fa-info-circle"></i> Basic Information</span></legend>
+                                   
+                
+                        <div class="display-label">
+                            Lease Title:
+                        </div>
+                        <div class="display-field">
+                            @Html.TextBoxFor(model => model.LeaseTitle, new { autofocus = "", required = "Required" })
+                            @Html.ValidationMessageFor(model => model.LeaseTitle)
+                        </div>
+
+                        <div class="display-label">
+                            Description:
+                        </div>
+                        <div class="display-field">
+                             @Html.TextAreaFor(model => model.LeaseDesc)
+                             @Html.ValidationMessageFor(model => model.LeaseDesc)
+                        </div>                   
+
+                        <div class="display-label">
+                           Property:
+                        </div>
+                         <div class="display-field">
+                             @*@Html.DropDownListFor(model => model.PropertyId, Model.PropertyList, new { @id="plist" })*@
+
+                             <div id="list_p">@Html.Partial("_propertyList")</div>
+                         </div>
+                         <input id="allp" type="checkbox" style="font-size: .8em;" /><span style="vertical-align:baseline; padding-top:5px;">Show All <i id="help" class="icon-help" style="color: #32cd32;"></i></span>
+                         <div class="display-label">
+                             Add Tenant
+                         </div>
+                         <div class="display-field">
+                             @*<input id="addten" type="checkbox" />*@ 
+                             @Html.CheckBoxFor(model => model.AddTenant, new { id = "addten"} )
+                         </div><br />
+
+
+                         <div id="existing">
+    
+                            <div class="display-label">
+                                Tenant:
+                            </div>
+                            <div class="display-field">
+                                 
+                                <!-- @Html.ActionLink("Add Tenant", "AddTenant") -->
+                                <div id="lst">@Html.Partial("_tenList")</div>
+                            <a id="addTen" href="#"> Add Tenant</a><div id="msg"></div>
+                            </div>
+    
+                        </div>
+
+                        <div class="display-label">
+                           Lease Term:
+                        </div>
+                        <div class="display-field">
+                           @Html.DropDownListFor(model => model.LeaseTermId, Model.LeaseTermList)
+                        </div>
+
+                        <div class="display-label">
+                            Lease Start Date
+                        </div>
+                        <div class="display-field">
+                            @Html.TextBoxFor(model => model.LeaseStartDate, new { @class = "datepicker", @Value = System.DateTime.Now.ToString("M/d/yyyy") })
+                            @Html.ValidationMessageFor(model => model.LeaseStartDate)
+                        </div>
+
+                        <div class="display-label">
+                            Lease End Date
+                        </div>
+                        <div class="display-field">
+                            @Html.TextBoxFor(model => model.LeaseEndDate, new { @class = "datepicker", @Value = System.DateTime.Now.ToString("M/d/yyyy") })
+                            @Html.ValidationMessageFor(model => model.LeaseEndDate)
+                        </div>
+
+                        <div class="display-label">
+                           Rent Frequency:
+                        </div>
+                        <div class="display-field">
+                            @Html.DropDownListFor(model => model.RentFrequency, ViewBag.DropdownData as List<SelectListItem>)
+                            @Html.ValidationMessageFor(model => model.RentFrequency)
+                        </div>
+
+                        <div class="display-label">
+                            Rent Amount:
+                        </div>
+                        <div class="display-field">
+                            @Html.EditorFor(model => model.RentAmount)
+                            @Html.ValidationMessageFor(model => model.RentAmount)
+                        </div>
+
+                        <div class="display-label">
+                            Damage Deposit:
+                        </div>
+                        <div class="display-field">
+                            @Html.EditorFor(model => model.DamageDepositAmount)
+                            @Html.ValidationMessageFor(model => model.DamageDepositAmount)
+                        </div>
+
+                        <div class="display-label">
+                            Pet Deposit:
+                        </div>
+                        <div class="display-field">
+                            @Html.EditorFor(model => model.PetDepositAmount)
+                            @Html.ValidationMessageFor(model => model.PetDepositAmount)
+                        </div>
+
+                        <div class="display-label">
+                           Rent Due On:
+                        </div>
+                        <div class="display-field">
+                            @Html.DropDownListFor(model => model.RentDueOn, ViewBag.DropdownData2 as List<SelectListItem>)
+                            @Html.ValidationMessageFor(model => model.RentDueOn)
+                        </div>
+
+                        <div class="display-label">
+                            Lease Signed Date:
+                        </div>
+                        <div class="display-field">
+                            @Html.TextBoxFor(model => model.LeaseSignDate, new { @class = "datepicker", @Value = System.DateTime.Now })
+                            @Html.ValidationMessageFor(model => model.LeaseSignDate)
+                        </div>
+
+                        <div class="display-label">
+                            Addendum:
+                        </div>
+                        <div class="display-field">
+                            @Html.EditorFor(model => model.Addendum)
+                            @Html.ValidationMessageFor(model => model.Addendum)
+                        </div>
+
+                        <div class="display-label">
+                            Notes:
+                        </div>
+                        <div class="display-field">
+                            @Html.TextAreaFor(model => model.Notes)            
+                        </div>
+
+
+
+
+                </fieldset>
+
+                
+               
+                </div>  
+                         
+                <div class="right-aligned"><input type="submit" value="Add" /></div>
+            }
+
+            <div>
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+
+
+        </div>  
+
+  </div>
+
+<!-- Add tenant dialog -->
+    <div id="add_ten" title="Property Details" >
+
+        <h4 class="ui-dia"><i class="fa fa-th"></i> &nbsp; ADD TENANT</h4>
+        
+                                      <div class="edit_field ui-dia">
+
+                                        <fieldset class="ui-dia">
+                                            <div class="display-label">
+                                                Fist Name:       
+                                            </div>
+                                            <div class="display-field">
+                                                <input id="fname" type="text" required />                   
+                                            </div>
+                                            <div class="display-label">
+                                                Last Name:       
+                                            </div>
+                                            <div class="display-field">
+                                               <input id="lname" type="text" required />            
+                                            </div>
+                                            <div class="display-label">
+                                                Contact Email:       
+                                            </div>
+                                            <div class="display-field">
+                                                <input id="email" type="text" required />                   
+                                            </div>
+                                            <div class="display-label">
+                                                Telephone 1:       
+                                            </div>
+                                            <div class="display-field">
+                                                <input id="tele" type="text" required />                   
+                                            </div> 
+                                             <div class="display-label">
+                                                Telephone 2:       
+                                            </div>
+                                            <div class="display-field">
+                                                <input id="tele2" type="text" />                   
+                                            </div>                   
+                
+                                    </fieldset>
+                                    
+                                     <p></p>
+                                      </div>
+                               
+                                
+    </div>
+
+</div>
+
+<!-- Add new tenant script -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#add_ten").hide();
+
+        $("#addTen").click(function () {           
+
+            var dialogOpts = {
+                autoOpen: false,
+                modal: true,
+                resizable: false,
+                draggable: false,
+                width: 480,
+                title: 'Add Tenant',
+                buttons: {
+                    "Cancel": function () {
+                        $(this).dialog("close");
+                    },
+
+                    "Continue": function () {
+
+                        var fn = $("#fname").val();
+                        var ln = $("#lname").val();
+                        var email = $("#email").val();
+                        var tel1 = $("#tele").val();
+                        var tel2 = $("#tele2").val();
+
+                        $.ajax({
+                            type: "POST",
+                            url: "/Manage/AddNewTenant",
+                            data: "firstName=" + fn + "&lastName=" + ln + "&eMail=" + email + "&telePhone=" + tel1 + "&telePhone2=" + tel2,
+
+                            contenType: "",
+                            dataType: "json",
+                            success: Suceeded
+                        });
+
+                        function Suceeded(data) {
+                            $("#msg").text(data);
+
+                            $('#msg').delay(5000).fadeOut(3000);
+
+                            //refresh listing
+                            //
+                            var url = "/Manage/GetTenantList/";
+                            //var q="" 
+                            $.get(url, function (data) {
+                                $("#lst").html(data);
+                            });
+
+                        }
+
+                        $(this).dialog("close");
+                    }
+                }
+
+            }
+
+            $("#add_ten").dialog(dialogOpts).dialog('open');
+
+            return false;
+
+
+        });
+
+
+    });
+
+
+</script>
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+<script type="text/ecmascript">
+    $(function () {
+        $(".datepicker").datepicker();
+    });
+
+    @*$(document).ready(function () {
+        $('#new').hide();
+        $('#tenant2').click(function () {
+            $('#new').show();
+            $('#existing').hide();
+        });
+        $('#tenant').click(function () {
+            $('#new').hide();
+            $('#existing').show();
+        });
+
+    });*@
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#allp").prop('checked', false);
+
+        $("#allp").change(function () {
+
+            var isChecked = $(this).is(':checked');
+
+            //alert(isChecked);
+
+            if (isChecked) {
+                var url = "/Manage/GetAllPropertyList";
+                $.get(url, function (data) {
+                    $("#list_p").html(data);
+                });
+            }
+            else {
+                var url = "/Manage/GetListedPropertyList";
+                $.get(url, function (data) {
+                    $("#list_p").html(data);
+                });
+            }
+        });
+
+    });
+
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#existing").hide();
+
+        $("#addten").change(function () {
+
+            var isChecked = $(this).is(':checked');
+
+            
+
+            if(isChecked)
+            {
+                $("#existing").show();
+            }
+            else
+            {
+                $("#existing").hide();
+            }
+
+        });
+    });
+
+</script>
+
+<!-- Tooltip Implementation -->
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        var changeTooltipPosition = function (event) {
+            var tooltipX = event.pageX - 8;
+            var tooltipY = event.pageY + 8;
+            $('div.tooltip').css({ top: tooltipY, left: tooltipX });
+        };
+
+        var showTooltip = function (event) {
+            $('div.tooltip').remove();
+            $('<div class="tooltip">All properties are present so that you can select to override the normal workflow.</div>')
+                  .appendTo('body');
+            changeTooltipPosition(event);
+        };
+
+        var hideTooltip = function () {
+            $('div.tooltip').remove();
+        };
+
+        $("#help").bind({
+            mousemove: changeTooltipPosition,
+            mouseenter: showTooltip,
+            mouseleave: hideTooltip
+        });
+
+       
+    
+
+    });
+
+</script>

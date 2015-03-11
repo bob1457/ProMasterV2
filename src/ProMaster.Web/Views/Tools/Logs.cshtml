@@ -1,0 +1,239 @@
+﻿@model PagedList.IPagedList<ProMaster.Infrastructure.Logging.ViewModels.LoggingDashBoardViewModel>
+
+@{
+    ViewBag.Title = "Logs";
+}
+
+<div class="content-wrapper">
+    <aside>
+        <!-- Left Panel/Column -->
+        <div id="left">
+            <div class="side_details_logo">
+                <img src="@Url.Content("~/Content/Images/logs.png")" alt="" title="Logs and Stats" />
+            </div>
+            <div class="side_details_caption metro">
+                <h3>Systems Logs</h3>
+                <br />
+                <span>
+                    <!----> 	  System logs that help monitoring performance, security and troublshooting. 
+                </span>
+                <p></p><p></p>
+                <h6 style="border-bottom: #fff solid 1px;"></h6>
+                <div class="side_details_content">
+
+                    <p>
+
+
+
+                </div>
+            </div>
+
+
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+        </div>
+    </aside><!-- End of aside -->
+    <div class="main metro">
+        <div id="manage-tabs" class="tabs-style">
+            <ul>
+                <li><a href="#tabs-1"><i class="fa fa-list-alt"></i> &nbsp;<span>Logs: list</span></a></li>
+                <li><a href="#tabs-2"><i class="fa fa-list-alt"></i> &nbsp;<span>Logs: chart</span></a></li>
+                <li><a href="#tabs-3"><i class="fa fa-list-alt"></i> &nbsp;<span>Logs: RSS</span></a></li>
+            </ul>
+            <div id="tabs-1">
+                <div class="tab_content">
+                    <div class="tab_content_title">
+                        <span class="title_icon"><img src="@Url.Content("~/Content/Images/list2.png")" alt="" title="Lease Details" /></span>
+                        <span class="title_text"><h5>System Logs: List</h5></span>
+                        <br />
+                        <span class="title_caption">System logs reording events, exceptions and debug information.</span><br />
+                    </div><br />
+                    <fieldset>
+
+                        <div class="content_info">
+                            <div class="log_head" style="margin-top: -.5em; width: 97%; margin-left: -0.1em;">
+<!-- To be implemented in later version -->
+                                <span>
+                                    Log Level:
+                                    <select id="level" style="background-color: rgb(238, 240, 241); font-size: .95em;">
+                                        <option value="1">ALL</option>
+                                        <option value="2">INFO</option>
+                                        <option value="3">WARN</option>
+                                        <option value="4">ERROR</option>
+                                    </select>
+                                </span>
+                                @*<span>
+        Log Period:
+        <select id="period" style="background-color: rgb(238, 240, 241); font-size: .95em;">
+            <option value="1">All</option>
+            <option value="2">Last 7 Days</option>
+            <option value="3">Last 14 Days</option>
+            <option value="4">Last 30 Days</option>
+            <option value="5">Last 180 Days</option>
+        </select>
+    </span>
+    <div id="get" class="button-mini linkedin_color" style="cursor:pointer; display:inline;">Apply Filter</div>*@
+
+
+                            </div>
+
+
+                            <div id="loglist">
+                                @Html.Partial("_Logs")
+
+
+
+
+
+
+                            </div>
+
+                            <br />
+
+                        </div>
+
+                        <!-- -->
+
+                    </fieldset>
+                </div>
+            </div>
+            <div id="tabs-2">
+                <div class="tab_content">
+                    <div class="tab_content_title">
+                        <span class="title_icon"><img src="@Url.Content("~/Content/Images/chart.png")" alt="" title="Lease Details" /></span>
+                        <span class="title_text"><h5>System Logs: Charts</h5></span>
+                        <br />
+                        <span class="title_caption">System logs reording events, exceptions and debug information.</span><br />
+                    </div><br />
+                    <fieldset>
+                        <legend><span><i class="icon-chart-alt"></i> Log Chart</span></legend>
+                        <div class="content_info">
+
+                            <em>Under construction</em>
+
+                        </div>
+
+                        <!-- -->
+
+                    </fieldset>
+                </div>
+            </div>
+
+            <div id="tabs-3">
+                <div class="tab_content">
+                    <div class="tab_content_title">
+                        <span class="title_icon"><img src="@Url.Content("~/Content/Images/feeds.png")" alt="" title="Lease Details" /></span>
+                        <span class="title_text"><h5>System Logs: RSS Feeds</h5></span>
+                        <br />
+                        <span class="title_caption">System logs reording events, exceptions and debug information.</span><br />
+                    </div><br />
+                    <fieldset>
+                        <legend><span><i class="fa fa-rss"></i> Log RSS</span></legend>
+                        <div class="content_info">
+
+                            <em>Under construction</em>
+
+                        </div>
+
+                        <!-- -->
+
+                    </fieldset>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+ </div>
+   <!--Jquery ui tabs Script -->
+    <script type="text/javascript">
+        $(function () {
+            $("#manage-tabs").tabs();
+        });
+    </script>
+
+    
+    <!--Ajax filtering Script - level -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#level").change(function () {
+
+                var item2 = $("#level option:selected").text();
+
+                //alert(item2);
+                if (item2 == "ALL") {
+                    var url = "/Tools/GetAllLogs";
+                    //var q = "Level=" + item2;
+                    //$.get(url, q, function (data) {
+                    $.get(url, function (data) {
+                        $("#loglist").html(data);
+                    });
+                }
+                else {
+                    var url = "/Tools/GetLogsByLevel";
+                    var q = "Level=" + item2;
+                    $.get(url, q, function (data) {
+                        $("#loglist").html(data);
+                    });
+                }
+
+            });
+
+            $("#period").change(function () {
+
+
+            });
+        });
+    </script>
+
+    <!--Ajax filtering Script - period -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#period").change(function () {
+
+                var item2 = $("#period option:selected").text();
+
+                //alert(item2);
+                if (item2 == "All") {
+                    var url = "/Tools/GetAllLogs";
+                    //var q = "Level=" + item2;
+                    //$.get(url, q, function (data) {
+                    $.get(url, function (data) {
+                        $("#loglist").html(data);
+                    });
+                }
+                else {
+                    var url = "/Tools/GetLogsByPeriod";
+                    var q = "period=" + item2;
+                    $.get(url, q, function (data) {
+                        $("#loglist").html(data);
+                    });
+                }
+
+            });
+
+            $("#period").change(function () {
+
+
+            });
+        });
+    </script>
+
+    @*<script type="text/javascript">
+
+
+        $('#pager').on('click', 'a', function () {
+            //alert(this.href);
+
+            $.ajax({
+                url: this.href,
+                type: 'GET',
+                cache: false,
+                success: function (result) {
+                    $('#loglist').html(result);
+                }
+            });
+            return false;
+        });
+    </script>*@

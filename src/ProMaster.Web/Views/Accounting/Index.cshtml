@@ -1,0 +1,78 @@
+﻿@model ProMaster.Core.Accounting.ViewModels.DisplayDashboardViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Dashboard</h2>
+<p></p>
+<strong>Number of Properties Under Management: </strong> (@Model.MyProperty.Count()) <a id="show" href="#">Show List</a><a id="hide" href="#">Hide List</a>
+<br />
+<strong>Number of Properties Rented: </strong> (@Model.RentedProperty.Count()) <a id="show1" href="#">Show List</a><a id="hide1" href="#">Hide List</a>
+<br />
+<div id="pList">
+<ul>
+    @foreach (var item in Model.MyProperty)
+    { 
+        <li>
+            <a href="@Url.Content("~/Manage/PropertyDetails/" + @item.PropertyId)" title="@item.PropertyName">@item.PropertyName</a>
+            @item.PropertyDesc
+            @item.pType
+            @item.RentalStatus
+            <a id="order" href="@Url.Content("~/Accounting/CostAndRevenueByProperty/" + @item.PropertyId)">Accounting Data</a>
+            <a id="mgnt" href="@Url.Content("~/Accounting/ManagementAccounting/" + @item.PropertyId)">Management Accounting</a>
+        </li>
+    }
+</ul>
+</div>
+
+<div id="rList">
+<ul>
+    @foreach (var item in Model.RentedProperty)
+    { 
+        <li>
+            <a href="@Url.Content("~/Manage/PropertyDetails/" + @item.PropertyId)" title="@item.PropertyName">@item.PropertyName</a>
+            @item.PropertyDesc
+            @item.pType
+            @item.RentalStatus
+            <a id="order1" href="@Url.Content("~/Accounting/CostAndRevenueByProperty/" + @item.PropertyId)">Accounting Data</a>
+            <a id="mgnt" href="@Url.Content("~/Accounting/ManagementAccounting/" + @item.PropertyId)">Management Accounting</a>
+        </li>
+    }
+</ul>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#pList").hide();
+        $("#hide").hide();
+        $("#rList").hide();
+        $("#hide1").hide();
+    
+
+        $("#show").click(function () {
+            $("#pList").show();
+            $("#show").hide();
+            $("#hide").show();
+        });
+
+        $("#show1").click(function () {
+            $("#rList").show();
+            $("#show1").hide();
+            $("#hide1").show();
+        });
+
+        $("#hide").click(function () {
+            $("#pList").hide();
+            $("#show").show();
+            $("#hide").hide();
+        });
+
+        $("#hide1").click(function () {
+            $("#rList").hide();
+            $("#show1").show();
+            $("#hide1").hide();
+        });
+    });
+</script>

@@ -1,0 +1,66 @@
+﻿@model ProMaster.Core.Reporting.ViewModels.ManagingAccountingViewModel
+
+Property Infomration:<br />
+@Html.DisplayFor(model => model.PropertyName)<br />
+@Html.DisplayFor(model=>model.PropertyAddressSuiteNumber)
+@Html.DisplayFor(model => model.PropertyAddressStreetNumber)
+@Html.DisplayFor(model=>model.PropertyAddressStreetName)
+@Html.DisplayFor(model => model.PropertyAddressCity)
+@Html.DisplayFor(model=>model.PropertyAddressProvState)
+@Html.DisplayFor(model => model.PropertyAddressPostZipCode)
+@Html.DisplayFor(model=>model.PropertyAddressCountry)<br />
+<p>
+
+
+
+<h4>Management Fee</h4>
+@if (Model.FeeList.Count() != 0)
+{
+    <ul>
+            @foreach (var item in Model.FeeList)
+            { 
+                <li>
+                    @item.ManagementFeeId
+                    @item.ManagementFeeAmount
+                    @item.IsManagementFeeReceived
+                    @item.ManagementFeeReceivedDate
+                </li>
+            }
+    
+    </ul>  
+
+    <p></p> 
+    <strong>Total Management Fees: $@ViewBag.totalfee</strong>
+}
+else
+{
+    <i>No Fees Found</i> 
+}
+
+<p></p>
+
+@if (Model.EventList.Count() != 0)
+{
+    <ul>
+            @foreach (var item in Model.EventList)
+            { 
+                <li>
+                    @item.EventId
+                    @item.EventDate
+                    @item.EventTitle
+                    @item.VisitTimeSpent Hours
+                    @item.MileageIncurred KMs
+                </li>
+            }
+    
+    </ul>  
+
+    <p></p> 
+    <strong>Total Hours: @ViewBag.totalHours Hours</strong><br />
+    <strong>Total Mileages: @ViewBag.totalMiles KMs</strong>
+}
+else
+{
+    <i>No Events Found</i> 
+}
+

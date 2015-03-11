@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProMasterManagementContractDataModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="ProMasterManagementContractDataEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="ManagementContracts" EntityType="ProMasterManagementContractDataModel.ManagementContract" />
+    <EntitySet Name="ManagementFeeFrequencies" EntityType="ProMasterManagementContractDataModel.ManagementFeeFrequency" />
+    <EntitySet Name="PropertyOwners" EntityType="ProMasterManagementContractDataModel.PropertyOwner" />
+    <AssociationSet Name="FK_ManagementContract_ManagementFeeFrequency" Association="ProMasterManagementContractDataModel.FK_ManagementContract_ManagementFeeFrequency">
+      <End Role="ManagementFeeFrequency" EntitySet="ManagementFeeFrequencies" />
+      <End Role="ManagementContract" EntitySet="ManagementContracts" />
+    </AssociationSet>
+    <EntitySet Name="Documents" EntityType="ProMasterManagementContractDataModel.Document" />
+    <EntitySet Name="DocumentPrincipalTypes" EntityType="ProMasterManagementContractDataModel.DocumentPrincipalType" />
+    <EntitySet Name="DocumentTypes" EntityType="ProMasterManagementContractDataModel.DocumentType" />
+    <AssociationSet Name="FK_Document_DocumentPrincipalType" Association="ProMasterManagementContractDataModel.FK_Document_DocumentPrincipalType">
+      <End Role="DocumentPrincipalType" EntitySet="DocumentPrincipalTypes" />
+      <End Role="Document" EntitySet="Documents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Document_DocumentType" Association="ProMasterManagementContractDataModel.FK_Document_DocumentType">
+      <End Role="DocumentType" EntitySet="DocumentTypes" />
+      <End Role="Document" EntitySet="Documents" />
+    </AssociationSet>
+    <EntitySet Name="ManagementFeeTypes" EntityType="ProMasterManagementContractDataModel.ManagementFeeType" />
+    <EntitySet Name="ManagementFees" EntityType="ProMasterManagementContractDataModel.ManagementFee" />
+    <AssociationSet Name="FK_ManagementFee_ManagementContract" Association="ProMasterManagementContractDataModel.FK_ManagementFee_ManagementContract">
+      <End Role="ManagementContract" EntitySet="ManagementContracts" />
+      <End Role="ManagementFee" EntitySet="ManagementFees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ManagementFee_ManagementFeeType" Association="ProMasterManagementContractDataModel.FK_ManagementFee_ManagementFeeType">
+      <End Role="ManagementFeeType" EntitySet="ManagementFeeTypes" />
+      <End Role="ManagementFee" EntitySet="ManagementFees" />
+    </AssociationSet>
+    <EntitySet Name="Properties" EntityType="ProMasterManagementContractDataModel.Property" />
+    <AssociationSet Name="FK_ManagementContract_Property" Association="ProMasterManagementContractDataModel.FK_ManagementContract_Property">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="ManagementContract" EntitySet="ManagementContracts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Property_PropertyOwner" Association="ProMasterManagementContractDataModel.FK_Property_PropertyOwner">
+      <End Role="PropertyOwner" EntitySet="PropertyOwners" />
+      <End Role="Property" EntitySet="Properties" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ManagementContract">
+    <Key>
+      <PropertyRef Name="ManagementContractId" />
+    </Key>
+    <Property Name="ManagementContractId" Type="Int32" Nullable="false" />
+    <Property Name="ManagementContractTitile" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="ListingFeeScale" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ManagementFeeScale" Type="String" Nullable="false" Unicode="false" MaxLength="50" FixedLength="false" />
+    <Property Name="ManagementFeeFrequencyId" Type="Int32" Nullable="false" />
+    <Property Name="ContractSignDate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="PropertyId" Type="Int32" Nullable="false" />
+    <Property Name="ManagementContractDocUrl" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="ManagementFeeFrequency" Relationship="ProMasterManagementContractDataModel.FK_ManagementContract_ManagementFeeFrequency" FromRole="ManagementContract" ToRole="ManagementFeeFrequency" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="7" />
+    <Property Type="DateTime" Name="UpdateDate" Nullable="false" Precision="7" />
+    <NavigationProperty Name="ManagementFees" Relationship="ProMasterManagementContractDataModel.FK_ManagementFee_ManagementContract" FromRole="ManagementContract" ToRole="ManagementFee" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="Property" Relationship="ProMasterManagementContractDataModel.FK_ManagementContract_Property" FromRole="ManagementContract" ToRole="Property" />
+  </EntityType>
+  <EntityType Name="ManagementFeeFrequency">
+    <Key>
+      <PropertyRef Name="ManagementFeeFrequencyId" />
+    </Key>
+    <Property Name="ManagementFeeFrequencyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="ManagementFeeFrequency1" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="ManagementContracts" Relationship="ProMasterManagementContractDataModel.FK_ManagementContract_ManagementFeeFrequency" FromRole="ManagementFeeFrequency" ToRole="ManagementContract" />
+  </EntityType>
+  <EntityType Name="PropertyOwner">
+    <Key>
+      <PropertyRef Name="PropertyOwnerId" />
+    </Key>
+    <Property Name="PropertyOwnerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ContactEmail" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ContactTelephone1" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="ContactTelephone2" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="OnlineAccessEnbaled" Type="Boolean" Nullable="false" />
+    <Property Name="UserAvartaImgUrl" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="AddedBy" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="AddProperty" Type="Boolean" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="UpdateDate" Type="DateTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="Properties" Relationship="ProMasterManagementContractDataModel.FK_Property_PropertyOwner" FromRole="PropertyOwner" ToRole="Property" />
+  </EntityType>
+  <Association Name="FK_ManagementContract_ManagementFeeFrequency">
+    <End Role="ManagementFeeFrequency" Type="ProMasterManagementContractDataModel.ManagementFeeFrequency" Multiplicity="1" />
+    <End Role="ManagementContract" Type="ProMasterManagementContractDataModel.ManagementContract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManagementFeeFrequency">
+        <PropertyRef Name="ManagementFeeFrequencyId" />
+      </Principal>
+      <Dependent Role="ManagementContract">
+        <PropertyRef Name="ManagementFeeFrequencyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Document">
+    <Key>
+      <PropertyRef Name="DocumentId" />
+    </Key>
+    <Property Type="Int32" Name="DocumentId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="DocumentTypeId" Nullable="false" />
+    <Property Type="String" Name="DocumentName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DcoumentDetails" Nullable="false" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="DocumentPrincipalTypeId" Nullable="false" />
+    <Property Type="Int32" Name="DocumentPrincipalId" Nullable="false" />
+    <Property Type="String" Name="DocumentUrl" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="7" />
+    <Property Type="DateTime" Name="UpdateDate" Nullable="false" Precision="7" />
+    <NavigationProperty Name="DocumentPrincipalType" Relationship="ProMasterManagementContractDataModel.FK_Document_DocumentPrincipalType" FromRole="Document" ToRole="DocumentPrincipalType" />
+    <NavigationProperty Name="DocumentType" Relationship="ProMasterManagementContractDataModel.FK_Document_DocumentType" FromRole="Document" ToRole="DocumentType" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DocumentPrincipalType">
+    <Key>
+      <PropertyRef Name="DocumentPrincipalTypeId" />
+    </Key>
+    <Property Type="Int32" Name="DocumentPrincipalTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="DocumentPrincipalType1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Documents" Relationship="ProMasterManagementContractDataModel.FK_Document_DocumentPrincipalType" FromRole="DocumentPrincipalType" ToRole="Document" />
+  </EntityType>
+  <EntityType Name="DocumentType">
+    <Key>
+      <PropertyRef Name="DocumentTypeId" />
+    </Key>
+    <Property Type="Int32" Name="DocumentTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="DocumentType1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Documents" Relationship="ProMasterManagementContractDataModel.FK_Document_DocumentType" FromRole="DocumentType" ToRole="Document" />
+  </EntityType>
+  <Association Name="FK_Document_DocumentPrincipalType">
+    <End Type="ProMasterManagementContractDataModel.DocumentPrincipalType" Role="DocumentPrincipalType" Multiplicity="1" />
+    <End Type="ProMasterManagementContractDataModel.Document" Role="Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentPrincipalType">
+        <PropertyRef Name="DocumentPrincipalTypeId" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="DocumentPrincipalTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Document_DocumentType">
+    <End Type="ProMasterManagementContractDataModel.DocumentType" Role="DocumentType" Multiplicity="1" />
+    <End Type="ProMasterManagementContractDataModel.Document" Role="Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentType">
+        <PropertyRef Name="DocumentTypeId" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="DocumentTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ManagementFeeType">
+    <Key>
+      <PropertyRef Name="ManagementFeeTypeId" />
+    </Key>
+    <Property Type="Int32" Name="ManagementFeeTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="ManagementFeeType1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ManagementFees" Relationship="ProMasterManagementContractDataModel.FK_ManagementFee_ManagementFeeType" FromRole="ManagementFeeType" ToRole="ManagementFee" />
+  </EntityType>
+  <EntityType Name="ManagementFee">
+    <Key>
+      <PropertyRef Name="ManagementFeeId" />
+    </Key>
+    <Property Type="Int32" Name="ManagementFeeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="ManagementFeeTypeId" Nullable="false" />
+    <Property Type="Decimal" Name="ManagementFeeAmount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="ManagementFeeMonth" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ManagementFeeYear" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsReceived" Nullable="false" />
+    <Property Type="DateTime" Name="ManagementDueDate" Nullable="false" Precision="7" />
+    <Property Type="DateTime" Name="ReceivedDate" Nullable="false" Precision="7" />
+    <Property Type="Int32" Name="ManagementContractId" Nullable="false" />
+    <Property Type="String" Name="Notes" MaxLength="450" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ManagementContract" Relationship="ProMasterManagementContractDataModel.FK_ManagementFee_ManagementContract" FromRole="ManagementFee" ToRole="ManagementContract" />
+    <NavigationProperty Name="ManagementFeeType" Relationship="ProMasterManagementContractDataModel.FK_ManagementFee_ManagementFeeType" FromRole="ManagementFee" ToRole="ManagementFeeType" />
+  </EntityType>
+  <Association Name="FK_ManagementFee_ManagementContract">
+    <End Type="ProMasterManagementContractDataModel.ManagementContract" Role="ManagementContract" Multiplicity="1" />
+    <End Type="ProMasterManagementContractDataModel.ManagementFee" Role="ManagementFee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManagementContract">
+        <PropertyRef Name="ManagementContractId" />
+      </Principal>
+      <Dependent Role="ManagementFee">
+        <PropertyRef Name="ManagementContractId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ManagementFee_ManagementFeeType">
+    <End Type="ProMasterManagementContractDataModel.ManagementFeeType" Role="ManagementFeeType" Multiplicity="1" />
+    <End Type="ProMasterManagementContractDataModel.ManagementFee" Role="ManagementFee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManagementFeeType">
+        <PropertyRef Name="ManagementFeeTypeId" />
+      </Principal>
+      <Dependent Role="ManagementFee">
+        <PropertyRef Name="ManagementFeeTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Property">
+    <Key>
+      <PropertyRef Name="PropertyId" />
+    </Key>
+    <Property Type="Int32" Name="PropertyId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="PropertyName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PropertyDesc" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PropertyListDesc" MaxLength="450" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="PropertyTypeId" Nullable="false" />
+    <Property Type="Int32" Name="StrataCouncilId" />
+    <Property Type="Int32" Name="PropertyAddressId" Nullable="false" />
+    <Property Type="Int32" Name="PropertyFeatureId" Nullable="false" />
+    <Property Type="Int32" Name="PropertyFacilityId" Nullable="false" />
+    <Property Type="Int32" Name="PropertyOwnerId" Nullable="false" />
+    <Property Type="Int32" Name="PropertyManagerId" Nullable="false" />
+    <Property Type="String" Name="PropertyImgUrl" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PropertyVideoUrl" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="PropertyBuildYear" Nullable="false" />
+    <Property Type="Int32" Name="PropertyMgmntlStatusId" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsShared" Nullable="false" />
+    <Property Type="Int32" Name="RentalStatusId" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="7" />
+    <Property Type="DateTime" Name="UpdateDate" Nullable="false" Precision="7" />
+    <NavigationProperty Name="ManagementContracts" Relationship="ProMasterManagementContractDataModel.FK_ManagementContract_Property" FromRole="Property" ToRole="ManagementContract" />
+    <NavigationProperty Name="PropertyOwner" Relationship="ProMasterManagementContractDataModel.FK_Property_PropertyOwner" FromRole="Property" ToRole="PropertyOwner" />
+  </EntityType>
+  <Association Name="FK_ManagementContract_Property">
+    <End Type="ProMasterManagementContractDataModel.Property" Role="Property" Multiplicity="1" />
+    <End Type="ProMasterManagementContractDataModel.ManagementContract" Role="ManagementContract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="ManagementContract">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Property_PropertyOwner">
+    <End Type="ProMasterManagementContractDataModel.PropertyOwner" Role="PropertyOwner" Multiplicity="1" />
+    <End Type="ProMasterManagementContractDataModel.Property" Role="Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyOwner">
+        <PropertyRef Name="PropertyOwnerId" />
+      </Principal>
+      <Dependent Role="Property">
+        <PropertyRef Name="PropertyOwnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

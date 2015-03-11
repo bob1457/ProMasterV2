@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProMasterTenancyDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ProMasterTenancyDataModelStoreContainer">
+    <EntitySet Name="Event" EntityType="ProMasterTenancyDataModel.Store.Event" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EventType" EntityType="ProMasterTenancyDataModel.Store.EventType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Lease" EntityType="ProMasterTenancyDataModel.Store.Lease" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LeaseTerm" EntityType="ProMasterTenancyDataModel.Store.LeaseTerm" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Property" EntityType="ProMasterTenancyDataModel.Store.Property" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PropertyOwner" EntityType="ProMasterTenancyDataModel.Store.PropertyOwner" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PropertyType" EntityType="ProMasterTenancyDataModel.Store.PropertyType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RentPayment" EntityType="ProMasterTenancyDataModel.Store.RentPayment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RentPaymentMethod" EntityType="ProMasterTenancyDataModel.Store.RentPaymentMethod" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tenant" EntityType="ProMasterTenancyDataModel.Store.Tenant" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Vendor" EntityType="ProMasterTenancyDataModel.Store.Vendor" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WorkOrder" EntityType="ProMasterTenancyDataModel.Store.WorkOrder" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WorkOrderStatus" EntityType="ProMasterTenancyDataModel.Store.WorkOrderStatus" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Event_EventType" Association="ProMasterTenancyDataModel.Store.FK_Event_EventType">
+      <End Role="EventType" EntitySet="EventType" />
+      <End Role="Event" EntitySet="Event" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_Property" Association="ProMasterTenancyDataModel.Store.FK_Event_Property">
+      <End Role="Property" EntitySet="Property" />
+      <End Role="Event" EntitySet="Event" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lease_LeaseTerm" Association="ProMasterTenancyDataModel.Store.FK_Lease_LeaseTerm">
+      <End Role="LeaseTerm" EntitySet="LeaseTerm" />
+      <End Role="Lease" EntitySet="Lease" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lease_Property" Association="ProMasterTenancyDataModel.Store.FK_Lease_Property">
+      <End Role="Property" EntitySet="Property" />
+      <End Role="Lease" EntitySet="Lease" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Property_PropertyOwner" Association="ProMasterTenancyDataModel.Store.FK_Property_PropertyOwner">
+      <End Role="PropertyOwner" EntitySet="PropertyOwner" />
+      <End Role="Property" EntitySet="Property" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Property_PropertyType" Association="ProMasterTenancyDataModel.Store.FK_Property_PropertyType">
+      <End Role="PropertyType" EntitySet="PropertyType" />
+      <End Role="Property" EntitySet="Property" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RentPayment_RentPaymentMethod" Association="ProMasterTenancyDataModel.Store.FK_RentPayment_RentPaymentMethod">
+      <End Role="RentPaymentMethod" EntitySet="RentPaymentMethod" />
+      <End Role="RentPayment" EntitySet="RentPayment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RentPayment_Tenant" Association="ProMasterTenancyDataModel.Store.FK_RentPayment_Tenant">
+      <End Role="Tenant" EntitySet="Tenant" />
+      <End Role="RentPayment" EntitySet="RentPayment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrder_Property" Association="ProMasterTenancyDataModel.Store.FK_WorkOrder_Property">
+      <End Role="Property" EntitySet="Property" />
+      <End Role="WorkOrder" EntitySet="WorkOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrder_Vendor" Association="ProMasterTenancyDataModel.Store.FK_WorkOrder_Vendor">
+      <End Role="Vendor" EntitySet="Vendor" />
+      <End Role="WorkOrder" EntitySet="WorkOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrder_WorkOrderStatus" Association="ProMasterTenancyDataModel.Store.FK_WorkOrder_WorkOrderStatus">
+      <End Role="WorkOrderStatus" EntitySet="WorkOrderStatus" />
+      <End Role="WorkOrder" EntitySet="WorkOrder" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Event">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EventName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="EventDetails" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="EventDate" Type="datetime2" Nullable="false" />
+    <Property Name="EventTypeId" Type="int" Nullable="false" />
+    <Property Name="PropertyId" Type="int" Nullable="false" />
+    <Property Name="MileageIncurred" Type="decimal" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EventType">
+    <Key>
+      <PropertyRef Name="EventTypeId" />
+    </Key>
+    <Property Name="EventTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EventType" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Lease">
+    <Key>
+      <PropertyRef Name="LeaseId" />
+    </Key>
+    <Property Name="LeaseId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LeaseTitle" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="LeaseDesc" Type="varchar" MaxLength="4000" />
+    <Property Name="PropertyId" Type="int" Nullable="false" />
+    <Property Name="LeaseStartDate" Type="datetime2" Nullable="false" />
+    <Property Name="LeaseEndDate" Type="datetime2" Nullable="false" />
+    <Property Name="LeaseTermId" Type="int" Nullable="false" />
+    <Property Name="RentFrequency" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="RentAmount" Type="decimal" Nullable="false" />
+    <Property Name="RentDueOn" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="DamageDepositAmount" Type="decimal" Nullable="false" />
+    <Property Name="PetDepositAmount" Type="decimal" />
+    <Property Name="LeaseSignDate" Type="datetime2" Nullable="false" />
+    <Property Name="LeaseAgreementDocUrl" Type="varchar" MaxLength="10" />
+    <Property Name="Addendum" Type="bit" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime2" Nullable="false" />
+    <Property Name="UpdateDate" Type="datetime2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LeaseTerm">
+    <Key>
+      <PropertyRef Name="LeaseTermId" />
+    </Key>
+    <Property Name="LeaseTermId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LeaaseTerm" Type="varchar" Nullable="false" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="Property">
+    <Key>
+      <PropertyRef Name="PropertyId" />
+    </Key>
+    <Property Name="PropertyId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PropertyName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="PropertyDesc" Type="varchar" MaxLength="250" />
+    <Property Name="PropertyTypeId" Type="int" Nullable="false" />
+    <Property Name="PropertyAddressId" Type="int" Nullable="false" />
+    <Property Name="PropertyFeatureId" Type="int" Nullable="false" />
+    <Property Name="PropertyFacilityId" Type="int" Nullable="false" />
+    <Property Name="PropertyOwnerId" Type="int" Nullable="false" />
+    <Property Name="PropertyManagerId" Type="int" Nullable="false" />
+    <Property Name="PropertyImgUrl" Type="varchar" MaxLength="100" />
+    <Property Name="PropertyVideoUrl" Type="varchar" MaxLength="100" />
+    <Property Name="PropertyBuildYear" Type="int" Nullable="false" />
+    <Property Name="PropertyRentalStatusId" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsShared" Type="bit" Nullable="false" />
+    <Property Name="RentalStatusId" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime2" Nullable="false" />
+    <Property Name="UpdateDate" Type="datetime2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PropertyOwner">
+    <Key>
+      <PropertyRef Name="PropertyOwnerId" />
+    </Key>
+    <Property Name="PropertyOwnerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ContactEmail" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ContactTelephone1" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="ContactTelephone2" Type="varchar" MaxLength="25" />
+    <Property Name="OnlineAccessEnbaled" Type="bit" Nullable="false" />
+    <Property Name="UserAvartaImgUrl" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="AddedBy" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="AddProperty" Type="bit" />
+    <Property Name="CreationDate" Type="datetime2" Nullable="false" />
+    <Property Name="UpdateDate" Type="datetime2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PropertyType">
+    <Key>
+      <PropertyRef Name="PropertyTypeId" />
+    </Key>
+    <Property Name="PropertyTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PropertyType" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="RentPayment">
+    <Key>
+      <PropertyRef Name="RentPaymentId" />
+    </Key>
+    <Property Name="RentPaymentId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TenantId" Type="int" Nullable="false" />
+    <Property Name="RentIsPaidOntime" Type="bit" Nullable="false" />
+    <Property Name="RentPaymentDate" Type="datetime2" Nullable="false" />
+    <Property Name="RentPaymentMonth" Type="varchar" Nullable="false" MaxLength="2" />
+    <Property Name="RentPaymentYear" Type="varchar" Nullable="false" MaxLength="4" />
+    <Property Name="RentPaymentMethodId" Type="int" Nullable="false" />
+    <Property Name="DepositForOwner" Type="bit" Nullable="false" />
+    <Property Name="DepositDate" Type="datetime2" />
+    <Property Name="BankId" Type="int" Nullable="false" />
+    <Property Name="Notes" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="RentPaymentMethod">
+    <Key>
+      <PropertyRef Name="RentPaymentMethodId" />
+    </Key>
+    <Property Name="RentPaymentMethodId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RentPaymentMethod" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Notes" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Tenant">
+    <Key>
+      <PropertyRef Name="TenantId" />
+    </Key>
+    <Property Name="TenantId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ContactEmail" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ContactTelephone1" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="ContactTelephone2" Type="varchar" MaxLength="25" />
+    <Property Name="OnlineAccessEnbaled" Type="bit" Nullable="false" />
+    <Property Name="UserAvartaImgUrl" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="LeaseId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="ManagedBy" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime2" Nullable="false" />
+    <Property Name="UpdateDate" Type="datetime2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vendor">
+    <Key>
+      <PropertyRef Name="VendorId" />
+    </Key>
+    <Property Name="VendorId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="VendorBusinessName" Type="varbinary" Nullable="false" MaxLength="50" />
+    <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="VendorDesc" Type="varchar" MaxLength="450" />
+    <Property Name="VendorContactTelephone1" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="VendorContactTelephone2" Type="varchar" MaxLength="10" />
+    <Property Name="VendorContactEmail" Type="varchar" MaxLength="35" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="OnlineAccessEnbaled" Type="bit" Nullable="false" />
+    <Property Name="UserAvartaImgUrl" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="CreationDate" Type="datetime2" Nullable="false" />
+    <Property Name="UpdateDate" Type="datetime2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WorkOrder">
+    <Key>
+      <PropertyRef Name="WorkOrderId" />
+    </Key>
+    <Property Name="WorkOrderId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WorkOrderName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="WorkOrderDetails" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="PropertyId" Type="int" Nullable="false" />
+    <Property Name="VendorId" Type="int" Nullable="false" />
+    <Property Name="InvoiceAmount" Type="real" Nullable="false" />
+    <Property Name="InvoiceDocUrl" Type="varbinary" MaxLength="50" />
+    <Property Name="InvoiceDate" Type="datetime2" Nullable="false" />
+    <Property Name="StartDate" Type="datetime2" Nullable="false" />
+    <Property Name="EndDate" Type="datetime2" Nullable="false" />
+    <Property Name="IsAuthorized" Type="bit" Nullable="false" />
+    <Property Name="WorkOrderStatusId" Type="int" Nullable="false" />
+    <Property Name="IsPaid" Type="bit" Nullable="false" />
+    <Property Name="PaymentMethodId" Type="int" Nullable="false" />
+    <Property Name="PaymentDate" Type="datetime2" Nullable="false" />
+    <Property Name="RecordCreationDate" Type="datetime2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WorkOrderStatus">
+    <Key>
+      <PropertyRef Name="WorkOrderStatusId" />
+    </Key>
+    <Property Name="WorkOrderStatusId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WorkOrderStatus" Type="nchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <Association Name="FK_Event_EventType">
+    <End Role="EventType" Type="ProMasterTenancyDataModel.Store.EventType" Multiplicity="1" />
+    <End Role="Event" Type="ProMasterTenancyDataModel.Store.Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EventType">
+        <PropertyRef Name="EventTypeId" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="EventTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_Property">
+    <End Role="Property" Type="ProMasterTenancyDataModel.Store.Property" Multiplicity="1" />
+    <End Role="Event" Type="ProMasterTenancyDataModel.Store.Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lease_LeaseTerm">
+    <End Role="LeaseTerm" Type="ProMasterTenancyDataModel.Store.LeaseTerm" Multiplicity="1" />
+    <End Role="Lease" Type="ProMasterTenancyDataModel.Store.Lease" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LeaseTerm">
+        <PropertyRef Name="LeaseTermId" />
+      </Principal>
+      <Dependent Role="Lease">
+        <PropertyRef Name="LeaseTermId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lease_Property">
+    <End Role="Property" Type="ProMasterTenancyDataModel.Store.Property" Multiplicity="1" />
+    <End Role="Lease" Type="ProMasterTenancyDataModel.Store.Lease" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="Lease">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Property_PropertyOwner">
+    <End Role="PropertyOwner" Type="ProMasterTenancyDataModel.Store.PropertyOwner" Multiplicity="1" />
+    <End Role="Property" Type="ProMasterTenancyDataModel.Store.Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyOwner">
+        <PropertyRef Name="PropertyOwnerId" />
+      </Principal>
+      <Dependent Role="Property">
+        <PropertyRef Name="PropertyOwnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Property_PropertyType">
+    <End Role="PropertyType" Type="ProMasterTenancyDataModel.Store.PropertyType" Multiplicity="1" />
+    <End Role="Property" Type="ProMasterTenancyDataModel.Store.Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyType">
+        <PropertyRef Name="PropertyTypeId" />
+      </Principal>
+      <Dependent Role="Property">
+        <PropertyRef Name="PropertyTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RentPayment_RentPaymentMethod">
+    <End Role="RentPaymentMethod" Type="ProMasterTenancyDataModel.Store.RentPaymentMethod" Multiplicity="1" />
+    <End Role="RentPayment" Type="ProMasterTenancyDataModel.Store.RentPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RentPaymentMethod">
+        <PropertyRef Name="RentPaymentMethodId" />
+      </Principal>
+      <Dependent Role="RentPayment">
+        <PropertyRef Name="RentPaymentMethodId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RentPayment_Tenant">
+    <End Role="Tenant" Type="ProMasterTenancyDataModel.Store.Tenant" Multiplicity="1" />
+    <End Role="RentPayment" Type="ProMasterTenancyDataModel.Store.RentPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tenant">
+        <PropertyRef Name="TenantId" />
+      </Principal>
+      <Dependent Role="RentPayment">
+        <PropertyRef Name="TenantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrder_Property">
+    <End Role="Property" Type="ProMasterTenancyDataModel.Store.Property" Multiplicity="1" />
+    <End Role="WorkOrder" Type="ProMasterTenancyDataModel.Store.WorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="WorkOrder">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrder_Vendor">
+    <End Role="Vendor" Type="ProMasterTenancyDataModel.Store.Vendor" Multiplicity="1" />
+    <End Role="WorkOrder" Type="ProMasterTenancyDataModel.Store.WorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vendor">
+        <PropertyRef Name="VendorId" />
+      </Principal>
+      <Dependent Role="WorkOrder">
+        <PropertyRef Name="VendorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrder_WorkOrderStatus">
+    <End Role="WorkOrderStatus" Type="ProMasterTenancyDataModel.Store.WorkOrderStatus" Multiplicity="1" />
+    <End Role="WorkOrder" Type="ProMasterTenancyDataModel.Store.WorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkOrderStatus">
+        <PropertyRef Name="WorkOrderStatusId" />
+      </Principal>
+      <Dependent Role="WorkOrder">
+        <PropertyRef Name="WorkOrderStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

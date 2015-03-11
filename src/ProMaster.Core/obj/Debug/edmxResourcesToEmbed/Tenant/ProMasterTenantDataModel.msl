@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProMasterTenantDataModelStoreContainer" CdmEntityContainer="ProMasterTenantDataEntities">
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="ProMasterTenantDataModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Disabled" ColumnName="Disabled" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Leases">
+      <EntityTypeMapping TypeName="ProMasterTenantDataModel.Lease">
+        <MappingFragment StoreEntitySet="Lease">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="Addendum" ColumnName="Addendum" />
+          <ScalarProperty Name="LeaseAgreementDocUrl" ColumnName="LeaseAgreementDocUrl" />
+          <ScalarProperty Name="LeaseSignDate" ColumnName="LeaseSignDate" />
+          <ScalarProperty Name="PetDepositAmount" ColumnName="PetDepositAmount" />
+          <ScalarProperty Name="DamageDepositAmount" ColumnName="DamageDepositAmount" />
+          <ScalarProperty Name="RentDueOn" ColumnName="RentDueOn" />
+          <ScalarProperty Name="RentAmount" ColumnName="RentAmount" />
+          <ScalarProperty Name="RentFrequency" ColumnName="RentFrequency" />
+          <ScalarProperty Name="LeaseTermId" ColumnName="LeaseTermId" />
+          <ScalarProperty Name="LeaseEndDate" ColumnName="LeaseEndDate" />
+          <ScalarProperty Name="LeaseStartDate" ColumnName="LeaseStartDate" />
+          <ScalarProperty Name="PropertyId" ColumnName="PropertyId" />
+          <ScalarProperty Name="LeaseDesc" ColumnName="LeaseDesc" />
+          <ScalarProperty Name="LeaseTitle" ColumnName="LeaseTitle" />
+          <ScalarProperty Name="LeaseId" ColumnName="LeaseId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Properties">
+      <EntityTypeMapping TypeName="ProMasterTenantDataModel.Property">
+        <MappingFragment StoreEntitySet="Property">
+          <ScalarProperty Name="PropertyMgmntlStatusId" ColumnName="PropertyMgmntlStatusId" />
+          <ScalarProperty Name="PropertyListDesc" ColumnName="PropertyListDesc" />
+          <ScalarProperty Name="StrataCouncilId" ColumnName="StrataCouncilId" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="RentalStatusId" ColumnName="RentalStatusId" />
+          <ScalarProperty Name="IsShared" ColumnName="IsShared" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="PropertyBuildYear" ColumnName="PropertyBuildYear" />
+          <ScalarProperty Name="PropertyVideoUrl" ColumnName="PropertyVideoUrl" />
+          <ScalarProperty Name="PropertyImgUrl" ColumnName="PropertyImgUrl" />
+          <ScalarProperty Name="PropertyManagerId" ColumnName="PropertyManagerId" />
+          <ScalarProperty Name="PropertyOwnerId" ColumnName="PropertyOwnerId" />
+          <ScalarProperty Name="PropertyFacilityId" ColumnName="PropertyFacilityId" />
+          <ScalarProperty Name="PropertyFeatureId" ColumnName="PropertyFeatureId" />
+          <ScalarProperty Name="PropertyAddressId" ColumnName="PropertyAddressId" />
+          <ScalarProperty Name="PropertyTypeId" ColumnName="PropertyTypeId" />
+          <ScalarProperty Name="PropertyDesc" ColumnName="PropertyDesc" />
+          <ScalarProperty Name="PropertyName" ColumnName="PropertyName" />
+          <ScalarProperty Name="PropertyId" ColumnName="PropertyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tenants">
+      <EntityTypeMapping TypeName="ProMasterTenantDataModel.Tenant">
+        <MappingFragment StoreEntitySet="Tenant">
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ManagedBy" ColumnName="ManagedBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="LeaseId" ColumnName="LeaseId" />
+          <ScalarProperty Name="UserAvartaImgUrl" ColumnName="UserAvartaImgUrl" />
+          <ScalarProperty Name="OnlineAccessEnbaled" ColumnName="OnlineAccessEnbaled" />
+          <ScalarProperty Name="ContactTelephone2" ColumnName="ContactTelephone2" />
+          <ScalarProperty Name="ContactTelephone1" ColumnName="ContactTelephone1" />
+          <ScalarProperty Name="ContactEmail" ColumnName="ContactEmail" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documents">
+      <EntityTypeMapping TypeName="ProMasterTenantDataModel.Document">
+        <MappingFragment StoreEntitySet="Document">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="DocumentUrl" ColumnName="DocumentUrl" />
+          <ScalarProperty Name="DocumentPrincipalId" ColumnName="DocumentPrincipalId" />
+          <ScalarProperty Name="DocumentPrincipalTypeId" ColumnName="DocumentPrincipalTypeId" />
+          <ScalarProperty Name="DcoumentDetails" ColumnName="DcoumentDetails" />
+          <ScalarProperty Name="DocumentName" ColumnName="DocumentName" />
+          <ScalarProperty Name="DocumentTypeId" ColumnName="DocumentTypeId" />
+          <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentPrincipalTypes">
+      <EntityTypeMapping TypeName="ProMasterTenantDataModel.DocumentPrincipalType">
+        <MappingFragment StoreEntitySet="DocumentPrincipalType">
+          <ScalarProperty Name="DocumentPrincipalType1" ColumnName="DocumentPrincipalType" />
+          <ScalarProperty Name="DocumentPrincipalTypeId" ColumnName="DocumentPrincipalTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentTypes">
+      <EntityTypeMapping TypeName="ProMasterTenantDataModel.DocumentType">
+        <MappingFragment StoreEntitySet="DocumentType">
+          <ScalarProperty Name="DocumentType1" ColumnName="DocumentType" />
+          <ScalarProperty Name="DocumentTypeId" ColumnName="DocumentTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeaseTerms">
+      <EntityTypeMapping TypeName="ProMasterTenantDataModel.LeaseTerm">
+        <MappingFragment StoreEntitySet="LeaseTerm">
+          <ScalarProperty Name="LeaaseTerm" ColumnName="LeaaseTerm" />
+          <ScalarProperty Name="LeaseTermId" ColumnName="LeaseTermId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CreditReports">
+      <EntityTypeMapping TypeName="ProMasterTenantDataModel.CreditReport">
+        <MappingFragment StoreEntitySet="CreditReport">
+          <ScalarProperty Name="CreditReportAddDate" ColumnName="CreditReportAddDate" />
+          <ScalarProperty Name="CreditReportScore" ColumnName="CreditReportScore" />
+          <ScalarProperty Name="TenancyApplicanionId" ColumnName="TenancyApplicanionId" />
+          <ScalarProperty Name="CreditReportId" ColumnName="CreditReportId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentCheckLists">
+      <EntityTypeMapping TypeName="ProMasterTenantDataModel.DocumentCheckList">
+        <MappingFragment StoreEntitySet="DocumentCheckList">
+          <ScalarProperty Name="DocumentCheckListCompletionDate" ColumnName="DocumentCheckListCompletionDate" />
+          <ScalarProperty Name="IsCreditReportProvided" ColumnName="IsCreditReportProvided" />
+          <ScalarProperty Name="IsIncomeStatementProvided" ColumnName="IsIncomeStatementProvided" />
+          <ScalarProperty Name="IsEmployerReferenceProvided" ColumnName="IsEmployerReferenceProvided" />
+          <ScalarProperty Name="IsLandLordReferenceProvided" ColumnName="IsLandLordReferenceProvided" />
+          <ScalarProperty Name="IsIdentificationProvided" ColumnName="IsIdentificationProvided" />
+          <ScalarProperty Name="TenancyApplicanionId" ColumnName="TenancyApplicanionId" />
+          <ScalarProperty Name="DocumentCheckListId" ColumnName="DocumentCheckListId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TenancyApplications">
+      <EntityTypeMapping TypeName="ProMasterTenantDataModel.TenancyApplication">
+        <MappingFragment StoreEntitySet="TenancyApplication">
+          <ScalarProperty Name="ScreeningNotes" ColumnName="ScreeningNotes" />
+          <ScalarProperty Name="ApplicantSIN" ColumnName="ApplicantSIN" />
+          <ScalarProperty Name="ApplicationSentDate" ColumnName="ApplicationSentDate" />
+          <ScalarProperty Name="CreditReportScore" ColumnName="CreditReportScore" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="IsIdentificationDocAvailalbe" ColumnName="IsIdentificationDocAvailalbe" />
+          <ScalarProperty Name="PreviousLandlordContact" ColumnName="PreviousLandlordContact" />
+          <ScalarProperty Name="CurrentLandlordContact" ColumnName="CurrentLandlordContact" />
+          <ScalarProperty Name="IsAuthorizedForRefCheck" ColumnName="IsAuthorizedForRefCheck" />
+          <ScalarProperty Name="CurrentMonthlyIncome" ColumnName="CurrentMonthlyIncome" />
+          <ScalarProperty Name="PreviousEmployerContact" ColumnName="PreviousEmployerContact" />
+          <ScalarProperty Name="CurrentEmployerContact" ColumnName="CurrentEmployerContact" />
+          <ScalarProperty Name="NumberOfChildren" ColumnName="NumberOfChildren" />
+          <ScalarProperty Name="NumberOfTenant" ColumnName="NumberOfTenant" />
+          <ScalarProperty Name="ApplicantContactEmail" ColumnName="ApplicantContactEmail" />
+          <ScalarProperty Name="ApplicantContactTel" ColumnName="ApplicantContactTel" />
+          <ScalarProperty Name="PreviousAddress" ColumnName="PreviousAddress" />
+          <ScalarProperty Name="CurrentAddress" ColumnName="CurrentAddress" />
+          <ScalarProperty Name="PropertyId" ColumnName="PropertyId" />
+          <ScalarProperty Name="ApplicantLastName" ColumnName="ApplicantLastName" />
+          <ScalarProperty Name="ApplicantFirstName" ColumnName="ApplicantFirstName" />
+          <ScalarProperty Name="TenancyApplicationId" ColumnName="TenancyApplicationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ScreeningCheckStatus">
+      <EntityTypeMapping TypeName="ProMasterTenantDataModel.ScreeningCheckStatu">
+        <MappingFragment StoreEntitySet="ScreeningCheckStatus">
+          <ScalarProperty Name="ScreeningCheckStatusName" ColumnName="ScreeningCheckStatusName" />
+          <ScalarProperty Name="ScreeningCheckStatusId" ColumnName="ScreeningCheckStatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ScreeningCheckTypes">
+      <EntityTypeMapping TypeName="ProMasterTenantDataModel.ScreeningCheckType">
+        <MappingFragment StoreEntitySet="ScreeningCheckType">
+          <ScalarProperty Name="ScreeningCheckTypeName" ColumnName="ScreeningCheckTypeName" />
+          <ScalarProperty Name="ScreeningCheckTypeId" ColumnName="ScreeningCheckTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TenantScreenings">
+      <EntityTypeMapping TypeName="ProMasterTenantDataModel.TenantScreening">
+        <MappingFragment StoreEntitySet="TenantScreening">
+          <ScalarProperty Name="ScreenNotes" ColumnName="ScreenNotes" />
+          <ScalarProperty Name="ScreenCheckUpdateDate" ColumnName="ScreenCheckUpdateDate" />
+          <ScalarProperty Name="ScreeningCheckStatusId" ColumnName="ScreeningCheckStatusId" />
+          <ScalarProperty Name="ScreeningCheckTypeId" ColumnName="ScreeningCheckTypeId" />
+          <ScalarProperty Name="TeancyApplicationId" ColumnName="TeancyApplicationId" />
+          <ScalarProperty Name="TenantScreeningId" ColumnName="TenantScreeningId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ScreenProcesses">
+      <EntityTypeMapping TypeName="ProMasterTenantDataModel.ScreenProcess">
+        <MappingFragment StoreEntitySet="ScreenProcess">
+          <ScalarProperty Name="ScreenProcessCompletionDate" ColumnName="ScreenProcessCompletionDate" />
+          <ScalarProperty Name="ScreenFinalStatus" ColumnName="ScreenFinalStatus" />
+          <ScalarProperty Name="IsScreenProcessCompleted" ColumnName="IsScreenProcessCompleted" />
+          <ScalarProperty Name="RentToIncomeRatioCheckStatus" ColumnName="RentToIncomeRatioCheckStatus" />
+          <ScalarProperty Name="CreditReportCheckStatus" ColumnName="CreditReportCheckStatus" />
+          <ScalarProperty Name="PreviousEmploerCheckStatus" ColumnName="PreviousEmploerCheckStatus" />
+          <ScalarProperty Name="CurrentEmploerCheckStatus" ColumnName="CurrentEmploerCheckStatus" />
+          <ScalarProperty Name="PrevioustLandlordCheckStatus" ColumnName="PrevioustLandlordCheckStatus" />
+          <ScalarProperty Name="CurrentLandlordCheckStatus" ColumnName="CurrentLandlordCheckStatus" />
+          <ScalarProperty Name="TenancyApplicanionId" ColumnName="TenancyApplicanionId" />
+          <ScalarProperty Name="ScreenProcessId" ColumnName="ScreenProcessId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RentPayments">
+      <EntityTypeMapping TypeName="ProMasterTenantDataModel.RentPayment">
+        <MappingFragment StoreEntitySet="RentPayment">
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="IsDepositForOwner" ColumnName="IsDepositForOwner" />
+          <ScalarProperty Name="IsCollectedInPerson" ColumnName="IsCollectedInPerson" />
+          <ScalarProperty Name="RentPaymentMethodId" ColumnName="RentPaymentMethodId" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="NumberOfLatePayment" ColumnName="NumberOfLatePayment" />
+          <ScalarProperty Name="RentPaidAmount" ColumnName="RentPaidAmount" />
+          <ScalarProperty Name="RentPaymentYear" ColumnName="RentPaymentYear" />
+          <ScalarProperty Name="RentPaymentMonth" ColumnName="RentPaymentMonth" />
+          <ScalarProperty Name="RentPaymentDate" ColumnName="RentPaymentDate" />
+          <ScalarProperty Name="RentIsPaidOntime" ColumnName="RentIsPaidOntime" />
+          <ScalarProperty Name="TenantId" ColumnName="TenantId" />
+          <ScalarProperty Name="RentPaymentId" ColumnName="RentPaymentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RentPaymentMethods">
+      <EntityTypeMapping TypeName="ProMasterTenantDataModel.RentPaymentMethod">
+        <MappingFragment StoreEntitySet="RentPaymentMethod">
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="RentPaymentMethod1" ColumnName="RentPaymentMethod" />
+          <ScalarProperty Name="RentPaymentMethodId" ColumnName="RentPaymentMethodId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

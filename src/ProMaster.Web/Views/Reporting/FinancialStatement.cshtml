@@ -1,0 +1,188 @@
+﻿@model ProMaster.Core.Reporting.ViewModels.AccountingCostViewModel
+
+@{
+    ViewBag.Title = "Financial income Statement";
+}
+
+
+<div class="content-wrapper">
+    <aside> 
+    <p><!-- Left Panel/Column -->
+      <div id="left">
+        
+         
+      	    <div class="profile_logo">
+        	    <img src="@Url.Content("~/Content/Images/m_reporting.png")" alt="" title="" />            
+            </div>
+
+             <div class="profile_caption metro">
+        	    <h3>Report on<br />Financial Income Statement </h3>
+        	    <br />
+
+                <span>
+            	    
+                </span>
+             
+    </div>
+
+      <p></p>
+      
+      <div class="side-widget tile-margin metro">
+      <p></p>
+        <div class="side-inner">
+          
+        </div>
+      
+      </div>     
+
+
+      </div>      
+    </p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </aside><!-- End of aside -->
+
+    <div class="main metro">
+        <div id="add_edit_panel">
+           <h3 ><span><i class="fa fa-th" style="color:#dd4b39"></i> &nbsp; PROPERTY RETN REVENUE REPORT</span>    	
+              <span >Select the property and generate report.</span>
+           </h3>
+        
+            <div class="edit_field">                    
+               <input class="rlabel"id="all" type="radio" name="ppt"  />All Properties<br> 
+               <input class="rlabel" id="indi" type="radio" name="ppt"/>Selected Property
+            </div>
+
+            <div  class="chose">
+                <div id="p">
+                    @Html.DropDownListFor(model => model.PropertyId, Model.PropertyList, new {id ="property" })
+                </div>
+                <div id="choose"><span>From:</span>
+                    <div class="display-field">
+                        <input style="width:16em;" id="sDate"  type="text" class="datepicker" value="@DateTime.Now.ToString("M/d/yyyy")" />
+                    </div>
+                </div>
+                <div id='choose1'><span>TO:</span>
+                    <input  style="width:16em;" type="text" id="eDate" class="datepicker" value="@DateTime.Now.ToString("M/d/yyyy")" />
+                </div><br />
+                <div class="left-aligned"><input id="md" type="submit" value="Get Report" /><div id="loading"></div></div>
+
+                <div id="report" class="metro">
+                    <fieldset>
+                        <legend><i class="icon-clipboard-2" style="background:#007bb6; color: white; padding: 10px; border-radius: 50%"></i> Property Rent Revenue Report</legend>
+                        
+                        <div id="period">Report Time Period: &nbsp; Start:<div id="s"></div> &nbsp; End: <div id="e"></div></div>
+                        <br /><br /> 
+                        <div id="statement"></div>
+
+                    </fieldset>                    
+                 </div>
+
+            </div>
+            
+    </div>
+</div>
+    
+    </div><!-- End of content-wrapper -->
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#all").prop('checked', true);
+        $("#p").hide();
+        //$("#report").hide();
+
+        $("#indi").change(function () {
+
+            var isChecked = $(this).is(':checked');
+
+
+
+            if (isChecked) {
+                $("#p").show();
+            }
+            else {
+                $("#p").hide();
+            }
+        });
+
+        $("#all").change(function () {
+
+            var isChecked = $("#indi").is(':checked');
+
+
+
+            if (isChecked) {
+                $("#p").show();
+            }
+            else {
+                $("#p").hide();
+            }
+        });
+
+    });
+		
+
+</script>
+
+<script type="text/ecmascript">
+    $(function () {
+        $(".datepicker").datepicker();
+    });
+</script>
+
+<!-- Financial Reporting Script --> 
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#md").button();
+        $("#report").hide();
+        //$("#period").hide();
+
+
+        $("#md").click(function () {
+            $("#period").show();
+
+            $("#loading").show();
+
+            var sDate = $("#sDate").val();
+            var eDate = $("#eDate").val();
+            // var propertyId = @(Model.PropertyId);
+            var propertyId = $("#property option:selected").val();
+
+            //alert(propertyId);
+
+            $("div#s").text(sDate);
+            $("#e").text(eDate);
+
+
+
+
+
+            var url = "/Reporting/GetFinancialStatementByProperty/";
+            var q = "id=" + propertyId + "&startPeriod=" + sDate + "&endPeriod=" + eDate;
+            $.get(url, q, function (data) {
+                $("#statement").html(data);
+                $("#report").show();
+
+                $("#loading").fadeOut("1000");
+
+                return false;
+
+
+
+                // Suceeded 
+
+            });
+        });
+    });
+
+
+
+
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#loading").hide();
+    });
+</script>

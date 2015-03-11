@@ -1,0 +1,502 @@
+﻿@model ProMaster.Core.Tenant.ViewModels.TenantScreenViewModel
+
+@{
+    ViewBag.Title = "Processing Application";
+}
+
+<div class="content-wrapper">
+
+    <aside> 
+    <!-- Left Panel/Column -->
+      <div id="left">
+      	<div class="side_details_logo">
+        	<img src="@Url.Content("~/Content/Images/gears.png")" alt="" title="" />
+            
+        </div>
+        <div class="side_details_caption">
+        	<h3>Tenancy Application Processing & Screening</h3>
+        	<br />
+            <span>
+                @Model.ApplicantLastName,  @Model.ApplicantFirstName<!-- 	  Detailed tenant information -->
+            </span>
+            <p></p><p></p>
+            <h6>Rental Propoerty</h6>
+            <div class="side_details_content">
+                
+                <div class="display-label">
+                    Name/Alias:
+                </div><br />
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.PropertyName)
+                </div><br />
+
+                <div class="display-label">
+                    Description:
+                </div><br />
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.PropertyDesc)
+                </div><br />
+            
+                <div class="display-label">
+                    Built year:
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.PropertyBuildYear)
+                </div><br />
+            
+            </div>
+           
+        </div>
+      </div>
+      
+    
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+    </aside><!-- End of aside -->
+
+
+    <div class="main metro">
+        <div id="manage-tabs" class="tabs-style">
+          <ul>
+            <li><a href="#tabs-1"><i class="fa fa-list-alt"></i> &nbsp;<span>Application Processing</span></a></li>
+            
+            
+          </ul>
+  		  <div id="tabs-1">    		
+            <div class="tab_content">
+                <div class="tab_content_title">
+                    <span class="title_icon"><img src="@Url.Content("~/Content/Images/vision.png")" alt="" title="" /></span>
+                    <span class="title_text"><h5>Application Screening and Processing</h5></span>
+                    <br /><br />
+                    <span class="title_caption">Application details, screening and approve process</span>
+                </div>  
+                <br />
+                <div>
+                    Application Status: 
+                    @if(Model.IsApplicationApproved == true && Model.IsApplicationActive == false)
+                    {
+                         <strong><span id="a" style="color:#47a021;">Approved</span></strong>
+                    }
+                    @if (Model.IsApplicationApproved == false && Model.IsApplicationActive == false)
+                    {
+                        <strong><span id="d" style="color:#f31f32;">Declined</span></strong>
+                    }
+                    @if (Model.IsApplicationActive == true)
+                    {
+                        <strong><span id="i" style="color:#0f5383;" >In Progress</span></strong>
+                    }
+                   
+                </div>
+                <br />
+                <div class="tab_content_field">
+                    <!-- <div class="display-label">
+                        Property Address:
+                    </div> -->
+                    
+                    <fieldset>
+                        <legend><span><i class=" icon-address-book" style="color: rgb(17, 168, 21);"></i> Application Details</span></legend>
+                        <div class="basic">
+                            <div class="display-label">
+                                ID:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.ApplicationId)
+                            </div> 
+                            <br />
+                            <div class="display-label">
+                                First Name:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.ApplicantFirstName)
+                            </div> 
+                            <br />
+                            <div class="display-label">
+                                Last Name:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.ApplicantLastName)
+                            </div>
+                            <br />                
+                            <div class="display-label">
+                               Current Landlord
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.ApplicantCurrentLandlorContact)
+                            </div> 
+                            <br /> 
+                          
+                            <div class="display-label">
+                                Current Employer
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.ApplicantCurrentEmploerContact)
+                            </div> 
+                            <br /> 
+                            <div class="display-label">
+                                Montly Income:
+                            </div>
+                            <div class="display-field">
+                                $@Html.DisplayFor(model => model.ApplicantEmploymentIncome)
+                            </div> 
+                            <br /> 
+                            <div class="display-label">
+                                Credit Report Score:
+                            </div>
+                            <div class="display-field">
+                                @Html.DisplayFor(model => model.ApplicantCreditScore)
+                            </div> 
+                            <br /> 
+                                                
+                        
+                        </div>
+                    
+                    </fieldset> 
+                    
+                    <fieldset>
+                        <legend><span><i class="fa fa-refresh" style="color: rgb(203, 126, 91);"></i> Screen Status Update</span></legend>
+                        
+                        <div class="basic">
+                            <div id="state">@Html.Partial("_ScreenStatus")</div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend><span><i class="fa fa-refresh" style="color: rgb(91, 191, 203);"></i> Documentation Checklist Status</span></legend>
+                        <div class="basic">
+                            <div class="display-label">
+                                Identification:
+                            </div>
+                            <div class="display-field">
+                                @Html.EditorFor(model => model.DocCheckList.FirstOrDefault().IdentificationDocAvailable)
+                            </div> 
+                            <br />
+                            <div class="display-label">
+                                Income (employer letter, pay stubs, etc.):
+                            </div>
+                            <div class="display-field">
+                                 @Html.EditorFor(model => model.DocCheckList.FirstOrDefault().IncomeDocAvailable)
+                            </div> 
+                            <br />
+                            <div class="display-label">
+                                Employment References:
+                            </div>
+                            <div class="display-field">
+                                 @Html.EditorFor(model => model.DocCheckList.FirstOrDefault().EmployerReferenceDocAvailable)
+                            </div>
+                            <br />                
+                            <div class="display-label">
+                               Current Landlord References:
+                            </div>
+                            <div class="display-field">
+                               @Html.EditorFor(model => model.DocCheckList.FirstOrDefault().LandlordReferenceDocAvailable)
+                            </div> 
+                            <br />
+                            <div class="display-label">
+                               Credit Report Status:
+                            </div>
+                            <div class="display-field">
+                               @Html.EditorFor(model => model.DocCheckList.FirstOrDefault().IsCreditReportAvailable)
+                            </div> 
+                            <br />
+                            <!--<div class="display-label">
+                               Document Checkist Completed:
+                            </div>
+                            <div class="display-field">
+                              @Html.EditorFor(model => model.DocCheckList.FirstOrDefault().IsAllDocumentsReady)
+                            </div>--> 
+                            <br />
+                        </div>
+                    </fieldset>
+
+                <!--   <div class="display-label">
+                                Application Status:
+                            </div>
+                            <div class="display-field">
+                            @if (Model.IsApplicationApproved == true && Model.IsApplicationActive == false)
+                            {  
+                                <strong>Approved</strong>
+                            }
+                            
+                            @if (Model.IsApplicationApproved == false && Model.IsApplicationActive == false)
+                            {
+                                <strong>Declined</strong>
+                            }
+                            
+                            @if (Model.IsApplicationApproved == false && Model.IsApplicationActive == true)
+                            {
+                                <strong>In Process</strong> 
+                            }
+                            
+                            </div> 
+                            <br /> -->
+
+               @if(Model.IsApplicationActive == true)
+               {
+                    <div class="right-aligned" id="buttons">
+                        <div class="edit_button button-med "><a id="save" href="#">Update</a></div>
+                        <div class="edit_button button-med "><a id="approve" href="#">Approve</a></div>
+                        <div class="edit_button button-med "><a id="decline" href="#">Decline</a></div>
+                    </div>
+               }
+                   
+                    
+                    
+                    <p></p>
+                    <div id="msg" style="color: #F41B1B; font-weight: 800;"></div>
+                </div>
+            
+            
+  		  </div>
+         
+		</div> 
+        
+
+    </div>
+    
+    
+    
+    </div><!-- end of main -->
+
+
+
+
+
+
+</div><!-- end of content-wrapper -->
+
+
+<!--Jquery ui tabs Script -->
+<script type="text/javascript">
+    $(function() {
+        $( "#manage-tabs" ).tabs();
+    });
+</script>
+
+<!-- update script -->
+<script type="text/javascript">
+    $("#save").click(function(){
+
+        var identity = $("#IdentificationDocAvailable").is(':checked');
+        var income = $("#IncomeDocAvailable").is(':checked');
+        var emp = $("#EmployerReferenceDocAvailable").is(':checked');;
+        var land = $("#LandlordReferenceDocAvailable").is(':checked');
+        var credit = $("#IsCreditReportAvailable").is(':checked');
+        var all = $("#IsAllDocumentsReady").is(':checked');
+
+        //alert(@Model.ApplicationId);
+        //alert(identity);
+        //alert(income);
+        //alert("save clicked!")
+    
+        $.ajax({
+            type: "POST",
+            url: "/Tools/SaveStatus",
+            data: "id=" + @(Model.ApplicationId) + "&identity=" + identity + "&income="
+                + income + "&land=" + land + "&emp=" + emp + "&credit=" + credit,
+                        contenType: "", 
+                        dataType: "json",
+                        success: done
+        });
+    
+        return false;
+    });
+    
+
+                function done(data) {
+
+                    $("#msg").html(data);  
+                                            
+                    $('#msg').delay(3000).fadeOut(3000); 
+                    
+                    //alert("save done!");
+                }
+</script>
+
+<!-- The approve confirmation dialog content -->
+<div id="approve-dialog" title="Confirmation" style="display:none">
+    <p><p><span class="dialog-icon"><i class="fa fa-exclamation-triangle" style="color:#117423;"></i></span> Are you sure to approve this application?</p>
+    <div class="dispaly-label" style="margin-left: 1em; margin-top: 1em; margin-bottom: 0.3em; font-size:0.9em;">Approval Notes:</div>
+    <div class="display-field"><textarea id="a_notes" style="width: 16em; margin-left: 1em; height: 3.5em; font-size:0.9em;"></textarea></div>
+</div>
+
+<!--Approve Script -->
+<script type="text/javascript">
+
+    $('#approve').click(function () {
+        //deleteLinkObj = $(this);
+        $('#approve-dialog').dialog();
+        return false;
+    });
+
+
+    $(function () {
+        $('#approve').click(function () {
+            var dialogOpts = {
+                autoOpen: false,
+                modal: true,
+                resizable: false,
+                draggable: false,
+                title: 'Approve Confirmation!',
+                buttons: {
+                    "Cancel": function () {
+                        $(this).dialog("close");
+                    },
+
+                    "Continue": function () {
+                        var notes = $("textarea#a_notes").val();
+                        //alert(notes);
+                        $.ajax({
+                            type: "POST",
+                            url: "/Tools/Approve",
+                            data: "id=" + @(Model.ApplicationId) + "&notes=" + notes,
+                            contenType: "",
+                            dataType: "json",
+                            success: declineDone
+                        });
+
+                        $(this).dialog("close");
+
+                    }
+                }
+            };
+
+
+            $('#approve-dialog').dialog(dialogOpts).dialog('open');
+            return false;
+        });
+    });
+
+
+    @*$("#approve").click(function () {
+
+        $.ajax({
+            type: "POST",
+            url: "/Tools/Approve",
+            data: "id=" + @(Model.ApplicationId),
+            contenType: "",
+            dataType: "json",
+            success: approveDone
+        });
+
+        return false;
+    });*@
+
+    function approveDone(data) {
+
+        $("#buttons").hide();
+        //alert("here?")
+        $("#save").hide();
+        $("#approve").hide();
+        $("#decline").hide();
+
+        $("#msg").html(data);
+
+        $("#a").text("Approved");
+
+        $('#msg').delay(3000).fadeOut(3000);
+    }
+
+</script>
+
+
+<!-- The decline confirmation dialog content -->
+<div id="decline-dialog" title="Confirmation" style="display:none">
+    <p><p><span class="dialog-icon"><i class="fa fa-exclamation-triangle"></i></span> Are you sure to decline this application?</p>
+    <div class="dispaly-label" style="margin-left: 1em; margin-top: 1em; margin-bottom: 0.3em; font-size:0.9em;">Decline Notes:</div>
+    <div class="display-field"><textarea id="d_notes" style="width: 16em; margin-left: 1em; height: 3.5em; font-size:0.9em;"></textarea></div>
+</div>
+<br />
+<div id="result"></div>
+
+
+<!-- Decline confirmation -->
+
+
+
+<!--Decline Script -->
+<script type="text/javascript">
+
+    $('#decline').click(function () {
+        //deleteLinkObj = $(this);
+        $('#decline-dialog').dialog();
+        return false;
+    });
+
+
+    $(function () {
+        $('#decline').click(function () {
+            var dialogOpts = {
+                autoOpen: false,
+                modal: true,
+                resizable: false,
+                draggable: false,
+                title: 'Decline Confirmation!',
+                buttons: {
+                    "Cancel": function () {
+                        $(this).dialog("close");
+                    },
+
+                    "Continue": function () {
+                        var notes = $("textarea#d_notes").val();
+
+                        //alert(notes);
+
+                        $.ajax({
+                            type: "POST",
+                            url: "/Tools/Decline",
+                            data: "id=" + @(Model.ApplicationId) + "&notes=" + notes,
+                            contenType: "",
+                            dataType: "json",
+                            success: declineDone
+                        });
+
+                        $(this).dialog("close");
+
+                    }
+                }
+            };
+
+
+            $('#decline-dialog').dialog(dialogOpts).dialog('open');
+            return false;
+        });
+    });
+
+
+
+
+    @*$("#decline").click(function () {
+
+        $.ajax({
+            type: "POST",
+            url: "/Tools/Decline",
+            data: "id=" + @(Model.ApplicationId),
+            contenType: "",
+            dataType: "json",
+            success: declineDone
+        });
+
+        return false;
+    });*@
+
+
+
+
+    function declineDone(data) {
+
+        $("#buttons").hide();
+        //alert("here?")
+        $("#save").hide();
+        $("#approve").hide();
+        $("#decline").hide();
+
+        $("#msg").html(data);
+
+        $("#d").text("Declined");
+
+        $('#msg').delay(3000).fadeOut(3000);
+    }
+
+</script>
+
+

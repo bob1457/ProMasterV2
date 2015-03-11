@@ -1,0 +1,39 @@
+﻿/*----- Custom Full Calendar Style -----*/
+
+.fc 
+{	
+	background-color:#ECE9C5;
+	}
+	
+.fc-header td
+{
+    background-color:#e3a21a;
+    }
+
+.fc-header-title h2 
+{
+    color:#aa4344;
+    font-variant:small-caps;
+    font-weight:900;
+    }
+    
+ #calandar tbody tr:nth-child(odd)
+ {
+	background:#ECE9C5;
+	}	
+	
+#calandar tbody tr:hover
+{
+	background:#ECE9C5;
+	}
+	
+tr.fc-minor td
+{
+    background-color:#ECE9C5;
+    }
+    
+.fc-header .fc-state-active,
+.fc-header .ui-state-active 
+{
+    background-color:#c5ecff;    
+    }

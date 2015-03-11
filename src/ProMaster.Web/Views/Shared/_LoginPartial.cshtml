@@ -1,0 +1,22 @@
+﻿@if (Request.IsAuthenticated) {
+    <text>
+        Hello, @Html.ActionLink(User.Identity.Name, "MyProfile", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })!
+        <img src="@Url.Content("~/Content/Documents/Others/" + User.Identity.Name + ".png")" width="20px" height="20px" title="@User.Identity.Name" id="avatar" />
+
+        
+<span class="button-mini vermelho">@using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
+            @Html.AntiForgeryToken()
+            <a href="javascript:document.getElementById('logoutForm').submit()">LOG OFF</a>
+        }</span>
+        
+        @if (User.Identity.IsAuthenticated && Roles.GetRolesForUser(User.Identity.Name).Contains("SuperAdmin"))
+        {        
+            <a href="@Url.Content("~/Admin")"><img src="@Url.Content("~/Content/Images/admin.png")" width="20px" height="20px" title="Site Admin" id="admin" /></a>
+        } 
+    </text>
+} else {
+    <ul>
+       
+        <li style="list-style:none"><span class="button-mini vermelho">@Html.ActionLink("LOG IN", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</span></li>
+    </ul>
+}

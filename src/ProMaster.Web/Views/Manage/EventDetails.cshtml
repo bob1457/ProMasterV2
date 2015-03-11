@@ -1,0 +1,150 @@
+﻿@model ProMaster.Core.Property.ViewModels.DisplayPropertyViewModel
+
+@{
+    ViewBag.Title = "Management Event Details";
+}
+
+<div class="content-wrapper">
+    <aside>
+        <p>
+            <!-- Left Panel/Column -->
+            <div id="left">
+                <div class="side_details_logo">
+                    <img src="~/Content/Images/event.png" alt="" title="Event Details" />
+
+                </div>
+                <div class="side_details_caption">
+                    <h3>Management Event Details</h3>
+                    <br />
+                    <span>
+                        Detailed property information
+                    </span>
+                    <div class="side_details_content">
+
+                        <div class="display-label">
+                            Name/Alias:
+                        </div><br />
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.PropertyName)
+                        </div><br />
+
+                        <div class="display-label">
+                            Description:
+                        </div><br />
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.PropertyDesc)
+                        </div><br />                        
+
+                        <div class="display-label">
+                            Rental Status:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.Status)
+                        </div><br />
+
+                       
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+    </aside><!-- End of aside -->
+    <div class="main metro">
+        <div id="manage-tabs" class="tabs-style">
+            <ul>
+                <li><a href="#tabs-1"><i class="fa fa-list-alt"></i> &nbsp;<span>General</span></a></li>
+            </ul>
+            <div id="tabs-1">
+                <div class="tab_content">
+                    <div class="tab_content_title">
+                        <span class="title_icon"><img src="@Url.Content("~/Content/Images/eventDetails.png")" alt="" title="" /></span>
+                        <span class="title_text"><h5>Management Contract Information</h5></span>
+                        <br />
+                        <span class="title_caption">Vendor information, including address, features and facilities, etc.</span>
+                    </div>
+                    <div class="tab_content_field">
+
+                        <fieldset>
+                            <legend><span><i class=" icon-address-book"></i> Basic Information</span></legend>
+                            <div class="basic">
+                                <div class="display-label">
+                                    Event ID:
+                                </div>
+                                <div class="display-field">
+                                    @Html.DisplayFor(model => model.EventId)
+                                </div>
+                                <br />
+                                <div class="basic">
+                                    <div class="display-label">
+                                        Event Date:
+                                    </div>
+                                    <div class="display-field">
+                                        @Html.DisplayFor(model => model.EventDate)
+                                    </div>
+                                    <br />
+                                    <div class="display-label">
+                                        Event Subject:
+                                    </div>
+                                    <div class="display-field">
+                                        @Html.DisplayFor(model => model.EventTitle)
+                                    </div><br />
+                                    <div class="display-label">
+                                        Details:
+                                    </div>
+                                    <div class="display-field">
+                                        @Html.DisplayFor(model => model.EventDetails)
+                                    </div>
+                                    <br />
+                                    <div class="display-label">
+                                        Event Type (KMs):
+                                    </div>
+                                    <div class="display-field">
+                                        @Html.DisplayFor(model => model.EventType)
+                                    </div>
+                                    <br />
+                                    <div class="display-label">
+                                        Mileage Incurred (KMs):
+                                    </div>
+                                    <div class="display-field">
+                                        @Html.DisplayFor(model => model.MileageIncurred)
+                                    </div>
+                                    <br />
+                                    <div class="display-label">
+                                        Time Spent (hour(s)):
+                                    </div>
+                                    <div class="display-field">
+                                        @Html.DisplayFor(model => model.TimeSpent)
+                                    </div>
+                                    <br />
+                                    
+
+                                </div>
+
+                        </fieldset>
+
+
+
+                        <!--<div class="right-aligned"><div class="edit_button button-med ">@Html.ActionLink("Edit", "EditEvent", new { id = Model.VendorId/**/ })</div></div>-->
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+        </div>
+
+    </div>
+
+<!--Jquery ui tabs Script -->
+<script type="text/javascript">
+    $(function () {
+        $("#manage-tabs").tabs();
+    });
+</script>

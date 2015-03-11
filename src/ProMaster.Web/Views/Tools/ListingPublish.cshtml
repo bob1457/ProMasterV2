@@ -1,0 +1,289 @@
+﻿@model ProMaster.Core.Property.ViewModels.ListingViewModel
+
+@{
+    ViewBag.Title = "Listing Publish";
+}
+
+<div class="content-wrapper">
+
+  <aside> 
+    <p><!-- Left Panel/Column -->
+      <div id="left">
+        
+         
+      	    <div class="profile_logo">
+        	    <img src="@Url.Content(Model.PropertyImageUrl)" alt="" title="@Model.PropertyName" />            
+            </div>
+
+             <div class="profile_caption metro">
+        	    <h3>@Html.DisplayFor(model => model.PropertyName)</h3>
+        	    <br />
+
+                <span>
+            	    <div class="display-label">
+                       Property Added on:
+                    </div><br />
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.RecordCreateDate)
+                    </div><br />
+
+                    <div class="display-label">
+                        Last Updated on:
+                    </div><br />
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.RecordUpdateDate)
+                    </div><br />
+                </span>
+
+           
+    </div>
+
+      <p></p>
+      
+      <div class="side_title_caption metro">
+          
+          <span>Manage property listing and marketing communication.</span>	<br /><br /><br /><br />
+          @if (User.IsInRole("PropertyManager"))
+          {
+              <span><i class="icon-new-tab rss_color"></i> Quick Access</span>
+              <div class="side-widget">
+                  <a href="@Url.Content("~/Tools/Messaging")" title="Messaging"><div class="tile amarelo" id="p1"><span><i class="fa fa-envelope-o"></i></span><br /><br /> Messaging</div></a>
+                  <a href="@Url.Content("~/Tools/Calendar")" title="Calendar"><div class="tile vermelho" id="p2"><span><i class="fa fa-calendar-o"></i></span><br /><br /> Calendar</div></a>
+                  <a href="@Url.Content("~/Tools/Resources")" title="Resources"><div class="tile metro_dark_blue" id="p3"><span><i class="fa fa-user"></i></span><br /><br /> Resources</div></a>
+                  <a href="@Url.Content("~/Tools/DocTool")" title="Document Tools"><div class="tile purple" id="p4"><span><i class="icon-clipboard-2"></i></span><br /><br /> Document Tools</div></a>
+              </div>
+          }
+      </div> <!-- End of left -->   
+
+
+      </div>      
+    </p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </aside><!-- End of aside -->
+
+  <div class="main metro">
+
+    <div id="add_edit_panel">
+        <h3><i class="fa fa-th"></i> &nbsp; LISTING PUBLISH        	
+          <span>Prepare property for listing and publish to listing</span>
+        </h3>
+                <!-- <fieldset class="edit"> 
+                <legend><span></span></legend> --><!-- </fieldset>  -->
+                
+                @using (Html.BeginForm())
+                { 
+                    <div class="edit_field">
+                         <fieldset>
+                            <legend><span><i class="fa fa-info-circle"></i> Listing Information</span></legend>
+                            
+                                           
+                                <div class="display-label">
+                                    <span class="grey-font">Property ID:</span>
+                                </div>
+                                <div class="display-field">
+                                    <span class="grey-font">@Html.DisplayFor(model => model.PropertyId)</span>
+                                </div> 
+                                <br /><br />
+                                    <br />
+                                <div class="display-label">
+                                    Listing Title:
+                                </div>
+                                <div class="display-field">
+                                    @Html.TextBoxFor(model => model.PorpertyListingTitle, new { autofocus = "", required = "Required" })
+                                    @Html.ValidationMessageFor(model => model.PorpertyListingTitle)
+                                </div> 
+                                <br />
+                                <div class="display-label">
+                                    Listing Description:
+                                </div>
+                                <div class="display-field">
+                                    @Html.TextAreaFor(model => model.PropertyListDesc, new { required = "Required" })                                
+                                </div>
+                                <br />
+                                
+                                <div class="display-label">
+                                    Monthly Rent:
+                                </div>
+                                <div class="display-field">
+                                    @Html.TextBoxFor(model => model.ListedRentAmount, new { required = "Required" })                                
+                                </div>
+                                <br />
+                               
+
+                                <div class="display-label">
+                                    Is Listed Externally:
+                                </div>
+                                <div class="display-field">
+                                    @Html.EditorFor(model => model.IsListedExternally)                                
+                                </div>
+                                <br />
+                                 <div class="display-label">
+                                     Notes:
+                                 </div>
+                                 <div class="display-field">
+                                     @Html.TextAreaFor(model => model.Notes)
+                                 </div>
+                                 <br />
+                            </fieldset>
+                                <br />
+
+                        </div> 
+                    <br />
+                    @*<div class="error">@Html.ValidationMessage("Error")</div>*@
+                    <!-- Adding pictures only works when the listing exists -->
+                    
+                    @*<fieldset>
+                        <legend><span><i class="fa fa-indent"></i> Property Photos</span></legend>
+
+                        <div id="pic_list">@Html.Partial("_PropertyListPictures")</div>
+                        
+                        
+                    </fieldset>*@
+                    
+                    <div class="right-aligned"><input type="submit" value="Publish/List" /></div>
+                } 
+
+                
+                    
+        </div>   
+  
+  </div><!-- End of main-->
+
+</div><!-- End of content-wrapper -->
+
+
+<!-- Add Picture Dialog -->
+<div id="add_pic">
+    <p></p>
+        <h4 class="ui-dia"><i class="fa fa-th"></i> &nbsp; ADD NEW PICTURE        	
+          
+        </h4>
+         <form id="form" action="@Url.Content("/Tools/AddPropertyPicture/" + @Model.PropertyId)" method="post" enctype="multipart/form-data">
+              <div class="edit_field ui-dia">
+
+                <fieldset class="ui-dia">
+                    <div class="display-label">
+                        Picture Title:       
+                    </div>  
+                    <div class="display-field">
+                        @Html.TextBoxFor(model => model.PropertyPictureTitle, new { @id="title", placeholder = "Required "}) <br />  
+                        @Html.ValidationMessageFor(model => model.PropertyPictureTitle)
+                    </div>
+                    <div class="display-label">
+                         Picture Caption:       
+                    </div>
+                     <div class="display-field">
+                        @Html.TextBoxFor(model => model.ListedPropertyPictureCaption, new { @id="details", placeholder = "Picture caption... "}) <br />
+                    </div>
+                    <div class="display-label">
+                        Upload file:     
+                    </div>
+                    <div class="display-field">
+                        <input id="upload" type="file" name="file" />
+                    </div>
+                    
+                
+            </fieldset>
+             <input class="edit_button" id="submit1" type="submit"  value="Add" />
+             <input class="edit_button" type="button" value="Cancel" id="btncancel" />
+            <p></p>
+              </div>
+    </form>
+</div>
+
+
+
+
+<!-- Add Picture Script -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#add_pic").hide();
+        // $("#pltype").hide();  
+    });
+
+    //$("#add").button();
+
+    $('#add').click(function () {
+
+        $("#t").val(1);
+
+
+        var dialogOpts = {
+            autoOpen: false,
+            modal: true,
+            resizable: false,
+            draggable: false,
+            width: 480,
+            title: 'Add Property Image'
+
+
+        }
+
+        $("#add_pic").dialog(dialogOpts).dialog('open');
+
+        return false;
+    });
+
+    $("#submit1").click(function () {
+
+        //Upload file
+
+        $("#add_pic").dialog('close');
+
+
+        //Reload picture list partial view
+        var url = "/Tools/GetPictureList/";
+        var q = "id=" + @Model.PropertyId
+        //alert(q);
+        $.get(url, q, function (data) {
+            $("#pic_list").html(data);
+        });
+    });
+
+
+    $("#btncancel").click(function () {
+        $("#add_pic").dialog('close');
+    });
+
+
+
+</script>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+<script type="text/javascript">
+    $(function () {
+        $(".datepicker").datepicker();
+    });
+    
+</script>
+
+<script type="text/javascript">
+    $("#cancel").hide();
+    $("#image").hide();
+
+    $("#show").click(function () {
+        $("#image").show();
+        $("#show").hide();
+        $("#cancel").show();
+
+        return false;
+    });
+
+    $("#cancel").click(function () {
+        $("#image").hide();
+        $("#show").show();
+        $("#cancel").hide();
+    });
+</script>
+
+<!-- Delete picture script -->
+<script type="text/javascript">
+
+
+</script>

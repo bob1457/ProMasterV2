@@ -1,0 +1,201 @@
+﻿@model ProMaster.Core.StrataCouncil.StrataCouncil
+
+@{
+    ViewBag.Title = "Edit Strata Council";
+}
+
+
+<div class="content-wrapper">
+    <aside> 
+    <p><!-- Left Panel/Column -->
+      <div id="left">
+        
+         
+      	    <div class="profile_logo">
+        	    <img src="@Url.Content("~/Content/Documents/image_icon.png")" alt="" title="@Model.StrataCouncilTitle" />            
+            </div>
+
+             <div class="profile_caption metro">
+                 <h3>@Html.DisplayFor(model => model.StrataCouncilTitle)</h3>
+                 <br />
+                 
+                 <span>
+                     <div class="display-label">
+                         Contract Entered on:
+                     </div><br />
+                     <div class="display-field">
+                         @Html.DisplayFor(model => model.CreateDate)
+                     </div><br />
+                     <div class="display-label">
+                         Last Updated on:
+                     </div><br />
+                     <div class="display-field">
+                         @Html.DisplayFor(model => model.UpdateDate)
+                     </div><br />
+                 </span>
+
+             </div>
+
+      <p></p>
+      
+        <div class="side_title_caption metro">
+            <p></p>
+            <span><i class="icon-new-tab rss_color"></i> Quick Access</span>
+            <div class="side-widget">
+                <a href="@Url.Content("~/Tools/Messaging")" title="Messaging"><div class="tile amarelo" id="p1"><span><i class="fa fa-envelope-o"></i></span><br /><br /> Messaging</div></a>
+                <a href="@Url.Content("~/Tools/Calendar")" title="Calendar"><div class="tile vermelho" id="p2"><span><i class="fa fa-calendar-o"></i></span><br /><br /> Calendar</div></a>
+                <a href="@Url.Content("~/Tools/Resources")" title="Resources"><div class="tile metro_dark_blue" id="p3"><span><i class="fa fa-user"></i></span><br /><br /> Resources</div></a>
+                <a href="@Url.Content("~/Tools/DocTool")" title="Document Tools"><div class="tile purple" id="p4"><span><i class="icon-clipboard-2"></i></span><br /><br /> Document Tools</div></a>
+            </div>
+
+        </div>      
+
+
+      </div>      
+    </p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </aside><!-- End of aside -->
+
+  <div class="main metro">
+       <div id="add_edit_panel">
+        <h3><i class="fa fa-th"></i> &nbsp; EDIT STRATA COUNCIL        	
+          <span>Please fill/Update all required fields and click "Save".</span>
+        </h3>
+                <!-- <fieldset class="edit"> 
+                <legend><span></span></legend> --><!-- </fieldset>  -->
+                
+                @using (Html.BeginForm()) 
+                { 
+                    <div class="edit_field">
+                         <fieldset>
+                            <legend><span><i class="fa fa-info-circle"></i> Basic Information</span></legend>
+                            
+                                           
+                                <div class="display-label">
+                                    <span class="grey-font">Council ID:</span>
+                                </div>
+                                <div class="display-field" style="padding-top: 5px;">
+                                    <span class=" grey-font">@Html.DisplayFor(model => model.StrataCouncilId)</span>
+                                </div>
+                                <br /><br />
+                                    <br />
+                                <div class="display-label">
+                                    Strata Name:
+                                </div>
+                                <div class="display-field">
+                                    @Html.TextBoxFor(model => model.StrataCouncilTitle, new { autofocus = "" })
+                                    @Html.ValidationMessageFor(model => model.StrataCouncilTitle)
+                                </div> 
+                                <br />
+                                <div class="display-label">
+                                    Manager First Name:
+                                </div>
+                                <div class="display-field">
+                                    @Html.EditorFor(model => model.StrataManagerFirstName)                                
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                     Manager Last Name:
+                                </div>
+                                <div class="display-field">
+                                   @Html.EditorFor(model => model.StrataManagerLastName)
+                                   @Html.ValidationMessageFor(model => model.StrataManagerLastName)
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                   Mailing Address:
+                                </div>
+                                <div class="display-field">
+                                   @Html.TextAreaFor(model => model.StrataCouncilMailingAddress)                              
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                    Contact Email:
+                                </div>
+                                <div class="display-field">
+                                    @Html.EditorFor(model => model.StrataManagerEmail)
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                    Contact Telephone:
+                                </div>
+                                <div class="display-field">
+                                    @Html.EditorFor(model => model.StrataManagerTelephone)
+                                </div>
+                            </fieldset>
+                                <br />
+
+                        </div> 
+                    
+                    <div class="right-aligned"><input type="submit" value="Save" /></div>
+                } 
+                    
+        
+    </div>
+
+  </div>
+
+</div><!-- End of content=wrapper -->
+
+
+
+<!--
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+<fieldset>
+        <legend>CreateStrataCouncilViewModel</legend>
+                
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StrataCouncilTitle)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StrataCouncilTitle)           
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StrataManagerFirstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StrataManagerFirstName)           
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StrataManagerLastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StrataManagerLastName)           
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StrataCouncilMailingAddress)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.StrataCouncilMailingAddress)           
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StrataManagerEmail)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StrataManagerEmail)           
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StrataManagerTelephone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StrataManagerTelephone)           
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+</fieldset>
+    
+}
+
+-->

@@ -1,0 +1,86 @@
+﻿@model ProMaster.Core.ViewModels.ManageDisplayViewModel
+
+<table>
+    <thead>
+        <tr>
+            <td colspan="9" class="table-h amarelo">
+                <span><i class="fa fa-th-list"></i></span> Lease Agreemnt List
+            </td>
+        </tr>
+    </thead>
+    <tr>
+
+        <th>ID &nbsp;</th>
+        <th>Property</th>
+        <th>Tenant First Name</th>
+        <th>Tenant Last Name</th>
+        <th>Sign Date</th>
+        <th>Start Date</th>
+        <th>Monthly Rent</th>
+        <th></th>
+        <th></th>
+    </tr>
+
+
+    @if (Model.LeaseList.Count() != 0)
+    {
+        foreach (var item in Model.LeaseList.Take(10))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LeaseId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PropertyName)
+                </td>
+                <td>
+                   
+                        @Html.DisplayFor(modelItem => item.TenantFirstName)
+                    
+                    
+                </td>
+
+                <td>                    
+                        @Html.DisplayFor(modelItem => item.TenantLastName)                   
+                   
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LeaseSignDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LeaseStartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RentAmount)
+                </td>
+
+                <td>
+                    <div class="table-button"><a href="@Url.Action("LeaseDetails", "Manage", new { id = item.LeaseId })"><img src="@Url.Content("~/Content/Images/details.png")" title="Details" /></a></div>
+                </td>
+                <td>
+                    <div class="table-button"><a class="delete-link" href="@Url.Action("DeleteLease", "Manage", new { id = item.LeaseId })"><img src="@Url.Content("~/Content/Images/delete.png")" title="Delete" /></a></div>
+                </td>
+            </tr>
+        }
+    }
+    else
+    {
+        <tr>
+            <td colspan="9">No records!</td>
+        </tr>
+    }
+
+    <tfoot>
+        <tr>
+            <td colspan="9"><span><i class="fa fa-list-ul"></i></span></td>
+
+        </tr>
+    </tfoot>
+</table>
+
+<div class="more">
+    @if (Model.LeaseList.Count() > 10)
+    {
+        <a href="#">More...</a>
+    }
+</div>

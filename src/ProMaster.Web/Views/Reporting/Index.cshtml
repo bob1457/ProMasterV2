@@ -1,0 +1,372 @@
+﻿@model ProMaster.Core.Reporting.ViewModels.DisplayDashboardViewModel
+
+@{
+    ViewBag.Title = "Reporting";
+}
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+
+
+<div class="content-wrapper">
+    <aside> 
+    <p><!-- Left Panel/Column --></p>
+      <div>
+      	<div class="side_title-logo">
+        	<img src="@Url.Content("~/Content/Images/reporting.png")" alt="" title="Reporting" />
+            
+        </div>
+        <div class="side_title_caption">
+        	<h3>Accounting and Reporting</h3>
+        	<br>
+            Manage all your reporting requirements.
+        
+        </div>
+      </div>
+      
+    
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </aside><!-- End of aside -->
+
+  <div class="main">	
+    	<div id="manage-tabs" class="tabs-style">
+          <ul>
+            <li><a href="#tabs-1"><i class="fa fa-tachometer"></i> <span>Key Indicators</span></a></li>            
+            <li><a href="#tabs-2"><i class="fa fa-bar-chart-o"></i> Reporting & Accounting</a></li>
+            <!-- <li><a href="#tabs-3"><i class="fa fa-usd"></i> Financial Reporting</a></li>      -->      
+            
+          </ul>
+  		  <div id="tabs-1">
+            <div id="dash">
+                <div id="chart_div2"></div>
+                <div id="chart_div"></div>
+            </div>
+            
+
+          </div>
+    	  	
+          <div id="tabs-2">
+            <!--
+             <div id="add_edit_panel">
+            		<h3 ><span class="no_bg"><i class="fa fa-th"></i> &nbsp; CREATE REPORT ON PROPERTIES  </span>    	
+                        <span class="no_bg">Create business and financial reports on the properties under management</span>
+                    </h3>
+                <div class="edit_field">
+                    <div class="display-label">
+                       &nbsp; Select Report Type:
+                    </div><br />
+                    <div class="display-field" id="type" >
+                        <select id="report_type">
+                            <option value="1">Property Maintenance Cost Report</option>
+                            <option value="2">Property Rent Revenue Report</option>
+                            <option value="3" >Property Management Fee Report</option>
+                            <option value="4">Property Financial Report</option>
+                        </select>
+                    </div><br />
+                    	<input class="rlabel"id="all" type="radio" name="ppt"  />All Properties<br> 
+                    	<input class="rlabel" id="indi" type="radio" name="ppt"/>Selected Property
+                    </div>
+                
+                	
+-->
+
+                        
+                        <!-- <div class="left-aligned"><input id="md" type="submit" value="Get Report" /></div> 
+                        <div class="button-med edit_button">@Html.ActionLink("Add New", "AddDocument")</div> 
+
+                        <div class="left-aligned"><div class="edit_button button-med">@Html.ActionLink("Details", "PropertyOwnerDetails", new { id=Model.PropertyId /**/ })</div></div>
+                        -->
+                <div id="add_edit_panel">
+            		<h3 style="margin-top:-1em;" ><span class="no_bg"><i class="fa fa-th"></i> &nbsp; MANAGEMENT AND FINAINCAIL REPORT  </span>    	
+                        <span class="no_bg">Select report type and generate reports on properties under management.</span>
+                    </h3>
+                </div>
+
+                 <div id="title_r" class="list_panel">  
+                    <div id="list">                  
+                        <div class="tool_tile">
+                        <a href="@Url.Content("~/Reporting/CostReportByProperty")" title="Financial Reporting">
+                            <div class="tile_large report_font greyTile text_shadow" id="p11">
+                                <span class="large_font">
+                                    <div class="r_tile_icon"><img src="@Url.Content("~/Content/Images/financial.png")" />
+                                    </div>
+                            </span><br />Financial Reporting
+                        </div>
+                        </a>
+                        <a href="@Url.Content("~/Reporting/BusinessReportByProperty")" title="Fee Report">
+                            <div class="tile_large report_font text_shadow" id="p2">
+                                <span class="large_font">
+                                    <div class="r_tile_icon"><img src="@Url.Content("~/Content/Images/perf.png")" />
+                                    </div> 
+                                </span><br />Business Reporting
+                            </div></a>
+                        <a href="@Url.Content("~/Reporting/ManagementAccountingByProperty")" title="Calendar"><div class="tile_large report_font text_shadow" id="p2"><span class="large_font"><div class="r_tile_icon"><img src="@Url.Content("~/Content/Images/magmnt.png")" title="Management Accounting" /></div></span><br />Management Accounting</div></a>
+                        <a href="@Url.Content("~/Reporting/LoggingTracking")" title="Tenancy Applications"><div class="tile_large report_font text_shadow" id="p4"><span class="large_font"><div class="r_tile_icon"><img src="@Url.Content("~/Content/Images/m_reporting.png")" title="Logging & Tracking" /></div></span><br />Logging & Tracking</div></a>	
+                        
+                    </div> 
+                    </div> 
+                </div> 
+            
+           </div>
+
+                    <!--
+                    <div id="report" class="metro">
+                        <fieldset>
+                            <legend><i class="icon-clipboard-2"></i> Report</legend>
+
+                            <div id="statement"></div>
+
+                        </fieldset>                    
+                    </div>
+
+                    -->
+      </div><!-- end of manage-tabs -->
+         
+            
+ <!--         <div id="tabs-3">
+
+
+ Move to a separate page 
+
+            <div id="add_edit_panel">
+            		<h3 ><span class="no_bg"><i class="fa fa-th"></i> &nbsp; FINAINACIL REPORT ON PROPERTY  </span>    	
+                        <span class="no_bg">Please select all or specific property and click "Generate Report".</span>
+                    </h3>
+                    	<input class="rlabel"id="all" type="radio" name="ppt"  />All Properties<br> 
+                    	<input class="rlabel" id="indi" type="radio" name="ppt"/>Selected Property
+                
+                	<div  class="chose">
+                        <div id="p">
+                         @Html.DropDownListFor(model => model.PropertyId, Model.PropertyList)
+                        </div>
+
+                        <div id="choose"><span>From:</span>
+                    		<div class="display-field">
+                                <input style="width:16em;" id="sDate"  type="text" class="datepicker" value="@DateTime.Now.ToString("M/d/yyyy")" />
+                            </div>
+                		</div>
+                        <div id='choose1'><span>TO:</span>
+                    		<input  style="width:16em;" type="text" id="eDate" class="datepicker" value="@DateTime.Now.ToString("M/d/yyyy")" />
+                		</div>
+
+
+                        <p></p><br />
+                        <div class="left-aligned"><input id="md" type="submit" value="Get Report" /></div>
+            
+            		</div>
+                    <div id="report" class="metro">
+                        <fieldset>
+                            <legend><i class="icon-clipboard-2"></i> Report</legend>
+
+                            <div id="statement"></div>
+
+                        </fieldset>                    
+                    </div>
+            	</div>
+            
+ 
+              
+                       
+		</div>  -->
+    </div><!-- End of main -->
+
+
+
+</div> 
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#pList").hide();
+        $("#hide").hide();
+        $("#rList").hide();
+        $("#hide1").hide();
+
+
+        $("#show").click(function () {
+            $("#pList").show();
+            $("#show").hide();
+            $("#hide").show();
+        });
+
+        $("#show1").click(function () {
+            $("#rList").show();
+            $("#show1").hide();
+            $("#hide1").show();
+        });
+
+        $("#hide").click(function () {
+            $("#pList").hide();
+            $("#show").show();
+            $("#hide").hide();
+        });
+
+        $("#hide1").click(function () {
+            $("#rList").hide();
+            $("#show1").show();
+            $("#hide1").hide();
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        $("#manage-tabs").tabs();
+    });
+</script>
+
+<!-- Google Chart Script -->
+<script type="text/javascript">
+
+     // Load the Visualization API and the piechart package.
+     google.load('visualization', '1.0', { 'packages': ['corechart'] });
+
+     // Set a callback to run when the Google Visualization API is loaded.
+     google.setOnLoadCallback(drawChart);
+
+     // Callback that creates and populates a data table, 
+     // instantiates the pie chart, passes in the data and
+     // draws it.
+     function drawChart() {
+
+         // Create the data table.
+         // for chart 1
+         var data = new google.visualization.DataTable();
+         data.addColumn('string', 'Topping');
+         data.addColumn('number', 'Slices');
+         data.addRows([
+        ['Single House', 6],
+        ['townhouse', 3],
+        ['Apartment', 5],
+        ['Mobile Home', 1],
+       
+      ]);
+
+         // Set chart options
+         var options = { 'title': 'Property Types',
+             'width': 300,
+             'height': 200,
+             'backgroundColor': '#E4E4E4'
+         };
+
+         // Instantiate and draw our chart, passing in some options.
+         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+         chart.draw(data, options);
+
+
+
+         // Create the data table.
+         // for chart 2
+         var data = new google.visualization.DataTable();
+         data.addColumn('string', 'Topping');
+         data.addColumn('number', 'Slices');
+         data.addRows([
+        ['Leased', 8],
+        ['Listed', 3],
+        ['Pending', 2],
+      ]);
+
+         // Set chart options
+         var options = { 'title': 'Property Lease',
+             'width': 300,
+             'height': 200,
+             'backgroundColor': '#E4E4E4'
+         };
+
+         // Instantiate and draw our chart, passing in some options.
+         var chart = new google.visualization.PieChart(document.getElementById('chart_div2'));
+         chart.draw(data, options);
+
+     }
+ </script>
+
+ <!-- Financial Reporting Panel Script -->
+
+ <script type="text/javascript">
+     $(document).ready(function () {
+         $("#all").prop('checked', true);
+         $("#p").hide();
+         //$("#report").hide();
+
+         $("#indi").change(function () {
+
+             var isChecked = $(this).is(':checked');
+
+
+
+             if (isChecked) {
+                 $("#p").show();
+             }
+             else {
+                 $("#p").hide();
+             }
+         });
+
+         $("#all").change(function () {
+
+             var isChecked = $("#indi").is(':checked');
+
+
+
+             if (isChecked) {
+                 $("#p").show();
+             }
+             else {
+                 $("#p").hide();
+             }
+         });
+
+     });
+		
+
+</script>
+
+
+<!-- Financial Reporting Script --> <!-- Will be moved to the new page with the html code above -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#md").button();
+        $("#data").hide();        
+        //$("#period").hide();
+    
+
+        $("#md").click(function () {
+            $("#period").show();
+
+            var sDate = $("#sDate").val();
+            var eDate = $("#eDate").val();
+            var propertyId = @(Model.PropertyId);
+
+                $("#s").html(sDate);
+                $("#e").html(eDate);         
+
+                var url="/Accounting/GetManagementAccountingData/";
+                var q="id=" + @(Model.PropertyId) + "&startPeriod=" + sDate + "&endPeriod=" + eDate;
+                    $.get(url, q, function(data){                                
+                        $("#statement").html(data);    
+                        return false;        
+                
+               
+                
+                        // Suceeded 
+            
+                    });
+        });
+    });
+
+
+
+
+</script> 
+
+
+
+
+
+<script type="text/ecmascript">
+    $(function () {
+        $(".datepicker").datepicker();
+    });
+</script>

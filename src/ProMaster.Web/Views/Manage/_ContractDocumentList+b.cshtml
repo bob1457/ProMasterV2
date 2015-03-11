@@ -1,0 +1,24 @@
+﻿@model ProMaster.Core.Contract.ViewModels.DisplayContractViewModel
+
+@if (Model.DocumentInfo != null)
+{
+<ul>
+    @foreach (var item in Model.DocumentInfo)
+    {
+        <li>
+            <a href="@Url.Content(@item.DocumentUrl)" target="_blank"><img src="@Url.Content("~/Content/Documents/image_icon.png")" alt="" title="@item.DocumentName" width="36" height="36"/></a>
+            @item.DocumentId
+            @item.DocumentName
+            @item.DcoumentDetails
+            @item.CreationDate            
+            @Html.ActionLink("Details", "DocumentDetails", "Document", new { id = @item.DocumentId }, null)
+             @Html.ActionLink("Delete", "DeleteDocument", "Document", new { id = @item.DocumentId }, new { @class = "delete-link" })
+        </li>
+    }
+</ul>
+}
+else
+{
+    
+    <strong>No Documents</strong>
+}

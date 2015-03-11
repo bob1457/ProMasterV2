@@ -1,0 +1,27 @@
+﻿@model ProMaster.Core.Reporting.ViewModels.AccountingCostViewModel
+
+<div id="property">
+   <div class="title_icon">
+                    <img src="@Url.Content("~/Content/Images/houses2.png")" alt="" title="All Properties" />
+                    </div>
+                    <!----> <div class="title_text"><h5>Management Cost Report for All Managed Properties</h5><br /><br />
+                        <span class="title_caption">Costs include repair and other costs<br /></span>
+                    </div>    
+                    
+                    
+                
+   
+</div><br />
+
+<p></p>
+<div id="report_title">Property Management Cost Report</div>
+<div id="report_data">
+        Management Fees:<br /><br />
+        @Html.Partial("_ManagementFee") 
+        <p></p><br />
+    Total Management Costs: &nbsp;
+    <span  class="total">$@ViewBag.totalfee</span>
+        <p></p><br /><br /><br />
+
+     <p><a class="left-aligned edit_button button_border" id="pdf" href="@Url.Content("~/Reporting/ExportReportPDF/?id=" + @ViewBag.pid +"&tId=2&startDate=" + @ViewBag.start +"&endDate=" +@ViewBag.end  )"  target="_blank">Export in PDF</a></p>
+</div>

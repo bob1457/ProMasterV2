@@ -1,0 +1,291 @@
+﻿@model ProMaster.Core.StrataCouncil.ViewModels.DisplayStrataCouncilViewModel
+
+@{
+    ViewBag.Title = "Strata Council Details";
+}
+
+
+<div class="content-wrapper">
+    <aside> 
+    <!-- Left Panel/Column -->
+        <div id="left">
+            <div class="side_details_logo">
+                <img src="@Url.Content("~/Content/Images/council1.png")" alt="" title="Landlord Details" />
+            </div>
+            <div class="side_details_caption metro">
+                <h3>Strata Council Details</h3>
+                <br />
+            </div>
+        </div>
+        <p>&nbsp;</p>
+    </aside><!-- End of aside -->
+
+    <div class="main metro">	
+    	<div id="manage-tabs" class="tabs-style">
+          <ul>
+            <li><a href="#tabs-1"><i class="fa fa-list-alt"></i> &nbsp;<span>General</span></a></li>
+            <li><a href="#tabs-2"><i class="icon-home"></i> &nbsp;Managed Properties</a></li>            
+            <li><a href="#tabs-3"><i class="icon-clipboard-2"></i> &nbsp;Resources</a></li>
+            
+          </ul>
+  		  <div id="tabs-1">    		
+            <div class="tab_content">
+                <div class="tab_content_title">
+                    <span class="title_icon"><img src="@Url.Content("~/Content/Images/council.png")" alt="" title="" /></span>
+                    <span class="title_text"><h5>Strata Council Information</h5></span>
+                    <br />
+                    <span class="title_caption">Property information, including address, features and facilities, etc.</span>
+                </div>  
+                <div class="tab_content_field">
+                    <!-- <div class="display-label">
+                        Property Address:
+                    </div> -->
+                    
+                    <fieldset>
+                        <legend><span><i class=" icon-address-book"></i> Address</span></legend>
+                        <div class="basic">
+                            <div class="display-label">
+                            ID:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.StrataCouncilId)
+                        </div> 
+                        <br />
+                        <div class="display-label">
+                            Couuncil Name:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.StrataCouncilName)
+                        </div> 
+                        <br />
+                        <div class="display-label">
+                            Manager First Name:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.StrataManageFirstName)
+                        </div>
+                        <br />
+                        <div class="display-label">
+                             Manager Last Name:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.StrataManagerLastName)
+                        </div>
+                        <br />
+                        <div class="display-label">
+                             Manager Email:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.StrataManagerContactEmail)
+                        </div>
+                        <br />
+                        <div class="display-label">
+                            Manager Telephone:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.StrataManagerContactTel)
+                        </div><br />
+                        <div class="display-label">
+                            Mailing Address:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.StrataCounvilMailingAddress)
+                        </div>
+                                                
+                        
+                    </div>
+                    
+                    </fieldset> 
+                    
+                   
+
+                    <div class="left-aligned backbutton"><a id="back" href="@Url.Content("~/Manage")" title="Back..."><span class="backbutton_format"><i class="icon-arrow-left-3"></i></span> Back to List...</a></div><div class="right-aligned"><div class="edit_button button-med ">@Html.ActionLink("Edit", "EditStrataCouncil", new { id = Model.StrataCouncilId /**/ })</div></div>
+                </div>
+            
+            
+  		  </div>
+         
+		</div> 
+         <div id="tabs-2">
+            
+            <div class="tab_content">
+                <div class="tab_content_title">
+                    <span class="title_icon"><img src="@Url.Content("~/Content/Images/property.png")" alt="" title="" /></span>
+                    <span class="title_text"><h5>Property Information</h5></span>
+                    <br />
+                    <span class="title_caption">Information of Properties, including apartments and twonhouses,  under Management </span>
+                </div>
+                <div class="tab_content_field">
+                     <fieldset>
+                        <legend><span><i class="fa fa-info-circle"></i> Property Under Management</span></legend>
+                        
+                        <div id="condolist">@Html.Partial("_CondoList")</div>
+
+                         <div class="add_element">
+                                <a id ="property" href="#">Add Property</a><a id="cancel" href="#">Cancel</a>
+                                <br />                                
+                                <div id="add_s">        
+                                   <h5>Select Property to be added:</h5>
+                                   
+                                   <div id="list">
+                                    <select id="list2">
+                                    </select>
+                                   </div>       
+                                   <a href="#" id="go">Add</a>
+                                    <p></p>
+                                </div>
+
+                             </div>
+
+                     </fieldset>
+
+                </div>
+                    
+            
+            
+            </div>
+          </div>  
+
+        <div id="tabs-3">
+                       <div class="tab_content">
+                           <div class="tab_content_title">
+                            <span class="title_icon"><img src="@Url.Content("~/Content/Images/documents3.png")" alt="" title="" /></span>
+                            <span class="title_text"><h5>Strata Documents</h5></span>
+                            <br />
+                            <span class="title_caption">Documents about landord(s), or property owner, including ID, and other support documents.</span>
+                        </div>
+                           <div class="tab_content_field">
+                            <fieldset>
+                                <legend><span><i class="fa fa-file"></i> Strata Related Resources</span></legend>
+                                    <div id="content_info">
+                        
+                                </div>   
+                    
+                                <div class="right-aligned"><div class="edit_button button-med"></div></div>
+                            </fieldset>
+                
+                
+                        </div>
+
+
+                       </div>
+             
+
+
+                  </div>
+
+    </div>
+        
+
+    </div><!-- End of main -->
+
+</div><!-- End of content-wrapper -->
+
+
+
+
+
+
+
+
+    
+
+
+<!--<div id="condolist">@Html.Partial("_CondoList")</div>
+
+
+-->
+<br />
+<div id="msg"></div>
+<p></p>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#add_s").hide();
+        $("#cancel").hide();
+
+        
+
+        var url = "@(Url.Content("~/Manage/GetCondoList"))";
+        var option = $('<option />');
+
+        $.getJSON(url, function (data) {
+            $("#list2").empty(); 
+
+            /* alert(data);*/
+
+            $.each(data, function () {
+                $("#list2").append($("<option />").val(this.id).html(this.name));
+            });
+            
+        });
+        
+
+        return false;
+    });
+</script>
+
+<!-- Add property to strata council script -->
+<script type="text/javascript">
+    $("#property").click(function () {
+        $("#add_s").show();
+        $("#property").hide();
+        $("#cancel").show();
+    });
+
+    $("#cancel").click(function () {
+        $("#add_s").hide();
+        $("#property").show();
+        $("#cancel").hide();
+    });
+
+    $("#go").click(function () {
+
+        var id = $("#list2").val();
+
+        $.ajax({
+            type: "POST",
+            url: "/Manage/AddCondoToStrata",
+            data: "id=" + id +"&sid=" + @(Model.StrataCouncilId),
+
+            contenType: "",
+            dataType: "json",
+            success: Suceeded
+        });
+
+        function Suceeded(data) {
+            //refresh the condo list with $.get ajax call...
+
+            var url="/Manage/GetManagedCondoList/";
+            var q="id=" + @Model.StrataCouncilId; 
+            $.get(url, q, function(data){                                
+                $("#condolist").html(data);            
+            });
+
+            $('#msg').html(data);
+            $("#msg").delay(5000).fadeOut(400);
+
+            return false;
+        }
+
+
+    });
+</script>
+
+<!--Jquery ui tabs Script -->
+<script type="text/javascript">
+    $(function () {
+        $("#manage-tabs").tabs();
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        //alert(window.name);
+
+        //write url for back to list button
+        //
+        $("#back").attr("href", window.name);
+
+    });
+</script>
+

@@ -1,0 +1,110 @@
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Core\bin\Debug\ProMaster.Core.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Core\bin\Debug\ProMaster.Core.pdb
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Core\obj\Debug\ResolveAssemblyReference.cache
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Core\obj\Debug\ProMaster.Core.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Core\obj\Debug\ProMaster.Core.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Core\bin\Debug\ProMaster.Core.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Core\bin\Debug\ProMaster.Core.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Core\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Core\obj\Debug\ProMaster.Core.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Core\obj\Debug\ProMaster.Core.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Core\bin\Debug\ProMaster.Core.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Core\bin\Debug\ProMaster.Core.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Core\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Core\obj\Debug\ProMaster.Core.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Core\obj\Debug\ProMaster.Core.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Core\bin\Debug\ProMaster.Core.dll.config
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Core\bin\Debug\ProMaster.Core.dll.config
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Core\bin\Debug\ProMaster.Core.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Core\bin\Debug\ProMaster.Core.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Core\obj\Debug\ProMaster.Core.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Core\obj\Debug\ProMaster.Core.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Core\bin\Debug\ProMaster.Core.dll.config
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Core\obj\Debug\ProMaster.Core.csprojResolveAssemblyReference.cache
+C:\Development\Projects\ProMaster\ProMaster.Core\bin\Debug\ProMaster.Core.dll.config
+C:\Development\Projects\ProMaster\ProMaster.Core\bin\Debug\ProMaster.Core.dll
+C:\Development\Projects\ProMaster\ProMaster.Core\bin\Debug\ProMaster.Core.pdb
+C:\Development\Projects\ProMaster\ProMaster.Core\bin\Debug\System.Web.Mvc.dll
+C:\Development\Projects\ProMaster\ProMaster.Core\obj\Debug\ProMaster.Core.csprojResolveAssemblyReference.cache
+C:\Development\Projects\ProMaster\ProMaster.Core\obj\Debug\ProMaster.Core.dll
+C:\Development\Projects\ProMaster\ProMaster.Core\obj\Debug\ProMaster.Core.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Core\bin\Debug\ProMaster.Core.dll.config
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Core\bin\Debug\ProMaster.Core.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Core\bin\Debug\ProMaster.Core.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Core\bin\Debug\log4net.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Core\bin\Debug\log4net.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Core\obj\Debug\ProMaster.Core.csprojResolveAssemblyReference.cache
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Core\obj\Debug\ProMaster.Core.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Core\obj\Debug\ProMaster.Core.pdb
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Core\bin\Debug\ProMaster.Core.dll.config
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Core\bin\Debug\ProMaster.Core.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Core\bin\Debug\ProMaster.Core.pdb
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Core\bin\Debug\log4net.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Core\bin\Debug\System.Web.Mvc.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Core\bin\Debug\log4net.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Core\obj\Debug\ProMaster.Core.csprojResolveAssemblyReference.cache
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Core\obj\Debug\ProMaster.Core.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Core\obj\Debug\ProMaster.Core.pdb
+C:\Projects\ProMaster\ProMaster.Core\bin\Debug\ProMaster.Core.dll.config
+C:\Projects\ProMaster\ProMaster.Core\bin\Debug\ProMaster.Core.dll
+C:\Projects\ProMaster\ProMaster.Core\bin\Debug\ProMaster.Core.pdb
+C:\Projects\ProMaster\ProMaster.Core\bin\Debug\log4net.dll
+C:\Projects\ProMaster\ProMaster.Core\bin\Debug\System.Web.Mvc.dll
+C:\Projects\ProMaster\ProMaster.Core\bin\Debug\log4net.xml
+C:\Projects\ProMaster\ProMaster.Core\obj\Debug\ProMaster.Core.csprojResolveAssemblyReference.cache
+C:\Projects\ProMaster\ProMaster.Core\obj\Debug\ProMaster.Core.dll
+C:\Projects\ProMaster\ProMaster.Core\obj\Debug\ProMaster.Core.pdb
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Core\bin\Debug\ProMaster.Core.dll.config
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Core\bin\Debug\ProMaster.Core.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Core\bin\Debug\ProMaster.Core.pdb
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Core\bin\Debug\log4net.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Core\bin\Debug\System.Web.Mvc.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Core\bin\Debug\log4net.xml
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Core\obj\Debug\ProMaster.Core.csprojResolveAssemblyReference.cache
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Core\obj\Debug\ProMaster.Core.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Core\obj\Debug\ProMaster.Core.pdb
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Core\bin\Debug\ProMaster.Core.dll.config
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Core\bin\Debug\ProMaster.Core.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Core\bin\Debug\ProMaster.Core.pdb
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Core\bin\Debug\log4net.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Core\bin\Debug\System.Web.Mvc.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Core\bin\Debug\log4net.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Core\obj\Debug\ProMaster.Core.csprojResolveAssemblyReference.cache
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Core\obj\Debug\ProMaster.Core.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Core\obj\Debug\ProMaster.Core.pdb
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Core\bin\Debug\ProMaster.Core.dll.config
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Core\bin\Debug\ProMaster.Core.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Core\bin\Debug\ProMaster.Core.pdb
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Core\bin\Debug\log4net.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Core\bin\Debug\System.Web.Mvc.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Core\bin\Debug\log4net.xml
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Core\obj\Debug\ProMaster.Core.csprojResolveAssemblyReference.cache
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Core\obj\Debug\ProMaster.Core.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Core\obj\Debug\ProMaster.Core.pdb
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Core\bin\Debug\ProMaster.Core.dll.config
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Core\bin\Debug\ProMaster.Core.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Core\bin\Debug\ProMaster.Core.pdb
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Core\bin\Debug\log4net.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Core\bin\Debug\System.Web.Mvc.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Core\bin\Debug\log4net.xml
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Core\obj\Debug\ProMaster.Core.csprojResolveAssemblyReference.cache
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Core\obj\Debug\ProMaster.Core.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Core\obj\Debug\ProMaster.Core.pdb
+C:\Projects\Release\ProMasterRC\ProMaster.Core\bin\Debug\ProMaster.Core.dll.config
+C:\Projects\Release\ProMasterRC\ProMaster.Core\bin\Debug\ProMaster.Core.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Core\bin\Debug\ProMaster.Core.pdb
+C:\Projects\Release\ProMasterRC\ProMaster.Core\bin\Debug\log4net.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Core\bin\Debug\System.Web.Mvc.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Core\bin\Debug\log4net.xml
+C:\Projects\Release\ProMasterRC\ProMaster.Core\obj\Debug\ProMaster.Core.csprojResolveAssemblyReference.cache
+C:\Projects\Release\ProMasterRC\ProMaster.Core\obj\Debug\ProMaster.Core.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Core\obj\Debug\ProMaster.Core.pdb
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Core\bin\Debug\ProMaster.Core.dll.config
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Core\bin\Debug\ProMaster.Core.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Core\bin\Debug\ProMaster.Core.pdb
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Core\bin\Debug\log4net.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Core\bin\Debug\System.Web.Mvc.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Core\bin\Debug\log4net.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Core\obj\Debug\ProMaster.Core.csprojResolveAssemblyReference.cache
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Core\obj\Debug\ProMaster.Core.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Core\obj\Debug\ProMaster.Core.pdb

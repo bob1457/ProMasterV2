@@ -1,0 +1,68 @@
+﻿@model ProMaster.Core.Reporting.ViewModels.ManagingAccountingViewModel
+
+@{
+    ViewBag.Title = "Financial Reporting";
+}
+
+<h2>ManagementAccounting</h2>
+
+Property Information:
+@Html.DisplayFor(model => model.PropertyName)<br />
+@Html.DisplayFor(model=>model.PropertyAddressSuiteNumber)
+
+
+
+FROM:<br />
+<div >@Html.TextBoxFor(model => model.StartPeriod, new { @id="sDate", @class = "datepicker", @Value = System.DateTime.Now.ToString("M/d/yyyy") })<br /></div>
+TO:<br />
+<div >@Html.TextBoxFor(model => model.EndPeriod, new { @id="eDate", @class = "datepicker", @Value = System.DateTime.Now.ToString("M/d/yyyy") })</div>
+
+<a href="#" id="md">Get Management Accounting Data</a>
+
+<p>
+    
+    <div id="period">
+        Period:<br />
+        <div id="s"></div> To <div id="e"></div>    
+    </div>
+</p>
+<div id="statement"></div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#md").button();
+        $("#data").hide();        
+        $("#period").hide();
+    
+
+        $("#md").click(function () {
+                $("#period").show();
+
+                var sDate = $("#sDate").val();
+                var eDate = $("#eDate").val();
+                var propertyId = @(Model.PropertyId);
+
+                $("#s").html(sDate);
+                $("#e").html(eDate);         
+
+                    var url="/Accounting/GetManagementAccountingData/";
+                    var q="id=" + @(Model.PropertyId) + "&startPeriod=" + sDate + "&endPeriod=" + eDate;
+                    $.get(url, q, function(data){                                
+                         $("#statement").html(data);    
+                         return false;        
+                
+               
+                
+                   // Suceeded 
+            
+                });
+            });
+    });
+
+    $(function () {
+        $(".datepicker").datepicker();
+    });
+
+
+
+</script>

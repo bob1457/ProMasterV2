@@ -1,0 +1,122 @@
+﻿@model PagedList.IPagedList<ProMaster.Core.Tenant.ViewModels.TenantScreenViewModel>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Tenancy Application List";
+}
+
+<div class="content-wrapper">
+    <aside> 
+    <p><!-- Left Panel/Column -->
+      <div id="left">
+      	<div class="side_title-logo">
+        	<img src="@Url.Content("~/Content/Images/TenacyApp.png")" alt="" title="Properties" />
+            
+        </div>
+        <div class="side_title_caption">
+        	<h3>Full List of teancy applications</h3>
+        	<br>
+            <span></span>
+        
+        </div>
+      </div>
+      
+    </p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </aside> <!-- End of aside -->
+
+     <div class="main metro">	
+
+        <div class="list_panel">
+            <h3><i class="icon-list"></i> &nbsp; ALL TENANCY APPLICATIONS       	
+                <span></span>
+            </h3>
+            <P></P>
+            
+                <div id="list">
+                    
+                    <table>
+                        <thead>
+            	            <tr>
+                	            <td colspan="10" class="table-h asphalt">
+                                <span><i class="fa fa-th-list"></i></span> Property List
+                                </td>                    
+                            </tr>	
+                        </thead>
+            	            <tr>
+                	            <th>ID &nbsp;</th>
+                                <th> First Name</th>
+                                <th> Last Name</th>
+                                <th> Tel</th>
+                                <th> Email</th>
+                                <th> Property</th>
+                                <th> No. of Tenants</th>
+                                <th> Reference Avail.</th> 
+                                <th> Application Date</th>
+                                <th></th>                   
+                            </tr>
+                            @if (Model.Count() != 0)
+                            { 
+                                 foreach (var item in Model)
+                                            {
+                                                <tr>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.ApplicationId)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.ApplicantFirstName)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.ApplicantLastName)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.ApplicantContactTel)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.ApplicantContactEmail)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.PropertyName)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.NumberOfOccupantse)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.IsAuthorizedToCheckReference)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.ApplicaitonDate)
+                                                    </td>
+                        
+                                                    <td>
+                    	                                <div class="table-button"><a href="@Url.Action("ApplicationDetails", "Tools", new { id = item.ApplicationId })"><img src="@Url.Content("~/Content/Images/details.png")" title="Details" /></a></div>	
+                                                    </td>
+                                                 </tr>  
+                                            }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="10">No records.</td>
+                                </tr>
+                            }
+                          
+                            <tfoot>
+                	            <tr>
+                                    <td colspan="10"><span><i class="fa fa-th"></i></span></td>
+                        
+                	            </tr>                
+                            </tfoot>
+            </table>
+                       
+
+            @Html.PagedListPager(Model, page => Url.Action("AllApplicationList", new { page, currenFilter = ViewBag.CurrentFiler }))
+
+        </div>
+        
+    </div>  
+
+    </div><!-- End of main -->
+
+</div><!-- end of content-wrapper -->

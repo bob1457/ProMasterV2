@@ -1,0 +1,161 @@
+﻿@model PagedList.IPagedList<ProMaster.Core.ViewModels.ManageDisplayViewModel>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "All Tenants";
+}
+
+
+<div class="content-wrapper">
+    <aside> 
+    <p><!-- Left Panel/Column -->
+      <div id="left">
+      	<div class="side_title-logo">
+        	<img src="@Url.Content("~/Content/Images/users.png")" alt="" title="Tenants" />
+            
+        </div>
+        <div class="side_title_caption">
+        	<h3>Full List of Tenants</h3>
+        	<br>
+            <span></span>
+        
+        </div>
+      </div>
+      
+    </p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </aside> <!-- End of aside -->
+
+    <div class="main metro">	
+
+        <div class="list_panel">
+            <h3><i class="icon-list"></i> &nbsp; ALL TENANTS         	
+                <span></span>
+            </h3>
+            <P></P>
+            <div id="new_button"><div class="button-med edit_button ">@Html.ActionLink("Add New", "AddTenant")</div>@*<span style="margin-left:0.75em;">Show All:<input id="all" type="checkbox" />By default, only tenant(s) with active lease agreement are displayed.</span>*@</div>
+            
+                <div id="list">
+                  <!--  
+                    <table>
+                        <thead>
+            	            <tr>
+                	            <td colspan="9" class="table-h amarelo">
+                                <span><i class="fa fa-th"></i></span> Tenant List
+                                </td>                    
+                            </tr>	
+                        </thead>
+            	        <tr>
+                	            <th>ID</th>
+                                <th></th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Telephone</th>
+                    
+                                <th>Email</th>
+                                <th>Added Date</th>
+                                <th></th> 
+                                <th></th>                   
+                            </tr>
+                
+                
+                    @if (Model.Count() != 0)
+                    { 
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TenantId)
+                                </td>
+                                <td>
+                                     <div class="table_img"><img src="@Url.Content(Model.FirstOrDefault().AvartaImgUrl)" title="" /></div>
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TenantFirstName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TenantLastName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TenantContactTelephone1)
+                                </td>
+                        
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TenantContactEmail)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TenantAddedDate)
+                                </td>
+
+                                <td>
+                    	                    <div class="table-button"><a href="@Url.Action("TenantDetails", "Manage", new { id=item.TenantId })"><img src="@Url.Content("~/Content/Images/details.png")" title="Details" /></a></div>
+                                </td>
+                                <td>
+                    	                    <div class="table-button"><a href="@Url.Action("DeleteTenant", "Manage", new { id=item.TenantId })"><img src="@Url.Content("~/Content/Images/delete.png")" title="Delete" /></a></div>	
+                                </td>
+                             </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="10">No record</td>
+
+                        </tr>
+
+                    }
+                       
+                        <tfoot>
+                	        <tr>
+                                <td colspan="9"><span><i class="fa fa-th"></i></span></td>
+                        
+                	        </tr>                
+                        </tfoot>
+            </table>
+--> 
+                    <div id="tlist">@Html.Partial("_AllTenantList")</div>
+
+            @Html.PagedListPager(Model, page => Url.Action("AllTenantsByPm", new { page, currenFilter = ViewBag.CurrentFiler }))
+
+        </div>
+        
+    </div>  
+
+    </div><!-- End of main -->
+
+
+</div><!-- end of content-wrapper -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#all").change(function () {
+
+            var isChecked = $("#all").is(':checked');
+
+            //alert(isChecked); this function will be implemented in later versioin
+            
+            var url = "";
+
+            if (isChecked) {
+               url = "/Manage/AllTenantList";
+            }
+            else
+            {
+                url = "/Manage/ActiveTenantList";
+            }
+
+            $.get(url, function (data) {
+                $("#tlist").html(data);
+                
+                return false;
+
+            });
+
+        });
+
+    });
+
+</script>
+

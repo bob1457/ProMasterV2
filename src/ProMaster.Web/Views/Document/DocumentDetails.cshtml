@@ -1,0 +1,139 @@
+﻿@model ProMaster.Core.Documents.ViewModels.DisplayDcoumentViewModel
+
+@{
+    ViewBag.Title = "Document Details";
+}
+
+<div class="content-wrapper">
+    <aside> 
+    <p><!-- Left Panel/Column -->
+      <div id="left">
+      	<div class="side_details_logo">
+        	<img src="@Url.Content("~/Content/Images/documents3.png")" alt="" title="Document Details" />
+            
+        </div>
+        <div class="side_details_caption">
+        	<h3>Document Details</h3>
+        	<br />
+            <span>
+            	Detailed document information
+            </span>
+            <div class="side_details_content">
+                
+                <div class="display-label">
+                    
+                </div><br />
+                <div class="display-field">
+                    
+                </div><br />
+
+                
+            
+            </div>
+        </div>
+      </div>
+      
+      
+      
+      
+    </p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </aside><!-- End of aside -->
+
+  <div class="main metro">
+      <div id="manage-tabs" class="tabs-style">
+          <ul>
+            <li><a href="#tabs-1"><i class="fa fa-list-alt"></i> &nbsp;<span>General</span></a></li>            
+          </ul>
+          <div id="tabs-1">
+             <div class="tab_content">
+                 <div class="tab_content_title">
+                     <span class="title_icon"><img src="@Url.Content("~/Content/Images/documents2.png")" alt="" title="" /></span>
+                     <span class="title_text"><h5>@Html.DisplayFor(model => model.DocumentTitle)</h5></span>
+                     <br />
+                     <span class="title_caption"><strong> Category: @Html.DisplayFor(model => model.DocumentCategory)</strong><br /> <em>All details of the document</em></span>
+                 </div>
+
+                 <div class="tab_content_field">
+                     <fieldset>
+                        <legend><span><i class="fa fa-info-circle"></i> Document Information</span></legend>
+
+                         <div class="basic">
+
+                        <div class="display-label">
+                            Document ID::
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.DocumentId)
+                        </div><br /> 
+                                           
+                        <div class="display-label">
+                            Document Title:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.DocumentTitle)
+                        </div> 
+                        <br />
+                        <div class="display-label">
+                            Description:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.DocumentDetails)
+                        </div> 
+                        <br />
+                        <div class="display-label">
+                            Document Type:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.DocumentType)
+                        </div>
+                        <br />
+                        <div class="display-label">
+                            Added Date:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.CreateDate)
+                        </div>
+                        <br />
+                        <div class="display-label">
+                            Last Updated:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.UpdateDate)
+                        </div>
+                        <br />
+                        
+                        </div>
+                          
+
+                     </fieldset>
+
+                     @*<fieldset>
+                         <legend><i class="fa fa-eye"></i> View Document</legend>*@
+                         <div class="view_doc">
+                             <a href="@Url.Content(@Model.DocumentUrl)" target="_blank"><img src="@Url.Content("~/Content/Documents/image_icon.png")" alt="" title="@Model.DocumentTitle" />&nbsp;<span style="margin-left: 2.25em; width:10em; display: inline-block; position:relative; top: -3em;">View Document</span></a>
+                         </div>
+                     @*</fieldset>*@
+
+                     <div class="right-aligned"><div class="edit_button button-med">@Html.ActionLink("Edit", "EditDocument", new { id=@Model.DocumentId /**/ })</div></div>
+                    
+                 </div>
+                 </div>
+             </div>
+          </div>
+
+      </div>
+
+
+</div><!-- End of content-wrapper -->
+
+
+
+
+<!--Jquery ui tabs Script -->
+<script type="text/javascript">
+    $(function() {
+        $( "#manage-tabs" ).tabs();
+    });
+</script>

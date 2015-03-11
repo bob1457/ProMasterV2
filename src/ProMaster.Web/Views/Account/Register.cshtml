@@ -1,0 +1,40 @@
+﻿@model ProMaster.Web.Models.RegisterModel
+@{
+    ViewBag.Title = "Register";
+}
+
+@*<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>Create a new account.</h2>
+</hgroup>*@
+
+<div id="login-panel">
+    <h3><b><span style="color:#860717;"><i class="fa fa-key"></span></i></b> ENABLE ONLINE ACCESS</h3>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+
+        <p class="label"><label>Username:</label></p>
+        <p>@Html.TextBoxFor(m => m.UserName, new { autofocus = "" })</p>
+        <p class="label"><label>Password:</label></p>
+        <p> @Html.PasswordFor(m => m.Password)</p>
+        <p class="label"><label>Confirm Password:</label></p>
+        <p> @Html.PasswordFor(m => m.ConfirmPassword)</p>
+
+        <p class="submit"><input type="submit" name="commit" value="Submit"></p>
+
+
+
+
+    }
+</div>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+
+    <script type="text/javascript">
+        $("#show").click(function () {
+            $("#online").show();
+        });
+    </script>

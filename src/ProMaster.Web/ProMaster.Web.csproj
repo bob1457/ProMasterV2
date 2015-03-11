@@ -1,0 +1,938 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4A568246-63C3-43E3-9024-EDB9E73D0A06}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProMaster.Web</RootNamespace>
+    <AssemblyName>ProMaster.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <TypeScriptToolsVersion>1.0</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+    <PublishDatabases>true</PublishDatabases>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PublishDatabases>true</PublishDatabases>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=4.1.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\iTextSharp.4.1.2\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcSiteMapProvider, Version=4.5.2.0, Culture=neutral, PublicKeyToken=1923abe4657913cc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvcSiteMapProvider.MVC4.Core.4.5.2\lib\net45\MvcSiteMapProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=2.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ProMaster.Infrastructure\Libs\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorPDF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RazorPDF.1.0.0\lib\net45\RazorPDF.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20505.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20505.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc.Html5">
+      <HintPath>..\ProMaster.Infrastructure\Libs\System.Web.Mvc.Html5.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20505.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20505.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20505.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20505.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebActivatorEx.2.0.1\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.20710.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.0.3.12153\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AccountingController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\ClientPortalController.cs" />
+    <Compile Include="Controllers\DocumentController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PropertyController.cs" />
+    <Compile Include="Controllers\ReportingController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\ToolsController.cs" />
+    <Compile Include="Filters\BasicAuthorizeAttribute.cs" />
+    <Compile Include="Filters\CustomHandleErrorAttribute.cs" />
+    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\BasicAuthenticationMessageHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\About.html" />
+    <Content Include="app\app.js" />
+    <Content Include="app\app_Index.html" />
+    <Content Include="app\common\directives\loginDialogDirective.js" />
+    <Content Include="app\common\routes.js" />
+    <Content Include="app\content\assets\images\1.png" />
+    <Content Include="app\content\assets\images\2.png" />
+    <Content Include="app\content\assets\images\3.png" />
+    <Content Include="app\content\assets\images\4.png" />
+    <Content Include="app\content\assets\images\banner.jpeg" />
+    <Content Include="app\content\assets\images\contract.jpg" />
+    <Content Include="app\content\assets\images\delete.png" />
+    <Content Include="app\content\assets\images\details.png" />
+    <Content Include="app\content\assets\images\docs.png" />
+    <Content Include="app\content\assets\images\favicon.ico" />
+    <Content Include="app\content\assets\images\hands.jpg" />
+    <Content Include="app\content\assets\images\homes-for-rent.png" />
+    <Content Include="app\content\assets\images\house.jpg" />
+    <Content Include="app\content\assets\images\logo.png" />
+    <Content Include="app\content\assets\images\property.png" />
+    <Content Include="app\content\assets\images\report.png" />
+    <Content Include="app\content\assets\images\tools.png" />
+    <Content Include="app\content\assets\images\user_default.png" />
+    <Content Include="app\content\styles\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="app\content\styles\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="app\content\styles\bootstrap\css\bootstrap.css" />
+    <Content Include="app\content\styles\bootstrap\css\bootstrap.min.css" />
+    <Content Include="app\content\styles\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="app\content\styles\bootstrap\js\bootstrap.js" />
+    <Content Include="app\content\styles\bootstrap\js\bootstrap.min.js" />
+    <Content Include="app\content\styles\bootstrap\js\npm.js" />
+    <Content Include="app\content\styles\custom_live-tile.css" />
+    <Content Include="app\content\styles\Custom_MetroJS.css" />
+    <Content Include="app\content\styles\fonts\fontawesome-webfont.svg" />
+    <Content Include="app\content\styles\fonts\iconFont.dev.svg" />
+    <Content Include="app\content\styles\fonts\iconFont.svg" />
+    <Content Include="app\content\styles\img\glyphicons-halflings-white.png" />
+    <Content Include="app\content\styles\img\glyphicons-halflings.png" />
+    <Content Include="app\content\styles\metro-bootstrap.css" />
+    <Content Include="app\content\styles\MetroJs.css" />
+    <Content Include="app\content\styles\ngDialog-theme-default.css" />
+    <Content Include="app\content\styles\ngDialog.css" />
+    <Content Include="app\content\styles\site.css" />
+    <Content Include="app\controllers\aboutController.js" />
+    <Content Include="app\controllers\homeController - Copy.js" />
+    <Content Include="app\controllers\homeController.js" />
+    <Content Include="app\controllers\loginController.js" />
+    <Content Include="app\controllers\manageController.js" />
+    <Content Include="app\controllers\propertyController.js" />
+    <Content Include="app\Docs.html" />
+    <Content Include="app\filters\dayNameFilter.js" />
+    <Content Include="app\filters\pageCount.js" />
+    <Content Include="app\filters\rangeFilter.js" />
+    <Content Include="app\Index.html" />
+    <Content Include="app\Manage.html" />
+    <Content Include="app\NoData.html" />
+    <Content Include="app\PropertyListing.html" />
+    <Content Include="app\Report.html" />
+    <Content Include="app\scripts\angular-animate.js" />
+    <Content Include="app\scripts\angular-animate.min.js" />
+    <Content Include="app\scripts\angular-cookies.js" />
+    <Content Include="app\scripts\angular-cookies.min.js" />
+    <Content Include="app\scripts\angular-mocks.js" />
+    <Content Include="app\scripts\angular-resource.js" />
+    <Content Include="app\scripts\angular-resource.min.js" />
+    <Content Include="app\scripts\angular-route.js" />
+    <Content Include="app\scripts\angular-route.min.js" />
+    <Content Include="app\scripts\angular-ui\ui-bootstrap-0.12.0.min.js" />
+    <Content Include="app\scripts\angular-ui\ui-bootstrap-tpls.js" />
+    <Content Include="app\scripts\angular-ui\ui-bootstrap-tpls.min.js" />
+    <Content Include="app\scripts\angular-ui\ui-bootstrap.js" />
+    <Content Include="app\scripts\angular-ui\ui-bootstrap.min.js" />
+    <Content Include="app\scripts\angular.js" />
+    <Content Include="app\scripts\angular.min.js" />
+    <Content Include="app\scripts\vendors\dialogs-main.js" />
+    <Content Include="app\scripts\vendors\dialogs-services.js" />
+    <Content Include="app\scripts\vendors\dirPagination.js" />
+    <Content Include="app\scripts\vendors\ngDialog.min.js" />
+    <Content Include="app\services\authHeaderInterceptorFactory.js" />
+    <Content Include="app\services\authService.js" />
+    <Content Include="app\services\base64Factory.js" />
+    <Content Include="app\Tools.html" />
+    <Content Include="app\views\about.html" />
+    <Content Include="app\views\home.html" />
+    <Content Include="app\views\one.html" />
+    <Content Include="app\views\partials\About.html" />
+    <Content Include="app\views\partials\Applications.html" />
+    <Content Include="app\views\partials\BrowseDocs.html" />
+    <Content Include="app\views\partials\Business.html" />
+    <Content Include="app\views\partials\Calendar.html" />
+    <Content Include="app\views\partials\ContractList.html" />
+    <Content Include="app\views\partials\Data.html" />
+    <Content Include="app\views\partials\dirPagination.tpl.html" />
+    <Content Include="app\views\partials\Financial.html" />
+    <Content Include="app\views\partials\LeaseList.html" />
+    <Content Include="app\views\partials\ListingProcess.html" />
+    <Content Include="app\views\partials\loginDialog.html" />
+    <Content Include="app\views\partials\OwnerList.html" />
+    <Content Include="app\views\partials\PropertyList.html" />
+    <Content Include="app\views\partials\RentList.html" />
+    <Content Include="app\views\partials\SearchDocs.html" />
+    <Content Include="app\views\partials\TenantList.html" />
+    <Content Include="app\views\partials\VendorList.html" />
+    <Content Include="app\views\PropertyDocs.html" />
+    <Content Include="app\views\shared\Login.html" />
+    <Content Include="app\views\two.html" />
+    <Content Include="Content\customfc.css" />
+    <Content Include="Content\fullcalendar.css" />
+    <Content Include="Content\fullcalendar.print.css" />
+    <Content Include="Content\Images\aboutus.png" />
+    <Content Include="Content\Images\delete.png" />
+    <Content Include="Content\Images\details.png" />
+    <Content Include="Content\Images\documents.png" />
+    <Content Include="Content\Images\documents2.png" />
+    <Content Include="Content\Images\favicon.ico" />
+    <Content Include="Content\Images\home-logo.png" />
+    <Content Include="Content\Images\home.png" />
+    <Content Include="Content\Images\home1.ico" />
+    <Content Include="Content\Images\home3.ico" />
+    <Content Include="Content\Images\listimg.png" />
+    <Content Include="Content\Images\manage.png" />
+    <Content Include="Content\Images\manage2.png" />
+    <Content Include="Content\Images\pdf.png" />
+    <Content Include="Content\Images\property.png" />
+    <Content Include="Content\Images\reporting.png" />
+    <Content Include="Content\Images\users.png" />
+    <Content Include="Content\Images\web.png" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\Styles\accord.css" />
+    <Content Include="Content\Styles\css\font-awesome.css" />
+    <Content Include="Content\Styles\css\font-awesome.min.css" />
+    <Content Include="Content\Styles\css\metro-bootstrap.css" />
+    <Content Include="Content\Styles\datepicker.css" />
+    <Content Include="Content\Styles\dialog.css" />
+    <Content Include="Content\Styles\font-awesome-ie7.css" />
+    <Content Include="Content\Styles\font-awesome-ie7.min.css" />
+    <Content Include="Content\Styles\font-awesome.css" />
+    <Content Include="Content\Styles\font-awesome.min.css" />
+    <Content Include="Content\Styles\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Styles\images\animated-overlay.gif" />
+    <Content Include="Content\Styles\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Content\Styles\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Content\Styles\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Content\Styles\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Content\Styles\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Content\Styles\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\Styles\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Content\Styles\images\ui-bg_highlight-soft_100_eeeeee_1x100-new.png" />
+    <Content Include="Content\Styles\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Content\Styles\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\Styles\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Content\Styles\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Content\Styles\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Content\Styles\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\Styles\jquery-ui-dialog.css" />
+    <Content Include="Content\Styles\CustomPagedList.css" />
+    <Content Include="Content\Styles\tablet.css" />
+    <Content Include="Content\Styles\desktop.css" />
+    <Content Include="Content\Styles\mobile.css" />
+    <Content Include="Content\Styles\reset.css" />
+    <Content Include="Content\Styles\tabs.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\authenticate.js" />
+    <Content Include="Scripts\fullcalendar.js" />
+    <Content Include="Scripts\fullcalendar.min.js" />
+    <Content Include="Scripts\jquery-1.11.1.min.js" />
+    <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery.base64.js" />
+    <Content Include="Scripts\jquery.base64.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Mvc.sitemap" />
+    <Content Include="Content\Styles\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Styles\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Styles\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Styles\fonts\FontAwesome.otf" />
+    <Content Include="app\content\styles\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="app\content\styles\bootstrap\css\bootstrap.css.map" />
+    <Content Include="app\content\styles\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="app\content\styles\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="app\content\styles\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="app\content\styles\fonts\fontawesome-webfont.eot" />
+    <Content Include="app\content\styles\fonts\fontawesome-webfont.ttf" />
+    <Content Include="app\content\styles\fonts\fontawesome-webfont.woff" />
+    <Content Include="app\content\styles\fonts\FontAwesome.otf" />
+    <Content Include="app\content\styles\fonts\gothic_0.TTF" />
+    <Content Include="app\content\styles\fonts\iconFont.eot" />
+    <Content Include="app\content\styles\fonts\iconFont.json" />
+    <Content Include="app\content\styles\fonts\iconFont.ttf" />
+    <Content Include="app\content\styles\fonts\iconFont.woff" />
+    <Content Include="app\content\styles\fonts\weblysleekuil.ttf" />
+    <Content Include="app\content\styles\fonts\weblysleekuili.ttf" />
+    <Content Include="app\content\styles\fonts\weblysleekuisb.ttf" />
+    <Content Include="app\content\styles\fonts\weblysleekuisbi.ttf" />
+    <Content Include="app\content\styles\fonts\weblysleekuisl.ttf" />
+    <Content Include="app\content\styles\fonts\weblysleekuisli.ttf" />
+    <Content Include="app\propertyData.json" />
+    <Content Include="app\scripts\angular-animate.min.js.map" />
+    <Content Include="app\scripts\angular-cookies.min.js.map" />
+    <Content Include="app\scripts\angular-resource.min.js.map" />
+    <Content Include="app\scripts\angular-route.min.js.map" />
+    <Content Include="app\scripts\angular.min.js.map" />
+    <Content Include="app\tests\propertyData.json" />
+    <None Include="MvcSiteMapSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\knockout-2.1.0.debug.js" />
+    <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\tab_navi.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial-BAK.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Accounting\ExportPDF.cshtml" />
+    <Content Include="Views\Manage\_TenantDocumentList.cshtml" />
+    <Content Include="Views\Manage\_ContractDocumentList+b.cshtml" />
+    <Content Include="Views\Accounting\_ManagementAccounting.cshtml" />
+    <Content Include="Views\Accounting\ManagementAccounting.cshtml" />
+    <Content Include="Views\Reporting\Index-BAK.cshtml" />
+    <Content Include="Views\Reporting\CostAndRevenueByProperty.cshtml" />
+    <Content Include="Views\Reporting\FinancialReporting.cshtml" />
+    <Content Include="Views\Reporting\_FinancialStatement.cshtml" />
+    <Content Include="Views\Reporting\_ManagementAccounting.cshtml" />
+    <Content Include="Views\Reporting\_ManagementFee.cshtml" />
+    <Content Include="Views\Reporting\_OtherCost.cshtml" />
+    <Content Include="Views\Reporting\_RentRevenue.cshtml" />
+    <Content Include="Views\Reporting\_RepairCost.cshtml" />
+    <Content Include="Views\Reporting\_PropertyReport.cshtml" />
+    <Content Include="Views\Reporting\ExportPDF.cshtml" />
+    <Content Include="Views\Reporting\_NoRecords.cshtml" />
+    <Content Include="Views\Manage\EditTenant.cshtml" />
+    <Content Include="Views\Account\EditProfile-BAK.cshtml" />
+    <Content Include="Views\Manage\Calendar.cshtml" />
+    <Content Include="Views\Manage\_CalendarEvent.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapTitleHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapPathHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModelList.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\MetaRobotsHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\MenuHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\CanonicalHelperModel.cshtml" />
+    <Content Include="Views\Manage\Message.cshtml" />
+    <Content Include="Views\Manage\_TenantInfo.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Document\Index.cshtml" />
+    <Content Include="Views\Reporting\Index.cshtml" />
+    <Content Include="Views\Manage\PropertyDetails.cshtml" />
+    <Content Include="Views\Account\MyProfile.cshtml" />
+    <Content Include="Views\Account\EditProfile.cshtml" />
+    <Content Include="Views\Manage\TenantDetails.cshtml" />
+    <Content Include="Views\Manage\PropertyOwnerDetails.cshtml" />
+    <Content Include="Views\Tools\Index.cshtml" />
+    <Content Include="Views\Tools\Calendar.cshtml" />
+    <Content Include="Views\Tools\_CalendarEvent.cshtml" />
+    <Content Include="Views\Manage\AllPropertiesByPm.cshtml" />
+    <Content Include="Views\Manage\_TenantList.cshtml" />
+    <Content Include="Views\Manage\AllTenantsByPm.cshtml" />
+    <Content Include="Views\Manage\AllContractByPm.cshtml" />
+    <Content Include="Views\Manage\_ContractList.cshtml" />
+    <Content Include="Views\Manage\ListAllLandlords.cshtml" />
+    <Content Include="Views\Manage\_AllLandlordList.cshtml" />
+    <Content Include="Views\Manage\AllLandlordsByPm.cshtml" />
+    <Content Include="Views\Reporting\CostReportByProperty.cshtml" />
+    <Content Include="Views\Reporting\FeeReportbyProperty.cshtml" />
+    <Content Include="Views\Reporting\RentRevenueReportByProperty.cshtml" />
+    <Content Include="Views\Reporting\_MaintenanceCostReport.cshtml" />
+    <Content Include="Views\Reporting\ReportByProperty.cshtml" />
+    <Content Include="Views\Reporting\ManagementCostReportByProperty.cshtml" />
+    <Content Include="Views\Reporting\_ManagementCostReport.cshtml" />
+    <Content Include="Views\Reporting\_PlacementFee.cshtml" />
+    <Content Include="Views\Reporting\_RentRevenueReport.cshtml" />
+    <Content Include="Views\Reporting\FinancialStatement.cshtml" />
+    <Content Include="Views\Shared\_Layout_H.cshtml" />
+    <Content Include="Views\Reporting\_MaintenanceCostAllPropertyReport.cshtml" />
+    <Content Include="Views\Reporting\CostReportByProperty2.cshtml" />
+    <Content Include="Views\Manage\SiteSearch.cshtml" />
+    <Content Include="Views\Home\Construction.cshtml" />
+    <Content Include="Views\Tools\Marketing.cshtml" />
+    <Content Include="Views\Tools\StatusUpdate.cshtml" />
+    <Content Include="Views\Reporting\_ManagementCostAllPropertyReport.cshtml" />
+    <Content Include="Views\Reporting\_RentRevenueAllPropertyReport.cshtml" />
+    <Content Include="Views\Reporting\_FinancialStatementAllProperties.cshtml" />
+    <Content Include="Views\Property\RentDetails.cshtml" />
+    <Content Include="Views\Tools\_PropertyPictureList.cshtml" />
+    <Content Include="Views\Tools\_PropertyListPictures.cshtml" />
+    <Content Include="Views\Reporting\ExportReportPDF-BAk.cshtml" />
+    <Content Include="Views\Reporting\PDFTest.cshtml" />
+    <Content Include="Views\Reporting\_OtherCost_pdf.cshtml" />
+    <Content Include="Views\Reporting\_RepairCost_pdf.cshtml" />
+    <Content Include="Views\Reporting\ExportReportPDF.cshtml" />
+    <Content Include="Views\Reporting\_ManagementFee_pdf.cshtml" />
+    <Content Include="Views\Reporting\_RentRevenue_pdf.cshtml" />
+    <Content Include="Views\Reporting\_FinancialStatement_pdf.cshtml" />
+    <Content Include="Views\Manage\_ownerList.cshtml" />
+    <Content Include="Views\Manage\_tenList.cshtml" />
+    <Content Include="Views\Manage\AllLeaseByPm.cshtml" />
+    <Content Include="Views\Manage\_AllLeaseList.cshtml" />
+    <Content Include="Views\Tools\Applications.cshtml" />
+    <Content Include="Views\Tools\ApplicationDetails.cshtml" />
+    <Content Include="Views\Tools\ProcessApp.cshtml" />
+    <Content Include="Views\Tools\AllApplicationList.cshtml" />
+    <Content Include="Views\Tools\_ScreenStatus.cshtml" />
+    <Content Include="Views\Tools\PropertyUpdate.cshtml" />
+    <Content Include="Views\Tools\ListingPublish.cshtml" />
+    <Content Include="Views\Manage\GetStarted.cshtml" />
+    <Content Include="Views\Admin\ManagePMs.cshtml" />
+    <Content Include="Views\Account\EnableOnlineAccess.cshtml" />
+    <Content Include="Views\Account\Register - Copy.cshtml" />
+    <Content Include="Views\Admin\ManagerDetails.cshtml" />
+    <Content Include="Views\Admin\EditPropertyManager.cshtml" />
+    <Content Include="Views\Admin\_ManagerList.cshtml" />
+    <Content Include="Views\Tools\_ApplicationList.cshtml" />
+    <Content Include="Views\Tools\_CompletedApplicationList.cshtml" />
+    <Content Include="Views\Manage\_ContractDocumentList.cshtml" />
+    <Content Include="Views\Manage\_propertyList.cshtml" />
+    <Content Include="Views\Manage\EventDetails.cshtml" />
+    <Content Include="Views\ClientPortal\Index.cshtml" />
+    <Content Include="Views\ClientPortal\_OwnedPropertyList.cshtml" />
+    <Content Include="Views\Manage\RentPaymentDetails.cshtml" />
+    <Content Include="Views\ClientPortal\_FeePaymentList.cshtml" />
+    <Content Include="Views\Manage\FeePaymentDetails.cshtml" />
+    <Content Include="Views\ClientPortal\_WorkOrderList.cshtml" />
+    <Content Include="Views\Manage\_venList.cshtml" />
+    <Content Include="Views\ClientPortal\_RentPaymentHistory.cshtml" />
+    <Content Include="Views\Manage\_TransferStatus.cshtml" />
+    <Content Include="Views\Search\SiteSearch.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\Home\NotFound.cshtml" />
+    <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Error\AccessDenied.cshtml" />
+    <Content Include="Views\Tools\Logs.cshtml" />
+    <Content Include="Views\Tools\_Logs.cshtml" />
+    <Content Include="Views\ClientPortal\_Report.cshtml" />
+    <Content Include="Views\Admin\AllProperties.cshtml" />
+    <Content Include="Views\Search\_DocSearch.cshtml" />
+    <Content Include="Views\Manage\_AllTenantList.cshtml" />
+    <Content Include="Views\Manage\_TenantDisplayList.cshtml" />
+    <Content Include="Views\Manage\_LeaseDisplayList.cshtml" />
+    <Content Include="Views\Property\_ListedProperty.cshtml" />
+    <Content Include="Views\Tools\LogDetails.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\common\resources\" />
+    <Folder Include="app\modules\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\Documents\Landlord\" />
+    <Folder Include="Content\Documents\Lease\" />
+    <Folder Include="Content\Documents\Others\" />
+    <Folder Include="Content\Documents\Property\" />
+    <Folder Include="Content\Documents\Tenant\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProMaster.ApplicationManager\ProMaster.ApplicationManager.csproj">
+      <Project>{8811490C-191F-42F2-AB01-B7E0718B9806}</Project>
+      <Name>ProMaster.ApplicationManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProMaster.Core\ProMaster.Core.csproj">
+      <Project>{3FBC5EC4-325A-4986-831C-789CEB0E53F1}</Project>
+      <Name>ProMaster.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProMaster.DAL\ProMaster.DAL.csproj">
+      <Project>{31C26F41-0111-4673-B46D-B2656EE4B676}</Project>
+      <Name>ProMaster.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProMaster.Infrastructure\ProMaster.Infrastructure.csproj">
+      <Project>{A1D29A60-AD5D-41BD-8130-291F471941EC}</Project>
+      <Name>ProMaster.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProMaster.Repository\ProMaster.Repository.csproj">
+      <Project>{483D6CE9-9003-43DE-8331-E7953661F505}</Project>
+      <Name>ProMaster.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\CreateProfile1.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\CreateProfile.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\MyProfile-BAK.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\CreatePropertyManager.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\AddPropertyOwner.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\_LandlordList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\AddProperty.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\AddManagementContract.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\AddTenant.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\AddLease.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\EditProperty.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\EditLandlord.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\ContractDetails.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\EditContract.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Property\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Property\PropertyDetails.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Property\RequestInfo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Property\Apply.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\ApplicationDetails.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\LeaseDetails.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Document\AddDocument.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Document\DocumentDetails.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\_EventList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\_RentPaymentLog.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\EditLease.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\AddVendor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\VendorDetails.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\EditVendor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\AddWorkOrder.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\WorkOrderDetails.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\EditWorkOrder.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Accounting\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_LayoutPDF.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\GenerateRentRecipt.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\_FeePaymentLog.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\GenerateFeeRecipt.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Document\SearchDocuments.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Document\EditDocument.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Accounting\WorkOrdersForProperty.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\AddStrataCouncil.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\StrataCouncilDetails.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\_CondoList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\EditStrataCouncil.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\TenantScreen1.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\TenantScreen3.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\AddOtherCost.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\OtherCostDetils.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\EditOtherCost.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\TenantScreen.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\_ScreenProcess.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\_DocCheckList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\StatusUpdate1.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\StatusUpdate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\_ScreenStatus.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\_PropertyDocumentList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Manage\_leaseDocumentList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Accounting\ExportPD1F.cshtml" />
+    <Content Include="Views\Accounting\FinancialStatementByProperty.cshtml" />
+    <Content Include="Views\Accounting\_ManagementFee.cshtml" />
+    <Content Include="Views\Accounting\_OtherCost.cshtml" />
+    <Content Include="Views\Accounting\_RentRevenue.cshtml" />
+    <Content Include="Views\Accounting\_RepairCost.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Accounting\_FinancialStatement.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Accounting\CostAndRevenueByProperty.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="app\scripts\typings\angularjs\angular-animate.d.ts" />
+    <TypeScriptCompile Include="app\scripts\typings\angularjs\angular-cookies.d.ts" />
+    <TypeScriptCompile Include="app\scripts\typings\angularjs\angular-mocks.d.ts" />
+    <TypeScriptCompile Include="app\scripts\typings\angularjs\angular-resource.d.ts" />
+    <TypeScriptCompile Include="app\scripts\typings\angularjs\angular-route.d.ts" />
+    <TypeScriptCompile Include="app\scripts\typings\angularjs\angular-sanitize.d.ts" />
+    <TypeScriptCompile Include="app\scripts\typings\angularjs\angular.d.ts" />
+    <TypeScriptCompile Include="app\scripts\typings\jquery\jquery.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2379</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

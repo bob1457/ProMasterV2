@@ -1,0 +1,296 @@
+﻿@model IEnumerable<ProMaster.Core.Property.ViewModels.ListingViewModel>
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout_H.cshtml";
+}
+
+<div id="home-banner">
+    <div class="content-wrapper">
+        <div id="banner-content">
+            <!-- <img src="@Url.Content("~/Content/Images/home_banner.jpg")" />
+            <h5>PROPERTY MANAGEMENT SOLUTIONS</h5>
+            <h2>We are Helping...</h2> -->
+            <img src="@Url.Content("~/Content/Images/hbanner.png")" />
+        </div>
+    </div> <!-- End of content-wrapper -->
+</div> <!-- End of home-banner -->
+
+<div class="content-wrapper metro">
+
+    <aside>
+        <p>
+            <!-- Left Panel/Column -->
+            <div id="left">
+                <span class="title_icon"><img src="@Url.Content("~/Content/Images/property-rent.png")" /></span>
+                <h1>Marketplace</h1>
+                <br />
+                <h3>Property for rent</h3>
+            </div>
+            <div id="rent_display">
+                @if(Model.Count() !=0)
+           {
+        <ul>
+            @foreach (var item in Model.Take(5))
+                  {
+                <li>
+                    <div class="list_img"><img id="shot1" src="@Url.Content(@item.PropertyImageUrl)" alt="" /></div>
+                    <h4>
+                        @item.PorpertyListingTitle
+                    </h4>
+                    <div class="list_caption">
+                        @if (@item.PropertyListDesc.Length > 30)
+                            {
+                            @item.PropertyListDesc.Substring(0, 30) <em>...</em> <br /> <br /><a href="#" id="@item.PropertyListingId">More details...</a><!--@Html.ActionLink("Details...", "RentDetails", "Property", new { id = item.PropertyId }, null)-->
+                            }
+                            else
+                            {
+                            @item.PropertyListDesc
+                            }
+                    </div>
+                    <br />
+                    <!-- Property Details Dialog -->
+                    <div itemid="@(item.PropertyListingId)" title="Property Details" style="border: thin solid rgb(170, 163, 163); padding: 10px;">
+                        @item.PropertyListDesc<br /><br />
+                        Monthly rent: $@item.ListedRentAmount.
+                        <!-- More content and formating here -->
+                    </div>
+
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            $("[itemid=@(item.PropertyListingId)]").hide();
+                        });
+
+                        $("#@item.PropertyListingId").mouseover(function () {
+                            //alert(@item.PropertyListingId);
+                            $("[itemid=@(item.PropertyListingId)]").show();
+                        });
+
+                        $("[itemid=@(item.PropertyListingId)]").mouseleave(function () {
+                            $("[itemid=@(item.PropertyListingId)]").hide();
+                        });
+
+                    </script>
+                    <script type="text/javascript">
+                        $("[itemid=@(item.PropertyListingId)]").click(function () {
+
+                            var url = "/Property/PropertyDetails/" + @item.PropertyId;
+
+                            window.location.replace(url);
+
+                        });
+                    </script>
+                </li>
+
+                  }
+        </ul>
+
+
+               if (Model.Count() > 5)
+               {
+                  <a href="@Url.Content("~/Property")" style="margin-left:.75em; color: #0A2392; font-weight: 800;"><i class="icon-arrow-right-3"></i> full Listing</a>
+               }
+
+           }
+                else
+                {
+        <em>No Listing at this time.</em>
+
+          }
+                
+            </div>
+
+
+
+
+        </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        @*<div>@Html.ValidationMessage("Error")</div>*@
+    </aside>
+    <!-- End of aside -->
+
+    <div class="main" style="margin-bottom: 2em;">
+        <p>
+            <!-- main content area-->
+            <div id="panel1">
+                <div class="panel_title metro"><i class="icon-user"></i> Tenancy</div>
+                <div class="panel_content">
+                    <img src="~/Content/Images/contract.jpg" alt="" title="" />
+                    <div id="home_tile_1" class="google_p_Color_bg">
+                        <div class="imge">
+                            <img src="~/Content/Images/users.png" alt="" />
+                        </div>
+                        <div class="content">
+                            Existing tenant or looking for a rental unit?<br/><br/>
+                            
+                            <div class="desc" >We help you with what you need. <a class="con" href="#">Contact us</a> for details. </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="panel2">
+                <div class="panel_title metro"><i class="icon-user-2"></i> Ownership</div>
+                <div class="panel_content">
+                    <img src="~/Content/Images/house.jpg" alt="" title="" />
+                    <div id="home_tile_2" class="green">
+                        <div class="imge">
+                            <img src="~/Content/Images/landlord.png" />
+                        </div>
+                        <div class="content">
+                            Existing owner or looking for a property manager?<br /><br />
+
+                            <div class="desc">We help you with what you need. <a class="con" href="#">Contact us</a> for details. </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div id="panel3">
+            <div class="panel_title metro"><i class="icon-user-3"></i> Services</div>
+            <div class="panel_content">
+                <img src="~/Content/Images/hands.jpg" alt="" title="" />
+                <div id="home_tile_3" class="metro_blue">
+                    <div class="imge">
+                        <img src="~/Content/Images/relations.png" />
+                    </div>
+                    <div class="content">
+                        Want to manage your own property?<br /><br />
+
+                        <div class="desc">We help you with what you need. <a class="con" href="#">Contact us</a> for details. </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+            
+    </div>
+    <div id="result" style="margin-top: 1em;"></div>
+    <!-- End of main -->
+
+    
+
+</div> <!-- End of content-wrapper -->
+
+<!-- Contact form -->
+<div id="contactus" class="metro" style="display:none;">
+    <h4 class="ui-dia" style="margin-bottom: 1em;"><i class="fa fa-th"></i> &nbsp; CONTACT</h4>
+
+    <div class="edit_field" style="width: 30em;">
+        <fieldset style="width: 26em;">
+
+
+            <div class="display-label">
+                Your Name:
+            </div>
+            <div class="display-field  field_sp " style="width:14em;">
+                <input id="name" type="text" placeholder="Your Name" />
+            </div>
+
+            <div class="display-label">
+                Your Email:
+            </div>
+            <div class="display-field field_sp" style="width:14em;">
+                <input id="email" type="text" placeholder="Your Email" />
+            </div>
+            <div class="display-label">
+                Your Telephone:
+            </div>
+            <div class="display-field field_sp" style="width:14em;">
+                <input id="tele" type="text" placeholder="Your Phone number" />
+            </div>
+            <div class="display-label">
+                Question Category:
+            </div>
+            <div class="display-field field_sp" style="width:14em;">
+                <select id="cate" style="width: 13em;">
+                    <option>Tenancy</option>
+                    <option>Ownership</option>
+                    <option>Managing</option>
+                </select>
+</div>
+            <div class="display-label">
+                Your questioin:
+            </div>
+            <div class="display-field" style="width: 16em; margin-left: -0.35em;">
+                <textarea id="msg" placeholder="Your Questions" style="height:5em; margin-left: 0.5em;"></textarea>
+            </div>
+
+            <div class="display-label" style="width:20em;">
+                <div class="display-label" style="margin-left: 2.5em;">
+
+                </div>
+                <div class="display-field" style="width: 16.5em; margin-left: 10.3em;">
+                    <span style="color:#00ff21;">You will be notified by email!</span>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+</div>
+
+<!-- send contact form secript -->
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $(".con").click(function() {
+
+            var dialogOpts = {
+                autoOpen: false,
+                modal: true,
+                resizable: false,
+                draggable: false,
+                width: 500,
+                title: 'Contact ProMaster',
+                buttons: {
+                    "Cancel": function() {
+                        $(this).dialog("close");
+                        },
+
+                    "Send": function() {
+
+                        var name = $("#name").val();
+                        var email = $("#email").val(); 
+                        var tel = $("#tele").val();
+                        var cate = $("#cate").val();
+                        var msg = $("#msg").val();
+
+                        //could be to insert an entry in message entity(when implemented in later version) and enable notification to the property manager
+                        //
+                        $.ajax({
+                            type: "POST",
+                            url: "/Home/ContactUs",
+                            data: "name=" + name + "&email=" + email + "&tele=" + tel + "&category=" + cate + "&msg=" + msg,
+
+                            contenType: "",
+                            dataType: "json",
+                            success: suceeded
+                        });
+
+                        function suceeded(data) {
+                            $("#result").text(data);
+
+                            $('#result').delay(3000).fadeOut(3000);
+
+                            $("#name").val("");
+                            $("#email").val(""); 
+                            $("#tele").val("");
+                            $("#cate").val("");
+                            $("#msg").val("");
+                        }
+
+                        $(this).dialog("close");
+                       
+
+                        }
+
+                    }
+
+                };
+
+            $("#contactus").dialog(dialogOpts).dialog('open');
+
+            return false;
+
+
+        });
+    });
+</script>

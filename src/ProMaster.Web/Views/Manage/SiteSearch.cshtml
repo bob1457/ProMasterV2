@@ -1,0 +1,166 @@
+﻿@model ProMaster.Core.SiteSearch.ViewModels.SiteSearchViewModel
+
+@{
+    ViewBag.Title = "Site Search";
+}
+
+<div class="content-wrapper">
+    <aside> 
+    <p><!-- Left Panel/Column -->
+      <div id="left">
+      	<div class="side_title-logo">
+        	<img src="@Url.Content("~/Content/Images/site_search.png")" alt="" title="Documents" />
+            
+        </div>
+        <div class="side_title_caption">
+        	<h3>Site Search Results</h3>
+        	<br>
+            <span>
+                Search the site by keywords. If you cannot find what you are looking for, try our advanced search.
+            </span>
+        
+        </div>
+      </div>
+      
+    </p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </aside> <!-- End of aside -->
+
+  <div class="main metro">
+    <div id="add_edit_panel">
+        <h3><i class="icon-search" style="background:#B63300; color: rgb(243, 228, 115); padding: 10px; border-radius: 50%"></i> &nbsp; SEARCH RESULTS...         	
+          <span style="padding-top:0.75em; margin-left:4em;">Searched by the keyword</span>
+        </h3>
+        
+        
+        <div id="search_results">
+
+            @if (@Model.ProopertyResults.Count() != 0 || @Model.LeaseResults.Count() != 0 || @Model.TenantResults.Count() != 0 || @Model.LandlordResults.Count() != 0 || @Model.ContractResults.Count() != 0)
+            { 
+            
+                <div id="doc_property">
+                    @if(@Model.ProopertyResults.Count() != 0){
+                        <h6 style="margin-bottom:1em; margin-left:-1.5em;">Properties</h6>
+                        <ul>
+                            @foreach (var item in Model.ProopertyResults)
+                            {
+                                <li><a href="@Url.Content("~/Manage/PropertyDetails/" + @item.PropertyId)">@item.PropertyName</a>&nbsp;
+                                <span>@if (@item.PropertyDesc.Length > 30)    
+                                        {
+                                            @item.PropertyDesc.Substring(0, 30);
+                                                                                  <em>...</em>
+                                        }
+                                        else
+                                        {
+                                            @item.PropertyDesc
+                                        }
+
+                                        &nbsp; , built year: @item.PropertyBuildYear
+
+                                </span>
+                               </li> 
+                            }
+                        </ul>
+                    }
+                </div>
+
+                <div id="doc_lease">
+                    @if(@Model.LeaseResults.Count() != 0){
+                        <h6 style="margin-bottom:1em; margin-left:-1.5em;">Lease Agreements</h6>
+                        <ul>
+                            @foreach (var item in Model.LeaseResults)
+                            {
+                                <li><a href="@Url.Content("~/Manage/LeaseDetails/" + @item.LeaseId)">@item.LeaseTitle</a>&nbsp;
+                                <span>@if (@item.LeaseDesc.Length > 30)    
+                                        {
+                                            @item.LeaseDesc.Substring(0, 30);
+                                                                                  <em>...</em>
+                                        }
+                                        else
+                                        {
+                                            @item.LeaseDesc
+                                        }
+
+                                        &nbsp; lease started on: @item.StartDate
+
+                                </span>
+                               </li> 
+                            }
+                        </ul>
+                        }
+                </div>
+
+                <div id="doc_tenant">
+                    @if(@Model.TenantResults.Count() != 0){
+                        <h6 style="margin-bottom:1em; margin-left:-1.5em;">Tenants</h6>
+                        <ul>
+                            @foreach (var item in Model.TenantResults)
+                            {
+                                <li><a href="@Url.Content("~/Manage/TenantDetails/" + @item.TenantId)">@item.LastName, @item.FirstName</a>&nbsp;
+                                    <span>Email: @item.ContactEmail, Telephone: @item.ContactTelephone1</span>                            
+                                </li> 
+                            }
+                        </ul>
+                        }
+                </div>
+
+                <div id="doc_owner">
+                    @if(@Model.LandlordResults.Count() != 0){
+                        <h6 style="margin-bottom:1em; margin-left:-1.5em;">Property Owners</h6>
+                        <ul>
+                            @foreach (var item in Model.LandlordResults)
+                            {
+                                <li><a href="@Url.Content("~/Manage/PropertyOwnerDetails/" + @item.LandlordId)">@item.LandlordLastName, @item.LandlordFirstName</a>&nbsp;
+                                    <span>Email: @item.LandlordContactEmail, Telephone: @item.LandlordContactTelephone</span>                            
+                                </li> 
+                            }
+                        </ul>
+                        }
+                </div>
+                
+                <div id="doc_contract">
+                    @if(@Model.ContractResults.Count() != 0){
+                        <h6 style="margin-bottom:1em; margin-left:-1.5em;">Management Contracts</h6>
+                        <ul>
+                            @foreach (var item in Model.ContractResults)
+                            {
+                                <li><a href="@Url.Content("~/Manage/ContractDetails/" + @item.ContractId)">@item.ContractTitle</a>&nbsp;
+                                    <span>
+                                       Contract Started: @item.StartDate, Contract entered: @item.ContractAddDate
+                                    </span>                            
+                                </li> 
+                            }
+                        </ul>
+                        }
+                </div>
+                
+            }
+            else
+            {
+                <em>No results found!</em> 
+            }
+           
+        </div>
+       
+        
+    </div>	
+    	  
+  </div><!-- End of main -->
+
+
+</div>
+
+
+<script type="text/javascript">
+
+    var kw;
+
+    $(document).ready(function () {
+
+        kw = $("#searchText").val();
+
+        $("#searchText").text(kw);
+    });
+
+</script>

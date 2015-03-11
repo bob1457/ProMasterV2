@@ -1,0 +1,181 @@
+﻿@model ProMaster.Core.Accounting.ViewModels.AccountingCostViewModel
+
+@{
+   ViewBag.Title = "Financial Statement";
+   Layout = "~/Views/Shared/_LayoutPDF.cshtml";
+}
+
+<paragraph>
+    <chunk style="font-family:Times;font-weight:bold;">Property: </chunk>
+    <chunk style="font-family:Times;">@Model.PropertyName</chunk>
+</paragraph>
+
+<paragraph style="font-family: Helvetica; font-size: 18; font-style: bold;">
+    <chunk><h3>Financial Statement</h3></chunk>
+</paragraph>
+
+<newline />
+<paragraph style="font-family: Helvetica; font-size: 18; font-style: italic;">
+	<chunk red="255" green="0" blue="0">@ViewBag.Title</chunk>
+</paragraph>
+
+    <chunk style="font-family:Times;font-weight:bold;">Repair Costs: </chunk>
+    <chunk style="font-family:Times;">
+    
+        @if (Model.WorkOrderList.Count() != 0)
+        {
+
+            <ul>
+                    @foreach (var item in Model.WorkOrderList)
+                    { 
+                        <li>
+                            @item.WorkOrderId
+                            @item.WorkOrderName
+                            @item.WorkOrderStatus
+                            @item.PaymentAmount
+                            @item.IsPaid
+                            @item.CreationDate
+                        </li>
+                    }
+    
+            </ul>   
+            <p></p>
+            <strong>Total Repair Cost: $@ViewBag.total</strong>
+        }
+        else
+        {
+            <i>No Work Orders Found!</i>
+        }
+    
+    </chunk>
+</paragraph>
+
+<paragraph>
+    <chunk style="font-family:Times;font-weight:bold;">Other Costs: </chunk>
+            <chunk style="font-family:Times;">
+        @if (Model.CostList.Count() != 0)
+        {
+            <ul>
+                    @foreach (var item in Model.CostList)
+                    { 
+                        <li>
+                            @item.OtherCostName
+                            @item.CostDetails
+                            @item.CostAmount
+                            @item.CostAddDate
+                        </li>
+                    }
+    
+            </ul>  
+
+            <p></p> 
+            <strong>Total Repair Cost: $@ViewBag.totalcost</strong>
+        }
+        else
+        {
+            <i>No Other Costs Found</i> 
+        }
+    </chunk>
+</paragraph>
+<paragraph>
+    <chunk style="font-family:Times;font-weight:bold;">Management Fee: </chunk>
+    <chunk style="font-family:Times;">
+        @if (Model.FeeList.Count() != 0)
+        {
+            <ul>
+                    @foreach (var item in Model.FeeList)
+                    { 
+                        <li>
+                            @item.ManagementFeeId
+                            @item.ManagementFeeAmount
+                            @item.IsManagementFeeReceived
+                    
+                        </li>
+                    }
+    
+            </ul>  
+
+            <p></p> 
+            <strong>Total Management Fees: $@ViewBag.totalfee</strong>
+        }
+        else
+        {
+            <i>No Fees Found</i> 
+        }
+    </chunk>
+</paragraph>
+
+<paragraph>
+    <chunk style="font-family:Times;font-weight:bold;">Rent Revenue: </chunk>
+    <chunk style="font-family:Times;">
+        @if (Model.RentRevenueList.Count() != 0)
+        {
+            <ul>
+                    @foreach (var item in Model.RentRevenueList)
+                    { 
+                        <li>
+                            @item.RentPaymentId
+                            @item.RentPaymentMonth
+                            @item.RentPamentYear
+                            @item.RentPaymentAmount
+                        </li>
+                    }
+    
+            </ul>  
+
+            <p></p> 
+            <strong>Total ent Revenue: $@ViewBag.totalrevenue</strong>
+        }
+        else
+        {
+            <i>No Rent Revenue Found</i> 
+        }
+    </chunk>
+</paragraph>
+
+<paragraph>
+    <chunk style="font-family:Times;font-weight:bold;">Rent Revenue: </chunk>
+    <chunk style="font-family:Times;">
+        @if (Model.RentRevenueList.Count() != 0)
+        {
+            <ul>
+                    @foreach (var item in Model.RentRevenueList)
+                    { 
+                        <li>
+                            @item.RentPaymentId
+                            @item.RentPaymentMonth
+                            @item.RentPamentYear
+                            @item.RentPaymentAmount
+                        </li>
+                    }
+    
+            </ul>  
+
+            <p></p> 
+            <strong>Total ent Revenue: $@ViewBag.totalrevenue</strong>
+        }
+        else
+        {
+            <i>No Rent Revenue Found</i> 
+        }
+    </chunk>
+</paragraph>
+
+<paragraph>
+    <chunk style="font-family:Times;font-weight:bold;">Total Expenses:</chunk>
+     <chunk style="font-family:Times;">
+        $@ViewBag.totalExpenses
+     </chunk>
+</paragraph>
+<paragraph>
+    <chunk style="font-family:Times;font-weight:bold;">Total Rent Revenue:</chunk>
+     <chunk style="font-family:Times;">
+        $@ViewBag.totalRevenue
+     </chunk>
+</paragraph>
+<paragraph>
+    <chunk style="font-family:Times;font-weight:bold;">Total Net Income:</chunk>
+     <chunk style="font-family:Times;">
+        $@ViewBag.totalNetIncome
+     </chunk>
+</paragraph>

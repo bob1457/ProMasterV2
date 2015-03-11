@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Not Found";
+}
+
+<div class="content-wrapper">
+    <aside>
+        <p>
+            <!-- Left Panel/Column -->
+            <div id="left">
+                <div class="side_title-logo" style="margin-top:1em;">
+                    <img src="@Url.Content("~/Content/Images/sign-error.png")" alt="" title="Documents" />
+
+                </div>
+                <div class="side_title_caption">
+                    <h3>Oops!</h3>
+                    <br />
+                    <span>An error occurred while processing your request.</span>
+
+                </div>
+            </div>
+
+        </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+    </aside> <!-- End of aside -->
+
+    <div class="main metro">
+        <div id="add_edit_panel">
+            <h3 style="font-size: 3em; margin-top: 0.5em; border-bottom:0;">
+                @*<i class="icon-warning" style="background:#B63300; color: rgb(243, 228, 115); padding: 10px; border-radius: 50%"></i> &nbsp;*@ ERROR: <span style="color:#e13d3d; font-size:0.65em; text-align: right; margin-top: -3.75em;">The page you are trying to access is not found!</span>
+                <span style="margin-top: -1.95em; font-size: 0.5em;">Please contact your system administrator.</span>
+            </h3>
+
+            <div id="error_details" style="margin-top:0;">
+                <img src="@Url.Content("~/Content/Images/error_404.png")" />
+                @*Details:<br />
+                <p>&nbsp;</p>
+                <div id="error_desc">
+                    <span style="color: #BC1C11;">
+                        <b>Controller:</b>@Model.ControllerName <br />
+                        <b>Action:</b> @Model.ActionName<br />
+                        <b>Exception:</b>: @Model.Exception<br />
+                    </span>
+                </div>
+                <p></p>
+                <p></p>*@
+
+            </div>
+
+        </div><!-- End of main -->
+
+
+    </div>
+
+</div>
+

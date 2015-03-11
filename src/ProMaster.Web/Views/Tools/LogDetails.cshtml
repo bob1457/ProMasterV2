@@ -1,0 +1,101 @@
+﻿@model ProMaster.Infrastructure.Logging.Log4Net_Error
+
+@{
+    ViewBag.Title = "title";
+}
+
+<div class="content-wrapper">
+    <aside>
+        <!-- Left Panel/Column -->
+        <div id="left">
+            <div class="side_details_logo">
+                <img src="@Url.Content(@Url.Content("~/content/Images/stats.png"))" alt="" title="Logs & Stats" />
+
+            </div>
+            <div class="side_details_caption">
+                <h3>Log Details</h3>
+                <br />
+                <span>
+                    <!-- 	  Detailed tenant information -->
+                </span>
+                <p></p><p></p>
+                
+                <div class="side_details_content">
+
+                    
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+    </aside><!-- End of aside -->
+    
+    <div class="main metro">
+        <div id="manage-tabs" class="tabs-style">
+            <ul>
+                <li><a href="#tabs-1"><i class="fa fa-list-alt"></i> &nbsp;<span>General</span></a></li>
+
+            </ul>
+            <div id="tabs-1">
+                <div class="tab_content metro">
+                    <div class="tab_content_title">
+
+                    </div>
+                    <div class="tab_content_field">
+
+                        <fieldset>
+                            <legend><span><i class="fa fa-info-circle"></i> Log Details</span></legend>
+                            <div class="basic"><div class="display-label">
+                                    Log ID:
+                                </div>
+                                <div class="display-field">
+                                    @Html.DisplayFor(model => model.Id)
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                    Date & Time:
+                                </div>
+                                <div class="display-field">
+                                    @Html.DisplayFor(model => model.Date)
+                                </div>
+                                <br />
+                                <div class="display-label">
+                                    Detailed Message:
+                                </div>
+                                <div class="display-field" style="overflow: hidden;width: 30em;margin-left: 16.3em; margin-top: -1em;">
+                                    @Html.DisplayFor(model => model.Message)
+                                </div>
+                                <br />
+
+
+
+                            </div>
+                            
+                            <br />
+                            @*<div id="msg1"></div>*@
+
+
+                        </fieldset>
+
+                    </div>
+
+                    <div class="left-aligned backbutton"><a id="back" href="@Url.Content("~/Tools/Logs")" title="Back..."><span class="backbutton_format"><i class="icon-arrow-left-3"></i></span> Back to List...</a></div><div class="right-aligned"></div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!--Jquery ui tabs Script -->
+<script type="text/javascript">
+    $(function () {
+        $("#manage-tabs").tabs();
+    });
+</script>

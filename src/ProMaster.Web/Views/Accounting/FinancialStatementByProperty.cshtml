@@ -1,0 +1,29 @@
+﻿@model ProMaster.Core.Accounting.ViewModels.AccountingCostViewModel
+
+@{
+    ViewBag.Title = "FinancialStatementByProperty";
+}
+
+<h2>FinancialStatementByProperty</h2><p></p>
+<!-- FROM:<br />
+<div id="sDate" >@Html.TextBoxFor(model => model.StartPeriod, new { @class = "datepicker", @Value = System.DateTime.Now.ToString("M/d/yyyy") })<br /></div>
+TO:<br />
+<div id="eDate">@Html.TextBoxFor(model => model.EndPeriod)</div>
+-->
+
+@Html.Partial("_FinancialStatement")
+
+
+<p></p>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+    });
+
+    $(function () {
+        $(".datepicker").datepicker();
+    });
+
+
+</script>

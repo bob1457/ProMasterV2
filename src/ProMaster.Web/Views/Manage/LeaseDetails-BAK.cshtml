@@ -1,0 +1,617 @@
+﻿@model ProMaster.Core.Lease.ViewModels.DisplayLeaseViewModel
+
+@{
+    ViewBag.Title = "LeaseDetails";
+}
+
+<h2>LeaseDetails</h2>
+
+<fieldset>
+    <legend>DisplayLeaseViewModel</legend>
+    <img src="~/Content/Documents/Lease/lease-icon.png" alt="" width="96" height="96" />
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LeaseId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LeaseId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LeaseTitle)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LeaseTitle)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LeaseDesc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LeaseDesc)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LeaseStartDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LeaseStartDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LeaseEndDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LeaseEndDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RentFrequency)
+    </div>
+    <div class="display-field">   
+        @Html.DisplayFor(model => model.RentFrequency)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RentAmount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RentAmount)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DamageDepositAmount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DamageDepositAmount)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PetDepositAmount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PetDepositAmount)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RentDueOn)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RentDueOn)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LeaseSignDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LeaseSignDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Addendum)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Addendum)
+    </div>
+
+    
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LeaseTerm)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LeaseTerm)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LeaseAddedDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LeaseAddedDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LeaseUpdateDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LeaseUpdateDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Notes)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Notes)
+    </div>
+
+    <p></p>
+    <img src="@Url.Content(Model.AvartaImgUrl)" alt="@Model.FirstName" height="96px"; width="96px" />
+    
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TenantId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TenantId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ContactEmail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ContactEmail)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ContactTelephone1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ContactTelephone1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ContactTelephone2)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ContactTelephone2)
+    </div>
+
+    
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OnLineAccessEnabled)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OnLineAccessEnabled)
+    </div>
+    <p></p>
+    <img src="@Url.Content(Model.PropertyImageUrl)" alt="@Model.PropertyName" height="96px"; width="96px" />
+
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PropertyId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PropertyId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PropertyName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PropertyName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PropertyDesc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PropertyDesc)
+    </div>
+
+    
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PropertyBuildYear)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PropertyBuildYear)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "EditLease", new {  id=Model.LeaseId /**/ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+<p><b>--Document--</b></p>
+<p></p>
+   <!-- @Html.ActionLink("Add Dcoument", "AddDocument", "Document", new { id = Model.LeaseId, pId = 4 }, null) 
+    <a href="#" id="add">Add Document</a>-->
+<a href="#" id="add">Add Dcoument</a>
+
+<div id="list">@Html.Partial("_leaseDocumentList")</div>
+<p></p>
+
+<div id="">
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NumberOfLatePayment)
+    </div>
+
+    @Html.DisplayFor(model => model.NumberOfLatePayment)
+</div>
+
+
+<p>
+    <a href="" id="rlog">Rent Payment History</a>
+</p>
+<div id="rent" >
+
+    <div id="rentlist" >
+         @Html.Partial("_RentPaymentLog")   
+    </div>
+    <br />
+
+    <div id="enterhistory">
+    <strong>Enter Rent Payment</strong>:
+    <p></p>
+    Rent Paid Date: <input id="date" type="text" value="@DateTime.Now.ToString("M/d/yyyy")" /><br />
+    Rent Paid Amount: <input id="amount" type="text" value="" placeholder="Rent Paid Amount" /><br />
+    Rent for Month: 
+    <select id="month">
+        <option value="1" selected>January</option>
+        <option value="2" >Februray</option>
+        <option value="3" >March</option>
+        <option value="4" >April</option>
+        <option value="5" >May</option>
+        <option value="6" >June</option>
+        <option value="7" >July</option>
+        <option value="8" >August</option>
+        <option value="9" >September</option>
+        <option value="10" >October</option>
+        <option value="11" >November</option>
+        <option value="12" >December</option>        
+    </select><br />
+    Rent for Year: 
+    <select id="year">
+        <option value="2013" selected>2013</option>
+        <option value="2014" >2014</option>
+        <option value="2015" >2015</option>
+        <option value="2016" >2016</option>
+        <option value="2017" >2017</option>
+        <option value="2018" >2018</option>
+        <option value="2019" >2019</option>
+        <option value="2020" >2020</option>               
+    </select><br />
+    Rent Payment Method: 
+    <select id="method">
+        <option value="1" selected>Cash</option>
+        <option value="2" >Personal Cheque</option>
+        <option value="3" >Money Order/Bank Draft</option>
+        <option value="4" >Electronic Transfer</option>
+        <option value="5" >Bank Fund Transfer</option>
+        <option value="6" >Credit Card</option>
+        <option value="7" >Others</option>                      
+    </select><br />
+    Collected in Person: <input id="collect" type="checkbox" name="collect"/><br />
+    Deposit for Owner: <input id="deposit" type="checkbox" />
+    <!-- <div id="hide-show1">Deposit for Owner: <input id="deposit1" type="checkbox"  /></div><br /> -->
+    
+
+    <div id="transfer">
+        Deposit/Transfer Date: <input id="date1" type="text" value="@DateTime.Now.ToString("M/d/yyyy")" /><br />
+        Transfer/Deposit Amount: <input id="amount1" type="text" value="" placeholder="Transfer or Depoist Amount" /><br />   
+        Bank: 
+        <select id="bank">
+            <option value="1" selected>Royal Bank</option>
+            <option value="2" >Bank of Montreal</option>
+            <option value="3" >TD Bank</option>
+            <option value="4" >Scotial Bank</option>
+            <option value="5" >CIBC</option>
+            <option value="6" >Hong Kong Bank</option>                   
+        </select><br />     
+    </div><br />
+
+
+    Notes: <br />
+    <textarea id="notes" rows = "5" placeholder="Enter Notes" /></textarea>
+    <p></p>
+    <input id="submit" type="submit"  value="Enter" />
+
+    </div>
+</div>
+<div id="paymentadded"></div>
+
+
+<!-- The confirmation dialog content -->
+<div id ="delete-dialog" title="Confirmation" style="display:none">
+    <p>Are you sure to delete this document?</p>    
+</div>
+<br />
+<div id="result"></div>
+
+
+<!-- Datepicker Script -->
+<script type="text/javascript">
+    $(function () {
+        $("#date").datepicker();
+    });
+</script>
+
+
+<!-- Delete Confirmation Script -->
+<script type="text/javascript">
+    $('.delete-link').click(function () {
+        deleteLinkObj = $(this);
+        $('#delete-dialog').dialog();
+        return false;
+    });
+
+    $(function () {
+        $('.delete-link').click(function () {
+            var dialogOpts = {
+                autoOpen: false,
+                modal: true,
+                resizable: false,
+                draggable: false,
+                title: 'Delete Confirmation!',
+                buttons: {
+                    "Cancel": function () {
+                        $(this).dialog("close");
+                    },
+
+                    "Continue": function () {
+                        $.post(deleteLinkObj[0].href, function (data) {
+                            if (data == '@Boolean.TrueString') {
+                                deleteLinkObj.closest("li").hide('fast');
+                                $("#result").text("The document has been successfully deleted!");
+                            }
+                            else {
+                                $("#result").text("error occured!");
+                            }
+                        });
+                        $(this).dialog("close");
+
+                    }
+                }
+            };
+
+
+            $('#delete-dialog').dialog(dialogOpts).dialog('open');
+            return false;
+        });
+    });
+
+</script>
+
+<!-- Add Document Dialog: Popup or show/hide -->
+<!-- Not implemented -->
+<div id="add_doc">
+    
+    
+        <strong>Add Document</strong>:
+        <br />
+
+<form id="form" action="@Url.Content("/Document/AddDocument/" + @Model.LeaseId)" method="post" enctype="multipart/form-data">
+    <fieldset>
+        <legend></legend>
+        <p>Document Type:</p>         
+        <!-- <select id="">
+            <option value="1" >Image</option>
+            <option value="2" >Text</option>
+            <option value="3" >Video</option>            
+        </select> -->
+        <div id="doctype" >@Html.DropDownListFor(model=>model.DocumentTypeId, Model.DocumentTypeList)</div>
+        <p>
+       
+        <!--<select id="">
+            <option value="1" selected>Lease Contract</option>
+            <option value="2" >Management Contract</option>
+            <option value="3" >Property</option>
+            <option value="4" >Tenant</option>            
+        </select> -->
+        <div id="pltype" >Document Category: <br />@Html.DropDownListFor(model => model.DocumentPrincipalTypeId, Model.DocumentTyPrincipalpeList, new {@id="t" })</div> 
+        <p>
+        Document Title: <br />
+        @Html.TextBoxFor(model => model.DocumentTitle, new { @id="title", placeholder = "Required "}) <br />  <!--   <input id="title" type="text" value="" placeholder="Enter Document Title" /><br /> -->             
+        @Html.ValidationMessageFor(model => model.DocumentTitle)
+        Document Details:<br />
+        @Html.TextAreaFor(model => model.DocumentDetails, new { @id="details", placeholder = "Document Details... "}) <br />
+        Upload file:<br />
+        <input id="upload" type="file" name="file" />
+        <p></p>
+        <input id="submit1" type="submit"  value="Add" />
+        <input type="button" value="Cancel" id="btncancel" />
+    </fieldset>
+</form>
+    
+ </div>
+
+
+
+<!-- Add Document Script -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#add_doc").hide();
+        //$("#pltype").hide();  
+    });
+
+    $("#add").button();
+    
+
+    $('#add').click(function () {
+    
+        $("#t").val(4);
+
+
+        var dialogOpts = {
+            autoOpen: false,
+            modal: true,
+            resizable: false,
+            draggable: false,
+            width: 400,
+            title: 'Add Document ...'
+           
+
+        }
+
+        $("#add_doc").dialog(dialogOpts).dialog('open');
+
+        return false;
+    });
+
+    $("#submit1").click(function() {
+
+        //Upload file
+        
+            $("#add_doc").dialog('close');
+        
+
+            //Reload least document partial view
+            var url = "/Manage/GetDocumentList/";
+            var q="id=" + @Model.LeaseId +"pid=4";
+            //alert(q);
+            $.get(url, q, function(data){                                
+                $("#list").html(data);            
+            });
+    });   
+
+
+    $("#btncancel").click(function() {
+        $("#add_doc").dialog('close');
+    });   
+
+</script>
+
+
+<!-- Add Rent History Script -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#transfer").hide();
+        
+
+        $("#submit").click(function () {            
+            var paidDate = $("#date").val();
+            var paidAmount = $("#amount").val();
+
+            var paidMonth = $("#month").val();
+            var paidYear = $("#year").val();
+            var paidMethodId = $("#method").val();
+
+            /**/ debugger; 
+
+            var collect = $("#collect").prop('checked');
+            var deposit = $("#deposit").prop('checked');
+            
+            
+            var temp = $("#amount1").val();
+
+            if (temp !="")
+            {
+                var transferamount = $("#amount1").val();
+                
+            }
+            else
+            {
+                var transferamount = 0.00;
+                
+            }
+
+            
+            var bandkid = $("#bank").val();
+            var transferdate = $("#date1").val();
+
+            var notes = $("#notes").val();
+
+            /* alert(transferamount); */
+
+            $.ajax({
+		                type: "POST",
+		                url: "/Manage/AddRentPayment",
+		                data: "id=" + @(Model.TenantId) + "&paydate=" + paidDate + "&paymonth=" + paidMonth +"&payyear=" + paidYear +"&payamount=" + 
+                        paidAmount +"&paymethodid=" + paidMethodId + "&collected=" + collect +"&deposit=" + deposit + "&notes=" + notes +"&bankId=" + 
+                        bandkid + "&transferAmt=" + transferamount +"&tranferDate=" + transferdate,
+		                
+		                contenType: "",
+		                dataType: "json",
+		                success: Suceeded
+		            });
+
+                    function Suceeded(data) {
+		                //alert('success');
+		                //$('#tagAdded').html(data);
+                        $('#paymentadded').html(data);
+                        
+                        $('#paymentadded').delay(5000).fadeOut(400);
+                        //refresh comments
+                        //
+                        var url="/Manage/GetPaymentByTenant/";
+                        var q="id=" + @(Model.TenantId);
+                            $.get(url, q, function(data){                                
+                                $("#rentlist").html(data);            
+                            });
+                         return false;
+		            }
+
+                    /* Clear the fields for new entry */
+
+                    aidDate = $("#date").val();
+                    paidAmount = $("#amount").val('');
+
+                    /* paidMonth = $("#month").val('');
+                    paidYear = $("#year").val(''); */
+                    paidMethodId = $("#method").val();
+
+                    collect = $("#collect").attr('checked', false);
+                    deposit = $("#deposit").attr('checked', false);
+
+                    var notes = $("#notes").val('');
+        });
+
+    $("#deposit").change(function () {
+
+        if(this.checked)
+        {
+             $("#transfer").show();
+        }
+        else
+        {
+            $("#transfer").hide();
+        }
+       
+         /* $("#deposit1").attr('checked', true); 
+        $("#hide-show1").show();
+        $("#hide-show").hide();
+
+        Debuging Code 
+
+        var temp1 = $("#deposit1").prop('checked');
+        var temp3 = $("#deposit").prop('checked');
+
+        alert("deposit= " + temp1);
+        alert("deposit1= " + temp1);
+        
+        */
+    });
+    
+    $("#deposit1").click(function () {
+        $("#transfer").hide();
+        $("#hide-show").show();
+        $("#deposit").attr('checked', false);
+        $("#deposit1").attr('checked', true); 
+        $("#hide-show1").hide();
+
+
+        /* Debuging Code
+
+        var temp2 = $("#deposit").prop('checked');
+        var temp4 = $("#deposit1").prop('checked');
+
+        alert("deposit= " + temp2);
+        alert("deposit1= " + temp2); 
+        
+        */
+
+    });
+
+});
+</script>
+
+<!-- Get/refresh history -->
+<script type="text/javascript">
+$(document).ready(function () { 
+        var url="/Manage/GetPaymentByTenant/";
+                        var q="id=" + @(Model.TenantId);
+                            $.get(url, q, function(data){                                
+                                $("#rentlist").html(data);            
+                            });
+    });
+</script>

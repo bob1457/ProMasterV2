@@ -1,0 +1,34 @@
+﻿[
+    {
+        "imgUrl": "content/assets/images/property.png",
+        "title": "621 Coquitlam",
+        "desc": "Bunglow in West Coquitlam",
+        "city":  "Coquitlam",
+        "rent": "2,100"
+    },
+
+    {
+        "imgUrl": "content/assets/images/property.png",
+        "title": "M21 Coquitlam",
+         "desc": "Apartment in Coquitlam Center",
+        "city": "Coquitlam",
+        "rent": "1,600"
+    },
+
+    {
+        "imgUrl": "content/assets/images/property.png",
+        "title": "10621 Surrey",
+        "desc": "Single house in Fraser Heights",
+        "city":  "Surrey",
+        "rent": "2,100"
+    },
+
+    {
+        "imgUrl": "content/assets/images/property.png",
+        "title": "201 Brentwood",
+        "desc": "One bedroom Condo North Burnaby",
+        "city":  "Burnaby",
+        "rent": "1,350"
+    }            
+
+]

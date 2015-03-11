@@ -1,0 +1,132 @@
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.pdb
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Infrastructure\obj\Debug\ResolveAssemblyReference.cache
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.pdb
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll.config
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll.config
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Infrastructure\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll.config
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Infrastructure\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.Infrastructure\bin\Debug\System.Web.Mvc.Html5.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll.config
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Infrastructure\bin\Debug\System.Web.Mvc.Html5.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.Infrastructure\bin\Debug\System.Web.Mvc.Html5.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Development\Projects\ProMaster\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll.config
+C:\Development\Projects\ProMaster\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll
+C:\Development\Projects\ProMaster\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Development\Projects\ProMaster\ProMaster.Infrastructure\bin\Debug\System.Web.Mvc.dll
+C:\Development\Projects\ProMaster\ProMaster.Infrastructure\bin\Debug\System.Web.Mvc.Html5.dll
+C:\Development\Projects\ProMaster\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Development\Projects\ProMaster\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.dll
+C:\Development\Projects\ProMaster\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Infrastructure\bin\Debug\EntityFramework.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.Infrastructure\bin\Debug\EntityFramework.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll.config
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Infrastructure\bin\Debug\EntityFramework.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Infrastructure\bin\Debug\log4net.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Infrastructure\bin\Debug\System.Web.Mvc.Html5.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Infrastructure\bin\Debug\EntityFramework.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Infrastructure\bin\Debug\log4net.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.pdb
+C:\Projects\ProMaster\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll.config
+C:\Projects\ProMaster\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll
+C:\Projects\ProMaster\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Projects\ProMaster\ProMaster.Infrastructure\bin\Debug\EntityFramework.dll
+C:\Projects\ProMaster\ProMaster.Infrastructure\bin\Debug\log4net.dll
+C:\Projects\ProMaster\ProMaster.Infrastructure\bin\Debug\System.Web.Mvc.dll
+C:\Projects\ProMaster\ProMaster.Infrastructure\bin\Debug\System.Web.Mvc.Html5.dll
+C:\Projects\ProMaster\ProMaster.Infrastructure\bin\Debug\EntityFramework.xml
+C:\Projects\ProMaster\ProMaster.Infrastructure\bin\Debug\log4net.xml
+C:\Projects\ProMaster\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Projects\ProMaster\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.dll
+C:\Projects\ProMaster\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.pdb
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll.config
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Infrastructure\bin\Debug\EntityFramework.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Infrastructure\bin\Debug\log4net.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Infrastructure\bin\Debug\System.Web.Mvc.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Infrastructure\bin\Debug\System.Web.Mvc.Html5.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Infrastructure\bin\Debug\EntityFramework.xml
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Infrastructure\bin\Debug\log4net.xml
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.pdb
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll.config
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Infrastructure\bin\Debug\EntityFramework.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Infrastructure\bin\Debug\log4net.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Infrastructure\bin\Debug\System.Web.Mvc.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Infrastructure\bin\Debug\System.Web.Mvc.Html5.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Infrastructure\bin\Debug\EntityFramework.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Infrastructure\bin\Debug\log4net.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.pdb
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll.config
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Infrastructure\bin\Debug\EntityFramework.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Infrastructure\bin\Debug\log4net.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Infrastructure\bin\Debug\System.Web.Mvc.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Infrastructure\bin\Debug\System.Web.Mvc.Html5.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Infrastructure\bin\Debug\EntityFramework.xml
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Infrastructure\bin\Debug\log4net.xml
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.pdb
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll.config
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Infrastructure\bin\Debug\EntityFramework.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Infrastructure\bin\Debug\log4net.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Infrastructure\bin\Debug\System.Web.Mvc.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Infrastructure\bin\Debug\System.Web.Mvc.Html5.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Infrastructure\bin\Debug\EntityFramework.xml
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Infrastructure\bin\Debug\log4net.xml
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.pdb
+C:\Projects\Release\ProMasterRC\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll.config
+C:\Projects\Release\ProMasterRC\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Projects\Release\ProMasterRC\ProMaster.Infrastructure\bin\Debug\EntityFramework.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Infrastructure\bin\Debug\log4net.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Infrastructure\bin\Debug\System.Web.Mvc.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Infrastructure\bin\Debug\System.Web.Mvc.Html5.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Infrastructure\bin\Debug\EntityFramework.xml
+C:\Projects\Release\ProMasterRC\ProMaster.Infrastructure\bin\Debug\log4net.xml
+C:\Projects\Release\ProMasterRC\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Projects\Release\ProMasterRC\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.dll
+C:\Projects\Release\ProMasterRC\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.pdb
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll.config
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Infrastructure\bin\Debug\EntityFramework.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Infrastructure\bin\Debug\log4net.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Infrastructure\bin\Debug\System.Web.Mvc.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Infrastructure\bin\Debug\System.Web.Mvc.Html5.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Infrastructure\bin\Debug\EntityFramework.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Infrastructure\bin\Debug\log4net.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.pdb

@@ -1,0 +1,222 @@
+﻿@model ProMaster.Core.Vendor.ViewModels.OtherCostViewModel
+
+@{
+    ViewBag.Title = "Edit Other Cost";
+}
+
+<div class="content-wrapper">
+    <aside>
+    <!-- Left Panel/Column -->
+      <div id="left">
+      	<div class="side_details_logo">
+        	<img src="@Url.Content("~/Content/Images/documents3.png")" alt="" title="Vendor Details" />          
+        </div>
+        <div class="side_details_caption metro">
+        	<h3>Contract Details</h3>
+        	<br />
+            <span>
+                 <!-- 	  Detailed tenant information -->
+                 @Model.OtherCostName
+                <p></p>
+                    <div class="display-label">
+                       Started Date:
+                    </div><br />
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.CostAddDate)
+                    </div><br />
+
+                    
+
+                @if (@Model.IsPaid == true)
+                        {
+                            <div class="display-label">
+                                    Is Paid:
+                                </div>
+                                <div class="display-field">
+                                     @Html.DisplayFor(model => model.IsPaid, new { @id = "ok" })
+                                </div><br />
+                            
+                            <div class="display-label">
+                                Invoice Amount:
+                            </div>
+                            <div class="display-field">
+                                 @Html.DisplayFor(model => model.CostAmount)
+                            </div>
+                            
+                            
+                        }
+
+
+            </span>
+            <p></p><p></p>
+            <h6>Serviced Propoerties</h6>
+            <div class="side_details_content">               
+                
+            
+            </div>
+        </div>
+      </div>
+      
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+    </aside><!-- End of aside -->
+
+     <div class="main metro">
+    <div id="add_edit_panel">
+        <h3><i class="fa fa-th"></i> &nbsp; EDIT OTHER COST
+          <span>Please fill/Update all required fields and click "Save".</span>
+        </h3>
+                <!-- <fieldset class="edit"> 
+                <legend><span></span></legend> --><!-- </fieldset>  -->
+                
+                @using (Html.BeginForm()) 
+                { 
+                    <div class="edit_field">
+                         <fieldset>
+                            <legend><span><i class="fa fa-info-circle"></i> Basic Information</span></legend>
+                            
+                                           
+                                <div class="display-label">
+                                    <span class="grey-font">Work Order ID: </span>
+                                </div>
+                                <div class="display-field">
+                                    <span class="grey-font">@Html.DisplayFor(model => model.OtherCostId)</span>
+                                </div> 
+                                <br /><br />
+                                    <br />
+                                <div class="display-label">
+                                    Work Order Name:
+                                </div>
+                                <div class="display-field">
+                                    @Html.TextBoxFor(model => model.OtherCostName, new { autofocus = "" })
+                                    @Html.ValidationMessageFor(model => model.OtherCostName)
+                                </div> 
+                                <br />
+                                <div class="display-label">
+                                    Description:
+                                </div>
+                                <div class="display-field">
+                                    @Html.TextAreaFor(model => model.CostDetails)                                
+                                </div>
+                                <br />                                
+                                <div class="display-label">
+                                   Cost Date
+                                </div>
+                                <div class="display-field">
+                                   @Html.TextBoxFor(model => model.CostAddDate)
+                                </div>
+
+                                 
+                                <br />
+
+                             @if(Model.IsPaid == false){
+
+                                <div class="display-label">
+                                    Is Paid:
+                                </div>
+                                <div class="display-field">
+                                     @Html.EditorFor(model => model.IsPaid, new { @id = "ok" })
+                                </div>
+                             }
+
+                        
+                            <div id="pay">
+                                <div class="display-label">
+                                    Invoice Amount:
+                                </div>
+                                <div class="display-field">
+                                     @Html.EditorFor(model => model.CostAmount)
+                                </div>
+                                
+                                
+                        </div>
+                          
+                                
+                            </fieldset>
+                                <br />
+
+                        </div> 
+                    
+                    <div class="right-aligned"><input type="submit" value="Save" /></div>
+                } 
+
+             </div> 
+  
+  
+  </div><!-- end of main -->
+
+
+   
+
+
+<!--
+    <fieldset>
+        <legend>OtherCostViewModel</legend>
+
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OtherCostName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OtherCostName)
+            @Html.ValidationMessageFor(model => model.OtherCostName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CostDetails)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.CostDetails)
+            @Html.ValidationMessageFor(model => model.CostDetails)
+        </div>
+
+        
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CostCategoryId)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.CostCategoryId, Model.CostCategoryList)
+            @Html.ValidationMessageFor(model => model.CostCategoryId)
+        </div>
+
+        
+
+        
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CostAmount)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CostAmount)
+            @Html.ValidationMessageFor(model => model.CostAmount)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsPaid)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsPaid)
+            @Html.ValidationMessageFor(model => model.IsPaid)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PropertyName)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.PropertyName)
+            @Html.ValidationMessageFor(model => model.PropertyName)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+    -->
+
+
+</div><!-- end of content-wrapper- -->
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

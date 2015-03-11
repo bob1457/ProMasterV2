@@ -1,0 +1,283 @@
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.pdb
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.ApplicationManager\obj\Debug\ResolveAssemblyReference.cache
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.pdb
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.ApplicationManager\bin\Debug\EntityFramework.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.ApplicationManager\bin\Debug\Microsoft.Web.Helpers.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.ApplicationManager\bin\Debug\Ninject.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.ApplicationManager\bin\Debug\Ninject.Web.Mvc.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.ApplicationManager\bin\Debug\EntityFramework.xml
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.ApplicationManager\bin\Debug\ProMaster.DAL.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.ApplicationManager\bin\Debug\ProMaster.Repository.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.ApplicationManager\bin\Debug\ProMaster.DAL.pdb
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.ApplicationManager\bin\Debug\ProMaster.Repository.pdb
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.ApplicationManager\bin\Debug\ProMaster.Infrastructure.dll
+c:\documents and settings\plsb mobile\my documents\visual studio 2010\Projects\ProMaster.Web\ProMaster.ApplicationManager\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\EntityFramework.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\Microsoft.Web.Helpers.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\Ninject.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\Ninject.Web.Mvc.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.DAL.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Repository.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Infrastructure.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.DAL.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Repository.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\EntityFramework.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.ApplicationManager\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.ApplicationManager\bin\Debug\EntityFramework.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.ApplicationManager\bin\Debug\Microsoft.Web.Helpers.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.ApplicationManager\bin\Debug\Ninject.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.ApplicationManager\bin\Debug\Ninject.Web.Mvc.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.ApplicationManager\bin\Debug\ProMaster.DAL.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.ApplicationManager\bin\Debug\ProMaster.Repository.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.ApplicationManager\bin\Debug\ProMaster.Infrastructure.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.ApplicationManager\bin\Debug\ProMaster.DAL.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.ApplicationManager\bin\Debug\ProMaster.Repository.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.ApplicationManager\bin\Debug\EntityFramework.xml
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.ApplicationManager\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.ApplicationManager\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.ApplicationManager\bin\Debug\ProMaster.Core.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\Backup of ProMaster_2013-08-14\ProMaster.ApplicationManager\bin\Debug\ProMaster.Core.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\EntityFramework.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\Microsoft.Web.Helpers.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\Ninject.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\Ninject.Web.Mvc.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.DAL.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Repository.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Core.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Infrastructure.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.DAL.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Repository.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\EntityFramework.xml
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Core.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.csprojResolveAssemblyReference.cache
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.dll
+C:\Users\Bob\Documents\Visual Studio 2012\Projects\ProMaster\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.pdb
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Core.dll
+C:\Documents and Settings\PLSB Mobile\My Documents\Visual Studio 2010\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Core.pdb
+C:\Development\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.dll
+C:\Development\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.pdb
+C:\Development\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\EntityFramework.dll
+C:\Development\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\Microsoft.Web.Helpers.dll
+C:\Development\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\Ninject.dll
+C:\Development\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\Ninject.Web.Mvc.dll
+C:\Development\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.DAL.dll
+C:\Development\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Repository.dll
+C:\Development\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\System.Web.Mvc.dll
+C:\Development\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Core.dll
+C:\Development\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Infrastructure.dll
+C:\Development\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.DAL.pdb
+C:\Development\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Repository.pdb
+C:\Development\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\EntityFramework.xml
+C:\Development\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Core.pdb
+C:\Development\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Development\Projects\ProMaster\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.csprojResolveAssemblyReference.cache
+C:\Development\Projects\ProMaster\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.dll
+C:\Development\Projects\ProMaster\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.ApplicationManager\bin\Debug\EntityFramework.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.ApplicationManager\bin\Debug\Microsoft.Web.Helpers.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.ApplicationManager\bin\Debug\Ninject.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.ApplicationManager\bin\Debug\Ninject.Web.Mvc.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.DAL.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Repository.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Core.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Infrastructure.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.DAL.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Repository.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.ApplicationManager\bin\Debug\EntityFramework.xml
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Core.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.csprojResolveAssemblyReference.cache
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.pdb
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.ApplicationManager\bin\Debug\log4net.dll
+C:\Users\Bob\Documents\Visual Studio 2012\ProMaster\ProMaster.ApplicationManager\bin\Debug\log4net.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.pdb
+C:\Projects\SourceControl\ProMaster\src\ProMaster.ApplicationManager\bin\Debug\EntityFramework.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.ApplicationManager\bin\Debug\log4net.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.ApplicationManager\bin\Debug\Microsoft.Web.Helpers.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.ApplicationManager\bin\Debug\Ninject.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.ApplicationManager\bin\Debug\Ninject.Web.Mvc.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.DAL.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Repository.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.ApplicationManager\bin\Debug\System.Web.Mvc.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Core.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Infrastructure.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.DAL.pdb
+C:\Projects\SourceControl\ProMaster\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Repository.pdb
+C:\Projects\SourceControl\ProMaster\src\ProMaster.ApplicationManager\bin\Debug\EntityFramework.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.ApplicationManager\bin\Debug\log4net.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Core.pdb
+C:\Projects\SourceControl\ProMaster\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Projects\SourceControl\ProMaster\src\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.csprojResolveAssemblyReference.cache
+C:\Projects\SourceControl\ProMaster\src\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.pdb
+C:\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.dll
+C:\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.pdb
+C:\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\EntityFramework.dll
+C:\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\log4net.dll
+C:\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\Microsoft.Web.Helpers.dll
+C:\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\Ninject.dll
+C:\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\Ninject.Web.Mvc.dll
+C:\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.DAL.dll
+C:\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Repository.dll
+C:\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\System.Web.Mvc.dll
+C:\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Core.dll
+C:\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Infrastructure.dll
+C:\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.DAL.pdb
+C:\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Repository.pdb
+C:\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\EntityFramework.xml
+C:\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\log4net.xml
+C:\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Core.pdb
+C:\Projects\ProMaster\ProMaster.ApplicationManager\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Projects\ProMaster\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.csprojResolveAssemblyReference.cache
+C:\Projects\ProMaster\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.dll
+C:\Projects\ProMaster\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.pdb
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.pdb
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\EntityFramework.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\log4net.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\Microsoft.Web.Helpers.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\Ninject.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\Ninject.Web.Mvc.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.DAL.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Repository.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\System.Web.Mvc.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Core.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Infrastructure.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.DAL.pdb
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Repository.pdb
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\EntityFramework.xml
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\log4net.xml
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Core.pdb
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.csprojResolveAssemblyReference.cache
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.dll
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.pdb
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.pdb
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.ApplicationManager\bin\Debug\EntityFramework.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.ApplicationManager\bin\Debug\log4net.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.ApplicationManager\bin\Debug\Microsoft.Web.Helpers.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.ApplicationManager\bin\Debug\Ninject.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.ApplicationManager\bin\Debug\Ninject.Web.Mvc.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.DAL.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Repository.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.ApplicationManager\bin\Debug\System.Web.Mvc.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Core.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Infrastructure.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.DAL.pdb
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Repository.pdb
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.ApplicationManager\bin\Debug\EntityFramework.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.ApplicationManager\bin\Debug\log4net.xml
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Core.pdb
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.csprojResolveAssemblyReference.cache
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.dll
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.pdb
+C:\Development\Projects\SC\ProMaster1\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.dll.config
+C:\Projects\SourceControl\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.dll.config
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.dll.config
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.pdb
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\EntityFramework.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\log4net.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\Microsoft.Web.Helpers.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\Ninject.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\Ninject.Web.Mvc.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.DAL.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Repository.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\System.Web.Mvc.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Core.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Infrastructure.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.DAL.pdb
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Repository.pdb
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\EntityFramework.xml
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\log4net.xml
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Core.pdb
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.csprojResolveAssemblyReference.cache
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.dll
+C:\Development\Projects\SC\ProMaster2\src\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.pdb
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.dll.config
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.pdb
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.ApplicationManager\bin\Debug\EntityFramework.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.ApplicationManager\bin\Debug\log4net.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.ApplicationManager\bin\Debug\Microsoft.Web.Helpers.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.ApplicationManager\bin\Debug\Ninject.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.ApplicationManager\bin\Debug\Ninject.Web.Mvc.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.DAL.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Repository.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.ApplicationManager\bin\Debug\System.Web.Mvc.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Core.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Infrastructure.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.DAL.pdb
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Repository.pdb
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.ApplicationManager\bin\Debug\EntityFramework.xml
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.ApplicationManager\bin\Debug\log4net.xml
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Core.pdb
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.csprojResolveAssemblyReference.cache
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.dll
+C:\Projects\SourceControl\ProMasterDev\src\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.pdb
+C:\Projects\Release\ProMasterRC\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.dll.config
+C:\Projects\Release\ProMasterRC\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.dll
+C:\Projects\Release\ProMasterRC\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.pdb
+C:\Projects\Release\ProMasterRC\ProMaster.ApplicationManager\bin\Debug\EntityFramework.dll
+C:\Projects\Release\ProMasterRC\ProMaster.ApplicationManager\bin\Debug\log4net.dll
+C:\Projects\Release\ProMasterRC\ProMaster.ApplicationManager\bin\Debug\Microsoft.Web.Helpers.dll
+C:\Projects\Release\ProMasterRC\ProMaster.ApplicationManager\bin\Debug\Ninject.dll
+C:\Projects\Release\ProMasterRC\ProMaster.ApplicationManager\bin\Debug\Ninject.Web.Mvc.dll
+C:\Projects\Release\ProMasterRC\ProMaster.ApplicationManager\bin\Debug\ProMaster.DAL.dll
+C:\Projects\Release\ProMasterRC\ProMaster.ApplicationManager\bin\Debug\ProMaster.Repository.dll
+C:\Projects\Release\ProMasterRC\ProMaster.ApplicationManager\bin\Debug\System.Web.Mvc.dll
+C:\Projects\Release\ProMasterRC\ProMaster.ApplicationManager\bin\Debug\ProMaster.Core.dll
+C:\Projects\Release\ProMasterRC\ProMaster.ApplicationManager\bin\Debug\ProMaster.Infrastructure.dll
+C:\Projects\Release\ProMasterRC\ProMaster.ApplicationManager\bin\Debug\ProMaster.DAL.pdb
+C:\Projects\Release\ProMasterRC\ProMaster.ApplicationManager\bin\Debug\ProMaster.Repository.pdb
+C:\Projects\Release\ProMasterRC\ProMaster.ApplicationManager\bin\Debug\EntityFramework.xml
+C:\Projects\Release\ProMasterRC\ProMaster.ApplicationManager\bin\Debug\log4net.xml
+C:\Projects\Release\ProMasterRC\ProMaster.ApplicationManager\bin\Debug\ProMaster.Core.pdb
+C:\Projects\Release\ProMasterRC\ProMaster.ApplicationManager\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Projects\Release\ProMasterRC\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.csprojResolveAssemblyReference.cache
+C:\Projects\Release\ProMasterRC\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.dll
+C:\Projects\Release\ProMasterRC\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.pdb
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.dll.config
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.pdb
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.ApplicationManager\bin\Debug\EntityFramework.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.ApplicationManager\bin\Debug\log4net.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.ApplicationManager\bin\Debug\Microsoft.Web.Helpers.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.ApplicationManager\bin\Debug\Ninject.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.ApplicationManager\bin\Debug\Ninject.Web.Mvc.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.DAL.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Repository.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.ApplicationManager\bin\Debug\System.Web.Mvc.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Core.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Infrastructure.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.DAL.pdb
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Repository.pdb
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.ApplicationManager\bin\Debug\EntityFramework.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.ApplicationManager\bin\Debug\log4net.xml
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Core.pdb
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.csprojResolveAssemblyReference.cache
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.dll
+C:\Development\Projects\SC\ProMasterV2\src\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.pdb

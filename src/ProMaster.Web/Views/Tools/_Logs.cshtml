@@ -1,0 +1,98 @@
+﻿@model PagedList.IPagedList<ProMaster.Infrastructure.Logging.ViewModels.LoggingDashBoardViewModel>
+@using PagedList.Mvc;
+
+
+
+<table>
+    <thead class="table_head">
+        <tr>
+            <td colspan="6" class="table-h table_head">                
+                <span><i class="icon-clipboard-2"></i></span> Logs (Total @ViewBag.TotalLogs)
+            </td>
+        </tr>
+    </thead>
+    <tr>
+
+        <th class="table_th">ID</th>
+        <th class="table_th">Date/Time</th>
+        <th class="table_th">Thread</th>
+        <th class="table_th">Level</th>
+        <th class="table_th">Message</th>
+        <th class="table_th"></th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.LogId
+            </td>
+            <td style="width:25%;">
+                @item.LogDateTime
+            </td>
+            <td style="width:10%;">
+                @item.LogThread
+            </td>
+            <td style="width:10%;">
+                @item.LogLevel
+            </td>
+            <td style="width:35%;">
+                @if(@item.LogMessage.Length > 150)
+                {
+                    @item.LogMessage.Substring(1, 105)<span>...</span>
+                }
+                else
+                {
+                    @item.LogMessage
+                }
+                
+            </td>
+            
+            <td>
+                <div class="table-button"><a href="@Url.Action("LogDetails", "Tools", new { id = item.LogId })"><img src="@Url.Content("~/Content/Images/documents2.png")" title="Log Details" /></a></div>
+            </td>
+        </tr>
+    }
+    <tfoot class="table_th">
+        <tr>
+            <td colspan="1" style="border-top: thin solid #BAB9B9; border-right-color: transparent;"><span><i class="icon-clipboard-2;"></i></span></td>
+            <td colspan="5">
+                <span id="pager" style="float:right;">
+                    @*@for (int i = 1; i <= @ViewBag.PageCount; i++)
+                    {
+                        <a class="page-number" href="javascript:void();">@i</a>
+                    }*@
+                    @Html.PagedListPager(Model, page => Url.Action("Logs", new { page, level = Request.QueryString["level"], period = Request.QueryString["period"] }), new PagedListRenderOptions {
+
+                       LinkToFirstPageFormat = "<<",
+                       LinkToPreviousPageFormat = "<",
+                       LinkToNextPageFormat = ">",
+                       LinkToLastPageFormat = ">>",
+               
+                    })
+
+                </span>
+
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+<script type="text/javascript">
+
+    $('#pager').on('click', 'a', function () {
+        //alert(this.href);
+
+        $.ajax({            
+            url: this.href,
+            type: 'GET',
+            data: '',
+            cache: false,
+            success: function (result) {
+                $('#loglist').html(result);
+            }
+        });
+        return false;
+    });
+
+</script>

@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<div class="content-wrapper">
+    <aside> 
+    <p><!-- Left Panel/Column -->
+      <div id="left">
+      	<div class="side_title-logo">
+        	<img src="@Url.Content("~/Content/Images/admin-large.png")" alt="" title="Tools" />
+            
+        </div>
+        <div class="side_title_caption">
+        	<h3>Manager's Toolbox</h3>
+        	<br>
+            <span>All that you need to word efficitly</span>
+        
+        </div>
+      </div>
+      
+    </p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </aside> <!-- End of aside -->
+
+  <div class="main metro">	
+
+    <div class="list_panel">
+
+        <div id="list">
+            <div class="tool_tile">
+            <a href="@Url.Content("~/Tools/Calendar")" title="Calendar/Schedule">
+                <div class="tile_large amarelo" id="p1"><br />
+                    <span class="large_font">
+                        <div class="tile_icon"><img src="@Url.Content("~/Content/Images/cal.png")" />
+                        </div>
+                    </span><br />Calendar
+                </div>
+            </a>
+            <a href="@Url.Content("~/Tools/Messaging")" title="Messaging"><div class="tile_large dark_orange" id="p2"><br /><span class="large_font"><div class="tile_icon"><img src="@Url.Content("~/Content/Images/mail.png")" /></div></span><br />Messaging</div></a>
+            <a href="@Url.Content("~/Tools/Applications")" title="Tenant Application and Screening"><div class="tile_large green" id="p2"><br /><span class="large_font"><div class="tile_icon"><img src="@Url.Content("~/Content/Images/users2.png")" /></div></span><br />Application & Screening</div></a>
+            <a href="@Url.Content("~/Tools/DocTool")" title="Document Tools"><div class="tile_large purple" id="p4"><br /><span class="large_font"><div class="tile_icon"><img src="@Url.Content("~/Content/Images/doc.png")" /></div></span><br />Doucment Tool</div></a>	
+            <a href="@Url.Content("~/Tools/ServiceNote")" title="Services Notification"><div class="tile_large metro_blue" id="p4"><br /><span class="large_font"><div class="tile_icon"><img src="@Url.Content("~/Content/Images/notes.png")" /></div></span><br />Service Notification</div></a>	
+            <a href="@Url.Content("~/Tools/Legal")" title="Legal and Dispute"><div class="tile_large yellow" id="p4"><br /><span class="large_font"><div class="tile_icon"><img src="@Url.Content("~/Content/Images/legal2.png")" /></div></span><br />Legal and Dispute</div></a>	
+            <a href="@Url.Content("~/Tools/Resources")" title="Resources"><div class="tile_large metro_dark_blue" id="p4"><br /><span class="large_font"><div class="tile_icon"><img src="@Url.Content("~/Content/Images/expertise.png")" /></div></span><br />Resources</div></a>	
+            <a href="@Url.Content("~/Tools/Marketing")" " title="Marketing Management"><div class="tile_large google_p_Color_bg" id="p4"><br /><span class="large_font"><div class="tile_icon"><img src="@Url.Content("~/Content/Images/list.png")" /></div></span><br />Marketing & Listing</div></a>	
+           
+        </div>
+        </div>
+        
+    </div>  
+
+  </div><!-- End of main -->
+
+  <br />
+</div><!-- end of content-wrapper -->
+
+<script type="text/javascript">
+  $(function() {
+    $( "#manage-tabs" ).tabs();
+  });
+
+  $(function () {
+      $("#doc_cat").accordion({
+          autoHeight:true
+      });
+  });
+
+  $(function () {
+      $(".datepicker").datepicker();
+  });
+
+</script>

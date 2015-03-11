@@ -1,0 +1,17 @@
+﻿<!---->
+<ul>
+    @foreach (var item in Model.DocCheckList)
+    { 
+        <li>
+            Identification Document Available: @item.IdentificationDocAvailable<br />
+            Income Dcoument Available: @item.IncomeDocAvailable<br />
+            Credit Report Available: @item.IsCreditReportAvailable<br />
+            Landlord Reference Available: @item.LandlordReferenceDocAvailable<br />
+            Employer Reference Available: @item.EmployerReferenceDocAvailable<br />
+            Document Checklist Completion Date: @item.DocumentCheckLiatCompletionDate<br />
+        </li>
+    }
+</ul>
+
+ 
+

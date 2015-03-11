@@ -1,0 +1,70 @@
+﻿@model ProMaster.Core.ClientPortal.ViewModels.DisplayClientPortalViewModel
+
+<table>
+    <thead class="table_head">
+        <tr>
+            <td colspan="8" class="table-h table_head">
+                <span><i class="icon-clipboard-2"></i></span> Repair Costs
+            </td>
+        </tr>
+    </thead>
+    <tr>
+        <th class="table_th">ID</th>
+        <th class="table_th">Name</th>
+        <th class="table_th">Description</th>
+        <th class="table_th">Start Date</th>
+        <th class="table_th">Status</th>
+        <th class="table_th">Amount</th>
+        <th class="table_th">Paid</th>
+        <th class="table_th"></th> 
+    </tr>
+    @if (@Model.WorkOrderList != null)
+    {
+        foreach (var item in Model.WorkOrderList)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WorkOrderId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WorkOrderName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WorkOrderDetails)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WorkOrderStatus)
+                </td>
+                <td>
+                    $@Html.DisplayFor(modelItem => item.InvoiceAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsPaid)
+                </td>
+                <td>
+                    <div class="table-button"><a href="@Url.Action("WorkOrderDetails", "Manage", new { id=item.WorkOrderId })"><img src="@Url.Content("~/Content/Images/details.png")" title="Details" /></a></div>
+                </td>
+
+            </tr>
+        }
+
+    }
+    else
+    {
+        <tr>
+            <td colspan="8">
+                <em>No records!</em>
+            </td>
+        </tr>
+    }
+    <tfoot class="table_th">
+        <tr>
+            <td colspan="8"><span><i class="icon-clipboard-2"></i></span></td>
+
+        </tr>
+    </tfoot>
+
+</table><br />

@@ -1,0 +1,405 @@
+﻿<!DOCTYPE html>
+
+<html ng-app="ProMasterClient">
+<head>
+    <title>ProMaster v.1.0 - Mobile</title>
+    <link href="/content/assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <!-- UI Styles -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- UI Styles -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link href="content/styles/bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="content/styles/metro-bootstrap.css" rel="stylesheet" />
+
+    <link href="content/styles/custom_live-tile.css" rel="stylesheet" />
+
+    <link href="content/styles/Custom_MetroJS.css" rel="stylesheet" />
+
+    <link href="content/styles/metro-bootstrap.css" rel="stylesheet" />
+
+
+    <link href="content/styles/MetroJs.css" rel="stylesheet" />
+
+    <!-- Custom Site Style -->
+    <link href="content/styles/site.css" rel="stylesheet" />
+
+
+
+</head>
+<body ng-controller="homeController">
+
+    <div class="home-container">
+        <div class="container">
+            <div class="row" style="margin-bottom: 1em;">
+                <div class="col-md-6" ng-cloak="">
+                    <div id="date">{{day | dayName}} {{date}}</div>
+                </div>
+                <div class="col-md-3"></div>
+                <div class="col-md-3 ">
+                    <div class="account_info ">
+                        <button ng-click="toogleModal()" class="cus-btn-xs btn btn-primary" style="color:rgb(249, 255, 0);">LOGIN</button>
+                    </div>
+
+                </div>
+            </div>
+            <br />
+
+        </div>
+    </div>
+    <div class="home-container banner metro">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" style="margin-top: -2.75em;">
+                    <div id="logo" class="img-responsive ">
+                        <img src="/content/assets/images/logo.png" />
+                    </div>
+                    <div id="tag_line">Your property managenment solution provider</div>
+                </div>
+                <div class="col-md-6"></div>
+                <div id="search_panel" class="col-md-2">
+                    <form id="search">
+                        <div class=" input-group input-group-sm">
+                            <input type="text" class="center-block form-control input-sm" title="Site search." placeholder="Search...">
+                            <span class="input-group-btn"><button class="btn btn-sm btn-primary" type="button"><i class="fa fa-search"></i></button></span>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6"></div>
+                <div class="col-lg-6">
+                    <!--<nav class="navbar navbar-default nav-pos" style="border-width: 0;">
+
+                        </nav>-->
+
+                    <ul id="menu">
+                        <li class="active_menu"><a href="Index.html"><span class="focus"><!-- <i class="fa fa-home fa-fw"></i>-->LISTING</span></a></li>
+                        <!--<li><a href="Manage.html#/Properties">MANAGE</a></li>
+                        <li><a href="Docs.html">DOCS</a></li>
+                        <li><a href="Tools.html">TOOLS</a></li>
+                        <li><a href="Report.html">REPORT</a></li>-->
+                        <li ><a href="About.html">ABOUT</a></li>
+                    </ul>
+                   
+
+                </div>
+            </div>
+
+            
+        </div>
+
+
+
+    </div>
+    
+    <div class="wrapper metro">
+        <div class="container" style="background-color: rgb(250, 250, 228);" ng-controller="propertyController" ng-cloak="">
+            <!--<div id="hello">{{title}} - {{date}}</div>-->
+            
+            <hr>
+            <div class="row">
+
+                <div class="col-md-5">
+                    <div class="panel panel-default" style="border-color: #fffefe;">
+                        <div class="panel-body" style="padding: 0;">
+                            <div class="bar" style="background-image: -webkit-linear-gradient(top, #ea6533, #f29553);">
+                                <div style="float:left; font-size: 2em; color: #E77524; display: inline;"><i class="icon-search" style="color: #5581CC;"></i>&nbsp; <span style="font-size: 0.75em; color:aliceblue;">Property Search<span style="font-size: .75em;"></span></span></div>
+                                <br />
+                                <br />
+
+                            </div>
+
+                            <form class="form-horizontal">
+                                <fieldset>
+
+                                    <!-- Form Name -->
+                                    <legend></legend>
+
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="textinput">Key Words</label>
+                                        <div class="col-md-6">
+                                            <input id="textinput" name="textinput" type="text" placeholder="key words" class="form-control input-md" autofocus="">
+                                            <!--<span class="help-block">help</span>-->
+                                        </div>
+                                    </div>
+
+                                    <!-- Select Basic -->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="selectbasic">Country</label>
+                                        <div class="col-md-6">
+                                            <select id="selectbasic" name="selectbasic" class="form-control">
+                                                <option value="1">Canada</option>
+                                                <!--<option value="2">United States</option>-->
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="selectbasic">Province/State</label>
+                                        <div class="col-md-6">
+                                            <select id="selectbasic" name="selectbasic" class="form-control">
+                                                <option value="1">British Columbia</option>
+                                                <!--<option value="2">Washington</option>-->
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="selectbasic">City</label>
+                                        <div class="col-md-6">
+                                            <select id="selectbasic" name="selectbasic" class="form-control">
+                                                <option value="1">Burnaby</option>
+                                                <option value="2">Coquitlam</option>
+                                                <option value="3">Langley</option>
+                                                <option value="4">Malple Ridge</option>
+                                                <option value="5">New Westminster</option>
+                                                <option value="6">North Vancouver</option>
+                                                <option value="7">Richmond</option>
+                                                <option value="8">Surrey</option>
+                                                <option value="9">Vancouver</option>
+                                                <option value="10">West Vancouver</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="selectbasic">Property Type</label>
+                                        <div class="col-md-6">
+                                            <select id="selectbasic" name="selectbasic" class="form-control">
+                                                <option value="1">All Types</option>
+                                                <option value="2">Apartment</option>
+                                                <option value="3">Individual House</option>
+                                                <option value="4">Town House House</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="selectbasic">No. of Bedrooms</label>
+                                        <div class="col-md-3">
+                                            <select id="selectbasic" name="selectbasic" class="form-control">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4+</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="selectbasic">No. of Bathrooms</label>
+                                        <div class="col-md-3">
+                                            <select id="selectbasic" name="selectbasic" class="form-control">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4+</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- Multiple Checkboxes -->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="checkboxes">Features</label>
+                                        <div class="col-md-4">
+                                            <div class="checkbox">
+                                                <label for="checkboxes-0">
+                                                    <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+                                                    Laundry
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label for="checkboxes-1">
+                                                    <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2">
+                                                    Dishwasher
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label for="checkboxes-1">
+                                                    <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2">
+                                                    Paking
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                    <!-- Button -->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="singlebutton"></label>
+                                        <div class="col-md-4">
+                                            <button id="singlebutton" name="singlebutton" class="btn btn-primary">Find</button>
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-7">
+
+                    <div class="panel panel-default" style="border-color: #fffefe;">
+                        <div class="panel-body" style="padding: 0;">
+
+                            <div class="bar">
+                                <div style="float:left; font-size: 2em; color: #E77524; display: inline;"><i class="fa fa-th-list"></i>&nbsp; <span style="font-size: 0.75em; color:aliceblue;">For Rent ({{propertyListing.length}})</span></div>
+                                <!-- These two buttons switch the layout varaible,
+                                which causes the correct UL to be shown. -->
+
+                                <a href="" class="list-icon" ng-class="{active: layout == 'list'}" ng-click="layout = 'list'"></a>
+                                <a href="" class="grid-icon" ng-class="{active: layout == 'grid'}" ng-click="layout = 'grid'"></a>
+                            </div>
+
+                            <ul ng-show="layout == 'list'" class="list">
+                                <!-- A compact view smaller photos and titles 
+                                <li ng-repeat="p in propertyListing | filter:range:selectedPage:pageSize" ng-cloak>-->
+                                <li ng-repeat="p in propertyListing" ng-cloak>
+                                    <a href="{{p.imgUrl}}" target="_blank"><img ng-src="{{p.imgUrl}}" style="width: 15%; height: auto;" /></a>
+                                    <p ng-bind="p.title"></p>
+                                    <p ng-bind="p.desc"></p>
+                                    <p>City: {{p.city}}</p>
+
+                                    <hr />
+                                    <p>Rent: ${{p.rent}}/month</p>
+                                </li>
+                            </ul>
+
+                            <ul ng-show="layout == 'grid'" class="grid">
+                                <!-- A view with big photos and no text -->
+                                <li ng-repeat="p in propertyListing">
+                                    <a href="{{p.imgUrl}}" target="_blank"><img ng-src="{{p.imgUrl}}" title="{{p.title}}" style="width: 75%; height: auto;" /></a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+
+
+        </div>
+        <br /><br />
+    </div>
+
+
+
+
+
+
+
+
+    <div id="footer">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="text-pos" id="copyright-info">All rights reserved 2013-{{year}} &#169; &nbsp; <a href="#">MB Technologies, Inc.</a>
+
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-2">
+                <p class="text-pos" id="footer-info"><i class="fa fa-facebook-square facebook"></i>  &nbsp;<i class="fa fa-twitter twitter"></i> &nbsp;<i class="fa fa-linkedin-square linkedin_color"></i> &nbsp; <i class="fa fa-google-plus google_p"></i> &nbsp;<i class="fa fa-rss-square rss_color"></i></p>
+
+            </div>
+        </div>
+
+
+        <div class="container">
+
+        </div>
+    </div>
+
+    <!--<input type="text" ng-model="models.helloAngular" />
+        <h1>{{models.helloAngular}}</h1>
+        <br />
+        <ul>
+            <li>
+                <a href="/#/">Home</a>
+            </li>
+            <li>
+                <a href="#/RouteOne">Route One</a>
+            </li>
+            <li>
+                <a href="#/RouteTwo/1">Route Two</a>
+            </li>
+            <li>
+                <a href="#/About">About</a>
+            </li>
+        </ul>
+        <br />
+        <div ng-view></div>-->
+    <!-- ********************************************************************************************** -->
+    <!--                                     Reference Section                                          -->
+    <!-- ********************************************************************************************** -->
+    <!-- References CDN Links
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="content/styles/bootstrap/js/bootstrap.min.js"></script>
+    -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.12/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.12/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.12/angular-cookies.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.12/angular-resource.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap.min.js"></script>
+
+
+    <!-- Local reference
+        <script src="scripts/angular.js"></script>-->
+    <!--<script src="scripts/angular-ui/ui-bootstrap.min.js"></script>-->
+    <!-- ********************************************************************************************** -->
+    <!--                                     AngularJS Modules Section                                  -->
+    <!-- ********************************************************************************************** -->
+    <!-- Main App -->
+    <script src="app.js"></script>
+    <script src="common/routes.js"></script>
+    
+    <script src="scripts/vendors/ngDialog.min.js"></script>
+
+    <!-- Libraries -->
+    <script src="scripts/vendors/dialogs-main.js"></script>
+    <script src="scripts/vendors/dialogs-services.js"></script>
+    <!--<script src="scripts/vandors/dirPagination.js"></script>-->
+
+    <!-- Controllers -->
+    <script src="controllers/homeController.js"></script>
+    <script src="controllers/propertyController.js"></script>
+    <script src="controllers/loginController.js"></script>
+
+    <!-- Services -->
+    
+
+    <!-- Filters -->
+    <script src="filters/dayNameFilter.js"></script>
+    <script src="filters/pageCount.js"></script>
+    <script src="filters/rangeFilter.js"></script>
+
+
+</body>
+</html>

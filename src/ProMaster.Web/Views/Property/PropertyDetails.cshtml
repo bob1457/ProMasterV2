@@ -1,0 +1,600 @@
+﻿@model ProMaster.Core.Property.ViewModels.DisplayPropertyViewModel
+
+@{
+    ViewBag.Title = "Rental Property Details";
+}
+
+<!-- Google Map API v.3 -->
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+<div class="content-wrapper">
+    <aside>
+        <p>
+            <!-- Left Panel/Column -->
+            <div id="left">
+                <div class="side_details_logo">
+                    <img src="@Url.Content(@Model.PropertyImageUrl)" alt="" title="Rental Property Details" />
+
+                </div>
+                <div class="side_details_caption">
+                    <h3>@Html.DisplayFor(model => model.PorpertyListingTitle)</h3>
+                    <br />
+                    <span>
+                       $@Html.DisplayFor(model => model.ListedRentAmount)/month
+                    </span>
+                    <div class="side_details_content">
+
+                        <div class="display-label">
+                            Address:
+                        </div><br />
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.PropertyAddressStreetNumber), @Html.DisplayFor(model => model.PropertyAddressStreetName) @Html.DisplayFor(model => model.PropertyAddressCity) @Html.DisplayFor(model => model.PropertyAddressProvState)
+                        </div><br />
+                        <input id="address" type="hidden" value="@Html.DisplayFor(model => model.PropertyAddressStreetNumber), @Html.DisplayFor(model => model.PropertyAddressStreetName) @Html.DisplayFor(model => model.PropertyAddressCity) @Html.DisplayFor(model => model.PropertyAddressProvState)" />
+                               @*<div class="display-label">
+                            Description:
+                        </div><br />
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.PropertyListDesc)
+                        </div><br />*@<div class="display-label">
+                            Built in:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.PropertyBuildYear)
+                        </div><br />
+
+                        <div class="display-label">
+                            Property Type:
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayFor(model => model.PropertyType)
+                        </div><br />
+                        
+                    </div>
+                    <span id="lookup" style="margin-left: -3.5em;">
+                        @*<a href="#" onclick="codeAddress()" style="margin-left: -5em; display:block;">Map Lookup</a>*@
+                        <input type="button" id="show_map" value="Show Map" onclick="codeAddress()" />
+                    </span>&nbsp;
+                    <span><a  id="apply" href="">Apply</a></span><br />
+                    <div id="result" style="margin-left: -3.5em; margin-top: 0.5em;color: #D03A17;"></div>
+                    <br />
+                    <div id="map-canvas" style="height:200px; width:300px; margin-left:-3.5em; margin-top:10px; background-color: #f2f2f2;" />
+                </div>
+                
+            </div>
+        </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+         
+            
+        
+
+    </aside><!-- End of aside -->
+    <div class="main metro">
+        <div id="manage-tabs" class="tabs-style">
+            <ul>
+                <li><a href="#tabs-1"><i class="fa fa-list-alt"></i> &nbsp;<span>General</span></a></li>                
+            </ul>
+            <div id="tabs-1">
+                <div class="tab_content">
+                    <div class="tab_content_title">
+                        <span class="title_icon"><img src="@Url.Content(@Model.PropertyImageUrl)" alt="" title="@Model.PorpertyListingTitle" /></span>
+                        <span class="title_text"><h5>@Model.PorpertyListingTitle</h5></span>
+                        <br />
+                        <div class="title_caption">@Model.PropertyListDesc</div>
+                    </div>
+                    <div class="tab_content_field">
+                        <!-- <div class="display-label">
+                Property Address:
+            </div> -->
+
+                        
+
+                        <fieldset>
+                            <legend><span><i class="fa fa-indent"></i> Features</span></legend>
+                            <ul class="features">
+                                <li>No. of Bedrooms: &nbsp; @Html.DisplayFor(model => model.NumberOfBedrooms)</li>
+                                <li>No. of Bathrooms: &nbsp;@Html.DisplayFor(model => model.NumberOfBathrooms)</li>
+                                <li>No. of Stories: &nbsp;@Html.DisplayFor(model => model.NumberOfFloors)</li>
+                                <li>No. of Parking: &nbsp;@Html.DisplayFor(model => model.NumberOfParkings)</li>
+                                <li>Total Living Area: &nbsp;@Html.DisplayFor(model => model.TotalLivingArea) sqft.</li>
+                                <li>Basedment Available: &nbsp;@Html.DisplayFor(model => model.BasementAvailable)</li>
+                                <li>Shared: &nbsp;@Html.DisplayFor(model => model.IsShared)</li>
+                            </ul>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend><span><i class="fa fa-cog"></i> Facilities</span></legend>
+                            <ul class="facilities">
+                                <li>Stove:&nbsp; @Html.DisplayFor(model => model.Stove)</li>
+                                <li>Refrigerator: &nbsp;@Html.DisplayFor(model => model.Refrigerator)</li>
+                                <li>Laundray: &nbsp;@Html.DisplayFor(model => model.Laundry)</li>
+                                <li>Diswasher: &nbsp;@Html.DisplayFor(model => model.Dishwasher)</li>
+                                <li>Blinds: &nbsp;@Html.DisplayFor(model => model.Blinds)</li>
+                                <li>TV/Internet&nbsp; @Html.DisplayFor(model => model.TVInternet)</li>
+                                <li>Furnture: &nbsp;@Html.DisplayFor(model => model.Furniture)</li>
+                                <li>Alarm: &nbsp;@Html.DisplayFor(model => model.FireAlarm)</li>
+                                <li>Common Ar.: &nbsp;@Html.DisplayFor(model => model.CommonFacility)</li>
+                            </ul>
+                            <div class="notes">
+                                Others and Notes: &nbsp; <br /><br />@Html.DisplayFor(model => model.Others)
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend><span><i class="icon-pictures"></i> Rental Property Photos</span></legend>
+                            <ul class="img_list">
+                                @if (Model.PropertyPictures == null)
+                                {
+                                    <em>No pictures</em>
+
+
+                                }
+                                else
+                                {
+                                    foreach (var item in Model.PropertyPictures)
+                                    {
+                                        <li>
+                                            <div id="list_container">
+                                                <div class="thumb_img" id="@item.PropertyListPictureId"><img src="@Url.Content(@item.ListPictureImgUrlThumb)" title="" style="margin-top:2em;" /></div>
+                                                
+                                                <script type="text/javascript">
+                                                    $(document).ready(function () {
+                                                        $(".showD").hide();
+
+                                                        $("#@item.PropertyListPictureId").mouseover(function () {                                                            
+
+                                                            var dialogOpts = {
+                                                                autoOpen: false,
+                                                                modal: false,
+                                                                resizable: false,
+                                                                //position:[x+5,y+5],
+                                                                position:{
+                                                                    my: "left",
+                                                                    at: "right",
+                                                                    of: event,
+                                                                    offset: "20 40"
+                                                                },
+                                                                width: 'auto',
+                                                                height:120,
+                                                                draggable: false
+
+                                                            };
+
+                                                            $(".ui-dialog-titlebar").hide();
+
+                                                            $("[itemid=@item.PropertyListPictureId]").dialog(dialogOpts).dialog('open');
+
+                                                            return false;
+                                                          
+                                                        });
+
+
+                                                        $("#@item.PropertyListPictureId").mouseleave(function () {
+
+                                                            $("[itemid=@item.PropertyListPictureId]").dialog('close');
+
+                                                            return false;
+                                                        });
+                                                    });
+                                                </script>
+
+
+                                                <div class="showD" itemid="@item.PropertyListPictureId" style="border-width:0px;">
+                                                    <img itemid="@item.PropertyListPictureId" src="@Url.Content(@item.ListPictureImgUrlMed)" /><br />
+                                                    <div style="font-size:.75em;"></div>
+                                                </div>
+
+                                            </div>
+
+                                        </li>
+                                    }
+
+                                }
+                            
+                            </ul>
+                        </fieldset>
+
+                        <div class="left-aligned backbutton"><a href="@Url.Content("~/Property/Index")" title="Back..."><span class="backbutton_format"><i class="icon-arrow-left-3"></i></span> Back to List...</a></div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Apply dialog -->
+<div id="app_form" class="apply_form metro" style="display:none;">
+
+    <p></p>
+    <h4 class="ui-dia" style="margin-bottom: 1em;"><i class="fa fa-th"></i> &nbsp; TENANCY APPLICATION</h4>
+
+
+    <div class="edit_field">
+
+        <fieldset style="width:28em;">
+            <p>
+                <span style="color:#e91b1b;">All fields are required, lack of information will delay your applicaiton process!</span>
+            </p>
+            <div class="display-label">
+                First Name:
+            </div>
+            <div class="display-field  field_sp " style="width:17em;">
+                <input id="fname" type="text" placeholder="First Name" />
+            </div>
+            <div class="display-label">
+                Last Name:
+            </div>
+            <div class="display-field field_sp" style="width:17em;">
+                <input id="lname" type="text" placeholder="Last Name" />
+            </div>
+            <div class="display-label">
+                SIN/SSN: <i id="help-1" class="icon-help" style="color: #32cd32;"></i>
+            </div>
+            <div class="display-field field_sp" style="width:17em;">
+                <input id="sin" type="text" value="000-000-000" />
+            </div>
+            <div class="display-label">
+                Contact Email:
+            </div>
+            <div class="display-field field_sp" style="width:17em;">
+                <input id="email" type="text" placeholder="Your Email" />
+            </div>
+            <div class="display-label">
+                Contact Telephone:
+            </div>
+            <div class="display-field field_sp" style="width:17em;">
+                <input id="tele" type="text" placeholder="Your Phone number" />
+            </div>
+            <div class="display-label">
+                Current Address:
+            </div>
+            <div class="display-field" style="width: 16.5em; height:4em; margin-left: -0.35em;">
+                <textarea id="address" placeholder="Your Current Address"></textarea>
+            </div>
+            <div class="display-label">
+                Current Employer:
+            </div>
+            <div class="display-field field_sp" style="width:17em;">
+                <input id="c_employer" type="text" placeholder="Employer & Contact" />
+            </div>
+            <div class="display-label">
+                Previous Employer:
+            </div>
+            <div class="display-field field_sp" style="width:17em;">
+                <input id="p_employer" type="text" placeholder="Employer & Contact" />
+            </div>
+            <div class="display-label">
+                Current Landlord:
+            </div>
+            <div class="display-field field_sp" style="width:17em;">
+                <input id="c_landlord" type="text" placeholder="Landlord & Contact" />
+            </div>
+            <div class="display-label">
+                Previous Landlord:
+            </div>
+            <div class="display-field field_sp" style="width:17em;">
+                <input id="p_landlord" type="text" placeholder="Landlord & Contact" />
+            </div>
+            <div class="display-label">
+                Montly Income:
+            </div>
+            <div class="display-field field_sp" style="width:17em;">
+                <input id="income" type="text" placeholder="Your Gross Income" />
+            </div>
+            <div class="display-label">
+                Credit Score: <i id="help" class="icon-help" style="color: #32cd32;"></i>
+            </div>
+            <div class="display-field field_sp" style="width:17em;">
+                <input id="score" type="text" placeholder="Credit Score" />
+            </div>
+
+            <div class="display-label">
+                No. of Occupants:
+            </div>
+            <div class="display-field field_sp" style="width:17em;">
+                <input id="tenant" type="text" placeholder="How Many Occupants" />
+            </div>
+            <div class="display-label">
+                No. of Children:
+            </div>
+            <div class="display-field field_sp" style="width:17em;">
+                <input id="child" type="text" placeholder="How Many Children" />
+            </div>
+            <div class="display-label" style="width:20em; color:#ff0000;">
+                By submitting the application form, I agree that the landlord/agent can check my references.
+                <br /><br />
+                <span style="color:#00ff21;">You will be notified by email!</span>
+            </div>
+
+        </fieldset>
+        <!--<input class="edit_button" id="submit1" type="submit"  value="Add" />
+        <input class="edit_button" type="button" value="Cancel" id="btncancel" /> -->
+        <p>
+
+        </p>
+    </div>
+
+
+
+    
+</div>
+
+
+<!--Jquery ui tabs Script -->
+<script type="text/javascript">
+    $(function() {
+        $( "#manage-tabs" ).tabs();
+    });
+</script>
+
+<!-- Map Script -->
+<script type="text/javascript">
+
+    //Initize a map
+    //
+    var geocoder;
+    var map;
+
+    function initialize() {
+
+        geocoder = new google.maps.Geocoder();
+        //var latlng = new google.maps.LatLng(-34.397, 150.644); //not showing any map on page load
+
+        //Map options
+        //
+        var mapOptions = {
+
+            //center: new google.maps.LatLng(-34.397, 150.644), //not showing any map on page load
+            zoom: 13,
+
+
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            mapTypeControl: true,
+            mapTypeControlOptions:
+            {
+                //style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+                poistion: google.maps.ControlPosition.TOP_RIGHT,
+                mapTypeIds: [google.maps.MapTypeId.ROADMAP,
+                    google.maps.MapTypeId.TERRAIN,
+                    google.maps.MapTypeId.HYBRID,
+                    google.maps.MapTypeId.SATELLITE]
+            },
+            navigationControl: true,
+            navigationControlOptions:
+            {
+                style: google.maps.NavigationControlStyle.ZOOM_PAN
+            },
+            scaleControl: true,
+            disableDoubleClickZoom: true,
+            draggable: true,
+            streetViewControl: true,
+            draggableCursor: 'move'
+
+
+        };
+
+        //Load map
+        //
+        map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+
+        //Geocoder
+        //
+
+
+
+
+
+        //var latitude = 30.3296604;
+        //var longitude = -97.8743174;
+
+
+        //Marker
+        //
+        var marker = new google.maps.Marker
+        (
+            {
+                position: new google.maps.LatLng(-34.397, 150.644),
+                //position: new google.maps.LatLng(latitude, longitude),
+                map: map,
+                title: 'Click me'
+            }
+        );
+
+
+        //Info window
+        //
+        var infowindow = new google.maps.InfoWindow({
+            content: 'Location info: <br />Country Name:<br />LatLng:'
+        });
+
+        google.maps.event.addListener(marker, 'click', function () {
+            // Calling the open method of the infoWindow
+            infowindow.open(map, marker);
+        });
+
+
+    }
+
+
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+
+    function codeAddress() {
+
+        //var geocoder;
+        //var map;
+        var address = document.getElementById('address').value;
+        //var address = $("addressInfo").val();
+
+        //alert(address);
+
+        geocoder.geocode({ 'address': address }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                map.setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                    map: map,
+                    title: 'Click me',
+                    position: results[0].geometry.location
+                });
+
+
+                //var latitude = results[0].geometry.location.lat();
+                //var longitude = results[0].geometry.location.lng();
+
+
+                //alert(latitude);
+                //alert(longitude);
+                $("#map-canvas").show();
+                $("#show_map").prop("disabled", true);
+            }
+            else {
+                alert("Geocode was not successful for the following reason: " + status);
+            }
+        });
+
+    }
+
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //$("#map-canvas").hide();
+    });
+</script>
+
+<!-- Apply Script -->
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#apply").click(function () {
+
+
+
+
+            var dialogOpts = {
+                autoOpen: false,
+                modal: true,
+                resizable: false,
+                draggable: false,
+                width: 535,
+                title: 'Tenancy Application',
+                buttons: {
+                    "Cancel": function () {
+                        $(this).dialog("close");
+                    },
+
+                    "Submit": function () {
+
+                        var counter = 0;
+
+                        var fn = $("#fname").val();
+                        var ln = $("#lname").val();
+                        var sin = $("#sin").val();
+                        var email = $("#email").val();
+                        var tel = $("#tele").val();
+                        var address = $("#address").val();
+                        var cemp = $("#c_employer").val();
+                        var pemp = $("#p_employer").val();
+                        var clanl = $("#c_landlord").val();
+                        var planl = $("#p_landlord").val();
+                        var mincome = $("#income").val();
+                        var cscore = $("#score").val();
+                        var ten = $("#tenant").val();
+                        var chd = $("#child").val();
+
+
+
+                        //alert(fn);
+
+                        //alert(tel);
+
+                        //alert(@(Model.PropertyId));
+
+                        $.ajax({
+                            type: "POST",
+                            url: "/Property/Apply",
+                            data: "id=" + @(Model.PropertyId) + "&firstName=" + fn + "&lastName=" + ln + "&sin=" + sin + "&eMail=" + email + "&telePhone=" + tel + "&currentAddr=" + address + "&currentEmp="
+                                + cemp + "&previousEmp=" + pemp + "&currentLand=" + clanl + "&previousLand=" + planl + "&monthlyIncom=" + mincome + "&creditScore=" + cscore + "&NumTenant=" + ten + "&NumChild=" + chd,
+
+                            contenType: "",
+                            dataType: "json",
+                            success: Suceeded
+                        });
+
+                        function Suceeded(data) {
+                            $("#result").text(data);
+
+                            $('#result').delay(3000).fadeOut(3000);
+                        }
+
+                        $(this).dialog("close");
+
+                    }
+
+                }
+
+            };
+
+
+            $("#app_form").dialog(dialogOpts).dialog('open');
+
+            return false;
+
+        });
+
+
+    });
+
+</script>
+
+<!-- Tooltip Implementation -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        var changeTooltipPosition = function (event) {
+            var tooltipX = event.pageX - 8;
+            var tooltipY = event.pageY + 8;
+            $('div.tooltip').css({ top: tooltipY, left: tooltipX });
+        };
+
+        var showTooltip2 = function (event) {
+            $('div.tooltip').remove();
+            $('<div class="tooltip">You need to get your own credit report.<br /> See here: http://www.consumer.equifax.ca/home/en_ca </div>')
+                .appendTo('body');
+            changeTooltipPosition(event);
+        };
+
+
+        var showTooltip1 = function (event) {
+            $('div.tooltip').remove();
+            $('<div class="tooltip">Your 9-digit Social Insurance Number in the form of xx-xx-xxx </div>')
+                .appendTo('body');
+            changeTooltipPosition(event);
+        };
+
+        var hideTooltip = function () {
+            $('div.tooltip').remove();
+        };
+
+        $("#help").bind({
+            mousemove: changeTooltipPosition,
+            mouseenter: showTooltip2,
+            mouseleave: hideTooltip
+        });
+
+        $("#help-1").bind({
+            mousemove: changeTooltipPosition,
+            mouseenter: showTooltip1,
+            mouseleave: hideTooltip
+        });
+
+
+    });
+
+</script>
+

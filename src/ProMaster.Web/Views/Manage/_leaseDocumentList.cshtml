@@ -1,0 +1,77 @@
+﻿@model ProMaster.Core.Lease.ViewModels.DisplayLeaseViewModel
+<!-- 
+<ul>
+    @foreach(var item in Model.DocumentInfo)
+    {
+        <li>
+            <a href="@Url.Content(@item.DocumentUrl)" target="_blank"><img src="@Url.Content("~/Content/Documents/image_icon.png")" alt="" title="@item.DocumentName" width="36" height="36"/></a>
+            @item.DocumentId
+            @item.DocumentName
+            @item.DcoumentDetails
+            @item.CreationDate            
+            @Html.ActionLink("Details", "DocumentDetails", "Document", new { id=@item.DocumentId }, null)
+            @Html.ActionLink("Delete", "DeleteDocument", "Document", new { id = @item.DocumentId }, new { @class = "delete-link" })
+            
+        </li>
+    }
+</ul> -->
+
+ <table>
+                                <thead class="table_head">
+            	                    <tr>
+                	                    <td colspan="7" class="table-h table_head">
+                                        <span><i class="icon-home"></i></span> Lease Document List
+                                        </td>                    
+                                    </tr>	
+                                </thead>
+            	                <tr>                                   
+                	                <th class="table_th">ID</th>
+                                    <th class="table_th">Doc Title</th>                                    
+                                    <th class="table_th">Added Date</th>
+                                    <th class="table_th">Updated Date</th>                                    
+                                    <th class="table_th"></th> 
+                                    <th class="table_th"></th>                   
+                                </tr>
+         </tr>
+                        @if (Model.TenantList.Count() != 0)
+                        { 
+                        
+                                foreach (var item in Model.DocumentInfo)
+                                {
+                                    <tr> 
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.DocumentId)
+                                        </td>                                       
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.DocumentName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CreationDate)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.UpdateDate)
+                                        </td>
+                                                                                
+                                        
+                                        <td>
+                    	                    <div class="table-button"><a href="@Url.Action("DocumentDetails", "Document", new { id=item.DocumentId })"><img src="@Url.Content("~/Content/Images/details.png")" title="Details" /></a></div>
+                                        </td>
+                                        <td>
+                    	                    <div class="table-button"><a class="delete-link" href="~/Document/DeleteDocument/@item.DocumentId"><img src="@Url.Content("~/Content/Images/delete.png")" title="Delete" /></a></div>	
+                                        </td>
+                                     </tr>  
+                                }
+                        }
+                        else
+                        { 
+                            <tr>
+                                <td colspan ="7">No records!</td>
+                            </tr> 
+                        }
+                                <tfoot class="table_th">
+                	                <tr>
+                                        <td colspan="7"><span><i class="icon-clipboard-2"></i></span></td>
+                        
+                	                </tr>                
+                                </tfoot>
+                            </table>

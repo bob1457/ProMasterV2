@@ -1,0 +1,6 @@
+﻿.live-tile/*, .list-tile, .copy-tile*/{
+    width: 90px;
+    height: 90px;
+    margin-left: -4px;
+    margin-top: -4px;
+}
