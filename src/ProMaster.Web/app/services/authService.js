@@ -51,15 +51,24 @@
             //    });
 
             $http.defaults.headers.common['Authorization'] = 'Basic ' + credentials;
-            $cookieStore.put('basicCredentials', credentials); //save the credentials
+            //$cookieStore.put('basicCredentials', credentials); //save the credentials
 
             $http.get(serviceBase, config).success(function() {
                 _authentication.isAuth = true;
                 _authentication.userName = username; //set current user's username
-            }).error(function() {
+            }).error(function(err, status) {
                 //handle errors
+                service.logout();
+                deferred.reject(err);
             });
 
+
+        };
+
+        service.Logout = function () {
+
+            _authentication.isAuth = false;
+            _authentication.userName = "";
 
         };
 

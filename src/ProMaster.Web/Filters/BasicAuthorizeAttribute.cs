@@ -107,7 +107,7 @@ namespace ProMaster.Web.Filters
             return authorized;
         }
 
-        public override void OnAuthorization(HttpActionContext actionContext)
+        public override void OnAuthorization(HttpActionContext actionContext)  //Entry point of the filter(custom attribute)
         {
             string username;
 
