@@ -8,43 +8,54 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
     //$locationProvider.html5Mode(true);
     $routeProvider.
         when('/', {
-            templateUrl: 'views/partials/RentList.html'
+            templateUrl: 'views/partials/RentList.html',
+            authenticated: false
             //controller: 'propertyController'
         }).
         when('/About', {
-            templateUrl: 'views/partials/About.html'
+            templateUrl: 'views/partials/About.html',
             //controller: 'propertyController'
+            authenticated: false
         }).
         when('/RentList', {
-            templateUrl: 'views/partials/RentList.html'
+            templateUrl: 'views/partials/RentList.html',
+            authenticated: false
         }).
         when('/Manage', {
             templateUrl: 'views/partials/PropertyList.html',
-            controller: 'manageController'
+            controller: 'manageController',
+            authenticated: true
         }).
         //when('/RouteTwo/:id', {
         //    templateUrl: function (params) { return 'views/two.html?id=' + params.id; }
         //}).
         when('/Properties', {
-            templateUrl: 'views/partials/PropertyList.html'
+            templateUrl: 'views/partials/PropertyList.html',
+            authenticated: true
         }).
         when('/Tenants', {
-            templateUrl: 'views/partials/TenantList.html'
+            templateUrl: 'views/partials/TenantList.html',
+            authenticated: true
         }).
         when('/Owners', {
-            templateUrl: 'views/partials/OwnerList.html'
+            templateUrl: 'views/partials/OwnerList.html',
+            authenticated: true
         }).
         when('/Leases', {
-            templateUrl: 'views/partials/LeaseList.html'
+            templateUrl: 'views/partials/LeaseList.html',
+            authenticated: true
         }).
         when('/Contracts', {
-            templateUrl: 'views/partials/ContractList.html'
+            templateUrl: 'views/partials/ContractList.html',
+            authenticated: true
         }).
         when('/Vendors', {
-            templateUrl: 'views/partials/VendorList.html'
+            templateUrl: 'views/partials/VendorList.html',
+            authenticated: true
         }).
     otherwise({
-        redirectTo: '/'
+        redirectTo: '/',
+        authenticated: false
     });
 }]).config(['ngDialogProvider', function (ngDialogProvider) {
     ngDialogProvider.setDefaults({
@@ -68,19 +79,23 @@ appDoc.config(['$routeProvider', '$locationProvider', function($routeProvider, $
 
     $routeProvider.
         when('/', {
-            templateUrl: 'NoData.html'
+            templateUrl: 'NoData.html',
+            authenticated: false
             //controller: 'propertyController'
         }).
         when('/BrowseDocs', {
-            templateUrl: 'views/partials/BrowseDocs.html'
+            templateUrl: 'views/partials/BrowseDocs.html',
+            authenticated: true
             //controller: 'docController'
         }).
         when('/SearchDocs', {
-            templateUrl: 'views/partials/SearchDocs.html'
+            templateUrl: 'views/partials/SearchDocs.html',
+            authenticated: true
             //controller: 'docController'
         }).
         otherwise({
-            redirectTo: '/'
+            redirectTo: '/',
+            authenticated: false
 
         });
 }]).config(['ngDialogProvider', function (ngDialogProvider) {
@@ -102,23 +117,28 @@ appTools.config(['$routeProvider', '$locationProvider', function ($routeProvider
 
     $routeProvider.
         when('/', {
-            templateUrl: 'NoData.html'
+            templateUrl: 'NoData.html',
+            authenticated: false
             //controller: 'propertyController'
         }).
          when('/Calendar', {
-             templateUrl: 'views/partials/Calendar.html'
+             templateUrl: 'views/partials/Calendar.html',
+             authenticated: true
              //controller: 'docController'
          }).
         when('/ListingProcess', {
-            templateUrl: 'views/partials/ListingProcess.html'
+            templateUrl: 'views/partials/ListingProcess.html',
+            authenticated: true
             //controller: 'docController'
         }).
         when('/Applications', {
-            templateUrl: 'views/partials/Applications.html'
+            templateUrl: 'views/partials/Applications.html',
+            authenticated: true
             //controller: 'docController'
         }).
         otherwise({
-            redirectTo: '/'
+            redirectTo: '/',
+            authenticated: false
 
         });
 }]).config(['ngDialogProvider', function (ngDialogProvider) {
@@ -140,23 +160,28 @@ appReport.config(['$routeProvider', '$locationProvider', function ($routeProvide
 
     $routeProvider.
         when('/', {
-            templateUrl: 'NoData.html'
+            templateUrl: 'NoData.html',
+            authenticated: false
             //controller: 'propertyController'
         }).
          when('/Financial', {
-             templateUrl: 'views/partials/Financial.html'
+             templateUrl: 'views/partials/Financial.html',
+             authenticated: true
              //controller: 'docController'
          }).
         when('/Business', {
-            templateUrl: 'views/partials/Business.html'
+            templateUrl: 'views/partials/Business.html',
+            authenticated: true
             //controller: 'docController'
         }).
         when('/Data', {
-            templateUrl: 'views/partials/Data.html'
+            templateUrl: 'views/partials/Data.html',
+            authenticated: true
             //controller: 'docController'
         }).
         otherwise({
-            redirectTo: '/'
+            redirectTo: '/',
+            authenticated: false
 
         });
 }]).config(['ngDialogProvider', function (ngDialogProvider) {
@@ -172,3 +197,18 @@ appReport.config(['$routeProvider', '$locationProvider', function ($routeProvide
         }
     });
 }]);
+
+/* To check if the user is authenticated, not sure where to put this code */
+/*
+$rootScope.$on('$routeChangeStart', function (event, next) {
+    var userAuthenticated = ...; // Check if the user is logged in
+
+    if (!userAuthenticated && !next.isLogin) {
+        //You can save the user's location to take him back to the same page after he has logged-in 
+        $rootScope.savedLocation = $location.url();
+
+
+        $location.path('/User/LoginUser');
+    }
+    });
+*/

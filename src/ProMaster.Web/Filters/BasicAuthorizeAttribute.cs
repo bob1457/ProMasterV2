@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Security.Principal;
 using System.Web.Http;
 using System.Web.Http.Controllers;
+using System.Web.Security;
 using WebMatrix.WebData;
 
 namespace ProMaster.Web.Filters
@@ -59,9 +61,9 @@ namespace ProMaster.Web.Filters
             }
 
             return gotIt;
-        }
+        } //Get credentials from incomeing header and decode it
 
-        private bool Authenticate(HttpActionContext actionContext, out string username)
+        private bool Authenticate(HttpActionContext actionContext, out string username)  //Actual authentication code (using membership)
         {
             bool isAuthenticated = false;
             username = string.Empty;
@@ -89,6 +91,14 @@ namespace ProMaster.Web.Filters
 
                     username = WebSecurity.CurrentUserName;
                 }
+
+                //Get more information from the user upon authentication success ?
+                //
+                //if (isAuthenticated)
+                //{
+                //    SetPrincipal(username, password, out principal);
+                //} 
+
             }
             else
             {
@@ -98,7 +108,16 @@ namespace ProMaster.Web.Filters
             return isAuthenticated;
         }
 
-        private bool isAuthorized(string username)
+        //private void SetPrincipal(string uname, string password, out IPrincipal principal)
+        //{
+        //    principal = null;
+
+        //    if()
+        //}
+
+
+
+        private bool isAuthorized(string username) //Role based authorization
         {
             bool authorized = false;
 
@@ -107,18 +126,20 @@ namespace ProMaster.Web.Filters
             return authorized;
         }
 
-        public override void OnAuthorization(HttpActionContext actionContext)  //Entry point of the filter(custom attribute)
+        public override void OnAuthorization(HttpActionContext actionContext)  //Generate error response for either 403 or 401 HTTP code
         {
             string username;
 
             if (Authenticate(actionContext, out username))
             {
-                if (!isAuthorized(username))
-                    actionContext.Response = new HttpResponseMessage(System.Net.HttpStatusCode.Forbidden);
+                if (!isAuthorized(username)) //Check the user role for authorization
+                    actionContext.Response = new HttpResponseMessage(System.Net.HttpStatusCode.Forbidden); //not authorized HTTP code 403
             }
             else
             {
-                actionContext.Response = new HttpResponseMessage(System.Net.HttpStatusCode.Unauthorized);
+                var host = actionContext.Request.RequestUri.DnsSafeHost;
+                actionContext.Response = new HttpResponseMessage(System.Net.HttpStatusCode.Unauthorized); //not authenticated HTTP code 401
+                actionContext.Request.Headers.Add("WWW-Authenticate", string.Format("Basic realm=\"{0}\"", host) );
             }
         }
     }

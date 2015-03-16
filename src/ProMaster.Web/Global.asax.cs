@@ -26,6 +26,7 @@ namespace ProMaster.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
+            //GlobalConfiguration.Configuration.MessageHandlers.Add();
 
             ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
 
@@ -42,6 +43,8 @@ namespace ProMaster.Web
             filters.Add(new CustomHandleErrorAttribute());
         }
 
+        //Global Error Handling
+        //
         protected void Application_Error(object sender, EventArgs e)
         {
             var httpContext = ((MvcApplication)sender).Context;

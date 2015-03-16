@@ -33,9 +33,10 @@
 
             //});
 
-            authService.Login($scope.username, $scope.password).success(function (response) {
+            authService.Login($scope.username, $scope.password).then(function (response) {
 
-                    authService.SetCredentials($scope.username, $scope.password);
+                authService.SetCredentials($scope.username, $scope.password);
+                    $scope.message = response;
 
                     $location.path('/app/Manage.html#/Properties');
                 },

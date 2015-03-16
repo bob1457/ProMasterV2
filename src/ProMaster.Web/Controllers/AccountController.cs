@@ -239,7 +239,7 @@ namespace ProMaster.Web.Controllers
                         //
 
                         //Roles.AddUserToRole(model.UserName, "PropertyManager");
-                        Roles.AddUserToRole(model.UserName, "SuperAdmin");
+                        //Roles.AddUserToRole(model.UserName, "SuperAdmin");
 
                         //Send notification email to the property manager
                         //***************************************************************
