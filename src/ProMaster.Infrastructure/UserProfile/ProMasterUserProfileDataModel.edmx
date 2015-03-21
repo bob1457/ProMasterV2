@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
   <!-- EF Runtime content -->
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="ProMasterUserProfileDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="ProMasterUserProfileDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Lease">
           <Key>
             <PropertyRef Name="LeaseId" />
@@ -149,7 +149,10 @@
           </Key>
           <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Disabled" Type="bit" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="AvatarImgUrl" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="webpages_Membership">
           <Key>
@@ -311,8 +314,8 @@
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="ProMasterUserProfileDataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-        <EntityContainer Name="ProMasterUserProfileDataEntities" annotation:LazyLoadingEnabled="true">
+      <Schema Namespace="ProMasterUserProfileDataModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="ProMasterUserProfileDataEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
           <EntitySet Name="Profiles" EntityType="ProMasterUserProfileDataModel.Profile" />
           <EntitySet Name="Users" EntityType="ProMasterUserProfileDataModel.User" />
           <EntitySet Name="webpages_Roles" EntityType="ProMasterUserProfileDataModel.webpages_Roles" />
@@ -353,7 +356,7 @@
           <Key>
             <PropertyRef Name="ProfileId" />
           </Key>
-          <Property Name="ProfileId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProfileId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="FirstName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="LastName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="ContactEmail" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
@@ -371,16 +374,19 @@
           <Key>
             <PropertyRef Name="UserId" />
           </Key>
-          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="webpages_Roles" Relationship="ProMasterUserProfileDataModel.webpages_UsersInRoles" FromRole="User" ToRole="webpages_Roles" />
-          <Property Name="Disabled" Type="Boolean" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AvatarImgUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="webpages_Roles">
           <Key>
             <PropertyRef Name="RoleId" />
           </Key>
-          <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Users" Relationship="ProMasterUserProfileDataModel.webpages_UsersInRoles" FromRole="webpages_Roles" ToRole="User" />
         </EntityType>
@@ -392,7 +398,7 @@
           <Key>
             <PropertyRef Name="PropertyManagerId" />
           </Key>
-          <Property Type="Int32" Name="PropertyManagerId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PropertyManagerId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="ContactEmail" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -410,7 +416,7 @@
           <Key>
             <PropertyRef Name="PropertyOwnerId" />
           </Key>
-          <Property Type="Int32" Name="PropertyOwnerId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PropertyOwnerId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="ContactEmail" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -431,7 +437,7 @@
           <Key>
             <PropertyRef Name="TenantId" />
           </Key>
-          <Property Type="Int32" Name="TenantId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="TenantId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -451,7 +457,7 @@
           <Key>
             <PropertyRef Name="LeaseId" />
           </Key>
-          <Property Name="LeaseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LeaseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="LeaseTitle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="LeaseDesc" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
           <Property Name="PropertyId" Type="Int32" Nullable="false" />
@@ -477,7 +483,7 @@
           <Key>
             <PropertyRef Name="LeaseTermId" />
           </Key>
-          <Property Name="LeaseTermId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LeaseTermId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="LeaaseTerm" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Leases" Relationship="ProMasterUserProfileDataModel.FK_Lease_LeaseTerm" FromRole="LeaseTerm" ToRole="Lease" />
         </EntityType>
@@ -485,7 +491,7 @@
           <Key>
             <PropertyRef Name="PropertyId" />
           </Key>
-          <Property Name="PropertyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PropertyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="PropertyName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PropertyDesc" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="PropertyListDesc" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
@@ -514,7 +520,7 @@
           <Key>
             <PropertyRef Name="PropertyTypeId" />
           </Key>
-          <Property Name="PropertyTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PropertyTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="PropertyType1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Properties" Relationship="ProMasterUserProfileDataModel.FK_Property_PropertyType" FromRole="PropertyType" ToRole="Property" />
         </EntityType>
@@ -598,7 +604,7 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ProMasterUserProfileDataModelStoreContainer" CdmEntityContainer="ProMasterUserProfileDataEntities">
           <EntitySetMapping Name="Profiles"><EntityTypeMapping TypeName="ProMasterUserProfileDataModel.Profile"><MappingFragment StoreEntitySet="Profile">
             <ScalarProperty Name="UserPrincipalId" ColumnName="UserPrincipalId" />
@@ -616,7 +622,10 @@
             <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="Users"><EntityTypeMapping TypeName="ProMasterUserProfileDataModel.User"><MappingFragment StoreEntitySet="User">
-            <ScalarProperty Name="Disabled" ColumnName="Disabled" />
+                <ScalarProperty Name="AvatarImgUrl" ColumnName="AvatarImgUrl" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
             <ScalarProperty Name="UserName" ColumnName="UserName" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
@@ -781,45 +790,45 @@
     </edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
-  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
-    <Connection>
-      <DesignerInfoPropertySet>
-        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
-      </DesignerInfoPropertySet>
-    </Connection>
-    <Options>
-      <DesignerInfoPropertySet>
-        <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="True" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
-        <DesignerProperty Name="UseLegacyProvider" Value="True" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
-      </DesignerInfoPropertySet>
-    </Options>
+  <edmx:Designer>
+    <edmx:Connection>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <edmx:DesignerProperty Name="EnablePluralization" Value="True" />
+        <edmx:DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <edmx:DesignerProperty Name="UseLegacyProvider" Value="True" />
+        <edmx:DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams>
-      <Diagram Name="ProMasterUserProfileDataModel">
-        <EntityTypeShape EntityType="ProMasterUserProfileDataModel.Profile" Width="1.875" PointX="0.5" PointY="3.125" Height="2.4140429687499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProMasterUserProfileDataModel.User" Width="1.5" PointX="3" PointY="0.5" Height="1.427958984375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProMasterUserProfileDataModel.webpages_Roles" Width="1.625" PointX="0.5" PointY="1" Height="1.4279589843749994" IsExpanded="true" />
-        <AssociationConnector Association="ProMasterUserProfileDataModel.webpages_UsersInRoles" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.125" PointY="1.7139794921874998" />
-          <ConnectorPoint PointX="3" PointY="1.7139794921874998" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="ProMasterUserProfileDataModel.PropertyManager" Width="1.75" PointX="3" PointY="2.875" Height="2.5783902994791656" />
-        <EntityTypeShape EntityType="ProMasterUserProfileDataModel.PropertyOwner" Width="1.75" PointX="5.125" PointY="0.5" Height="2.7427376302083335" />
-        <EntityTypeShape EntityType="ProMasterUserProfileDataModel.Tenant" Width="1.75" PointX="8.125" PointY="0.5" />
-        <EntityTypeShape EntityType="ProMasterUserProfileDataModel.Lease" Width="1.5" PointX="10.75" PointY="0.875" />
-        <EntityTypeShape EntityType="ProMasterUserProfileDataModel.LeaseTerm" Width="1.5" PointX="12.875" PointY="3.5" />
-        <EntityTypeShape EntityType="ProMasterUserProfileDataModel.Property" Width="1.5" PointX="8" PointY="5.125" />
-        <EntityTypeShape EntityType="ProMasterUserProfileDataModel.PropertyType" Width="1.5" PointX="5" PointY="6.75" />
-        <AssociationConnector Association="ProMasterUserProfileDataModel.FK_Lease_LeaseTerm" />
-        <AssociationConnector Association="ProMasterUserProfileDataModel.FK_Lease_Property" />
-        <AssociationConnector Association="ProMasterUserProfileDataModel.FK_Property_PropertyManager" />
-        <AssociationConnector Association="ProMasterUserProfileDataModel.FK_Property_PropertyOwner" />
-        <AssociationConnector Association="ProMasterUserProfileDataModel.FK_Property_PropertyType" />
-        <EntityTypeShape EntityType="ProMasterUserProfileDataModel.webpages_Membership" Width="1.5" PointX="0.75" PointY="7.75" />
-      </Diagram>
-    </Diagrams>
-  </Designer>
+    <edmx:Diagrams>
+      <edmx:Diagram Name="ProMasterUserProfileDataModel">
+        <edmx:EntityTypeShape EntityType="ProMasterUserProfileDataModel.Profile" Width="1.875" PointX="0.5" PointY="3.125" Height="2.4140429687499996" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="ProMasterUserProfileDataModel.User" Width="1.5" PointX="3" PointY="0.5" Height="1.427958984375" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="ProMasterUserProfileDataModel.webpages_Roles" Width="1.625" PointX="0.5" PointY="1" Height="1.4279589843749994" IsExpanded="true" />
+        <edmx:AssociationConnector Association="ProMasterUserProfileDataModel.webpages_UsersInRoles" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="2.125" PointY="1.7139794921874998" />
+          <edmx:ConnectorPoint PointX="3" PointY="1.7139794921874998" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="ProMasterUserProfileDataModel.PropertyManager" Width="1.75" PointX="3" PointY="4" Height="2.5783902994791656" />
+        <edmx:EntityTypeShape EntityType="ProMasterUserProfileDataModel.PropertyOwner" Width="1.75" PointX="5.125" PointY="0.5" Height="2.7427376302083335" />
+        <edmx:EntityTypeShape EntityType="ProMasterUserProfileDataModel.Tenant" Width="1.75" PointX="8.125" PointY="0.5" />
+        <edmx:EntityTypeShape EntityType="ProMasterUserProfileDataModel.Lease" Width="1.5" PointX="10.75" PointY="0.875" />
+        <edmx:EntityTypeShape EntityType="ProMasterUserProfileDataModel.LeaseTerm" Width="1.5" PointX="12.875" PointY="3.5" />
+        <edmx:EntityTypeShape EntityType="ProMasterUserProfileDataModel.Property" Width="1.5" PointX="8" PointY="5.125" />
+        <edmx:EntityTypeShape EntityType="ProMasterUserProfileDataModel.PropertyType" Width="1.5" PointX="5" PointY="6.75" />
+        <edmx:AssociationConnector Association="ProMasterUserProfileDataModel.FK_Lease_LeaseTerm" />
+        <edmx:AssociationConnector Association="ProMasterUserProfileDataModel.FK_Lease_Property" />
+        <edmx:AssociationConnector Association="ProMasterUserProfileDataModel.FK_Property_PropertyManager" />
+        <edmx:AssociationConnector Association="ProMasterUserProfileDataModel.FK_Property_PropertyOwner" />
+        <edmx:AssociationConnector Association="ProMasterUserProfileDataModel.FK_Property_PropertyType" />
+        <edmx:EntityTypeShape EntityType="ProMasterUserProfileDataModel.webpages_Membership" Width="1.5" PointX="0.75" PointY="7.75" />
+      </edmx:Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
 </edmx:Edmx>

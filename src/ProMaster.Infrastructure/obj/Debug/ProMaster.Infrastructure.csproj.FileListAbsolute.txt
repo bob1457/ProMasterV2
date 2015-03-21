@@ -130,3 +130,15 @@ C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Infrastructure\bin\Debug\lo
 C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.csprojResolveAssemblyReference.cache
 C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.dll
 C:\Development\Projects\SC\ProMasterV2\src\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.pdb
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll.config
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Infrastructure\bin\Debug\EntityFramework.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Infrastructure\bin\Debug\log4net.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Infrastructure\bin\Debug\System.Web.Mvc.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Infrastructure\bin\Debug\System.Web.Mvc.Html5.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Infrastructure\bin\Debug\EntityFramework.xml
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Infrastructure\bin\Debug\log4net.xml
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.dll
+C:\Development\Projects\SC\ProMaster\src\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.pdb

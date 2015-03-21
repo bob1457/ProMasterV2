@@ -5,7 +5,10 @@ var appReport = angular.module('ProMasterClientReport');
 
 
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider, $stateProvider) {
-    //$locationProvider.html5Mode(true);
+    //$locationProvider.html5Mode({
+    //  enabled: true,
+    //  requireBase: false
+    //});
     $routeProvider.
         when('/', {
             templateUrl: 'views/partials/RentList.html',

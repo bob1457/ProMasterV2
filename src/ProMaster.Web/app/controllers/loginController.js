@@ -1,9 +1,14 @@
 ﻿(function () {
     'use strict';
     debugger;
+    
     angular
         .module('ProMasterClient')
         .controller('loginController', loginController);
+
+    //angular
+    //    .module('ProMasterClientDoc')
+    //    .controller('loginController', loginController);
 
     loginController.$inject = ['$scope', '$http', '$rootScope', '$location', 'authService', 'base64'];
 
@@ -15,15 +20,15 @@
        
 
         //authService.ClearCreadentials(); //reset login status
-
+        debugger;
         $scope.login = function () {
 
-            //$scope.dataLoading = true;
+            $scope.dataLoading = true;
             //authService.Login($scope.username, $scope.password, function (response) {
             //    if (response.success) {
             //        //$scope.message = "Authentication Success!";
             //        authService.SetCredentials($scope.username, $scope.password);
-            //        $location.path('http://localhost:2379/app/Manage.html#/Properties');
+            //        $location.path('/app/Manage.html#/Properties');
             //    } else {
             //        $scope.error = response.message;
             //        $scope.dataLoading = false;
@@ -33,15 +38,20 @@
 
             //});
 
-            authService.Login($scope.username, $scope.password).then(function (response) {
+            authService.Login($scope.username, $scope.password, function (response) {
 
                 authService.SetCredentials($scope.username, $scope.password);
                     $scope.message = response;
 
-                    $location.path('/app/Manage.html#/Properties');
+                    //$rootScope.$apply(function() {
+                    //    $location.path('/app/Manage.html#/Properties');
+                    //});
+
+                    document.location.href = 'http://localhost:2379/app/Manage.html#/Properties';
+                   
                 },
                     function (err) {
-                    $scope.message = err.error_description;
+                    $scope.message = "Login failed, check your username or password and try again!";
             });
             
 
@@ -60,8 +70,8 @@
 
 
         $scope.logoutSuccess = function() {
-            authService.ClearCreadentials();
-            $location.path('/'); //redirect back to home/login page
+            authService.ClearCredentials();
+            document.location.href = 'http://localhost:2379/app/Index.html'; //redirect back to home/login page
         };
 
         //activate();

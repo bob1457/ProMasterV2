@@ -452,8 +452,6 @@ C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\ProMaster.DAL.dll
 C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\ProMaster.Infrastructure.dll
 C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\ProMaster.Repository.dll
 C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\RazorPDF.dll
-C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\System.Net.Http.dll
-C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\System.Net.Http.WebRequest.dll
 C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\System.Web.Helpers.dll
 C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\System.Web.Mvc.dll
 C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\System.Web.Mvc.Html5.dll
@@ -482,8 +480,6 @@ C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\System.Web.WebPages.De
 C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\System.Web.WebPages.Razor.xml
 C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\EntityFramework.xml
 C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\Newtonsoft.Json.xml
-C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\System.Net.Http.xml
-C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\System.Net.Http.WebRequest.xml
 C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\WebMatrix.Data.xml
 C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\Microsoft.Web.WebPages.OAuth.xml
 C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\WebMatrix.WebData.xml

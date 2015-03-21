@@ -17,8 +17,8 @@
             userName: "",
         };
 
-       
 
+        debugger;
         service.Login = function (username, password, callback) {
 
             /* Dummy authentication for testing, uses $timeout to simulate api call
@@ -53,9 +53,10 @@
             $http.defaults.headers.common['Authorization'] = 'Basic ' + credentials;
             //$cookieStore.put('basicCredentials', credentials); //save the credentials
 
-            $http.get(serviceBase, config).success(function() {
+            $http.get(serviceBase, config).success(function(response) {
                 _authentication.isAuth = true;
                 _authentication.userName = username; //set current user's username
+                callback(response);
             }).error(function(err, status) {
                 //handle errors
                 service.logout();

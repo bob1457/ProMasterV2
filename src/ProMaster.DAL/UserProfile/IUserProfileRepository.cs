@@ -26,7 +26,7 @@ namespace ProMaster.DAL.UserProfile
 
         PropertyManager GetPropertyManagerEmailByUserName(string userName);
 
-        bool GetUserStatus(string userName);
+        //bool GetUserStatus(string userName);
         User GetUserByName(string userName);
 
 

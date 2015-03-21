@@ -952,7 +952,7 @@ namespace ProMaster.Web.Controllers
         {
             string userName = User.Identity.Name;
 
-
+            var user = _userProfileRepository.GetUserByName(userName);
 
             if (User.IsInRole("SuperAdmin"))
             {
@@ -1111,6 +1111,12 @@ namespace ProMaster.Web.Controllers
                
             }
 
+            //Update memebership user table
+            //
+            user.FirstName = Request.Form["FirstName"];
+            user.LastName = Request.Form["LastName"];
+            user.Email = Request.Form["ContactEmail"];
+            
 
             _userProfileRepository.Save();
 
@@ -1130,6 +1136,8 @@ namespace ProMaster.Web.Controllers
 
             var profile = new Profile();
 
+            var user = _userProfileRepository.GetUserByName(userName);
+
             profile.UserName = userName;
             profile.FirstName = Request.Form["FirstName"];
             profile.LastName = Request.Form["LastName"];
@@ -1144,7 +1152,13 @@ namespace ProMaster.Web.Controllers
             profile.CreationDate = DateTime.Now;
             profile.UpdateDate = DateTime.Now;
 
+            user.FirstName = profile.FirstName;
+            user.LastName = profile.LastName;
+            user.Email = profile.ContactEmail;
+            user.AvatarImgUrl = profile.UserAvartaImgUrl;
+
             _userProfileRepository.AddProfile(profile);
+
             _userProfileRepository.Save();
 
             return RedirectToAction("MyProfile", "Account");

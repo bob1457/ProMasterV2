@@ -62,13 +62,13 @@ namespace ProMaster.Repository.UserProfile
             return roles;
         }
 
-        public bool GetUserStatus(string userName)
-        {
-            //throw new NotImplementedException();
-            User firstOrDefault;
-            firstOrDefault = entities.Users.FirstOrDefault(u => u.UserName == userName);
-            return firstOrDefault != null && firstOrDefault.Disabled;
-        }
+        //public bool GetUserStatus(string userName)
+        //{
+        //    //throw new NotImplementedException();
+        //    User firstOrDefault;
+        //    firstOrDefault = entities.Users.FirstOrDefault(u => u.UserName == userName);
+        //    return firstOrDefault != null; // && firstOrDefault.Disabled;
+        //}
 
 
         public webpages_Membership GetMember(int userId)
@@ -81,7 +81,7 @@ namespace ProMaster.Repository.UserProfile
         public User GetUserByName(string userName)
         {
             //throw new NotImplementedException();
-            return entities.Users.Where(u => u.UserName == userName).FirstOrDefault();
+            return entities.Users.FirstOrDefault(u => u.UserName == userName);
         }
 
         public int GetRoleIdByUserName(string userName)

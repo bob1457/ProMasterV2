@@ -8,6 +8,10 @@ using System.Web.Http.Controllers;
 using System.Web.Security;
 using WebMatrix.WebData;
 
+using ProMaster.Infrastructure.UserProfile;
+using ProMaster.DAL.UserProfile;
+using ProMaster.Repository.UserProfile;
+
 namespace ProMaster.Web.Filters
 {
     [AttributeUsageAttribute(AttributeTargets.Class | AttributeTargets.Method, Inherited = true, AllowMultiple = true)]
@@ -108,11 +112,10 @@ namespace ProMaster.Web.Filters
             return isAuthenticated;
         }
 
-        //private void SetPrincipal(string uname, string password, out IPrincipal principal)
+        //private MembershipUser GetUserProfile(string uname)
         //{
-        //    principal = null;
+        //    // to be further designed
 
-        //    if()
         //}
 
 
