@@ -307,7 +307,9 @@
     <Content Include="app\services\base64Factory.js" />
     <Content Include="app\Tools.html" />
     <Content Include="app\views\about.html" />
+    <Content Include="app\views\Docs.html" />
     <Content Include="app\views\home.html" />
+    <Content Include="app\views\Manage.html" />
     <Content Include="app\views\one.html" />
     <Content Include="app\views\partials\About.html" />
     <Content Include="app\views\partials\Applications.html" />
@@ -328,7 +330,9 @@
     <Content Include="app\views\partials\TenantList.html" />
     <Content Include="app\views\partials\VendorList.html" />
     <Content Include="app\views\PropertyDocs.html" />
+    <Content Include="app\views\Report.html" />
     <Content Include="app\views\shared\Login.html" />
+    <Content Include="app\views\Tools.html" />
     <Content Include="app\views\two.html" />
     <Content Include="Content\customfc.css" />
     <Content Include="Content\fullcalendar.css" />

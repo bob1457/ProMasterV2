@@ -47,7 +47,7 @@
                     //    $location.path('/app/Manage.html#/Properties');
                     //});
 
-                    document.location.href = 'http://localhost:2379/app/Manage.html#/Properties';
+                    document.location.href = 'http://localhost:2379/app/Manage.html#/Manage';
                    
                 },
                     function (err) {
@@ -78,4 +78,6 @@
 
         //function activate() { }
     }
+
+    
 })();

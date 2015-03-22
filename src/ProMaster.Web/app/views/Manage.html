@@ -1,0 +1,298 @@
+﻿<div class="panel panel-default" style="border-top-width: 0; border-right-width: 0;">
+
+    <div id="manage">
+        <ul class="nav nav-tabs" ng-cloak>
+            <li id="properties" ng-class="{active:tab === 1 }"><a href="" ng-click="tab = 1"><i class="icon-home"></i>  Properties ({{properties.length}})</a></li>
+            <li id="tenant" ng-class="{active:tab === 2 }"><a href="" ng-click="tab = 2"><i class="icon-user"></i> Tenants</a></li>
+            <li id="owner" ng-class="{active:tab === 3 }"><a href="" ng-click="tab = 3"><i class="icon-user-2"></i> Owners</a></li>
+            <li id="lease" ng-class="{active:tab === 4 }"><a href="" ng-click="tab = 4"><i class="icon-bookmark-3"></i>  Leases</a></li>
+            <li id="contract" ng-class="{active:tab === 5 }"><a href="" ng-click="tab = 5"><i class="icon-clipboard-2"></i> Contracts</a></li>
+            <li id="vendor" ng-class="{active:tab === 6 }"><a href="" ng-click="tab = 6"><i class="icon-cone"></i> Vendors</a></li>
+        </ul>
+
+        <div class="table-responsive" style="overflow-x: hidden;">
+            <br />
+            
+            <div ng-show="tab === 1">
+                <div class="container" style="margin-left: 2em; margin-bottom: -1em;">
+                    <a href="" ng-click="openDefault()" class="cus-btn-xs btn btn-primary" style="color:rgb(249, 255, 0);"><i class="icon-plus-2"></i> Add New</a>
+                </div>
+
+                <table class="table-responsive table table-hover table-striped table-bordered" style="width: 90%; margin: 2em auto 2em auto;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Property Name</th>
+                            <th>Property Type</th>
+                            <th>Rental Status</th>
+                            <th>Created On</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="p in properties">
+                            <td>{{p.id}}</td>
+                            <td>{{p.title}}</td>
+                            <td>{{p.type}}</td>
+                            <td>{{p.status}}</td>
+                            <td>{{p.created}}</td>
+                            <td><a href="" title="Details"><img src="content/assets/images/details.png" width="20" height="20" /></a></td>
+                            <td><a href="" title="Details"><img src="content/assets/images/delete.png" width="20" height="20" /></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Dialog Script -->
+                <script type="text/ng-template" id="firstDialogId">
+                    <div class="ngdialog-message">
+                        <h3>ngDialog template 123</h3>
+                        <p ng-show="theme">Test content for <code>{{theme}}</code></p>
+                        <p ng-show="ngDialogData.foo">Data passed through: <code>{{ngDialogData.foo}}</code></p>
+                        <p ng-show="dialogModel.message">Scope passed through: <code>{{dialogModel.message}}</code></p>
+                    </div>
+                    <div class="ngdialog-buttons">
+                        <button type="button" class="ngdialog-button ngdialog-button-secondary"
+                                ng-dialog="secondDialogId"
+                                ng-dialog-class="ngdialog-theme-default"
+                                ng-dialog-controller="SecondModalCtrl"
+                                ng-dialog-close-previous>
+                            Close and open
+                        </button>
+                        <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="openSecond()">Open next</button>
+                    </div>
+                </script>
+            </div>
+            <div ng-show="tab === 2">
+
+                <table class=" table" style="width: 90%; margin: 2em auto 2em auto;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tenant Name</th>
+                            <th>Property Name</th>
+                            <th>Telephone</th>
+                            <th>Email</th>
+                            <th>Created On</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <div ng-show="tab === 3">
+                <br />
+                <table class="table" style="width: 90%; margin: 2em auto 2em auto;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Owner Name</th>
+                            <th>Property Name</th>
+                            <th>Telephone</th>
+                            <th>Email</th>
+                            <th>Created On</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            
+            <div ng-show="tab === 4">
+                <br />
+                <table class="table" style="width: 90%; margin: 2em auto 2em auto;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Lease Title</th>
+                            <th>Property Name</th>
+                            <th>Telephone</th>
+                            <th>Email</th>
+                            <th>Created On</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div  ng-show="tab === 5">
+                <br />
+                <table class="table" style="width: 90%; margin: 2em auto 2em auto;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Contract Title</th>
+                            <th>Property Name</th>
+                            <th>Telephone</th>
+                            <th>Email</th>
+                            <th>Created On</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div  ng-show="tab === 6">
+                <br />
+                <table class="table" style="width: 90%; margin: 2em auto 2em auto;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Vendor Name</th>
+                            <th>Property Name</th>
+                            <th>Telephone</th>
+                            <th>Email</th>
+                            <th>Created On</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                            <td>Table cell</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    
+</div>

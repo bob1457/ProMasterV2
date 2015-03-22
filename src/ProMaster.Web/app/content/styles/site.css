@@ -300,7 +300,7 @@ ul.list li p{
 
 ul.grid{
 	list-style: none;
-	width: 570px;
+	/*width: 570px;*/
 	margin: 0 auto;
 	text-align: left;
 }

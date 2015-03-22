@@ -25,37 +25,44 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
             authenticated: false
         }).
         when('/Manage', {
-            templateUrl: 'views/partials/PropertyList.html',
+            templateUrl: 'views/Manage.html',
+            controller: 'manageController',
+            authenticated: true
+        }).
+        when('/Docs', {
+            templateUrl: 'views/Docs.html',
             controller: 'manageController',
             authenticated: true
         }).
         //when('/RouteTwo/:id', {
         //    templateUrl: function (params) { return 'views/two.html?id=' + params.id; }
         //}).
-        when('/Properties', {
-            templateUrl: 'views/partials/PropertyList.html',
+        when('/Tools', {
+            templateUrl: 'views/Tools.html',
+            controller: 'manageController',
             authenticated: true
         }).
-        when('/Tenants', {
-            templateUrl: 'views/partials/TenantList.html',
+        when('/Report', {
+            templateUrl: 'views/Report.html',
+            controller: 'manageController',
             authenticated: true
         }).
-        when('/Owners', {
-            templateUrl: 'views/partials/OwnerList.html',
-            authenticated: true
-        }).
-        when('/Leases', {
-            templateUrl: 'views/partials/LeaseList.html',
-            authenticated: true
-        }).
-        when('/Contracts', {
-            templateUrl: 'views/partials/ContractList.html',
-            authenticated: true
-        }).
-        when('/Vendors', {
-            templateUrl: 'views/partials/VendorList.html',
-            authenticated: true
-        }).
+        //when('/Owners', {
+        //    templateUrl: 'views/partials/OwnerList.html',
+        //    authenticated: true
+        //}).
+        //when('/Leases', {
+        //    templateUrl: 'views/partials/LeaseList.html',
+        //    authenticated: true
+        //}).
+        //when('/Contracts', {
+        //    templateUrl: 'views/partials/ContractList.html',
+        //    authenticated: true
+        //}).
+        //when('/Vendors', {
+        //    templateUrl: 'views/partials/VendorList.html',
+        //    authenticated: true
+        //}).
     otherwise({
         redirectTo: '/',
         authenticated: false
