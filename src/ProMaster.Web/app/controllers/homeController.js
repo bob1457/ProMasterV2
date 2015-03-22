@@ -1,8 +1,8 @@
 ﻿(function () {
 
-    var injectParams = ['$scope', 'ngDialog'];//, '$rootScope', '$timeout', '$dialogs'];
+    var injectParams = ['$scope', 'ngDialog', '$location'];//, '$rootScope', '$timeout', '$dialogs'];
 
-    var homeController = function ($scope, ngDialog, selected) {
+    var homeController = function ($scope, ngDialog, $location) {
 
         //Display date, day and year on top bar
         //
@@ -51,7 +51,10 @@
             });
         };
 
-       
+        //$scope.isActive = function(route) {
+        //    return route = $location.path();
+        //};
+
     };
 
     homeController.$inject = injectParams;
@@ -59,9 +62,9 @@
     //Load controller
     //
     angular.module('ProMasterClient').controller('homeController', homeController);
-    angular.module('ProMasterClientDoc').controller('homeController', homeController);
-    angular.module('ProMasterClientTools').controller('homeController', homeController);
-    angular.module('ProMasterClientReport').controller('homeController', homeController);
+    //angular.module('ProMasterClientDoc').controller('homeController', homeController);
+    //angular.module('ProMasterClientTools').controller('homeController', homeController);
+    //angular.module('ProMasterClientReport').controller('homeController', homeController);
 
 }());
 

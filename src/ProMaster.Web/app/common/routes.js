@@ -85,128 +85,128 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
 }]);
 
 
-appDoc.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+//appDoc.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
-    $routeProvider.
-        when('/', {
-            templateUrl: 'NoData.html',
-            authenticated: false
-            //controller: 'propertyController'
-        }).
-        when('/BrowseDocs', {
-            templateUrl: 'views/partials/BrowseDocs.html',
-            authenticated: true
-            //controller: 'docController'
-        }).
-        when('/SearchDocs', {
-            templateUrl: 'views/partials/SearchDocs.html',
-            authenticated: true
-            //controller: 'docController'
-        }).
-        otherwise({
-            redirectTo: '/',
-            authenticated: false
+//    $routeProvider.
+//        when('/', {
+//            templateUrl: 'NoData.html',
+//            authenticated: false
+//            //controller: 'propertyController'
+//        }).
+//        when('/BrowseDocs', {
+//            templateUrl: 'views/partials/BrowseDocs.html',
+//            authenticated: true
+//            //controller: 'docController'
+//        }).
+//        when('/SearchDocs', {
+//            templateUrl: 'views/partials/SearchDocs.html',
+//            authenticated: true
+//            //controller: 'docController'
+//        }).
+//        otherwise({
+//            redirectTo: '/',
+//            authenticated: false
 
-        });
-}]).config(['ngDialogProvider', function (ngDialogProvider) {
-    ngDialogProvider.setDefaults({
-        className: 'ngdialog-theme-default',
-        plain: false,
-        showClose: true,
-        closeByDocument: true,
-        closeByEscape: true,
-        appendTo: false,
-        preCloseCallback: function () {
-            console.log('default pre-close callback');
-        }
-    });
-}]);
-
-
-appTools.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
-
-    $routeProvider.
-        when('/', {
-            templateUrl: 'NoData.html',
-            authenticated: false
-            //controller: 'propertyController'
-        }).
-         when('/Calendar', {
-             templateUrl: 'views/partials/Calendar.html',
-             authenticated: true
-             //controller: 'docController'
-         }).
-        when('/ListingProcess', {
-            templateUrl: 'views/partials/ListingProcess.html',
-            authenticated: true
-            //controller: 'docController'
-        }).
-        when('/Applications', {
-            templateUrl: 'views/partials/Applications.html',
-            authenticated: true
-            //controller: 'docController'
-        }).
-        otherwise({
-            redirectTo: '/',
-            authenticated: false
-
-        });
-}]).config(['ngDialogProvider', function (ngDialogProvider) {
-    ngDialogProvider.setDefaults({
-        className: 'ngdialog-theme-default',
-        plain: false,
-        showClose: true,
-        closeByDocument: true,
-        closeByEscape: true,
-        appendTo: false,
-        preCloseCallback: function () {
-            console.log('default pre-close callback');
-        }
-    });
-}]);
+//        });
+//}]).config(['ngDialogProvider', function (ngDialogProvider) {
+//    ngDialogProvider.setDefaults({
+//        className: 'ngdialog-theme-default',
+//        plain: false,
+//        showClose: true,
+//        closeByDocument: true,
+//        closeByEscape: true,
+//        appendTo: false,
+//        preCloseCallback: function () {
+//            console.log('default pre-close callback');
+//        }
+//    });
+//}]);
 
 
-appReport.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+//appTools.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
 
-    $routeProvider.
-        when('/', {
-            templateUrl: 'NoData.html',
-            authenticated: false
-            //controller: 'propertyController'
-        }).
-         when('/Financial', {
-             templateUrl: 'views/partials/Financial.html',
-             authenticated: true
-             //controller: 'docController'
-         }).
-        when('/Business', {
-            templateUrl: 'views/partials/Business.html',
-            authenticated: true
-            //controller: 'docController'
-        }).
-        when('/Data', {
-            templateUrl: 'views/partials/Data.html',
-            authenticated: true
-            //controller: 'docController'
-        }).
-        otherwise({
-            redirectTo: '/',
-            authenticated: false
+//    $routeProvider.
+//        when('/', {
+//            templateUrl: 'NoData.html',
+//            authenticated: false
+//            //controller: 'propertyController'
+//        }).
+//         when('/Calendar', {
+//             templateUrl: 'views/partials/Calendar.html',
+//             authenticated: true
+//             //controller: 'docController'
+//         }).
+//        when('/ListingProcess', {
+//            templateUrl: 'views/partials/ListingProcess.html',
+//            authenticated: true
+//            //controller: 'docController'
+//        }).
+//        when('/Applications', {
+//            templateUrl: 'views/partials/Applications.html',
+//            authenticated: true
+//            //controller: 'docController'
+//        }).
+//        otherwise({
+//            redirectTo: '/',
+//            authenticated: false
 
-        });
-}]).config(['ngDialogProvider', function (ngDialogProvider) {
-    ngDialogProvider.setDefaults({
-        className: 'ngdialog-theme-default',
-        plain: false,
-        showClose: true,
-        closeByDocument: true,
-        closeByEscape: true,
-        appendTo: false,
-        preCloseCallback: function () {
-            console.log('default pre-close callback');
-        }
-    });
-}]);
+//        });
+//}]).config(['ngDialogProvider', function (ngDialogProvider) {
+//    ngDialogProvider.setDefaults({
+//        className: 'ngdialog-theme-default',
+//        plain: false,
+//        showClose: true,
+//        closeByDocument: true,
+//        closeByEscape: true,
+//        appendTo: false,
+//        preCloseCallback: function () {
+//            console.log('default pre-close callback');
+//        }
+//    });
+//}]);
+
+
+//appReport.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+
+//    $routeProvider.
+//        when('/', {
+//            templateUrl: 'NoData.html',
+//            authenticated: false
+//            //controller: 'propertyController'
+//        }).
+//         when('/Financial', {
+//             templateUrl: 'views/partials/Financial.html',
+//             authenticated: true
+//             //controller: 'docController'
+//         }).
+//        when('/Business', {
+//            templateUrl: 'views/partials/Business.html',
+//            authenticated: true
+//            //controller: 'docController'
+//        }).
+//        when('/Data', {
+//            templateUrl: 'views/partials/Data.html',
+//            authenticated: true
+//            //controller: 'docController'
+//        }).
+//        otherwise({
+//            redirectTo: '/',
+//            authenticated: false
+
+//        });
+//}]).config(['ngDialogProvider', function (ngDialogProvider) {
+//    ngDialogProvider.setDefaults({
+//        className: 'ngdialog-theme-default',
+//        plain: false,
+//        showClose: true,
+//        closeByDocument: true,
+//        closeByEscape: true,
+//        appendTo: false,
+//        preCloseCallback: function () {
+//            console.log('default pre-close callback');
+//        }
+//    });
+//}]);
 
 /* To check if the user is authenticated, not sure where to put this code */
 /*
