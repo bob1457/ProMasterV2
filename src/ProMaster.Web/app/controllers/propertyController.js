@@ -6,7 +6,7 @@
     function propertyController($scope, $http) {
        
         //Test scope
-        $scope.title = "Properties For Rent";
+        $scope.title = "For Rent";
 
         //pagination
         $scope.currentPage = 1;

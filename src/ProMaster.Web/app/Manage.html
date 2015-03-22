@@ -91,12 +91,12 @@
             </div>
             <div class="row">
                 <div class="col-lg-6"></div>
-                <div class="col-lg-6">
+                <div class="col-lg-6" ng-init="tab = 1">
                     <!--<nav class="navbar navbar-default nav-pos" style="border-width: 0;">
 
                         </nav>-->
 
-                    <ul id="menu">
+                    <ul id="menu" ng-init="menu = 1">
                         <li ng-class="{active_menu: menu == 1}"><a href="#/Manage" ng-click="menu = 1">MANAGE</a></li>
                         <li ng-class="{active_menu: menu == 2}"><a href="#/Docs" ng-click="menu = 2">DOCS</a></li>
                         <li ng-class="{active_menu: menu == 3}"><a href="#/Tools" ng-click="menu = 3">TOOLS</a></li>
