@@ -83,13 +83,13 @@
 
                         </nav>-->
 
-                    <ul id="menu">
-                        <li class="active" id="home"><a href="Index.html#/RentList"><span class="focus"><!-- <i class="fa fa-home fa-fw"></i>-->HOME</span></a></li>
+                    <ul id="menu" ng-init="menu = 1">
+                        <li ng-class="{active_menu: menu == 1}"><a href="Index.html#/RentList" ng-click="menu = 1"><span class="focus"><!-- <i class="fa fa-home fa-fw"></i>-->HOME</span></a></li>
                         <!--<li><a href="Manage.html#/Properties">MANAGE</a></li>
-                        <li><a href="Docs.html">DOCS</a></li>
-                        <li><a href="Tools.html">TOOLS</a></li>
-                        <li><a href="Report.html">REPORT</a></li>-->
-                        <li id="about"><a href="Index.html#/About">ABOUT</a></li>
+        <li><a href="Docs.html">DOCS</a></li>
+        <li><a href="Tools.html">TOOLS</a></li>
+        <li><a href="Report.html">REPORT</a></li>-->
+                        <li ng-class="{active_menu: menu == 2}"><a href="Index.html#/About" ng-click="menu = 2">ABOUT</a></li>
                     </ul>
 
 
@@ -436,13 +436,13 @@
     <!-- Login Dialog Script -->
     <script type="text/ng-template" id="loginDialogId">
         
-        <div class="panel-body metro" style="padding: 0; margin: -15px;" ng-controller="loginController">
+        <div class="panel-body metro" style="padding: 0; margin: -15px;" ng-controller="homeController">
 
-            <div id="loginbox1" style="margin-top:0;">
+            <div id="loginbox1" style="margin-top:0;" ng-controller="loginController">
                 <div class="panel panel-info" style="margin-bottom:0;">
                     <div class="panel-heading">
                         <div class="panel-title"><i class="fa fa-key" style="color: #419641;"></i> Login</div>
-                        <!--<div style="float:right; font-size: 80%; position: relative; top:-10px"><a ng-click="openDefault()" href="">Forgot password?</a></div>-->
+                        <div style="float:right; font-size: 80%; position: relative; top:-10px"><a ng-click="openDefault()" href="">Forgot password?</a></div>
                     </div>
                     <div style="padding-top:30px" class="panel-body">
 
@@ -475,7 +475,7 @@
 
                                 <div class="col-sm-12 controls">
                                     <!--<a id="btn-login" href="#" class="btn btn-success">Login  </a>
-                <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>-->
+                            <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>-->
                                     <button type="submit" class="btn btn-primary btn-success" ng-disabled="loginForm1.$invalid">LOGIN</button>
                                 </div>
                             </div>
