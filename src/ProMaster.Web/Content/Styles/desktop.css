@@ -139,7 +139,8 @@ body#manage a#manage,
 body#document a#document,
 body#reporting a#reporting,
 body#tools a#tools,
-body#admin a#admin,
+/*body#admin a#tools,*/
+body#admin a#manage,
 body#about a#about
 {
     border-bottom-style:solid;

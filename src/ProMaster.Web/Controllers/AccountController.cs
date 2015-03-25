@@ -991,6 +991,11 @@ namespace ProMaster.Web.Controllers
                     profile.ContactTelephone1 = Request.Form["ContactTelephone1"];
                     profile.ContactTelephone2 = Request.Form["ContactTelephone2"];
                     profile.UpdateDate = DateTime.Now;
+
+                    user.FirstName = Request.Form["FirstName"];
+                    user.LastName = Request.Form["LastName"];
+                    user.Email = Request.Form["Email"];
+                    
                 }
                 #endregion
 
