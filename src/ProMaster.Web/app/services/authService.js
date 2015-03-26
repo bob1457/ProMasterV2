@@ -17,6 +17,7 @@
             userName: "",
         };
 
+        service.isLoggedIn = false;
 
         debugger;
         service.Login = function (username, password, callback) {
@@ -51,11 +52,14 @@
             //    });
 
             $http.defaults.headers.common['Authorization'] = 'Basic ' + credentials;
-            //$cookieStore.put('basicCredentials', credentials); //save the credentials
+            $cookieStore.put('basicCredentials', credentials); //save the credentials
 
             $http.get(serviceBase, config).success(function(response) {
                 _authentication.isAuth = true;
                 _authentication.userName = username; //set current user's username
+
+                service.isLoggedIn = true;
+
                 callback(response);
             }).error(function(err, status) {
                 //handle errors
@@ -66,10 +70,21 @@
 
         };
 
+        service.Session = function() {
+            return $http.get('/api/Login/1') //chekc if the user is authenticated -- crate an api controller on the server to verify if the user is authenticated
+                .then(function(response) {
+                    service.isLoggedIn = true;
+                    return response;
+                });
+        };
+
+
         service.Logout = function () {
 
             _authentication.isAuth = false;
             _authentication.userName = "";
+
+            service.isLoggedIn = false;
 
         };
 

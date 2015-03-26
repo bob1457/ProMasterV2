@@ -1,7 +1,7 @@
 ﻿var app = angular.module('ProMasterClient');
-var appDoc = angular.module('ProMasterClientDoc');
-var appTools = angular.module('ProMasterClientTools');
-var appReport = angular.module('ProMasterClientReport');
+//var appDoc = angular.module('ProMasterClientDoc');
+//var appTools = angular.module('ProMasterClientTools');
+//var appReport = angular.module('ProMasterClientReport');
 
 
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider, $stateProvider) {
@@ -11,41 +11,52 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
     //});
     $routeProvider.
         when('/', {
-            templateUrl: 'views/partials/RentList.html',
-            authenticated: false
+            templateUrl: 'views/partials/RentList.html'
+            //authenticated: false
             //controller: 'propertyController'
         }).
         when('/About', {
-            templateUrl: 'views/partials/About.html',
+            templateUrl: 'views/partials/About.html'
             //controller: 'propertyController'
-            authenticated: false
+            //authenticated: false
         }).
         when('/RentList', {
-            templateUrl: 'views/partials/RentList.html',
-            authenticated: false
+            templateUrl: 'views/partials/RentList.html'
+            //authenticated: false
         }).
         when('/Manage', {
             templateUrl: 'views/Manage.html',
             controller: 'manageController',
-            authenticated: true
+            resolve: {
+                auth: ['$q', '$location', 'authService', function($q, $location, authServce) {
+                    return authServce.Session().then(
+                        function(success) {},
+                        function(err) {
+                            //$location.url('/app/Index.html');
+                            document.location.href = 'http://localhost:2379/app/Index.html';
+                            $location.replace();
+                            return $q.reject(err);
+                        });
+                }]
+            }
         }).
         when('/Docs', {
             templateUrl: 'views/Docs.html',
-            controller: 'manageController',
-            authenticated: true
+            controller: 'manageController'
+            //authenticated: true
         }).
         //when('/RouteTwo/:id', {
         //    templateUrl: function (params) { return 'views/two.html?id=' + params.id; }
         //}).
         when('/Tools', {
             templateUrl: 'views/Tools.html',
-            controller: 'manageController',
-            authenticated: true
+            controller: 'manageController'
+            //authenticated: true
         }).
         when('/Report', {
             templateUrl: 'views/Report.html',
-            controller: 'manageController',
-            authenticated: true
+            controller: 'manageController'
+            //authenticated: true
         }).
         //when('/Owners', {
         //    templateUrl: 'views/partials/OwnerList.html',

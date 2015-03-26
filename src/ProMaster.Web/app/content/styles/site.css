@@ -340,7 +340,9 @@ ul.grid li img{
     
 }
 
-
+.top_bar_bottom_margin {
+    margin-bottom: 1em;
+}
 
 
 
@@ -446,7 +448,10 @@ ul.grid li img{
     .panel-heading img {
         width: 10%;
         float: left;
-    }   
+    }  
+    .top_bar_bottom_margin {
+        margin-bottom: 3em;
+    } 
 }
 
 @media (min-width:1024px ) {
@@ -470,7 +475,7 @@ ul.grid li img{
 
     .banner {
         margin-top: 1em;
-        height: 240px;
+        height: 210px;
         background-color: #EEE9E9;
     }
     #search {
@@ -501,4 +506,7 @@ ul.grid li img{
         float: left;
     }
 
+     .top_bar_bottom_margin {
+        margin-bottom: 1em;
+    } 
 }

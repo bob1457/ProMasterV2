@@ -16,8 +16,8 @@
     };
 
     angular.module('ProMasterClient').filter("dayName", dayName);
-    angular.module('ProMasterClientDoc').filter("dayName", dayName);
-    angular.module('ProMasterClientTools').filter("dayName", dayName);
-    angular.module('ProMasterClientReport').filter("dayName", dayName);
+    //angular.module('ProMasterClientDoc').filter("dayName", dayName);
+    //angular.module('ProMasterClientTools').filter("dayName", dayName);
+    //angular.module('ProMasterClientReport').filter("dayName", dayName);
 
 })();

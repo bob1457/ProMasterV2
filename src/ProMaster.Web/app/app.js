@@ -11,9 +11,9 @@
             notAuthenticated: 'auth-not-authenticated',
             notAuthorized: 'auth-not-authorized'
         });  //, 'angularUtils.directives.dirPagination']); //Create main application module
-    angular.module('ProMasterClientDoc', ['ngRoute', 'ui.bootstrap', 'ngResource', 'ngCookies', 'ngDialog']); //, 'authService']); //Create main application module
-    angular.module('ProMasterClientTools', ['ngRoute', 'ui.bootstrap', 'ngResource', 'ngCookies', 'ngDialog']); //, 'authService']); //Create main application module
-    angular.module('ProMasterClientReport', ['ngRoute', 'ui.bootstrap', 'ngResource', 'ngCookies', 'ngDialog']); //, 'authService']); //Create main application module
+    //angular.module('ProMasterClientDoc', ['ngRoute', 'ui.bootstrap', 'ngResource', 'ngCookies', 'ngDialog']); //, 'authService']); //Create main application module
+    //angular.module('ProMasterClientTools', ['ngRoute', 'ui.bootstrap', 'ngResource', 'ngCookies', 'ngDialog']); //, 'authService']); //Create main application module
+    //angular.module('ProMasterClientReport', ['ngRoute', 'ui.bootstrap', 'ngResource', 'ngCookies', 'ngDialog']); //, 'authService']); //Create main application module
     
     
     angular.module('ProMasterClient').run(['$rootScope', '$location', 
