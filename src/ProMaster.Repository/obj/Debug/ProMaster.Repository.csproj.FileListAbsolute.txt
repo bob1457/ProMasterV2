@@ -220,3 +220,6 @@ C:\Development\Projects\SC\ProMaster\src\ProMaster.Repository\bin\Debug\ProMaste
 C:\Development\Projects\SC\ProMaster\src\ProMaster.Repository\bin\Debug\EntityFramework.xml
 C:\Development\Projects\SC\ProMaster\src\ProMaster.Repository\bin\Debug\log4net.xml
 C:\Development\Projects\SC\ProMaster\src\ProMaster.Repository\obj\Debug\ProMaster.Repository.pdb
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Repository\bin\Debug\ProMaster.Repository.dll.config
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Repository\bin\Debug\SendGridMail.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Repository\bin\Debug\SendGrid.SmtpApi.dll

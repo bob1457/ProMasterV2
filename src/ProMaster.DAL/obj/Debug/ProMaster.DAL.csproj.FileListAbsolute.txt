@@ -188,3 +188,6 @@ C:\Development\Projects\SC\ProMaster\src\ProMaster.DAL\bin\Debug\EntityFramework
 C:\Development\Projects\SC\ProMaster\src\ProMaster.DAL\obj\Debug\ProMaster.DAL.csprojResolveAssemblyReference.cache
 C:\Development\Projects\SC\ProMaster\src\ProMaster.DAL\obj\Debug\ProMaster.DAL.dll
 C:\Development\Projects\SC\ProMaster\src\ProMaster.DAL\obj\Debug\ProMaster.DAL.pdb
+C:\Projects\SourceControl\ProMaster\src\ProMaster.DAL\bin\Debug\ProMaster.DAL.dll.config
+C:\Projects\SourceControl\ProMaster\src\ProMaster.DAL\bin\Debug\SendGridMail.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.DAL\bin\Debug\SendGrid.SmtpApi.dll

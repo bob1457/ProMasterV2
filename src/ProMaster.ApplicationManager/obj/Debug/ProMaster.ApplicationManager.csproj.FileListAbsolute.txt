@@ -303,3 +303,6 @@ C:\Development\Projects\SC\ProMaster\src\ProMaster.ApplicationManager\bin\Debug\
 C:\Development\Projects\SC\ProMaster\src\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.csprojResolveAssemblyReference.cache
 C:\Development\Projects\SC\ProMaster\src\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.dll
 C:\Development\Projects\SC\ProMaster\src\ProMaster.ApplicationManager\obj\Debug\ProMaster.ApplicationManager.pdb
+C:\Projects\SourceControl\ProMaster\src\ProMaster.ApplicationManager\bin\Debug\ProMaster.ApplicationManager.dll.config
+C:\Projects\SourceControl\ProMaster\src\ProMaster.ApplicationManager\bin\Debug\SendGridMail.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.ApplicationManager\bin\Debug\SendGrid.SmtpApi.dll

@@ -142,3 +142,17 @@ C:\Development\Projects\SC\ProMaster\src\ProMaster.Infrastructure\bin\Debug\log4
 C:\Development\Projects\SC\ProMaster\src\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.csprojResolveAssemblyReference.cache
 C:\Development\Projects\SC\ProMaster\src\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.dll
 C:\Development\Projects\SC\ProMaster\src\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.pdb
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll.config
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Infrastructure\bin\Debug\ProMaster.Infrastructure.pdb
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Infrastructure\bin\Debug\EntityFramework.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Infrastructure\bin\Debug\log4net.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Infrastructure\bin\Debug\System.Web.Mvc.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Infrastructure\bin\Debug\System.Web.Mvc.Html5.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Infrastructure\bin\Debug\EntityFramework.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Infrastructure\bin\Debug\log4net.xml
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Infrastructure\obj\Debug\ProMaster.Infrastructure.pdb
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Infrastructure\bin\Debug\SendGrid.SmtpApi.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Infrastructure\bin\Debug\SendGridMail.dll

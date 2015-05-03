@@ -96,5 +96,22 @@ namespace ProMaster.Web.Controllers
         {
             return View();
         }
+
+        public JsonResult SentMail()
+        {
+            SMTPService smtp = new SMTPService();
+
+            try
+            {
+                smtp.SendMail("admin@promaster.com", "bob.yuan@yahoo.com", "Test Mail", "Hello, Bob!", false);
+
+                return Json("Sent successfully!");
+            }
+            catch (Exception ex)
+            {
+                return Json("Error occured: " + ex.Message);
+            }
+            
+        }
     }
 }

@@ -165,12 +165,19 @@
                                             <div style="margin-top:10px" class="form-group">
 
                                                 <div class="col-sm-12 controls">
-                                                   <!-- <a id="btn-login"  href="" class="btn btn-success">Login  </a>
-                                                    <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>-->
+                                                    <!-- <a id="btn-login"  href="" class="btn btn-success">Login  </a>
+                                                        <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>-->
                                                     <button type="submit" class="btn btn-primary btn-success" ng-disabled="loginForm.$invalid">LOGIN</button>
+                                                    
+                                                   
                                                 </div>
                                             </div>
                                             
+                                            <!-- Email Send Button - Test -->
+                                            <!--<button id="sendmail" type="submit" class="btn btn-primary btn-success" >Contact Us</button>
+                                                <div id="msg2"></div>-->
+                                            
+
                                             <!--<div ng-hide="{{loginForm.$valid}}" class="well">
                                                 Message:
                                                 <div>
@@ -583,3 +590,17 @@
 
 </body>
 </html>
+
+
+<script type="text/javascript">
+    $("#sendmail").click(function() {
+        $.ajax(
+            {
+                url: "/Home/SentMail",
+                success: function(result) {
+                    $("#msg2").text(result);
+                }
+            }
+        );
+    });
+</script>

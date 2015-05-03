@@ -1048,3 +1048,5 @@ C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\bin\DotNetOpenAuth.OpenId
 C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\obj\Debug\ProMaster.Web.csprojResolveAssemblyReference.cache
 C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\obj\Debug\ProMaster.Web.dll
 C:\Development\Projects\SC\ProMaster\src\ProMaster.Web\obj\Debug\ProMaster.Web.pdb
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\SendGrid.SmtpApi.dll
+C:\Projects\SourceControl\ProMaster\src\ProMaster.Web\bin\SendGridMail.dll
