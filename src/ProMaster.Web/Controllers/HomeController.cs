@@ -97,6 +97,8 @@ namespace ProMaster.Web.Controllers
             return View();
         }
 
+        //Email Testing
+        //
         public JsonResult SentMail()
         {
             SMTPService smtp = new SMTPService();
